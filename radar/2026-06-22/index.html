@@ -79,6 +79,8 @@ a{color:inherit;text-decoration:none}
   padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
 .post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
 .post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figure{margin:2.2rem 0}
 .post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
@@ -111,6 +113,7 @@ a{color:inherit;text-decoration:none}
 <h1>AI RADAR DAILY 2026-06-22 — 代理記憶與工作流</h1>
 <p class="byline"><time>2026-06-22</time></p>
 </div>
+<figure class="hero"><img src="https://polarbear0827.github.io/My-Way/radar/2026-06-22/cover.png" alt="AI RADAR DAILY 2026-06-22 — 代理記憶與工作流" loading="lazy"></figure>
 <p class="lead">今天的 AI 開源焦點很清楚：Agent 不再只是在單輪任務裡「看起來聰明」，而是開始被要求能夠連續研究、持續寫碼、保存上下文，並在多個工具與子任務之間穩定交接。這代表市場正在從「模型能力展示」轉向「代理工作流基礎建設」。值得注意的是，今天上榜的專案不是單一方向爆發，而是沿著三條線同時推進：長期記憶、長程任務執行、以及可直接落地的場景產品。這其實是一個成熟訊號。當開發者開始處理記憶、沙盒、技能編排、本地資料與自託管，而不是只包一層聊天介面，就表示 Agent 正在從玩具原型走向可維運的軟體系統。</p>
 <h2>今天的趨勢</h2>
 <p>第一個趨勢是「長程代理」正在成為新競爭點。過去的 Agent 框架多半強調工具呼叫、ReAct 推理、函式編排，能完成幾步任務就算成功。但今天的關鍵問題已經變成：它能不能連續跑一段時間？能不能研究、整理、寫作、寫碼、驗證，再把成果交付出來？bytedance/deer-flow 這類長程任務 SuperAgent 框架，代表的是 Agent 從短任務自動化走向研究型、自主型流程。這也會帶出更多工程需求，例如子代理分工、沙盒執行、狀態管理、任務回放、錯誤恢復與結果追蹤。未來真正有價值的 Agent，不會只是「會叫工具」，而是能把一個模糊目標拆成可驗證的工作流。</p>

@@ -79,6 +79,8 @@ a{color:inherit;text-decoration:none}
   padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
 .post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
 .post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figure{margin:2.2rem 0}
 .post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
@@ -111,6 +113,7 @@ a{color:inherit;text-decoration:none}
 <h1>AI RADAR DAILY 2026-06-08 — AI Agent 工具鏈爆發</h1>
 <p class="byline"><time>2026-06-08</time></p>
 </div>
+
 <p class="lead">今天這批 repo 很一致：大家不再急著證明「模型能不能回答」，而是在解同一個更現實的問題——<strong>代理怎麼變成真的工作系統</strong>。你會看到 Claude Code、agent harness、memory、workflow、MCP 這些關鍵字反覆出現，代表開發者的重心已經從模型能力本身，轉向上下文管理、工具調度、長期記憶與可持續執行。這不是單純的功能擴張，而是 AI 工程的重心位移：從 demo 走向可維護、可教學、可組裝的代理基礎設施。這種轉變很重要，因為它意味著未來的競爭，不只在誰的模型更強，而在誰能把代理做得更穩、更省 token、更容易接入真實工作流。</p>
 <h2>今天的趨勢</h2>
 <p>第一個明顯趨勢，是 <strong>agent harness 正在成為新一代基礎件</strong>。像 affaan-m/ECC、shareAI-lab/learn-claude-code、HKUDS/nanobot 這類專案，核心都不是「做一個聊天機器人」，而是把代理的執行流程拆成可控模組：技能、記憶、工具、研究流程、安全邊界。這說明開發者已經意識到，真正難的不是讓模型說話，而是讓它在多輪、多工具、多任務下仍然保持一致性。這類 repo 的價值在於，它們把 agent 從神秘黑盒變成工程問題，讓人可以調參、替換、重組，而不是只能祈禱模型表現穩定。</p>

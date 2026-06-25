@@ -79,6 +79,8 @@ a{color:inherit;text-decoration:none}
   padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
 .post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
 .post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figure{margin:2.2rem 0}
 .post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
@@ -111,6 +113,7 @@ a{color:inherit;text-decoration:none}
 <h1>AI RADAR DAILY 2026-06-23 — Agent基建升溫</h1>
 <p class="byline"><time>2026-06-23</time></p>
 </div>
+<figure class="hero"><img src="https://polarbear0827.github.io/My-Way/radar/2026-06-23/cover.png" alt="AI RADAR DAILY 2026-06-23 — Agent基建升溫" loading="lazy"></figure>
 <p class="lead">今天最值得注意的不是某個模型又多會回答問題，而是 Agent 周邊基建開始補齊。過去半年，Computer-use 多半停留在展示：讓模型開瀏覽器、點幾個按鈕、填表單，影片看起來很聰明，但產品化時立刻遇到不穩定、不可重現、缺少隔離環境與評測標準等問題。今天的 Radar 顯示，開源社群正在把焦點從「Agent 能不能操作電腦」推進到「如何讓 Agent 安全、可測、可部署地操作完整系統」。同時，影片生成也出現另一條路線：不只依賴端到端生成模型，而是用 HTML、CSS、模板、流程編排，把內容製作變成可控的自動化管線。RAG 端則更務實，Milvus 與 zvec 指向兩種不同需求：一邊是雲原生大規模服務，一邊是嵌入式、輕量、低延遲。這代表 AI 應用開始從「什麼都想用同一套」走向依場景分工。</p>
 <h2>今天的趨勢</h2>
 <p>第一個趨勢是 Computer-use 正在基建化。這個方向的核心不是讓 Agent 看起來像人類使用電腦，而是讓它能在可控環境裡執行任務。真正困難的地方包括：桌面環境如何隔離、操作如何記錄、失敗如何重放、任務如何評測、不同作業系統如何支援，以及 SDK 如何讓開發者把這些能力接進自己的產品。trycua/cua 出現在這個時間點很關鍵，因為它不是只做一個 demo，而是把沙盒、SDK、benchmark 放在同一個框架裡思考。這會是 Agent 從聊天機器人走向工作流自動化時必須跨過的一道門檻。</p>

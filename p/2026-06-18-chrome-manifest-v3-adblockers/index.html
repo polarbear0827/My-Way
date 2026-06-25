@@ -79,6 +79,8 @@ a{color:inherit;text-decoration:none}
   padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
 .post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
 .post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figure{margin:2.2rem 0}
 .post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
@@ -111,6 +113,7 @@ a{color:inherit;text-decoration:none}
 <h1>廣告阻擋器的最後倒數：Chrome Manifest V3 之後，誰替我們控制網頁？</h1>
 <p class="byline"><time>2026-06-18</time></p>
 </div>
+
 <p class="lead">如果你曾在長輩的電腦上看見一排閃動的下載按鈕、假防毒警告、突然跳出的影片廣告，你大概知道「廣告阻擋器」從來不只是討厭廣告的人在用的小工具。它更像是一副網頁世界的安全眼鏡：擋掉追蹤器、惡意導向、遮住正文的蓋版，讓人能安靜讀完一篇文章、查一份食譜，或替孩子找作業資料。</p>
 <p>但這副眼鏡正在被重新設計。Google Chrome 的 Manifest V3 遷移已經不是開發者論壇裡的遠方爭論。Chrome 官方文件在 2025 年 7 月 24 日更新的時程中寫明，Chrome 138 已讓所有 channel 的 Manifest V2 擴充功能停用，使用者不能再自行打開；Chrome 139 起，Manifest V2 擴充功能將停止對升級使用者運作。近期科技社群又因 Chromium 移除舊旗標的討論而升溫：那些靠隱藏設定把舊版 uBlock Origin 留在 Chrome 裡的人，正在看見最後一道門被關上。¹ ¹⁴ ¹⁵</p>
 <p>這篇文章不把問題簡化成「Google 消滅廣告阻擋器」。事實更麻煩。Google 的說法是：Manifest V3 是為了安全、隱私與效能，因為舊擴充功能能長時間常駐、載入遠端程式碼、攔截太多網路請求。批評者則說：這同時也把最強大的內容阻擋能力從使用者手中拿走，交回瀏覽器與平台本身。當 Chrome 在 2026 年 5 月仍占全球瀏覽器市場約 70.25%，這不是少數玩家的設定問題，而是多數人每天進入網路時，能不能替自己關燈、拉窗簾、鎖門的問題。¹ ² ³ ¹¹</p>

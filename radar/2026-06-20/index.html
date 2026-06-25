@@ -79,6 +79,8 @@ a{color:inherit;text-decoration:none}
   padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
 .post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
 .post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figure{margin:2.2rem 0}
 .post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
@@ -111,6 +113,7 @@ a{color:inherit;text-decoration:none}
 <h1>AI RADAR DAILY 2026-06-20 — 代理記憶與自動化</h1>
 <p class="byline"><time>2026-06-20</time></p>
 </div>
+<figure class="hero"><img src="https://polarbear0827.github.io/My-Way/radar/2026-06-20/cover.png" alt="AI RADAR DAILY 2026-06-20 — 代理記憶與自動化" loading="lazy"></figure>
 <p class="lead">今天最值得注意的變化，不是又多了一批「可以聊天」的 AI 工具，而是 Agent 開始補上過去最薄弱的兩塊能力：記憶與行動。前者讓 AI 不再每次都從零開始理解專案、使用者偏好或任務脈絡；後者讓 AI 能真正碰到瀏覽器、影片流程、開發工具與本地資料。這代表 AI Agent 的競爭重點正在從模型回答品質，轉向「能否穩定接住長流程工作」。今天的 Top repos 很清楚地呈現這個方向：codebase-memory-mcp 把程式碼庫變成可查詢的持久知識圖譜，memanto 與 LEANN 從不同角度處理長期記憶與本地 RAG，browser-harness 與 obscura 則把瀏覽器自動化推向更實用的落地層。這不是單一產品趨勢，而是 Agent 基礎設施正在成形。</p>
 <h2>今天的趨勢</h2>
 <p>今天的整體趨勢可以概括為「代理記憶與自動化」。這裡的關鍵不是單純把聊天紀錄存起來，而是讓 Agent 能把任務中累積的資訊轉成可檢索、可推理、可重用的上下文。過去 AI 助手最大的限制，是上下文窗口再大也會被任務長度、程式碼庫規模、文件散落程度吃掉。當 Agent 進入真實工作流，它不能只靠一次 prompt 記住所有事情，而需要外部記憶層、索引層與評估層支撐。今天出現的 DeusData/codebase-memory-mcp、moorcheh-ai/memanto、StarTrail-org/LEANN、comet-ml/opik，分別對應了程式碼知識圖譜、長期記憶、本地私有檢索與 LLM 應用觀測，這些都指向同一件事：AI Agent 正從「問答介面」走向「可累積上下文的工作系統」。</p>

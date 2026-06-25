@@ -79,6 +79,8 @@ a{color:inherit;text-decoration:none}
   padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
 .post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
 .post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figure{margin:2.2rem 0}
 .post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
@@ -111,6 +113,7 @@ a{color:inherit;text-decoration:none}
 <h1>AI RADAR DAILY 2026-06-19 — Agent上下文基建</h1>
 <p class="byline"><time>2026-06-19</time></p>
 </div>
+<figure class="hero"><img src="https://polarbear0827.github.io/My-Way/radar/2026-06-19/cover.png" alt="AI RADAR DAILY 2026-06-19 — Agent上下文基建" loading="lazy"></figure>
 <p class="lead">今天的 AI 開源訊號很清楚：大家不再只問「模型能不能寫程式」，而是開始補足 agent 真正做事時最缺的基礎設施——上下文。過去一年，coding agent 的瓶頸常被描述成推理能力、工具呼叫或模型成本，但真正卡住日常使用的，往往是更樸素的問題：它不知道這個 repo 的歷史決策、不知道哪些檔案才是關鍵、不知道文件與資料庫 schema 之間的關係，也無法跨 session 記得前一次怎麼判斷。今天 Top repos 的共同點，不是又做了一個聊天介面，而是把程式碼、文件、資料庫、社群資料與瀏覽器操作包成 agent 能消化的上下文層。這代表 AI 工具的競爭正在往下沉：誰能讓 agent 少讀噪音、多抓關鍵脈絡，誰就更接近可落地的工作流。</p>
 <h2>今天的趨勢</h2>
 <p>今天的整體趨勢可以概括為「Agent 上下文基建」。第一個洞察，是知識圖譜正在成為 agent 理解大型專案的中介層。像 safishamsi/graphify 與 tirth8205/code-review-graph 都不是單純把資料塞進向量資料庫，而是試圖把程式碼、文件、資料庫與依賴關係轉成可查詢、可追蹤的圖結構。這個方向很重要，因為大型 repo 的問題從來不是資料不夠，而是關係太多、噪音太大。傳統 RAG 很容易找到「語意相近」的片段，但 code review 或架構理解常需要知道呼叫鏈、模組邊界、資料流與變更影響範圍。圖譜化的上下文，正是在補這塊缺口。</p>

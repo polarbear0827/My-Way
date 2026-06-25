@@ -10,7 +10,7 @@
 <meta property="og:title" content="HF 論文速讀 2026-06-20">
 <meta property="og:description" content="今天共同趨勢是從單純堆大模型，轉向統一架構、任務專家與可自動優化的高效率系統。">
 <meta property="og:url" content="https://polarbear0827.github.io/My-Way/papers/2026-06-20/">
-
+<meta property="og:image" content="https://polarbear0827.github.io/My-Way/papers/2026-06-20/cover.png">
 <meta name="twitter:card" content="summary_large_image">
 
 <style>:root{
@@ -79,6 +79,8 @@ a{color:inherit;text-decoration:none}
   padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
 .post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
 .post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figure{margin:2.2rem 0}
 .post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
@@ -101,7 +103,7 @@ a{color:inherit;text-decoration:none}
 .foot a{color:var(--accent)}
 @media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "HF 論文速讀 2026-06-20", "description": "今天共同趨勢是從單純堆大模型，轉向統一架構、任務專家與可自動優化的高效率系統。", "url": "https://polarbear0827.github.io/My-Way/papers/2026-06-20/", "datePublished": "2026-06-20", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "HF 論文速讀 2026-06-20", "description": "今天共同趨勢是從單純堆大模型，轉向統一架構、任務專家與可自動優化的高效率系統。", "url": "https://polarbear0827.github.io/My-Way/papers/2026-06-20/", "datePublished": "2026-06-20", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://polarbear0827.github.io/My-Way/papers/2026-06-20/cover.png"}</script>
 </head>
 <body>
 <header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
@@ -111,6 +113,7 @@ a{color:inherit;text-decoration:none}
 <h1>HF 論文速讀 2026-06-20</h1>
 <p class="byline"><time>2026-06-20</time></p>
 </div>
+<figure class="hero"><img src="https://polarbear0827.github.io/My-Way/papers/2026-06-20/cover.png" alt="HF 論文速讀 2026-06-20" loading="lazy"></figure>
 <p class="lead">今天共同趨勢是從單純堆大模型，轉向統一架構、任務專家與可自動優化的高效率系統。</p>
 <blockquote class="onesent">AI 系統正在把多模態、對齊、修補、Prompt 與深度估計，推向更統一且更省算力的實用化。</blockquote>
 <h2>今天先記三件事</h2><ol class="rem3"><li>HiDream-O1-Image 直接在 pixel-space 統一生成與編輯。</li><li>TMPO 用 trajectory distribution matching 減少 reward hacking。</li><li>Moebius 與 FAPO 代表小模型、Pipeline 自優化的落地路線。</li></ol>

@@ -79,6 +79,8 @@ a{color:inherit;text-decoration:none}
   padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
 .post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
 .post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figure{margin:2.2rem 0}
 .post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
 .post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
@@ -111,6 +113,7 @@ a{color:inherit;text-decoration:none}
 <h1>AI RADAR DAILY 2026-06-15 — 代理工具層崛起</h1>
 <p class="byline"><time>2026-06-15</time></p>
 </div>
+<figure class="hero"><img src="https://polarbear0827.github.io/My-Way/radar/2026-06-15/cover.png" alt="AI RADAR DAILY 2026-06-15 — 代理工具層崛起" loading="lazy"></figure>
 <p class="lead">今天最值得注意的不是某個單一模型能力又提升了多少，而是 AI agent 周邊工具層正在快速補齊。過去一年，很多代理展示看起來都很漂亮，但一進入真實工作場景就卡住：不記得前文、不理解專案結構、不能穩定讀取網站、無法使用登入後服務，也很難把外部資料變成可推理的上下文。今天的熱門專案集中指向同一件事：開發者正在把「代理能做事」所需的基礎設施拆出來，做成可重複調用的記憶、知識圖譜、瀏覽器、CLI、社群讀取與工作流接口。這代表 agent 的競爭重心，正在從「誰的提示詞更聰明」轉向「誰能更可靠地接入真實環境」。</p>
 <h2>今天的趨勢</h2>
 <p>今天的整體趨勢可以概括為「代理工具層崛起」。這不是單純多了幾個自動化工具，而是 AI agent 生態正在補上落地所需的中間層：記憶層、資料層、網站操作層與工作流封裝層。模型本身仍然重要，但模型如果每次都從零開始、只能讀少量上下文、不能理解專案歷史，也很難在大型專案或複雜工作裡穩定產出。今天 Top repos 的共同訊號是：大家不再只問「agent 能不能回答」，而是問「agent 能不能持續理解、查找、操作、回到工作流程」。</p>
