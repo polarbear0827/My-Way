@@ -13,15 +13,19 @@
 <meta property="og:image" content="https://www.google.com/chrome/static/images/chrome-logo.svg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/rss+xml" title="穗稻忠武的專欄" href="https://polarbear0827.github.io/columns/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://polarbear0827.github.io/columns/assets/style.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "廣告阻擋器的最後倒數：Chrome Manifest V3 之後，誰替我們控制網頁？", "description": "如果你曾在長輩的電腦上看見一排閃動的下載按鈕、假防毒警告、突然跳出的影片廣告，你大概知道「廣告阻擋器」從來不只是討厭廣告的人在用的小工具。它更像是一副網頁世界的安全眼鏡：擋掉追蹤器、惡意導向、遮住正文的蓋版，讓人能安靜讀完一篇文章、查一份食譜，或替孩子找作業資料。", "url": "https://polarbear0827.github.io/columns/p/2026-06-18-chrome-manifest-v3-adblockers/", "datePublished": "2026-06-18", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://www.google.com/chrome/static/images/chrome-logo.svg"}</script>
 </head>
 <body>
-<header class="site"><a href="https://polarbear0827.github.io/columns/">← 穗稻忠武的專欄</a></header>
-<main class="article">
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/columns/">穗稻忠武的專欄</a></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">台灣文化</span><span class="tag">藝術</span><span class="tag">台灣</span><span class="tag">科技與生活</span><span class="tag">專欄</span></div>
 <h1>廣告阻擋器的最後倒數：Chrome Manifest V3 之後，誰替我們控制網頁？</h1>
-<p class="meta">2026-06-18 ・ <span class="tag">台灣文化</span> <span class="tag">藝術</span> <span class="tag">台灣</span> <span class="tag">科技與生活</span> <span class="tag">專欄</span></p>
-<p>如果你曾在長輩的電腦上看見一排閃動的下載按鈕、假防毒警告、突然跳出的影片廣告，你大概知道「廣告阻擋器」從來不只是討厭廣告的人在用的小工具。它更像是一副網頁世界的安全眼鏡：擋掉追蹤器、惡意導向、遮住正文的蓋版，讓人能安靜讀完一篇文章、查一份食譜，或替孩子找作業資料。</p>
+<p class="byline"><time>2026-06-18</time></p>
+</div>
+<p class="lead">如果你曾在長輩的電腦上看見一排閃動的下載按鈕、假防毒警告、突然跳出的影片廣告，你大概知道「廣告阻擋器」從來不只是討厭廣告的人在用的小工具。它更像是一副網頁世界的安全眼鏡：擋掉追蹤器、惡意導向、遮住正文的蓋版，讓人能安靜讀完一篇文章、查一份食譜，或替孩子找作業資料。</p>
 <p>但這副眼鏡正在被重新設計。Google Chrome 的 Manifest V3 遷移已經不是開發者論壇裡的遠方爭論。Chrome 官方文件在 2025 年 7 月 24 日更新的時程中寫明，Chrome 138 已讓所有 channel 的 Manifest V2 擴充功能停用，使用者不能再自行打開；Chrome 139 起，Manifest V2 擴充功能將停止對升級使用者運作。近期科技社群又因 Chromium 移除舊旗標的討論而升溫：那些靠隱藏設定把舊版 uBlock Origin 留在 Chrome 裡的人，正在看見最後一道門被關上。¹ ¹⁴ ¹⁵</p>
 <p>這篇文章不把問題簡化成「Google 消滅廣告阻擋器」。事實更麻煩。Google 的說法是：Manifest V3 是為了安全、隱私與效能，因為舊擴充功能能長時間常駐、載入遠端程式碼、攔截太多網路請求。批評者則說：這同時也把最強大的內容阻擋能力從使用者手中拿走，交回瀏覽器與平台本身。當 Chrome 在 2026 年 5 月仍占全球瀏覽器市場約 70.25%，這不是少數玩家的設定問題，而是多數人每天進入網路時，能不能替自己關燈、拉窗簾、鎖門的問題。¹ ² ³ ¹¹</p>
 <figure><img src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="封面：Chrome 是多數人日常網路入口，Manifest V3 爭議因此從開發者議題變成公共生活議題｜來源：Google Chrome 官方圖示" loading="lazy"></figure>
@@ -93,7 +97,7 @@
 <p>這則新聞對台灣讀者也不遙遠。Chrome 是許多公司、學校與家庭的預設瀏覽器；Google 帳號、Gmail、Google Drive、Meet、Classroom 與各種 SaaS 工作流程，把瀏覽器變成半個作業系統。當擴充功能架構改變，受影響的不只是美國科技論壇上的 power user，也包括每天在辦公室開後台、在學校查資料、在家替長輩更新電腦的人。</p>
 <p>更微妙的是，台灣網路使用者經常穿梭在多語言、多地區、廣告密度不同的網站之間。繁體中文新聞站、論壇、購物頁、海外文件、影音平台，各自有不同的彈窗、追蹤器與反阻擋策略。對這類跨語言使用者來說，filter list 的完整性與可自訂性特別重要。若未來工具只剩「平台允許的規則表」，那些比較小眾的語言與地區規則是否仍被照顧，就值得長期觀察。</p>
 <p>因此，最實際的建議不是立刻恐慌，而是做一次瀏覽器盤點：你裝了哪些外掛？哪些已停止維護？哪些要求過寬權限？哪些只是習慣留下、其實很少使用？Manifest V3 爭議提醒我們，安全不是只靠一個 ad blocker，而是一組可被理解的選擇。把不需要的外掛移除、保留可信工具、替高風險家人設定較安全瀏覽器，這些小動作比在社群上罵平台更能立即降低風險。 對企業與學校資訊部門而言，這也是一次文件化的機會。過去大家常把瀏覽器外掛視為個人偏好；現在它更像端點安全的一部分。哪些外掛准用、哪些替代品可支援、若網站因阻擋器破版該如何回報，都應該寫成普通人看得懂的說明，而不是只留給 IT 人員在政策清單裡查找。尤其當員工把同一個 Google 帳號、密碼管理器與同步設定帶到多台裝置時，瀏覽器外掛已經跨過「個人喜好」邊界，成為資料保護與工作安全的共同責任。這種責任需要被翻譯成可操作的日常語言：什麼可以安裝、什麼應該移除、遇到警告要找誰、換瀏覽器會不會影響工作流程，這些都應明白寫下，讓非工程背景的人也能照著完成，並真正知道自己為何這樣做。</p>
-<h2>引用來源</h2>
+<h2 class="refs-head">引用來源</h2>
 <p class="ref">¹ Chrome for Developers（2025-07-24）— Manifest V2 support timeline
 <a href="https://developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline" rel="noopener" target="_blank">https://developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline</a></p>
 <p class="ref">² Chrome for Developers（n.d.）— Extensions / Manifest V3
@@ -134,8 +138,8 @@
 <a href="https://brave.com/blog/brave-shields-manifest-v3/" rel="noopener" target="_blank">https://brave.com/blog/brave-shields-manifest-v3/</a></p>
 <p class="ref">²⁰ Chromium Security（2020-09-17 edited）— Changes to Cross-Origin Requests in Chrome Extension Content Scripts
 <a href="https://www.chromium.org/Home/chromium-security/extension-content-script-fetches/" rel="noopener" target="_blank">https://www.chromium.org/Home/chromium-security/extension-content-script-fetches/</a></p>
-<p class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/chrome-manifest-v3" rel="noopener" target="_blank">Substack</a>。</p>
-</main>
-<footer class="site">© 穗稻忠武的專欄 ・ <a href="https://polarbear0827.github.io/columns/">回首頁</a></footer>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/chrome-manifest-v3" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/columns/">← 回專欄首頁</a><span>© 穗稻忠武的專欄</span></footer>
 </body>
 </html>
