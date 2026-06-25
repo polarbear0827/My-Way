@@ -12,33 +12,35 @@
 <meta property="og:url" content="https://polarbear0827.github.io/columns/p/2026-06-06-ai-data-centers-grid-water/">
 <meta property="og:image" content="https://www.goldmansachs.com/images/migrated/insights/pages/articles/ai-is-poised-to-drive-160-increase-in-data-center-power-demand/800x450.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" type="application/rss+xml" title="穗稻忠武的專欄" href="https://polarbear0827.github.io/columns/rss.xml">
+
 <style>:root{
   --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
   --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
-  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC",
-    "PMingLiU",Georgia,serif;
-  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC",
-    "Microsoft JhengHei",sans-serif;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
 }
 *{box-sizing:border-box}
 html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85}
 a{color:inherit;text-decoration:none}
 
-/* masthead */
-.masthead{text-align:center;padding:4.5rem 1.5rem 2.6rem;border-bottom:1px solid var(--line)}
-.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.7rem;letter-spacing:.06em;margin:0}
-.masthead .tagline{color:var(--soft);max-width:540px;margin:1rem auto 0;font-size:1rem}
-.masthead .rss{display:inline-block;margin-top:1.3rem;font-size:.82rem;letter-spacing:.12em;
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
   color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
 .masthead .rss:hover{background:var(--accent);color:#fff}
 
-/* feed */
-.feed{max-width:1080px;margin:0 auto;padding:2.4rem 1.4rem 1rem}
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
 .lead-slot{margin-bottom:2.2rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
-
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
   display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
 .card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
@@ -48,58 +50,58 @@ a{color:inherit;text-decoration:none}
   background:linear-gradient(135deg,#f6efe6,#efe6da)}
 .card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
 .card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
-.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.22rem;line-height:1.45;margin:.1rem 0}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
 .card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
 .kicker{display:flex;gap:.4rem;flex-wrap:wrap}
-.tag{font-size:.72rem;letter-spacing:.08em;color:var(--accent);background:var(--accent-soft);
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
   border-radius:999px;padding:.12rem .6rem}
 .byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
-
-/* featured */
 .card.featured{flex-direction:row;align-items:stretch}
 .card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
 .card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
-.card.featured h2{font-size:1.9rem;line-height:1.4}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
 .card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
 @media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
 
-/* article */
-.topbar{border-bottom:1px solid var(--line);padding:1.1rem 1.5rem;text-align:center}
-.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.14em;font-size:1.05rem}
-.post{max-width:700px;margin:0 auto;padding:2.8rem 1.5rem 1rem}
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
 .post-head{text-align:center;margin-bottom:2.4rem}
 .post-head .kicker{justify-content:center;margin-bottom:1rem}
-.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.3rem;line-height:1.45;margin:.3rem 0}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
 .post-head .byline{margin-top:.9rem}
-.post p{margin:1.25rem 0;font-size:1.075rem;letter-spacing:.01em}
-.post p.lead{font-size:1.2rem;line-height:1.9;color:#2c2a26}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
 .post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
   line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
-.post h2{font-family:var(--serif);font-weight:700;font-size:1.5rem;margin:2.6rem 0 .8rem;
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
   padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
-.post h2.refs-head{font-size:1.15rem;color:var(--soft);border-bottom:1px solid var(--line)}
-.post h3{font-family:var(--serif);font-size:1.2rem;margin:1.8rem 0 .5rem}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
 .post figure{margin:2.2rem 0}
 .post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
-.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;
-  font-style:italic;line-height:1.6}
-.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;
-  padding-left:.9rem;border-left:2px solid var(--line);word-break:break-all}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
 .post .ref a{color:var(--accent)}
 .post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
-.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);
-  border:1px solid var(--line);border-radius:12px;color:var(--soft);font-size:.95rem}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
 .also a{color:var(--accent);font-weight:500}
-
 .foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
   display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
 .foot a{color:var(--accent)}
-@media(max-width:680px){.masthead h1{font-size:2.1rem}.post-head h1{font-size:1.8rem}.post p.lead{font-size:1.1rem}}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI資料中心的電力帳單", "description": "生成式 AI 的競賽，正在從模型能力延伸到電力、用水與地方治理。資料中心不再只是雲端背後的基礎設施，而是會改變電網投資、公共水資源與居民生活品質的實體建設。本文依六階段流程，先比較科技、人文、社會三類候選題；最後選擇「AI 資料中心的電力與水資源帳單」，因為它同時有官方報告、企業資料、地方衝突與投資人壓力可交叉驗證。", "url": "https://polarbear0827.github.io/columns/p/2026-06-06-ai-data-centers-grid-water/", "datePublished": "2026-06-06", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://www.goldmansachs.com/images/migrated/insights/pages/articles/ai-is-poised-to-drive-160-increase-in-data-center-power-demand/800x450.jpg"}</script>
 </head>
 <body>
-<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/columns/">穗稻忠武的專欄</a></header>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/columns/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/columns/">專欄</a><a href="https://polarbear0827.github.io/columns/radar/">AI Radar</a><a href="https://polarbear0827.github.io/columns/papers/">HF 速讀</a></nav></header>
 <article class="post">
 <div class="post-head">
 <div class="kicker"><span class="tag">專欄</span></div>
@@ -177,6 +179,6 @@ a{color:inherit;text-decoration:none}
 <a href="https://ocp-all.groups.io/g/Sustainability/topic/lbnl_2024_united_states_data/111152191" rel="noopener" target="_blank">https://ocp-all.groups.io/g/Sustainability/topic/lbnl_2024_united_states_data/111152191</a></p>
 
 </article>
-<footer class="foot"><a href="https://polarbear0827.github.io/columns/">← 回專欄首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<footer class="foot"><a href="https://polarbear0827.github.io/columns/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
 </body>
 </html>

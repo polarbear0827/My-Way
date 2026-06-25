@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Radar Daily · 穗稻忠武的專欄</title>
+<meta name="description" content="每日 AI 開源工具與趨勢掃描。">
+<link rel="canonical" href="https://polarbear0827.github.io/columns/radar/">
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/columns/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/columns/">專欄</a><a href="https://polarbear0827.github.io/columns/radar/">AI Radar</a><a href="https://polarbear0827.github.io/columns/papers/">HF 速讀</a></nav></header>
+<header class="masthead">
+<h1>AI Radar Daily</h1>
+<p class="tagline">每日 AI 開源工具與趨勢掃描。</p>
+
+</header>
+<main class="feed">
+<section class="lead-slot"><a class="card featured" href="https://polarbear0827.github.io/columns/radar/2026-06-25/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-25/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-25 — AI 工具生態持續演進</h2><p class="excerpt">今天是 2026-06-25，AI Radar 完成了每日例行掃描。 這次從 GitHub Search、Trendshift、Hacker News 等來源追蹤到 8 個值得關注的 AI 開源工具。 整體方向很清晰：*</p>
+<p class="byline"><time>2026-06-25</time></p></div></a></section>
+<section class="grid"><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-24/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-24/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-24 — AI 工具生態持續演進</h2><p class="excerpt">今天是 2026-06-24，AI Radar 完成了每日例行掃描。 這次從 GitHub Search、Trendshift、Hacker News 等來源追蹤到 8 個值得關注的 AI 開源工具。 整體方向很清晰：*</p>
+<p class="byline"><time>2026-06-24</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-23/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-23/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-23 — Agent基建升溫</h2><p class="excerpt">今天最值得注意的不是某個模型又多會回答問題，而是 Agent 周邊基建開始補齊。過去半年，Computer-use 多半停留在展示：讓模型開瀏覽器、點幾個按鈕、填表單，影片看起來很聰明，但產品化時立刻遇到不穩定、不可重現</p>
+<p class="byline"><time>2026-06-23</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-22/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-22/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-22 — 代理記憶與工作流</h2><p class="excerpt">今天的 AI 開源焦點很清楚：Agent 不再只是在單輪任務裡「看起來聰明」，而是開始被要求能夠連續研究、持續寫碼、保存上下文，並在多個工具與子任務之間穩定交接。這代表市場正在從「模型能力展示」轉向「代理工作流基礎建設」</p>
+<p class="byline"><time>2026-06-22</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-21/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-21/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-21 — 代理工作流落地</h2><p class="excerpt">今天的 AI Radar 很清楚：市場不再只是在比較哪個模型回答比較漂亮，而是在追問「這些模型能不能真正進入工作流」。從 unslothai/unsloth 把開源模型訓練與本地推論做得更低門檻，到 triggerdot</p>
+<p class="byline"><time>2026-06-21</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-20/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-20/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-20 — 代理記憶與自動化</h2><p class="excerpt">今天最值得注意的變化，不是又多了一批「可以聊天」的 AI 工具，而是 Agent 開始補上過去最薄弱的兩塊能力：記憶與行動。前者讓 AI 不再每次都從零開始理解專案、使用者偏好或任務脈絡；後者讓 AI 能真正碰到瀏覽器、</p>
+<p class="byline"><time>2026-06-20</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-19/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-19/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-19 — Agent上下文基建</h2><p class="excerpt">今天的 AI 開源訊號很清楚：大家不再只問「模型能不能寫程式」，而是開始補足 agent 真正做事時最缺的基礎設施——上下文。過去一年，coding agent 的瓶頸常被描述成推理能力、工具呼叫或模型成本，但真正卡住日</p>
+<p class="byline"><time>2026-06-19</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-18/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-18/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-18 — 代理工具鏈升溫</h2><p class="excerpt">今天最值得注意的變化，不是又多了一個會聊天的模型，而是代理正在長出「手腳」。過去 AI agent 的想像常停在對話框裡：你下指令，它回覆計畫，偶爾幫你產生程式碼或文字。但今天的開源動向顯示，焦點正在移向更務實的層次：代</p>
+<p class="byline"><time>2026-06-18</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-17/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-17/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-17 — 代理工具鏈整合</h2><p class="excerpt">今天的 AI Radar 很清楚地指向一件事：AI agent 的競爭正在從「模型會不會回答」轉向「工具鏈能不能承接真實工作」。這批專案不再只是包一層聊天介面，也不只是做一個漂亮 demo，而是在補齊代理系統真正缺的環節</p>
+<p class="byline"><time>2026-06-17</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-16/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-16/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-16 — 代理工具基建化</h2><p class="excerpt">今天最值得注意的不是又出現了多少個聊天機器人，而是 AI agent 正在快速離開「對話框」這個容器。新的工具不再滿足於回答問題，而是開始接管瀏覽器、網站、檔案系統、程式碼庫、工作流與跨平台搜尋。這代表代理工具正在基建化</p>
+<p class="byline"><time>2026-06-16</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-15/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-15/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-15 — 代理工具層崛起</h2><p class="excerpt">今天最值得注意的不是某個單一模型能力又提升了多少，而是 AI agent 周邊工具層正在快速補齊。過去一年，很多代理展示看起來都很漂亮，但一進入真實工作場景就卡住：不記得前文、不理解專案結構、不能穩定讀取網站、無法使用登</p>
+<p class="byline"><time>2026-06-15</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-14/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-14/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-14 — AI 工具生態持續演進</h2><p class="excerpt">今天是 2026-06-14，AI Radar 完成了每日例行掃描。 這次從 GitHub Search、Trendshift、Hacker News 等來源追蹤到 8 個值得關注的 AI 開源工具。 整體方向很清晰：*</p>
+<p class="byline"><time>2026-06-14</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-13/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-13/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-13 — AI 工具生態持續演進</h2><p class="excerpt">今天是 2026-06-13，AI Radar 完成了每日例行掃描。 這次從 GitHub Search、Trendshift、Hacker News 等來源追蹤到 8 個值得關注的 AI 開源工具。 整體方向很清晰：*</p>
+<p class="byline"><time>2026-06-13</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-10/">
+<div class="thumb"><img src="https://polarbear0827.github.io/columns/radar/2026-06-10/cover.png" alt="" loading="lazy"></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-10 — AI代理與記憶工具</h2><p class="excerpt">今天的觀察很直接：AI 工具已經不再只比誰回答得像人，而是比誰真的能把事情做完。從今天的 Top 8 可以看到，大家關注的重心正在從「聊天介面」轉向「執行介面」：終端機裡的 Claude Code、可自我演化的 Gene</p>
+<p class="byline"><time>2026-06-10</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-09/">
+<div class="thumb noimg"><span>RADAR</span></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-09 — AI代理工具鏈爆發</h2><p class="excerpt">今天的訊號很清楚：AI 開發工具已經不再只是「哪個模型更強」，而是「哪一套工具鏈更順」。你可以看到 Claude Code、Codex、Cursor 這類代理工具不再單打獨鬥，周邊開始長出記憶、RAG、知識圖譜、CLI </p>
+<p class="byline"><time>2026-06-09</time></p></div></a><a class="card" href="https://polarbear0827.github.io/columns/radar/2026-06-08/">
+<div class="thumb noimg"><span>RADAR</span></div>
+<div class="card-body"><div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span></div>
+<h2>AI RADAR DAILY 2026-06-08 — AI Agent 工具鏈爆發</h2><p class="excerpt">今天這批 repo 很一致：大家不再急著證明「模型能不能回答」，而是在解同一個更現實的問題——**代理怎麼變成真的工作系統**。你會看到 Claude Code、agent harness、memory、workflow</p>
+<p class="byline"><time>2026-06-08</time></p></div></a></section>
+</main>
+<footer class="foot"><span>© 穗稻忠武的專欄</span></footer>
+</body>
+</html>

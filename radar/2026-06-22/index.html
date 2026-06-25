@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI RADAR DAILY 2026-06-22 — 代理記憶與工作流 · 穗稻忠武的專欄</title>
+<meta name="description" content="今天的 AI 開源焦點很清楚：Agent 不再只是在單輪任務裡「看起來聰明」，而是開始被要求能夠連續研究、持續寫碼、保存上下文，並在多個工具與子任務之間穩定交接。這代表市場正在從「模型能力展示」轉向「代理工作流基礎建設」。值得注意的是，今天上榜的專案不是單一方向爆發，而是沿著三條線同時推進：長期記憶、長程任務執行、以及">
+<link rel="canonical" href="https://polarbear0827.github.io/columns/radar/2026-06-22/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI RADAR DAILY 2026-06-22 — 代理記憶與工作流">
+<meta property="og:description" content="今天的 AI 開源焦點很清楚：Agent 不再只是在單輪任務裡「看起來聰明」，而是開始被要求能夠連續研究、持續寫碼、保存上下文，並在多個工具與子任務之間穩定交接。這代表市場正在從「模型能力展示」轉向「代理工作流基礎建設」。值得注意的是，今天上榜的專案不是單一方向爆發，而是沿著三條線同時推進：長期記憶、長程任務執行、以及">
+<meta property="og:url" content="https://polarbear0827.github.io/columns/radar/2026-06-22/">
+<meta property="og:image" content="https://polarbear0827.github.io/columns/radar/2026-06-22/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI RADAR DAILY 2026-06-22 — 代理記憶與工作流", "description": "今天的 AI 開源焦點很清楚：Agent 不再只是在單輪任務裡「看起來聰明」，而是開始被要求能夠連續研究、持續寫碼、保存上下文，並在多個工具與子任務之間穩定交接。這代表市場正在從「模型能力展示」轉向「代理工作流基礎建設」。值得注意的是，今天上榜的專案不是單一方向爆發，而是沿著三條線同時推進：長期記憶、長程任務執行、以及", "url": "https://polarbear0827.github.io/columns/radar/2026-06-22/", "datePublished": "2026-06-22", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://polarbear0827.github.io/columns/radar/2026-06-22/cover.png"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/columns/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/columns/">專欄</a><a href="https://polarbear0827.github.io/columns/radar/">AI Radar</a><a href="https://polarbear0827.github.io/columns/papers/">HF 速讀</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span><span class="tag">RAG</span></div>
+<h1>AI RADAR DAILY 2026-06-22 — 代理記憶與工作流</h1>
+<p class="byline"><time>2026-06-22</time></p>
+</div>
+<p class="lead">今天的 AI 開源焦點很清楚：Agent 不再只是在單輪任務裡「看起來聰明」，而是開始被要求能夠連續研究、持續寫碼、保存上下文，並在多個工具與子任務之間穩定交接。這代表市場正在從「模型能力展示」轉向「代理工作流基礎建設」。值得注意的是，今天上榜的專案不是單一方向爆發，而是沿著三條線同時推進：長期記憶、長程任務執行、以及可直接落地的場景產品。這其實是一個成熟訊號。當開發者開始處理記憶、沙盒、技能編排、本地資料與自託管，而不是只包一層聊天介面，就表示 Agent 正在從玩具原型走向可維運的軟體系統。</p>
+<h2>今天的趨勢</h2>
+<p>第一個趨勢是「長程代理」正在成為新競爭點。過去的 Agent 框架多半強調工具呼叫、ReAct 推理、函式編排，能完成幾步任務就算成功。但今天的關鍵問題已經變成：它能不能連續跑一段時間？能不能研究、整理、寫作、寫碼、驗證，再把成果交付出來？bytedance/deer-flow 這類長程任務 SuperAgent 框架，代表的是 Agent 從短任務自動化走向研究型、自主型流程。這也會帶出更多工程需求，例如子代理分工、沙盒執行、狀態管理、任務回放、錯誤恢復與結果追蹤。未來真正有價值的 Agent，不會只是「會叫工具」，而是能把一個模糊目標拆成可驗證的工作流。</p>
+<p>第二個趨勢是 AI 記憶正在變成基礎設施，而不是附加功能。topoteretes/cognee 與 MemPalace/mempalace 同時上榜，說明開發者正在認真處理上下文斷層。LLM 的 context window 即使變長，也無法完全替代可查詢、可治理、可持久化的記憶層。企業知識、個人偏好、專案歷史、任務狀態、決策脈絡，都不應該每次對話重新載入。更重要的是，記憶不是單純向量檢索而已，還需要知識圖譜、關聯推理、本地儲存、權限控制與可解釋的資料結構。這也是為什麼 cognee 這類專案值得注意：它瞄準的是 Agent 長期可用性的核心缺口。</p>
+<p>第三個趨勢是 Agent 產品開始往具體場景落地。今天的榜單裡有股票分析、求職自動化、AI 設計工具、本地協作桌面、coding-agent CLI。這些不是抽象框架，而是把 AI Agent 放進明確工作流程裡。ZhuLinsen/daily_stock_analysis 針對多市場股票分析，santifer/career-ops 針對求職流程，nexu-io/open-design 針對設計工作，Gitlawb/openclaude 針對開發者終端操作。這些產品未必都已成熟，但方向正確：Agent 的價值不是「可以做很多事」，而是「在某個高頻場景裡把重複流程做得更穩」。接下來的差異化會從模型選型轉向資料接入、任務治理、輸出品質與使用者信任。</p>
+<h2>Top 8 工具</h2>
+<h3>1. ZhuLinsen/daily_stock_analysis — Score: 6.8｜AI Agent</h3>
+<p>ZhuLinsen/daily_stock_analysis 是今天分數最高的專案，主打用 LLM 自動分析多市場股票。它的價值不在於取代專業投資判斷，而是在於把每日資料蒐集、摘要、事件整理與初步解讀流程自動化。股票分析是典型高頻、資訊密集、需要快速整理脈絡的場景，因此很適合測試 Agent 的資料整合能力。不過這類工具最重要的不是「分析口吻像專家」，而是資料來源、推理邏輯與輸出可追溯性。若未來能加入更完整的資料驗證、風險提示與策略回測，它會比單純的市場摘要更有價值。</p>
+<h3>2. topoteretes/cognee — Score: 6.2｜RAG</h3>
+<p>topoteretes/cognee 是今天的 Best Pick，定位是為 AI Agent 建立長期記憶。它把知識圖譜、向量資料庫與可自託管架構結合起來，解決多輪任務中最常見的上下文斷層問題。很多 Agent 失敗不是因為模型不夠強，而是因為它記不住已經做過什麼、使用者偏好是什麼、專案知識在哪裡。cognee 的切入點更像底層記憶服務，而不是單一應用，因此可以被整合到企業知識庫、個人代理、研究助手或 coding workflow 裡。它代表 RAG 正從文件問答升級為可持久化的代理記憶層。</p>
+<h3>3. bytedance/deer-flow — Score: 6.2｜RAG</h3>
+<p>bytedance/deer-flow 是開源長程任務 SuperAgent 框架，重點放在連續研究與工作流式產出。這類框架的價值，在於它不是只讓模型回答問題，而是讓模型能規劃任務、調用工具、分派步驟、整理資料，最後產出可交付結果。從命名與定位來看，deer-flow 瞄準的是「流程」而非「聊天」，這正符合今天 Agent 發展的主軸。它如果能在沙盒執行、引用管理、錯誤恢復與任務狀態追蹤上做得扎實，就有機會成為研究型代理與企業內部自動化流程的基礎框架。</p>
+<h3>4. iOfficeAI/AionUi — Score: 6.3｜AI Agent</h3>
+<p>iOfficeAI/AionUi 是本地 24/7 AI 協作桌面介面，值得注意的是它把 Agent 從雲端聊天頁面拉回本地桌面環境。這個方向很實際，因為許多個人與企業工作流都發生在本機：文件、瀏覽器、IDE、通訊軟體、檔案系統與內部工具。如果 AI 協作助手要真正長時間待命，本地整合能力會比單純網頁聊天更重要。AionUi 的潛力在於提供一個常駐式協作入口，但挑戰也很明顯：權限控管、背景執行安全、資源消耗與使用者信任，都會直接影響採用門檻。</p>
+<h3>5. nexu-io/open-design — Score: 6.2｜AI Agent</h3>
+<p>nexu-io/open-design 是本地優先的開源 AI 設計工具。AI 設計工具很多，但「本地優先」與「開源」讓它有不同定位。設計工作通常涉及品牌素材、未公開產品、內部文件與客戶資料，因此資料是否能留在本地，是專業場景的重要考量。open-design 如果只是生成圖片，競爭會非常激烈；但如果能把版面、元件、設計規範、品牌系統與多人協作串起來，就有機會變成設計流程裡的 Agent 工具。這類產品真正的壁壘不是生成能力，而是能不能融入設計師每天反覆使用的工作節奏。</p>
+<h3>6. santifer/career-ops — Score: 6.2｜Automation</h3>
+<p>santifer/career-ops 用 Claude Code 自動化求職流程，是一個很典型的場景型自動化專案。求職看似個人化，但其實包含大量重複步驟：職缺搜尋、履歷調整、求職信撰寫、公司研究、申請追蹤與面試準備。career-ops 的價值就在於把這些碎片化任務組成可執行流程。它也反映出一個趨勢：開發者開始把 coding-agent 用在非寫碼任務上，因為 Claude Code 這類工具具備檔案操作、流程管理與上下文維護能力。未來若能加入資料表追蹤、職缺評分與回饋迭代，會更接近真正的求職作業系統。</p>
+<h3>7. MemPalace/mempalace — Score: 6.2｜MCP</h3>
+<p>MemPalace/mempalace 是本地優先的開源 AI 記憶系統，並且與 MCP 生態相關。它和 cognee 一樣抓住記憶層痛點，但更強調本地優先與開源可控。這個方向很重要，因為 AI 記憶涉及高度敏感的個人與組織資料，包括偏好、歷史對話、專案脈絡與決策紀錄。若所有記憶都被鎖在雲端平台，用戶很難治理，也難以跨工具使用。MemPalace 的價值在於讓記憶成為可攜、可控、可接入的資產。若它能和更多 MCP 工具穩定串接，就可能成為個人代理與本地工作流的重要基礎元件。</p>
+<h3>8. Gitlawb/openclaude — Score: 5.8｜AI Agent</h3>
+<p>Gitlawb/openclaude 是開源 coding-agent 終端 CLI，定位上接近開發者日常使用的代理介面。終端 CLI 是 coding-agent 很合理的落點，因為開發者本來就在命令列裡處理檔案、執行測試、查 git 狀態、安裝套件與部署服務。openclaude 的價值在於降低使用者對特定商業工具的依賴，讓開發者可以用開源方式探索 coding-agent 工作流。不過 coding-agent CLI 的競爭會越來越激烈，真正差異會來自安全沙盒、程式碼理解、patch 品質、測試迴圈與可審查性。只要它能把「能改碼」推進到「穩定交付修改」，就有機會累積社群使用。</p>
+<h2>今日首選</h2>
+<p>今天的首選是 topoteretes/cognee。原因很直接：它不是又一個把 LLM 包成聊天介面的應用，而是切中 Agent 長期運作最核心的基礎問題——記憶。現在很多 Agent demo 看起來很強，是因為任務短、上下文乾淨、資料量可控；一旦進入真實工作場景，問題馬上出現：它忘記前一次決策、重複讀同一份文件、無法理解專案歷史，也無法把使用者偏好轉化為穩定行為。這不是單靠更大的 context window 就能解決的，因為長期記憶需要結構化、可檢索、可更新，也需要在不同任務之間持續存在。</p>
+<p>cognee 的優勢在於它把 RAG 從「文件查詢」推往「代理記憶」。知識圖譜可以處理實體與關係，向量資料庫可以處理語意相似度，自託管架構則讓企業與個人更容易掌握資料主權。這三者合在一起，剛好對應 Agent 落地的三個必要條件：能理解脈絡、能找回資訊、能被安全部署。相比今天其他偏場景的工具，cognee 更像可重複整合的基礎層。它可以服務股票分析代理、求職代理、設計助手、coding-agent，也可以成為企業內部知識庫與個人 AI 助理的共同記憶底座。這種「被其他工具需要」的特性，正是它值得成為今日首選的原因。</p>
+<p>當然，記憶系統也有自己的挑戰。如何避免錯誤記憶污染？如何處理過期資訊？如何讓使用者理解 Agent 為什麼想起某段資料？這些都會決定 cognee 未來能否從開發者工具進一步變成可靠基礎設施。但方向上，它站在今天最重要的交會點：Agent 越長程，記憶越關鍵；工作流越複雜，持久上下文越不可或缺。</p>
+<h2>評分方式說明</h2>
+<p>AI Radar 的評分不是單純看 star 數，也不是只看專案是否熱門，而是綜合觀察幾個面向：第一，專案是否切中當前 AI 工程的真實痛點；第二，是否具備可重複使用或可整合的價值；第三，是否已經呈現明確使用場景，而不只是概念展示；第四，技術方向是否符合近期趨勢，例如 Agent、RAG、MCP、自動化、本地優先與工作流編排；第五，社群採用與後續演進潛力。分數代表今日觀察下的相對優先級，不等於長期成敗判斷。</p>
+<h2>結語</h2>
+<p>今天的榜單透露一個很實在的訊息：AI Agent 的下一步不是更會聊天，而是更會記住、更會協作、更能完成長流程任務。記憶層、沙盒、子代理、工作流與本地資料治理，會成為接下來開源 AI 工具的重要戰場。如果你正在做企業知識庫、個人代理、開發者自動化或垂直場景產品，今天這批 repo 值得逐一拆開研究。別只看 demo，要看它們如何處理狀態、資料與失敗恢復；那才是 Agent 能不能進入真實工作的關鍵。</p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/columns/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+</body>
+</html>
