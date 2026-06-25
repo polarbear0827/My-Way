@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>廣告阻擋器的最後倒數：Chrome Manifest V3 之後，誰替我們控制網頁？ · 穗稻忠武的專欄</title>
+<meta name="description" content="如果你曾在長輩的電腦上看見一排閃動的下載按鈕、假防毒警告、突然跳出的影片廣告，你大概知道「廣告阻擋器」從來不只是討厭廣告的人在用的小工具。它更像是一副網頁世界的安全眼鏡：擋掉追蹤器、惡意導向、遮住正文的蓋版，讓人能安靜讀完一篇文章、查一份食譜，或替孩子找作業資料。">
+<link rel="canonical" href="https://polarbear0827.github.io/columns/p/2026-06-18-chrome-manifest-v3-adblockers/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="廣告阻擋器的最後倒數：Chrome Manifest V3 之後，誰替我們控制網頁？">
+<meta property="og:description" content="如果你曾在長輩的電腦上看見一排閃動的下載按鈕、假防毒警告、突然跳出的影片廣告，你大概知道「廣告阻擋器」從來不只是討厭廣告的人在用的小工具。它更像是一副網頁世界的安全眼鏡：擋掉追蹤器、惡意導向、遮住正文的蓋版，讓人能安靜讀完一篇文章、查一份食譜，或替孩子找作業資料。">
+<meta property="og:url" content="https://polarbear0827.github.io/columns/p/2026-06-18-chrome-manifest-v3-adblockers/">
+<meta property="og:image" content="https://www.google.com/chrome/static/images/chrome-logo.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="穗稻忠武的專欄" href="https://polarbear0827.github.io/columns/rss.xml">
+<link rel="stylesheet" href="https://polarbear0827.github.io/columns/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "廣告阻擋器的最後倒數：Chrome Manifest V3 之後，誰替我們控制網頁？", "description": "如果你曾在長輩的電腦上看見一排閃動的下載按鈕、假防毒警告、突然跳出的影片廣告，你大概知道「廣告阻擋器」從來不只是討厭廣告的人在用的小工具。它更像是一副網頁世界的安全眼鏡：擋掉追蹤器、惡意導向、遮住正文的蓋版，讓人能安靜讀完一篇文章、查一份食譜，或替孩子找作業資料。", "url": "https://polarbear0827.github.io/columns/p/2026-06-18-chrome-manifest-v3-adblockers/", "datePublished": "2026-06-18", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://www.google.com/chrome/static/images/chrome-logo.svg"}</script>
+</head>
+<body>
+<header class="site"><a href="https://polarbear0827.github.io/columns/">← 穗稻忠武的專欄</a></header>
+<main class="article">
+<h1>廣告阻擋器的最後倒數：Chrome Manifest V3 之後，誰替我們控制網頁？</h1>
+<p class="meta">2026-06-18 ・ <span class="tag">台灣文化</span> <span class="tag">藝術</span> <span class="tag">台灣</span> <span class="tag">科技與生活</span> <span class="tag">專欄</span></p>
+<p>如果你曾在長輩的電腦上看見一排閃動的下載按鈕、假防毒警告、突然跳出的影片廣告，你大概知道「廣告阻擋器」從來不只是討厭廣告的人在用的小工具。它更像是一副網頁世界的安全眼鏡：擋掉追蹤器、惡意導向、遮住正文的蓋版，讓人能安靜讀完一篇文章、查一份食譜，或替孩子找作業資料。</p>
+<p>但這副眼鏡正在被重新設計。Google Chrome 的 Manifest V3 遷移已經不是開發者論壇裡的遠方爭論。Chrome 官方文件在 2025 年 7 月 24 日更新的時程中寫明，Chrome 138 已讓所有 channel 的 Manifest V2 擴充功能停用，使用者不能再自行打開；Chrome 139 起，Manifest V2 擴充功能將停止對升級使用者運作。近期科技社群又因 Chromium 移除舊旗標的討論而升溫：那些靠隱藏設定把舊版 uBlock Origin 留在 Chrome 裡的人，正在看見最後一道門被關上。¹ ¹⁴ ¹⁵</p>
+<p>這篇文章不把問題簡化成「Google 消滅廣告阻擋器」。事實更麻煩。Google 的說法是：Manifest V3 是為了安全、隱私與效能，因為舊擴充功能能長時間常駐、載入遠端程式碼、攔截太多網路請求。批評者則說：這同時也把最強大的內容阻擋能力從使用者手中拿走，交回瀏覽器與平台本身。當 Chrome 在 2026 年 5 月仍占全球瀏覽器市場約 70.25%，這不是少數玩家的設定問題，而是多數人每天進入網路時，能不能替自己關燈、拉窗簾、鎖門的問題。¹ ² ³ ¹¹</p>
+<figure><img src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="封面：Chrome 是多數人日常網路入口，Manifest V3 爭議因此從開發者議題變成公共生活議題｜來源：Google Chrome 官方圖示" loading="lazy"></figure>
+<h2>一個擴充功能被關掉時，普通人失去的是什麼</h2>
+<p>許多使用者是在某天打開 Chrome 時，才意識到 Manifest V3 已經抵達。The Verge 在 2024 年 10 月報導，Chrome 開始自動停用 uBlock Origin 等仍使用 Manifest V2 的擴充功能，畫面會告訴使用者該工具「不再受支援」，並導向 Chrome Web Store 的替代選項。這種通知對工程師是一個 API 世代切換；對一般人則是一句更日常的話：你習慣的那個網頁護欄，今天突然不見了。¹²</p>
+<p>Hacker News 上一則 2024 年 11 月的 Ask HN 問題很能說明這種困惑。發文者問：「今天我注意到 uBlock Origin 從 Chrome extension 移除了。有人能解釋為什麼嗎？有什麼替代品？」留言區很快分成幾派：有人建議換 Firefox，有人說 Brave 內建阻擋已足夠，有人為 Google 的安全理由辯護，也有人把它視為廣告商與使用者控制權的衝突。這些留言不是正式證據，但它們呈現了這個題目的社群熱度：許多人不是在討論抽象標準，而是在問自己明天該用哪個瀏覽器。¹⁶</p>
+<p>廣告阻擋器的日常功能常被低估。它不只是把橫幅廣告變不見。對視覺敏感、注意力容易被打斷、需要螢幕閱讀器、或網路速度不穩的人來說，廣告阻擋器能讓頁面更可讀、更少閃爍、更少追蹤。有些使用者甚至把它當成防詐工具：不讓惡意廣告與假下載按鈕出現在家人面前。Chrome 對擴充架構的改寫，因此不是單純「網頁上會多幾個廣告」，而是重新定義了普通人能在多大程度上改造自己的瀏覽環境。</p>
+<figure><img src="https://raw.githubusercontent.com/uBlockOrigin/uBOL-home/main/chromium/img/icon_128.png" alt="uBlock Origin Lite 是 Manifest V3 時代的替代工具，但開發者明確說它不是原版 uBlock Origin 的自動替身｜來源：uBlockOrigin/uBOL-home GitHub" loading="lazy"></figure>
+<h2>Manifest V3 到底改了哪幾件事</h2>
+<p>要理解爭議，先要把「Manifest」說成普通話。瀏覽器擴充功能有一份 manifest 檔，像是身分證與權限表：它告訴瀏覽器這個外掛叫什麼、需要哪些能力、能不能看網頁、能不能攔截請求、背景程式如何運作。Google 在 Chrome for Developers 文件中把 Manifest V3 定義為最新的 extensions platform，目標是改善擴充功能的 privacy、security 與 performance，並讓使用者更理解外掛能做什麼。²</p>
+<p>三個變化最關鍵。第一，長時間常駐的 background page 被 event-driven service worker 取代。Google 認為舊外掛即使沒在工作也可能占用資源；MV3 讓背景程式只在需要時醒來。第二，Chrome Web Store 政策禁止擴充功能載入 remotely hosted code。Google 的理由是：外掛可能通過審查時看起來乾淨，之後再從遠端伺服器載入未審查的程式碼。第三，也是廣告阻擋器最痛的地方，blocking webRequest API 被 declarativeNetRequest 取代。² ⁵ 舊模式像是讓外掛站在網路門口，每一個請求經過時都可以看一眼、即時判斷、決定放行或攔下。新模式則像要求外掛預先交出規則表，瀏覽器照表處理。Google 的 DNR 文件說，這讓擴充功能能在不攔截並檢視請求內容的情況下修改網路請求，因此「提供更多隱私」。但對 uBlock Origin 這類工具而言，正是即時判斷、動態規則、細緻 cosmetic filtering，構成了多年來的威力。新制度不是完全不能擋，而是把「怎麼擋」的主導權改寫。⁴</p>
+<figure><img src="https://raw.githubusercontent.com/gorhill/uBlock/master/src/img/ublock.svg" alt="原版 uBlock Origin 的開源圖示。從 MV2 到 MV3，爭議核心不是圖示換不換，而是內容阻擋能力的邊界｜來源：gorhill/uBlock GitHub" loading="lazy"></figure>
+<h2>Google 的理由：安全、效能、隱私，不是只有廣告</h2>
+<p>Google 的辯護不能被一句「它靠廣告賺錢」就抹掉。舊擴充功能確實有風險。MV2 允許持久背景頁面，允許更高權限的網路攔截；若惡意外掛取得廣泛網站權限，它可能觀察瀏覽紀錄、竊取資料、注入程式碼。Chrome 的 security migration 文件也明確要求移除任意字串執行與遠端託管程式碼，將 extension logic 打包在擴充功能內，接受 Chrome Web Store 審查。⁵</p>
+<p>從瀏覽器工程角度看，Google 追求的是把更多危險決策移到瀏覽器內部，而不是讓每一個外掛都能即時檢查所有網路交通。DNR API 的官方說明強調，它可以 block、redirect、upgrade、allow 或修改請求標頭；差別在於規則預先宣告，由瀏覽器執行。這對惡意外掛是一種降權，對瀏覽器維護者則降低複雜度。⁴</p>
+<p>問題在於，安全與控制權經常共用同一把鑰匙。對一個惡意外掛來說，攔截請求是風險；對一個隱私工具來說，攔截請求是保護。Google 以同一套限制同時約束壞工具與好工具，於是爭議便落在比例原則：是否有其他方法能保留進階阻擋能力，同時改善審查、權限揭露、遠端程式碼限制？EFF 在 2021 年批評 Manifest V3 時，正是抓住這點：它認為限制 webRequest 的阻擋能力並不能真正阻止惡意外掛觀察資料，反而削弱了隱私保護工具。⁹</p>
+<p>這也是本文需要保持中立的地方。Google 的安全論點有技術基礎；批評者對權力集中與利益衝突的警覺也有公共理由。若把任何一邊畫成純粹善惡，就看不見真正的制度設計問題。</p>
+<figure><img src="https://www.mozilla.org/media/img/favicons/firefox/browser/favicon-196x196.59e3822720be.png" alt="Mozilla 在 Firefox 的 Manifest V3 路線中保留 blocking webRequest，讓跨瀏覽器標準出現不同政治選擇｜來源：Mozilla 官方圖示" loading="lazy"></figure>
+<h2>uBO Lite 不是自動替代品：那句「too different」的重量</h2>
+<p>uBlock Origin 的 MV3 版本叫 uBlock Origin Lite，簡稱 uBOL。Chrome Web Store 目前列出它由 Raymond Hill 提供，2026 年 6 月 15 日更新，約 1,700 萬使用者，評分 4.5。頁面說它是 MV3-based content blocker，預設規則包含 uBlock Origin 內建清單、EasyList、EasyPrivacy、Peter Lowe’s Ad and tracking server list，並且「entirely declarative」，不需要永久過濾程序。⁸</p>
+<p>這些說明聽起來很像一個合理替代品。但 uBOL 的 FAQ 在第一題就把期待拉回現實：uBO Lite 不會自動取代 uBO，因為它「too different」。使用者必須在 Chrome 停用 uBO / Manifest V2 擴充功能之前自行選擇替代方案；uBOL 是否符合期待，取決於使用者造訪哪些網站、原本如何設定 uBO、又如何設定 uBOL。⁷ FAQ 更細地說，若網站不需要 uBO 專有的過濾能力，使用者可能幾乎感覺不到差異；但在反內容阻擋網站或某些網站破版情境下，uBOL 一般會比較不有效，因為許多 uBO filter 不能轉成 DNR rules。預設情況下，uBO 啟用 generic cosmetic filtering，uBOL 則沒有；要在 uBOL 獲得 generic cosmetic filtering，必須把 blocking mode 提高到 Complete。⁷</p>
+<p>這裡最值得注意的不是哪個版本「比較好」，而是普通人的維護成本被提高。過去，一個朋友可能只會跟你說：「裝 uBlock Origin。」現在建議變成一串條件句：如果你留在 Chrome，裝 uBO Lite；如果你需要動態過濾，考慮 Firefox；如果你想留 Chromium，又想要內建阻擋，考慮 Brave；如果你管理公司電腦，要看 enterprise policy 與瀏覽器版本。技術標準的改變，最後變成家庭 IT 顧問的說明負擔。</p>
+<figure><img src="https://www.eff.org/files/eff-logo.png" alt="EFF 長期批評 Manifest V3 會弱化隱私工具；本文將其視為倡議團體觀點，而非唯一事實來源｜來源：Electronic Frontier Foundation" loading="lazy"></figure>
+<h2>反方的焦慮：當瀏覽器也是廣告公司的產品</h2>
+<p>EFF 對 Manifest V3 的批評很尖銳。它在 2021 年文章中稱 MV3 對 Chrome 使用者「deceitful and threatening」，認為 Google 同時控制主流瀏覽器與大型廣告網路，形成利益衝突。EFF 說，Manifest V3 會限制那些監看、修改、阻擋 tracker 的隱私保護工具；它也引用 Google trackers 出現在 top one million websites 的比例，主張這不是中性的工程治理，而是 Google 進一步定義人們如何在線上生活。⁹</p>
+<p>AdGuard 與 Ghostery 的說法也偏批判，但必須標註它們本身是廣告阻擋與隱私產品廠商，有商業利益。AdGuard 早在 2022 年推出 MV3 原型時就列出限制：rule limits、dynamic rules 限制、filter 更新與除錯困難、cosmetic filtering 延遲等。Ghostery 則把問題說成：Google 讓廣告商更容易、讓使用者更難，並認為 uBlock Origin Lite 遠不如原版。¹⁸ ¹⁹</p>
+<p>支持 Google 的人會反問：如果一個外掛能看每個網站的請求、修改每個頁面，難道不應該限制嗎？這個反問成立。可是反方焦慮的核心不只是 API，而是代理權。瀏覽器原本應該代表使用者行動；若使用者想把某些廣告、追蹤器、惱人的彈窗擋掉，瀏覽器應該幫他，還是應該幫平台維持一個「可管理的廣告環境」？ 這個問題之所以尖銳，是因為 Chrome 太大。StatCounter 2026 年 5 月資料顯示，Chrome 全球瀏覽器市場占比約 70.25%，Safari 15.72%，Edge 5.14%，Firefox 2.19%。當一個瀏覽器的決策影響七成使用者，它就不只是產品政策，而近似公共基礎設施的治理。¹¹</p>
+<figure><img src="https://brave.com/static-assets/images/brave-logo-sans-text.svg" alt="Brave 主張 Shields 內建於瀏覽器，不依賴 MV2 或 MV3；這代表使用者控制權也可能從外掛轉向瀏覽器本體｜來源：Brave 官方圖示" loading="lazy"></figure>
+<h2>研究給了一個不方便的答案：不一定全面變差</h2>
+<p>若只聽開發者社群與倡議團體，很容易得到「MV3 讓廣告阻擋器必然失效」的結論。但 2026 年 PoPETs 接受的一篇研究〈Privacy vs. Profit: Impact of Google’s MV3 on Ad-Blocker Effectiveness〉提供了更複雜的證據。研究者 Karlo Lukic 與 Lazaros Papadopoulos 實測 MV3 對廣告阻擋與反追蹤效果的影響，核心結論是：其結果沒有發現 MV3 ad blockers 相對 MV2 counterparts 在 ad-blocking 或 anti-tracking effectiveness 上有統計顯著下降；某些情況下，MV3 instances 甚至在 tracker blocking 上略有改善。¹⁷</p>
+<p>這不代表批評者錯了。研究也指出 MV3 的可見缺點之一是更多 cosmetic placeholders，也就是廣告被拿掉後留下空白或殘影；而且測試環境、網站樣本、所選工具與設定都會影響結果。對一般使用者來說，「廣告請求有沒有擋掉」與「頁面看起來是否乾淨、是否破版、是否被反 adblock 偵測」是不同問題。¹⁷</p>
+<p>這篇研究的重要性，在於阻止我們把議題寫成單線悲劇。MV3 可能沒有讓所有 MV3 阻擋器在所有測試中全面失效；uBO Lite 也不是玩具，它有 1,700 萬使用者，仍能擋掉許多廣告與追蹤器。真正的變化更細：進階使用者失去部分自訂能力；阻擋器開發者失去即時判斷空間；瀏覽器內部規則表成為新的瓶頸；普通人則必須在「夠用」與「可控制」之間重新選擇。 這也是科技報導常被忽略的一層：產品政策不只改變平均效果，也改變邊界情境。對大多數網站「看起來差不多」不等於對所有需求都沒有損失。無障礙使用者、需要嚴格隱私的人、常瀏覽高廣告密度網站的人、替全家維護電腦的人，感受到的變化可能比平均值更大。</p>
+<figure><img src="https://www.gstatic.com/images/branding/product/2x/chrome_48dp.png" alt="Chrome 官方圖示再次出現，是因為這場爭議最終回到同一個入口：多數人每日打開的瀏覽器｜來源：Google 官方圖示" loading="lazy"></figure>
+<h2>替代路線：Firefox、Brave、內建阻擋與新的妥協</h2>
+<p>Mozilla 的路線顯示，MV3 並不是只有 Chrome 一種實作。Mozilla 在 2022 年說明 Firefox 的 MV3 計畫時，明確表示會同時支援 declarativeNetRequest 與 blocking webRequest。Mozilla 接受 MV3 作為跨瀏覽器 WebExtensions 的現實，因為 Chromium 的市場份額讓它成為事實標準；但 Firefox 也選擇保留對內容阻擋工具更友善的能力。¹⁰</p>
+<p>Brave 則走另一條路。它的官方部落格說，Brave Shields 是直接建在瀏覽器程式碼裡，不依賴 MV2 或 MV3，因此 Manifest V3 不會削弱 Shields。Brave 也在 2025 年更新中表示，v1.81 起由自家 backend 支援四個 MV2 擴充：AdGuard、uBO、uMatrix、NoScript，但這是有限支援，不等於所有 MV2 外掛都能永遠留下。²⁰</p>
+<p>這些替代方案各有代價。換 Firefox 可能意味著離開某些企業環境或 Google 生態整合；換 Brave 可能接受另一個公司的產品哲學與預設設定；使用 uBO Lite 可能足夠，但需要承認它不是原版；使用 DNS-level blocking 或系統層工具，則會把問題移到更難設定的地方。 普通人的真正困境不是沒有替代品，而是替代品變得像保險條款。你要懂 API、懂 filter list、懂 browser engine、懂 extension store，才能判斷自己要不要換。這對高度技術社群或許是日常，對多數人卻是不合理的負擔。當保護自己的網頁閱讀需要這麼多知識，保護本身就變成一種階級差異。</p>
+<figure><img src="https://www.ghostery.com/favicon.ico" alt="Ghostery 的 favicon 在本文中代表另一類利益相關者：隱私工具廠商既批評平台，也在提供替代產品｜來源：Ghostery 官方網站" loading="lazy"></figure>
+<h2>對新聞業與創作者來說，這不是單純的好壞題</h2>
+<p>廣告阻擋器的另一面，是媒體與創作者的生計。許多網站確實依賴廣告；若所有人都阻擋，免費內容的商業模式會受壓。但使用者安裝阻擋器，往往不是因為討厭創作者賺錢，而是被追蹤、彈窗、蓋版、假按鈕與自動播放逼到沒有選擇。</p>
+<p>這裡有一個長期失敗的契約。網站希望讀者接受廣告以換取免費內容；讀者原本也可能接受一些不打擾的廣告。但當廣告網路把頁面變慢、把注意力切碎、把資料送往多個第三方，讀者就用擴充功能重新談判。Manifest V3 不是這個契約破裂的原因，而是把談判桌上的權力重新分配。</p>
+<p>Google 的 built-in ad blocking、Better Ads 標準、Privacy Sandbox 等方案，都可以被理解為平台試圖重新制定「可接受廣告」的規則。批評者擔心的是：當制定規則的人本身也賣廣告，使用者很難相信這些規則完全代表自己。這不是說所有廣告都不該存在，而是說使用者應該能保留拒絕與改造的能力。</p>
+<p>對創作者而言，真正值得追問的不是「如何繞過 ad blocker」，而是如何重新建立讀者願意支持的關係：訂閱、會員、低干擾廣告、清楚揭露、較少追蹤、尊重注意力。若網站把每一次閱讀都變成敵對關係，瀏覽器政策只能暫時改變戰場，不能修復信任。</p>
+<figure><img src="https://www.gstatic.com/images/branding/product/1x/chrome_48dp.png" alt="Manifest V3 把內容阻擋從即時判斷轉向宣告式規則；圖中仍以 Chrome logo 作為平台權力的視覺提示｜來源：Google 官方圖示" loading="lazy"></figure>
+<h2>接下來要觀察的，不只是廣告有沒有出現</h2>
+<p>未來幾個月，最容易觀察的是表面現象：某些舊外掛是否被停用、uBO Lite 能不能擋 YouTube 或新聞網站的廣告、Chrome 使用者是否轉向 Firefox 或 Brave。但更重要的指標在更深處。</p>
+<p>第一，看 rule limits 與 DNR 能力是否繼續放寬。Google 過去確實因開發者回饋提高過限制、補上平台缺口；若 MV3 要成為長期制度，它必須證明自己能支持強大的隱私工具，而不只是支持「可接受程度」的阻擋器。³ ⁴</p>
+<p>第二，看瀏覽器競爭是否仍有效。若 Firefox、Brave、Vivaldi、Opera 等替代路線能迫使 Chrome 保留更多使用者控制，市場才有制衡；若多數人因工作、同步、手機、密碼管理而離不開 Chrome，則競爭壓力會小得多。</p>
+<p>第三，看社群是否把問題從「我討厭廣告」推進到「我需要可理解、可維護的控制權」。對普通人來說，最好的未來不是每個人都成為 adblock 專家，而是瀏覽器提供清楚的層級：基本安全、低干擾閱讀、強隱私模式、網站例外、家庭與長輩防護。這些設定應該能被理解，而不是藏在 flags、policy 與 GitHub FAQ 裡。</p>
+<p>最後，也要看平台是否願意承認自己不是中立空氣。瀏覽器每天替我們決定哪些腳本能跑、哪些 cookie 能留下、哪些通知能跳出、哪些外掛能改變頁面。Manifest V3 把這些決定照亮了。當那個熟悉的小盾牌從工具列消失，使用者真正問的不是「我還能不能擋廣告」，而是「這台電腦、這個瀏覽器、這個網頁，到底還有多少是替我工作的？」</p>
+<figure><img src="https://raw.githubusercontent.com/uBlockOrigin/uBOL-home/main/chromium/img/icon_128.png" alt="uBO Lite 圖示再次出現：家用維修的第一步，是確認自己仍使用受維護的阻擋工具｜來源：uBlockOrigin/uBOL-home GitHub" loading="lazy"></figure>
+<h2>一條家用維修路線：你該怎麼替自己與家人做選擇</h2>
+<p>如果把 Manifest V3 爭議落回一台家用電腦，建議可以分成三層。第一層是「不要裸奔」。若你留在 Chrome，至少安裝仍維護的 MV3 內容阻擋器，例如 uBO Lite 或其他可信工具；安裝前看清楚開發者、權限、更新時間與資料使用聲明。Chrome Web Store 的 uBO Lite 頁面明確標示開發者不會收集或使用資料，這類資訊比陌生網站提供的安裝檔更重要。⁸</p>
+<p>第二層是「替高風險使用者選更簡單的環境」。家中若有長輩、兒童、或不熟悉網路詐騙的人，瀏覽器內建保護與預設阻擋比複雜外掛更可靠。Brave Shields、Firefox 加 uBlock Origin、或作業系統層級的安全設定，都可能比在 Chrome flags 裡維持舊擴充更容易維護。不要把需要定期修補的 workaround 交給不會更新的人，因為那會把保護變成新的風險。¹⁰ ¹⁹</p>
+<p>第三層是「接受網站例外，但不要交出全部」。有些小型媒體、社群網站、創作者頁面值得你關掉阻擋、購買訂閱或加入會員；但這應該是使用者主動選擇，而不是因為工具被削弱後被迫接受所有追蹤。好的瀏覽器應該讓這種例外設定清楚、可回復、可理解，而不是把它藏在十幾個權限頁與政策文件裡。</p>
+<figure><img src="https://www.google.com/chrome/static/images/chrome-logo.svg" alt="Manifest V3 爭議表面是工程詞彙，實際牽動每個人可不可以改造自己的瀏覽器｜來源：Google Chrome 官方圖示" loading="lazy"></figure>
+<h2>為什麼這是一篇日常科技新聞，而不是工程師內戰</h2>
+<p>從外面看，Manifest V3 像是一場工程師內戰：service worker、DNR、webRequest、rule limits。可是每一個術語都對應到日常生活。service worker 決定外掛是否能一直在背景替你守門；DNR 決定阻擋器能不能即時看見陌生請求；rule limits 決定你能不能同時使用多個語言、地區與反追蹤清單；遠端程式碼限制則決定一個外掛能不能在審查後偷偷變壞。</p>
+<p>這些不是抽象技術，而是「誰替你做決定」的不同版本。過去，懂一點技術的使用者可以把瀏覽器改造成比較安靜、比較安全、比較合自己需要的工具；未來，越來越多決策會被平台包進瀏覽器內部，以安全與效能名義統一處理。統一處理可能讓大多數人更安全，也可能讓少數真正需要彈性的人失去空間。</p>
+<p>公共討論應該要求兩件事同時成立：第一，擴充功能確實不能成為惡意軟體的自由港；第二，瀏覽器不能用安全之名，把使用者代理權全部收回。這兩件事並不矛盾。更細緻的權限模型、更透明的審查、更好的網站例外、更完整的無障礙與家庭防護，都比一句「你可以換瀏覽器」更負責。因為對許多人來說，換瀏覽器不是一個按鈕，而是一整套工作、帳號、密碼、同步與習慣的搬家。</p>
+<figure><img src="https://www.mozilla.org/media/img/favicons/firefox/browser/favicon-196x196.59e3822720be.png" alt="瀏覽器圖示背後是代理權問題：它究竟代表平台，還是代表使用者？｜來源：Mozilla 官方圖示" loading="lazy"></figure>
+<h2>結語：小盾牌之後，還要有能說明的權力</h2>
+<p>Chrome 工具列上的小盾牌、紅色八角形圖示或拼圖外掛按鈕，表面上只是軟體 UI。可是一旦它們消失，使用者才發現自己對網頁的控制其實寄存在幾個很脆弱的地方：一個開源維護者的時間、一家平台公司的政策、一份很少人讀的 developer documentation、一個瀏覽器市占率造成的事實標準。</p>
+<p>Manifest V3 的故事提醒我們，日常科技新聞不只發生在新手機、新 App、新 AI 功能發表會。它也發生在那些看不見的權限表裡。當一份 manifest 改版，一個家庭的網頁安全感、一個讀者的注意力、一個創作者的收入模式、一個開源專案的維護策略，都會被牽動。</p>
+<p>或許幾年後，多數人會覺得 uBO Lite、Firefox、Brave 或其他工具已經足夠；或許研究會證明 MV3 阻擋器在大多數場景並沒有明顯退步；也或許平台會繼續放寬 API，讓進階工具找到新平衡。但即使如此，這場爭論仍留下了一個值得保存的問題：瀏覽器究竟是代表平台管理網頁，還是代表使用者改造網頁？</p>
+<p>對每天打開電腦的人來說，答案不應該只寫在 Chromium commit 或 Chrome Web Store 的替代建議裡。它應該出現在清楚的設定、可理解的權限、可靠的替代方案，以及平台願意接受外部批評的制度中。否則，當下一個小工具被關掉時，我們又會在同一個早晨醒來，發現自己少了一點控制權，卻說不清是從什麼時候開始失去的。</p>
+<figure><img src="https://www.gstatic.com/images/branding/product/2x/chrome_48dp.png" alt="Chrome 在台灣辦公室與家庭也常是預設入口，平台政策會落到每台日常電腦上｜來源：Google 官方圖示" loading="lazy"></figure>
+<h2>台灣讀者的距離：看似美國公司政策，實際進入每一台辦公室電腦</h2>
+<p>這則新聞對台灣讀者也不遙遠。Chrome 是許多公司、學校與家庭的預設瀏覽器；Google 帳號、Gmail、Google Drive、Meet、Classroom 與各種 SaaS 工作流程，把瀏覽器變成半個作業系統。當擴充功能架構改變，受影響的不只是美國科技論壇上的 power user，也包括每天在辦公室開後台、在學校查資料、在家替長輩更新電腦的人。</p>
+<p>更微妙的是，台灣網路使用者經常穿梭在多語言、多地區、廣告密度不同的網站之間。繁體中文新聞站、論壇、購物頁、海外文件、影音平台，各自有不同的彈窗、追蹤器與反阻擋策略。對這類跨語言使用者來說，filter list 的完整性與可自訂性特別重要。若未來工具只剩「平台允許的規則表」，那些比較小眾的語言與地區規則是否仍被照顧，就值得長期觀察。</p>
+<p>因此，最實際的建議不是立刻恐慌，而是做一次瀏覽器盤點：你裝了哪些外掛？哪些已停止維護？哪些要求過寬權限？哪些只是習慣留下、其實很少使用？Manifest V3 爭議提醒我們，安全不是只靠一個 ad blocker，而是一組可被理解的選擇。把不需要的外掛移除、保留可信工具、替高風險家人設定較安全瀏覽器，這些小動作比在社群上罵平台更能立即降低風險。 對企業與學校資訊部門而言，這也是一次文件化的機會。過去大家常把瀏覽器外掛視為個人偏好；現在它更像端點安全的一部分。哪些外掛准用、哪些替代品可支援、若網站因阻擋器破版該如何回報，都應該寫成普通人看得懂的說明，而不是只留給 IT 人員在政策清單裡查找。尤其當員工把同一個 Google 帳號、密碼管理器與同步設定帶到多台裝置時，瀏覽器外掛已經跨過「個人喜好」邊界，成為資料保護與工作安全的共同責任。這種責任需要被翻譯成可操作的日常語言：什麼可以安裝、什麼應該移除、遇到警告要找誰、換瀏覽器會不會影響工作流程，這些都應明白寫下，讓非工程背景的人也能照著完成，並真正知道自己為何這樣做。</p>
+<h2>引用來源</h2>
+<p class="ref">¹ Chrome for Developers（2025-07-24）— Manifest V2 support timeline
+<a href="https://developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline" rel="noopener" target="_blank">https://developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline</a></p>
+<p class="ref">² Chrome for Developers（n.d.）— Extensions / Manifest V3
+<a href="https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3" rel="noopener" target="_blank">https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3</a></p>
+<p class="ref">³ Chrome for Developers / David Li（2023-11-16）— Resuming the transition to Manifest V3
+<a href="https://developer.chrome.com/blog/resuming-the-transition-to-mv3/" rel="noopener" target="_blank">https://developer.chrome.com/blog/resuming-the-transition-to-mv3/</a></p>
+<p class="ref">⁴ Chrome for Developers（2026-05-05）— chrome.declarativeNetRequest API
+<a href="https://developer.chrome.com/docs/extensions/reference/api/declarativeNetRequest" rel="noopener" target="_blank">https://developer.chrome.com/docs/extensions/reference/api/declarativeNetRequest</a></p>
+<p class="ref">⁵ Chrome for Developers（2023-03-08）— Improve extension security
+<a href="https://developer.chrome.com/docs/extensions/develop/migrate/improve-security" rel="noopener" target="_blank">https://developer.chrome.com/docs/extensions/develop/migrate/improve-security</a></p>
+<p class="ref">⁶ uBlockOrigin（2026）— uBOL-home GitHub repository
+<a href="https://github.com/uBlockOrigin/uBOL-home" rel="noopener" target="_blank">https://github.com/uBlockOrigin/uBOL-home</a></p>
+<p class="ref">⁷ uBlockOrigin（2026-06-15）— uBlock Origin Lite FAQ
+<a href="https://github.com/uBlockOrigin/uBOL-home/wiki/Frequently-asked-questions-(FAQ)" rel="noopener" target="_blank">https://github.com/uBlockOrigin/uBOL-home/wiki/Frequently-asked-questions-(FAQ)</a></p>
+<p class="ref">⁸ Chrome Web Store（2026）— uBlock Origin Lite listing
+<a href="https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh" rel="noopener" target="_blank">https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh</a></p>
+<p class="ref">⁹ Electronic Frontier Foundation / Daly Barnett（2021-12-09）— Chrome Users Beware: Manifest V3 is Deceitful and Threatening
+<a href="https://www.eff.org/deeplinks/2021/12/chrome-users-beware-manifest-v3-deceitful-and-threatening" rel="noopener" target="_blank">https://www.eff.org/deeplinks/2021/12/chrome-users-beware-manifest-v3-deceitful-and-threatening</a></p>
+<p class="ref">¹⁰ Mozilla Add-ons Blog / Rob Wu（2022-05-18）— Manifest v3 in Firefox: Recap &amp; Next Steps
+<a href="https://blog.mozilla.org/addons/2022/05/18/manifest-v3-in-firefox-recap-next-steps/" rel="noopener" target="_blank">https://blog.mozilla.org/addons/2022/05/18/manifest-v3-in-firefox-recap-next-steps/</a></p>
+<p class="ref">¹¹ StatCounter Global Stats（2026-05）— Browser Market Share Worldwide
+<a href="https://gs.statcounter.com/browser-market-share" rel="noopener" target="_blank">https://gs.statcounter.com/browser-market-share</a></p>
+<p class="ref">¹² The Verge / Emma Roth（2024-10-15）— Google Chrome’s uBlock Origin phaseout has begun
+<a href="https://www.theverge.com/2024/10/15/24270981/google-chrome-ublock-origin-phaseout-manifest-v3-ad-blocker" rel="noopener" target="_blank">https://www.theverge.com/2024/10/15/24270981/google-chrome-ublock-origin-phaseout-manifest-v3-ad-blocker</a></p>
+<p class="ref">¹³ Android Headlines / Jean Leon（2026-06-15）— Google Chrome’s Upcoming Update Ready to Kill Your Favorite Ad Blockers for Good
+<a href="https://www.androidheadlines.com/2026/06/google-chrome-update-disabled-legacy-ad-blockers-permanently.html" rel="noopener" target="_blank">https://www.androidheadlines.com/2026/06/google-chrome-update-disabled-legacy-ad-blockers-permanently.html</a></p>
+<p class="ref">¹⁴ MobileSyrup / Jonathan Lamont（2026-06-17）— Google is closing the door on ad-blockers in Chrome, other browsers
+<a href="https://mobilesyrup.com/2026/06/17/google-chrome-manivest-v3-ad-block-loophole/" rel="noopener" target="_blank">https://mobilesyrup.com/2026/06/17/google-chrome-manivest-v3-ad-block-loophole/</a></p>
+<p class="ref">¹⁵ Hacker News（2024-11-22）— Ask HN: Is uBlock Origin removed from Chrome extension?
+<a href="https://news.ycombinator.com/item?id=42210593" rel="noopener" target="_blank">https://news.ycombinator.com/item?id=42210593</a></p>
+<p class="ref">¹⁶ Karlo Lukic &amp; Lazaros Papadopoulos（2026 forthcoming, PoPETs）— Privacy vs. Profit: Impact of Google’s MV3 on Ad-Blocker Effectiveness
+<a href="https://arxiv.org/html/2503.01000" rel="noopener" target="_blank">https://arxiv.org/html/2503.01000</a></p>
+<p class="ref">¹⁷ AdGuard / Dmitriy Seregin（2022-08-30; updated 2023-11-03）— AdGuard publishes the world's first ad blocker built on Manifest V3
+<a href="https://adguard.com/en/blog/adguard-mv3.html" rel="noopener" target="_blank">https://adguard.com/en/blog/adguard-mv3.html</a></p>
+<p class="ref">¹⁸ Ghostery（n.d.）— uBlock Origin Stopped Working - Manifest V3
+<a href="https://www.ghostery.com/blog/ublock-origin-stopped-working-manifestv3" rel="noopener" target="_blank">https://www.ghostery.com/blog/ublock-origin-stopped-working-manifestv3</a></p>
+<p class="ref">¹⁹ Brave（2024-06-27; updated 2025-07-11）— What Manifest V3 means for Brave Shields and the use of extensions in the Brave browser
+<a href="https://brave.com/blog/brave-shields-manifest-v3/" rel="noopener" target="_blank">https://brave.com/blog/brave-shields-manifest-v3/</a></p>
+<p class="ref">²⁰ Chromium Security（2020-09-17 edited）— Changes to Cross-Origin Requests in Chrome Extension Content Scripts
+<a href="https://www.chromium.org/Home/chromium-security/extension-content-script-fetches/" rel="noopener" target="_blank">https://www.chromium.org/Home/chromium-security/extension-content-script-fetches/</a></p>
+<p class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/chrome-manifest-v3" rel="noopener" target="_blank">Substack</a>。</p>
+</main>
+<footer class="site">© 穗稻忠武的專欄 ・ <a href="https://polarbear0827.github.io/columns/">回首頁</a></footer>
+</body>
+</html>
