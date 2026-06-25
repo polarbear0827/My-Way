@@ -21,7 +21,10 @@
 }
 *{box-sizing:border-box}
 html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
 a{color:inherit;text-decoration:none}
 
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
@@ -145,5 +148,19 @@ a{color:inherit;text-decoration:none}
 
 </article>
 <footer class="foot"><a href="https://polarbear0827.github.io/columns/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
 </body>
 </html>
