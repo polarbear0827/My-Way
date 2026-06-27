@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>把一年變成一件作品 · 穗稻忠武的專欄</title>
+<meta name="description" content="一九八〇年四月十一日，紐約市中心一間工作室裡，謝德慶把自己的生活交給一台工人打卡鐘。他不是每天上班一次，而是每小時整點打卡一次，連夜晚也不例外；每次打卡後，他站在同一位置拍下一格十六釐米底片。這件後來被稱為《一年行為 1980–1981》（Time Clock Piece）的作品，把睡眠、勞動、移民身分與藝術制度都壓縮">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-06-27-tehching-hsieh-time-as-art/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="把一年變成一件作品">
+<meta property="og:description" content="一九八〇年四月十一日，紐約市中心一間工作室裡，謝德慶把自己的生活交給一台工人打卡鐘。他不是每天上班一次，而是每小時整點打卡一次，連夜晚也不例外；每次打卡後，他站在同一位置拍下一格十六釐米底片。這件後來被稱為《一年行為 1980–1981》（Time Clock Piece）的作品，把睡眠、勞動、移民身分與藝術制度都壓縮">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-06-27-tehching-hsieh-time-as-art/">
+<meta property="og:image" content="https://media.tate.org.uk/art/images/work/T/T13/T13875_7.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "把一年變成一件作品", "description": "一九八〇年四月十一日，紐約市中心一間工作室裡，謝德慶把自己的生活交給一台工人打卡鐘。他不是每天上班一次，而是每小時整點打卡一次，連夜晚也不例外；每次打卡後，他站在同一位置拍下一格十六釐米底片。這件後來被稱為《一年行為 1980–1981》（Time Clock Piece）的作品，把睡眠、勞動、移民身分與藝術制度都壓縮", "url": "https://polarbear0827.github.io/My-Way/p/2026-06-27-tehching-hsieh-time-as-art/", "datePublished": "2026-06-27", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://media.tate.org.uk/art/images/work/T/T13/T13875_7.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>把一年變成一件作品</h1>
+<p class="byline"><time>2026-06-27</time></p>
+</div>
+
+<p class="lead">一九八〇年四月十一日，紐約市中心一間工作室裡，謝德慶把自己的生活交給一台工人打卡鐘。他不是每天上班一次，而是每小時整點打卡一次，連夜晚也不例外；每次打卡後，他站在同一位置拍下一格十六釐米底片。這件後來被稱為《一年行為 1980–1981》（Time Clock Piece）的作品，把睡眠、勞動、移民身分與藝術制度都壓縮進一個簡單動作。¹²</p>
+<p>為什麼今天重看謝德慶？因為他的作品不只屬於七〇年代紐約前衛藝術史。Dia Art Foundation 宣布在 Dia Beacon 展出《Lifeworks 1978–1999》，稱這是這位台灣裔美國藝術家首次回顧展，並把五件「一年行為」與《十三年計畫》放入同一個空間結構。這讓一個老問題重新浮現：當藝術把一年人生作為材料，觀眾到底看見的是作品、檔案，還是一個人在制度邊緣留下的生存痕跡？³</p>
+<figure><img src="https://media.tate.org.uk/art/images/work/T/T13/T13875_7.jpg" alt="謝德慶《一年行為 1980–1981》作品影像｜來源：Tate（© Tehching Hsieh）" loading="lazy"><figcaption>打卡鐘、照片、卡片與身體姿態構成《Time Clock Piece》的基本語法；它看似冷靜，實際上把一年生活切成八千多個不可逃避的整點。</figcaption></figure>
+<h2>來源地圖：從藝術家檔案到批評現場</h2>
+<p>這篇文章採用四類來源。第一類是一手或準一手資料：Tate 的作品條目與訪談、謝德慶官方網站、北美館威尼斯台灣館資料、Dia 的展覽說明，以及 MoMA 對二〇〇九年展覽與館藏資料的說明。這些來源能確認作品年份、規則、展覽脈絡與藝術家自述。第二類是權威美術館與檔案機構，包括 Asia Art Archive、Asia Art Archive in America、UCCA 與 Google Arts &amp; Culture；它們提供作品出版、展覽與文獻保存角度。第三類是國際媒體與藝術評論：The Guardian、The New York Times、Frieze、Artforum、ARTnews、The Art Newspaper 與 ArtAsiaPacific，用來理解作品接受史、評論爭議與二〇二五年後的回顧展脈絡。第四類是可能有立場的來源，例如畫廊或展覽官方文字，本文只把它們當作作品資料與圖像線索，不把宣傳語當作獨立評價。</p>
+<p>九個候選題經過 `column_topic_memory.py score-lines --lane art` 評分後，草間彌生因十四日內已有完整專欄被排除；徐冰、台灣布袋戲、林玉山等題目可行，但今日選謝德慶，理由是近期未重複核心人物，且二〇二五至二〇二七 Dia 回顧展提供新的「為何現在」；同時，他的作品具備台灣、移民、行為藝術、檔案與制度接受史等多層材料。反方與爭議主要不在「作品是否發生」，而在如何解讀：它是普遍生命哲學、移民生存經驗、勞動與控制的隱喻，還是藝術制度遲到承認非白人藝術家的案例。⁴⁵⁶</p>
+<figure><img src="https://static.wixstatic.com/media/7dc044_5e6bd05f97e343919c88c10381b38ce7~mv2_d_5472_3080_s_4_2.jpg" alt="謝德慶官方網站列出的六件 Life Works｜來源：Tehching Hsieh 官方網站（© Tehching Hsieh）" loading="lazy"><figcaption>官方網站把「籠子、打卡、戶外、繩子、無藝術、十三年」並列，提醒讀者：謝德慶不是只做一件極端作品，而是用二十多年時間反覆測量藝術與生活的邊界。</figcaption></figure>
+<h2>從南州到紐約：一個移動中的身體</h2>
+<p>多個來源都確認，謝德慶一九五〇年生於台灣，少年時離開高中，曾學畫，服兵役後在台灣有過個展，之後停止繪畫。Tate 與 LADA 的簡介說，他一九七四年以船員身分抵達美國，並在美國沒有合法身分地生活十四年，直到一九八八年獲得特赦。¹⁷ 這段傳記常被拿來解釋他的作品：一個沒有穩定法律身分、語言資本與藝術網絡的人，如何把自己的身體變成唯一可靠的工作室。</p>
+<p>但這裡必須小心。若把謝德慶所有作品都化約成「台灣移民的苦難」，反而會抹去他的形式思考。Tate Research Centre: Asia 的報告指出，討論者提醒觀眾不要只把作品過度自傳化；謝德慶本人也常把重點放在「時間」本身，而不是某種民族或身份寓言。⁸ 因此較準確的說法是：移民處境不是作品唯一主題，卻是作品形成的歷史條件之一。沒有這個條件，作品裡的等待、規則、外部見證與自我檔案化，很難被完整理解。</p>
+<p>他在一九七八年以前已經做過短行為與攝影，北美館的威尼斯台灣館說明提到，二〇一七年《Doing Time》展覽最後一室回到他一九七三年在台北製作、較少曝光的短作品與照片。⁴ 這條線索重要，因為它讓謝德慶不只是「到了紐約才成為行為藝術家」；他在台灣已經離開繪畫，開始以行動、影像與身體危險測試藝術。</p>
+<figure><img src="https://static.wixstatic.com/media/7dc044_f024a2302fe6418ea5bdd4c3e7dd5f9e~mv2_d_1200_1855_s_2.jpg" alt="謝德慶《一年行為 1978–1979》相關作品圖像｜來源：Tehching Hsieh 官方網站（© Tehching Hsieh）" loading="lazy"><figcaption>從早期行為到紐約「一年行為」，謝德慶逐漸把作品從單次事件推向整年生活；照片不是附屬紀錄，而是讓不可見時間得以被追認的證物。</figcaption></figure>
+<h2>籠子：一年孤立如何成為作品</h2>
+<p>一九七八年九月三十日，謝德慶把自己關進紐約 TriBeCa 工作室裡一只木籠，開始《一年行為 1978–1979》。MoMA 二〇〇九年的展覽說明與《紐約時報》評論都指出，這件作品規則嚴格：他不說話、不讀書、不寫字、不聽收音機、不看電視；朋友負責送食物、處理排泄物，並每日拍照。MoMA 說該展是其 performance 系列的第一檔，聚焦「籠子」與三百六十五張每日照片。⁹¹⁰</p>
+<p>這件作品的形式力量，在於它拒絕把痛苦表演成戲劇。觀眾看到的是一個人日復一日在同一空間裡被拍照，頭髮逐漸長出，時間變成可見的線。Asia Art Archive in America 對《Cage Piece》出版物的說明提到，作品用法律式見證確認籠子封條未破，並以每日肖像保存存在證據。¹¹ 這種「證據」語言，讓作品同時接近監禁、修道、勞動考勤與概念藝術。</p>
+<p>《紐約時報》在二〇〇九年評論中把謝德慶放在兩條脈絡間：一邊是 Chris Burden 那類具有衝擊性的早期行為，另一邊是 On Kawara、Hanne Darboven、Roman Opalka 等以重複測量時間的觀念藝術家。¹⁰ 這個比較有助於看清謝德慶：他不是只在「忍耐」，而是把時間作為形式，讓觀眾在事後以檔案面對一個無法補看的生命段落。</p>
+<figure><img src="https://static.wixstatic.com/media/7dc044_15244653d8b44b0abe4b611cd377d33f~mv2_d_1200_1855_s_2.jpg" alt="《Cage Piece》相關圖像｜來源：Tehching Hsieh 官方網站（© Tehching Hsieh）" loading="lazy"><figcaption>籠子作品的日常條件極少：床、桶、食物、封條、每日照片；正因形式貧乏，時間本身才成為觀眾無法迴避的材料。</figcaption></figure>
+<h2>打卡鐘：把睡眠切碎的工人時間</h2>
+<p>《Time Clock Piece》是最容易被描述、也最難真正想像的一件。Tate 說，謝德慶從一九八〇年四月十一日至一九八一年四月十一日，每小時打卡一次，歷時三百六十六天；裝置包括信件、聲明、制服、照片、打卡鐘與時間卡。¹ Frieze 則給出更細數字：作品原定一年內二十四小時、三百六十五天打卡八七六〇次，謝德慶實際完成八六六六次，睡過九十四次；Guardian 的二〇一四年報導使用另一組展覽數字，提到八六二七張肖像與一三三次錯過。²⁵ 兩者差異提醒我們，不同展覽與媒體可能使用不同統計口徑；本文採取保守寫法：他完成八千多次整點打卡，少數整點因睡眠或失誤錯過。</p>
+<p>作品最殘酷處不在動作困難，而在動作太簡單。打一張卡、拍一張照片，單次不到幾分鐘；但整點規則摧毀了長睡、深度工作、遠行與完整談話。Guardian 引述謝德慶說，那像在「limbo」裡，只是在等下一次打卡。² Frieze 訪談中，他用「I am recording time」概括作品，並說「art time」與「life time」需要在同一水位。⁵</p>
+<p>把它看成勞動批判是合理的，但不宜過度簡化。Guardian 報導指出，他不自稱政治藝術家，雖然觀眾可從政治角度解讀；他更關心人類生命的普遍狀況。² 這並不排除勞動與控制的意義：打卡鐘本來就是工業管理工具，謝德慶把自己變成永不下班的人，讓「工作時間」吞掉「生活時間」。只是作品沒有替觀眾下結論，而是把一年交給重複，讓每個人從自己的生活經驗進入。</p>
+<figure><img src="https://static.wixstatic.com/media/7dc044_27092e4b013a4b30b0885c475a1cb8e9~mv2_d_1200_1855_s_2.jpg" alt="《一年行為 1980–1981》打卡作品圖像｜來源：Tehching Hsieh 官方網站（© Tehching Hsieh）" loading="lazy"><figcaption>整點打卡使作品像一部低速機器：照片、卡片與影片都在證明時間通過，但真正消耗的是藝術家的睡眠與日常自主。</figcaption></figure>
+<h2>戶外、繩子與無藝術：一年作為規則機器</h2>
+<p>如果只看打卡鐘，謝德慶容易被誤解為「最會忍耐的人」。但五件一年行為其實各自拆解一種生活條件：籠子拆掉社交與資訊；打卡拆掉睡眠與連續性；戶外拆掉 shelter；繩子拆掉隱私與距離；無藝術則拆掉藝術家身分本身。MoMA Post 對戶外作品的說明指出，謝德慶一九八一年九月二十六日至一九八二年九月二十六日留在曼哈頓街頭，不進入遮蔽物，只帶睡袋與小背包。¹²</p>
+<p>二〇二四年《紐約時報》T Magazine 文章重訪《Outdoor Piece》，提到他曾在一九八二年五月三日被捕，因進入警局與法庭相關程序成為唯一破例；報導描述律師如何爭取讓他待在戶外，法官也承認「待在外面也許是藝術」。¹³ 這段故事把作品從抽象時間拉回城市制度：街頭、警察、法院、冷冬、移民身分與日常暴力，都進入了作品。</p>
+<p>《Rope Piece》則把另一個人帶入規則。ARTnews 二〇二五年訪談與 Dia 展覽文字都指出，謝德慶與 Linda Montano 以八英尺繩子相連一年，但不得接觸彼此。³¹⁴ 這不是浪漫關係的象徵，而是把自由、親密與束縛變成同一條繩子。Dia 引述 Montano 回憶，兩人的溝通從語言退回手勢甚至聲音；謝德慶則說「我們成為彼此的籠子」。³ 這句話讓五件作品彼此照亮：籠子可以是木頭，也可以是時間、街道、他人或藝術制度。</p>
+<figure><img src="https://static.wixstatic.com/media/7dc044_d09dbfed2f334dd3a65edb9c8cd31f43~mv2_d_1200_1855_s_2.jpg" alt="《戶外作品》相關圖像｜來源：Tehching Hsieh 官方網站（© Tehching Hsieh）" loading="lazy"><figcaption>戶外作品把藝術家的身體放到紐約街頭：地圖、衣物、路線與警察遭遇，都讓「一年」不再只是抽象時間，而是城市制度中的生存。</figcaption></figure>
+<h2>檔案不是替代品，而是作品留下的骨架</h2>
+<p>行為藝術常面臨一個矛盾：作品發生在當下，但美術館與後來觀眾只能面對文件。謝德慶的特殊性在於，他從一開始就把文件設計進作品。MoMA Post 指出，若沒有他對攝影、物件、地圖、錄音與文字的精準保存，這些一年行為可能只會變成都市傳說。¹² Artforum 二〇〇九年訪談中，謝德慶自己說，《Time Clock Piece》的完整文件包括靜態與動態影像、十六釐米攝影機與放映機；但他也提醒，文件只是痕跡，作品中有些不可見部分只能由觀眾用自身經驗與想像接近。⁶</p>
+<p>這就是觀看謝德慶時最重要的張力。你看到的不是作品本身，而是作品留下的證詞；但沒有這些證詞，你又無法知道作品曾經如何消耗一個人的時間。Tate 的訪談讓謝德慶用一句話概括：「生命是生命刑期；生命是時間流逝；生命是自由思考。」⁷ 這句話容易被當成哲學標語，但它在作品裡不是抽象概念，而是被打卡鐘、封條、照片與見證人制度一再落實。</p>
+<p>因此，檔案不是作品的退化版本，而是作品讓後世進入的門。它也讓作品接受史變得可能：二〇〇九年 MoMA、Guggenheim 展覽，二〇一七年威尼斯台灣館，二〇二五年 Dia 回顧展，都是在不同制度裡重新排列同一批時間痕跡。這些展覽不是單純複製當年行為，而是把「一年生活」翻譯成美術館空間、牆面、放映、卡片、路線與空房間。</p>
+<figure><img src="https://static.wixstatic.com/media/7dc044_6fb5102946d84459963c5fb3bb7bfe20~mv2_d_1200_1855_s_2.jpg" alt="《Rope Piece》相關圖像｜來源：Tehching Hsieh 官方網站（© Tehching Hsieh）" loading="lazy"><figcaption>繩子作品使「關係」本身成為規則：距離被固定，自由被協商，另一個人的生活也被拉進一年行為的時間結構。</figcaption></figure>
+<h2>遲到的承認：從邊緣藝術家到國際回顧展</h2>
+<p>謝德慶的作品今天看似已被納入當代藝術正典，但這個位置來得很晚。Frieze 指出，他的作品直到二〇〇九年前後才在更大制度中獲得牽引：MoMA 個展、Guggenheim《The Third Mind》、以及與 Adrian Heathfield 合作出版的《Out of Now》。⁵ Guardian 也把這段晚近承認與二〇〇九年展覽、專書出版連在一起。²</p>
+<p>為什麼會晚？Frieze 引述 Heathfield 的說法，指出他當年被排除在歷史之外，部分原因是「不是白人」。⁵ 這是評論者觀點，不等於唯一解釋；但它確實提醒我們，藝術史不是作品完成後自然形成，而是由美術館、出版、評論、市場、語言與種族化觀看共同組成。謝德慶在紐約做作品時，沒有合法身分、缺少英文語言資源，也不在穩定畫廊體系內；他的作品高度依靠檔案，卻長期缺少讓檔案進入公共敘事的制度。</p>
+<p>二〇一七年威尼斯台灣館《Doing Time》是一個轉折。北美館與台灣館網站說，展覽由 Adrian Heathfield 策展，在 Palazzo delle Prigioni 展出《Time Clock Piece》與《Outdoor Piece》，並回到一九七三年台北早期作品。⁴¹⁵ Artforum 報導當年北美館宣布謝德慶代表台灣參展，Heathfield 稱威尼斯舊監獄空間適合一位理解「doing time」代價的藝術家。¹⁶ 這裡的制度意義很清楚：台灣不只是把一位海外成功藝術家帶回國家館，而是把移民、監禁、時間與檔案置於台灣當代藝術的國際敘事中心。</p>
+<figure><img src="https://static.wixstatic.com/media/7dc044_027df57f70e14e1b967ae9a1ab143349~mv2_d_1200_1855_s_2.jpg" alt="《無藝術作品》相關圖像｜來源：Tehching Hsieh 官方網站（© Tehching Hsieh）" loading="lazy"><figcaption>《No Art Piece》把作品推到最難展示的位置：當藝術家不做、不看、不談藝術時，美術館能呈現的只剩規則與缺席。</figcaption></figure>
+<h2>Dia Beacon 的問題：美術館如何展示二十一年時間</h2>
+<p>Dia 二〇二五年展覽提供新的觀看框架。官方說明指出，謝德慶二〇二四年捐贈十一件職涯核心作品給 Dia；《Lifeworks 1978–1999》是他首次回顧展，涵蓋五件一年行為與《十三年計畫》，其中《Rope Piece》與《Thirteen Year Plan》首次一同進入完整呈現。³ 展覽不是按一般年表掛照片，而是依藝術家構想出的建築模型，把「art time」與「life time」轉譯成空間。</p>
+<p>The Art Newspaper 二〇二五年訪談中，謝德慶說，他不希望觀眾只想著文件，而是希望人在空間中思考時間；他也說：「People don’t need to know about art history to know my work, they only need life experience.」¹⁷ 這句話可能是理解回顧展的鑰匙。謝德慶的作品很需要藝術史脈絡，否則我們看不懂它與觀念藝術、行為藝術、檔案制度的關係；但它也不完全依賴專業語言。每個等車、失眠、打卡、租屋、移動、孤獨或被制度排除的人，都有某種進入作品的入口。</p>
+<p>ARTnews 的二〇二五年訪談則補充，謝德慶不把自己實踐稱為「career」，因為那只是生活；他也說時間與藝術對他差異不大，兩者都使用同一材料：時間。¹⁴ 這種說法會讓美術館困難：美術館擅長保存物件，但謝德慶的材料是不可追回的生命段落。Dia 的解法是讓觀眾走過空間比例、文件與空房間，接受一個事實：所有展示都只能是翻譯，不能替代當年的一年。</p>
+<figure><img src="https://media.tate.org.uk/aztate-prd-ew-dg-wgtail-st1-ctr-data/images/.width-420_9f53jAe.jpg" alt="Dia 與 Tate 展示脈絡中的《Time Clock Piece》影像｜來源：Tate（© Tehching Hsieh）" loading="lazy"><figcaption>當作品進入 Tate、MoMA、威尼斯台灣館與 Dia，它不再只是個人行為，而成為美術館如何保存「不可再演生命時間」的制度難題。</figcaption></figure>
+<h2>爭議與誤讀：英雄主義、政治寓言，或只是活著？</h2>
+<p>謝德慶作品最常被貼上的詞是「耐力」。這個詞有用，卻也危險。The Art Newspaper 標題引用他明確說法：「我不是想當超人，我的作品不是英雄主義。」¹⁷ 若觀眾只把他看成極限挑戰者，作品會被誤讀成藝術版馬拉松；但謝德慶反覆強調，他使用一年，是因為一年是人類計算生命的基本單位，也是地球繞太陽一圈的時間。⁷¹⁷</p>
+<p>另一種誤讀是把作品完全政治化。打卡鐘當然能引出勞動、監控與現代工業時間；戶外作品當然會碰到城市治理、無家者處境與移民身份；籠子也難免讓人想到監禁。但 Guardian 報導中，謝德慶說自己不是政治藝術家，雖然允許政治解讀。² 這裡更中性的表述是：他的作品不以政治口號為形式，卻把政治處境無法排除地帶入生活規則。</p>
+<p>第三種誤讀是把檔案當成透明證明。其實檔案越完整，越提醒我們失去什麼：一年的疲倦、無聊、短暫夢境、恐懼、飢餓、失眠後的空白，不會完整進入照片。Frieze 訪談提到，謝德慶談到睡眠剝奪使日夜模糊，也有移民噩夢；這些不是作品的宣傳語，而是文件背後無法被完全轉譯的生活經驗。⁵</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 謝德慶的重要性，或許不在於他比別人更能忍，而在於他把「忍」從心理品質變成形式結構。每一件作品都有一句簡單規則，簡單到任何人都能理解；但當規則持續一年，它就不再只是概念，而會侵入睡眠、消化、天氣、人際關係與法律身分。這是他的作品至今仍有效的原因：它讓觀眾用自己的時間感去想像一個無法替代的時間。</p>
+<figure><img src="https://static.wixstatic.com/media/7dc044_2752a6543cca400aab861d08ba035d67~mv2.jpg" alt="《十三年計畫》相關圖像｜來源：Tehching Hsieh 官方網站（© Tehching Hsieh）" loading="lazy"><figcaption>十三年計畫把「展示」推遲到幾乎消失：作品最後留下的不是豐富物件，而是藝術家在千禧年前夕宣告自己「保持活著」。</figcaption></figure>
+<h2>台灣藝術史的位置：不是「海外成功」的單一路線</h2>
+<p>把謝德慶放回台灣藝術史，也需要避免另一種簡化：把他說成離開台灣後在西方被承認、再回頭為台灣爭光的單線故事。北美館與威尼斯台灣館資料更複雜地指出，《Doing Time》不只展出紐約的一年行為，也帶回他一九七三年在台北完成的短行為與照片。⁴¹⁵ 這使作品脈絡從「移民後的紐約」往前延伸到台灣戰後美術教育、抽象繪畫、兵役後青年藝術家的出走與轉向。</p>
+<p>MoMA Post 也提到，謝德慶在台灣被年輕藝術家視為重要參照；這不是因為他提供某種台灣風格圖像，而是因為他示範了如何在資源稀薄、制度外部與長期孤立中，仍以嚴格方法建立作品。¹² 對台灣觀眾而言，他的價值也許不只在「國際能見度」，而在於他讓人重新問：如果藝術不依附漂亮物件、不依附市場敘事、不依附即時掌聲，它還能靠什麼成立？他的答案不是口號，而是時間、規則、見證與持續活著。</p>
+<p>這也使謝德慶與許多「可被收藏的台灣現代美術」保持距離。他的作品可以被機構收藏，但收藏的其實不是單一物件，而是一套規則、文件、見證與事後重組方法。當台灣藝術史討論海外藝術家時，常容易落入成就清單；謝德慶更值得保留的是方法上的不安：他證明一位藝術家可以離開畫布、離開展覽檔期、甚至離開「正在做藝術」的可見狀態，仍以極嚴格的形式留下作品。這種不安，對今天被速度、曝光與平台指標包圍的創作者，反而比英雄式傳記更有現實意義。</p>
+<figure><img src="https://static.wixstatic.com/media/7dc044_37967c67e76442bc82147c8131c13640~mv2.jpg" alt="謝德慶早期與一年行為作品圖像｜來源：Tehching Hsieh 官方網站（© Tehching Hsieh）" loading="lazy"><figcaption>從台灣早期實驗到紐約一年行為，謝德慶的路徑不只是地理移動，也是一種從繪畫物件轉向生活規則的藝術方法轉換。</figcaption></figure>
+<h2>結語：下一次整點之前</h2>
+<p>今天的讀者也許不會把自己關進籠子，不會一年不進室內，也不會每小時醒來打卡。但謝德慶作品之所以能跨出藝術圈，是因為它把現代生活裡常見卻難以命名的狀態推到極限：我們被鐘錶、身份、工作、親密關係、城市規則與自我證明切割。作品沒有替這些狀態提出解方，只把它們拉長到一年，讓人無法用一句話帶過。</p>
+<p>在 Dia Beacon 的回顧展語境裡，謝德慶不再只是「那位一年不睡覺的藝術家」。他更像一位把時間做成建築的人：籠子是一年，打卡鐘是一年，街道是一年，繩子是一年，空白也是一年；十三年則像一條幾乎看不見的走廊，通向一張「我保持活著」的聲明。¹⁷³ 下一次整點到來時，我們大概仍會看手機、趕信件、搭車、睡覺或工作。謝德慶的作品不要求觀眾模仿他的規則；它只是把一個問題留在那裡：如果時間就是我們共同使用、也共同失去的材料，那麼我們每天打掉的那些卡、等掉的那些分鐘、活過卻無法保存的那些片刻，是否也正在構成一種無名的作品？</p>
+<p>這篇文章最後回到打卡鐘，不是因為它最戲劇化，而是因為它最接近一般人的生活。打卡、報到、簽到、回覆訊息、留下紀錄，本來是日常行政；謝德慶把它推到整年，讓行政動作變成存在問題。從這個角度看，他的作品也預示了今日被資料化的生活：人們透過時間戳、定位、螢幕紀錄與工作平台證明自己在場，卻也在證明中失去未被記錄的部分。謝德慶留下的不是對科技社會的直接預言，而是一套更早的形式模型：當生命被切成可驗證片段時，最難保存的反而是片段之間的等待、疲倦與自由思考。</p>
+<p>因此，謝德慶的「一年」不是過去式。它仍在每個制度要求我們證明自己存在的時刻回來：你在哪裡、何時到、做了多久、誰能作證。藝術把這些問題放慢，讓觀眾在美術館牆面前意識到，時間從來不只是背景；它是我們真正付出的材料。</p>
+<p>如果說許多藝術作品把世界縮成一個可觀看的形象，謝德慶則反過來，把一個動作擴大成一年，讓觀看者承認自己只能在事後靠文件想像。這份無法完整抵達，正是作品的倫理：它不把痛苦消費成奇觀，也不把移民身分包裝成單一寓言，而是留下足夠清楚、也足夠沉默的痕跡，讓時間自己說話。也因如此，觀眾離開展場後帶走的不是「我看過一個人受苦」的刺激，而是對自己生活節奏的回聲：下一個整點到來時，我們是否仍能分辨哪些時間屬於制度，哪些時間仍屬於自己。這個問題沒有標準答案，卻足以讓作品在四十多年後仍未過期。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ Tate（無日期）— "Tehching Hsieh: 'All art comes from life'"
+<a href="https://www.tate.org.uk/art/artworks/hsieh-one-year-performance1980-1981-t13875/tehching-hsieh" rel="noopener" target="_blank">https://www.tate.org.uk/art/artworks/hsieh-one-year-performance1980-1981-t13875/tehching-hsieh</a></p>
+<p class="ref">² The Guardian（2014-04-30）— "Tehching Hsieh: the man who didn't go to bed for a year"
+<a href="https://www.theguardian.com/artanddesign/australia-culture-blog/2014/apr/30/tehching-hsieh-the-man-who-didnt-go-to-bed-for-a-year" rel="noopener" target="_blank">https://www.theguardian.com/artanddesign/australia-culture-blog/2014/apr/30/tehching-hsieh-the-man-who-didnt-go-to-bed-for-a-year</a></p>
+<p class="ref">³ Dia Art Foundation（無日期）— "Tehching Hsieh: Lifeworks 1978–1999"
+<a href="https://www.diaart.org/exhibition/exhibitions-projects/tehching-hsieh-lifeworks-19781999-exhibition" rel="noopener" target="_blank">https://www.diaart.org/exhibition/exhibitions-projects/tehching-hsieh-lifeworks-19781999-exhibition</a></p>
+<p class="ref">⁴ Taipei Fine Arts Museum（2019 更新）— "Doing Time"
+<a href="https://www.tfam.museum/Exhibition/Exhibition_page.aspx?ddlLang=en-us&amp;id=605" rel="noopener" target="_blank">https://www.tfam.museum/Exhibition/Exhibition_page.aspx?ddlLang=en-us&amp;id=605</a></p>
+<p class="ref">⁵ Frieze（2023-04-28）— "The Rigour of Tehching Hsieh's One Year Performance"
+<a href="https://www.frieze.com/article/tehching-hsieh-durational-performance-235" rel="noopener" target="_blank">https://www.frieze.com/article/tehching-hsieh-durational-performance-235</a></p>
+<p class="ref">⁶ Artforum（2009-01-22）— "Tehching Hsieh"
+<a href="https://www.artforum.com/columns/tehching-hsieh-discusses-his-exhibition-at-the-museum-of-modern-art-190087/" rel="noopener" target="_blank">https://www.artforum.com/columns/tehching-hsieh-discusses-his-exhibition-at-the-museum-of-modern-art-190087/</a></p>
+<p class="ref">⁷ Tate Etc.（2017 夏）— "Tehching Hsieh and Marina Abramović in conversation"
+<a href="https://www.tate.org.uk/tate-etc/issue-40-summer-2017/interview-tehching-hsieh-marina-abramovic" rel="noopener" target="_blank">https://www.tate.org.uk/tate-etc/issue-40-summer-2017/interview-tehching-hsieh-marina-abramovic</a></p>
+<p class="ref">⁸ Tate Research Centre: Asia（2018-07）— "Art Time, Life Time: Tehching Hsieh"
+<a href="https://www.tate.org.uk/research/research-centres/tate-research-centre-asia/event-report-tehching-hsieh" rel="noopener" target="_blank">https://www.tate.org.uk/research/research-centres/tate-research-centre-asia/event-report-tehching-hsieh</a></p>
+<p class="ref">⁹ MoMA（2009）— "Performance 1: Tehching Hsieh"
+<a href="https://www.moma.org/calendar/performance/322" rel="noopener" target="_blank">https://www.moma.org/calendar/performance/322</a></p>
+<p class="ref">¹⁰ The New York Times（2009-02-18）— "At MoMA, a Life Shrunk to Expand Art"
+<a href="https://www.nytimes.com/2009/02/19/arts/design/19perf.html" rel="noopener" target="_blank">https://www.nytimes.com/2009/02/19/arts/design/19perf.html</a></p>
+<p class="ref">¹¹ Asia Art Archive in America（無日期）— "Tehching Hsieh – One Year Performance 1978–1979"
+<a href="https://www.aaa-a.org/collection/tehching-hsieh-one-year-performance-1978-1979" rel="noopener" target="_blank">https://www.aaa-a.org/collection/tehching-hsieh-one-year-performance-1978-1979</a></p>
+<p class="ref">¹² MoMA Post（2016-03-16）— "Tehching Hsieh’s One Year Performance"
+<a href="https://post.moma.org/tehching-hsiehs-one-year-performance/" rel="noopener" target="_blank">https://post.moma.org/tehching-hsiehs-one-year-performance/</a></p>
+<p class="ref">¹³ The New York Times（2024-10-03）— "Tehching Hsieh Changed the Art World. Then He Left It All Behind."
+<a href="https://www.nytimes.com/2024/10/03/t-magazine/tehching-hsieh-dia-art-foundation.html" rel="noopener" target="_blank">https://www.nytimes.com/2024/10/03/t-magazine/tehching-hsieh-dia-art-foundation.html</a></p>
+<p class="ref">¹⁴ ARTnews / Art in America（2025-09-30）— "Tehching Hsieh’s Durational Performances Merge Art and Life"
+<a href="https://www.artnews.com/art-in-america/columns/tehching-hsieh-performance-dia-1234754437/" rel="noopener" target="_blank">https://www.artnews.com/art-in-america/columns/tehching-hsieh-performance-dia-1234754437/</a></p>
+<p class="ref">¹⁵ Tehching Hsieh 官方網站（無日期）— "TEHCHING HSIEH: DOING TIME"
+<a href="https://www.tehchinghsieh.net/doing-time" rel="noopener" target="_blank">https://www.tehchinghsieh.net/doing-time</a></p>
+<p class="ref">¹⁶ Artforum（2016-07-28）— "Tehching Hsieh to Represent Taiwan at the 2017 Venice Biennale"
+<a href="https://www.artforum.com/news/tehching-hsieh-to-represent-taiwan-at-the-2017-venice-biennale-230233/" rel="noopener" target="_blank">https://www.artforum.com/news/tehching-hsieh-to-represent-taiwan-at-the-2017-venice-biennale-230233/</a></p>
+<p class="ref">¹⁷ The Art Newspaper（2025-11-07）— "Tehching Hsieh: ‘I didn’t try to be a superman, my work is not about heroism’"
+<a href="https://www.theartnewspaper.com/2025/11/07/tehching-hsieh-i-didnt-try-to-be-a-superman-my-work-is-not-about-heroism" rel="noopener" target="_blank">https://www.theartnewspaper.com/2025/11/07/tehching-hsieh-i-didnt-try-to-be-a-superman-my-work-is-not-about-heroism</a></p>
+<p class="ref">¹⁸ ARTnews（2017-05-11）— "Slow and Steady: Tehching Hsieh in Venice"
+<a href="https://www.artnews.com/art-news/market/slow-and-steady-tehching-hsieh-in-venice-8319/" rel="noopener" target="_blank">https://www.artnews.com/art-news/market/slow-and-steady-tehching-hsieh-in-venice-8319/</a></p>
+<p class="ref">¹⁹ Asia Art Archive（無日期）— "Tehching Hsieh: One Year Performance: Art Documents 1978-1999"
+<a href="https://www.aaa.org.hk/en/collections/search/library/tehching-hsieh-one-year-performance-art-documents-1978-1999" rel="noopener" target="_blank">https://www.aaa.org.hk/en/collections/search/library/tehching-hsieh-one-year-performance-art-documents-1978-1999</a></p>
+<p class="ref">²⁰ The New York Times（2020-09-17）— "Art About Waiting — and What It Takes to Endure"
+<a href="https://www.nytimes.com/2020/09/17/t-magazine/Tehching-Hsieh-endurance-art.html" rel="noopener" target="_blank">https://www.nytimes.com/2020/09/17/t-magazine/Tehching-Hsieh-endurance-art.html</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
