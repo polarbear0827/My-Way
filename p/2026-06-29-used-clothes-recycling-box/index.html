@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>舊衣回收箱旁的城市良心 · 穗稻忠武的專欄</title>
+<meta name="description" content="把一袋舊衣放進回收箱，看起來像一個很小的善意動作：衣櫃變空一點，城市少一點垃圾，也許還能幫助社福團體。但這個鐵箱後方，其實連著一條很長的路：台北巷口、新北分選場、非洲二手市場、歐洲法規、快時尚品牌與台灣紡織業的再生技術。本文選題來自 12:00「科技人文與生活日常」lane 的候選評分：便利商店題因 6 月 14 日已">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-06-29-used-clothes-recycling-box/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="舊衣回收箱旁的城市良心">
+<meta property="og:description" content="把一袋舊衣放進回收箱，看起來像一個很小的善意動作：衣櫃變空一點，城市少一點垃圾，也許還能幫助社福團體。但這個鐵箱後方，其實連著一條很長的路：台北巷口、新北分選場、非洲二手市場、歐洲法規、快時尚品牌與台灣紡織業的再生技術。本文選題來自 12:00「科技人文與生活日常」lane 的候選評分：便利商店題因 6 月 14 日已">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-06-29-used-clothes-recycling-box/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1759630814559-f9fffe187384?fm=jpg&amp;q=70&amp;w=1200&amp;auto=format&amp;fit=crop">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "舊衣回收箱旁的城市良心", "description": "把一袋舊衣放進回收箱，看起來像一個很小的善意動作：衣櫃變空一點，城市少一點垃圾，也許還能幫助社福團體。但這個鐵箱後方，其實連著一條很長的路：台北巷口、新北分選場、非洲二手市場、歐洲法規、快時尚品牌與台灣紡織業的再生技術。本文選題來自 12:00「科技人文與生活日常」lane 的候選評分：便利商店題因 6 月 14 日已", "url": "https://polarbear0827.github.io/My-Way/p/2026-06-29-used-clothes-recycling-box/", "datePublished": "2026-06-29", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://images.unsplash.com/photo-1759630814559-f9fffe187384?fm=jpg&q=70&w=1200&auto=format&fit=crop"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>舊衣回收箱旁的城市良心</h1>
+<p class="byline"><time>2026-06-29</time></p>
+</div>
+
+<p class="lead">導言：把一袋舊衣放進回收箱，看起來像一個很小的善意動作：衣櫃變空一點，城市少一點垃圾，也許還能幫助社福團體。但這個鐵箱後方，其實連著一條很長的路：台北巷口、新北分選場、非洲二手市場、歐洲法規、快時尚品牌與台灣紡織業的再生技術。本文選題來自 12:00「科技人文與生活日常」lane 的候選評分：便利商店題因 6 月 14 日已有〈超商島嶼的日常工程〉而重複；外送、手機信仰物件、捷運置物櫃則較偏近期科技生活題。最後選擇「舊衣回收箱旁的城市良心」，是因為它同時具備街角場景、社福制度、快時尚衝突、全球廢棄物流與台灣循環紡織技術。本文亦標記舊 blocked 任務僅為 superseded 背景，未處理其狀態。</p>
+<figure><img src="https://images.unsplash.com/photo-1759630814559-f9fffe187384?fm=jpg&amp;q=70&amp;w=1200&amp;auto=format&amp;fit=crop" alt="二手衣店裡挑衣服的人｜來源：Kiko Camaclang / Unsplash（Unsplash License）" loading="lazy"><figcaption>一只回收箱把「不要了」變成「可能還能用」；真正困難的是箱子後方的分選、去化與責任分攤。</figcaption></figure>
+<h2>一只箱子，兩種想像</h2>
+<figure><img src="https://images.unsplash.com/photo-1714583353759-ac534aae73ce?fm=jpg&amp;q=70&amp;w=1200&amp;auto=format&amp;fit=crop" alt="二手衣架上的外套與襯衫｜來源：Mirza Polat / Unsplash（Unsplash License）" loading="lazy"><figcaption>慈善、環保與城市管理在同一只箱子上相遇；台北的制度同樣把社福資格、道路空間與回收責任綁在一起。</figcaption></figure>
+<p>在台北街頭，舊衣回收箱通常不大聲。它不如垃圾車旋律那樣提醒人，也不像便利商店招牌那樣照亮整條巷子。多數人遇見它，是在換季、搬家、孩子長高、工作衣不再合身的某個下午：一袋衣服被塞進箱口，手指鬆開，善意就像完成了。中央社引述台北市環保局統計指出，台北市 2024 年 1,169 個舊衣回收箱共收到 3,161 噸二手衣物，創造 2,166 萬元收益，平均為設置的社福團體增加約 45 萬元額外收入；2025 年第一季也已募集 1,107 噸、創造 588 萬元收益。¹</p>
+<p>但這只箱子不是單純的「善心投入口」。台北市環保局 2025 年 11 月的新聞稿進一步說，新一期許可到 2028 年 10 月 31 日止，核准 49 家社福團體、1,337 個箱位，並要求民眾投放的衣物必須乾淨、無潮濕異味、可再使用，不可投入一般垃圾。² 台北市開放資料平台也把核准編號、團體名稱、行政區、地點、經緯度列為資料欄位；這表示回收箱不是隨意擺設，而是被納入城市治理的可查詢點位。³</p>
+<p>法規語言更清楚地說明這件日常小事背後的秩序。台北市「社會福利團體從事舊衣回收再利用管理要點」規定，申請者須經審查，許可營運期間原則為三年；設置後必須標示核准文號與編號，維持設施周圍三公尺內整潔，衍生廢棄物也由設置單位清除。⁴ 換言之，當衣服落入箱中，善意還沒有完成；它只是把責任交給另一群人。</p>
+<h2>從衣櫃到分選場：善意開始變重</h2>
+<figure><img src="https://images.unsplash.com/photo-1624192647570-1131acc12ccf?fm=jpg&amp;q=70&amp;w=1200&amp;auto=format&amp;fit=crop" alt="待分類的衣物架｜來源：Megan Lee / Unsplash（Unsplash License）" loading="lazy"><figcaption>能再穿的衣服，才有機會進入二手店、義賣或外銷；回收現場最耗人的工作，是把「可用」和「不可用」分開。</figcaption></figure>
+<p>《報導者》2022 年的調查把舊衣箱後面的聲音帶到讀者面前：新北樹林一處約 300 坪的舊衣回收場裡，貨車把衣物倒成三層樓高，女工站在輸送機兩側挑選，能穿、沒有破洞的衣服被分類、整新、折疊，無法賣出或不合品質的衣物則等著進入垃圾流程。⁵ 這段場景提醒我們，舊衣回收不是魔法，而是一種高度依賴勞動的分類經濟。</p>
+<p>問題在於，投進箱子的東西不一定是「衣」。中央社報導中，環保局提醒舊衣箱只收衣物類，鞋子、布偶、包包、棉被、枕頭等均不可捐贈。¹ 自由時報 2026 年專題訪問北部大型回收商久泰環保負責人吳基正，他說回收箱常被當成垃圾桶，曾撿到神像、動物屍體、廚餘，甚至骨灰罈；在快時尚影響下，不能轉售的廢料比例從早期一成至三成，上升到高達七成。⁶ 這些敘述來自業者經驗，不能直接推估全國比例，但它說明了回收箱現場的核心困境：民眾以為自己捐出的是資源，接手者卻可能收到成本。</p>
+<p>《報導者》也記錄，伊甸基金會舊衣回收中心專員賴朝乾曾表示，起毛球、汙損、掉拉鍊的衣物不會捐給弱勢團體，也不會義賣；有些民眾只是想處理掉不要的衣服，品質不佳的衣物五成以上最後仍得交由回收業者處理。⁵ 這裡的道德問題不在於「捐衣」本身，而在於捐贈者是否把別人的後端勞動看見。把不能穿的東西塞進箱中，並不會讓它變成公益；它只是讓社福團體、清運工與分選場承擔更多費用。</p>
+<h2>台灣舊衣出口榮景，為何走到瓶頸</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/A_clothing_market_in_Taiwan_c._1940.tif/1280px-A_clothing_market_in_Taiwan_c._1940.tif.jpg" alt="1940 年代台灣衣物市場｜來源：Unknown author / Wikimedia Commons（Public Domain）" loading="lazy"><figcaption>衣物向來不只遮身，也是一種市場流動；今日舊衣回收的難題，是流動速度與品質變化遠超過舊制度可負荷。</figcaption></figure>
+<p>台灣舊衣回收曾經依靠出口。《報導者》引述環保署與關務署統計指出，2011 年全台舊衣出口約 66,000 噸、產值達新台幣 5.7 億元高峰；但在中國、非洲需求降低與疫情期間海運價格上升後，出口量跌到約 34,000 噸，只剩全盛時期一半。⁵ 這代表台灣街角收進來的衣服，過去很大程度上仰賴海外二手市場吸收。</p>
+<p>自由時報 2026 年報導中的久泰案例，提供了另一個地方尺度。久泰位於新北泰山，報導稱每月回收約 500 噸、年達 6,000 噸，品質好的二手衣外銷到非洲、東南亞等地；無法轉售的廢料，近年嘗試加工成汽車隔熱棉、地毯、抹布，甚至開發聚酯材再利用。⁶ 這種路線很務實：先把可穿的衣服賣到還有需求的市場，再把不可穿的部分降階使用。但它也暴露舊模型的脆弱性——只要出口價格、運費、進口國政策、衣物品質任何一端變動，整條鏈就會吃緊。</p>
+<p>2026 年 4 月，知新聞報導久泰環保相關工廠火警，稱新北五股鐵皮廠房燃燒面積初估 5,676 平方公尺，現場堆置回收舊衣，火勢延燒，起火原因待查。²⁰ 本文無法依此單一事件推論舊衣回收業普遍安全風險，但它讓人看見一個常被忽略的事實：當城市把大量衣物集中到後端場域，這些衣物不再只是柔軟的舊物，而是需要倉儲、消防、物流與資金周轉的物質堆積。</p>
+<h2>快時尚讓「可再穿」變少</h2>
+<figure><img src="https://images.unsplash.com/photo-1669532673647-b1185ea1a594?fm=jpg&amp;q=70&amp;w=1200&amp;auto=format&amp;fit=crop" alt="整理與搬運中的衣物｜來源：Annie Spratt / Unsplash（Unsplash License）" loading="lazy"><figcaption>回收箱收得到更多衣服，未必代表可用資源增加；快時尚改變了衣服的品質、壽命與後端成本。</figcaption></figure>
+<p>全球趨勢正在壓縮舊衣系統。Ellen MacArthur Foundation 2017 年報告指出，過去 15 年服裝生產倍增，快時尚加速「可丟棄」的衣物觀念；該基金會也估計，若能改變衣服設計、銷售與使用方式，可捕捉約 5,000 億美元被浪費的經濟機會。¹⁵ Reuters 2023 年另一篇產業分析則引用同一系統性問題：紡織生產過去 15 年翻倍，但衣服被穿著的時間下降 40%；服裝生命終端進入新衣再製的比例不到 1%。¹⁴</p>
+<p>在台灣，環境部相關數字同樣指向「量增加、品質與去化壓力上升」。中央社 2025 年報導引述環境部統計，2024 年舊衣回收量約 8.2 萬公噸，再利用方式包括二手衣販賣 42%、降階使用 34%、作為 SRF 固體再生燃料或焚化處理 24%。¹⁰ 這組數字比「捐出去就等於被需要」更冷靜：有一部分衣服確實延長生命，但也有相當比例走向低值用途或燃燒。</p>
+<p>環境資訊中心報導則指出，台灣 2022 年回收 8.2 萬噸舊衣，其中約四成二手衣販售，近六成品質較差者不是降級做抹布、地毯，就是直接燒毀；報導並引述當時環保署說法，衣服成分複雜、傳統回收難以妥善分選，是再利用不易的主因。⁷ 這些資料彼此時間不同、分類口徑也不完全相同，本文不把它們混算為單一趨勢線；但它們共同指向同一個問題：舊衣系統的瓶頸，不是只有「有沒有人願意捐」，而是衣服本身是否耐穿、可辨識、可拆解、可再製。</p>
+<h2>世界另一端：善意出口後的陰影</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/A_market_scene_for_second_hand_clothes_at_Funsi_in_the_Upper_West_Region_of_Ghana.jpg" alt="迦納二手衣市場一景｜來源：Dnshitobu / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>二手衣市場能創造生計，也可能承受全球北方過量消費的廢棄壓力；兩件事常同時存在。</figcaption></figure>
+<p>二手衣的國際流動不是單純的善意旅程。The Guardian 2023 年在迦納的報導指出，迦納每週進口約 1,500 萬件二手衣，當地稱為 obroni wawu；Kantamanto 是全球大型二手衣市場之一，但約 40% 衣物會離開市場成為廢棄物，一部分被焚燒或進入非正式掩埋場，污染潟湖、海灘與社區。¹⁶ 這不表示所有二手衣出口都是錯的；它表示出口不能被想像成責任終點。</p>
+<p>Reuters 2023 年報導歐洲正在加速處理紡織廢棄物問題：歐盟要求會員國自 2025 年起將紡織品與其他廢棄物分流；歐洲每年約 520 萬噸衣物廢棄物中，不到四分之一被回收，數百萬噸進入掩埋。¹² Reuters 另一篇報導引述歐盟環境委員 Virginijus Sinkevičius 表示，歐盟希望到 2028 年前建立規範，使時尚公司承擔更永續生產責任，並要求企業收集一定比例的紡織廢棄物或支付地方政府收集費用；他也說初始比例「一定會高於 5%」。¹³</p>
+<p>智利的案例則顯示，二手衣進口國也開始要求責任回流。The Guardian 2025 年報導，智利將紡織品納入延伸生產者責任法的優先類別，要求進口商申報帶入國內的衣物，並以清除 Atacama 沙漠成堆衣物為政策目標；報導引述政府資料稱，智利每年進口 123,000 噸二手衣。¹⁷ 當全球南方國家要求更嚴格的進口管理，台灣、歐洲與美國等出口或消費市場不能再把「有人會收」視為理所當然。</p>
+<h2>法規正在改寫責任邊界</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Clothing_Recycling_Container.jpg" alt="衣物回收容器｜來源：Dcapillae / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>當紡織品被視為獨立廢棄物流，政策問題就不只是回收率，而是誰付分選、再用與污染成本。</figcaption></figure>
+<p>歐盟「永續與循環紡織策略」把 2030 年願景寫得很直接：進入歐盟市場的紡織品應耐用、可修補、可回收，且在很大程度上使用再生纖維；快時尚不再流行，生產者須在價值鏈中對產品負責。¹¹ 2025 年歐盟關於廢棄物框架指令修訂的新聞稿也說，會員國將建立紡織與鞋類產品的延伸生產者責任制度，讓生產者為用後與廢棄紡織品管理付費；新規也要透過清楚界定「廢棄物」與「可再使用紡織品」，處理非法出口問題。¹⁸</p>
+<p>台灣政策語言正在往同一方向移動，但路徑不同。環境部資源循環署成立紡織循環聯盟時表示，聯盟串連原料生產、品牌、百貨、回收處理、產官學研等，已有 66 個單位加入，目標包括綠色設計、循環採購、永續消費、智慧分選、再生纖維認證與產業創新。⁹ 中央社 2025 年報導則引述循環署說法，台灣已訂出循環紡織品認定方式，並設定 2026 年公私部門循環紡織品採購量至少達 10 萬件。¹⁰</p>
+<p>這些政策的共同核心是「責任前移」。過去回收箱把壓力放在末端：社福團體收、回收商分、焚化爐吞。現在若要真正循環，就必須在設計、材質、品牌回收、政府採購與消費者行為上同時改變。否則，回收箱只會越收越多，卻把更多不可用衣物送往低值化與焚化。</p>
+<h2>技術能不能救舊衣？</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/T-REC_Textile_Recycling_project.jpg" alt="T-REC 紡織回收計畫示意｜來源：Fabio Usvardi / Wikimedia Commons（CC BY-SA 3.0）" loading="lazy"><figcaption>「衣服變衣服」的前提，是先知道衣服由什麼材料構成；分選技術因此成為舊衣循環的入口。</figcaption></figure>
+<p>台灣的科技角色不是抽象的 AI 敘事，而是很具體地卡在分選。商業周刊 2025 年報導新創沛德永續以 AI 與近紅外線光譜打造衣物分選機，號稱三秒辨別棉、尼龍、壓克力、聚酯纖維、羊毛、醋酸等材質，並可依比例調整；報導引述遠東新世紀化纖總部副總經理黃全億說，台灣每年約八萬噸廢棄舊衣，傳統回收廠多按男、女、小孩、褲子、外套等用途分類，而非材質分類，因此很難讓紡織廠取得可物理回收的料源。⁸</p>
+<p>環境資訊中心較早的報導也指出，紡織產業綜合研究所與環保署、工研院合作測試智慧分選設備，可挑出 100% 聚酯纖維舊衣，每小時鑑別 1,000 件；但設備成本至少 500 萬元，因此政府曾草擬補助要點鼓勵業者轉型。⁷ 這裡的科技不是取代人的故事，而是要處理人工難以穩定完成的材質辨識。</p>
+<p>不過，技術也有邊界。若市場繼續大量生產難拆、混紡、低耐用度衣物，分選機只能在廢棄物山裡找到相對可用的一部分。若再生纖維成本高於新料，而消費者與品牌不願支付溢價，回收料仍可能停在示範階段。商周報導中，沛德創辦人劉曜達也提到，舊衣回收再製不易，本就應高值化。⁸ 這句話點破循環經濟的價格矛盾：我們期待回收品便宜，卻又希望有人支付分類、清洗、檢測、再製與履歷成本。</p>
+<h2>公益、商業與不舒服的問題</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Inside_the_second_hand_shop%2C_clothing_racks.jpg" alt="二手衣店衣架內部｜來源：MAKY.OREL / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>二手衣的美好想像，是每件衣服都有下一位主人；但現實中，只有足夠乾淨、耐用、合適的衣服才能走到這一步。</figcaption></figure>
+<p>舊衣回收箱之所以讓人願意靠近，是因為它不像一般資源回收那麼冰冷。台北市新聞稿把它稱為「環保」與「公益」雙重效益；中央社也報導，這些收益可幫助身障者與弱勢家庭。¹² 這些說法有其制度依據：回收箱設置資格與社福團體連動，收益也確實成為部分團體收入來源。但公益敘事也可能遮住不舒服的問題：如果民眾投入的是破損、潮濕、有異味、無法再用的衣物，那筆「善心」可能會變成社福團體的處理費。</p>
+<p>品牌端同樣有利益衝突。Reuters 報導中，H&amp;M 向 Reuters 表示承認自己是問題的一部分，並稱時尚生產與消費方式需要改變；Hugo Boss 則說過度生產與過度消費是全產業問題，正在用資料分析調整產量。¹² 這些企業聲明有其價值，但也必須標注為廠商說法。真正的檢驗不只在回收箱數量或永續標語，而在產品是否更耐用、產量是否下降、維修再用服務是否可負擔、以及品牌是否為後端成本付費。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 對台灣城市而言，舊衣回收箱最值得保留的地方，不是它讓我們快速清空衣櫃，而是它讓衣服重新進入公共討論：誰做了這件衣服？誰穿過？誰分類？誰承擔出口失敗、焚化、火災、污染與再製成本？如果這些問題都被一個「捐」字蓋過，回收箱就會變成安慰消費者的道具；若這些問題能被制度逐步回答，回收箱才可能成為循環生活的入口。</p>
+<h2>誰被交付這袋衣服</h2>
+<figure><img src="https://images.unsplash.com/photo-1778512377846-bc979eaba7fc?fm=jpg&amp;q=70&amp;w=1200&amp;auto=format&amp;fit=crop" alt="在衣架中選衣的手｜來源：Luba Glazunova / Unsplash（Unsplash License）" loading="lazy"><figcaption>一件衣服離開原主人後，常要經過清運、分選、修補、義賣、外銷或再製；每一步都有人承擔時間與風險。</figcaption></figure>
+<p>舊衣回收箱的公共形象，通常是一個善良而整潔的畫面：衣服被摺好、放進塑膠袋、送給下一個需要的人。但真實流程比較接近一連串判斷。清運人員要判斷箱旁是否有垃圾、是否有潮濕發霉物；分選工要在成堆衣物裡看污漬、拉鍊、毛球、破洞與材質；社福團體要面對收入波動；回收商要承擔庫存、運費、出口價格與焚化處理成本。台北市管理要點要求設置單位維持周邊三公尺整潔、處理衍生廢棄物，這正是因為「捐贈」在現場不只是一個道德詞，也是一筆管理成本。⁴</p>
+<p>這也是為什麼「什麼都可以捐」是一種危險的誤解。若衣服只是尺寸不合、款式過時，但乾淨、完整、還能穿，它可能進入義賣、外銷或二手市場；若衣服已破損、發霉、沾油、混入棉被枕頭與雜物，後端人員只能花時間把它移出回收流程。中央社報導中，環保局特別提醒非衣物類不要投入；台北市新聞稿也要求衣物乾淨、無潮濕異味、可再使用。¹² 這些規則看似瑣碎，其實是把善意從抽象口號拉回物理現場：你願不願意把自己不要的東西，整理到別人仍可尊嚴使用的程度？</p>
+<p>社福團體在此處的位置尤其微妙。它們不是單純的回收公司，也不是無限吸收城市廢物的緩衝墊。制度把舊衣箱設置資格與身心障礙福利團體、社福機構連在一起，是希望讓二手衣物流轉成收入與工作機會；可是如果衣物品質持續下降，公益管道就會被迫替快時尚與不負責任的消費習慣收尾。本文無法量化每一個團體承擔的實際成本，但從中央社、台北市政府與《報導者》的資料可見，這套系統同時有收入、就業、清運、分類與廢棄物處理多重面向。¹²⁵</p>
+<h2>回到衣櫃：城市良心從少買開始</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Clothing_Recycling_Container.jpg" alt="衣物回收容器｜來源：Dcapillae / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>最好的舊衣回收，不是把更多衣服推進箱子，而是讓更少衣服太快變成舊衣。</figcaption></figure>
+<p>對一般人來說，最可行的改變很平凡：買少一點，買耐穿一點，修補多一次，轉送前先清洗整理，確認回收箱收什麼、不收什麼。這些動作看似保守，卻比「把所有不要的東西丟進箱裡」更接近循環。Ellen MacArthur Foundation 的新紡織經濟報告強調，衣服、布料與纖維應在使用後重新進入經濟，而不是成為廢棄物；這個願景的第一步，不是更快丟棄，而是讓使用時間延長。¹⁵</p>
+<p>政策端則需要承認：回收不是免費的。台北市以三年許可、總量管理與社福資格把街角箱納入治理；環境部推紡織循環聯盟與循環採購；歐盟以延伸生產者責任要求品牌付費。這些路線未必完美，但方向一致：不能只要求末端做好人，也不能只要求消費者有道德。從設計、銷售、使用、捐贈、分選到再製，每一段都需要把成本說清楚。</p>
+<p>如果把這個問題放回家裡，最簡單的判斷標準也許是：這件衣服若不是送給陌生人，而是送給自己認識的人，我會不會先洗乾淨、摺好、確認它沒有破洞？若答案是否定的，它大概不應該被塞進舊衣箱。回收箱不是把內疚感外包的孔洞，而是讓可用物延長生命的公共設施；它需要的是比較少但品質更好的投放，而不是更多混雜、潮濕、難以再用的布料。</p>
+<p>對品牌與政府而言，下一步也不能停在宣導民眾「記得回收」。若材質標示更清楚、單一材質設計更多、維修與二手流通更方便，消費者才有可能在購買前就理解衣服的去向。若政府採購願意支持循環紡織品，若品牌回收真正付費，若回收商有能力做材質分選，街角箱子的壓力才會下降。這些制度看起來離一件 T 恤很遠，其實決定了那件 T 恤最後是被穿第二次、變成抹布、成為燃料，或重新回到紗線。</p>
+<p>一袋舊衣投進箱子的聲音很輕，輕到我們常以為責任已經離開手中。實際上，它只是換了地方：到了分選場的輸送帶、社福團體的帳本、回收商的倉庫、非洲或南美的二手市場、環境部的政策會議，或者某台近紅外線分選機的光束下。城市良心不在於箱子收了多少，而在於我們是否願意承認：每件衣服都有來處，也有去處；真正的善意，是不要把去處交給看不見的人獨自承擔。</p>
+<p>還有一個更日常的檢查方式：不要把「回收」當成購買更多的理由。若新衣的價格便宜到讓人不必思考，後端就一定有人替那份便宜付出代價，可能是製造端的勞動者，可能是回收端的分選工，也可能是進口國的海灘與排水溝。舊衣回收箱可以延緩浪費，但不能抵銷過度消費本身。它提醒我們，環保不是丟掉之後才開始，而是在付款之前、穿著期間、修補時刻與最後投放前，都已經開始。</p>
+<p>因此，下一次整理衣櫃時，真正值得問的也許不是「這袋要丟哪裡」，而是「我為什麼這麼快就不需要它」。如果答案是尺寸改變、工作需求不同、孩子長大，那回收或轉送是合理選項；如果答案只是促銷、流行、衝動與廉價，問題就已經發生在購物車裡。城市不能只靠回收箱解決時尚的速度，因為箱子只能處理結果，不能替我們重新設定欲望。舊衣回收的未來，最後仍會回到一個非常樸素的生活技術：慢一點買，好一點穿，久一點留，最後才好好交給下一段旅程。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ 中央社（2025-06-20）—〈北市舊衣回收箱年募3161噸善心 7/7開放下期申請〉
+<a href="https://www.cna.com.tw/news/aloc/202506200070.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/aloc/202506200070.aspx</a></p>
+<p class="ref">² 臺北市政府環境保護局（2025-11-01）—〈北市最新一期社福團體從事舊衣回收再利用許可 114.11.1正式上路〉
+<a href="https://www.tldep.gov.taipei/Public/News/TpeDep_Detail.aspx?SN=9495590" rel="noopener" target="_blank">https://www.tldep.gov.taipei/Public/News/TpeDep_Detail.aspx?SN=9495590</a></p>
+<p class="ref">³ 臺北市資料大平臺（更新時間 2026-02-06）—〈臺北市社會福利團體(機構)設置舊衣回收設施據點〉
+<a href="https://data.taipei/dataset/detail?id=33de0950-24df-463d-b199-da3fbf612ef1" rel="noopener" target="_blank">https://data.taipei/dataset/detail?id=33de0950-24df-463d-b199-da3fbf612ef1</a></p>
+<p class="ref">⁴ 臺北市法規查詢系統—〈臺北市社會福利團體從事舊衣回收再利用管理要點〉
+<a href="https://www.laws.taipei.gov.tw/Law/LawSearch/LawArticleContent/FL015774" rel="noopener" target="_blank">https://www.laws.taipei.gov.tw/Law/LawSearch/LawArticleContent/FL015774</a></p>
+<p class="ref">⁵ 報導者（2022-02-14）—〈從遠征非洲到坐困「綢」城：舊衣回收產業，窮途中如何找路？〉
+<a href="https://www.twreporter.org/a/taiwan-clothes-recycling-1" rel="noopener" target="_blank">https://www.twreporter.org/a/taiwan-clothes-recycling-1</a></p>
+<p class="ref">⁶ 自由時報（2026-03-01）—〈舊衣回收2-1》「Taiwan King」吳基正 從整理轉售到轉化再生材料〉
+<a href="https://news.ltn.com.tw/news/NewTaipei/breakingnews/5354747" rel="noopener" target="_blank">https://news.ltn.com.tw/news/NewTaipei/breakingnews/5354747</a></p>
+<p class="ref">⁷ 環境資訊中心—〈實現「衣服變衣服」循環鏈 環保署擬補助舊衣回收廠智慧化〉
+<a href="https://e-info.org.tw/node/237394" rel="noopener" target="_blank">https://e-info.org.tw/node/237394</a></p>
+<p class="ref">⁸ 商業周刊（2025-03-27）—〈一台AI「X光機」3秒分類材質，它為台灣每年8萬噸舊衣拚重生〉
+<a href="https://www.businessweekly.com.tw/Archive/Article/Index?StrId=7012087" rel="noopener" target="_blank">https://www.businessweekly.com.tw/Archive/Article/Index?StrId=7012087</a></p>
+<p class="ref">⁹ 環境部資源循環署—〈紡織循環聯盟成立！織出永續未來！〉
+<a href="https://enews.moenv.gov.tw/page/3b3c62c78849f32f/d949ec2f-b25f-4e54-aa33-ef01c01d7aa7" rel="noopener" target="_blank">https://enews.moenv.gov.tw/page/3b3c62c78849f32f/d949ec2f-b25f-4e54-aa33-ef01c01d7aa7</a></p>
+<p class="ref">¹⁰ 中央社（2025-10-10）—〈環境部促紡織品循環採購 115年目標10萬件〉
+<a href="https://www.cna.com.tw/news/ahel/202510100056.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/ahel/202510100056.aspx</a></p>
+<p class="ref">¹¹ European Commission—“Sustainable and Circular Textiles Strategy”
+<a href="https://environment.ec.europa.eu/strategy/textiles-strategy_en" rel="noopener" target="_blank">https://environment.ec.europa.eu/strategy/textiles-strategy_en</a></p>
+<p class="ref">¹² Reuters（2023-09-01）— “Fast fashion firms prepare for EU crackdown on waste mountain”
+<a href="https://www.reuters.com/business/retail-consumer/fast-fashion-firms-prepare-eu-crackdown-waste-mountain-2023-09-01/" rel="noopener" target="_blank">https://www.reuters.com/business/retail-consumer/fast-fashion-firms-prepare-eu-crackdown-waste-mountain-2023-09-01/</a></p>
+<p class="ref">¹³ Reuters（2023-06-27）— “EU wants all textile waste rules in place by 2028, commissioner says”
+<a href="https://www.reuters.com/sustainability/eu-wants-all-textile-waste-rules-place-by-2028-commissioner-2023-06-27/" rel="noopener" target="_blank">https://www.reuters.com/sustainability/eu-wants-all-textile-waste-rules-place-by-2028-commissioner-2023-06-27/</a></p>
+<p class="ref">¹⁴ Reuters（2023-08-09）— “Resale is all the rage, but fashion brands not making a dent in unsustainable levels of waste”
+<a href="https://www.reuters.com/sustainability/climate-energy/resale-is-all-rage-fashion-brands-not-making-dent-unsustainable-levels-waste-2023-08-09/" rel="noopener" target="_blank">https://www.reuters.com/sustainability/climate-energy/resale-is-all-rage-fashion-brands-not-making-dent-unsustainable-levels-waste-2023-08-09/</a></p>
+<p class="ref">¹⁵ Ellen MacArthur Foundation（2017-11-28）— “A New Textiles Economy: Redesigning Fashion's Future”
+<a href="https://www.ellenmacarthurfoundation.org/a-new-textiles-economy" rel="noopener" target="_blank">https://www.ellenmacarthurfoundation.org/a-new-textiles-economy</a></p>
+<p class="ref">¹⁶ The Guardian（2023-06-05）— “‘It’s like a death pit’: how Ghana became fast fashion’s dumping ground”
+<a href="https://www.theguardian.com/global-development/2023/jun/05/yvette-yaa-konadu-tetteh-how-ghana-became-fast-fashions-dumping-ground" rel="noopener" target="_blank">https://www.theguardian.com/global-development/2023/jun/05/yvette-yaa-konadu-tetteh-how-ghana-became-fast-fashions-dumping-ground</a></p>
+<p class="ref">¹⁷ The Guardian（2025-06-26）— “Chile targets fast fashion waste with landmark desert cleanup plan”
+<a href="https://www.theguardian.com/world/2025/jun/26/chile-fast-fashion-waste-atacama-desert" rel="noopener" target="_blank">https://www.theguardian.com/world/2025/jun/26/chile-fast-fashion-waste-atacama-desert</a></p>
+<p class="ref">¹⁸ European Commission（2025-02-18）— “Commission welcomes provisional agreement to enhance the circularity of textiles and reduce food waste”
+<a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_25_548" rel="noopener" target="_blank">https://ec.europa.eu/commission/presscorner/detail/en/ip_25_548</a></p>
+<p class="ref">¹⁹ Taipei City Government Citizen Services—〈臺北市社會福利團體(機構)設置舊衣回收設施申請〉
+<a href="https://service.taipei/case-detail/AM030" rel="noopener" target="_blank">https://service.taipei/case-detail/AM030</a></p>
+<p class="ref">²⁰ 知新聞（2026-04-13）—〈北台最大舊衣回收廠燒毀！「久泰環保」月收500噸外銷 老闆咬牙苦撐心血全沒了〉
+<a href="https://www.knews.com.tw/news/3AD27456A019D65BBC6090B46FF3F43D" rel="noopener" target="_blank">https://www.knews.com.tw/news/3AD27456A019D65BBC6090B46FF3F43D</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
