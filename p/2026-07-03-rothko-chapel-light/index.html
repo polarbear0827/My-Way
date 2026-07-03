@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>黑色教堂的光 · 穗稻忠武的專欄</title>
+<meta name="description" content="這不是一座用彩色玻璃、祭壇與敘事壁畫說話的教堂。休士頓蒙特羅斯街區的魯斯科教堂（Rothko Chapel）外表近乎沉默：八角形磚牆、低矮入口、池水裡倒映著巴奈特・紐曼（Barnett Newman）的《破碎方尖碑》。走進室內，十四幅馬克・魯斯科（Mark Rothko）的深色畫布環繞觀者；它們不是圖像，不…">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-03-rothko-chapel-light/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黑色教堂的光">
+<meta property="og:description" content="這不是一座用彩色玻璃、祭壇與敘事壁畫說話的教堂。休士頓蒙特羅斯街區的魯斯科教堂（Rothko Chapel）外表近乎沉默：八角形磚牆、低矮入口、池水裡倒映著巴奈特・紐曼（Barnett Newman）的《破碎方尖碑》。走進室內，十四幅馬克・魯斯科（Mark Rothko）的深色畫布環繞觀者；它們不是圖像，不…">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-03-rothko-chapel-light/">
+<meta property="og:image" content="https://rothkochapel.org/assets/hero/brick_and_branch.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "黑色教堂的光", "description": "這不是一座用彩色玻璃、祭壇與敘事壁畫說話的教堂。休士頓蒙特羅斯街區的魯斯科教堂（Rothko Chapel）外表近乎沉默：八角形磚牆、低矮入口、池水裡倒映著巴奈特・紐曼（Barnett Newman）的《破碎方尖碑》。走進室內，十四幅馬克・魯斯科（Mark Rothko）的深色畫布環繞觀者；它們不是圖像，不…", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-03-rothko-chapel-light/", "datePublished": "2026-07-03", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://rothkochapel.org/assets/hero/brick_and_branch.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">藝術</span><span class="tag">專欄</span></div>
+<h1>黑色教堂的光</h1>
+<p class="byline"><time>2026-07-03</time></p>
+</div>
+
+<p class="lead">這不是一座用彩色玻璃、祭壇與敘事壁畫說話的教堂。休士頓蒙特羅斯街區的魯斯科教堂（Rothko Chapel）外表近乎沉默：八角形磚牆、低矮入口、池水裡倒映著巴奈特・紐曼（Barnett Newman）的《破碎方尖碑》。走進室內，十四幅馬克・魯斯科（Mark Rothko）的深色畫布環繞觀者；它們不是圖像，不講故事，卻把光線、時間、呼吸與不安變成觀看的一部分。¹²</p>
+<p>這篇文章討論的不是「黑色畫為什麼有名」這個簡化問題，而是一個更慢的問題：當一組抽象繪畫被建築、宗教改革、人權運動、修復科技與颶風共同包圍時，它如何從藝術家的最後大型委託，變成半個世紀後仍需要被重新照亮、重新保護的公共空間。本文依照官方檔案、博物館資料、建築與藝術媒體報導交叉整理；涉及「是否更接近魯斯科原意」的部分，將標明為不同來源的解讀，而非定論。³⁴</p>
+<figure><img src="https://rothkochapel.org/assets/hero/brick_and_branch.jpg" alt="魯斯科教堂磚牆與樹影｜來源：Rothko Chapel 官方網站" loading="lazy"><figcaption>教堂外牆的樹影讓這座建築顯得近乎日常；但進入室內後，日常光線會轉為觀看十四幅深色畫布的條件。</figcaption></figure>
+<h2>一座不像教堂的教堂</h2>
+<p>魯斯科教堂於 1971 年開放，官方時間線稱它是「現代神聖藝術的地標」與沉思庇護所；Rothko Chapel 的介紹頁則說，這裡同時是精神空間、世界領袖論壇、獨處與集會之地，每年約有十萬名不同信仰背景的訪客前來。¹² 這個自我定位很重要，因為它從一開始就拒絕把「神聖」交給單一宗教語言。教堂使命寫著：管理一處反思空間，並以促進精神性、創造力、對話與行動的節目，帶向更公平、更有能動性的社群。² 現場的結構也把這個定位具體化。根據 Texas State Historical Association，教堂位於休士頓 Yupon Street 與 Sul Ross 一帶，由多明尼克與約翰・德梅尼爾（Dominique and John de Menil）委託，原本曾與聖湯瑪斯大學校園計畫相連，後來成為獨立項目；建物無窗，八角平面中排列十四幅魯斯科畫作，北、東、西牆各有三聯畫，南牆為單幅，其餘四幅位於對角軸線。⁴ 這些畫以深棕、紫紅、黑色為主，讓宗教圖像從人物故事退到近乎不可名狀的色域。</p>
+<p>因此，這座教堂的第一個矛盾是：它看似撤走了宗教敘事，卻沒有撤走宗教性的重量。德梅尼爾夫人曾在啟用典禮上形容，魯斯科工作時顏色愈來愈暗，彷彿把觀者帶到超越、宇宙神祕與人類可朽條件的門檻。¹ 這句話不是中立描述，而是創辦人的詮釋；但它提醒我們，教堂從起點就被設計成一種「沒有固定圖像的神聖經驗」。</p>
+<figure><img src="https://rothkochapel.org/assets/timeline/1971.jpg" alt="1971 年魯斯科教堂開放相關影像｜來源：Rothko Chapel 官方時間線" loading="lazy"><figcaption>官方時間線把 1971 年標為教堂開放之年；這個時點也使魯斯科未能親眼看見完工建築的事實更具重量。</figcaption></figure>
+<h2>從德梅尼爾夫婦到現代宗教藝術</h2>
+<p>魯斯科教堂不是孤立誕生。官方時間線把兩個法國戰後宗教建築列在前史：1951 年馬諦斯在旺斯的玫瑰經禮拜堂，1955 年勒・柯比意在 Ronchamp 的 Notre-Dame du Haut；同一條線還標出 1962 至 1965 年第二次梵蒂岡大公會議。¹ Rothko Chapel 介紹頁進一步說，德梅尼爾夫婦受到全球普世教會運動、梵二以及法國把現代藝術與建築帶入敬拜場所的努力影響。² 這些背景讓「抽象畫放進教堂」不只是富人收藏家的奇想。德梅尼爾夫婦是休士頓重要藝術贊助者，也創立了鄰近的 Menil Collection；他們在 1964 年委託魯斯科，希望創造一個休士頓的神聖空間。¹² Menil Archives 的館藏說明顯示，相關檔案涵蓋 1964 至 2003 年，包括開幕、營運、與 Mark Rothko Foundation 的通信、保存與翻修報告、Barnett Newman《破碎方尖碑》資料、人權獎項、曼德拉與達賴喇嘛到訪等紀錄。³ 也就是說，這不是一件作品的孤立保存，而是一整套藝術、機構、宗教與人權網絡。 德梅尼爾夫婦的想像裡，現代藝術不是公共生活的裝飾，而是倫理場所。Rothko Chapel 官方頁面指出，《破碎方尖碑》獻給馬丁・路德・金恩；關於它如何來到教堂，也有一段爭議史：1969 年德梅尼爾夫婦曾提出協助休士頓市購入此作並放在市政廳附近，條件是獻給被刺殺的金恩；市府接受購買提議，卻拒絕奉獻文字，德梅尼爾夫婦撤回，最後自行購買並安置於教堂前。² 這段歷史讓教堂的「沉思」不等於退出政治，而是把沉思放在行動的門口。</p>
+<figure><img src="https://rothkochapel.org/assets/timeline/1991.jpg" alt="魯斯科教堂前的公共活動記憶｜來源：Rothko Chapel 官方時間線" loading="lazy"><figcaption>教堂長期承載人權與公共對話，並非只是一間安靜展室；藝術與行動在這裡共用同一座場域。</figcaption></figure>
+<h2>魯斯科為何不是只在畫顏色</h2>
+<p>要理解教堂，就不能把魯斯科簡化成「畫彩色矩形的人」。MoMA 的藝術家頁引用魯斯科自己的說法：「我只對表達基本人類情感有興趣——悲劇、狂喜、厄運等等。」MoMA 也指出，若觀者只被色彩關係打動，就錯過了重點；對魯斯科而言，藝術是深層溝通，創作是一種道德行為。⁶ 這種自我理解解釋了為什麼他對展示環境如此在意。 National Gallery of Art 的傳記則提供了形式演變的路徑：魯斯科 1903 年生於當時俄羅斯帝國的 Dvinsk，十歲移民美國；早期畫風包含風景、裸體、肖像與城市場景，1930 年代與「The Ten」等團體相關，1940 年代受到神話、原始藝術、基督教悲劇與超現實主義影響；到 1947 年左右，他逐漸去除神話與超現實元素，三年內發展出後來為人熟知的柔邊矩形與色域結構。⁷ NGA 另一篇介紹指出，1949 年魯斯科已確立垂直排列柔邊矩形於單色背景上的格式；但即使更抽象，他仍堅持作品關於人類經驗本質，而非只有形式。⁸ Tate 的藝術家頁也把他的後期大型委託列成三條線：Seagram 壁畫、Harvard 壁畫，以及休士頓的魯斯科教堂十四幅畫。⁹ 其中 Seagram 壁畫原本要放在紐約 Four Seasons 餐廳，後來魯斯科撤回委託、退還費用；這段故事常被用來說明，他不願作品成為富裕餐廳的裝飾。⁸⁹ 因此，魯斯科教堂可被看作他對展示環境執念的終點。Rothko Chapel 官方頁說，德梅尼爾夫婦受到他 1950 年代 Four Seasons Hotel 作品啟發而委託教堂；他在兩年多實驗後，於 1967 年完成十四幅畫：七幅為栗色地上的硬邊黑矩形，七幅為紫色調性畫作；自然光對他很重要，因為它應能呈現色彩的細微差異。²</p>
+<figure><img src="https://rothkochapel.org/assets/timeline/1964.jpg" alt="1964 年委託脈絡影像｜來源：Rothko Chapel 官方時間線" loading="lazy"><figcaption>德梅尼爾夫婦 1964 年委託魯斯科，讓這組作品從一開始就不是可任意移動的單件畫作，而是被想像為整體空間。</figcaption></figure>
+<h2>十四幅深色畫布的空間劇場</h2>
+<p>教堂內部最常被誤解的地方，是把暗色等同於單一情緒。TSHA 引用藝術史家 Robert Rosenblum 的說法，這些作品像是西方宗教藝術的敘事複雜性與肉身形象被抽空，只留下黑暗而迫人的臨在，迫使觀者面對「一切與虛無」的選擇。⁴ 這是評論，不是測量結果；但它準確指出：魯斯科教堂的觀看不是辨識圖像，而是在空間裡被低對比、慢變化、幾乎不可立即掌握的畫面包圍。 建築也在強化這種緩慢。十四幅畫不是博物館牆上彼此競爭的單件作品，而是由八角形平面控制的環境。Menil Archives 指出，教堂由 Philip Johnson 參與設計，後由 Howard Barnstone 與 Eugene Aubry 完成；檔案也收有 1971 至 1981 年教堂畫作與《破碎方尖碑》的安裝照片。³ Architectural Record 在 2020 年修復報導中概括，Philip Johnson 工作至 1967 年，之後由休士頓建築師 Barnstone 與 Aubry 完成，教堂 1971 年完工，隔年是魯斯科去世後一年。¹¹ 這裡的「現地性」也意味著脆弱。畫作為空間而生，空間也為畫作而生；一旦光線、濕度、牆體、天窗或人流出問題，作品本身就被牽動。這也是為什麼魯斯科教堂的歷史，不只是藝術史，也是維護史。NYT 2000 年報導提到，教堂早期曾有照明、濕度、漏水、地基與牆裂等問題；其中最大畫作曾因尺寸太大而無法從門口移出處理，最初安裝時甚至是由吊車經天窗放入。¹⁹ 這類細節讓「沉思空間」回到非常物質的現實：畫布、牆、濕度、雨水、重力，都會進入藝術史。</p>
+<figure><img src="https://www.aro.net/wp-content/uploads/2020/09/Rothko-Chapel_01-1410x793.jpg" alt="修復後的魯斯科教堂南校園與廣場｜來源：Architecture Research Office" loading="lazy"><figcaption>ARO 的修復與擴建把教堂、廣場與新校園重新串接，試圖讓沉思空間與公共任務各有位置。</figcaption></figure>
+<h2>最難修復的不是牆，而是光</h2>
+<p>魯斯科教堂半世紀裡最持續的問題，是光。The New York Times 2019 年報導說，教堂因第一階段 3,000 萬美元修復與校園擴建而關閉；工程將替換天花裝置，加入新天窗與數位照明系統，使魯斯科十四幅黑色巨幅畫布第一次在白天有柔和自然光、夜間有均勻照明。¹⁰ 報導也指出，魯斯科在紐約東 69 街馬車房工作室的天窗下創作，會拉動降落傘調節光線；他要求教堂有類似天窗，但未真正面對休士頓強烈日照，且他 1970 年去世前從未見到完工建物。¹⁰</p>
+<p>The Art Newspaper 同年報導補足了保護角度：德州陽光過亮，可能使紫與黑的巨幅畫布褪色；多年來管理者在天窗下裝了傘狀擋板，雖然降低光線，卻也被視為入侵沉思空間的裝置。¹⁴ Smithsonian 轉述同一脈絡，指出天窗幾乎從開放第一天起就必須被遮蔽，以保護畫作不褪色；修復計畫希望用特殊玻璃、鋁製百葉與夜間投影照明，接近魯斯科在工作室裡喜愛的光線。¹⁸ 但是，「接近原意」不是簡單答案。Texas Monthly 2020 年的評論性報導提醒，參與者稱工程為 restoration 而非 renovation，因為目標是實現魯斯科原本未被充分執行的意圖；但文章也指出，休士頓光線與紐約工作室光線的差異，早在 Philip Johnson 理解德州陽光時就已構成矛盾。²⁰ 也就是說，修復不是回到一個從未真正存在過的純粹過去，而是在檔案、材料、保護、當代技術與詮釋之間作判斷。</p>
+<figure><img src="https://www.aro.net/wp-content/uploads/2020/09/Rothko-Chapel_08-1410x793.jpg" alt="魯斯科教堂修復後的空間序列｜來源：Architecture Research Office" loading="lazy"><figcaption>光線、入口與動線的調整，是為了讓觀者在真正面對畫作前，先被空間速度放慢。</figcaption></figure>
+<h2>2020 年修復：把阻礙移開</h2>
+<p>2020 年重新開放後，多個建築媒體把焦點放在「減少干擾」。Architectural Record 報導說，ARO 自 2016 年起與 Nelson Byrd Woltz Landscape Architects、George Sexton Associates 合作，3,000 萬美元計畫包含歡迎屋、能源屋、後續公共節目中心、檔案與行政空間等；最具轉變性的工作，是完全替換中央大天窗，利用鋁製百葉引導日光至畫作上方牆面，夜間與低光環境則以光電控制 LED 系統提供類似漫射光。¹¹ Architectural Digest 也描述，ARO 與 George Sexton Associates 安裝的新天窗受魯斯科紐約工作室啟發，以百葉與夾層玻璃傳遞光線、保護作品；ARO 建築師 Adam Yarinsky 說，過去厚重擋板像與教堂競爭，Stephen Cassell 則說他們做的很多事是在移除阻礙。¹³ ARO 自己的專案頁同樣把任務分成兩層：恢復觀者在十四幅魯斯科巨幅畫前的敬畏感，並擴張校園以支援社會行動使命；新增北校園、歡迎屋、能源屋與未來節目中心，意在讓教堂本身更少被活動設備打擾。¹² National Trust 的報導則把保存工程說得更具體：ARO 修補磚牆裂縫、更換破裂內角磚、重整照明、加裝可收納防洪門，並把機械設備、非歷史玻璃隔間與前台移到新的 Welcome House，盡量移除妨礙藝術經驗的物件。¹⁷ 這些不是美學小修，而是把「讓觀者專注於畫」落實到消防、排水、動線、聲學與機械系統。 不過，修復過程也暴露建築本身的年代限制。Architectural Record 2019 年另一篇報導指出，工程期間發現教堂約 25 英尺高的混凝土砌塊牆原本沒有鋼筋補強，這在 1970 年代可接受，但若今日新建，休士頓法規會要求鋼筋以承受每小時 130 英里的側向風載；補強增加約 110 萬美元成本並延後重開。¹⁶ 這裡的重點不是責備原設計，而是現代主義建築進入氣候風險時代後，必須接受新的安全尺度。</p>
+<figure><img src="https://www.aro.net/wp-content/uploads/2020/09/Rothko-Chapel_09-1410x793.jpg" alt="魯斯科教堂新校園設計示意｜來源：Architecture Research Office" loading="lazy"><figcaption>把公共節目移向新校園，是回應「活動是否打擾沉思」這個長期張力的一種制度設計。</figcaption></figure>
+<h2>人權、沉思與「太多活動」的張力</h2>
+<p>魯斯科教堂的獨特之處，在於它不只保護藝術品，也主持公共議題。Menil Archives 的檔案涵蓋人權獎、宗教與學術座談、曼德拉與達賴喇嘛來訪資料；官方時間線記錄 1981 年「Truth and Freedom」獎、1986 年 Desmond Tutu 到訪、1991 年 Nelson Mandela 在此接受 Carter-Menil Award 等事件。¹³ 這些活動讓教堂成為全球人權網絡的一個小節點。 但這也帶來空間使用的張力。The Art Newspaper 2019 年報導中，Christopher Rothko 說教堂承載了太多活動，常為了節目搬入長椅、舞台、喇叭；對於遠道而來、幾乎像朝聖般想觀看教堂的人而言，安靜沉思空間可能突然變成活動場地。¹⁴ 這不是反對公共行動，而是指出一座把「內在沉思」與「外在行動」都列為使命的機構，必須持續分配空間與時間。 2020 年校園擴張正是對這個張力的制度回應。ARO 說，新的 Program Center 支援公共節目，降低活動使用教堂本體的頻率，強化訪客經驗；北校園的公共庭院與透明牆面則把公共活動移向外部世界。¹² Architectural Record 也說，修復與擴建讓公眾能更深入參與教堂推進藝術、文化、社會正義與人權的使命。¹¹ <strong>（以下為本文分析，非事實陳述）</strong> 魯斯科教堂真正困難之處，正在於它不是白盒子美術館，也不是只供禮拜的宗教空間；它必須讓一個人安靜地坐在黑色畫布前，也必須讓一群人討論戰爭、族群、信仰與自由。</p>
+<figure><img src="https://media.architecturaldigest.com/photos/5f6903e60f4f763d718f2f42/16:9/w_1280,c_limit/200625_3514%20%281%29.jpg" alt="修復後天窗與室內光線｜來源：Architectural Digest / Elizabeth Felicella" loading="lazy"><figcaption>天窗不是單純讓室內更亮；它關係到深色畫布能否在保護條件下被慢慢看見。</figcaption></figure>
+<h2>颶風之後：現地作品的氣候風險</h2>
+<p>如果 2020 年修復把問題集中在「如何看見」，2024 年 Hurricane Beryl 則把問題推向「如何存活」。The Art Newspaper 2024 年 8 月報導，魯斯科教堂因 Beryl 造成的損害無限期關閉；當時報導稱三幅魯斯科畫作受影響，天花板與多面牆也受損，教堂聘請 Whitten &amp; Proctor Fine Art Conservation 評估。¹⁵ 同年 12 月，The Art Newspaper 更新說教堂將於 12 月 17 日重新對外開放；四幅受損魯斯科面板被移至館外，由保存公司修復，建築天花板與牆面則已修復。²¹ 官方 2024 年 12 月新聞稿提供更完整版本：Beryl 帶來異常強降雨與強風，導致屋頂漏水，部分天花板與牆面水損，四幅魯斯科面板受到不同程度影響；受損面板正在館外仔細修復，完成後才會回到教堂。²² Houston Public Media 2025 年報導進一步指出，四幅受損面板包括東牆三聯畫全部；風暴碎屑堵住排水管，使水回灌到屋頂，再從東側內牆的小開口流入，損害 1964 至 1967 年創作的現地作品。²³ 這個事件改變了觀看魯斯科教堂的時間尺度。過去人們談它，多半談抽象表現主義、神聖空間、光線修復與德梅尼爾夫婦；Beryl 之後，教堂也成為氣候風險中的文化資產案例。Houston Public Media 引述 David Leslie 說，這筆保存補助來到關鍵時刻，不只對魯斯科教堂，也關乎極端天氣日益增加時的脆弱性；保存程序需要大量時間、特殊材料與專業技術支援，才能穩定並修復作品。²³ <strong>（以下為本文分析，非事實陳述）</strong> 魯斯科教堂的弔詭在於，它追求的是近乎無時間的沉思感，卻被非常當代的時間所追趕：保險、排水、颶風、修復經費、氣候變遷。當一組作品被固定在某個空間，它不只是「不能輕易移動」；它也把那個地方的每一次風暴、每一次基礎設施失效，都變成藝術保存的一部分。</p>
+<figure><img src="https://cdn.savingplaces.org/2021/01/15/08/52/06/941/Rothko_edited.jpg" alt="修復後魯斯科教堂室內｜來源：National Trust for Historic Preservation / Elizabeth Felicella" loading="lazy"><figcaption>保存工程讓教堂更接近設計者與藝術家構想的觀看條件，也暴露現地作品對建築維護的依賴。</figcaption></figure>
+<h2>黑暗不是結論，而是觀看方法</h2>
+<p>魯斯科教堂經常被說成「陰鬱」或「黑暗」，這些詞並非全錯，卻容易遮蔽作品真正要求的時間。NGA 的介紹提醒，觀者常把魯斯科晚期深色作品與他的健康惡化、憂鬱、自殺相連，但同一時期也有較柔和的紙上作品；藝術家的生命當然不能完全切離作品，卻也不能把作品簡化為病理註解。⁸ NYT 2000 年報導也提到，修復與研究曾推動學者改變「暗色畫只是憂鬱證據」的常見看法。¹⁹ 這是本文最想保留的平衡：魯斯科的死亡是真實歷史，教堂的黑色也是真實視覺經驗；但把兩者直線相連，會讓觀者錯過作品在空間裡慢慢發生的細節。MoMA 引述魯斯科談悲劇、狂喜與厄運，不是在鼓勵觀者只看見悲劇，而是在說抽象可以承載基本情感的複數性。⁶ Rothko Chapel 官方頁說，自然光對畫作很重要，因為它顯示色彩微差；這句話也意味著，黑暗不是空無，而是一種要求眼睛放慢的條件。² 在這個意義上，2020 年修復與 2024 年風災不是旁支新聞，而是作品命運的一部分。修復者移除擋板、重作天窗、把設備遷出、加強牆體與防洪；保存者把受水損畫布送往館外，等待技術與時間。¹¹¹²¹⁷²³ 對讀者而言，魯斯科教堂的今日意義也許不在於它是否「更接近原作」，因為原作本身從未脫離環境；它更像一個提醒：有些藝術不是讓我們快速理解，而是讓我們在光線不足處停留，直到眼睛承認自己還沒看完。</p>
+<figure><img src="https://th-thumbnailer.cdn-si-edu.com/FJ8dtrbKhl6ZULxhgUnvhLfEEuE=/1280x720/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/a9/65/a96511e5-3123-41f8-a378-a7a0315f217f/rothko.jpg" alt="魯斯科教堂修復示意圖｜來源：Smithsonian Magazine / Architecture Research Office" loading="lazy"><figcaption>這張修復視覺化圖像說明：半世紀後，魯斯科教堂的問題仍集中在如何讓光線進入而不傷害作品。</figcaption></figure>
+<h2>觀看者坐下以後</h2>
+<p>魯斯科教堂也迫使我們重新思考「參觀」這個動作。多數美術館的觀看路徑，是在作品、標籤、下一件作品之間移動；但這座教堂的空間邏輯更接近停留。觀者一旦坐下，眼睛會先覺得太暗，接著才慢慢分辨畫面中的紫、栗、黑、邊界與筆觸。這種遲緩不是缺陷，而是作品與建築共同設下的條件。MoMA 引述魯斯科說，他關心的是悲劇、狂喜、厄運等基本情感；若只看色彩關係，便錯過要點。⁶ 在教堂裡，這句話不再像藝術家宣言，而變成一種身體經驗：你必須把觀看速度降到接近呼吸。</p>
+<p>這也解釋了為什麼光線工程會被寫進藝術史。若燈太亮，深色畫布變成被剖開的表面；若光太暗，作品又被誤解為一片沒有層次的黑。Architectural Record 形容，要真正理解教堂作品的黑暗，需要「剛剛好的光」；這句話看似簡單，卻牽涉天窗、百葉、投影、牆面反射、觀者瞳孔與保存劑量。¹¹ Smithsonian 的報導也指出，修復者試圖模擬魯斯科在紐約工作室喜歡的光線，而不是單純讓畫「更亮」。¹⁸ 因此，魯斯科教堂的修復倫理，不是把藝術品變得清楚可拍照，而是讓它保留抵抗快速消費的能力。 教堂同時也把觀者放進一個不穩定的共同體。坐在室內的人可能是藝術朝聖者、宗教人士、觀光客、休士頓居民、正在尋找安靜的人，或剛參與人權活動的人。官方說它歡迎不同信仰與非信仰者，TSHA 也記錄此處曾容納貴格會、猶太教、穆斯林、天主教、印度教、佛教等儀式與會面。²⁴ 這種開放性讓教堂不屬於單一教義，卻也讓它必須承受多種期待。有人希望它絕對安靜，有人希望它繼續發聲；有人只想看畫，有人把畫前的沉默視為行動前的準備。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 這也許是魯斯科教堂在今日仍值得討論的原因：它沒有給出一套可複製的藝術空間公式，而是保存了一個不容易被解決的問題。現代藝術能否承擔精神性而不落入宗教宣傳？公共機構能否談人權而不把作品變成活動背景？修復能否尊重原意，同時承認原意從未完整落地？這些問題沒有單一答案；但在那間暗室裡，它們以非常具體的形式存在：一盞燈、一面牆、一張椅子、一幅還在修復中的畫。 還有一個容易被忽略的面向，是翻譯。魯斯科教堂在中文語境裡常被介紹為「抽象表現主義聖地」或「冥想空間」，這些說法有用，卻可能太快把它變成旅遊清單。若依照檔案與修復史重看，它更像一個由多個動詞支撐的場所：委託、繪製、建造、遮光、修補、討論、關閉、重開、再保存。這些動詞讓作品從藝術市場的名作敘事回到日常維護，也讓觀者理解：所謂神聖感並非天然存在，而是由許多人在半世紀裡反覆調整條件，讓沉默可以繼續發生。</p>
+<p>因此，這篇文章最後不把魯斯科教堂稱為「答案」。它比較像一個精心保存的提問裝置：一位藝術家想控制觀看條件，兩位贊助者想讓現代藝術進入精神與社會生活，建築師與修復者則在多年後處理當初想像沒有預見的陽光、牆體與風暴。若觀者在那裡感到不確定，這種不確定也許正是作品仍然有效的證據。</p>
+<p>對遠端讀者而言，這座教堂或許只是一組照片；對現場觀者而言，它是一段被迫放慢的時間。這種差異也是文章必須保留的限制：任何文字都只能描述條件，不能替代那種在暗處等待圖像浮現的經驗。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ Rothko Chapel（無日期）— “Timeline”
+<a href="https://www.rothkochapel.org/learn/timeline/" rel="noopener" target="_blank">https://www.rothkochapel.org/learn/timeline/</a></p>
+<p class="ref">² Rothko Chapel（無日期）— “About”
+<a href="https://rothkochapel.org/index.php/learn/about/" rel="noopener" target="_blank">https://rothkochapel.org/index.php/learn/about/</a></p>
+<p class="ref">³ The Menil Archives（無日期）— “Rothko Chapel Records”
+<a href="https://archives.menil.org/repositories/2/resources/108" rel="noopener" target="_blank">https://archives.menil.org/repositories/2/resources/108</a></p>
+<p class="ref">⁴ Texas State Historical Association（2017-02-19 修訂）— “Rothko Chapel”
+<a href="https://www.tshaonline.org/handbook/entries/rothko-chapel" rel="noopener" target="_blank">https://www.tshaonline.org/handbook/entries/rothko-chapel</a></p>
+<p class="ref">⁵ National Park Service（2000-08-16）— “Rothko Chapel, National Register Digital Assets”
+<a href="https://npgallery.nps.gov/AssetDetail/NRIS/00000883" rel="noopener" target="_blank">https://npgallery.nps.gov/AssetDetail/NRIS/00000883</a></p>
+<p class="ref">⁶ MoMA（無日期）— “Mark Rothko”
+<a href="https://www.moma.org/artists/5047" rel="noopener" target="_blank">https://www.moma.org/artists/5047</a></p>
+<p class="ref">⁷ National Gallery of Art（無日期）— “Mark Rothko: Artist Info”
+<a href="https://www.nga.gov/collection/artist-info.1839.html" rel="noopener" target="_blank">https://www.nga.gov/collection/artist-info.1839.html</a></p>
+<p class="ref">⁸ National Gallery of Art（2023-09-29）— “Who Is Mark Rothko? 9 Things to Know”
+<a href="https://www.nga.gov/stories/articles/who-mark-rothko-9-things-know" rel="noopener" target="_blank">https://www.nga.gov/stories/articles/who-mark-rothko-9-things-know</a></p>
+<p class="ref">⁹ Tate（無日期）— “Mark Rothko 1903–1970”
+<a href="https://www.tate.org.uk/art/artists/mark-rothko-1875" rel="noopener" target="_blank">https://www.tate.org.uk/art/artists/mark-rothko-1875</a></p>
+<p class="ref">¹⁰ The New York Times（2019-02-27）— “Rothko Chapel to Be Seen in New Light”
+<a href="https://www.nytimes.com/2019/02/27/arts/design/rothko-chapel-renovation.html" rel="noopener" target="_blank">https://www.nytimes.com/2019/02/27/arts/design/rothko-chapel-renovation.html</a></p>
+<p class="ref">¹¹ Architectural Record（2020-09-30）— “Renovated Rothko Chapel Reopens in Houston”
+<a href="https://www.architecturalrecord.com/articles/14817-renovated-rothko-chapel-reopens-in-houston" rel="noopener" target="_blank">https://www.architecturalrecord.com/articles/14817-renovated-rothko-chapel-reopens-in-houston</a></p>
+<p class="ref">¹² Architecture Research Office（2020-09-16）— “A New Campus for the Rothko Chapel”
+<a href="https://www.aro.net/rothko-chapel/" rel="noopener" target="_blank">https://www.aro.net/rothko-chapel/</a></p>
+<p class="ref">¹³ Architectural Digest（2020-09-22）— “The Ambitious Restoration of Houston’s Rothko Chapel Is Now Complete”
+<a href="https://www.architecturaldigest.com/story/ambitious-restoration-houston-rothko-chapel-complete" rel="noopener" target="_blank">https://www.architecturaldigest.com/story/ambitious-restoration-houston-rothko-chapel-complete</a></p>
+<p class="ref">¹⁴ The Art Newspaper（2019-02-27）— “Rothko Chapel to be restored, and gain auxiliary buildings”
+<a href="https://www.theartnewspaper.com/2019/02/27/rothko-chapel-to-be-restored-and-gain-auxiliary-buildings" rel="noopener" target="_blank">https://www.theartnewspaper.com/2019/02/27/rothko-chapel-to-be-restored-and-gain-auxiliary-buildings</a></p>
+<p class="ref">¹⁵ The Art Newspaper（2024-08-15）— “Rothko Chapel in Houston closes due to hurricane damage”
+<a href="https://www.theartnewspaper.com/2024/08/15/rothko-chapel-closes-hurricane-beryl-damage" rel="noopener" target="_blank">https://www.theartnewspaper.com/2024/08/15/rothko-chapel-closes-hurricane-beryl-damage</a></p>
+<p class="ref">¹⁶ Architectural Record（2019-10-30）— “Mid-Construction Discovery Causes Delay, Increases Cost of Rothko Chapel Restoration”
+<a href="https://www.architecturalrecord.com/articles/14339-mid-construction-discovery-causes-delay-increases-cost-of-rothko-chapel-restoration" rel="noopener" target="_blank">https://www.architecturalrecord.com/articles/14339-mid-construction-discovery-causes-delay-increases-cost-of-rothko-chapel-restoration</a></p>
+<p class="ref">¹⁷ National Trust for Historic Preservation（無日期）— “Skylit Contemplation at Houston’s Restored Rothko Chapel”
+<a href="https://savingplaces.org/stories/skylit-contemplation-at-houstons-restored-rothko-chapel" rel="noopener" target="_blank">https://savingplaces.org/stories/skylit-contemplation-at-houstons-restored-rothko-chapel</a></p>
+<p class="ref">¹⁸ Smithsonian Magazine（2019-02-28）— “Houston’s Rothko Chapel Casts a New Light”
+<a href="https://www.smithsonianmag.com/smart-news/houstons-rothko-chapel-casts-new-light-180971595/" rel="noopener" target="_blank">https://www.smithsonianmag.com/smart-news/houstons-rothko-chapel-casts-new-light-180971595/</a></p>
+<p class="ref">¹⁹ The New York Times（2000-06-15）— “Restoring Rothko’s Chapel and His Vision”
+<a href="https://www.nytimes.com/2000/06/15/arts/arts-in-america-restoring-rothko-s-chapel-and-his-vision.html" rel="noopener" target="_blank">https://www.nytimes.com/2000/06/15/arts/arts-in-america-restoring-rothko-s-chapel-and-his-vision.html</a></p>
+<p class="ref">²⁰ Texas Monthly（2020-06-24）— “Critics of the Rothko Chapel Say It’s Too Somber—Will a Pricey Restoration and Skylight Change That?”
+<a href="https://www.texasmonthly.com/arts-entertainment/rothko-chapel-restoration/" rel="noopener" target="_blank">https://www.texasmonthly.com/arts-entertainment/rothko-chapel-restoration/</a></p>
+<p class="ref">²¹ The Art Newspaper（2024-12-16）— “Houston’s Rothko Chapel reopens after hurricane damage is repaired”
+<a href="https://www.theartnewspaper.com/2024/12/16/rothko-chapel-reopens-hurricane-beryl-repairs-houston" rel="noopener" target="_blank">https://www.theartnewspaper.com/2024/12/16/rothko-chapel-reopens-hurricane-beryl-repairs-houston</a></p>
+<p class="ref">²² Rothko Chapel（2024-12）— “After Being Closed Since July Due to Damage from Hurricane Beryl, the Rothko Chapel Announces Reopening on December 17”
+<a href="https://www.rothkochapel.org/learn/in-the-news/press-release/after-being-closed-since-july-due-to-damage-from-hurricane-beryl-the-rothko-chapel-announces-reopening-on-december-17" rel="noopener" target="_blank">https://www.rothkochapel.org/learn/in-the-news/press-release/after-being-closed-since-july-due-to-damage-from-hurricane-beryl-the-rothko-chapel-announces-reopening-on-december-17</a></p>
+<p class="ref">²³ Houston Public Media（2025-05-12）— “Rothko Chapel to restore Beryl-damaged artwork with grant funding”
+<a href="https://www.houstonpublicmedia.org/articles/news/arts-culture-news/2025/05/12/521121/rothko-chapel-damaged-artwork-repair-grant-bank-of-america-houston/" rel="noopener" target="_blank">https://www.houstonpublicmedia.org/articles/news/arts-culture-news/2025/05/12/521121/rothko-chapel-damaged-artwork-repair-grant-bank-of-america-houston/</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/b4c" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
