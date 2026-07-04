@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>照片上傳之前 · 穗稻忠武的專欄</title>
+<meta name="description" content="一張孩子在餐桌旁比著勝利手勢的照片，本來只是祖父母群組裡的溫柔日常。到 2026 年，英國國家犯罪局（NCA）和 Internet Watch Foundation（IWF）卻把這種日常照片放進新的安全警告：公開上網的兒童影像，可能被 AI 工具偷走、改造，成為兒少性虐待材料（CSAM）。本文不呈現任何違法…">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-04-before-uploading-child-photos-ai-risk/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="照片上傳之前">
+<meta property="og:description" content="一張孩子在餐桌旁比著勝利手勢的照片，本來只是祖父母群組裡的溫柔日常。到 2026 年，英國國家犯罪局（NCA）和 Internet Watch Foundation（IWF）卻把這種日常照片放進新的安全警告：公開上網的兒童影像，可能被 AI 工具偷走、改造，成為兒少性虐待材料（CSAM）。本文不呈現任何違法…">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-04-before-uploading-child-photos-ai-risk/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1773947331776-1ddd78a95f58?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "照片上傳之前", "description": "一張孩子在餐桌旁比著勝利手勢的照片，本來只是祖父母群組裡的溫柔日常。到 2026 年，英國國家犯罪局（NCA）和 Internet Watch Foundation（IWF）卻把這種日常照片放進新的安全警告：公開上網的兒童影像，可能被 AI 工具偷走、改造，成為兒少性虐待材料（CSAM）。本文不呈現任何違法…", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-04-before-uploading-child-photos-ai-risk/", "datePublished": "2026-07-04", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://images.unsplash.com/photo-1773947331776-1ddd78a95f58?fm=jpg&q=80&w=1200&auto=format&fit=crop"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">台灣文化</span><span class="tag">AI</span><span class="tag">歷史</span><span class="tag">台灣</span><span class="tag">科技與生活</span><span class="tag">專欄</span></div>
+<h1>照片上傳之前</h1>
+<p class="byline"><time>2026-07-04</time></p>
+</div>
+
+<p class="lead">一張孩子在餐桌旁比著勝利手勢的照片，本來只是祖父母群組裡的溫柔日常。到 2026 年，英國國家犯罪局（NCA）和 Internet Watch Foundation（IWF）卻把這種日常照片放進新的安全警告：公開上網的兒童影像，可能被 AI 工具偷走、改造，成為兒少性虐待材料（CSAM）。本文不呈現任何違法或傷害性影像，只討論這個警告如何改變家庭、學校、平台與法律之間的責任分工。¹²</p>
+<figure><img src="https://images.unsplash.com/photo-1773947331776-1ddd78a95f58?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="孩子看著手機光源｜來源：Zachary Kadolph / Unsplash（Unsplash License）" loading="lazy"><figcaption>手機光線曾經代表家庭記錄與陪伴；新的風險在於，一張普通照片離開原始脈絡後，可能被複製到父母完全看不見的地方。</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1752652011925-a397442fbe0b?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="母女自拍｜來源：Vitaly Gariev / Unsplash（Unsplash License）" loading="lazy"><figcaption>自拍不是問題本身；問題是公開帳號、可搜尋頁面與可被下載的圖像，讓家庭記憶變成可被陌生人再利用的資料。</figcaption></figure>
+<h2>一張普通照片為什麼突然變成風險</h2>
+<p>IWF 與 NCA 在 7 月 3 日發布給父母與照護者的新指南，核心不是要父母停止所有分享，而是提醒「公開」的代價已經改變。指南說，AI 已進入日常生活，也可能被濫用來製作、操弄與分享兒童裸露、半裸露或性化影像；在英國法下，這類內容屬於兒少性虐待材料。指南列出的第一個型態，正是「日常兒童照片」被取自社群、網站或通訊軟體後，改造成性化或虐待性影像。² BBC 報導同一份警告時指出，NCA 建議父母不要公開發布孩子照片；若仍想分享，可使用 close friends 群組、私人帳號，並檢查舊照片中是否露出臉、身體、校服等識別資訊。IWF 執行長 Kerry Smith 的說法比較精準：他們不是要父母不要和所愛、可信任的人分享，而是要大家在掌握完整事實後做決定。¹</p>
+<p>這個變化的關鍵在於「接觸」不再是必要條件。IWF 新聞稿引述 NCA 的 Tim Wright 說，AI 工具變得更強、更普及、更容易使用，犯罪者已用它們以新方式鎖定兒童；即使是日常家庭照片，也可能在孩子或父母不知情的狀況下被偷走與操弄。³</p>
+<figure><img src="https://images.unsplash.com/photo-1713942590404-d6981e63fb56?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="一家人在床上各自使用手機與平板｜來源：Vitaly Gariev / Unsplash（Unsplash License）" loading="lazy"><figcaption>家庭裡同時存在陪伴、娛樂與拍照分享；政策討論若只說「不要上網」，會忽略這些裝置已是家庭日常的一部分。</figcaption></figure>
+<h2>數字背後：從靜態 deepfake 到全動態影片</h2>
+<p>IWF 的 2026 年報告說，2025 年它評估了 8,029 張或段 AI 生成的真實感兒少性虐待影像與影片，這些內容出現在暗網，也出現在明網的商業平台。更令人注意的是影片：2024 年 IWF 只找到 13 段 AI 生成兒少性虐待影片，2025 年變成 3,443 段；IWF 稱這是 26,385% 的增幅，其中 65% 被歸為英國法下最嚴重的 Category A。⁴ 這些數字需要兩層理解。第一，IWF 也承認 AI 生成內容在整體違法內容中仍是相對小的一部分；它不是說所有兒少性虐待材料都已被 AI 取代。第二，增長速度與逼真度正在讓辨識、移除、調查與受害者辨認更困難。紐約時報 2025 年報導也引用 IWF 與美國 National Center for Missing &amp; Exploited Children 的資料，指出 AI 生成影片與影像正逼近「難以和真實虐待區分」的門檻，可能使執法資源被大量合成內容稀釋。⁵</p>
+<p>Reuters 2026 年 2 月報導西班牙、愛爾蘭等監管行動時，也指出 IWF 的新資料顯示 AI 工具使犯罪者能大規模製造高真實感內容，且 UNICEF 報告估計 11 國至少 120 萬名兒童表示自己的影像曾被操弄成明示性 deepfake。這些來源共同指向同一件事：這已不是單一 app、單一平台或單一國家的問題。⁶⁷</p>
+<figure><img src="https://images.unsplash.com/photo-1756142008024-81c8349c8a29?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="兩名兒童看著筆電螢幕｜來源：Samsung Memory US / Unsplash（Unsplash License）" loading="lazy"><figcaption>兒童的數位生活不只在社群平台，也在學習、遊戲與通訊裡；照片流動到哪裡，風險邊界就延伸到哪裡。</figcaption></figure>
+<h2>「曬小孩」曾是社交支持，也一直有隱私爭議</h2>
+<p>sharenting 這個詞，指父母在網路上分享孩子的照片、影片或個人資訊。它不是天生有惡意：研究者長期指出，父母分享孩子，是為了保存記憶、維繫親友關係、尋找育兒支持，也是在社群中建立家庭敘事。2026 年 Frontiers 的範疇回顧指出，這個領域橫跨媒體研究、兒童發展、傳播、法律與健康；早期研究常把 sharenting 視為家庭日常記錄，但近年越來越關注隱私、自主、數位身分與長期可見性。⁸ OECD 在兒童數位風險分類報告中也早已提醒，兒童個資不只是孩子自己提供的資料，也包括父母與朋友替他們披露的資訊；報告引用英國 Nominet 研究稱，孩子到 5 歲前平均已有近 1,500 張照片被貼到數位環境中。這個數字不必被解讀成每張照片都危險，而是說「數位足跡」常在孩子能同意前就已形成。⁹</p>
+<p>系統性文獻回顧則把 sharenting 的問題分成兒童隱私、兒童觀點、專業 sharenting、社群媒體困境等主題。也有研究指出，孩子長大後可能反對父母過去的貼文，或因界線未協商而感到家庭衝突。換言之，AI 濫用不是從零開始的新風險，而是把既有的隱私、同意與控制問題推到更高後果。¹⁰</p>
+<figure><img src="https://images.unsplash.com/photo-1752652012189-6b7954b13908?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="母女在床上一起看手機｜來源：Vitaly Gariev / Unsplash（Unsplash License）" loading="lazy"><figcaption>親子共看照片可能是親密互動；新的問題是孩子是否也參與了「這張照片要不要被別人看見」的決定。</figcaption></figure>
+<h2>指南真正要求的是三件事：可見度、舊照片、同意</h2>
+<p>IWF/NCA 指南把父母能做的事縮成三組：檢查隱私設定、檢查既有社群帳號、重新談影像同意。第一組是可見度：帳號是否公開、貼文是否所有人可見、是否能改成 private 或 close friends。第二組是回頭看：舊照片是否露出孩子臉、身體、校服、活動地點；如果不舒服，能否刪除或改成私人。第三組是同意：親友、學校、運動俱樂部過去取得的拍攝與發布同意，是否仍符合今天的 AI 風險環境。²</p>
+<p>這三件事的共同點，是把「分享」從單次按鈕改成一組家庭治理。指南甚至建議父母跟孩子談：「如果有人未經同意拍你並發布，你會怎麼感覺？」這不是把兒童變成安全責任的唯一承擔者，而是把孩子視為有感受、有界線、能逐步學會拒絕的人。²³ UNICEF 的「Deepfake abuse is abuse」聲明也採取類似方向。它呼籲政府把 AI 生成內容納入 CSAM 定義並刑事化，AI 開發者採取安全設計，數位公司不只是事後移除，而要阻止流通；但它同時指出，風險在生成式工具嵌入社群平台後會被放大。這表示父母調整分享習慣只是其中一層，平台與政策仍需承擔系統責任。⁷</p>
+<figure><img src="https://images.unsplash.com/photo-1758874960087-fc08f94b43ae?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="祖母與孫女自拍｜來源：Vitaly Gariev / Unsplash（Unsplash License）" loading="lazy"><figcaption>跨世代自拍讓家庭成員都成為影像流通的一部分；同意不只存在於父母和孩子，也存在於親友群組、學校與活動單位之間。</figcaption></figure>
+<h2>法律正在追趕，但追趕的速度不一致</h2>
+<p>英國是目前動作較快的法域之一。Reuters 2025 年報導，英國將把使用 AI 工具製作兒少性虐待影像列為犯罪，目標包括用來「nudeify」真實兒童影像的工具、教學手冊與散布網站。¹¹ 2026 年 GOV.UK 的 Crime and Policing Act factsheet 進一步說，法律將引入犯罪化經最佳化用於產生 CSAM 的 AI 模型，因為這些模型可能產生含有真實兒童肖像的高度逼真內容；英國政府同時強調，製作、持有或散布兒少性虐待影像，包括 AI 生成內容，本來就已違法。¹²</p>
+<p>但各地法律並不一致。IWF 報告指出，美國沒有單一、全面處理 AI CSAM 的聯邦法律；若內容描繪真實兒童，可能依既有聯邦 CSAM 法處理，完全 AI 生成內容則可能牽涉淫穢法與州法差異。AP 2024 年報導美國執法現場時，也呈現這種追趕狀態：州議會快速補法，檢察官說過去因必須證明影像描繪真實兒童而無法起訴部分案件。¹³¹⁴ 歐盟也在補洞。歐洲議會研究簡報指出，現行 AI Act、Digital Services Act 與打擊兒少性虐待指令各自處理安全、平台移除與刑事定義；但為填補缺口，歐洲議會與歐盟理事會已同意把生成非自願明示性與兒少性虐待內容的 AI 系統納入禁止實務，預計 2026 年 12 月 2 日適用。¹⁵</p>
+<figure><img src="https://images.unsplash.com/photo-1758598737723-01be406c09e7?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="母親與兒子在沙發自拍｜來源：Vitaly Gariev / Unsplash（Unsplash License）" loading="lazy"><figcaption>法律補上的是犯罪與工具供應；家庭面對的卻是每天是否拍照、是否上傳、是否公開的細小決定。</figcaption></figure>
+<h2>平台責任：不能只把風險交給父母</h2>
+<p>把所有責任推回父母，既不公平，也不實際。UNICEF 明確要求數位公司「防止流通」，而不是等受害者或代表通報後才移除。IWF 也呼籲科技公司在發布 AI 模型前評估與防護，讓犯罪者更難濫用影像生成器。³⁷</p>
+<p>AP 報導美國案例時提到，大型科技公司如 Google、OpenAI、Stability AI 已同意與 Thorn 合作對抗兒少性虐待影像；但專家也指出，許多安全補救是技術普及後才做，對已可離線運行或被舊版本改造的模型效果有限。¹⁴ NBC News 2026 年則引述執法與專家指出，犯罪者會利用開源模型、漏洞與現成性剝削平台，產生可辨識或完全不存在兒童的影像，檢方與立法者都在追趕。¹⁶ 這裡的矛盾在於，平台一方面鼓勵影像分享、回憶、限時動態、學校活動照片與親友互動；另一方面，當影像被下載、截圖、重新上傳或餵進外部模型，原平台常不再能控制。<strong>（以下為本文分析，非事實陳述）</strong> 因此，下一階段的平台安全不能只停在「隱私設定藏在選單裡」，而應在兒童影像、校服、群體活動照、公開搜尋可見性等情境中提供更清楚的預設提醒與限制。</p>
+<figure><img src="https://web-cdnprod.aa.com.tr/uploads/Contents/2026/07/03/thumbs_b_c_400528a534d24447676a1565360982d3.jpg" alt="英國 NCA/IWF 警告相關新聞配圖｜來源：Anadolu Agency（新聞配圖）" loading="lazy"><figcaption>當執法與兒少安全組織把「不要公開貼孩子照片」說出口，代表風險已不只是資安專家或平台政策文件裡的問題。</figcaption></figure>
+<h2>學校、社團與親友群組，是下一個前線</h2>
+<p>IWF 新聞稿提到一個英國學校案例：犯罪團伙從學校網站取得學生影像，用 AI 製作 100 多張性化影像，並試圖勒索學校；IWF 表示已迅速協助阻止影像上傳，但也擔心更多學校可能成為目標。³ 這個案例讓「父母帳號是否公開」之外的第二條路徑浮現：孩子的照片也可能在校網、球隊、營隊、比賽、家長會與媒體報導中出現。</p>
+<p>因此，指南把同意延伸到學校與俱樂部，不是形式主義。過去家長簽影像同意書時，多半想到的是活動紀錄、官網花絮、招生宣傳；今天還要問，照片是否會被搜尋引擎索引，是否包含全名、校服、隊名、地點，是否可被下載，是否有定期下架政策。²³</p>
+<p>學校也必須知道如何處理已發生事件。IWF/NCA 給專業人員的指南說，任何 AI-CSAM 事件都應以與其他兒少性虐待材料同等的照護、緊急度與 safeguarding 方式處理；專業人員不應下載、儲存或轉傳內容，即使是為了回報，也應依指定保護流程處理。¹⁷ 這是很重要的細節：善意轉傳「證據」可能造成二次散布。</p>
+<figure><img src="https://images.unsplash.com/photo-1758874960087-fc08f94b43ae?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="祖孫用手機互動｜來源：Vitaly Gariev / Unsplash（Unsplash License）" loading="lazy"><figcaption>真正的界線常發生在家庭聚會後：誰可以把合照放上公開社群、誰需要先問孩子與父母。</figcaption></figure>
+<h2>給家庭的低恐慌版本：不是退出網路，而是縮小公開面</h2>
+<p>這類議題最容易走向恐慌：所有照片都不能拍、所有分享都是危險、所有平台都不可用。但 IWF/NCA 指南的語氣其實更務實。它承認父母聽到這些會焦慮，也說父母並不孤單；它列出的步驟，許多是一般人今天就能做的低成本調整：把公開帳號改成私人，建立 close friends 清單，清掉不認識的追蹤者，檢查舊照片，避免露出校服與固定地點，跟親友說清楚不要公開轉貼。² UNICEF Parenting 對 sharenting 的建議也不是「父母自己解決一切」。它提醒父母避免分享過度私密、讓孩子尷尬或裸露的照片，也要注意地點與校徽等可識別資訊；但同時說，保護工作不能只落在父母身上，政策制定者與數位平台需要創造更安全的家庭空間。¹⁸</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 對一般家庭而言，可以把「照片上傳之前」變成四個問題：這張照片是否公開？孩子長大後會不會不舒服？陌生人能不能從照片判斷學校、地點或固定活動？如果親友轉貼，我能不能接受？四個問題中只要有一個答案是否定，較安全的選擇就是不公開、延後發布、裁切識別資訊，或只傳給可信任的人。</p>
+<h2>結語：家庭記憶需要新的門</h2>
+<p>AI 影像濫用讓一張孩子照片的意義變得不穩定。它仍可以是親情、成長、節日與遠方家人的連結；但在公開網路上，它也可能成為陌生人下載、再製、操弄的資料。這不是要求每個家庭停止記錄生活，而是要求家庭、學校、平台與法律承認：孩子的臉不是免費素材，孩子的童年也不應在他們能理解以前，被永久交給搜尋、模型與截圖文化。 如果說過去的數位素養，是教孩子不要亂點連結、不要把密碼告訴別人；那麼 2026 年的家庭數位素養，可能還要多一句：在替孩子按下發布之前，先替他們保留一扇還能關上的門。</p>
+<figure><img src="https://images.unsplash.com/photo-1752652012189-6b7954b13908?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="親子共用手機的日常場景｜來源：Vitaly Gariev / Unsplash（Unsplash License）" loading="lazy"><figcaption>家庭照片的可見度，往往不是一次決定，而是在生日、畢業、校外教學、親友轉貼中反覆被打開。</figcaption></figure>
+<h2>台灣家庭也會遇到的問題：群組比公開貼文更複雜</h2>
+<p>本文主要引用英國、歐盟、美國與國際組織資料，並不是因為這個問題只屬於英語世界；相反，台灣家庭的日常分享方式，可能讓邊界更模糊。許多父母不一定在公開 Instagram 或 Facebook 上頻繁貼孩子，卻會把照片放進 LINE 家族群、班級群、社團群、社區活動相簿，或交給學校與才藝班做成果紀錄。這些空間看似私人，但成員多、轉傳容易、截圖無痕，實際可見度常比父母想像更高。</p>
+<p>IWF/NCA 指南提醒父母檢查「朋友或家人是否也上傳了孩子影像」，正好對應這種群組文化。² 在家庭聚會中，真正難的不是父母自己不發，而是如何開口請長輩、親友、學校與教練不要把合照放上公開頁面。這需要新的禮貌語言：不是指責對方，而是說「現在 AI 影像風險不同，我們希望孩子照片不要公開，可不可以只傳私人群組、不要轉貼？」 台灣也有大量學校、補習班、社團與公部門活動照片。這些照片常帶有制服、名牌、班級、活動地點與時間，從兒童權利角度看，識別性比家庭自拍更高。OECD 對兒童數位風險的分類說，兒童資料也包含父母與朋友替他們披露的資訊；若放到學校與機構層級，這句話應該再加上「組織替孩子披露的資訊」。⁹</p>
+<figure><img src="https://images.unsplash.com/photo-1713942590404-d6981e63fb56?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="一家人在手機與平板前共處｜來源：Vitaly Gariev / Unsplash（Unsplash License）" loading="lazy"><figcaption>許多照片並不是孩子自己發布，卻會先於孩子的選擇權存在；這正是 sharenting 研究關注的核心。</figcaption></figure>
+<h2>孩子的同意，不只是問一句「可以嗎」</h2>
+<p>兒童影像同意很容易被簡化成一句話：「你要不要拍？」但對年幼孩子而言，他們未必理解公開平台、搜尋引擎、截圖、資料庫與 AI 模型的後果；對青少年而言，他們可能理解尷尬，卻未必能拒絕大人或學校的要求。因此，同意不能只是形式，而要包含年齡、理解能力、可撤回性，以及大人是否真的尊重拒絕。</p>
+<p>Frontiers 2026 回顧指出，孩子可能反對父母發文，並把 sharenting 視為家庭界線衝突。⁸ UNICEF Parenting 也提醒父母，要試著從孩子角度看照片，避免發布讓孩子尷尬或過度私密的內容。¹⁸ IWF/NCA 指南則把「孩子覺得照片被拍或被分享時的感受」放進對話開場。² 這些來源共同說明，孩子不是家庭形象的道具，而是影像中的權利主體。 實務上，父母可以把同意拆成幾個層次：可以拍，不一定可以上傳；可以傳給祖父母，不一定可以放公開社群；今天可以，半年後孩子覺得不舒服時也應可刪除；團體照裡有別人孩子時，更不能只憑自己孩子同意。這些看似麻煩，但它們把「保護」從恐嚇式禁令，轉成日常可練習的尊重。</p>
+<figure><img src="https://images.unsplash.com/photo-1756142008024-81c8349c8a29?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="兩名兒童看著筆電螢幕｜來源：Samsung Memory US / Unsplash（Unsplash License）" loading="lazy"><figcaption>當孩子開始使用學校平台、雲端相簿與社群帳號，影像同意也必須從家庭規矩變成教育內容。</figcaption></figure>
+<h2>偵測技術的限制：不能把孩子安全完全交給模型</h2>
+<p>技術公司常以偵測、雜湊比對、內容審核與安全分類來回應 CSAM 問題，這些工具確實重要，IWF、NCMEC 與平台長期仰賴它們移除既有材料。但 AI 生成內容使問題變複雜：如果影像是新生成、經過改造、或混合真實臉孔與合成身體，既有雜湊比對不一定能抓到；如果模型能離線運作，平台也未必看得見生成過程。AP 報導中，專家說調查人員要花時間判斷影像是否描繪真實兒童或由 AI 生成，這本身就會消耗救援與辦案資源。¹⁴</p>
+<p>IWF 的 2026 報告還提出一個更棘手的問題：所謂「deepfake defence」。當社會知道影像可以被合成，犯罪者可能反過來聲稱真實虐待證據是 AI 生成，以此製造合理懷疑。⁴ 這不只影響司法，也影響受害者被相信的可能性。也就是說，AI 風險不只在生成新傷害，也在削弱影像作為證據的信任基礎。 這是為什麼政策討論不能停在「偵測工具會進步」。偵測永遠必要，但它是事後或半事後的防線；更前面的防線包括訓練資料治理、模型發布前紅隊測試、禁止專門濫用工具、平台不允許宣傳 nudification 服務、以及兒童影像預設不被拿來訓練或再利用。The Guardian 2025 年報導英國新法允許指定 AI 公司與兒少安全組織測試模型是否能產生虐待影像，正是把防線往「生成之前」推。¹⁹</p>
+<figure><img src="https://images.unsplash.com/photo-1758598737723-01be406c09e7?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="母親與兒子自拍｜來源：Vitaly Gariev / Unsplash（Unsplash License）" loading="lazy"><figcaption>家庭層面的安全感，最後仍取決於平台、工具供應商與法律是否把濫用成本拉高，而不是讓每位父母獨自防守。</figcaption></figure>
+<h2>各方說法的交會與分歧</h2>
+<p>目前可確認的交會點有三個。第一，IWF、NCA、UNICEF、AP、Reuters 等來源都承認 AI 生成或操弄的兒少性化內容正在增加，且可能涉及真實兒童影像。第二，這類內容即使由 AI 製作，也會造成真實傷害，不能被當成「沒有真正受害者」的灰色娛樂。第三，父母、學校與平台都需要調整做法；任何單一方都無法獨立解決。</p>
+<p>分歧則在責任比例與法律邊界。兒少安全組織傾向要求更嚴格的模型測試、工具禁令與平台防堵；科技產業可能擔心測試、開源模型、加密通訊與合法創作工具被過度限制。各國法律也不一致：英國積極補上生成器與手冊犯罪，歐盟透過 AI Act 與 CSA 指令補洞，美國則在聯邦與州法之間拼接。¹²¹³¹⁵ 對父母而言，這些分歧不應被解讀成「等政府決定再說」。比較合理的態度是：在法律與平台還在追趕時，先降低公開面；在降低公開面時，也不要讓焦慮變成對孩子的羞辱或監控。IWF/NCA 指南特別提醒，如果事情真的發生，父母應保持冷靜，讓孩子知道不是他們的錯，並向警察、CEOP、平台或 Report Remove 等管道求助。²³ 這種語氣很重要，因為受害者責備會讓孩子更不敢求助。</p>
+<figure><img src="https://images.unsplash.com/photo-1773947331776-1ddd78a95f58?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="孩子看著手機光源｜來源：Zachary Kadolph / Unsplash（Unsplash License）" loading="lazy"><figcaption>最後回到那道手機光：它既是孩子與世界連接的入口，也需要成人為孩子保留退出與拒絕的權利。</figcaption></figure>
+<h2>最後要看的，不只是照片，而是預設值</h2>
+<p>這場爭議不會因為一份指南就結束。生成式 AI 的門檻仍在下降，平台仍鼓勵人們用影像維持關係，家庭也仍需要把孩子的成長分享給遠方親友。真正的問題，不是「要不要從此不拍照」，而是我們是否仍把公開發布當作預設，把撤回、限制、詢問同意當作例外。</p>
+<p>比較成熟的做法，可能是把預設值反過來：孩子照片先不公開；若要公開，先確認目的、範圍、時間與可刪除性。學校與社團活動照先不放全名、校服與可定位資訊；若要發布，先讓家長與孩子知道用途。平台則應把兒童影像視為高敏感內容，提供清楚提示，而不是把設定埋進多層選單。這些措施不能保證零風險，但可以讓犯罪者少一點現成素材，讓孩子多一點未來能重新決定自己的空間。 本文能確認的是：IWF、NCA、UNICEF、AP、Reuters 等來源都已把 AI 生成或操弄兒少性化影像視為真實且擴大的危害；本文無法獨立核實每一個執法個案，也不主張所有家庭分享都應被污名化。比較穩健的結論是：家庭記憶仍值得保存，但不必預設交給公開網路保存。照片上傳之前，多問一次，可能就是孩子日後少承擔一次無法撤回的風險。</p>
+<p>這也是為什麼「低恐慌」不等於「低估風險」。低恐慌的意思，是不把孩子嚇到沉默，不把父母推向羞愧，也不讓學校為了避免麻煩而停止所有紀錄；它要做的是把每一次發布都變成可討論、可撤回、可限制範圍的選擇。若家人需要保存照片，可以存在本機、加密雲端或封閉相簿；若親友需要看見孩子成長，可以限制收件者與轉傳規則；若學校需要公開成果，可以選擇背影、局部、無姓名、定期下架。這些做法都不完美，但比把孩子的臉永久交給公開搜尋更接近兒童最佳利益。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ BBC News（2026-07-03）— "Parents warned not to publicly share children’s images amid AI abuse risks"
+<a href="https://www.bbc.co.uk/news/articles/cd7wj7d0jzzo" rel="noopener" target="_blank">https://www.bbc.co.uk/news/articles/cd7wj7d0jzzo</a></p>
+<p class="ref">² Internet Watch Foundation / National Crime Agency（未標日期）— "AI Child Sexual Abuse Imagery: Parent Safety Guide"
+<a href="https://www.iwf.org.uk/resources/ai-child-abuse-imagery-parent-guide/" rel="noopener" target="_blank">https://www.iwf.org.uk/resources/ai-child-abuse-imagery-parent-guide/</a></p>
+<p class="ref">³ Internet Watch Foundation（2026-07-03）— "AI-Generated Child Sexual Abuse Material: New Guidance for Parents"
+<a href="https://www.iwf.org.uk/news-media/news/new-guidance-for-parents-and-carers-as-ai-manipulated-images-of-children-become-a-growing-concern/" rel="noopener" target="_blank">https://www.iwf.org.uk/news-media/news/new-guidance-for-parents-and-carers-as-ai-manipulated-images-of-children-become-a-growing-concern/</a></p>
+<p class="ref">⁴ Internet Watch Foundation（2026-03-23）— "AI CSAM Report 2026: Harm Without Limits"
+<a href="https://www.iwf.org.uk/about-us/why-we-exist/our-research/how-ai-is-being-abused-to-create-child-sexual-abuse-imagery/" rel="noopener" target="_blank">https://www.iwf.org.uk/about-us/why-we-exist/our-research/how-ai-is-being-abused-to-create-child-sexual-abuse-imagery/</a></p>
+<p class="ref">⁵ The New York Times（2025-07-10）— "A.I.-Generated Images of Child Sexual Abuse Are Flooding the Internet"
+<a href="https://www.nytimes.com/2025/07/10/technology/ai-csam-child-sexual-abuse.html" rel="noopener" target="_blank">https://www.nytimes.com/2025/07/10/technology/ai-csam-child-sexual-abuse.html</a></p>
+<p class="ref">⁶ Reuters（2026-02-20）— "Rise in AI-generated child sexual imagery reports"
+<a href="https://www.reuters.com/world/us/rise-ai-generated-child-sexual-imagery-reports-2026-02-20/" rel="noopener" target="_blank">https://www.reuters.com/world/us/rise-ai-generated-child-sexual-imagery-reports-2026-02-20/</a></p>
+<p class="ref">⁷ UNICEF（2026-02-04）— "Deepfake abuse is abuse"
+<a href="https://www.unicef.org/press-releases/deepfake-abuse-is-abuse" rel="noopener" target="_blank">https://www.unicef.org/press-releases/deepfake-abuse-is-abuse</a></p>
+<p class="ref">⁸ Frontiers in Psychology（2026-06-11）— "Children’s privacy, autonomy, and digital identity in sharenting research"
+<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1845715/full" rel="noopener" target="_blank">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1845715/full</a></p>
+<p class="ref">⁹ OECD（2021）— "Children in the Digital Environment: Revised Typology of Risks"
+<a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/01/children-in-the-digital-environment_9d454872/9b8f222e-en.pdf" rel="noopener" target="_blank">https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/01/children-in-the-digital-environment_9d454872/9b8f222e-en.pdf</a></p>
+<p class="ref">¹⁰ Journal of Family Theory &amp; Review（未標日期）— "Sharenting: A systematic review of the empirical literature"
+<a href="https://onlinelibrary.wiley.com/doi/10.1111/jftr.12566" rel="noopener" target="_blank">https://onlinelibrary.wiley.com/doi/10.1111/jftr.12566</a></p>
+<p class="ref">¹¹ Reuters（2025-02-01）— "UK makes use of AI tools to create child abuse material a crime"
+<a href="https://www.reuters.com/technology/artificial-intelligence/uk-makes-use-ai-tools-create-child-abuse-material-crime-2025-02-01/" rel="noopener" target="_blank">https://www.reuters.com/technology/artificial-intelligence/uk-makes-use-ai-tools-create-child-abuse-material-crime-2025-02-01/</a></p>
+<p class="ref">¹² GOV.UK（2026-05-11）— "Crime and Policing Act 2026: child sexual abuse material factsheet"
+<a href="https://www.gov.uk/government/publications/crime-and-policing-act-2026-factsheets/crime-and-policing-act-2026-child-sexual-abuse-material-factsheet" rel="noopener" target="_blank">https://www.gov.uk/government/publications/crime-and-policing-act-2026-factsheets/crime-and-policing-act-2026-child-sexual-abuse-material-factsheet</a></p>
+<p class="ref">¹³ Internet Watch Foundation（2026）— "Harm without limits: AI child sexual abuse material through the eyes of our Analysts" PDF
+<a href="https://www.iwf.org.uk/media/hl1nvdti/iwf-ai-csam-report-2026.pdf" rel="noopener" target="_blank">https://www.iwf.org.uk/media/hl1nvdti/iwf-ai-csam-report-2026.pdf</a></p>
+<p class="ref">¹⁴ Associated Press（2024-10-25）— "AI-generated child sexual abuse images are spreading. Law enforcement is racing to stop them"
+<a href="https://apnews.com/article/ai-child-sexual-abuse-images-justice-department-42186aaf8c9e27c39060f9678ebb6d7b" rel="noopener" target="_blank">https://apnews.com/article/ai-child-sexual-abuse-images-justice-department-42186aaf8c9e27c39060f9678ebb6d7b</a></p>
+<p class="ref">¹⁵ European Parliamentary Research Service（2026）— "AI image generation and the spread of online child sexual abuse deepfakes"
+<a href="https://www.europarl.europa.eu/RegData/etudes/ATAG/2026/789297/EPRS_ATA(2026)789297_EN.pdf" rel="noopener" target="_blank">https://www.europarl.europa.eu/RegData/etudes/ATAG/2026/789297/EPRS_ATA(2026)789297_EN.pdf</a></p>
+<p class="ref">¹⁶ NBC News（2026-02-28）— "The AI child exploitation crisis is here"
+<a href="https://www.nbcnews.com/tech/security/ai-child-exploitation-crisis-rcna259409" rel="noopener" target="_blank">https://www.nbcnews.com/tech/security/ai-child-exploitation-crisis-rcna259409</a></p>
+<p class="ref">¹⁷ Internet Watch Foundation / NCA（未標日期）— "Child sexual abuse material generated by artificial intelligence" PDF
+<a href="https://www.iwf.org.uk/media/ceel0u4z/ai-guidance-england-final.pdf" rel="noopener" target="_blank">https://www.iwf.org.uk/media/ceel0u4z/ai-guidance-england-final.pdf</a></p>
+<p class="ref">¹⁸ UNICEF Parenting（未標日期）— "What you need to know about sharenting"
+<a href="https://www.unicef.org/parenting/child-care/sharenting" rel="noopener" target="_blank">https://www.unicef.org/parenting/child-care/sharenting</a></p>
+<p class="ref">¹⁹ The Guardian（2025-11-12）— "Tech companies and UK child safety agencies to test AI tools’ ability to create abuse images"
+<a href="https://www.theguardian.com/technology/2025/nov/12/tech-companies-child-safety-agencies-test-ai-tools-abuse-images-ability" rel="noopener" target="_blank">https://www.theguardian.com/technology/2025/nov/12/tech-companies-child-safety-agencies-test-ai-tools-abuse-images-ability</a></p>
+<p class="ref">²⁰ NPR（2026-04-14）— "Abusive, criminal deepfake images are getting harder to prosecute"
+<a href="https://www.npr.org/2026/04/14/g-s1-117410/deepfake-ai-images-child-sex-abuse" rel="noopener" target="_blank">https://www.npr.org/2026/04/14/g-s1-117410/deepfake-ai-images-child-sex-abuse</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/dad" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
