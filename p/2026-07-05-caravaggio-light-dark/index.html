@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>黑暗裡的人臉 · 穗稻忠武的專欄</title>
+<meta name="description" content="在羅馬的聖路易吉・德・弗朗切西教堂，觀眾若站在孔塔雷利禮拜堂前，會先看見一間像酒館、帳房或街角房間的陰暗室內。基督幾乎從畫面邊緣出現，手指穿過一束斜光，指向還握著錢幣的人。卡拉瓦喬的黑暗不是單純的戲劇效果；它把神聖故事拉回一張桌子、一雙髒腳、一張猶疑的臉，讓觀看者無法只把畫當成遠古傳說。¹²">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-05-caravaggio-light-dark/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黑暗裡的人臉">
+<meta property="og:description" content="在羅馬的聖路易吉・德・弗朗切西教堂，觀眾若站在孔塔雷利禮拜堂前，會先看見一間像酒館、帳房或街角房間的陰暗室內。基督幾乎從畫面邊緣出現，手指穿過一束斜光，指向還握著錢幣的人。卡拉瓦喬的黑暗不是單純的戲劇效果；它把神聖故事拉回一張桌子、一雙髒腳、一張猶疑的臉，讓觀看者無法只把畫當成遠古傳說。¹²">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-05-caravaggio-light-dark/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/c/ce/Caravaggio%2C_Michelangelo_Merisi_da_-_The_Calling_of_Saint_Matthew_-_1599-1600_%28hi_res%29.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "黑暗裡的人臉", "description": "在羅馬的聖路易吉・德・弗朗切西教堂，觀眾若站在孔塔雷利禮拜堂前，會先看見一間像酒館、帳房或街角房間的陰暗室內。基督幾乎從畫面邊緣出現，手指穿過一束斜光，指向還握著錢幣的人。卡拉瓦喬的黑暗不是單純的戲劇效果；它把神聖故事拉回一張桌子、一雙髒腳、一張猶疑的臉，讓觀看者無法只把畫當成遠古傳說。¹²", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-05-caravaggio-light-dark/", "datePublished": "2026-07-05", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Caravaggio%2C_Michelangelo_Merisi_da_-_The_Calling_of_Saint_Matthew_-_1599-1600_%28hi_res%29.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">藝術</span><span class="tag">專欄</span></div>
+<h1>黑暗裡的人臉</h1>
+<p class="byline"><time>2026-07-05</time></p>
+</div>
+
+<p class="lead">在羅馬的聖路易吉・德・弗朗切西教堂，觀眾若站在孔塔雷利禮拜堂前，會先看見一間像酒館、帳房或街角房間的陰暗室內。基督幾乎從畫面邊緣出現，手指穿過一束斜光，指向還握著錢幣的人。卡拉瓦喬的黑暗不是單純的戲劇效果；它把神聖故事拉回一張桌子、一雙髒腳、一張猶疑的臉，讓觀看者無法只把畫當成遠古傳說。¹²</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Caravaggio%2C_Michelangelo_Merisi_da_-_The_Calling_of_Saint_Matthew_-_1599-1600_%28hi_res%29.jpg" alt="《聖馬太蒙召》，卡拉瓦喬，1599–1600｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>這張畫是本文的入口：一道光、一張桌子、幾個像十七世紀羅馬人的人物，足以說明卡拉瓦喬如何把宗教敘事推到觀眾面前。</figcaption></figure>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Boy_Bitten_by_a_Lizard-Caravaggio_%28National_Gallery_London%29.jpg/1280px-Boy_Bitten_by_a_Lizard-Caravaggio_%28National_Gallery_London%29.jpg" alt="《被蜥蜴咬的男孩》，卡拉瓦喬，約1594–1595｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>早期作品中的一瞬疼痛，已經預告他後來在宗教畫裡追求的「被事件撞上」的臨場感。</figcaption></figure>
+<h2>從街頭模特兒開始的藝術</h2>
+<p>米開朗基羅・梅里西，後世以出生地稱為卡拉瓦喬，1571 年生，1610 年死於義大利海岸返羅馬途中。National Gallery 與 BBC History 的簡介都指出，他在米蘭受訓，1590 年代初進入羅馬，初期靠靜物、半身人物與小幅世俗題材尋找市場。²⁷這段起點很重要，因為他後來的宗教畫並非從宮廷理想美學出發，而是從水果、玻璃瓶、少年表情、賭徒與算命者這類近距離觀看開始。 National Gallery 對《被蜥蜴咬的男孩》的說明稱，這幅約 1594–1595 年的作品罕見地捕捉一個突然動作：少年手指被蜥蜴咬住，身體向後縮，桌上的果物與花瓶仍被畫得極其細密。十五世紀、十六世紀繪畫當然不缺戲劇，但卡拉瓦喬把戲劇壓進人的皮膚反應，像是讓痛感直接穿過畫布。¹⁵BBC Culture 引述 National Gallery 策展人 Letizia Treves 的說法，卡拉瓦喬把街上人物帶進畫室，直接從生命模型畫到畫布上，不再把素描階段視為唯一正統。⁵ 他並非完全沒有規劃；National Gallery 對《以馬忤斯晚餐》的技術說明提到，畫中仍可見棕色底稿與調整痕跡。¹³但他的決定性改變，是讓觀看者先遇見「像真的人」，再思考那個人身上的宗教、寓言或道德意義。Getty ULAN 的藝術家紀錄將他描述為以「破壞禮儀規範的自然主義」、tenebrism（強烈明暗對比）與 alla prima 直接作畫著稱。³這不是浪漫化的天才神話，而是一套可被追蹤的工作方法：從實物出發，縮小理想化距離，讓光線像舞台機械一樣決定觀眾先看哪裡。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Supper_at_Emmaus-Caravaggio_%281601%29.jpg/1280px-Supper_at_Emmaus-Caravaggio_%281601%29.jpg" alt="《以馬忤斯晚餐》，卡拉瓦喬，1601｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>桌上的果籃、麵包與酒器不是裝飾；它們讓奇蹟取得物質重量，也讓觀眾進入同一張桌子。</figcaption></figure>
+<h2>桌面上的奇蹟</h2>
+<p>《以馬忤斯晚餐》是理解卡拉瓦喬中期成熟語言的關鍵。National Gallery 說明，作品描繪路加福音中復活後的基督與兩名門徒同桌，門徒直到基督擘餅時才認出他。畫中一人幾乎從椅子上彈起，另一人雙臂張開，桌前果籃危險地懸在邊緣；強光落在臉、手與白桌布上，使宗教啟示變成一個剛發生的家庭餐桌事件。¹³</p>
+<p>這裡的「寫實」不是冷靜記錄。它更像一種把觀眾捲入場面的安排。National Gallery 指出，畫家讓門徒成為滿臉鬍鬚、衣著粗糙的普通工人，而年輕無鬚的基督像來自另一世界；幾何結構又把視線導向基督平靜的臉。¹³也就是說，平凡與神聖不是互相取消，而是互相拉扯。桌上每一件物品都在延長那一秒：麵包、雞肉、水罐、酒杯、果籃，像是提醒觀眾，奇蹟不是抽象概念，而是一件發生在物質世界裡的事。 Met 的 Heilbrunn Timeline 將這種做法概括為：卡拉瓦喬從當代服裝、普通模特兒與近距離構圖中，使遙遠過去像在觀眾眼前展開。¹這個說法可以解釋為什麼他的畫容易被後來的電影、攝影與劇場引用；它本身已經像在控制鏡頭距離、光源方向與入場時機。但這種力量也帶來風險。宗教畫需要服務禮儀、祈禱與教義，不能只追求震撼。卡拉瓦喬每次把聖者變成街上可見的人，就同時提出一個問題：神聖是否必須以理想化身體出現？還是可以從皺紋、髒腳、疲倦手指與不知所措的表情中被看見？</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Death_of_the_Virgin-Caravaggio_%281606%29.jpg/1280px-Death_of_the_Virgin-Caravaggio_%281606%29.jpg" alt="《聖母之死》，卡拉瓦喬，約1601–1606｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>這幅畫後來進入羅浮宮收藏；其早期被拒收的歷史，使「真實」與「得體」的衝突變得具體。</figcaption></figure>
+<h2>當真實碰到祭壇</h2>
+<p>卡拉瓦喬的爭議不只來自傳記暴力，也來自他讓宗教形象太接近身體現實。羅浮宮藏《聖母之死》的館藏資料記錄，此作約 1601–1606 年，原受 Laerzio Cherubini 委託給羅馬特拉斯提弗列的 Santa Maria della Scala 教堂，但完成後遭該教堂神職人員拒絕，後經曼托瓦公爵、英王查理一世、Everhard Jabach 與法王路易十四收藏，1671 年進入法國王室收藏。¹⁷ Met 的文章把問題說得更清楚：一幅聖母死亡圖像應該強調神學意義、顯示基督之母不朽的尊嚴，還是可以強調死亡本身的肉身現實？¹卡拉瓦喬選擇後者時，畫面就可能與祭壇期待發生摩擦。《聖母之死》中垂下的手臂、沉重的身體、低矮紅簾，讓死亡近得令人不安。Thyssen-Bornemisza 博物館的藝術家傳記也指出，他「把神聖帶近現實」既是受歡迎的原因，也引發爭議；該傳記提到，他以乞丐與妓女作為畫中模特兒的做法，觸動了觀看者對聖像得體性的界線。⁴ 這裡不必把卡拉瓦喬簡化成反教會者。他長期接受教會與貴族委託，畫的是祭壇畫、聖徒與殉道；真正尖銳之處在於，他把委託方期待的神聖故事，畫成可被街道、酒館與停屍間經驗理解的現場。Vatican Museums 對《埋葬基督》（亦稱 Deposition）的說明提供另一面：該作被視為卡拉瓦喬最高成就之一，原為羅馬 Chiesa Nuova 的 Vittrice 家族禮拜堂而作，1797 年依托倫蒂諾條約被轉往巴黎，1817 年歸還後入庇護七世畫廊。¹⁶它沒有描繪基督入墓的傳統瞬間，而是把身體安放在塗油石上的過程推到畫面前方；這種壓迫式近距離使觀眾幾乎站在石板旁。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/The_Entombment_of_Christ-Caravaggio_%28c.1602-3%29.jpg/1280px-The_Entombment_of_Christ-Caravaggio_%28c.1602-3%29.jpg" alt="《埋葬基督》，卡拉瓦喬，約1602–1604｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>身體被推向畫面前緣，像要落入觀眾所在空間；這是卡拉瓦喬把神聖敘事變成共同現場的典型做法。</figcaption></figure>
+<h2>一道光的公共委託</h2>
+<p>如果要找一個決定性轉折，多數來源都會回到 1599–1600 年的孔塔雷利禮拜堂。Met、BBC History、Thyssen 與 Getty 都指出，卡拉瓦喬透過 Cardinal Francesco Maria del Monte 的支持取得聖馬太系列委託，這是他的第一個重要公共宗教委託，並使他在羅馬建立聲名。¹³⁴⁷ 《聖馬太蒙召》之所以仍被反覆討論，不只是因為它好看，而是因為它把畫面理解權交給觀眾。紐約時報 2025 年分析教宗方濟各喜愛此作的互動專文指出，基督在最暗處抬手，馬太坐在桌邊，一手指向自己，一手仍抓著錢；光從看不見的窗邊斜切進來，使「蒙召」變成一個抗拒、遲疑、被打斷的時刻。¹⁰</p>
+<p>這種光不是單純照明。Met 引述同時代評論稱，卡拉瓦喬一派像在黑牆房間裡用高處單一光源，使亮處極亮、暗處極暗，造成強烈立體感。¹Getty 也把聖馬太系列列為他早期使用 tenebrism 的重要作品，並指出這種明暗與禮拜堂本身受限的自然光相互呼應。³<strong>（以下為本文分析，非事實陳述）</strong> 卡拉瓦喬的光線之所以顯得現代，不在於它像聚光燈，而在於它把倫理選擇變成視覺事件。觀眾不只是「知道」馬太被召喚，而是看到他猶豫；不只是理解神恩，而是看見一個人仍捨不得桌上的錢。這使宗教故事獲得心理時間，而不只是神學圖解。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/1608_Caravaggio_Beheading_of_Saint_John_the_Baptist_%281%29.jpg/1280px-1608_Caravaggio_Beheading_of_Saint_John_the_Baptist_%281%29.jpg" alt="《施洗約翰被斬首》，卡拉瓦喬，1608｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>馬耳他的巨幅作品把暴力壓低、拉長、放進近乎空曠的黑暗；這與早期羅馬的炫技形成對照。</figcaption></figure>
+<h2>逃亡路線上的畫</h2>
+<p>卡拉瓦喬傳記常被「暴力天才」吸走注意，這有其檔案基礎，也有被市場放大的部分。BBC News 2011 年報導羅馬國家檔案館展出的警察與法院文件，列出他 1598 到 1606 年多次涉案紀錄：非法帶劍、攻擊、辱罵、向警察丟石頭，以及 1606 年在 Campo Marzio 地區殺死 Ranuccio Tomassoni。⁶BBC Culture 也整理，十七世紀初他至少 11 次受審，1606 年後被迫逃離羅馬。⁵ 然而，把這些檔案直接等同於藝術成就，反而會遮住問題。National Gallery 的藝術家頁把他的生活與技法並列：他可快速作畫、反覆惹事，也能讓普通人的臉成為聖徒的臉。²Britannica 則提醒，後世對他的「被詛咒自毀天才」想像，從二十世紀中期以後增強了其大眾吸引力；但若只愛這個神話，會低估他作為畫家的敏感與野心。⁹ 1606 年後的逃亡路線大致清楚：離開羅馬，至那不勒斯，再到馬耳他，之後西西里、再回那不勒斯，最後試圖返羅馬尋求赦免。²³⁴⁷St John's Co-Cathedral 的官方頁說，他 1607 年 7 月抵達馬耳他，1608 年 7 月在 Grand Master Alof de Wignacourt 接納下成為騎士，後因鬥毆被囚於 Fort St Angelo，逃離後在同年 12 月被逐出騎士團。¹⁸在馬耳他，他畫下《施洗約翰被斬首》與《聖哲羅姆書寫》，兩件作品至今保存在 St John's Co-Cathedral。¹⁸《施洗約翰被斬首》也是他唯一已知在畫布上簽名的作品；簽名被置於血泊附近，這一點長期吸引評論者，也使作品與他自身暴力史形成難以避開的回聲。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/CaravaggioSalomeLondon.jpg" alt="《莎樂美接收施洗約翰首級》，卡拉瓦喬，約1609–1610｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>晚期半身構圖把故事濃縮成幾個臉部與手勢，黑暗不再只是效果，而像是人物心理的空氣。</figcaption></figure>
+<h2>晚期黑暗的心理重量</h2>
+<p>National Gallery 對《莎樂美接收施洗約翰首級》的說明指出，這是卡拉瓦喬晚期作品，可能在生命末尾於那不勒斯完成；他把故事縮到最基本的人物關係，用有限色彩、強烈明暗與手勢傳達悲劇。¹⁴莎樂美的表情曖昧，老女僕雙手緊握，行刑者面無表情，場面不再依靠繁複背景，而靠幾個人如何承受自己捲入的暴力。 Met 藏《聖彼得否認基督》同樣屬晚期。館方說，這幅 1610 年作品依靠明亮區域與近乎黑色背景的對比，是他風格的極端階段；士兵一指、婦人兩指共同暗示彼得三次否認。¹²若去掉宗教故事，畫面仍是一場指認：有人被迫在暗處承認或否認自己的關係。 New York Review of Books 2005 年回顧卡拉瓦喬晚期展覽時指出，1606 年殺人後，畫家的作品從早期炫技轉向更沈著、暗色與內省；比較兩版《以馬忤斯晚餐》，早期的果籃、玻璃與手勢光彩仍在，晚期則把色彩收束到棕色與深藍，讓疲倦、信仰與近乎觸碰的手勢承擔重量。¹¹Guardian 2024 年談 National Gallery「The Last Caravaggio」展時，進一步把《聖烏蘇拉殉道》放入死亡謎團脈絡：評論者 Jonathan Jones 認為，畫中自我見證般的臉與晚期逃亡經驗互相照亮；但關於他最後是否只是因瘧疾、傷勢與奔波而死，或還有馬耳他騎士追殺的陰影，仍屬歷史推論與評論詮釋。⁸本文因此不把死因寫成單一陰謀，而保留多方說法。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/The_Denial_of_Saint_Peter_MET_DP-12413-001.jpg/1280px-The_Denial_of_Saint_Peter_MET_DP-12413-001.jpg" alt="《聖彼得否認基督》，卡拉瓦喬，1610｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>最後階段的畫面常只留下幾個被光切出的手勢；敘事被壓縮成指認、否認與沉默。</figcaption></figure>
+<h2>影響不是只有「明暗法」</h2>
+<p>卡拉瓦喬影響後世，常被簡化成「明暗法」。但 chiaroscuro 原本不是他發明；BBC Culture 與 Britannica 都指出，他真正的變化在於把光影、街頭模型、宗教故事與近距離劇場結合，使敘事像突然發生在觀眾身邊。⁵⁹Met 也指出，Bartolomeo Manfredi、Hendrick ter Brugghen、Gerrit van Honthorst、Valentin de Boulogne、Jusepe de Ribera 等人使卡拉瓦喬式風格成為國際運動，成為巴洛克繪畫的重要支柱。¹</p>
+<p>這種影響跨出繪畫並不意外。BBC Culture 引述馬丁・史柯西斯談《窮街陋巷》時說，酒吧場景可視為向《聖馬太蒙召》致意：人在桌邊、有人起身、街上人物成為場面核心。⁵Britannica 也提到，他的戲劇性場面與光影處理啟發了 Pasolini、Scorsese 等電影人。⁹ 但影響也意味著誤讀風險。若只把卡拉瓦喬當成電影感先驅，容易忘記他的畫本來服務具體禮拜堂、家族委託與反宗教改革時代的宗教需求。若只把他當成暴力傳奇，則會忽略畫中那些安靜的技術：手指方向、暗部保留、人物被推到畫面前沿、普通物件如何成為事件證據。<strong>（以下為本文分析，非事實陳述）</strong> 今日觀看卡拉瓦喬，最有價值的可能不是追問他是否「像現代人」，而是反過來問：為何現代影像仍需要他？答案或許在於，他讓觀眾感到每個神聖或暴力事件都不是抽象概念，而是發生在某個房間、某張桌子、某個人的手上。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Caravaggio_-_Medusa_Uffizi_-_High_quality.jpg/1280px-Caravaggio_-_Medusa_Uffizi_-_High_quality.jpg" alt="《梅杜莎》，卡拉瓦喬，1590年代｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>《梅杜莎》把驚恐凝固在盾面上；它提醒我們，卡拉瓦喬的觀看常是被截停在最尖銳的一瞬。</figcaption></figure>
+<h2>「壞男孩」品牌之外</h2>
+<p>紐約時報在 2025 年文章中提醒，當代觀眾常把卡拉瓦喬視為「我們自己的」老大師：壞男孩、拳鬥者、酷兒局外人、被詛咒的天才，甚至成為一種品牌。¹⁰這些詞有些來自檔案，有些來自後世投射；若不加分辨，會讓一個複雜畫家被傳記標籤吞沒。 BBC News 的警察檔案報導提供了反浪漫的細節：攜帶武器、丟石頭、攻擊侍者、因賭債或球場衝突而殺人，這些不是藝術家的裝飾性逸聞，而是具體法律事件。⁶同時，National Gallery、Met、Vatican Museums 與 Louvre 的館藏資料又提醒，他的畫作仍必須回到委託、場地、收藏與禮儀脈絡中理解。¹²¹³¹⁶¹⁷Uffizi 的《梅杜莎》相關頁說明，該作作為盾形畫面，與 Cardinal Francesco Maria Del Monte 贈予托斯卡尼大公的脈絡有關。²⁰這類資訊使我們看見另一個卡拉瓦喬：他不是只有街頭鬥毆，也在精英贈禮、宮廷收藏與城市教堂之間工作。</p>
+<p>藝術史中的黑暗，往往由制度照明；沒有主教、樞機、銀行家、騎士團與博物館，今日的卡拉瓦喬也不會以同樣方式存在。因此，最中性的結論不是替他洗白，也不是再次消費他的暴力，而是把幾種事實分開：他確實多次涉入暴力與司法事件；他也確實透過模型、光線與構圖改變了宗教敘事的觀看方式；他的後世形象則在檔案、展覽、電影與媒體敘事中不斷被重新製造。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Crucifixion_of_Saint_Peter-Caravaggio_%28c.1600%29.jpg/1280px-Crucifixion_of_Saint_Peter-Caravaggio_%28c.1600%29.jpg" alt="《聖彼得被釘十字架》，卡拉瓦喬，約1600｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>教堂現場、身體重量與強烈對角線，提醒讀者卡拉瓦喬作品原本多屬具體禮拜空間，而非單純可轉貼的圖像。</figcaption></figure>
+<h2>今日的觀看者站在哪裡</h2>
+<p>今天的卡拉瓦喬既在教堂，也在博物館；既在羅浮宮、國家藝廊與大都會博物館，也在新聞互動頁、旅遊導覽與電影引用中。他的作品原本多為特定空間而作，今日卻常以可搜尋、可放大、可轉貼的數位圖像存在。這種轉換讓更多人看見細節，也可能讓場域被抽離。例如《聖馬太蒙召》若只在螢幕上被裁切成一隻手與一束光，就會失去它在陰暗禮拜堂側牆上的位置感；但若沒有數位圖像，許多觀眾也不會第一次遇見它。 St John's Co-Cathedral 2024 年啟用 Caravaggio Centre，館方介紹其中包含「Face to Face」投影區、關於《施洗約翰被斬首》的細節導覽、紅外反射、紫外線與高解析非侵入式檢測資訊。¹⁹這件事顯示，今日卡拉瓦喬不只被觀看，也被技術化、教育化與觀光化。觀眾不再只是站在一幅畫前，而是在展場、投影、導覽、網站與社群影像中學習如何看他。這種機構化並非壞事。相反地，它能把被「壞男孩」神話遮住的具體問題重新攤開：作品原來掛在哪裡？光線從何處來？修復與科學檢測揭露了什麼？畫面尺寸如何壓迫身體？誰付錢委託，誰拒收，誰收藏，誰又在數百年後用展覽重新命名？ 紐約時報把《聖馬太蒙召》放進 2025 年羅馬禧年與教宗方濟各的藝術偏好中討論，說明同一幅畫在今天仍會被宗教、觀光與新聞事件重新啟動。¹⁰方濟各看見的是被召叫者的猶疑與抓住錢財的手；藝術史觀眾看見的是光線、構圖與反文藝復興理想；遊客也可能只看見一個必訪景點。這些觀看方式並存，並不彼此排斥。 BBC Culture 提到，卡拉瓦喬二十世紀以後重新流行，並開始影響攝影、電影與當代藝術。⁵這段後世接受史提醒我們：藝術史不是作品完成後就停止，而是每一代人用自己的媒介再一次理解它。Roberto Longhi 1951 年在米蘭的卡拉瓦喬展覽，讓他重新進入現代藝術史視野；電影導演與攝影師再把那束光搬到酒吧、街角、攝影棚與銀幕上。⁵⁹可是，現代性也容易帶來過度親近。當我們說卡拉瓦喬「像電影」時，可能是在用今日媒介稱讚他，也可能是在把十七世紀宗教畫改寫成二十世紀視覺語言的先祖。比較穩妥的說法是：他的作品提供了一種高度壓縮的場面組織方式，後來媒介能從中借用，但不能把它從教堂、委託與反宗教改革脈絡中完全拆走。 對今日觀眾而言，最困難的任務不是判斷卡拉瓦喬好不好，而是承認自己被什麼吸引。若被黑暗吸引，要問那黑暗正在遮住誰；若被暴力吸引，要問暴力是否被美學化；若被聖者的普通臉吸引，要問普通人的身體在當時為何足以引發爭議。這些問題，才讓四百年前的畫不只是漂亮圖像，而仍是公共討論的一部分。</p>
+<h2>結語：黑暗不是答案，是方法</h2>
+<p>回到《聖馬太蒙召》前，那束光仍像一道問題，而不是答案。它沒有把所有人物照亮；相反，它讓觀眾注意到誰還在暗處、誰尚未理解、誰被召喚卻仍抓著錢。卡拉瓦喬的黑暗不是把世界浪漫化，而是把不確定、貧窮、恐懼、暴力與信仰放在同一個可見空間。 四百多年後，他仍容易被說成「現代」。但若現代只是指暴力傳奇、電影感或反叛姿態，這個詞太窄。更準確地說，他讓觀看者承認：藝術可以不先安慰人；它可以先迫使人看見手、臉、物件與死亡。等那些東西被看見，神聖、罪、赦免與歷史才有落腳之處。 還有一個需要保留的限制：我們今天所看見的卡拉瓦喬，經過太多中介。羅馬警察檔案讓他的暴力可被具體化，但檔案不是心理診斷；教堂與博物館描述作品場域，但館藏文字也有機構自身的敘事目的；媒體文章能把他帶回公共討論，卻也可能偏好「謎團」「惡名」「最後一幅」這類容易吸引點擊的角度。嚴謹觀看不應排斥任何一類來源，而是把每一類來源放回它的位置。</p>
+<p>換言之，卡拉瓦喬的黑暗也是資料方法。暗處提醒我們，仍有不能確定的部分；光處提醒我們，仍有可檢證的事物：作品年代、尺寸、所在館藏、委託關係、警察紀錄、展覽日期、館方技術說明。當文章把這些可檢證資訊排列起來，讀者才有能力區分「畫家做了什麼」、「後人怎麼說他」以及「我們今天為什麼還需要這個故事」。 若把這套方法帶回每一幅作品，卡拉瓦喬會變得不那麼像一張海報，而更像一系列場地：孔塔雷利禮拜堂的側牆、National Gallery 的 32 室、羅浮宮 Denon 翼的展廳、馬耳他共主教座堂的祈禱室、大都會博物館的畫廊。每個場地都讓同一個名字出現不同面貌。也正因如此，本文選擇以「人臉」而非「天才」作為標題核心：卡拉瓦喬的技法終究不是為了製造黑，而是為了讓某些臉在黑暗裡忽然變得無法迴避。 最後，卡拉瓦喬的觀看倫理也適用於我們的時代。影像平台喜歡高反差、強表情、暴力故事與可迅速辨認的風格；卡拉瓦喬似乎天生適合這種傳播。但他的畫其實要求慢看：先辨認人物的位置，再看光從何而來，再問那個人為什麼在此刻被看見。這種慢看，使他不只是社群媒體上容易被轉貼的「黑暗大師」，而是提醒觀眾：每一張震撼影像背後，都有被安排的光線、被選中的模特兒、被省略的背景與被建構的故事。若今日影像世界常把情緒推到最前方，卡拉瓦喬則提供一個更古老也更嚴格的問題：你被打動之後，是否還願意查證自己到底看見了什麼？ 這也是本文把多個館藏來源並置的原因。單一作品頁能說明尺寸、年代與收藏；媒體報導能呈現現代接受史；檔案新聞能補足傳記事件；評論文章能提出疑問。它們合在一起，不是為了把卡拉瓦喬定格成聖人或罪人，而是讓讀者在證據層次之間自行判斷。若說他的畫讓人「走進現場」，嚴謹的寫作也應讓讀者走進來源現場：哪些可斷言、哪些只是推論、哪些是後世想像。只有如此，黑暗才不會變成姿態，而會成為一種看見事實邊界的方法。</p>
+<p>因此，若要把卡拉瓦喬留給今日讀者，最好的方式不是再添一層傳奇，而是把觀看速度放慢。看清楚一束光如何被安排，看清楚一隻手如何指向另一個人，看清楚畫外的委託、檔案與館藏如何支撐畫內的震撼。這樣的慢看，才配得上他那些從黑暗裡浮出的臉。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ The Metropolitan Museum of Art（2003-10）— "Caravaggio (Michelangelo Merisi) (1571–1610) and His Followers"
+<a href="https://www.metmuseum.org/TOAH/HD/crvg/hd_crvg.htm" rel="noopener" target="_blank">https://www.metmuseum.org/TOAH/HD/crvg/hd_crvg.htm</a></p>
+<p class="ref">² The National Gallery, London（未標日期）— "Michelangelo Merisi da Caravaggio (1571 - 1610)"
+<a href="https://www.nationalgallery.org.uk/artists/michelangelo-merisi-da-caravaggio" rel="noopener" target="_blank">https://www.nationalgallery.org.uk/artists/michelangelo-merisi-da-caravaggio</a></p>
+<p class="ref">³ Getty Research Institute（未標日期）— "ULAN Full Record Display: Caravaggio, Michelangelo Merisi da"
+<a href="https://www.getty.edu/vow/ULANFullDisplay?find=caravaggio&amp;role=&amp;nation=&amp;prev_page=1&amp;subjectid=500115312" rel="noopener" target="_blank">https://www.getty.edu/vow/ULANFullDisplay?find=caravaggio&amp;role=&amp;nation=&amp;prev_page=1&amp;subjectid=500115312</a></p>
+<p class="ref">⁴ Museo Nacional Thyssen-Bornemisza（未標日期）— "Caravaggio (Michelangelo Merisi)"
+<a href="https://www.museothyssen.org/en/collection/artists/caravaggio-michelangelo-merisi" rel="noopener" target="_blank">https://www.museothyssen.org/en/collection/artists/caravaggio-michelangelo-merisi</a></p>
+<p class="ref">⁵ BBC Culture（2016-10-11）— "Why Caravaggio was as shocking as his paintings"
+<a href="https://www.bbc.com/culture/article/20161010-why-caravaggio-was-a-shocking-as-his-paintings" rel="noopener" target="_blank">https://www.bbc.com/culture/article/20161010-why-caravaggio-was-a-shocking-as-his-paintings</a></p>
+<p class="ref">⁶ BBC News（2011-02-18）— "Caravaggio's crimes exposed in Rome's police files"
+<a href="https://www.bbc.com/news/world-europe-12497978" rel="noopener" target="_blank">https://www.bbc.com/news/world-europe-12497978</a></p>
+<p class="ref">⁷ BBC History（未標日期； archived）— "Caravaggio (1571-1610)"
+<a href="https://www.bbc.co.uk/history/historic_figures/caravaggio.shtml" rel="noopener" target="_blank">https://www.bbc.co.uk/history/historic_figures/caravaggio.shtml</a></p>
+<p class="ref">⁸ The Guardian（2024-04-12）— "Who killed Caravaggio and why? His final paintings may hold the key"
+<a href="https://www.theguardian.com/artanddesign/2024/apr/12/who-killed-caravaggio-and-why-his-final-paintings-may-hold-the-key" rel="noopener" target="_blank">https://www.theguardian.com/artanddesign/2024/apr/12/who-killed-caravaggio-and-why-his-final-paintings-may-hold-the-key</a></p>
+<p class="ref">⁹ Encyclopaedia Britannica（更新至2026-05-21）— "Caravaggio | Biography, Paintings, Style, &amp; Facts"
+<a href="https://www.britannica.com/biography/Caravaggio" rel="noopener" target="_blank">https://www.britannica.com/biography/Caravaggio</a></p>
+<p class="ref">¹⁰ The New York Times（2025-04-25）— "A Closer Look at Pope Francis’ Favorite Painting"
+<a href="https://www.nytimes.com/interactive/2025/04/24/arts/pope-francis-caravaggio.html" rel="noopener" target="_blank">https://www.nytimes.com/interactive/2025/04/24/arts/pope-francis-caravaggio.html</a></p>
+<p class="ref">¹¹ The New York Review of Books（2005-05-12）— "The Battle of Light with Darkness"
+<a href="https://www.nybooks.com/articles/2005/05/12/the-battle-of-light-with-darkness/" rel="noopener" target="_blank">https://www.nybooks.com/articles/2005/05/12/the-battle-of-light-with-darkness/</a></p>
+<p class="ref">¹² The Metropolitan Museum of Art（未標日期）— "The Denial of Saint Peter"
+<a href="https://www.metmuseum.org/art/collection/search/437986" rel="noopener" target="_blank">https://www.metmuseum.org/art/collection/search/437986</a></p>
+<p class="ref">¹³ The National Gallery, London（未標日期）— "The Supper at Emmaus"
+<a href="https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus" rel="noopener" target="_blank">https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-the-supper-at-emmaus</a></p>
+<p class="ref">¹⁴ The National Gallery, London（未標日期）— "Salome receives the Head of John the Baptist"
+<a href="https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-salome-receives-the-head-of-john-the-baptist" rel="noopener" target="_blank">https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-salome-receives-the-head-of-john-the-baptist</a></p>
+<p class="ref">¹⁵ The National Gallery, London（未標日期）— "Boy bitten by a Lizard"
+<a href="https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-boy-bitten-by-a-lizard" rel="noopener" target="_blank">https://www.nationalgallery.org.uk/paintings/michelangelo-merisi-da-caravaggio-boy-bitten-by-a-lizard</a></p>
+<p class="ref">¹⁶ Vatican Museums（未標日期）— "Caravaggio, Deposition"
+<a href="https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-xii---secolo-xvii/caravaggio--deposizione-dalla-croce.html" rel="noopener" target="_blank">https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-xii---secolo-xvii/caravaggio--deposizione-dalla-croce.html</a></p>
+<p class="ref">¹⁷ Musée du Louvre（未標日期）— "La Mort de la Vierge"
+<a href="https://collections.louvre.fr/en/ark:/53355/cl010062304" rel="noopener" target="_blank">https://collections.louvre.fr/en/ark:/53355/cl010062304</a></p>
+<p class="ref">¹⁸ St John's Co-Cathedral（2021-04-07）— "Caravaggio"
+<a href="https://www.stjohnscocathedral.com/the-co-cathedral/caravaggio/" rel="noopener" target="_blank">https://www.stjohnscocathedral.com/the-co-cathedral/caravaggio/</a></p>
+<p class="ref">¹⁹ St John's Co-Cathedral（2024-04-12）— "Come and visit The Caravaggio Centre at St John’s Co-Cathedral"
+<a href="https://www.stjohnscocathedral.com/2024/04/12/come-and-visit-the-caravaggio-centre-at-st-johns-co-cathedral/" rel="noopener" target="_blank">https://www.stjohnscocathedral.com/2024/04/12/come-and-visit-the-caravaggio-centre-at-st-johns-co-cathedral/</a></p>
+<p class="ref">²⁰ Uffizi Galleries（2021-12-03）— "Caravaggio, Medusa, 1595"
+<a href="https://www.uffizi.it/en/video/uffizi-for-everyone-international-signs-video-caravaggio-medusa-1595" rel="noopener" target="_blank">https://www.uffizi.it/en/video/uffizi-for-everyone-international-signs-video-caravaggio-medusa-1595</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/820" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
