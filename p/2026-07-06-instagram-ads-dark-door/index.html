@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>廣告入口的暗門 · 穗稻忠武的專欄</title>
+<meta name="description" content="在手機上滑過一則廣告，通常只是一秒鐘的事。可是 BBC Eye 近日在印度建立測試帳號後發現，Instagram 的付費廣告系統不只推送成人色情內容，還出現指向 Telegram 頻道、涉嫌販售兒少性剝削與虐待素材的廣告；印度政府隨後要求 Meta 移除相關廣告與內容，並在七日內說明審核如何失守。¹²³">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-06-instagram-ads-dark-door/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="廣告入口的暗門">
+<meta property="og:description" content="在手機上滑過一則廣告，通常只是一秒鐘的事。可是 BBC Eye 近日在印度建立測試帳號後發現，Instagram 的付費廣告系統不只推送成人色情內容，還出現指向 Telegram 頻道、涉嫌販售兒少性剝削與虐待素材的廣告；印度政府隨後要求 Meta 移除相關廣告與內容，並在七日內說明審核如何失守。¹²³">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-06-instagram-ads-dark-door/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Social_media_Icons_On_The_Home_Screen_of_an_Android_Phone.jpg/1280px-Social_media_Icons_On_The_Home_Screen_of_an_Android_Phone.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "廣告入口的暗門", "description": "在手機上滑過一則廣告，通常只是一秒鐘的事。可是 BBC Eye 近日在印度建立測試帳號後發現，Instagram 的付費廣告系統不只推送成人色情內容，還出現指向 Telegram 頻道、涉嫌販售兒少性剝削與虐待素材的廣告；印度政府隨後要求 Meta 移除相關廣告與內容，並在七日內說明審核如何失守。¹²³", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-06-instagram-ads-dark-door/", "datePublished": "2026-07-06", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Social_media_Icons_On_The_Home_Screen_of_an_Android_Phone.jpg/1280px-Social_media_Icons_On_The_Home_Screen_of_an_Android_Phone.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">台灣文化</span><span class="tag">台灣</span><span class="tag">專欄</span></div>
+<h1>廣告入口的暗門</h1>
+<p class="byline"><time>2026-07-06</time></p>
+</div>
+
+<p class="lead">導言：在手機上滑過一則廣告，通常只是一秒鐘的事。可是 BBC Eye 近日在印度建立測試帳號後發現，Instagram 的付費廣告系統不只推送成人色情內容，還出現指向 Telegram 頻道、涉嫌販售兒少性剝削與虐待素材的廣告；印度政府隨後要求 Meta 移除相關廣告與內容，並在七日內說明審核如何失守。¹²³</p>
+<p>這不是一篇關於「網路上有壞人」的故事。更接近的問題是：當平台把廣告、推薦系統、外部通訊 app 與自動審核綁在一起，一個普通使用者的 feed 會如何被推向危險邊界？本文不重述任何違法影像內容，只追蹤可查證的流程：誰付錢、誰審核、誰引流、誰負責。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Social_media_Icons_On_The_Home_Screen_of_an_Android_Phone.jpg/1280px-Social_media_Icons_On_The_Home_Screen_of_an_Android_Phone.jpg" alt="手機螢幕上的社群媒體圖示｜來源：mikemacmarketing / Wikimedia Commons（CC BY 2.0）" loading="lazy"><figcaption>社群平台的風險往往不是從一個明顯可疑的網站開始，而是從熟悉的手機 feed、通知與廣告版位開始。</figcaption></figure>
+<h2>一個測試帳號看到的暗門</h2>
+<p>BBC World Service 記者 Divya Arya 報導，BBC 在印度建立一個 Instagram alias account，起因是觀察到平台即使在使用者沒有搜尋相關內容時，也會推送帶有性暗示的內容。測試帳號追蹤十個發布性暗示內容的帳號後，不到一週便在 feed 上看到提供視訊通話與成人色情內容的廣告；數日後，則出現涉及兒童與成人的性暗示廣告，並連到 Telegram 頻道。BBC 表示，總計約有三十則獨立廣告涉嫌推廣兒少性虐待素材，另有約二十則成人色情廣告。¹ 在這裡，「廣告」兩字是關鍵。一般使用者發布的貼文可能在上架後才被偵測；但 Meta 自己的廣告標準寫明，廣告主下單後，每一則廣告都會根據政策審查，審查流程主要依賴自動化工具，會檢查影像、影片、文字、目標受眾與連結目的地等元素。Meta 也在同一份政策中承認，審核流程不一定能偵測到所有違規。⁵</p>
+<p>BBC 報導其中一則廣告給 Instagram 後，平台二十四小時後回覆稱該廣告不違反「community guidelines」；但當 BBC 向 Meta 詢問整體發現後，Meta 表示已停用數則廣告、暫停發布帳號，並移除更多廣告、關閉帳號、封鎖違規 URL。¹ 這使事件的焦點從「使用者是否上傳違法內容」轉到更尖銳的問題：如果付費廣告已經通過平台自己的前置審核，平台是否只是被動主機，還是已經成為違法市場的流量入口？</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Meta_Platforms_Headquarters_Menlo_Park_California.jpg/1280px-Meta_Platforms_Headquarters_Menlo_Park_California.jpg" alt="Meta 位於加州 Menlo Park 的總部｜來源：LPS.1 / Wikimedia Commons（CC0）" loading="lazy"><figcaption>當一則廣告出現在 Instagram，背後不是單一工程錯誤，而是一整套公司政策、審核流程與營收模型。</figcaption></figure>
+<h2>印度政府為何立刻介入</h2>
+<p>BBC 調查發布後數小時，印度政府表示已召喚 Meta 代表說明。Bloomberg 隨後引述知情人士報導，印度科技部要求 Meta 停用包含 Instagram 在內的平台上涉及兒童性虐待與剝削的廣告及其他內容。² ThePrint 與 The Hindu 進一步報導，印度電子與資訊科技部（MeitY）在七月四日晚間發出通知，要求 Instagram 停用所有推廣或便利取得 CSEAM 的廣告與內容，並要求 Meta 在七日內詳細說明。³⁴</p>
+<p>印度政府的問題並不只在於「內容存在」。ThePrint 報導，政府要求 Meta 說明這些廣告如何在平台審核政策下成為付費廣告、是否繞過預發布審核，以及公司採取了哪些矯正措施。³ 這與一般平台刪文不同：付費廣告理應是平台更能掌握的區域，因為廣告主、素材、投放目的地與付款流程都留下平台可檢視的資料。</p>
+<p>法律背景也讓印度政府的反應更具重量。UNODC 收錄的印度 Information Technology Act 第 67B 條明定，發布、傳送、建立、收集、搜尋、瀏覽、下載、廣告、促進、交換或散布涉及兒童性明示行為的電子材料，均屬處罰範圍；初犯最高可處五年徒刑與罰金，累犯可至七年。¹⁵ The Hindu 也曾報導，印度最高法院在 2024 年指出，私下觀看、下載、儲存、持有、散布或展示兒童性剝削與虐待素材，均可能觸犯 POCSO 與 IT Act，並要求司法文件改用 CSEAM 一詞。¹⁶</p>
+<p>本文無法獨立核實印度政府通知全文，因目前多數細節來自知情人士與印度媒體報導；但多個來源一致指出，政府要求 Meta 移除相關廣告與內容、提交七日內說明，並把問題定位為平台審核與演算法放大風險，而非單一帳號違規。²³⁴</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/The_Secretary%2C_Department_of_Electronics_%26_Information_Technology_%28DeitY%29%2C_Ministry_of_Communications_%26_Information_Technology%2C_Shri_J._Satyanarayana_delivering_the_Keynote_Address.jpg/1280px-thumbnail.jpg" alt="印度電子與資訊科技部相關政府活動影像｜來源：Ministry of Communications / Wikimedia Commons（GODL-India）" loading="lazy"><figcaption>印度監管者追問的不是單一貼文，而是平台把違法外鏈做成付費廣告後，誰應負責。</figcaption></figure>
+<h2>Meta 的說法：沒有完美系統，也沒有「明知故犯」</h2>
+<p>Meta 對 BBC 的回應分成兩層。第一層是處置：公司稱已停用多個廣告與帳號，並封鎖更多違規 URL。第二層是責任邊界：Meta 表示「沒有系統是完美的」，廣告審核不一定能偵測所有違規；公司會在廣告上線後繼續使用主動偵測技術，任何人也都可以回報疑似違規廣告。¹</p>
+<p>Meta 也否認 BBC 調查可能導向的最嚴重解讀。BBC 引述 Meta 表示，稱公司蓄意把含兒童元素的廣告投放給有不當興趣的使用者，是「categorically inaccurate」；公司也否認把收入置於安全之上，並稱 2025 年已自動停用超過四百萬個顯示足夠可疑訊號的帳號。¹ 這些說法必須與 Meta 自己公布的制度性文件一起讀。Meta Advertising Standards 明確禁止廣告包含性剝削或危害兒童的內容，並稱一旦發現明顯兒童剝削，會依法向美國 National Center for Missing and Exploited Children（NCMEC）通報。⁵ Meta 的 Safety Center 則說，公司採取「預防、控制、回應」三段式兒童保護方法，使用影像比對、AI 與機器學習處理兒童裸露、成年人與青少年的不當互動、可能的 grooming 等風險。⁷</p>
+<p>可是制度存在不等於制度有效。Meta H1 2026 Integrity Reports 顯示，公司正在部署更進階 AI 系統，用於內容執法與違規內容盛行率測量；同一份報告也說，2025 年移除超過 1.59 億則詐騙廣告，其中 92% 在有人回報前被移除，並在 2025 年十一月至 2026 年一月間移除超過 34.4 萬則試圖推廣「nudify」app 的 Facebook 與 Instagram 廣告。⁶ 這些數字說明 Meta 的自動化安全機制確實大規模運作；同時也提醒讀者，平台每天面對的是工業化濫用，而不是零星違規。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 這起事件最棘手之處，在於它不是「Meta 沒有政策」；恰恰相反，Meta 有詳細政策、透明報告、NCMEC 通報承諾與 AI 偵測系統。真正的新聞點是：在高風險領域，當政策與自動化審核仍讓付費廣告流出時，平台不能只用「沒有完美系統」結案，因為廣告是平台主動販售、審核、分發的商品。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/DCMS_SoS_Visits_the_National_Center_for_Missing_and_Exploited_Children_-_51737071262.jpg/1280px-DCMS_SoS_Visits_the_National_Center_for_Missing_and_Exploited_Children_-_51737071262.jpg" alt="DCMS 官員訪問 National Center for Missing and Exploited Children｜來源：UKinUSA / Wikimedia Commons（CC BY-SA 2.0）" loading="lazy"><figcaption>NCMEC 是美國兒少性剝削通報體系核心之一，也是 Meta 等平台聲稱會依法通報的機構。</figcaption></figure>
+<h2>Telegram 的位置：外鏈目的地還是共同風險場域</h2>
+<p>BBC 報導中的廣告並未只停留在 Instagram，而是把使用者帶往 Telegram 頻道。BBC 指出，它向 Telegram 回報兩個涉嫌販售兒少性虐待影片的頻道；其中一個後來顯示因違反 Telegram 服務條款而無法顯示，另一個仍繼續發布新影片銷售。¹ Telegram 告訴 BBC，該公司使用自動化與人工審核，已「virtually eliminated」平台上的公開 CSAM 傳播；Telegram 也稱 2026 年已移除超過 27.4 萬個相關群組與頻道。¹ Telegram 官方 Safety Overview 顯示，平台 2026 年已封鎖 1,869 萬多個群組與頻道，其中 CSAM 相關群組與頻道超過 27.7 萬；它也宣稱自 2018 年起，公開影像會自動與過去十年由 Telegram 審核員封鎖的 CSAM hash 資料庫比對，並在 2024 年加入 Internet Watch Foundation 等組織提供的 hash。⁸ Telegram 的 EU DSA 透明報告則強調，平台不以推薦演算法放大內容，使用者通常只會接觸自己選擇參與的內容；官方請求中，CSAM 類資訊請求為 556 件，移除請求為 3 件。⁹</p>
+<p>然而，監管者與兒少保護組織對 Telegram 的評價並不完全相同。Reuters 四月報導，英國通訊監管機構 Ofcom 已啟動調查，檢視 Telegram 是否符合 Online Safety Act 下防止 CSAM 分享的義務；Ofcom 表示收到 Canadian Centre for Child Protection 提供的證據，並自行評估後決定展開調查。¹⁰ Ofcom 官方聲明同時指出，平台必須評估並降低使用者遇到非法內容的風險，若違法可被要求改正、罰款最高達 1,800 萬英鎊或全球營收 10%。¹¹</p>
+<p>IWF 的立場更像「肯定第一步，但要求更多」。IWF 2024 年宣布 Telegram 加入會員，取得其 hash 資料與工具以阻擋公開平台上的兒少性虐待影像；IWF 同時說，這只是更長旅程的第一步，並提到 Telegram 上曾有數千件回報，包括最嚴重類型與涉及兩歲以下兒童的影像。¹² 澳洲 eSafety 也在 2025 年因 Telegram 延遲五個多月回覆透明度通知，對其開出近 100 萬澳幣罰單。¹³</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Telegram_app_icon_on_smartphone_screen_%28perspective_render%29_%2849896396508%29.jpg/1280px-Telegram_app_icon_on_smartphone_screen_%28perspective_render%29_%2849896396508%29.jpg" alt="智慧型手機上的 Telegram app 圖示｜來源：Ivan Radic / Wikimedia Commons（CC BY 2.0）" loading="lazy"><figcaption>Instagram 廣告把流量導向 Telegram，讓責任從單一平台擴散成跨平台治理問題。</figcaption></figure>
+<h2>付費廣告比一般貼文更難被原諒</h2>
+<p>平台常說，使用者每天上傳海量內容，完全即時審核不可能。這句話在一般貼文場景有一定現實基礎；但付費廣告不同。廣告不是被動出現在平台上的內容，而是平台收費後發送給目標受眾的商業訊息。Meta 自己的政策也承認，廣告審核會檢查素材、目標資訊與連結目的地。⁵</p>
+<p>BBC 報導指出，這些廣告使用明顯違規的詞彙，並指向 Telegram 頻道；ThePrint 報導印度政府也要求 Meta 解釋這些廣告如何通過預發布審核。¹³ 如果 BBC 與印度媒體引述的事實成立，這不只是「壞人上傳內容」，而是「壞人買到平台分發能力」。在廣告市場裡，平台不只是公告欄，還是交易撮合者、審核者與投放者。 Meta H1 2026 報告的 scam ads 數字可作為對照：2025 年平台移除 1.59 億則詐騙廣告，顯示 Meta 已把廣告濫用視為大規模執法領域。⁶ 那麼兒少性剝削相關廣告理應位於更高敏感度的審核層級。Meta 可能會指出，惡意行為者會不斷變換素材、遮掩語意、使用外鏈與代碼；這是合理的風險描述。但在兒少性剝削素材面前，社會對「漏網率」的容忍度必然比一般低品質廣告或詐騙廣告更低。</p>
+<p>這也說明為什麼印度政府特別提到「algorithmic amplification」。廣告系統並非只把內容放在原地，而是依照平台對使用者興趣、互動與轉換機率的預測，把內容送到更可能點擊的人面前。BBC 前 Facebook 副總裁 Brian Boland 引述自身看法稱，Instagram 演算法為了讓使用者停留，會顯示更極端、更誘人的內容；他並未說演算法「想」製造犯罪，而是指出若目標只追求點擊與收入，且缺乏積極控制，就可能產生這種結果。¹</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 對一般讀者而言，這裡的日常風險不是「我會不會主動尋找違法內容」，而是「平台會不會把高風險內容或外鏈包裝成廣告送到我的螢幕」。當推薦與廣告都以行為預測為核心，安全系統也必須從內容審查升級為「分發責任」審查：不只問內容本身是否違規，也問誰被推送、為什麼被推送、連結把人帶去哪裡。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Iwf-gebaeude.jpg/1280px-Iwf-gebaeude.jpg" alt="Internet Watch Foundation 相關建物｜來源：Wikimedia Commons（CC0）" loading="lazy"><figcaption>IWF 等組織長期處理已知兒少性虐待影像的 hash 與下架協作，突顯平台外部監督的重要性。</figcaption></figure>
+<h2>數字背後：通報增加，不等於問題減少</h2>
+<p>NCMEC 2026 年三月公布的 2025 初步資料顯示，CyberTipline 在 2025 年收到 2,130 萬件通報，包含 6,180 萬件與疑似兒少性剝削相關的影像、影片與其他檔案。NCMEC 也指出，2025 年有超過 150 萬件通報與生成式 AI 和兒少性剝削有關；排除其中 110 萬件缺乏可行動資訊的 Amazon AI Services 通報後，仍有超過 1.2 萬件涉及 AI 訓練資料中的 CSAM、逾 7,000 件涉及使用者生成或持有 AI 生成 CSAM、逾 3 萬件涉及使用者上傳影像並嘗試以文字提示生成 CSAM。¹⁴</p>
+<p>這些數字不能直接拿來衡量犯罪總量。NCMEC 自己提醒，通報數量不是犯罪盛行率，也不是兒童受害人數、網路上 CSAM 影像影片總量，或執法機關開案數。¹⁴ 但它們說明一件事：平台通報體系正在承受愈來愈多不同型態的壓力，從既有影像重複散布，到線上誘騙、勒索，再到生成式 AI 改造或生成內容。 Meta 透明報告、Telegram Safety Overview、Ofcom 調查與 IWF 合作新聞共同呈現一種矛盾局面：平台都聲稱已導入 AI、hash matching、人工審核、使用者回報與 NGO 合作；同時，監管者與調查媒體仍不斷發現新的漏洞。⁶⁸¹⁰¹² 這不必然表示平台所有承諾都是空話，但表示安全承諾需要外部可驗證的結果，而不是只看平台自行公布的移除總量。</p>
+<p>對讀者來說，這些遠方數字也不只是印度、英國或美國的事。今天每個大型平台都以全球化方式處理內容、廣告與外鏈；某一國測試帳號看到的廣告，可能揭露的是同一套廣告審核系統在不同語言、文化與法律環境下的弱點。當平台說它已移除數百萬帳號或數十萬廣告，下一個問題應該是：哪些內容在被移除前已被看見？哪些外鏈仍然活著？哪些平台之間的轉跳讓責任變得模糊？</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/DCMS_SoS_Visits_the_National_Center_for_Missing_and_Exploited_Children_-_51737893616.jpg/1280px-DCMS_SoS_Visits_the_National_Center_for_Missing_and_Exploited_Children_-_51737893616.jpg" alt="兒少安全機構訪問場景｜來源：UKinUSA / Wikimedia Commons（CC BY-SA 2.0）" loading="lazy"><figcaption>英國 Online Safety Act 下的 Ofcom 調查，代表兒少安全已從平台自律走向更強制的法規檢查。</figcaption></figure>
+<h2>台灣讀者應該看見的日常問題</h2>
+<p>這起事件發生在印度，但它提出的不是印度專屬問題。台灣使用者同樣生活在 Instagram、Facebook、Threads、Telegram、LINE、YouTube、TikTok 與各種外鏈之間。對一般家長、老師、社群經營者或小型廣告主而言，最難辨識的風險不是明顯違法網站，而是合法平台上的「看似普通廣告」與外部通訊 app 之間的縫隙。</p>
+<p>第一個日常問題是：回報機制是否足夠清楚。BBC 報導裡，一則被回報的廣告二十四小時後被判定不違反標準，直到媒體整體詢問後才有更大規模處置。¹ 這讓使用者很難知道：按下「檢舉」後，究竟是由自動系統、外包審核、人類專員，還是二次審核處理？若第一次判定錯誤，使用者是否有簡單的上訴或升級管道？</p>
+<p>第二個問題是外鏈責任。Telegram 可以主張它不演算法放大內容，也可以主張它大量移除違規群組；Instagram 可以主張廣告主與外部頻道才是犯罪者。但從使用者路徑來看，問題是一條線：Instagram feed 看到廣告，點擊後到 Telegram，接著進入封閉頻道。當每家公司只管理自己的一段，犯罪者就有機會利用平台之間的縫隙。</p>
+<p>第三個問題是平台營收與安全團隊的權力關係。BBC 引述前 Facebook 主管 Brian Boland 表示，他曾經因使用者安全移除大量詐騙廣告收入，但後來收入與使用者體驗的取捨逐漸變成核心問題。¹ 這是一方說法，Meta 否認把收入置於安全之上；但廣告平台若要取得公眾信任，就必須能讓外界看見安全團隊是否有足夠權限讓高風險廣告無條件下架，而不是在營收與風險之間反覆折衝。</p>
+<p>對使用者而言，最務實的建議仍然簡單：不要點擊任何涉及性內容、未成年人、裸露、私密影片或「轉到通訊 app 交易」的廣告；看到疑似兒少性剝削內容，不要下載、轉傳或截圖散布，應使用平台檢舉與所在地官方通報管道。這些建議看似基本，但在平台把危險包成廣告時，基本動作就成為必要防線。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/The_Union_Minister_for_Electronics_%26_Information_Technology_and_Law_%26_Justice%2C_Shri_Ravi_Shankar_Prasad_addressing_the_World_Congress_of_Information_Technology_%28WCIT%29_and_26th_Nasscom_India_Leadership_Forum%2C_in_Hyderabad.jpg" alt="印度電子與資訊科技部相關公共活動｜來源：Ministry of Electronics and IT, Government of India / Wikimedia Commons（GODL-India）" loading="lazy"><figcaption>印度政府此次追問 Meta，也提醒其他市場：平台廣告審核已不只是商業政策，而是公共安全制度。</figcaption></figure>
+<h2>接下來該看什麼</h2>
+<p>短期內，最值得追蹤的是 Meta 對印度政府七日通知的正式回覆。若公司只重申「零容忍」與「沒有系統完美」，爭議很可能持續；若它公開說明這些廣告如何通過審核、哪些訊號沒有被偵測、哪些人類審核或升級流程失效，外界才有機會判斷問題是個案、流程漏洞，還是廣告系統本身的結構性缺陷。 第二個觀察點是 Telegram 與外部組織合作是否能涵蓋更多場景。Telegram 官方數字顯示 2026 年已封鎖大量 CSAM 相關群組與頻道；IWF、Ofcom、eSafety 的資料則顯示，監管者仍擔心壞人網絡在其生態系中操作。⁸¹⁰¹²¹³ 如果 Instagram 廣告引流到 Telegram 的路徑屬實，兩家公司之間是否能建立更快的違法外鏈共享與封鎖機制，將比各自發布聲明更重要。</p>
+<p>第三個觀察點是廣告透明度。Meta 的 Ad Library 已用於政治與社會議題廣告透明；但兒少安全事件提出另一種透明需求：高風險類別的廣告是否應有更嚴格留存、外部稽核、違規後公開統計，以及跨平台外鏈風險報告？這些問題不一定都能用公開資料解決，因為公開太多也可能被犯罪者逆向利用；但完全不公開，社會只能在下一次媒體調查後才知道系統漏了什麼。</p>
+<p>結語：每個平台都會說，兒少性剝削是不能容忍的犯罪。這句話本身沒有爭議。真正的爭議在下一句：當犯罪者不是把內容藏在網路角落，而是買到一則被平台分發的廣告，平台該如何證明自己不只是事後清理，而是在廣告被端到使用者螢幕前，就把暗門關上。</p>
+<p>還有一個較少被討論的日常後果：平台的錯誤不會平均分配。語言、地區與市場規模會影響安全資源配置。BBC 測試帳號設在印度；印度又是 Meta、WhatsApp、Instagram 的重大市場。當同一套廣告審核系統要處理不同語言、俚語、暗號、在地支付方式與通訊 app 生態時，英語政策文件與全球安全口號未必能涵蓋每個市場的變體。這也是為什麼本案不能只看作「某地有犯罪者」，而應視為大型平台在非單一語言市場執行安全政策的壓力測試。 對台灣讀者而言，這提醒我們不要把平台安全想成一個單一按鈕。即使平台在美國、歐盟或英國接受監管，台灣使用者看到的廣告、外鏈與詐騙話術，仍可能受本地語言、支付習慣、社群平台偏好與通報管道影響。若某些內容使用中文變體、諧音、截圖文字、短網址或通訊軟體群組名稱逃避審核，海外平台總部不一定能即時辨識。公共討論因此不應只停在「平台要管好」，還要要求平台揭露本地語言審核能力、外鏈封鎖流程、與執法或兒少保護團體的通報合作。</p>
+<p>從家庭與學校角度，另一個需要避免的誤解是：只要孩子沒有主動搜尋，平台就安全。BBC 調查的可怕之處正在於測試帳號不是直接搜尋犯罪內容，而是從性暗示內容、推薦、廣告一路滑向更高風險內容。¹ 這種路徑讓數位素養教育不能只教「不要搜尋壞東西」，還要教孩子與成年人辨識平台推薦、廣告標籤、外部連結、陌生群組邀請與付費內容陷阱。換言之，安全教育的對象不只是孩子，也包括每天替平台購買廣告、經營粉專、投放短影音的成年人。</p>
+<p>最後，廣告主也不能把這件事視為與自己無關。品牌安全通常被理解為「我的廣告不要出現在不適合的內容旁邊」；本案則反過來問：平台是否讓違法或剝削性內容本身買成廣告？當合法品牌與非法廣告共用同一套投放基礎設施，平台的審核失誤會侵蝕整個廣告市場信任。若平台無法證明高風險廣告被更嚴格地篩掉，最後受影響的不只是受害兒童與使用者，也包括依賴平台做生意的正當商家。</p>
+<p>因此，本案的後續不只該看罰款或下架數量，也該看三個較細的指標。第一，Meta 是否公開說明廣告審核失誤發生在素材辨識、文字辨識、連結目的地檢查、帳號風險評分，還是人工覆核環節。第二，Telegram 是否能在接獲跨平台線索後更快封鎖同一批頻道、替代頻道與轉址鏈，而不是只處理單一回報。第三，印度與其他監管者是否要求平台提供匿名化、可稽核的高風險廣告資料，使外部研究者能檢查系統性問題，而不必每一次都靠媒體假帳號重新揭露。 這些問題不會有簡單答案。過度公開審核規則可能讓犯罪者學會規避；完全不公開又會讓平台用「安全考量」阻擋問責。較合理的方向，是讓受信任的兒少保護組織、監管者與研究者在保密條件下取得足夠資料，檢查平台是否把最高風險內容放在最高審核層級。對使用者而言，平台安全不是抽象公共政策，而是每天滑手機時看不見的基礎建設；當基礎建設漏水，最脆弱的人會最先受傷。</p>
+<p>平台也應把「外鏈目的地」視為廣告安全的一部分。若廣告文案本身含糊，但連到已知高風險通訊群組、短網址或重複被封鎖的網域，審核系統仍應攔截。這不是要求平台閱讀所有私人訊息，而是要求它對自己收費分發出去的連結負責。廣告審核若只看素材，不看流量最後被帶到哪裡，就像機場只檢查登機證，不檢查行李。</p>
+<p>換言之，這不是單一公司公關危機，而是廣告經濟進入通訊平台灰區後的公共安全測驗。若平台不能證明高風險廣告在上線前被擋下，使用者就只能在事後承擔風險。</p>
+<p>本案也提醒媒體與研究者，平台調查需要避開二次傷害。報導違法內容時，應描述機制與責任，不應重製、截圖散布或提供可追查到非法素材的細節。公共利益在於看清系統漏洞，而不是讓受害影像再次流通。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ BBC News（2026-07-03）— "Instagram running ads promoting child sexual abuse material in India, BBC finds"
+<a href="https://www.bbc.com/news/articles/cvgm4e0316zo" rel="noopener" target="_blank">https://www.bbc.com/news/articles/cvgm4e0316zo</a></p>
+<p class="ref">² Bloomberg（2026-07-05）— "India Tells Meta to Remove Child Abuse Content from Instagram"
+<a href="https://www.bloomberg.com/news/articles/2026-07-05/india-tells-meta-to-remove-child-abuse-content-from-instagram" rel="noopener" target="_blank">https://www.bloomberg.com/news/articles/2026-07-05/india-tells-meta-to-remove-child-abuse-content-from-instagram</a></p>
+<p class="ref">³ ThePrint（2026-07-05）— "Centre issues notice to Meta over child abuse material in Instagram ads, seeks detailed reply in a week"
+<a href="https://theprint.in/india/governance/centre-issues-notice-to-meta-over-child-abuse-material-in-instagram-ads-seeks-detailed-reply-in-a-week/2978109/" rel="noopener" target="_blank">https://theprint.in/india/governance/centre-issues-notice-to-meta-over-child-abuse-material-in-instagram-ads-seeks-detailed-reply-in-a-week/2978109/</a></p>
+<p class="ref">⁴ The Hindu / PTI（2026-07-05）— "Government issues stern notice to Meta on child sexual abuse material in Instagram ads: sources"
+<a href="https://www.thehindu.com/sci-tech/technology/government-issues-stern-notice-to-meta-on-child-sexual-abuse-material-in-instagram-ads-sources/article71185375.ece" rel="noopener" target="_blank">https://www.thehindu.com/sci-tech/technology/government-issues-stern-notice-to-meta-on-child-sexual-abuse-material-in-instagram-ads-sources/article71185375.ece</a></p>
+<p class="ref">⁵ Meta Transparency Center（無日期，擷取於 2026-07-06）— "Introduction to the Advertising Standards"
+<a href="https://transparency.meta.com/policies/ad-standards?locale=en_US" rel="noopener" target="_blank">https://transparency.meta.com/policies/ad-standards?locale=en_US</a></p>
+<p class="ref">⁶ Meta Transparency Center（2026-03-19）— "Integrity Reports, H1 2026"
+<a href="https://transparency.meta.com/reports/integrity-reports-h1-2026/" rel="noopener" target="_blank">https://transparency.meta.com/reports/integrity-reports-h1-2026/</a></p>
+<p class="ref">⁷ Meta Safety Center（無日期，擷取於 2026-07-06）— "Child protection technology advancements and accountability"
+<a href="https://www.meta.com/en-gb/safety/topics/online-child-protection/technology/" rel="noopener" target="_blank">https://www.meta.com/en-gb/safety/topics/online-child-protection/technology/</a></p>
+<p class="ref">⁸ Telegram（無日期，擷取於 2026-07-06）— "Telegram Safety Overview"
+<a href="https://telegram.org/safety" rel="noopener" target="_blank">https://telegram.org/safety</a></p>
+<p class="ref">⁹ Telegram（2025）— "Telegram’s DSA Transparency Report"
+<a href="https://telegram.org/tos/eu-dsa/transparency-2025" rel="noopener" target="_blank">https://telegram.org/tos/eu-dsa/transparency-2025</a></p>
+<p class="ref">¹⁰ Reuters（2026-04-21）— "UK regulator probes Telegram over child sexual abuse concerns"
+<a href="https://www.reuters.com/world/uk/uk-regulator-investigates-telegram-over-child-sexual-abuse-concerns-2026-04-21/" rel="noopener" target="_blank">https://www.reuters.com/world/uk/uk-regulator-investigates-telegram-over-child-sexual-abuse-concerns-2026-04-21/</a></p>
+<p class="ref">¹¹ Ofcom（2026-04-21）— "Ofcom investigates Telegram and teen chat sites"
+<a href="https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-investigates-telegram-and-teen-chat-sites" rel="noopener" target="_blank">https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-investigates-telegram-and-teen-chat-sites</a></p>
+<p class="ref">¹² Internet Watch Foundation（2024-12-04）— "Telegram joins IWF in child sexual abuse imagery crackdown"
+<a href="https://www.iwf.org.uk/news-media/news/telegram-joins-iwf-in-child-sexual-abuse-imagery-crackdown/" rel="noopener" target="_blank">https://www.iwf.org.uk/news-media/news/telegram-joins-iwf-in-child-sexual-abuse-imagery-crackdown/</a></p>
+<p class="ref">¹³ eSafety Commissioner（2025-02-24）— "Australia takes enforcement action against Telegram for serious delay in terror and child sexual abuse transparency"
+<a href="https://www.esafety.gov.au/newsroom/media-releases/australia-takes-enforcement-action-against-telegram-for-serious-delay-in-terror-and-child-sexual-abuse-transparency" rel="noopener" target="_blank">https://www.esafety.gov.au/newsroom/media-releases/australia-takes-enforcement-action-against-telegram-for-serious-delay-in-terror-and-child-sexual-abuse-transparency</a></p>
+<p class="ref">¹⁴ National Center for Missing and Exploited Children（2026-03-31）— "The Work Never Stops: A First Look at NCMEC's 2025 Data"
+<a href="https://www.missingkids.org/blog/2026/the-work-never-stops-first-look-at-ncmecs-2025-data" rel="noopener" target="_blank">https://www.missingkids.org/blog/2026/the-work-never-stops-first-look-at-ncmecs-2025-data</a></p>
+<p class="ref">¹⁵ UNODC SHERLOC（無日期，擷取於 2026-07-06）— "India Information Technology Act, 2000, Section 67B"
+<a href="https://www.unodc.org/cld/en/legislation/ind/the_information_technology_act_2000/chapter_xi/section_67b/section_67b.html" rel="noopener" target="_blank">https://www.unodc.org/cld/en/legislation/ind/the_information_technology_act_2000/chapter_xi/section_67b/section_67b.html</a></p>
+<p class="ref">¹⁶ The Hindu（2024-09-23）— "Viewing, storing child sexual exploitative and abuse material an offence under POCSO, IT Act, says Supreme Court"
+<a href="https://www.thehindu.com/news/national/storing-and-viewing-child-sexually-exploitative-abuse-material-an-offence-under-pocso-supreme-court/article68672855.ece" rel="noopener" target="_blank">https://www.thehindu.com/news/national/storing-and-viewing-child-sexually-exploitative-abuse-material-an-offence-under-pocso-supreme-court/article68672855.ece</a></p>
+<p class="ref">¹⁷ BBC News（2026-04-21）— "Ofcom probing Telegram over child sexual abuse material concerns"
+<a href="https://www.bbc.com/news/articles/c4gxj049wljo" rel="noopener" target="_blank">https://www.bbc.com/news/articles/c4gxj049wljo</a></p>
+<p class="ref">¹⁸ The Straits Times（2026-07-05）— "India tells Meta to remove child abuse content from Instagram"
+<a href="https://www.straitstimes.com/asia/south-asia/india-tells-meta-to-remove-child-abuse-content-from-instagram" rel="noopener" target="_blank">https://www.straitstimes.com/asia/south-asia/india-tells-meta-to-remove-child-abuse-content-from-instagram</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/546" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
