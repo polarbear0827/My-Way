@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>穗稻忠武的專欄 · 影片</title><link>https://polarbear0827.github.io/My-Way/</link><description>FB 影片貼文 feed</description><language>zh-Hant</language><lastBuildDate>Wed, 08 Jul 2026 09:24:22 +0800</lastBuildDate><item><title>今天的統一主題：AI 正從炫技工具變成日常基礎建設，但真正的戰場是成本、信任與工作流</title><link>https://polarbear0827.github.io/My-Way/podcast/2026-07-08/</link><guid>https://polarbear0827.github.io/My-Way/video/podcast-2026-07-08.mp4</guid><pubDate>2026-07-08</pubDate><description>AI 現在不是坐在展示台上的跑車，而是直接開進你的辦公室、手機、社群和家庭門口。酷爆，但也開始有煞車失靈的瞬間！🔥
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>穗稻忠武的專欄 · 影片</title><link>https://polarbear0827.github.io/My-Way/</link><description>FB 影片貼文 feed</description><language>zh-Hant</language><lastBuildDate>Wed, 08 Jul 2026 10:25:15 +0800</lastBuildDate><item><title>Prompt 成為貼文時</title><link>https://polarbear0827.github.io/My-Way/p/2026-07-08-prompt-becomes-post-meta-pocket/</link><guid>https://polarbear0827.github.io/My-Way/video/column-2026-07-08-prompt-becomes-post-meta-pocket.mp4</guid><pubDate>2026-07-08</pubDate><description>在社群平台上，貼文曾經是一段文字、一張照片、一支影片。Meta 新上架的 Pocket 把下一個問題擺到手機螢幕上：如果貼文本身變成一個可玩的 AI 小程式，平台要審查的是「內容」，還是「行為」？
+
+▶ 全文:https://polarbear0827.github.io/My-Way/p/2026-07-08-prompt-becomes-post-meta-pocket/
+
+#穗稻忠武觀察室 #深度長文 #人文觀察</description><enclosure url="https://polarbear0827.github.io/My-Way/video/column-2026-07-08-prompt-becomes-post-meta-pocket.mp4" type="video/mp4" length="0"/><media:content url="https://polarbear0827.github.io/My-Way/video/column-2026-07-08-prompt-becomes-post-meta-pocket.mp4" medium="video" type="video/mp4"/><media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/4/43/Meta_Headquarters_Sign.jpg"/></item><item><title>AI RADAR DAILY 2026-07-08 — AI Agent 基礎設施熱</title><link>https://polarbear0827.github.io/My-Way/radar/2026-07-08/</link><guid>https://polarbear0827.github.io/My-Way/video/radar-2026-07-08.mp4</guid><pubDate>2026-07-08</pubDate><description>2026 年 7 月 8 日的 AI Radar 觀察到一個明確轉折：AI Agent 不再停留在文字對話或 API 呼叫，而是開始真正接管使用者的電腦桌面與瀏覽器。trycua/cua 與 browser-use 兩大專案同時進入熱門榜，代表「電腦使用代理」（Computer Use Agent）已從概念進入可執行階段。這不是單純的工具更新，而是基礎設施層級的突破，讓 AI 從被動回應變成主動操
+
+▶ 全文:https://polarbear0827.github.io/My-Way/radar/2026-07-08/
+
+#AI #開源 #AIRadar #科技</description><enclosure url="https://polarbear0827.github.io/My-Way/video/radar-2026-07-08.mp4" type="video/mp4" length="0"/><media:content url="https://polarbear0827.github.io/My-Way/video/radar-2026-07-08.mp4" medium="video" type="video/mp4"/><media:thumbnail url="https://polarbear0827.github.io/My-Way/radar/2026-07-08/cover.png"/></item><item><title>今天的統一主題：AI 正從炫技工具變成日常基礎建設，但真正的戰場是成本、信任與工作流</title><link>https://polarbear0827.github.io/My-Way/podcast/2026-07-08/</link><guid>https://polarbear0827.github.io/My-Way/video/podcast-2026-07-08.mp4</guid><pubDate>2026-07-08</pubDate><description>AI 現在不是坐在展示台上的跑車，而是直接開進你的辦公室、手機、社群和家庭門口。酷爆，但也開始有煞車失靈的瞬間！🔥
 
 ▶ 全文:https://polarbear0827.github.io/My-Way/podcast/2026-07-08/
 
@@ -43,7 +51,11 @@
 
 ▶ 全文:https://polarbear0827.github.io/My-Way/radar/2026-07-06/
 
-#AI #開源 #AIRadar #科技</description><enclosure url="https://polarbear0827.github.io/My-Way/video/radar-2026-07-06.mp4" type="video/mp4" length="0"/><media:content url="https://polarbear0827.github.io/My-Way/video/radar-2026-07-06.mp4" medium="video" type="video/mp4"/><media:thumbnail url="https://polarbear0827.github.io/My-Way/radar/2026-07-06/cover.png"/></item><item><title>今天的共同主題是：AI 從酷炫工具，正式變成企業、政府、科學與創作產業都得重新畫線的底層基礎建設</title><link>https://polarbear0827.github.io/My-Way/podcast/2026-07-06/</link><guid>https://polarbear0827.github.io/My-Way/video/podcast-2026-07-06.mp4</guid><pubDate>2026-07-06</pubDate><description>AI 現在不只是辦公室裡幫你寫信的小幫手，它更像一台開進城市中心的巨型推土機：有人拿它蓋高速公路，有人趕快拉封鎖線！🔥
+#AI #開源 #AIRadar #科技</description><enclosure url="https://polarbear0827.github.io/My-Way/video/radar-2026-07-06.mp4" type="video/mp4" length="0"/><media:content url="https://polarbear0827.github.io/My-Way/video/radar-2026-07-06.mp4" medium="video" type="video/mp4"/><media:thumbnail url="https://polarbear0827.github.io/My-Way/radar/2026-07-06/cover.png"/></item><item><title>HF 論文速讀 2026-07-06</title><link>https://polarbear0827.github.io/My-Way/papers/2026-07-06/</link><guid>https://polarbear0827.github.io/My-Way/video/papers-2026-07-06.mp4</guid><pubDate>2026-07-06</pubDate><description>3D 生成、影像 flow 模型與影片時空推理的 diffusion 創新
+
+▶ 全文:https://polarbear0827.github.io/My-Way/papers/2026-07-06/
+
+#AI #論文速讀 #HuggingFace</description><enclosure url="https://polarbear0827.github.io/My-Way/video/papers-2026-07-06.mp4" type="video/mp4" length="0"/><media:content url="https://polarbear0827.github.io/My-Way/video/papers-2026-07-06.mp4" medium="video" type="video/mp4"/><media:thumbnail url="https://polarbear0827.github.io/My-Way/papers/2026-07-06/cover.png"/></item><item><title>今天的共同主題是：AI 從酷炫工具，正式變成企業、政府、科學與創作產業都得重新畫線的底層基礎建設</title><link>https://polarbear0827.github.io/My-Way/podcast/2026-07-06/</link><guid>https://polarbear0827.github.io/My-Way/video/podcast-2026-07-06.mp4</guid><pubDate>2026-07-06</pubDate><description>AI 現在不只是辦公室裡幫你寫信的小幫手，它更像一台開進城市中心的巨型推土機：有人拿它蓋高速公路，有人趕快拉封鎖線！🔥
 
 ▶ 全文:https://polarbear0827.github.io/My-Way/podcast/2026-07-06/
 
@@ -83,16 +95,4 @@
 
 ▶ 全文:https://polarbear0827.github.io/My-Way/papers/2026-07-04/
 
-#AI #論文速讀 #HuggingFace</description><enclosure url="https://polarbear0827.github.io/My-Way/video/papers-2026-07-04.mp4" type="video/mp4" length="0"/><media:content url="https://polarbear0827.github.io/My-Way/video/papers-2026-07-04.mp4" medium="video" type="video/mp4"/><media:thumbnail url="https://polarbear0827.github.io/My-Way/papers/2026-07-04/cover.png"/></item><item><title>今天全是 AI 從雲端煙火，變成企業水電瓦斯的基礎建設日</title><link>https://polarbear0827.github.io/My-Way/podcast/2026-07-04/</link><guid>https://polarbear0827.github.io/My-Way/video/podcast-2026-07-04.mp4</guid><pubDate>2026-07-04</pubDate><description>AI 不再只是螢幕裡會聊天的魔法球，它正在變成公司真正要付錢、要部署、要管線、要入口的生產力引擎。今天這 5 則新聞像一張施工藍圖：誰掌握資料、算力、桌面與落地能力，誰就掌握下一波職場節奏。🔥
-
-▶ 全文:https://polarbear0827.github.io/My-Way/podcast/2026-07-04/
-
-#Podcast #AI懶人祕技</description><enclosure url="https://polarbear0827.github.io/My-Way/video/podcast-2026-07-04.mp4" type="video/mp4" length="0"/><media:content url="https://polarbear0827.github.io/My-Way/video/podcast-2026-07-04.mp4" medium="video" type="video/mp4"/><media:thumbnail url="https://polarbear0827.github.io/My-Way/podcast/cover.jpg"/></item><item><title>上架後的第一封勒索信</title><link>https://polarbear0827.github.io/My-Way/p/2026-07-03-product-hunt-beg-bounty-extortion/</link><guid>https://polarbear0827.github.io/My-Way/video/column-2026-07-03-product-hunt-beg-bounty-extortion.mp4</guid><pubDate>2026-07-03</pubDate><description>一個新產品在 Product Hunt 上線，原本應該是創辦人盯著流量、留言、轉換率的日子；但對一些小團隊來說，第一批「使用者」裡也可能混著自動掃描器與陌生來信。最近一則 r/startups 討論把這種場景說得很具體：一個 hackathon MVP 上架後數小時，有人宣稱發現「Critical Vuln…
-
-▶ 全文:https://polarbear0827.github.io/My-Way/p/2026-07-03-product-hunt-beg-bounty-extortion/
-
-#穗稻忠武觀察室 #深度長文 #人文觀察</description><enclosure url="https://polarbear0827.github.io/My-Way/video/column-2026-07-03-product-hunt-beg-bounty-extortion.mp4" type="video/mp4" length="0"/><media:content url="https://polarbear0827.github.io/My-Way/video/column-2026-07-03-product-hunt-beg-bounty-extortion.mp4" medium="video" type="video/mp4"/><media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/0/09/Center_of_MacBook_Air_keyboard.jpg"/></item><item><title>候車亭裡的數字孤獨</title><link>https://polarbear0827.github.io/My-Way/p/2026-07-03-bus-arrival-app-senior-digital-divide/</link><guid>https://polarbear0827.github.io/My-Way/video/column-2026-07-03-bus-arrival-app-senior-digital-divide.mp4</guid><pubDate>2026-07-03</pubDate><description>台北車站旁的公車候車亭，最醒目的不是車，而是一排不斷更新的數字：三分、五分、即將到站、尚未發車。對熟悉 App 的人而言，這些字像日常背景音；對不會用手機、看不清小字，或住在站牌一公里外坡路上的長者而言，它們可能是一道新的門檻。
-
-▶ 全文:https://polarbear0827.github.io/My-Way/p/2026-07-03-bus-arrival-app-senior-digital-divide/
-
-#穗稻忠武觀察室 #深度長文 #人文觀察</description><enclosure url="https://polarbear0827.github.io/My-Way/video/column-2026-07-03-bus-arrival-app-senior-digital-divide.mp4" type="video/mp4" length="0"/><media:content url="https://polarbear0827.github.io/My-Way/video/column-2026-07-03-bus-arrival-app-senior-digital-divide.mp4" medium="video" type="video/mp4"/><media:thumbnail url="https://www-ws.gov.taipei/001/Upload/636/relpic/31011/8906137/4d99b2ef-08ec-4ef2-9907-c6832a4c8c6a@710x470.jpg"/></item></channel></rss>
+#AI #論文速讀 #HuggingFace</description><enclosure url="https://polarbear0827.github.io/My-Way/video/papers-2026-07-04.mp4" type="video/mp4" length="0"/><media:content url="https://polarbear0827.github.io/My-Way/video/papers-2026-07-04.mp4" medium="video" type="video/mp4"/><media:thumbnail url="https://polarbear0827.github.io/My-Way/papers/2026-07-04/cover.png"/></item></channel></rss>
