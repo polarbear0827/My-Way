@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>陌生人把歌交給你時 · 穗稻忠武的專欄</title>
+<meta name="description" content="在李明維的作品裡，藝術常常不是牆上的物件，而是一個人對另一個人說：「我可以給你一份禮物嗎？」這份禮物可能是一首舒伯特藝術歌曲、一件被彩線修補的衣服、一朵必須轉送給陌生人的花，或是一封終於寫下卻未必寄出的信。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-09-lee-mingwei-gift-as-art/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="陌生人把歌交給你時">
+<meta property="og:description" content="在李明維的作品裡，藝術常常不是牆上的物件，而是一個人對另一個人說：「我可以給你一份禮物嗎？」這份禮物可能是一首舒伯特藝術歌曲、一件被彩線修補的衣服、一朵必須轉送給陌生人的花，或是一封終於寫下卻未必寄出的信。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-09-lee-mingwei-gift-as-art/">
+<meta property="og:image" content="https://npg.si.edu/sites/default/files/Sonic%20Blossom%20Buddha%20Room%20%2362.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "陌生人把歌交給你時", "description": "在李明維的作品裡，藝術常常不是牆上的物件，而是一個人對另一個人說：「我可以給你一份禮物嗎？」這份禮物可能是一首舒伯特藝術歌曲、一件被彩線修補的衣服、一朵必須轉送給陌生人的花，或是一封終於寫下卻未必寄出的信。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-09-lee-mingwei-gift-as-art/", "datePublished": "2026-07-09", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://npg.si.edu/sites/default/files/Sonic%20Blossom%20Buddha%20Room%20%2362.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">台灣文化</span><span class="tag">藝術</span><span class="tag">台灣</span><span class="tag">專欄</span></div>
+<h1>陌生人把歌交給你時</h1>
+<p class="byline"><time>2026-07-09</time></p>
+</div>
+
+<p class="lead">導言：在李明維的作品裡，藝術常常不是牆上的物件，而是一個人對另一個人說：「我可以給你一份禮物嗎？」這份禮物可能是一首舒伯特藝術歌曲、一件被彩線修補的衣服、一朵必須轉送給陌生人的花，或是一封終於寫下卻未必寄出的信。</p>
+<p>這篇文章選擇李明維，不是因為他是「台灣之光」這類容易滑向宣傳的標籤，而是因為他的作品把當代美術館最難回答的問題推到觀眾面前：如果作品由相遇、等待、信任和拒絕構成，藝術到底存在哪裡？¹²</p>
+<figure><img src="https://npg.si.edu/sites/default/files/Sonic%20Blossom%20Buddha%20Room%20%2362.jpg" alt="《聲之綻》表演現場，歌者穿著轉化長袍在美術館中為單一觀眾獻唱｜來源：Anita Kan / Smithsonian National Portrait Gallery" loading="lazy"><figcaption>這張照片呈現李明維最具代表性的場景：陌生人之間的禮物不是物件，而是一段只有幾分鐘、卻被美術館框出的相遇。</figcaption></figure>
+<figure><img src="https://web-drupal-cms-prod.clevelandart.org/sites/default/files/July-August_2019_SonicBlossom_A1.jpg" alt="《聲之綻》在克里夫蘭美術館展演的歌者與觀眾｜來源：Cleveland Museum of Art / moCa Cleveland" loading="lazy"><figcaption>作品把大型美術館的公共空間縮成一對一的距離：歌聲是公開的，但被贈予的瞬間只屬於一個人。</figcaption></figure>
+<h2>一份禮物，如何成為作品</h2>
+<p>《聲之綻》（Sonic Blossom）最簡單的描述，是一位受過訓練的歌者在展場中接近一名觀眾，詢問「May I give you the gift of song?」若對方接受，歌者便為他或她演唱五首舒伯特歌曲中的一首。M+在 2024 年展出時，把它稱為李明維備受讚譽的表演裝置，並指出作品源於藝術家照顧手術後康復母親時，母子二人從舒伯特歌曲獲得慰藉的經驗。³ 大都會博物館 2015 年的介紹則記錄了作品在展廳中的細節：歌者穿著由 1930 年代和服腰帶改製的長袍，學生歌者在現代與當代藝術展廳、佛像展廳間移動，對隨機觀眾提出邀請。⁴克里夫蘭美術館後來也說明，歌者穿的是李明維稱為「Transformation Gown」的服裝，作品在 2013 年為韓國國立現代美術館開幕展創作，之後巡迴多個美術館。²² 但「禮物」在這裡不是溫馨的裝飾語。Schirn Kunsthalle Frankfurt 的文章指出，送禮同時包含友誼、依附與某種隱性的契約：接受歌的人也把時間、注意力，甚至尷尬和感動回贈給表演者。¹⁴這正是李明維作品的張力所在。它不只是藝術家給觀眾一個善意姿態，而是設計一個可能被接受、也可能被拒絕的關係。</p>
+<figure><img src="https://web-drupal-cms-prod.clevelandart.org/sites/default/files/banners/SonicBlossom_AL.jpg" alt="《聲之綻》展覽橫幅影像，歌者與觀眾在展廳中形成短暫對峙｜來源：Cleveland Museum of Art / moCa Cleveland" loading="lazy"><figcaption>這類影像提醒讀者：作品的核心不是歌手獨唱，而是邀請、同意、接受與退出所構成的社會形式。</figcaption></figure>
+<h2>從台灣、紡織到耶魯：作品的材料不是只有線與布</h2>
+<p>李明維 1964 年生於台灣，藝術家個人網站列出，他 1993 年取得 California College of the Arts 紡織藝術學士，1997 年取得耶魯大學雕塑碩士；他目前在巴黎與紐約工作。¹ 台灣當代藝術資料庫也記錄，他的作品多次以食、衣、住、臥等生活作息作為探索日常核心的入口，關注陌生人互動中的信任與親密。¹⁰</p>
+<p>這段教育背景不只是履歷資料。Artforum 評論森美術館回顧展時特別指出，李明維曾受紡織訓練，布料在他的作品中經常承載親密、隸屬與情感的圖像。⁶ 《補裳計畫》（The Mending Project）正是最直接的例子：觀眾帶來需要修補的衣物，與修補者隔桌坐下，在等待針線穿過布料時交談。Fine Arts Museums of San Francisco 的展覽介紹把它放在「照護的儀式」脈絡中，說李明維把書寫、掃地、修補、呼吸等平凡行為轉化成能鼓勵社會連結與療癒的作品。² 在這裡，紡織不只是媒材，而是一種倫理形式：衣服帶著身體痕跡、家庭記憶、破損與羞怯；彩線讓傷口變得可見，也讓陌生人的勞動留下痕跡。作品不是把破洞隱藏起來，而是把修補過程公開成一場可以被目擊的對話。</p>
+<figure><img src="https://fabricworkshopandmuseum.org/wp-content/uploads/2018/06/Lee_Mingwei_004_LR.jpg" alt="《魚雁計畫／書信計畫》相關影像，觀眾可進入木與半透明玻璃構成的小室寫信｜來源：The Fabric Workshop and Museum" loading="lazy"><figcaption>書信、衣物與歌聲都不是中性的材料；它們是個人情感進入公共展場時，最容易暴露脆弱的媒介。</figcaption></figure>
+<h2>寫信、吃飯、睡覺：把日常動作搬進美術館</h2>
+<p>李明維的早期作品已經把美術館理解為一種待客場域。《魚雁計畫／書信計畫》（The Letter-Writing Project）要求觀眾進入木與半透明玻璃構成的小室，以站、坐、跪三種姿態寫給在世或已逝之人的信。Fabric Workshop and Museum 記錄，此作 1998 年先在 Whitney Museum of American Art 展出兩座小室，第三座則在該館完成；多年巡迴後，李明維已保留約 15,000 封未寄出的信。²⁰</p>
+<p>Whitney 的收藏頁則提供另一種制度性確認：館藏中的《The Letter-Writing Project》小室年代為 1998，媒材為木與玻璃。²¹ 這說明作品雖然依賴觀眾參與，仍然可以進入美術館收藏體系；被收藏的不是信的內容，而是一套讓人願意書寫、封存、公開或寄出的空間結構。 ArtAsiaPacific 對李明維「八件關鍵作品」的整理指出，《晚餐計畫》（The Dining Project）來自他在耶魯求學時的孤獨：他在校園張貼邀請，詢問是否有人願意讓他做一頓飯並談話。¹¹這個故事容易被浪漫化，但它也指出李明維作品的核心方法：把私人需要轉譯成一個形式清楚、規則簡單、結果開放的邀請。</p>
+<figure><img src="https://media.tate.org.uk/aztate-prd-ew-dg-wgtail-st1-ctr-data/images/Photocall_Our_Labyrinth_2022_16.width-420.jpg" alt="《如實曲徑》在 Tate Modern 的舞者掃動米粒｜來源：Tate（Oliver Cowling 攝）" loading="lazy"><figcaption>從寫信到掃米，李明維常讓觀眾面對看似微小的動作：它們不靠巨大戲劇性，而靠時間、專注與等待累積重量。</figcaption></figure>
+<h2>關係美學：李明維與歐美脈絡的差異</h2>
+<p>李明維常被放進「關係美學」或參與式藝術的脈絡。ArtReview 評森美術館回顧展時，便把他的作品放在 Allan Kaprow、John Cage、Rirkrit Tiravanija 等行為與關係藝術傳統之後，並指出日本觀眾面對《移動的花園》與《補裳計畫》時的害羞與保留，會重新改寫作品結果。⁷</p>
+<p>Artforum 的判斷更細：它認為展覽延伸了關係美學的標準讀法，從亞洲哲學與藝術實踐出發，把關係理解為家庭、藝術同伴與陌生人的多層連結；相較某些歐洲關係藝術傾向打斷制度權威，李明維的作品更常以溫和方式召集行動，重申人與人連結的可能。⁶ 這不是說作品沒有批判。只是批判的形式不一定是對抗、揭露或破壞，也可以是把市場交換之外的互惠放進美術館，逼問觀眾：不收費、不購買、不擁有的相遇，能否也被嚴肅對待？Berlin Art Link 訪談中，李明維談到自己在耶魯以晚餐邀請陌生人的經驗，也說他敏感於藝術家被名人化，因此作品重點不是「李明維本人」出現，而是陌生人作為主持者與參與者彼此發生關係。²³ 這也構成一個限制：作品越仰賴善意與儀式，越可能被批評為過度和諧，較少直接碰觸權力與衝突。本文因此不把「療癒」視為不證自明的美德；它必須回到具體制度與情境中檢驗。</p>
+<figure><img src="https://media.tate.org.uk/aztate-prd-ew-dg-wgtail-st1-ctr-data/images/Photocall_Our_Labyrinth_2022_84.width-420.jpg" alt="《如實曲徑》舞者在 Tate Modern 輪機房大廳中掃出米粒路徑｜來源：Tate（Oliver Cowling 攝）" loading="lazy"><figcaption>關係美學在李明維作品中不是抽象理論，而是觀眾是否願意接受花、坐下聽歌、拿衣服給陌生人修補的具體選擇。</figcaption></figure>
+<h2>米粒、掃帚與輪機房：當作品進入 Tate Modern</h2>
+<p>2022 年，Tate Modern 在輪機房大廳展演《如實曲徑》（Our Labyrinth）。Tate 新聞稿說，作品從 5 月 26 日到 6 月 15 日連續演出；舞者腳踝繫鈴，以掃帚把米粒掃成迷宮般路徑，靈感來自李明維在緬甸寺院看到志工清掃通往寺院小徑的經驗。¹⁶</p>
+<p>中央社同年從倫敦報導，這是 Tate Modern 指標性空間「輪機房大廳」首度有台灣藝術家作品進駐；報導也記錄，李明維認為作品不是傳達單一東方或禪宗概念，而是尋找不同文化中與心靈直接對話、與自然發生關係的共通美學。⁹ Tate 的作品解說進一步指出，《如實曲徑》沒有固定編舞，舞者被要求「讓米引導他們」；米、掃帚、絲質紗籠與腳鈴都被視為儀式元件，表演者也依自身能量決定步伐與節奏。¹⁷ 這個說法重要，因為它把作品從「美麗慢動作」拉回工作條件與身體實踐。舞者不只是執行藝術家構想的人，而是在每一次掃動中重新決定作品樣貌的人。中央社訪問舞者劉奕伶，她提到演出要聆聽呼吸、米粒構圖、另一名舞者狀態，以及「米、掃帚告訴我的事」。⁹這類細節讓作品避免只剩靜謐影像，而看得見人如何在制度場域中工作。</p>
+<figure><img src="https://media.tate.org.uk/aztate-prd-ew-dg-wgtail-st1-ctr-data/images/Our_Labyrinth_Tate_Modern_2022_078.width-600.jpg" alt="《如實曲徑》在 Tate Modern 的表演細節，米粒與黑色地面形成路徑｜來源：Tate（Oliver Cowling 攝）" loading="lazy"><figcaption>米粒不是佈景，而是作品的時間尺度：它被掃開、聚攏、重組，也讓每次演出都不可重複。</figcaption></figure>
+<h2>疫情之後，照護變成制度問題</h2>
+<p>李明維作品在疫情期間面臨一次特殊壓力測試。2020 年，Gropius Bau 原本要展出「禮 Li, Gifts and Rituals」，但柏林因疫情封鎖，展覽必須重構。Artnet News 報導指出，這場展覽幾乎每件主要作品都需要觀眾啟動、長時間表演或觸摸交換；館方導入口罩、單向動線、限流與 Plexiglass 等措施後，策展人 Stephanie Rosenthal 說，他們同時要處理「大家安全」與「大家感覺安全」。¹⁹</p>
+<p>這是李明維作品的重要轉折：當身體接近、接待、觸摸、交換在公共衛生上變成風險，作品不能只談善意。 Gropius Bau 的展覽頁仍把核心定義為「藝術作為轉化性禮物」：歌、對話、凝視與修補都可以被給予和接收；《補裳計畫》中，修補者一邊修衣服，一邊與訪客對話，衣物再以線連回牆上的線軸，形成持續擴張的裝置。¹⁸ Artnet 的報導則提供了反面條件：床、沙發、共享物件、衣物交換都需要重新編碼；《睡寢計畫》甚至暫時「永久睡著」，改由博物館員工提供床邊物件。¹⁹這說明作品中的照護不是純粹私人美德，而是制度能否提供安全條件的問題。若沒有館方、志工、表演者與觀眾共同維護，所謂「關係」很快會變成風險。</p>
+<figure><img src="https://news.artnet.com/app/news-upload/2020/05/gb20_p_lee_mingwei_sleeping_project_c_laura_fiorio-1024x683.jpg" alt="《睡寢計畫》在 Gropius Bau 疫情時期展出，床與個人物件被重新安排｜來源：Laura Fiorio / Artnet News" loading="lazy"><figcaption>疫情讓李明維作品的關鍵字從「親密」延伸到「安全」：能否相遇，取決於制度如何安排距離。</figcaption></figure>
+<h2>《聲之綻》的爭議核心：親密是真實，還是被製造？</h2>
+<p>關於《聲之綻》，最有用的批評不是問它是否令人感動，而是問這份感動如何被生產。IFA Contemporary 評 2015 年大都會博物館演出時提出尖銳問題：這種人際連結是真實的，還是被製造的？是否只是藝術家用情緒捷徑，讓觀眾暫時克服被媒介化生活造成的麻木？¹⁵</p>
+<p>這個問題不能用「觀眾哭了」來回答。作品的確被高度設計：李明維選曲、安排歌者、設計服裝、指定展場，歌者向觀眾提出的邀請也被制度包裹。 但 IFA Contemporary 同文也指出，劇場、電影、繪畫本來就仰賴製造情境；關鍵在於觀眾是否仍有退出權。¹⁵在《聲之綻》中，觀眾可以拒絕歌者，這讓作品比較接近一份「親密的契約」：你若簽署，它才成立。 HK01 2024 年專訪中，李明維更細談這種張力。他說，如果歌者與受歌者本來認識，作品張力就不存在；陌生人之間的尷尬、信任與雙向選擇，才使它成為作品。¹³他也提到，歌者不是依外在條件挑選「看起來會接受」的人，而是用直覺尋找，像兩個陌生人跳探戈。¹³這些說法支持一個較中性的結論：作品不是自然發生的真情流露，而是讓真情可能發生的人工場域。</p>
+<figure><img src="https://news.artnet.com/app/news-upload/2020/05/gb20_p_lee_mingwei_sonic_blossom_1_c_laura_fiorio-1024x683.jpg" alt="《聲之綻》在 Gropius Bau 展出，疫情時期加入安全距離與防護安排｜來源：Laura Fiorio / Artnet News" loading="lazy"><figcaption>當一首歌被 Plexiglass、口罩與館方動線包圍，作品更清楚顯示：親密從來不是沒有條件的。</figcaption></figure>
+<h2>從《移動的花園》看文化差異與觀眾能動性</h2>
+<p>《移動的花園》（The Moving Garden）提供另一個觀看李明維的方法。NGV 的訪談中，李明維說，一件展覽開幕時大約只完成百分之四十，作品會因觀眾互動而每天變得更複雜；他也說，觀眾在作品中扮演提供與豐富內容的最重要角色。⁵ 這不是禮貌性的說法。《移動的花園》要求觀眾拿走一朵花，離開美術館時改走不同路線，並把花送給他認為會受益的陌生人。 NGV 訪談記錄，李明維在里昂雙年展 site visit 時，於 Saône 與 Rhône 河邊讀 Lewis Hyde《The Gift》，看到花朵流過河面，形成作品靈感；他也提到，作品在法國三個半月約有 15,000 朵花被送給陌生人，但在日本因社會較保留，取花者少得多。⁵ ArtReview 對森美術館版本的觀察呼應這點：東京觀眾較害羞，《補裳計畫》中許多留下的衣物不是破損待修，而是被繡上裝飾；評論者因此認為，東京觀眾確實改變了李明維的作品。⁷這讓作品的「全球巡迴」不只是複製同一套形式，而是測量不同城市如何理解送禮、羞怯、公眾互動與陌生人。</p>
+<figure><img src="https://www.modernamuseet.se/app/uploads/malmo/2025/09/in0a701.jpg" alt="Moderna Museet Malmö 展出李明維作品的展場影像，觀眾在安靜空間中閱讀與停留｜來源：Helene Toresdotter / Moderna Museet" loading="lazy"><figcaption>李明維作品常把觀眾從「看展的人」變成「維持作品的人」；展場是否安靜、是否願意停留，都會改變作品。</figcaption></figure>
+<h2>今天為什麼還要談李明維</h2>
+<p>2024 年到 2025 年，李明維仍持續在國際機構中被重新展出：M+ 展出《聲之綻》、FAMSF 展出「Rituals of Care」、Moderna Museet Malmö 展出「Best Regards」，藝術家 CV 也列出 2025 年 M+《如沙的格爾尼卡》、Isabella Stewart Gardner Museum 與 Worcester Art Museum 等計畫。¹²³⁸ 這種持續曝光可以從兩面理解。一方面，它顯示參與式藝術已經被主要美術館正式納入收藏、展覽與教育系統；Tate 甚至在新聞稿中說，《如實曲徑》作為新收藏展演，強調 live art 與 performance 是藝術史不可分割的一部分。¹⁶另一方面，當「照護」「療癒」「連結」成為疫情後文化機構熟悉的語彙，李明維作品也可能被過度簡化成安慰性展覽。 Moderna Museet 的介紹說，李明維作品從邀請開始：寫信、帶來需要照料的衣服或保存多年的手作物件，讓日常與私人記憶被給予空間與注意；藝術家的材料是關係與時間。⁸這句話也可以作為本文的收束。 <strong>（以下為本文分析，非事實陳述）</strong>李明維的重要性不在於他發明了參與式藝術，也不在於他的作品總能帶來「美好連結」。更值得注意的是，他把當代藝術中常被抽象談論的觀眾、制度、照護與交換，放回非常具體的動作：坐下、開口、修補、掃地、轉送、寫信、拒絕。這些動作太小，容易被市場與新聞事件忽略；但也正因為小，它們能測出一個社會還願意把多少注意力交給陌生人。</p>
+<figure><img src="https://media.tate.org.uk/aztate-prd-ew-dg-wgtail-st1-ctr-data/images/Our_Labyrinth_Tate_Modern_2022_041.width-420.jpg" alt="《如實曲徑》舞者在 Tate Modern 輪機房大廳中以身體、米粒與掃帚形成暫時圖像｜來源：Tate（Oliver Cowling 攝）" loading="lazy"><figcaption>文章最後回到米粒與身體：作品結束後圖像會消失，但觀眾曾經停下來觀看的時間，正是作品留下的部分。</figcaption></figure>
+<h2>結語：如果作品是一段被保存的注意力</h2>
+<p>李明維的作品常在完成後消失：歌唱結束，歌者離開；米粒被掃出新路徑，又被下一次表演覆蓋；花被帶出美術館，可能在街角交到另一個人手上；信被封存、閱讀、寄出或等待某天被焚化。這些作品看似脆弱，卻因為反覆被不同城市、不同機構、不同觀眾重新啟動，而取得另一種持久性。 它們也要求我們把「看藝術」改成「承擔一點關係」。承擔不必偉大：也許只是坐下三分鐘，讓陌生人唱完一首歌；也許只是把一件破衣服拿到桌前，承認它曾被使用、曾經磨損；也許只是把花送給不認識的人。李明維把這些動作放進美術館，不是要證明世界因此被修好，而是讓人短暫看見：修補、贈予與注意力仍然可以被練習。 還有一個不能忽略的層面，是李明維作品如何改變「台灣藝術家」在國際美術館中的敘述位置。許多國際機構介紹他時，會寫下 Taiwan-born、Taiwanese-American、lives in Paris and New York 等身分標記；這些標記有助於定位藝術家，卻也可能讓作品被快速歸入「東方靈性」或「亞洲禮物文化」的類型。中央社訪問中，李明維特別表示，他避免作品被單一文化指涉或概念框架約束，並相信伊斯蘭、北歐等不同文化裡也能找到類似美學。⁹這句話值得放在文章最後再看一次：他不是否認台灣、佛教、禮俗或家庭經驗的影響，而是拒絕讓這些元素成為固定標籤。 因此，較準確的讀法不是說李明維把「東方」帶進西方美術館，而是說他把跨文化經驗變成一套可被重新演出的規則。舒伯特來自歐洲藝術歌曲傳統，和服腰帶與轉化長袍來自日本紡織與舞台想像，米粒連到亞洲飲食與儀式，信件與餐桌則是許多文化共享的親密形式。這些元素在同一件作品中並置時，並不要求觀眾找出唯一來源，而是讓觀眾在不完全理解的情況下仍可進入作品。M+ 在介紹《聲之綻》時也強調，李明維作品嘗試超越文化與政治藩籬，直達人性經驗核心。³ 制度面也同樣複雜。作品看似反市場，卻非常依賴美術館資源：場地、保險、表演者、排班、典藏、圖錄、教育部門、新聞稿與國際巡迴網絡。如果沒有這些制度支撐，一首歌可能只是街頭偶遇；有了制度，它成為能被收藏、研究、再演與討論的作品。這並非矛盾，而是當代表演與參與式藝術的基本條件。Tate 把《如實曲徑》納入收藏並在輪機房大廳展演，正說明 live art 進入主流藝術史時，需要的不只是藝術家的概念，也需要機構願意把時間、空間與人力交給不可完全控制的過程。¹⁶ 同時，這類作品也要求評論者保持距離。若只用「療癒」「溫柔」「連結」讚美它，會忽略其中的控制、勞動與不平等：誰被邀請接受禮物？誰負責修補、歌唱、掃地？誰有時間在美 術館裡等一首歌？誰的故事被保存在展場裡，誰的故事只成為路過者的情緒？Artnet 對 Gropius Bau 疫情重啟的報導之所以重要，正是因為它把作品背後的館方決策、收入壓力、衛生措施與工作協調放回畫面。¹⁹這些條件不會削弱作品，反而讓作品更真實。 換言之，李明維作品裡的「善意」不是廉價的善良。它是一套需要被排練、被維護、被拒絕也被重新啟動的公共技術。歌者必須學會如何靠近陌生人；觀眾必須決定是否信任；館方必須安排風險；評論者必須指出美感與制度的雙重條件。當這些元素都成立時，作品才會短暫打開一個空間，讓人看見關係可以不是交易，也不必立即被效率衡量。這也許正是今天仍要談李明維的理由：在許多公共場域越來越急促、可疑、演算法化的時代，他把慢、等待與面對面重新設計成藝術形式，但也讓我們不得不問，誰還有能力接受這樣的形式。 這種慢也讓作品站在今日注意力經濟的反方向。《聲之綻》最短或許只有三分鐘，但它不能被快轉；《補裳計畫》需要等待針線完成；《如實曲徑》要靠舞者長時間把米粒推成路徑；《書信計畫》則要求一個人停下來面對那些沒有說出口的話。這些動作都沒有立即產出，也很難被量化為參觀人次、銷售額或社群互動率。可是美術館願意讓它們發生，正是因為它們把「藝術經驗」從觀看物件，轉成一段被共同保存的注意力。 也因此，李明維的作品不適合被讀成單純的慰藉。在某些觀眾身上，它可能帶來安靜；在另一些觀眾身上，它可能帶來不自在，甚至拒絕。ArtReview 提到東京觀眾對送花和修補衣物的保留，並不是作品失敗，而是作品顯示文化差異的時刻。⁷如果作品的目的只是製造善意，它應該抹平差異；但李明維的規則反而讓差異浮出來：有些城市願意把花拿走，有些城市比較猶豫；有些人願意坐下聽歌，有些人拒絕；有些人把破衣服交出來，有些人只願意讓衣服被裝飾。 最後，李明維也讓台灣當代藝術的一條路線變得清楚：它不必只以國族符號、地方景觀或政治宣言出現，也可以透過日常禮節、家庭記憶、移動身分與跨文化表演進入世界。這條路線不是逃避政治，而是把政治放在更細的尺度：誰被承認為可以送禮的人，誰能在美術館裡成為主持者，誰的日常動作能進入藝術史。當一名台灣出生的藝術家讓 Tate、Met、M+、Gropius Bau 與 Moderna Museet 一再為陌生人的歌、信、衣服與米粒騰出空間，這本身就是一個制度事實。它不必被誇大成勝利敘事，但值得被仔細記錄。</p>
+<p>在這個意義上，李明維不是把藝術變小，而是把藝術的尺度換成關係的尺度。大型展廳、國際巡迴與館藏制度仍然存在；但它們服務的不是巨大物件，而是一個人願不願意把三分鐘交給另一個人。作品留給讀者的問題也許很簡單：當公共生活充滿防備與效率要求時，我們還能否辨認一份不要求立即回報的禮物？如果答案仍然可能是肯定的，那麼這份肯定也需要被設計、被保護、被一次次重新練習。</p>
+<p>這篇文章沒有把李明維寫成答案，而是把他放回一連串提問：藝術是否能由人與人之間短暫的注意力構成？美術館是否能保存一個本來會消失的動作？禮物是否仍然可能在制度、風險與市場之中保有開放性？這些問題沒有單一結論；它們只會在每次有人接受或拒絕邀請時，再度被打開。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ LEE MINGWEI（n.d.）— “CV”
+<a href="https://www.leemingwei.com/cv.php" rel="noopener" target="_blank">https://www.leemingwei.com/cv.php</a></p>
+<p class="ref">² Fine Arts Museums of San Francisco（n.d.）— “Lee Mingwei: Rituals of Care”
+<a href="https://www.famsf.org/exhibitions/lee-mingwei" rel="noopener" target="_blank">https://www.famsf.org/exhibitions/lee-mingwei</a></p>
+<p class="ref">³ M+ Museum（2024）— “Lee Mingwei: Sonic Blossom”
+<a href="https://www.mplus.org.hk/en/exhibitions/lee-mingwei-sonic-blossom/" rel="noopener" target="_blank">https://www.mplus.org.hk/en/exhibitions/lee-mingwei-sonic-blossom/</a></p>
+<p class="ref">⁴ The Metropolitan Museum of Art（2015-10-30）— “May I Give You the Gift of Song? Lee Mingwei's Sonic Blossom”
+<a href="https://www.metmuseum.org/perspectives/lee-mingwei-sonic-blossom" rel="noopener" target="_blank">https://www.metmuseum.org/perspectives/lee-mingwei-sonic-blossom</a></p>
+<p class="ref">⁵ National Gallery of Victoria（n.d.）— “Lee Mingwei, The Moving Garden, 2009–”
+<a href="https://www.ngv.vic.gov.au/essay/lee-mingwei-the-moving-garden-2009/" rel="noopener" target="_blank">https://www.ngv.vic.gov.au/essay/lee-mingwei-the-moving-garden-2009/</a></p>
+<p class="ref">⁶ Artforum（2014-12）— “Lee Mingwei”
+<a href="https://www.artforum.com/events/lee-mingwei-3-208113/" rel="noopener" target="_blank">https://www.artforum.com/events/lee-mingwei-3-208113/</a></p>
+<p class="ref">⁷ ArtReview（2015-03）— “Lee Mingwei and His Relations”
+<a href="https://artreview.com/march-2015-review-lee-mingwei/" rel="noopener" target="_blank">https://artreview.com/march-2015-review-lee-mingwei/</a></p>
+<p class="ref">⁸ Moderna Museet（2024-12-03）— “Lee Mingwei”
+<a href="https://www.modernamuseet.se/en/malmo/exhibitions/lee-mingwei/" rel="noopener" target="_blank">https://www.modernamuseet.se/en/malmo/exhibitions/lee-mingwei/</a></p>
+<p class="ref">⁹ 中央社（2022-05-31）— “英國泰特美術館指標空間首見台灣 李明維展寧靜力量”
+<a href="https://www.cna.com.tw/news/acul/202205310350.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/acul/202205310350.aspx</a></p>
+<p class="ref">¹⁰ 台灣當代藝術資料庫（n.d.）— “李明維”
+<a href="https://tcaaarchive.org/Artist/Detail/1039" rel="noopener" target="_blank">https://tcaaarchive.org/Artist/Detail/1039</a></p>
+<p class="ref">¹¹ ArtAsiaPacific（2024-02-22）— “The Essential Works of Lee Mingwei”
+<a href="https://artasiapacific.com/people/the-essential-works-of-lee-mingwei" rel="noopener" target="_blank">https://artasiapacific.com/people/the-essential-works-of-lee-mingwei</a></p>
+<p class="ref">¹² Smithsonian National Portrait Gallery（n.d.）— “Lee Mingwei on Music and Sonic Blossom”
+<a href="https://npg.si.edu/blog/lee-mingwei-on-music-and-sonic-blossom" rel="noopener" target="_blank">https://npg.si.edu/blog/lee-mingwei-on-music-and-sonic-blossom</a></p>
+<p class="ref">¹³ 香港01（2024-09-28）— “裝置《聲之綻》古典歌者一對一獻上生命禮讚　專訪藝術家李明維”
+<a href="https://www.hk01.com/%E8%97%9D%E6%96%87/1061460/" rel="noopener" target="_blank">https://www.hk01.com/%E8%97%9D%E6%96%87/1061460/</a></p>
+<p class="ref">¹⁴ Schirn Kunsthalle Frankfurt（2017）— “Lee Mingwei, Sonic Blossom”
+<a href="https://www.schirn-peace.org/en/post/lee-mingwei-sonic-blossom/" rel="noopener" target="_blank">https://www.schirn-peace.org/en/post/lee-mingwei-sonic-blossom/</a></p>
+<p class="ref">¹⁵ IFAcontemporary（2016-06-30）— “Performing Intimacy: Lee Mingwei’s Sonic Blossom at the Metropolitan Museum of Art”
+<a href="https://ifacontemporary.org/performing-intimacy-lee-mingweis-sonic-blossom-at-the-metropolitan-museum-of-art/" rel="noopener" target="_blank">https://ifacontemporary.org/performing-intimacy-lee-mingweis-sonic-blossom-at-the-metropolitan-museum-of-art/</a></p>
+<p class="ref">¹⁶ Tate（2022）— “New Displays at Tate Modern Launch with Lee Mingwei’s Performance Our Labyrinth”
+<a href="https://www.tate.org.uk/press/press-releases/new-displays-at-tate-modern-launch-with-lee-mingweis-performance-our-labyrinth" rel="noopener" target="_blank">https://www.tate.org.uk/press/press-releases/new-displays-at-tate-modern-launch-with-lee-mingweis-performance-our-labyrinth</a></p>
+<p class="ref">¹⁷ Tate（n.d.）— “Encountering Lee Mingwei's Our Labyrinth”
+<a href="https://www.tate.org.uk/art/artworks/mingwei-our-labyrinth-t15700/encountering-lee-mingweis-our-labyrinth" rel="noopener" target="_blank">https://www.tate.org.uk/art/artworks/mingwei-our-labyrinth-t15700/encountering-lee-mingweis-our-labyrinth</a></p>
+<p class="ref">¹⁸ Gropius Bau / Berliner Festspiele（2020）— “Lee Mingwei: 禮 Li, Gifts and Rituals”
+<a href="https://www.berlinerfestspiele.de/en/gropius-bau/programm/2020/ausstellungen/lee-mingwei--li-geschenke-und-rituale" rel="noopener" target="_blank">https://www.berlinerfestspiele.de/en/gropius-bau/programm/2020/ausstellungen/lee-mingwei--li-geschenke-und-rituale</a></p>
+<p class="ref">¹⁹ Artnet News（2020-05-18）— “‘Plexiglass Has Become a Symbol of Care’: How a Berlin Museum Reimagined a Participatory Art Show in the Era of Social Distancing”
+<a href="https://news.artnet.com/art-world/lee-mingwei-gropius-bau-1862328" rel="noopener" target="_blank">https://news.artnet.com/art-world/lee-mingwei-gropius-bau-1862328</a></p>
+<p class="ref">²⁰ The Fabric Workshop and Museum（2018-06-12）— “Lee Mingwei”
+<a href="https://fabricworkshopandmuseum.org/artist/lee-mingwei/" rel="noopener" target="_blank">https://fabricworkshopandmuseum.org/artist/lee-mingwei/</a></p>
+<p class="ref">²¹ Whitney Museum of American Art（n.d.）— “Lee Mingwei: Booth from The Letter-Writing Project”
+<a href="https://whitney.org/collection/works/12159" rel="noopener" target="_blank">https://whitney.org/collection/works/12159</a></p>
+<p class="ref">²² Cleveland Museum of Art（2019-06-07）— “Sonic Blossom”
+<a href="https://www.clevelandart.org/articles/sonic-blossom" rel="noopener" target="_blank">https://www.clevelandart.org/articles/sonic-blossom</a></p>
+<p class="ref">²³ Berlin Art Link（2020-03-20）— “Social Interaction as Survival Tactic: Lee Mingwei’s Gifts and Rituals at Gropius Bau”
+<a href="https://www.berlinartlink.com/2020/03/20/social-interaction-as-survival-tactic-lee-mingweis-gifts-and-rituals-at-gropius-bau/" rel="noopener" target="_blank">https://www.berlinartlink.com/2020/03/20/social-interaction-as-survival-tactic-lee-mingweis-gifts-and-rituals-at-gropius-bau/</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/fb5" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
