@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>公開照片被再利用之後 · 穗稻忠武的專欄</title>
+<meta name="description" content="一個公開的 Instagram 帳號，過去通常意味著「任何人都看得到」。Meta 在 2026 年 7 月推出 Muse Image 後，這個意思又往前推了一步：公開照片可能成為別人生成 AI 圖像的素材，而且當事人不一定會被通知。¹³">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-09-public-photos-reused-by-ai/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="公開照片被再利用之後">
+<meta property="og:description" content="一個公開的 Instagram 帳號，過去通常意味著「任何人都看得到」。Meta 在 2026 年 7 月推出 Muse Image 後，這個意思又往前推了一步：公開照片可能成為別人生成 AI 圖像的素材，而且當事人不一定會被通知。¹³">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-09-public-photos-reused-by-ai/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Instagram_app_on_smartphone.jpg/1280px-Instagram_app_on_smartphone.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "公開照片被再利用之後", "description": "一個公開的 Instagram 帳號，過去通常意味著「任何人都看得到」。Meta 在 2026 年 7 月推出 Muse Image 後，這個意思又往前推了一步：公開照片可能成為別人生成 AI 圖像的素材，而且當事人不一定會被通知。¹³", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-09-public-photos-reused-by-ai/", "datePublished": "2026-07-09", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Instagram_app_on_smartphone.jpg/1280px-Instagram_app_on_smartphone.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">台灣文化</span><span class="tag">台灣</span><span class="tag">科技與生活</span><span class="tag">專欄</span></div>
+<h1>公開照片被再利用之後</h1>
+<p class="byline"><time>2026-07-09</time></p>
+</div>
+
+<p class="lead">一個公開的 Instagram 帳號，過去通常意味著「任何人都看得到」。Meta 在 2026 年 7 月推出 Muse Image 後，這個意思又往前推了一步：公開照片可能成為別人生成 AI 圖像的素材，而且當事人不一定會被通知。¹³</p>
+<p>這不是一篇關於模型分數的文章。它要問的是：當自拍、旅遊照、工作作品、孩子的生日照與創作者的臉，都可能在平台的新功能裡被「再利用」，公開與同意之間還剩下多少距離？</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Instagram_app_on_smartphone.jpg/1280px-Instagram_app_on_smartphone.jpg" alt="Instagram app 顯示在智慧手機上｜來源：Wikimedia Commons / HS You（CC BY-SA 4.0）" loading="lazy"><figcaption>封面中的 Instagram 手機畫面，是這場爭議最日常的入口：問題不在於人們是否知道自己公開了照片，而在於平台是否改變了公開照片可被使用的範圍。</figcaption></figure>
+<h2>一個 @ 標記改變的邊界</h2>
+<p>Meta 在官方新聞稿中說，Muse Image 是 Meta Superintelligence Labs 的第一個圖像生成模型，已經進入 Meta AI app、meta.ai、Instagram Stories 與 WhatsApp 的部分場景，之後也會進入 Facebook、Messenger 與廣告工具。公司把它描述成「懂你的世界」的創作夥伴：使用者可以用自然語言生成圖像、套用預設提示、在照片上圈選修改，甚至把房間改造成可以連到 Marketplace 商品的佈置圖。¹</p>
+<p>真正引發反彈的，是「@-mention」功能。Meta 自己寫道，使用者可以在 Meta AI app 裡標記 Instagram 帳號，讓 Meta AI 使用公開照片生成一張「可以發布」的視覺。The Verge、BBC、TechCrunch 與多家媒體都指出，這代表只要帳號是公開狀態，其他人可能把某個人的公開照片帶進 AI 圖像裡；Meta 則說使用者可以透過設定關閉這種再利用。³⁴⁶</p>
+<p>BBC 的報導把爭議壓縮成一句話：Meta 面臨反彈，因為 Muse Image 可以使用別人的公開 Instagram 個人照片生成圖片，而且不會告知當事人。這個敘述重要，因為它把問題從「照片能不能被看見」轉成「照片能不能被拿去合成」。社群平台多年來鼓勵公開、分享與被看見；Muse Image 讓公開變成一種可計算、可重組、可再次商業化的素材狀態。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Aerial_view_of_Facebook_campus_in_Menlo_Park%2C_September_2019.JPG/1280px-Aerial_view_of_Facebook_campus_in_Menlo_Park%2C_September_2019.JPG" alt="Meta 位於 Menlo Park 的園區空拍｜來源：Wikimedia Commons / Quintin Soloviev（CC BY-SA 3.0）" loading="lazy"><figcaption>這不是單一 app 的小設定，而是 Meta 整個社群、廣告與 AI 生態系如何重新定義「公開內容」的案例。</figcaption></figure>
+<h2>Meta 的說法：控制權在使用者手上</h2>
+<p>Meta 的立場並非完全沒有防線。官方文章說，Muse Image 的 @ 標記功能「使用公開照片」建立視覺，同時也說使用者可以用簡單設定關閉自己的內容被標記用於 AI 創作。BBC 進一步整理了路徑：公開帳號使用者可到 Instagram 設定裡的「Sharing and Reuse」，關閉「Allow people to reuse your content on Instagram and with AI features at Meta」；若帳號本來就是 private，理論上已不會被這個功能使用。¹³</p>
+<p>The Verge 也發布了更直接的提醒：進入個人檔案、打開右上選單、往下找到 sharing and reuse，關閉 Posts 與 Reels 的再利用，並另外關掉原創音訊可被 Meta AI 再利用的選項。The National、Mashable 與 PCMag 等媒體則把這件事寫成「如何 opt out」的實用新聞，顯示爭議已經從技術發布，迅速轉成使用者自保指南。⁷¹⁹²⁰</p>
+<p>問題在於，opt-out 並不等於知情同意。若預設狀態是允許再利用，平台實際上把負擔交給使用者：你必須知道這個功能存在、知道設定在哪裡、理解公開照片與 AI 再利用的差異，還要在變更前完成操作。對一般人來說，這不像同意書，比較像是某天醒來才發現家門口多了一條新路，而你必須自己去申請封路。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Social_Media_App_Icons_On_The_Screen_of_A_Smartphone.jpg/1280px-Social_Media_App_Icons_On_The_Screen_of_A_Smartphone.jpg" alt="社群媒體 app 圖示顯示在智慧手機螢幕上｜來源：Wikimedia Commons / Jason Howie（CC BY 2.0）" loading="lazy"><figcaption>多數使用者是在多個 app 之間滑動，而不是逐條閱讀每一次功能變更；這讓「設定可關閉」與「使用者真正知情」之間出現落差。</figcaption></figure>
+<h2>公開，不等於任意重組</h2>
+<p>社群平台長期以「公開」作為再散布的基礎。你公開一張照片，別人可以觀看、按讚、分享、截圖；這些都是早已存在的風險。Muse Image 的差異，是把公開照片帶進生成流程：照片不只是被看見，而是成為新影像裡的人物、臉、姿態或風格參考。The Decoder 指出，這類功能在歐洲可能面臨 GDPR 與生物特徵資料相關問題，也會碰上歐盟 AI Act 的深偽標示義務。⁸⁹</p>
+<p>TechCrunch 把這件事放回 Meta 的隱私前史：2019 年 FTC 對 Facebook 開出 50 億美元罰款，源於 Cambridge Analytica 與更廣泛的隱私承諾問題；2021 年 Facebook 又宣布關閉臉部辨識系統、刪除超過 10 億人的臉部辨識模板。這些歷史不代表 Muse Image 必然違法，但它解釋了為何「預設加入、事後關閉」會讓許多使用者與監管者敏感。⁶¹⁰¹²¹³</p>
+<p>公開帳號的創作者尤其處於矛盾位置。若改成 private，他們失去觸及、合作與作品曝光；若維持公開，個人形象可能成為他人 AI 圖像素材。Counterpoint 與 CMR 分析師在 Economic Times 訪問中指出，這改變了公開帳號的意義：它不再只是被看見，也可能被再製成廣告、假背書或傷害名譽的視覺。²¹ 這是「曝光換機會」與「曝光換風險」之間的新交易。</p>
+<figure><img src="https://media.wired.com/photos/6a4d6e8fe06236b4d104fe30/191:100/w_1280,c_limit/Meta-Lets-Anyone-Use-Your-Instagram-Photos-in-AI-Images-Gear-2268477073.jpg" alt="WIRED 報導中使用的手機與 Instagram 視覺｜來源：WIRED / Getty Images" loading="lazy"><figcaption>創作者需要公開作品才能被看見，但同一份可見度也可能讓肖像、風格與照片被帶入他人生成內容。</figcaption></figure>
+<h2>深偽陰影：從好玩濾鏡到非同意影像</h2>
+<p>Meta 將 Muse Image 放在「日常創作」語境裡：修老照片、換髮型、做邀請卡、生成 QR code、改造房間。這些用途聽起來像是手機裡更聰明的修圖工具。可是 BBC 訪問的 Foxglove advocacy director Donald Campbell 則說，這是「obvious recipe for disaster」；Privacy International 也對 BBC 表示，AI 公司把人們的影像與資料視為可被開採的原料。³</p>
+<p>這些批評不是抽象恐懼。2026 年 1 月，BBC 報導英國 Ofcom 調查 X，原因是 Grok 被指用來製作、分享非同意的性化影像與兒童性化影像。Ofcom 說會檢視平台是否快速移除非法內容、是否採取適當措施避免英國使用者看到，以及是否用高度有效的年齡保證阻止兒童接觸色情影像。幾天後，BBC 又報導 X 宣布在相關司法轄區限制 Grok 把真人照片改成暴露衣著。¹⁴¹⁵</p>
+<p>Muse Image 與 Grok 個案不是同一個產品，也不能把另一平台的濫用直接等同於 Meta 的功能。但它們共享一個問題：當生成工具可以以真人照片為基礎，傷害就不只來自「有人看見你的照片」，而是「有人把你的照片變成你沒有做過、沒有同意、甚至可能造成羞辱或風險的畫面」。因此，爭議焦點不只是模型能不能標水印，而是平台是否應該在生成前取得明確同意。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/2014-04-04-Federal-Trade-Commission-Building-Washington-DC.jpg/1280px-2014-04-04-Federal-Trade-Commission-Building-Washington-DC.jpg" alt="美國 Federal Trade Commission 建築｜來源：Wikimedia Commons / Ted Eytan（CC BY-SA 4.0）" loading="lazy"><figcaption>FTC 曾以歷史性罰款要求 Facebook 改變隱私治理；Muse Image 的爭議也會被放在這條長期監管脈絡裡觀看。</figcaption></figure>
+<h2>監管者正在追趕圖像生成速度</h2>
+<p>歐盟在 2026 年 6 月公布 AI 生成內容透明度實務守則。歐盟委員會說，AI Act 第 50 條的透明度義務將自 2026 年 8 月 2 日起適用，涵蓋 AI 生成內容的機器可讀標記與深偽、特定 AI 生成文字的標示。這套規則的核心不是禁止生成，而是降低欺騙與操縱風險，讓人們知道何時正在接觸人工生成或人工修改的內容。⁹</p>
+<p>Meta 也推出自己的技術回應。Meta AI 官方文章說，Muse Image 包含 Content Seal，這是一種不可見浮水印，據稱即使影像被裁切、壓縮、調整尺寸或截圖，也能保留來源訊號；Meta 也預告提供檢測工具，讓人們檢查影像是否帶有 Content Seal。² 這種做法對追蹤來源有幫助，但它不是完整答案。浮水印通常是在影像生成之後才發揮作用；對被拿來生成的人來說，傷害可能在生成、分享或被截圖轉傳的那一刻已經發生。</p>
+<p>Reuters 在 2026 年 3 月報導兒童線上安全與年齡檢查技術成熟時指出，各國監管者正把年齡保證、平台責任與 AI 內容限制放在一起討論。¹⁶ AP 也報導 FTC 對 AI 伴侶聊天機器人對兒少影響展開詢問，顯示監管焦點不只在社群貼文，也延伸到 AI 產品與情感、心理、影像安全的交界。¹⁷ Muse Image 的爭議，正好落在這個新監管網的交叉點。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Belgique_-_Bruxelles_-_Schuman_-_Berlaymont_-_01.jpg/1280px-Belgique_-_Bruxelles_-_Schuman_-_Berlaymont_-_01.jpg" alt="歐盟委員會 Berlaymont 大樓｜來源：Wikimedia Commons / EmDee（CC BY-SA 4.0）" loading="lazy"><figcaption>歐盟 AI Act 把生成內容標記與深偽揭露列入透明度義務，代表監管者正在要求平台把「這是不是 AI 生成」說清楚。</figcaption></figure>
+<h2>平台化時代，照片是社交也是資料</h2>
+<p>Reuters Institute 2026 Digital News Report 說，社群媒體與影音平台首次在 48 個市場平均上超過電視與新聞網站，成為最普遍的線上新聞來源；18 至 24 歲族群中，社群、影音與 AI 聊天機器人成為主要資訊入口的比例更高。¹⁸ 這個背景讓 Muse Image 的爭議更重要：人們不是在一個邊緣工具裡交出照片，而是在日常資訊、社交、創作與商業曝光所在的平台裡交出照片。</p>
+<p>Meta 的商業模式也使「再利用」不只是創意問題。FTC 2019 年新聞稿指出，Facebook 透過定向廣告將使用者資訊貨幣化，2018 年營收大多來自廣告；FTC 指控 Facebook 以令人誤解的揭露與設定削弱使用者隱私選擇。¹⁰ Reuters 同一事件報導也記錄，FTC 民主黨委員曾批評和解沒有真正限制 Facebook 的資料收集與商業模式。¹¹</p>
+<p>Muse Image 目前被包裝成免費的「everyday creation」，但它也會進入 Meta Advantage+ creative，供廣告商與代理商使用。¹ 這使問題多了一層：若平台把人們公開照片變成 AI 生成的社交脈絡或廣告素材，誰負責確認肖像同意？如果生成內容導致假背書、騷擾或商業混淆，是使用者、廣告主、平台，還是模型供應商承擔後果？目前各方尚無定論。</p>
+<figure><img src="https://about.fb.com/wp-content/uploads/2026/07/Muse-Image_Social-Share-1.jpg?w=1200" alt="Meta Muse Image 官方視覺｜來源：Meta Newsroom" loading="lazy"><figcaption>Meta 把 Muse Image 包裝成日常創作工具；爭議正在於這個創作流程是否也把公開照片納入可再利用素材。</figcaption></figure>
+<h2>使用者能做什麼，平台還欠什麼</h2>
+<p>就個人層面，最直接的做法是檢查 Instagram 的 Sharing and Reuse 設定，關閉 Posts、Reels 與原創音訊的 AI 再利用選項；若不需要公開曝光，也可把帳號改成 private。³¹⁹ 但這些做法都有代價。創作者、店家、自由工作者、藝術家與公共人物常常需要公開帳號；把帳號鎖起來，等於用可見度換安全。</p>
+<p>平台層面，至少有三個問題仍需要回答。第一，預設值應該是 opt-in 還是 opt-out？若功能涉及他人肖像或可識別影像，明確同意是否應成為前提？第二，已生成影像如何處理？The Decoder 指出，若使用者之後才關閉設定，已生成的影像不一定會被刪除。⁸ 第三，當影像被分享到平台外、被截圖或被二次加工，Content Seal 或平台政策是否仍有執行力？</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> Muse Image 的真正轉折，不在於它能不能生成漂亮圖片，而在於它把「公開」變成平台可以重新解釋的動詞。公開曾經是讓別人看見；現在可能是讓模型讀取、組合、推論、包裝，再把你放進一張你沒有參與的圖。若平台希望使用者相信這只是創作工具，就需要比「你可以去設定裡關掉」更清楚的同意設計。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Social_media_Image01.jpg" alt="社群媒體使用示意圖｜來源：Wikimedia Commons（CC0）" loading="lazy"><figcaption>一張日常社群照片可能同時是記憶、作品、宣傳與資料；不同角色會用不同方式理解它的邊界。</figcaption></figure>
+<h2>台灣讀者的日常提醒</h2>
+<p>Muse Image 目前主要在美國與部分國家推出，尚未等於每一位台灣使用者都已被同樣功能覆蓋。可是台灣讀者仍值得先理解這件事，因為 Meta 的產品通常跨市場擴散，而 Instagram 在台灣也同時是個人相簿、店家櫥窗、創作者履歷與公共溝通工具。</p>
+<p>對一般人來說，最實際的問題不是要不要刪掉 Instagram，而是重新分類照片：哪些只是日常風景，哪些包含孩子、制服、住家、車牌、工作場所，哪些照片若被 AI 放到陌生情境會造成困擾？BBC 7 月 3 日報導英國 NCA 與 IWF 警告父母不要公開分享兒童影像，原因之一正是 AI 生成虐待影像風險升高；IWF 說 2025 年辨識出超過 8,000 件逼真的 AI 生成兒童性虐待影像與影片，比前一年增加 14%。²² 這些數字提醒我們，照片風險已不只停留在盜圖或冒名帳號。</p>
+<p>對創作者與小商家來說，則需要建立兩套素材策略：一套可以公開、可以被轉傳；另一套保留更高解析度、臉部特徵、客戶與家人影像，只用於受控通路。這不是要求每個人恐慌，而是承認平台規則正在變化。過去我們問「這張照片能不能公開？」現在還要問：「如果它被拿去生成別的內容，我能不能接受？」</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Meta_Platforms_Headquarters_Menlo_Park_California.jpg/1280px-Meta_Platforms_Headquarters_Menlo_Park_California.jpg" alt="Meta Platforms 總部入口｜來源：Wikimedia Commons / TaurusEmerald（CC0）" loading="lazy"><figcaption>Meta 會繼續把 AI 放進社群產品；使用者、創作者與監管者接下來要爭的是預設值、告知方式與責任邊界。</figcaption></figure>
+<h2>接下來看三件事</h2>
+<p>第一，看 Meta 是否調整預設。若反彈擴大，Meta 可能把設定提示做得更明顯，或在不同市場採用不同同意流程。第二，看歐盟與英國如何套用即將生效或已生效的規則：AI Act 的標記與深偽揭露義務、英國 Online Safety Act 與 Ofcom 對 Grok 的調查，都會為平台畫出新的安全與透明度底線。⁹¹⁴</p>
+<p>第三，看創作者與廣告主如何處理肖像權與品牌安全。Muse Image 很快會走向廣告工具，這意味著「我只是玩一下」與「我把某人的臉放進商業內容」之間會變得更難分。當平台提供工具、使用者輸入提示、模型生成圖像、廣告主再拿來投放，責任鏈比傳統盜圖更複雜。</p>
+<p>結語不是要求所有人退出公開網路，而是要求公開網路重新說清楚自己的規則。公開照片可以讓人相遇、被看見、找到工作、建立社群；它也可能被平台改寫成訓練資料、生成素材與商業工具。Muse Image 讓這個問題變得具體：在下一次上傳照片以前，我們不只是在問誰能看見，也是在問誰能把它變成別的東西。</p>
+<p>這裡還有一個容易被忽略的層面：Muse Image 把「社交圖像」與「生成工具」接在同一個產品鏈裡。過去，修圖 app 與社群平台多半是兩段流程；使用者先在一個工具裡修圖，再決定是否發布到另一個平台。Meta 的設計則把生成、編輯、聊天、限時動態、貼文與未來廣告工具串在一起。當工具本身就知道你的朋友、你的公開帳號、你的 Marketplace 商品與你的社交互動，生成影像就不只是圖像模型的結果，而是平台關係網的延伸。¹²</p>
+<p>這也是為什麼「我只是不想被陌生人拿去做圖」會變成一個結構性問題。你可以關閉設定，但你無法要求每一位朋友、客戶、合作對象都理解相同風險；你可以刪掉舊照片，但那些照片可能早已被截圖、轉貼或進入其他資料流程；你可以檢查浮水印，但你未必會看到每一張以你為素材的圖。個人能做的防護，是降低暴露；平台必須回答的，則是暴露之後如何取得同意、如何限制用途、如何追責。</p>
+<p>從新聞史看，這不是 Meta 第一次在「便利」與「同意」之間引發爭論。臉部辨識自動標記最初也被包裝成減少手動標註的便利功能，後來卻因生物特徵資料、告知不足與使用者選擇權受到監管與訴訟壓力。AP 報導，Facebook 2021 年宣布關閉臉部辨識系統並刪除超過 10 億人的 faceprints，背景正是政府、警方與其他單位可能濫用該技術的社會疑慮。¹²</p>
+<p>Muse Image 不等於臉部辨識系統，Meta 也沒有在新聞稿中說它建立可識別個人的臉部模板；但兩者共享同一個政治問題：當平台以「照片」作為產品功能的燃料時，照片中的人是否只是資料，還是仍保有可拒絕、可撤回、可被通知的權利？若平台只在設定深處提供開關，就很難說使用者真的參與了這個決定。</p>
+<p>對監管者而言，接下來的難題是把不同法制拼接起來。美國有 FTC 的消費者保護與隱私承諾監督，歐盟有 AI Act、GDPR 與平台規則，英國則透過 Online Safety Act 與 Ofcom 檢視非法內容與兒少保護。這些規則各自處理不同面向：有的問平台是否誤導使用者，有的問生成內容是否應標示，有的問平台是否快速移除非法內容，有的問兒童是否被有效保護。⁹¹⁰¹⁴¹⁶</p>
+<p>可是使用者遇到的情境通常不是分開的。他看到的是一張圖：這張圖像不像我？是不是用我的公開照片做的？有沒有標 AI？誰生成的？會不會被拿去騷擾、詐騙或廣告？這些問題跨越隱私、肖像、消費者保護、著作權、性別暴力與兒少安全。單一法律工具很難完全處理，因此平台的產品設計會成為第一道防線。</p>
+<p>對台灣的公共討論而言，Muse Image 也提供一個比「AI 會不會取代工作」更貼近日常的切入點。許多家庭、店家、學校社團、地方創作者與小型品牌都依賴 Instagram 取得能見度；他們未必有法務團隊，也未必會追蹤英文科技新聞。若平台在某次更新後改變公開內容的再利用方式，最晚知道的人往往正是最依賴平台的人。</p>
+<p>因此，這篇文章最後留下的不是「不要公開」四個字，而是一組更務實的檢查：公開照片是否包含可識別孩子、客戶、病患、學生或未同意的第三人？是否包含住家位置、學校制服、工作識別證或私人空間？是否為創作者賴以維生的肖像與作品？如果答案是肯定的，公開之前就應該把 AI 再利用納入考量。這不是把責任全推給使用者，而是在平台規則變清楚以前，先為自己保留一點空間。</p>
+<p>在使用者層面，這種變化也會改變家庭與工作場合的禮貌。朋友聚會拍照，以前比較常問的是「可以 tag 你嗎」；現在可能還要問「這張照片可不可以放在公開帳號，讓平台未來可能拿來做 AI 再利用？」學校、社團、店家活動與公司尾牙也是如此。只要照片裡有可識別的人，公開發布者不再只是管理自己的形象，也在替別人決定他們是否進入一個生成系統。</p>
+<p>對新聞業與公共資訊而言，問題更敏感。Reuters Institute 的報告提醒，社群與影音平台已成為許多人接觸新聞與公共議題的主要入口。¹⁸ 如果 AI 圖像能更容易把真人放進特定場景，政治迷因、災難影像、抗議照片、名人背書與地方社團消息都可能更難辨識。歐盟要求機器可讀標記與深偽揭露，正是因為真假影像的混淆會影響資訊生態，而不只是個人名譽。⁹</p>
+<p>Meta 當然也可指出，許多照片早已能被下載、截圖、轉貼，Muse Image 只是把現有風險變得更容易、更內建。這個說法有部分道理：網路公開從來不是無風險。但產品設計會改變風險規模。當平台把某種行為做成內建功能、放在熱門 app 裡、與朋友列表和公開帳號相連，原本需要技術門檻或惡意工具才能完成的事，就變成更多普通使用者能在幾秒鐘內嘗試的日常操作。</p>
+<p>因此，本文能確認的是：Meta 已推出 Muse Image，並明確描述 @ 標記公開 Instagram 帳號作為生成素材的功能；多家媒體與倡議者已提出同意、opt-out 與非同意影像風險；監管者正透過 AI Act、FTC 隱私命令、Ofcom 調查與兒少安全規則回應類似問題。本文無法獨立確認的是：不同市場的每位使用者目前是否都已看到相同設定、Meta 實際如何在後端限制濫用、以及未來各監管機關會否認定此功能違法。這些仍需要後續觀察。</p>
+<p>還有一個現實問題，是平台用語往往比風險更柔軟。Meta 的新聞稿使用「bring specific Instagram profiles right into your images」這類創作語言；對創作者來說，那可能是合作邀請卡；對被騷擾者來說，可能是陌生人把自己的臉放進不願出現的場景。兩者都可能發生。中立地說，Muse Image 的技術能力本身可用於正當創作，也可能降低設計門檻；但同一能力若缺少明確同意與用途限制，就會把被拍攝者、被標記者與公開帳號經營者帶入他們沒有預期的語境。</p>
+<p>這也是為什麼本文沒有把結論寫成「Meta 必然錯」或「使用者太敏感」。目前可確認的是功能、反彈、opt-out 路徑、監管背景與過往案例；仍待查證的是不同地區實際部署方式、Meta 內部濫用偵測規則、使用者關閉設定後對既有生成圖像的實際影響，以及未來監管機關是否會要求改成 opt-in。對讀者而言，最穩健的態度是把公開照片視為一種會被平台重新定義的資料，而不是只被朋友瀏覽的相簿。</p>
+<p>若說社群平台過去二十年的默契是「你給我內容，我給你觸及」，生成式 AI 正在把它改寫成「你給我內容，我也可能把它變成別人的素材」。這個改寫不一定全然惡意，卻需要新的同意語法。當一張日常照片可以被模型拿去完成邀請卡、廣告草稿、惡作劇迷因或羞辱影像時，平台不能只把責任留在一個深藏的切換鈕裡。它需要讓使用者在上傳、公開、被標記、被生成與被分享的每一步，都看得見自己的選擇。</p>
+<p>最後，這件事也提醒我們：AI 安全不只發生在研究室或政策白皮書裡，它常常藏在一個 app 更新、一個預設開關、一句看似無害的產品文案裡。一般使用者不會每天閱讀 Meta、歐盟委員會或 FTC 文件；他們只是在上班途中滑手機、替店裡新品拍照、替孩子記錄生日，或把旅行照放上公開帳號。正因如此，平台若要把這些日常照片接入生成系統，就應該用同樣日常、清楚、不可誤解的方式告知，而不是假設每個人都會在風險發生前找到設定選單。</p>
+<p>Muse Image 只是最新案例。未來，類似功能可能出現在短影音、直播、購物、交友、遊戲與廣告工具裡。今天的問題是 Instagram 公開照片；明天可能是聲音、動作、房間、店面、家人與客戶。這不是反科技，而是要求科技把人當成參與者，而不是素材庫。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ Meta Newsroom（2026-07-07）— "Introducing Muse Image: Image Generation Built for Your World"
+<a href="https://about.fb.com/news/2026/07/introducing-muse-image-meta-ai/" rel="noopener" target="_blank">https://about.fb.com/news/2026/07/introducing-muse-image-meta-ai/</a></p>
+<p class="ref">² Meta AI（2026-07-07）— "Introducing Muse Image and Muse Video"
+<a href="https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/" rel="noopener" target="_blank">https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/</a></p>
+<p class="ref">³ BBC News（2026-07-08）— "Outcry as Meta lets users make AI images from public Instagram profile pics"
+<a href="https://www.bbc.co.uk/news/articles/cp9lee19y1yo" rel="noopener" target="_blank">https://www.bbc.co.uk/news/articles/cp9lee19y1yo</a></p>
+<p class="ref">⁴ The Verge（2026-07-07）— "Meta’s new Muse Image model can pull other Instagram users into AI photos"
+<a href="https://www.theverge.com/tech/962485/meta-muse-image-ai-model-instagram" rel="noopener" target="_blank">https://www.theverge.com/tech/962485/meta-muse-image-ai-model-instagram</a></p>
+<p class="ref">⁵ WIRED（2026-07-07）— "Meta Now Lets Anyone Use Your Instagram Photos in AI Images—Unless You Opt Out"
+<a href="https://www.wired.com/story/meta-now-lets-anyone-use-your-instagram-photos-in-ai-images-unless-you-opt-out/" rel="noopener" target="_blank">https://www.wired.com/story/meta-now-lets-anyone-use-your-instagram-photos-in-ai-images-unless-you-opt-out/</a></p>
+<p class="ref">⁶ TechCrunch（2026-07-07）— "Meta just launched a new AI generator, Muse Image, and users are already pushing back over use of their photos"
+<a href="https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/" rel="noopener" target="_blank">https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/</a></p>
+<p class="ref">⁷ The National（2026-07-08）— "Backlash against Meta's Muse Image AI as Instagram users seek to opt out"
+<a href="https://www.thenationalnews.com/future/technology/2026/07/08/meta-muse-image-opt-out-instagram-ai/" rel="noopener" target="_blank">https://www.thenationalnews.com/future/technology/2026/07/08/meta-muse-image-opt-out-instagram-ai/</a></p>
+<p class="ref">⁸ The Decoder（2026-07-08）— "Muse Image is technically impressive, but Meta's use of Instagram photos raises questions"
+<a href="https://the-decoder.com/muse-image-is-technically-impressive-but-metas-use-of-instagram-photos-raises-questions/" rel="noopener" target="_blank">https://the-decoder.com/muse-image-is-technically-impressive-but-metas-use-of-instagram-photos-raises-questions/</a></p>
+<p class="ref">⁹ European Commission（2026-06-10）— "Code of Practice on Transparency of AI-Generated Content"
+<a href="https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content" rel="noopener" target="_blank">https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content</a></p>
+<p class="ref">¹⁰ Federal Trade Commission（2019-07-24）— "FTC Imposes $5 Billion Penalty and Sweeping New Privacy Restrictions on Facebook"
+<a href="https://www.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook" rel="noopener" target="_blank">https://www.ftc.gov/news-events/news/press-releases/2019/07/ftc-imposes-5-billion-penalty-sweeping-new-privacy-restrictions-facebook</a></p>
+<p class="ref">¹¹ Reuters（2019-07-25）— "Facebook to pay record $5 billion U.S. fine over privacy; faces antitrust probe"
+<a href="https://www.reuters.com/article/technology/facebook-to-pay-record-5-billion-us-fine-over-privacy-faces-antitrust-probe-idUSKCN1UJ1L9/" rel="noopener" target="_blank">https://www.reuters.com/article/technology/facebook-to-pay-record-5-billion-us-fine-over-privacy-faces-antitrust-probe-idUSKCN1UJ1L9/</a></p>
+<p class="ref">¹² AP News（2021-11-03）— "Facebook to shut down face-recognition system, delete data"
+<a href="https://apnews.com/article/technology-business-85a21a8079a757f2ff99972f1858f7ce" rel="noopener" target="_blank">https://apnews.com/article/technology-business-85a21a8079a757f2ff99972f1858f7ce</a></p>
+<p class="ref">¹³ Meta Newsroom（2021-11-02）— "An Update On Our Use of Face Recognition"
+<a href="https://about.fb.com/news/2021/11/update-on-use-of-face-recognition/" rel="noopener" target="_blank">https://about.fb.com/news/2021/11/update-on-use-of-face-recognition/</a></p>
+<p class="ref">¹⁴ BBC News（2026-01-12）— "Ofcom investigates Elon Musk's X over Grok AI sexual deepfakes"
+<a href="https://www.bbc.co.uk/news/articles/cwy875j28k0o" rel="noopener" target="_blank">https://www.bbc.co.uk/news/articles/cwy875j28k0o</a></p>
+<p class="ref">¹⁵ BBC News（2026-01-14）— "Elon Musk's X to block Grok from undressing images of real people"
+<a href="https://www.bbc.co.uk/news/articles/ce8gz8g2qnlo" rel="noopener" target="_blank">https://www.bbc.co.uk/news/articles/ce8gz8g2qnlo</a></p>
+<p class="ref">¹⁶ Reuters（2026-03-09）— "Amid wave of kids’ online safety laws, age-checking tech comes of age"
+<a href="https://www.reuters.com/legal/litigation/amid-wave-kids-online-safety-laws-age-checking-tech-comes-age-2026-03-09/" rel="noopener" target="_blank">https://www.reuters.com/legal/litigation/amid-wave-kids-online-safety-laws-age-checking-tech-comes-age-2026-03-09/</a></p>
+<p class="ref">¹⁷ AP News（2025-09-11）— "FTC launches inquiry into AI chatbots acting as companions and their effects on children"
+<a href="https://apnews.com/article/ftc-chatbot-ai-e78fcc72520f56a4eff90df7ad6220c0" rel="noopener" target="_blank">https://apnews.com/article/ftc-chatbot-ai-e78fcc72520f56a4eff90df7ad6220c0</a></p>
+<p class="ref">¹⁸ Reuters Institute for the Study of Journalism（2026-06-16）— "Overview and key findings of the 2026 Digital News Report"
+<a href="https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary" rel="noopener" target="_blank">https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary</a></p>
+<p class="ref">¹⁹ The Verge（2026-07-08）— "You can (and should) opt out of letting people use your Instagram posts with Meta’s AI"
+<a href="https://www.theverge.com/ai-artificial-intelligence/962998/you-can-and-should-opt-out-of-letting-people-use-your-instagram-posts-with-metas-ai" rel="noopener" target="_blank">https://www.theverge.com/ai-artificial-intelligence/962998/you-can-and-should-opt-out-of-letting-people-use-your-instagram-posts-with-metas-ai</a></p>
+<p class="ref">²⁰ PCMag（2026-07-08）— "Meta's New Image Model Lets People Tag Your Insta ID in Prompts: How to Opt Out"
+<a href="https://uk.pcmag.com/ai/166057/metas-new-image-model-lets-people-tag-your-insta-id-in-prompts-how-to-opt-out" rel="noopener" target="_blank">https://uk.pcmag.com/ai/166057/metas-new-image-model-lets-people-tag-your-insta-id-in-prompts-how-to-opt-out</a></p>
+<p class="ref">²¹ The Economic Times / PTI（2026-07-08）— "Meta's new Muse AI image generator sparks privacy, image-scraping concerns"
+<a href="https://economictimes.indiatimes.com/news/india/metas-new-muse-ai-image-generator-sparks-privacy-image-scraping-concerns/articleshow/132263977.cms" rel="noopener" target="_blank">https://economictimes.indiatimes.com/news/india/metas-new-muse-ai-image-generator-sparks-privacy-image-scraping-concerns/articleshow/132263977.cms</a></p>
+<p class="ref">²² BBC News（2026-07-03）— "Parents warned not to publicly share children’s images amid AI abuse risks"
+<a href="https://www.bbc.com/news/articles/cd7wj7d0jzzo" rel="noopener" target="_blank">https://www.bbc.com/news/articles/cd7wj7d0jzzo</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/686" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
