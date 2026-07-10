@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>金色牆上的第九 · 穗稻忠武的專欄</title>
+<meta name="description" content="這不是一幅安靜掛在白牆上的畫。1902 年，維也納分離派把一棟展館變成向貝多芬致意的臨時劇場；大廳中央是 Max Klinger 的《貝多芬》雕像，牆上則是 Gustav Klimt 用金、銀、玻璃、鈕扣與線條鋪開的《貝多芬橫飾帶》。它原本展後就要拆除，後來被切開、收藏、遷移、納粹時期被牽入掠奪與保管史，直…">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-10-klimt-beethoven-frieze/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金色牆上的第九">
+<meta property="og:description" content="這不是一幅安靜掛在白牆上的畫。1902 年，維也納分離派把一棟展館變成向貝多芬致意的臨時劇場；大廳中央是 Max Klinger 的《貝多芬》雕像，牆上則是 Gustav Klimt 用金、銀、玻璃、鈕扣與線條鋪開的《貝多芬橫飾帶》。它原本展後就要拆除，後來被切開、收藏、遷移、納粹時期被牽入掠奪與保管史，直…">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-10-klimt-beethoven-frieze/">
+<meta property="og:image" content="https://secession.at/items/uploads/images/1667921875_1li2lhk7SLgY.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "金色牆上的第九", "description": "這不是一幅安靜掛在白牆上的畫。1902 年，維也納分離派把一棟展館變成向貝多芬致意的臨時劇場；大廳中央是 Max Klinger 的《貝多芬》雕像，牆上則是 Gustav Klimt 用金、銀、玻璃、鈕扣與線條鋪開的《貝多芬橫飾帶》。它原本展後就要拆除，後來被切開、收藏、遷移、納粹時期被牽入掠奪與保管史，直…", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-10-klimt-beethoven-frieze/", "datePublished": "2026-07-10", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://secession.at/items/uploads/images/1667921875_1li2lhk7SLgY.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">社會觀察</span><span class="tag">專欄</span></div>
+<h1>金色牆上的第九</h1>
+<p class="byline"><time>2026-07-10</time></p>
+</div>
+
+<p class="lead">這不是一幅安靜掛在白牆上的畫。1902 年，維也納分離派把一棟展館變成向貝多芬致意的臨時劇場；大廳中央是 Max Klinger 的《貝多芬》雕像，牆上則是 Gustav Klimt 用金、銀、玻璃、鈕扣與線條鋪開的《貝多芬橫飾帶》。它原本展後就要拆除，後來被切開、收藏、遷移、納粹時期被牽入掠奪與保管史，直到 1986 年才回到分離派會館地下室公開展出。¹²</p>
+<p>今天看這件作品，重點不只是「漂亮」或「金色」。它更像一張關於現代藝術誕生的剖面圖：藝術家想把音樂、建築、雕塑與繪畫合成一個整體；觀眾與報紙則在其中看見醜、病、慾望與冒犯。這道金色牆面問的問題，至今仍沒有完全過時：公共藝術到底要安慰人、教育人，還是有權把不安赤裸地放到公共空間裡？³⁴</p>
+<figure><img src="https://secession.at/items/uploads/images/1667921875_1li2lhk7SLgY.jpg" alt="《貝多芬橫飾帶》局部｜來源：Secession / Jorit Aust（官方圖像）" loading="lazy"><figcaption>封面局部呈現 Klimt 把人物、金色裝飾與象徵敘事壓在同一個平面上；這也是本文討論「音樂如何變成牆面」的入口。</figcaption></figure>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Secession_Building.jpg/1280px-Secession_Building.jpg" alt="維也納分離派會館｜來源：Vitold Muratov / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>分離派會館不是一般博物館背景，而是《貝多芬橫飾帶》最初被設計進入的空間；作品與建築的關係，是理解它的第一層。</figcaption></figure>
+<h2>一棟展館先變成樂章</h2>
+<p>1902 年 4 月 15 日至 6 月 27 日，維也納分離派第十四屆展覽以貝多芬為主題。分離派官網記錄，展覽由 Josef Hoffmann 指導，共有二十一位藝術家參與，Klinger 的《貝多芬》雕像立在主廳中央，Klimt 的橫飾帶則位於左側通道，觀眾進場後很快會遇見它。¹ 這個安排並不只是「掛畫」；展覽目標是讓建築、繪畫、雕塑、裝飾與音樂在同一主題下互相作用，讓作品從房間的整體設計中出現。¹ 這種想法常被稱為 Gesamtkunstwerk，中文可譯為「總體藝術作品」。Tate 在 2008 年 Klimt 展覽資料中也指出，第十四屆分離派展覽由 Hoffmann 設計，Klinger 雕像周圍有 Klimt 三面牆的橫飾帶；展覽不是單件作品陳列，而是要讓觀眾走入一個由藝術共同構成的環境。⁷ MAK 對「維也納 1900」的說明則把這種跨越建築、繪畫與應用藝術的交流，視為維也納現代美學的重要基礎。¹⁷ 這一點決定了本文的讀法：不能只把《貝多芬橫飾帶》當成 Klimt 一人的圖像奇觀。它也是分離派的一次制度實驗：藝術家協會、展館、觀眾、音樂崇拜與現代設計願望，被集中在一場只預計存在數月的展覽裡。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Max_Klingers_%27Beethoven%27_in_der_14._Ausstellung_der_Wiener_Secession%2C_1902_%281%29.jpg" alt="1902 年第十四屆分離派展覽中的 Max Klinger《貝多芬》雕像｜來源：Archiv der Secession / Wikimedia Commons（公有領域）" loading="lazy"><figcaption>Klinger 的雕像是展覽核心；Klimt 的牆面不是孤立作品，而是圍繞這尊貝多芬形象展開的視覺回應。</figcaption></figure>
+<h2>貝多芬不是配樂，而是被重新塑形</h2>
+<p>分離派的官方說明把 1902 年展覽放在貝多芬逝世七十五週年的紀念脈絡中。¹ 但 Klimt 畫的不是音樂家的肖像，也不是樂譜插圖；他採用的是 Richard Wagner 對第九號交響曲的詮釋，把「追求幸福」鋪成三面牆的寓言敘事。¹ Getty 的展覽資料也說，Klimt 在 1901 至 1902 年製作這個裝飾循環，將貝多芬第九號交響曲終樂章轉譯成圖像；他同時吸收古希臘、拜占庭、中世紀、日本藝術，以及 Jan Toorop、Fernand Khnopff、George Minne、Ferdinand Hodler、Edvard Munch 等同時代藝術家的形式資源。² 左牆從漂浮的「精靈」與「苦難的人類」開始，接著出現被「同情」與「野心」驅動的騎士。中牆轉入敵對力量：Typhoeus、Gorgons、疾病、瘋狂、死亡、啃咬的憂傷，以及淫逸與放縱。右牆則把尋求幸福導向詩、藝術、天使合唱與擁抱的戀人。¹² 這套敘事看似從苦難走向救贖，但它的線條與身體並不安穩；人物常被壓扁、拉長、孤立，像在裝飾與心理狀態之間漂浮。 因此，貝多芬在這裡不是背景音樂，而是被現代主義重新塑形的材料。Wagner 對「第九」的理解、Schiller〈歡樂頌〉的語句、Klinger 沉重的雕像身體、Klimt 輕飄的平面人物，共同構成一場關於「藝術能不能使人通向幸福」的辯論。</p>
+<figure><img src="https://secession.at/items/uploads/images/1668445293_L4ewhFBdQJBl.jpg" alt="1902 年左側展廳中的《貝多芬橫飾帶》｜來源：Archive of the Secession（官方檔案圖像）" loading="lazy"><figcaption>這張歷史照片顯示橫飾帶原本嵌在展場牆面，而非後來地下室中單獨觀看的狀態。</figcaption></figure>
+<h2>臨時作品如何逃過拆除</h2>
+<p>《貝多芬橫飾帶》最初並不是為永久保存而生。分離派說明指出，它和其他裝飾性壁畫一樣，原定在展覽結束後拆除；之所以沒有立即消失，是因為分離派隔年安排 Klimt 回顧展，作品被暫時留下。¹ 1903 年，收藏家 Carl Reininghaus 購買它，作品被從牆上切成數塊並移走，之後在維也納家具倉庫中存放多年。¹ 奧地利藝術返還委員會 2015 年英文版決議書提供更細的流轉史：橫飾帶在 1903 年後由 Carl Moll 監督拆卸，分成八塊，存放於 Michelbeuern 的 Möbelaufbewahrungsanstalt Wilhelm &amp; Eisler；1915 年，Reininghaus 將它賣給工業家 August Lederer。⁸ 分離派官網則說 Lederer 與妻子 Serena 是 Klimt 重要支持者，並擁有當時重要的 Klimt 私人收藏。¹ 這段歷史讓作品的「倖存」帶有偶然性。若沒有下一檔 Klimt 展、沒有收藏家出手、沒有之後漫長的修復制度，《貝多芬橫飾帶》可能只會剩下照片與評論。它今天成為美術史關鍵作品，並不是因為一開始就被制度認定為國寶，而是因為臨時展覽、私人收藏、國家保存與法律爭議在不同時間接力。</p>
+<figure><img src="https://secession.at/items/uploads/images/1659534962_sHoTvp3PAnrH.jpeg" alt="《貝多芬橫飾帶》今日安裝於分離派會館地下室｜來源：Secession / Jorit Aust（官方圖像）" loading="lazy"><figcaption>1986 年以後，作品才在為保存條件設計的地下室空間中長期公開；今日觀看經驗已不同於 1902 年原展場。</figcaption></figure>
+<h2>地下室裡的國家收藏</h2>
+<p>作品回到分離派會館，並不是原封不動的回家。分離派說明記錄，奧地利共和國取得作品後，由聯邦古蹟辦公室維也納分處 Manfred Koller 領導團隊，花十年修復；1985 年分離派建築整修時，地下室為作品建立了能維持保存條件的房間；自 1986 年起，作品作為 Österreichische Galerie Belvedere 的永久借展，在原建築中公開展出。¹ Vienna.info 提供的展覽資訊把尺寸寫得更直觀：約三十四公尺寬、兩公尺高。⁶ Tate 教育資料則把修復時間列為 1973 至 1983 年，並說地下室房間是為了保存控制條件而設。⁷ Belvedere 近年的新聞資料則將《貝多芬橫飾帶》列入其 Klimt 收藏脈絡：Belvedere 擁有世界最大規模的 Klimt 油畫收藏，並包括在分離派展出的這件紀念性橫飾帶。⁵ 這裡有一個微妙的制度關係：作品在分離派會館展出，但所有權與收藏敘事連到 Belvedere 與奧地利國家收藏。對觀眾來說，它似乎「回到原址」；對法律與博物館制度來說，它則是被修復、借展、重新安置的國家級作品。</p>
+<figure><img src="https://secession.at/items/uploads/images/1659527110_F0sqBEKMy6w2.jpg" alt="《貝多芬橫飾帶》左牆：精靈、苦難的人類與騎士｜來源：Secession / Jorit Aust（官方圖像）" loading="lazy"><figcaption>左牆把「尋求幸福」視覺化，但人物並不厚重寫實，而是被線條、輪廓與空白推向平面。</figcaption></figure>
+<h2>平面、線條與裝飾的革命</h2>
+<p>分離派引用藝術史家 Marian Bisanz-Prakken 的說法，指出《貝多芬橫飾帶》有三個重要創新：人物的二維化與紀念性孤立、線條的表現性使用，以及裝飾的主導地位；她也把這件作品視為 Klimt 「金色時期」的開端之一。¹ 這不是單純的裝飾趣味，而是對身體如何在現代圖像中出現的重新安排。 Getty 的資料進一步解釋，Klimt 把人物安排成正面或側面，並讓身體服從強烈的水平與垂直結構。² 這種形式不是偶然；它讓身體不再像傳統繪畫那樣透過明暗、肌肉與扭轉呈現體積，而是像符號、紋樣、精神狀態與表面材料的混合體。藝術史家 Emmelyn Butterfield-Rosen 在芝加哥大學出版社的書中，把 Klimt 放進 1900 年前後歐洲藝術對身體姿態與心理意識的重新理解中；出版社介紹指出，她分析藝術家如何放棄傳統姿態，改以正面、側面、背面等更平面化的身體語彙，反映當時對意識與身體關係的新理解。¹⁴ 所以，這件作品的「金色」不只是華麗。金、銀、玻璃、鈕扣、釘與線條，把人物從自然主義空間中抽離，推向一種介於壁畫、飾帶、祭壇、樂譜與心理圖之間的狀態。</p>
+<figure><img src="https://secession.at/items/uploads/images/1668441163_t4NUakCTD4o9.jpg" alt="《敵對力量》局部，中牆｜來源：Secession / Jorit Aust（官方圖像）" loading="lazy"><figcaption>中牆的怪物、病、死與慾望，是當年最容易引發道德不安的部分；它讓救贖敘事先通過陰影。</figcaption></figure>
+<h2>醜、慾望與「冒犯」的公共性</h2>
+<p>1902 年的觀眾並沒有一致接受這道金色牆面。分離派官網記錄，許多同儕藝術家讚賞它，但一般公眾與當代報刊常以憤怒、震驚回應；中牆「敵對力量」中的疾病、瘋狂、死亡、啃咬的憂傷，被批評為「瘋狂與固定觀念的圖像」「病理場景」「對高貴人體的無恥漫畫」，Gorgons、淫逸與放縱則被斥為「畫出來的色情」。¹ 這場爭議不能孤立理解。Klimt 在維也納大學天頂畫委託中已陷入更廣泛的公共衝突。Belvedere 的 Google Arts &amp; Culture 故事指出，《哲學》1900 年公開時引發輿論與教授反彈，《醫學》1901 年展示後爭議更大，保守官員批評教育部支持 Klimt；核心問題之一是 Klimt 拒絕把學科畫成理想化、肯定性的寓言。¹¹ eLife 一篇關於 Klimt 大學畫的文章也把這些爭議放在科學、藝術與社會的張力中，指出《醫學》沒有頌揚治療與進步，而是呈現生命、死亡與醫學能力的限制。¹²</p>
+<p>因此，《貝多芬橫飾帶》不是在真空中被罵「淫穢」。它延續了同一個問題：當公共或半公共空間期待藝術提供光明、理性與安慰時，藝術家是否可以把病、死、慾望、無力感與心理陰影也畫進去？</p>
+<figure><img src="https://secession.at/items/uploads/images/1668443874_C7gRxAKBGf0x.jpg" alt="《啃咬的憂傷》局部｜來源：Secession / Jorit Aust（官方圖像）" loading="lazy"><figcaption>這個局部提醒我們，Klimt 的寓言不是只有金色戀人；它同時包含心理痛苦與形體扭曲。</figcaption></figure>
+<h2>「審查」神話之外的維也納</h2>
+<p>談 Klimt 爭議時，最容易落入單線敘事：天才藝術家面對保守社會，最後獲得歷史平反。這個敘事有吸引力，但可能過度簡化。學者 Nausikaä El-Mecky 在 All-Over Magazin 文章中重新檢視大學畫爭議，提醒讀者當時不是單純「所有人都不懂現代藝術」；維也納既有前衛咖啡館與分離派，也有傳統、政治保守與公共委託的限制。¹³ 她的分析指出，爭議核心並非只有裸體或道德恐慌，也包括受委託作品是否必須服從建築、機構與公共目的。 這個觀點對《貝多芬橫飾帶》同樣重要。1902 年展覽本身是藝術家協會的實驗，比大學天頂畫更接近藝術家自行建立的場域；但觀眾依然會用公共道德、身體規範與「貝多芬應該如何被尊敬」來評判它。Klimt 的作品一方面靠分離派制度取得自由，另一方面仍被展覽與社會輿論框住。 <strong>（以下為本文分析，非事實陳述）</strong> 這也許正是作品持續有力的原因：它不是簡單勝利的前衛宣言，而是一個未解的公共問題。若藝術只在私人客廳中冒犯，它的風險有限；當藝術進入展館、學校、城市與國家收藏，冒犯就變成共同討論公共價值的方式。</p>
+<figure><img src="https://secession.at/items/uploads/images/1668442919_GjjrYiWICRCm.jpg" alt="《漂浮精靈》局部｜來源：Secession / Jorit Aust（官方圖像）" loading="lazy"><figcaption>漂浮的人體讓作品介於樂章、夢境與裝飾之間；近年研究也常從身體姿態重新閱讀這件作品。</figcaption></figure>
+<h2>當代研究為何仍回到這面牆</h2>
+<p>《貝多芬橫飾帶》之所以不只屬於 1902 年，是因為它後來反覆被不同研究問題召回。Getty 關心它的素描、線條與形式來源；Tate 透過 2008 年展覽，把它放進「繪畫、設計與現代生活」的維也納 1900 故事；芝加哥大學出版社的 Butterfield-Rosen 則把它放在現代人如何重新理解身體、心智與姿態的問題中。²⁷¹⁴ Art in America 對 Butterfield-Rosen 一書的評論指出，她把 Klimt 的《貝多芬橫飾帶》與 Klinger 的《貝多芬》雕像並置閱讀，關注作品中漂浮、正面化、裝飾化的人物，以及這些形式如何改變觀看者對身體與內在心理的理解。¹⁵ 19th-Century Art Worldwide 的書評也指出，該書第二章討論 1902 年分離派展覽中的 Klinger 與 Klimt，並把重點放在創造天才、身體重量、性選擇、裝飾與意識隱喻之間的差異。¹⁶ 換句話說，這面牆可以被看作音樂翻譯、分離派宣言、性與死亡寓言、現代身體研究、公共藝術爭議，也可以被看作保存與返還制度的案例。它的意義沒有被一種解釋固定。</p>
+<figure><img src="https://secession.at/items/uploads/images/1668443255_WxRzYanvaGsL.jpg" alt="Typhoeus、淫逸與放縱局部｜來源：Secession / Jorit Aust（官方圖像）" loading="lazy"><figcaption>神話怪物與誘惑形象使中牆成為作品最密集的衝突區，也讓「歡樂頌」必須先穿過恐懼。</figcaption></figure>
+<h2>掠奪、出口禁令與返還爭議</h2>
+<p>作品的現代生命還包括法律與所有權爭議。奧地利藝術返還委員會 2015 年決議書指出，作品曾屬 August 與 Serena Lederer 的收藏；納粹德國吞併奧地利後，Serena Lederer 與子女因猶太身分遭迫害，收藏受到查封與管制。⁸ 戰後，作品相關權利回到 Erich Lederer；1972 年，奧地利共和國以 1,500 萬先令購得作品，決議書並討論這筆交易是否與先前返還、出口程序與國家取得之間具有法律上的直接關聯。⁸ BBC 2015 年報導則把爭議說得更清楚：Lederer 繼承人主張，作品雖在二戰後返還家族，卻受到出口禁令限制，Erich Lederer 因而被迫以低價賣給奧地利國家；分離派方面則主張價格是自願談判結果，且奧地利政府支付修復費用。BBC 引述返還諮詢委員會主席 Clemens Jabloner 的說法，認為出口程序並未被用作迫使 Lederer 達成協議的工具。⁹ 委員會最後建議不返還。⁸⁹ 這部分沒有簡單結論。可以確認的是：作品曾被納粹時期的迫害與文化財管制捲入，也曾成為戰後奧地利返還制度的測試案例；同時，委員會在 2015 年作出不返還建議。本文不以此判斷哪一方道德上「完全正確」，而是指出：美術館牆上的金色作品，背後常有移動、禁令、價格、保存投資與國家形象的複雜帳本。</p>
+<figure><img src="https://secession.at/items/uploads/images/1659943947_HOK9JAn5BZa.jpeg" alt="《貝多芬橫飾帶》聲音體驗宣傳圖｜來源：Secession（官方圖像）" loading="lazy"><figcaption>2020 年分離派與維也納交響樂團合作，讓觀眾以 QR code 聆聽第九號交響曲終樂章；作品再次回到音樂與空間的關係。</figcaption></figure>
+<h2>今日意義：在金色中聽見不安</h2>
+<p>2020 年，分離派與 Wiener Symphoniker 合作，紀念貝多芬 250 週年，讓觀眾能透過 QR code 聆聽第九號交響曲第四樂章；分離派說明這能幫助觀眾直覺理解作品的音樂靈感，因為《貝多芬橫飾帶》本來就是把第九號交響曲翻譯成視覺藝術。¹ 但今日觀看這件作品，若只聽見勝利與歡樂，可能反而錯過它的現代性。Klimt 的牆面確實走向擁抱、合唱與「給全世界的一吻」；然而它也讓觀眾先經過苦難的人類、敵對力量、病、死、慾望與憂傷。它不是取消陰影後才談幸福，而是把幸福放在陰影之後。 這也是它對當代讀者仍有意義的地方。公共文化常希望藝術提供清楚立場、療癒情緒或城市品牌；但《貝多芬橫飾帶》提醒我們，藝術的公共功能不一定是降低不安，也可能是讓不安有形式、可被看見、被爭論、被保存。1902 年有人把它看成淫穢與病態；今天它被稱為維也納新藝術與現代主義的重要作品。這兩件事並不互相取消。它們共同說明：一件作品進入歷史，不是因為它停止引發問題，而是因為它的問題仍能被不同時代重新打開。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Klimt_-_Nuda_Veritas_-_1899.jpeg" alt="Gustav Klimt《Nuda Veritas》｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>《Nuda Veritas》不是《貝多芬橫飾帶》的一部分，但它顯示 Klimt 在同一時期以裸露真理挑戰公共觀看習慣。</figcaption></figure>
+<h2>從公共委託轉向私人金色</h2>
+<p>《貝多芬橫飾帶》位於 Klimt 生涯轉折處。Belvedere 的維也納現代主義資料把 1901 年大學畫《醫學》展出與 1902 年《貝多芬橫飾帶》列在同一條時間線上，並指出 Klimt 1905 年在大學畫爭議後退出國家委託，轉向自由資產階級收藏家的委託。⁵ 這代表《貝多芬橫飾帶》不只是金色時期的前奏，也是 Klimt 與公共權力關係改變前的關鍵作品。 若把它和後來的《吻》相比，差異會更清楚。Belvedere 說《吻》於 1908 年首次展出即由帝國皇家文化教育部為 Moderne Galerie 購入，並成為 Belvedere 收藏代表作；同一份資料也說 Klimt 此時把金箔、油彩、青銅粉等材料結合，完成其金色時期最知名的圖像。⁵ 《貝多芬橫飾帶》裡的金色仍帶有展場、牆面、寓言與公共辯論的重量；《吻》則更容易被今日觀眾當成愛與裝飾的普遍圖像。 這種轉換提醒我們：一個藝術家的「風格」不是突然成熟的美學選擇，而是由委託制度、觀眾反應、收藏者支持與自我防衛共同推動。《貝多芬橫飾帶》的價值，正是在它仍保留著衝突的粗糙邊緣。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Gustav_Klimt_-_Judith_-_4737_-_%C3%96sterreichische_Galerie_Belvedere.jpg" alt="Gustav Klimt《Judith I》｜來源：Belvedere / Wikimedia Commons（公有領域）" loading="lazy"><figcaption>《Judith I》同樣屬於 Klimt 的金色語彙；它使聖經女英雄、誘惑與裝飾平面交疊，呼應《貝多芬橫飾帶》中危險女性形象引發的不安。</figcaption></figure>
+<h2>女性形象：救贖、誘惑與觀看者的困惑</h2>
+<p>《貝多芬橫飾帶》中的女性形象並不只有一種功能。左牆有漂浮精靈，中牆有 Gorgons、淫逸與放縱，右牆有詩、藝術、天使合唱與擁抱中的戀人。這些人物有時像道路上的誘惑，有時像通往理想的媒介，有時則只是被裝飾線條包圍的身體。Getty 對《Lasciviousness》研究素描的說明指出，這類紅髮女性在 1900 年前後歐洲藝術中常接近 femme fatale 的語彙；在 Klimt 圖像裡，誘惑與威脅經常不是兩個分離角色。² MoMA 在解說 Klimt《Hope, II》時提醒，Klimt 常把拜占庭、邁錫尼、波斯、拉文納鑲嵌與日本屏風等來源轉化為裝飾語言，同時把出生、死亡與感官性放在同一畫面中。¹⁹ 這種說法雖不是直接針對《貝多芬橫飾帶》，但有助於理解 Klimt 如何把身體與裝飾、生命與死亡、宗教與感官並置。</p>
+<p>今天閱讀這些形象，不能只複製 1902 年報刊的道德譴責，也不能只把它們浪漫化為「女性力量」。較謹慎的說法是：Klimt 把女性身體置於現代男性主體尋求幸福的敘事中，既讓她們成為危險、藝術與救贖的象徵，也暴露出當時文化如何把慾望與焦慮投射到女性形象上。這正是作品需要被重新觀看的地方。</p>
+<figure><img src="https://secession.at/items/uploads/images/1668444773_EOQ3lRACgnYT.jpg" alt="維也納分離派會館入口｜來源：Secession / 官方檔案圖像" loading="lazy"><figcaption>今日分離派仍以當代藝術展館運作；《貝多芬橫飾帶》在其中既是歷史資產，也是城市文化路線的一站。</figcaption></figure>
+<h2>從醜聞到城市名片</h2>
+<p>一件作品被美術史寫進正典後，常會失去它曾經造成的不舒服感。《貝多芬橫飾帶》今日是維也納觀光與藝術路線中的重要節點；Vienna.info 把它列在 Klimt Walk 相關資訊中，並提醒遊客標準門票即可觀看分離派當代展覽與地下室橫飾帶。⁶ Klimt Foundation 也把 Klimt 與「Vienna 1900」作為持續研究、展示與公共教育的核心，說明這段時期至今仍形塑奧地利文化記憶。¹⁰ 但城市名片化也帶來一個風險：作品越容易被印成紀念品，越容易被簡化成金色、裝飾、愛與「維也納很美」。分離派官網保留的 contemporary criticism 段落，反而是重要的校正。¹ 它提醒我們，今天被視為文化資產的作品，當年可以被罵成病態、色情、難以理解；而那些罵聲不是旁枝，而是作品進入公共生活時的一部分。 <strong>（以下為本文分析，非事實陳述）</strong> 若把《貝多芬橫飾帶》只當成觀光景點，觀眾得到的是已經被制度馴化的 Klimt；若把它同時視為公共爭議、保存工程與返還案例，觀眾才會看見現代藝術不是從美術館自然長出來，而是在展場、報紙、法院、倉庫、修復室與售票口之間被反覆定義。這使它比一幅「漂亮的金色名作」更接近現代藝術的真實面貌。</p>
+<p>這一層也讓作品與今日公共文化相連。當城市把藝術史變成觀光路線，常會強調可拍照、可辨識、可消費的部分；可是《貝多芬橫飾帶》的真正價值，並不只在它能代表「維也納 1900」的品牌。它同時逼觀眾承認：一個社會願意保存的作品，可能正是曾經讓它感到羞恥、不適或憤怒的作品。從這個角度看，保存不是把爭議洗白，而是讓爭議有機會被後來的人重新閱讀。</p>
+<figure><img src="https://secession.at/items/uploads/images/1659519349_9lh4hvFSrk1e.jpg" alt="《貝多芬橫飾帶》右牆：藝術、天使合唱與擁抱｜來源：Secession / Jorit Aust（官方圖像）" loading="lazy"><figcaption>結尾處的合唱與擁抱常被視為「給全世界的一吻」；但它的力量來自前面已經穿過痛苦、誘惑與爭議。</figcaption></figure>
+<h2>結語</h2>
+<p>從臨時展覽牆面到國家收藏，從貝多芬崇拜到身體心理學，從分離派的總體藝術實驗到戰後返還爭議，《貝多芬橫飾帶》像一面被時間反覆貼金、刮傷、修補的牆。它的金色不只是裝飾，而是把維也納 1900 年代的願望與矛盾都照亮：藝術想替人尋找幸福，卻不能不承認人也由恐懼、慾望、疾病、死亡與制度構成。 當觀眾今天走進分離派地下室，看見那些漂浮的身體、陰暗的怪物與最後的擁抱，或許會發現 Klimt 沒有把第九號交響曲畫成單純的歡樂。他畫的是通往歡樂之前，人必須穿過的那面牆。</p>
+<p>也因此，這篇文章最後回到一個較小、卻更難回答的問題：如果藝術的功能只是讓人立刻同意，它或許不需要花一百多年被保存、爭論與修復。《貝多芬橫飾帶》之所以仍值得走進地下室觀看，是因為它不把幸福當成便宜的結論。它把幸福放在牆的盡頭，讓觀眾先經過所有不願承認的東西。那不是樂觀，也不是悲觀；比較接近現代藝術給公共生活留下的一種工作方式：把看似不能同處一室的感官、道德、歷史與制度放在一起，直到我們不得不重新學會觀看。</p>
+<p>這也是本文選擇它作為今晚藝術專欄主題的原因：它不是單一名作介紹，而是一個把創作自由、展覽制度、公共道德、保存技術與戰後返還問題連在一起的節點。看它，就是看現代藝術如何在牆上形成，也如何在牆外繼續被社會處理。</p>
+<hr>
+<p><strong>引用來源</strong>¹ Secession（無日期）— “Beethoven Frieze” <a href="https://secession.at/en/beethovenfrieze" rel="noopener" target="_blank">https://secession.at/en/beethovenfrieze</a> ² Getty Museum（無日期）— “Gustav Klimt: The Magic of Line — Beethoven Frieze” <a href="https://www.getty.edu/art/exhibitions/klimt/beethoven_frieze.html" rel="noopener" target="_blank">https://www.getty.edu/art/exhibitions/klimt/beethoven_frieze.html</a> ³ Smarthistory（無日期）— “Gustav Klimt, Beethoven Frieze” <a href="https://smarthistory.org/gustav-klimt-beethoven-frieze/" rel="noopener" target="_blank">https://smarthistory.org/gustav-klimt-beethoven-frieze/</a> ⁴ Fundación Juan March（2006）— “Creative Destruction: Gustav Klimt, The Beethoven Frieze and the Controversy over the Freedom of Art” <a href="https://cdnrepositorios.march.es/sites/default/files/images/node-127678-document.pdf" rel="noopener" target="_blank">https://cdnrepositorios.march.es/sites/default/files/images/node-127678-document.pdf</a> ⁵ Belvedere（無日期）— “The Klimt-Collection of the Belvedere” <a href="https://www.belvedere.at/en/press/klimt-collection-belvedere" rel="noopener" target="_blank">https://www.belvedere.at/en/press/klimt-collection-belvedere</a> ⁶ Vienna.info（2021-03-17）— “Klimt’s Beethoven Frieze” <a href="https://www.wien.info/en/art-culture/art-nouveau/beethoven-frieze-340636" rel="noopener" target="_blank">https://www.wien.info/en/art-culture/art-nouveau/beethoven-frieze-340636</a> ⁷ Tate（2008）— “Gustav Klimt: educators pack / recreation of Beethoven Frieze” <a href="https://www.tate.org.uk/documents/189/klimt_educators_pack_final.pdf" rel="noopener" target="_blank">https://www.tate.org.uk/documents/189/klimt_educators_pack_final.pdf</a> ⁸ Austrian Commission for Provenance Research / Art Restitution Advisory Board（2015-03-06）— “Beethoven Frieze by Gustav Klimt, Erich Lederer decision” <a href="https://www.provenienzforschung.gv.at/beiratsbeschluesse/Lederer_Erich_2015-03-06_englisch.pdf" rel="noopener" target="_blank">https://www.provenienzforschung.gv.at/beiratsbeschluesse/Lederer_Erich_2015-03-06_englisch.pdf</a> ⁹ BBC News（2015-03-06）— “Austria panel opposes return of Klimt frieze looted by Nazis” <a href="https://www.bbc.com/news/world-europe-31747759" rel="noopener" target="_blank">https://www.bbc.com/news/world-europe-31747759</a> ¹⁰ Klimt Foundation（無日期）— “Gustav Klimt Database” <a href="https://www.klimt-foundation.com/en/publications/digital-pu/gustav-klimt-database/" rel="noopener" target="_blank">https://www.klimt-foundation.com/en/publications/digital-pu/gustav-klimt-database/</a> ¹¹ Belvedere / Google Arts &amp; Culture（無日期）— “The Stories Behind Klimt’s Faculty Paintings” <a href="https://artsandculture.google.com/story/the-stories-behind-klimt-39-s-faculty-paintings-belvedere/nwWxIZNv_3ZAIA?hl=en" rel="noopener" target="_blank">https://artsandculture.google.com/story/the-stories-behind-klimt-39-s-faculty-paintings-belvedere/nwWxIZNv_3ZAIA?hl=en</a> ¹² eLife（2019-08-01）— “Science, art, society and Klimt’s University of Vienna paintings” <a href="https://elifesciences.org/articles/50016" rel="noopener" target="_blank">https://elifesciences.org/articles/50016</a> ¹³ All-Over Magazin（無日期）— Nausikaä El-Mecky, “A Very Nuanced Scandal” <a href="https://allover-magazin.com/?p=3153" rel="noopener" target="_blank">https://allover-magazin.com/?p=3153</a> ¹⁴ University of Chicago Press（2021）— Emmelyn Butterfield-Rosen, “Modern Art and the Remaking of Human Disposition” <a href="https://press.uchicago.edu/ucp/books/book/chicago/M/bo89966631.html" rel="noopener" target="_blank">https://press.uchicago.edu/ucp/books/book/chicago/M/bo89966631.html</a> ¹⁵ Art in America（2021-11-15）— “Review: Modern Art and the Remaking of Human Disposition” <a href="https://www.artnews.com/art-in-america/aia-reviews/modern-art-and-the-remaking-of-human-disposition-emmelyn-butterfield-rosen-1234610111/" rel="noopener" target="_blank">https://www.artnews.com/art-in-america/aia-reviews/modern-art-and-the-remaking-of-human-disposition-emmelyn-butterfield-rosen-1234610111/</a> ¹⁶ 19th-Century Art Worldwide（2022）— “Modern Art and the Remaking of Human Disposition by Emmelyn Butterfield-Rosen” <a href="https://www.19thc-artworldwide.org/autumn22/misteli-reviews-modern-art-and-the-remaking-of-human-disposition-by-rosen" rel="noopener" target="_blank">https://www.19thc-artworldwide.org/autumn22/misteli-reviews-modern-art-and-the-remaking-of-human-disposition-by-rosen</a> ¹⁷ MAK Museum Vienna（2026）— “VIENNA 1900—Everyday. A Total Work of Art” <a href="https://www.mak.at/exhibition/vienna1900" rel="noopener" target="_blank">https://www.mak.at/exhibition/vienna1900</a> ¹⁸ HGB Leipzig（無日期）— “Max Klinger: Angaben zur Beethoven-Skulptur” <a href="https://www.hgb-leipzig.de/kunstorte/ap_klinger_angaben.html" rel="noopener" target="_blank">https://www.hgb-leipzig.de/kunstorte/ap_klinger_angaben.html</a> ¹⁹ MoMA（無日期）— “Gustav Klimt, Hope, II” <a href="https://www.moma.org/collection/works/79792" rel="noopener" target="_blank">https://www.moma.org/collection/works/79792</a> ²⁰ Tate（2008-03-03）— “Recreation of Gustav Klimt’s monumental Beethoven Frieze to be displayed at Tate” <a href="https://www.tate.org.uk/press/press-releases/recreation-gustav-klimts-monumental-beethoven-frieze-be-displayed-tate" rel="noopener" target="_blank">https://www.tate.org.uk/press/press-releases/recreation-gustav-klimts-monumental-beethoven-frieze-be-displayed-tate</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/cf7" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
