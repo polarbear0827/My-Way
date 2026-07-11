@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>招牌消失之前 · 穗稻忠武的專欄</title>
+<meta name="description" content="走在台灣老街，最先抵達眼睛的，常常不是建築，而是招牌。它們伸出騎樓、貼上牆面、懸在路口，像一層又一層城市皮膚：有手寫的楷書，有電腦割字的圓體，有夜裡發亮的燈箱，也有已經歇業卻仍掛在原處的舊店名。這些字不只是商業標示，也保存了誰在街上做生意、誰曾經在這裡生活、誰用什麼方式讓自己被看見。¹²">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-11-before-signboards-disappear/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="招牌消失之前">
+<meta property="og:description" content="走在台灣老街，最先抵達眼睛的，常常不是建築，而是招牌。它們伸出騎樓、貼上牆面、懸在路口，像一層又一層城市皮膚：有手寫的楷書，有電腦割字的圓體，有夜裡發亮的燈箱，也有已經歇業卻仍掛在原處的舊店名。這些字不只是商業標示，也保存了誰在街上做生意、誰曾經在這裡生活、誰用什麼方式讓自己被看見。¹²">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-11-before-signboards-disappear/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/7/71/Shop_signs_in_Taipei_2007-11-24.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "招牌消失之前", "description": "走在台灣老街，最先抵達眼睛的，常常不是建築，而是招牌。它們伸出騎樓、貼上牆面、懸在路口，像一層又一層城市皮膚：有手寫的楷書，有電腦割字的圓體，有夜裡發亮的燈箱，也有已經歇業卻仍掛在原處的舊店名。這些字不只是商業標示，也保存了誰在街上做生意、誰曾經在這裡生活、誰用什麼方式讓自己被看見。¹²", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-11-before-signboards-disappear/", "datePublished": "2026-07-11", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Shop_signs_in_Taipei_2007-11-24.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">台灣文化</span><span class="tag">飲食文化</span><span class="tag">歷史</span><span class="tag">藝術</span><span class="tag">台灣</span><span class="tag">社會觀察</span></div>
+<h1>招牌消失之前</h1>
+<p class="byline"><time>2026-07-11</time></p>
+</div>
+
+<p class="lead">走在台灣老街，最先抵達眼睛的，常常不是建築，而是招牌。它們伸出騎樓、貼上牆面、懸在路口，像一層又一層城市皮膚：有手寫的楷書，有電腦割字的圓體，有夜裡發亮的燈箱，也有已經歇業卻仍掛在原處的舊店名。這些字不只是商業標示，也保存了誰在街上做生意、誰曾經在這裡生活、誰用什麼方式讓自己被看見。¹²</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Shop_signs_in_Taipei_2007-11-24.jpg" alt="台北街頭招牌層疊｜來源：zilupe / Wikimedia Commons（CC BY 2.0）" loading="lazy"><figcaption>台灣街道的招牌常把建築立面變成一張密集的文字版面；這份「雜」正是本文討論的核心。</figcaption></figure>
+<p>這篇文章不把招牌簡化成「美」或「醜」。更重要的問題是：當都市更新、廣告物安全、LED 與數位輸出改變街道時，台灣曾經由手寫、投影、鐵皮、壓克力與霓虹做出的文字風景，會留下什麼？又會消失什麼？</p>
+<h2>街道先說話：招牌為何成了台灣感</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2015-05-01_Shop_signs_in_Tainan.jpg/1280px-2015-05-01_Shop_signs_in_Tainan.jpg" alt="台南店家招牌密集排列｜來源：Sun Taro / Wikimedia Commons（CC BY-SA 2.0）" loading="lazy"><figcaption>這種招牌密度讓街道先於建築說話：店名、行業、顏色和字體共同構成台灣街景的第一印象。</figcaption></figure>
+<p>《台灣光華雜誌》2023 年以台灣招牌街景為題，指出中文招牌的個性與活力，是台灣街道景觀的重要成分；文章還提到 2017 年日本雜誌《Brutus》以台南國華街作為台灣特輯封面，彩色招牌與生活感讓許多日本讀者一眼認出台灣。¹ 這不是單一店家的設計，而是一種長期累積的視覺環境。 設計圈近年也把這件事重新命名。沿岸制作旗下品牌 p.n.g. 在 2025 年展覽《招牌：》中，將招牌視為促銷、敘事、指引與審美迭代的集合；GQ Taiwan 與 MOT TIMES 的報導都指出，策展團隊試圖讓觀眾重新理解招牌如何反映不同時代的價值觀。³⁴</p>
+<p>但「台灣感」不是只有觀光者的浪漫。BIOS monthly 訪談裡，策展人陳彥安把台灣招牌稱為「雜」而不只是「醜」：不同世代、不同經濟條件、不同店家生命經驗，被塞進高密度城市裡。⁵ 這個說法提醒我們，街景不是一張由上而下設計好的海報，而是無數店主、師傅、房東、政府規則與路人習慣共同排版的結果。</p>
+<h2>從手寫到字帖：一個被複製的文字年代</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/2015-05-02_shop_signs_in_Tainan.jpg/1280px-2015-05-02_shop_signs_in_Tainan.jpg" alt="台南另一處店家招牌｜來源：Sun Taro / Wikimedia Commons（CC BY-SA 2.0）" loading="lazy"><figcaption>招牌上的字看似各自生長，但許多早期書法體其實來自字帖、投影與師傅手工再詮釋。</figcaption></figure>
+<p>justfont 2016 年文章〈那個讓人想到台灣的字體〉，追查台灣街頭常見楷書來源，發現許多招牌店使用的底本可追溯到劉元祥書寫、文史哲出版社印行的《商用字彙》。文章訪問出版社與相關人士，指出這套楷書、顏體、分書、行書字帖曾在招牌店間廣泛流通，師傅可透過投影或描圖把字放大到看板上。⁶ 這裡的關鍵不是「原稿」被機械複製，而是每一次轉譯都留下手的痕跡。justfont 寫到，投影法得到的是模糊輪廓，描繪師傅仍需補足線條；刻空心字要打穿金屬板，也不可能完全重現毛筆筆觸。⁶ 因此台灣街頭那些似曾相識的楷書，不是單純字型檔，而是書法、商業設計、招牌工法與現場判斷混合出的「準字型」。 中央社 2024 年專訪 justfont 創辦人葉俊麟時，也把這條線帶回當代字體教育：justfont 從街頭觀察、字型散步，到挖掘大稻埕鐵皮刻字行「柏祥號」裡的老書，試圖讓人意識到身邊的字從哪裡來。⁷ 在這個意義上，招牌不只是字體展示場，也是田野現場。</p>
+<h2>市場、夜市與老店：手作招牌留下的勞動痕跡</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Shop_sign_of_the_Cat_Mouse_Noodles%2C_Changhua_%28Taiwan%29.jpg" alt="彰化貓鼠麵店招牌｜來源：Mk2010 / Wikimedia Commons（CC BY-SA 3.0）" loading="lazy"><figcaption>老店招牌常把地方飲食、店名記憶與某一代招牌工法綁在一起，成為地方辨識的一部分。</figcaption></figure>
+<p>Shopping Design 2019 年文章把台灣街頭文字分成手寫創作、印刷字帖與電腦字型三種主要來源，並指出 1970 年代許多招牌以字帖為範本，由老師傅描繪上色；80 年代後，卡典西德與電腦切割又改變了街頭文字。⁸ 這個分類提供了觀察街景的時間尺：鐵板、木頭、壓克力、貼紙、燈箱與噴墨輸出，都是年代留下的材料證據。</p>
+<p>The News Lens 2020 年刊出的市場字型觀察則把鏡頭推近到傳統市場。新竹東門市場、中央市場周邊的老招牌，被店家回憶為四、五十年以上，甚至六十年以上的物件；受訪頭家娘提到，替店家寫招牌的師傅已過世，後代也沒有接手。⁹ 這樣的資訊很難從招牌本身讀出，卻說明每一塊字背後可能有一條斷掉的職業傳承。 同一篇文章也記錄市場裡的手寫價目、販售項目與即興字體。這些字未必被美術館收藏，卻是最日常的視覺勞動：讓人知道這裡賣什麼、價錢多少、攤主如何跟客人說話。⁹ 如果只從「市容整潔」看招牌，很容易漏掉這些低調但密集的手作資訊。</p>
+<h2>霓虹、LED與安全：亮度背後的成本</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Neon_signs_and_No._2%2C_Bo%27ai_Rd._20221020_night.jpg/1280px-Neon_signs_and_No._2%2C_Bo%27ai_Rd._20221020_night.jpg" alt="台北博愛路夜間霓虹招牌｜來源：GillyBerlin / Wikimedia Commons（CC BY 2.0）" loading="lazy"><figcaption>霓虹曾是台灣與香港等亞洲城市夜間商業的象徵；LED 與法規則改變了「被看見」的技術條件。</figcaption></figure>
+<p>The News Lens International 2017 年圖文報導指出，台灣霓虹招牌約在 1950 年代隨經濟起飛出現，1960 年代受到壓克力招牌挑戰，1970 年代一度回潮，1980 年代後又被 LED 取代；報導也提到 LED 較便宜、製作快、維護成本低，但也讓霓虹招牌逐漸凋零。¹⁰</p>
+<p>香港提供一面更清楚的對照鏡。BBC Travel 2018 年報導稱，香港 90% 的戶外霓虹招牌已經消失；紐約時報中文網 2015 年與 2024 年報導則從建築規劃、安全、LED 成本與師傅斷層等角度，記錄香港霓虹招牌如何從城市標誌變成保存對象。¹¹¹²¹³ The Guardian 2023 年報導也指出，香港 2022 年伸出式招牌移除令達 1,119 件，高於 2015 年不到 700 件；業者面對補辦、檢查與成本，往往選擇拆除。¹⁴ 這些香港資料不能直接等同台灣，但能說明一個共同問題：當招牌從活生生的商業工具變成危險物、懷舊物或館藏物，它的社會位置就改變了。霓虹、手繪與老招牌不是因為「不好看」才消失，更多時候是成本、工法、法規、房租與維護責任共同推動。</p>
+<h2>管制不是只有美醜：北門案例與城市秩序</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Beimen_Photographic_Supply_District_sign_20191012.jpg" alt="台北北門相機街招牌｜來源：Solomon203 / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>北門周邊的招牌管制把「古蹟景觀」與「店家能見度」放在同一張政策桌上。</figcaption></figure>
+<p>台北市政府的招牌廣告申請 SOP 說明，規範目的包括美化市容、維護都市景觀、形塑地區特色；中型廣告物需提出所有權、使用權、土地使用分區、廣告物安全證明、內容核准文件、設計圖說、建築物相關證明等文件。¹⁵ 這些要求反映招牌不只是視覺選擇，也牽涉結構、安全、權利與管理。</p>
+<p>北門周邊則是更具象的例子。2017 年台北市政府公報預告的「北門周邊建築廣告物設置辦法」草案，目的在維護古蹟周邊都市景觀，並將範圍分成管制區；第一、第二管制區不得採高彩度色彩，不得設置電子式及閃爍式廣告物，騎樓簷下式廣告物須保持淨高 2.5 公尺以上，第一管制區側懸式廣告物突出外牆應在 80 公分以下且面積不得大於 0.5 平方公尺。¹⁶</p>
+<p>這些數字讓「美感」變得具體：幾公分、幾公尺、什麼顏色、能不能閃爍，都會改變一條街的表情。The News Lens International 也曾記錄，北門周邊招牌管制引發店家擔憂，認為缺少配套、尺寸限制可能讓招牌太小而影響生意。¹⁰ 因此，管制不是美學專家的單方勝利，而是公共安全、文化景觀與小店生存之間的協商。</p>
+<h2>統一或自然生長：設計介入的爭議</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Shop_signs_on_Taiwan_Blvd._near_the_intersection_with_Fu-an_Rd._01.jpg/1280px-Shop_signs_on_Taiwan_Blvd._near_the_intersection_with_Fu-an_Rd._01.jpg" alt="台中台灣大道店家招牌｜來源：Tosdos0012 / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>街景更新常在「變整齊」與「失去個性」之間擺盪；招牌越日常，改動越容易引發情感反應。</figcaption></figure>
+<p>台北市也曾設計補助制度，而不是只靠禁令。臺北市「廣告物美化更置申請及補助作業須知」規定，依法報備的公寓大廈管理組織、街區代表人或更新計畫街區廣告物使用人可以申請；補助金額依實際設計及製作經費核計，但每一商家不得超過新台幣 5 萬 3,000 元。¹⁷ 這顯示政府知道招牌更新需要錢，也需要街區同意與設計圖說。</p>
+<p>然而，補助與統一化不必然解決爭議。BIOS monthly 訪談中，陳彥安談到公館商圈曾把招牌變成同尺寸、同高度的圓角矩形；他承認使用上可能讓店家覺得無法凸顯特色。⁵ 對比日本某些商店街透過協會形成共識，台灣常見的問題是：誰有權決定一條街應該長什麼樣子？政府、設計師、店家、居民、遊客，答案可能不同。</p>
+<p>學術研究也提醒，招牌形式確實會影響人們的印象。Lin Ching-li 與 Guan Shing-Sheng 2019 年研究以台灣商圈招牌更新案為樣本，指出框架、頂部、左右側形狀等特徵，對「現代—傳統」與「友善—冷漠」等意象有高度影響。¹⁸ 這不代表所有招牌都該統一，而是說設計選擇會被感知，街道不是中性的背景。</p>
+<h2>消失之後如何被看見：採集、字體化與展覽</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/%E9%87%91%E9%B4%BB%E7%99%BC%E5%BD%A9%E5%88%B8%E8%A1%8C_%E6%A9%AB%E5%BC%8F%E6%8B%9B%E7%89%8C_20231106.jpg/1280px-%E9%87%91%E9%B4%BB%E7%99%BC%E5%BD%A9%E5%88%B8%E8%A1%8C_%E6%A9%AB%E5%BC%8F%E6%8B%9B%E7%89%8C_20231106.jpg" alt="台灣彩券橫式招牌｜來源：Lin79115 / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>數位字型、攝影採集與策展，讓原本在街頭被忽略的招牌轉換成可討論、可保存、可再設計的材料。</figcaption></figure>
+<p>消失不只意味拆掉，也可能意味換一種形式留下。justfont 2023 年〈柑仔蜜的設計之道〉說明，設計師沈采柔從老招牌、舊書封、傳統市場與廟宇採集文字，以台南冰菓店招牌為發想起點，先用手繪揣摩招牌師傅的工作方式，再轉換成現代可用的數位字型。¹⁹ 這不是把一塊招牌原封不動搬進電腦，而是把手工的不完美轉譯為可再使用的文字系統。</p>
+<p>Shopping Design 2026 年報導則把鏡頭轉向台中中區。justfont 蘇煒翔帶路的「字體散步」提到藝術家王水河：出生於台中的王水河活躍於字體、建築、室內設計等領域，宮原眼科招牌字體被稱為「水河圓體」，真美照相館、玉女女裝社等招牌也顯示他依照版位、距離與方向調整字形的能力。²⁰</p>
+<p>這條路線讓「職人」從匿名街景裡被叫出名字。過去招牌常被當作背景，師傅的署名不在顯眼處；如今透過設計研究、散步地圖、展覽與數位字型，老招牌反而被重新觀看。這種保存不是把街道凍結，而是讓人知道哪些字不是自然長出來的，而是有人畫過、磨過、掛上去、修過。</p>
+<h2>結語：把街道當成共同編輯的版面</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/%E5%8F%B0%E7%81%A3%E8%B6%8A%E5%8D%97%E6%B3%95%E5%9C%8B%E9%BA%B5%E5%8C%85%E6%8B%9B%E7%89%8C.jpg" alt="台灣越南法國麵包招牌｜來源：Zsfi / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>新的移民飲食、連鎖品牌與街角小店仍在產生新招牌；問題不是要不要變，而是如何讓變化有記憶。</figcaption></figure>
+<p><strong>（以下為本文分析，非事實陳述。）</strong> 台灣招牌的困難，在於它同時是私人財產、公共視覺、營業工具、地方記憶與安全風險。若只用「雜亂」批判它，會看不見手寫字、字帖、霓虹與老店背後的勞動；若只用「懷舊」保護它，也會忽略掉落、遮蔽、光害、通行與古蹟景觀的公共問題。</p>
+<p>更可行的方向，可能不是要求每條街都整齊如一，也不是讓每塊招牌自然增生到無人負責；而是把街道當成共同編輯的版面。哪些招牌具有地方記憶，值得紀錄或原地保留？哪些招牌已經歇業、危險、遮蔽公共空間，應由制度協助拆除？哪些新招牌可以在合法、安全前提下保留店家的個性？這些問題需要店家、居民、設計者、政府與路人一起回答。</p>
+<p>手寫招牌真正消失之前，最急迫的未必是替每一塊招牌立碑，而是先學會辨認它們。辨認那個字是手畫的還是割字的，辨認一塊招牌為什麼伸得那麼外面，辨認某個老店名背後是否還有人記得師傅的名字。街道不會回到過去，但如果我們在它被更新之前多看一眼，未來的城市就不必只剩下乾淨，還可以留下來路。</p>
+<h2>兩種保存：原地保留與轉換保存</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/%E5%8F%B0%E7%81%A3%E8%B6%8A%E5%8D%97%E6%B3%95%E5%9C%8B%E9%BA%B5%E5%8C%85%E6%8B%9B%E7%89%8C.jpg" alt="台灣越南法國麵包招牌｜來源：Zsfi / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>新移民飲食與街角小店仍在製造新的招牌語彙；「保存」不只指老物件，也包括理解新符號如何進入街道。</figcaption></figure>
+<p>談招牌保存時，最容易想到的是把舊物留下。但從香港霓虹的經驗看，原地保留往往最困難：安全責任在業主身上，維修需要技師，材料老化需要成本，法規又要求定期檢查。紐約時報中文網報導 M+ 策展人曾說，博物館收藏招牌並不理想，因為那會讓它脫離原本讓它有活力的街道環境。¹³ 這句話同樣適用台灣：一塊招牌如果離開騎樓、車聲、行人與店家氣味，仍然能被保存，但它保存的是物件，不再是完整的城市關係。</p>
+<p>另一種保存，是把工法、字形、材料邏輯轉換成可被使用的知識。justfont 的《商用字彙》研究與「柑仔蜜」字型，便屬於這一路徑：它們不是要求每一塊老招牌永遠掛在原處，而是把招牌背後的書寫方法、比例判斷、手感缺陷與時代語彙整理出來，讓新的設計仍能理解舊的來源。⁶¹⁹ 這種做法有其限制：數位字型終究不等於師傅站在高處描線，也不等於鐵皮被雨水與日光磨出的斑駁；但它能讓更多人知道，街道上的字不是沒有作者。</p>
+<p>台中中區的王水河路線，則介於兩者之間。Shopping Design 記錄宮原眼科、真美照相館、玉女女裝社、信和電器等地點，讓讀者帶著地圖去現場辨認「水河圓體」與「水河蕃薯體」。²⁰ 這是一種步行式保存：不必先把招牌搬走，而是改變觀看者的知識。當人知道「這個字是誰畫的、為什麼這樣轉折、為什麼直式與橫式不一樣」，城市裡原本沉默的物件便開始說話。</p>
+<h2>誰付錢，誰承擔，誰有資格說美</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shop_signs_on_Taiwan_Blvd._near_the_intersection_with_Fu-an_Rd.jpg/1280px-Shop_signs_on_Taiwan_Blvd._near_the_intersection_with_Fu-an_Rd.jpg" alt="台中台灣大道另一處店招｜來源：Tosdos0012 / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>招牌更新不只是美學計畫，也會轉化為店家、管委會、房東與政府之間的成本分配問題。</figcaption></figure>
+<p>如果把招牌視為公共美學，設計師與政府很容易提出改善方案；但如果把招牌視為店家的生意工具，問題就變得更複雜。台北市美化更置須知要求申請人提出設計製作人資料、經費明細、安全證明、設置同意、街區現況照片、竣工模擬圖等文件，並要求現有十戶以上商家及設置處所所有權人、廣告物使用人同意配合。¹⁷ 這表示街區整體更新需要協調，而協調本身就是成本。</p>
+<p>店家抗拒統一化，未必是反對美感；也可能是擔心自己消失在整齊裡。BIOS monthly 訪談提到國華街、永樂市場招牌更新爭議時，陳彥安指出，如果外型與視覺被統一，店家原本特色可能被移除。⁵ 這不是抽象的風格爭論，而是招牌最基本的功能：我在這裡，我跟隔壁不一樣，你要找的是我。</p>
+<p>反過來說，完全放任自然生長也不是答案。老舊招牌可能掉落，側懸式廣告可能遮擋視線或影響通行，電子式廣告可能破壞古蹟景觀。北門草案以古蹟周邊為理由，限制高彩度、電子式、閃爍式廣告，並規定高度、突出距離與騎樓淨高。¹⁶ 這些限制並非只為了讓街道「看起來更高級」，也牽涉公共風險與城市共同資產。</p>
+<p>因此，更負責任的討論需要把「誰付錢」放進來：誰負責拆除廢棄招牌？誰補助合法更新？誰幫小店做不失個性的安全設計？誰記錄被拆下的老招牌？若這些問題沒有答案，招牌政策很容易變成兩種極端：一端是漂亮但排除小店的街景，另一端是充滿記憶但無人負責的危險堆積。</p>
+<h2>招牌作為移民、階級與產業的表情</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/%E5%8F%B0%E7%81%A3%E7%AC%AC5%E5%B1%86%E5%85%AC%E7%9B%8A%E5%BD%A9%E5%88%B8%E5%9C%93%E5%BD%A2%E6%8B%9B%E7%89%8C.jpg" alt="台灣街邊彩券行招牌｜來源：Lin79115 / Wikimedia Commons（CC BY 4.0）" loading="lazy"><figcaption>從彩券、越南麵包到檳榔攤，招牌經常是產業與社群如何在街頭自我定位的第一層語言。</figcaption></figure>
+<p>招牌之所以值得寫成生活日常專欄，是因為它把宏大的社會變遷壓縮成很小的視覺選擇。檳榔攤孔雀霓虹、彩券行圓形標誌、越南法國麵包招牌、補習班燈箱、通訊行 LED，每一種都讓人迅速判斷那是什麼產業、服務誰、希望被怎樣理解。BIOS monthly 訪談裡，張柏韋談到檳榔攤孔雀燈管如何從單一元素凝煉成符號；外國人未必理解它的情色或夜間經濟脈絡，本地人卻能讀出文化暗示。⁵</p>
+<p>這也意味著，招牌並非只是設計品味的結果，更是階級與產業位置的結果。高端品牌可以選擇低調，因為它有其他辨識資源；小吃攤、修車行、藥局、傳統市場攤商，往往必須用更大、更亮、更直接的方式被看見。沿岸制作陳彥安在 Shopping Design 訪談中說，台灣地狹人稠、商業體聚集，店家的招牌要想辦法被看見，建築便會被遮蓋。² 這不是單純審美失敗，而是城市商業競爭的結果。</p>
+<p>移民飲食的招牌又讓街景繼續長出新語言。越南法國麵包、印尼小吃、泰式按摩、清真食品與多語商店，正在把新的文字、色彩和圖像放進台灣街角。若只追求一種「乾淨」的城市表面，這些新社群可能最先被要求安靜；但若完全不討論規則，行人與居民又承擔混亂成本。招牌因此是一種公共協商：城市如何讓不同人被看見，同時讓每個人安全通過。</p>
+<h2>從一塊招牌開始的城市教育</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Taipei_street_signs.jpg" alt="台北街頭多重路牌與街景｜來源：Brian Hioe / Wikimedia Commons（CC0）" loading="lazy"><figcaption>學會閱讀招牌，也是在學會閱讀城市如何安排資訊、權力與記憶。</figcaption></figure>
+<p>如果要把招牌議題帶進公共教育，最好的起點可能不是要求學生判斷美醜，而是要求他們追問來源：這塊招牌用了什麼材料？字是手寫、字帖、電腦字型，還是品牌標準字？它伸出多遠？是否仍在營業？它服務的客群是誰？它有沒有遮住建築、騎樓或行人空間？它的語言是中文、台語羅馬字、英文、日文，還是移民社群語言？</p>
+<p>這些問題能把審美討論從「我喜歡／我討厭」推向更可驗證的觀察。Shopping Design 2019 年把採集街頭字型稱為「採集文字，採集時代的片段」；中央社報導也提到 justfont 從字型散步、社群討論到書籍，長期推廣人們在路上觀察字。⁷⁸ 這種方法不需要每個人都成為設計師，卻能讓人明白街道不是自然如此。</p>
+<p><strong>（以下為本文分析，非事實陳述。）</strong> 台灣未來的招牌政策若要避免兩極化，或許也需要這種教育基礎。當社會只用「醜」指責街景，店家會感到被羞辱；當社會只用「懷舊」保護老招牌，公共安全又會被浪漫化。比較好的公共語言，是具體說出某塊招牌的材料、工法、歷史、風險與功能，再決定它應該保留、修復、縮小、更新，或被記錄後拆除。</p>
+<h2>仍在變動的街角</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Taipei_Cinema_Park%2C_Taiwan%2C_2024.jpg" alt="台北街頭招牌與建物｜來源：Another Believer / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>街角不是靜態標本；新品牌、新住民、新法規與新材料都持續改寫同一面牆。</figcaption></figure>
+<p>最後需要注意的是，招牌不是一個已經結束的民俗題目。它仍在被外送平台、連鎖品牌、社群打卡、觀光想像與租金壓力重寫。過去店家靠伸出騎樓的看板攔住路人，今天也可能靠 Google Maps 評分、Instagram 照片與外送平台縮圖找到客人；但實體招牌仍不會消失，因為街上的人仍需要在三秒內知道自己走到哪裡、這裡賣什麼、能不能進去。</p>
+<p>這也是為什麼手寫招牌的討論不能停在哀悼。真正值得保留的，不只是某一種懷舊風格，而是台灣街道允許小店、老店、新移民店家與地方產業用自己的方式說「我在這裡」的能力。當制度介入時，它若能同時處理安全、補助、記錄與設計協作，街道就不必在髒亂與整齊之間二選一；它可以變得更安全，也仍然保有不同人的聲音。</p>
+<p>在這個意義上，招牌不是城市表面的雜訊，而是一套每天被使用、被忽略、被修補的公共語言；它越普通，越需要在消失之前被仔細讀一次。</p>
+<p>也值得留下現場脈絡。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ Taiwan Panorama（2023-02-01）— "Signs of the Times: Shop Signs’ Place in Taiwan’s Streetscapes"
+<a href="https://www.taiwan-panorama.com/en/Articles/Details?CatId=8&amp;Guid=e3a5faae-693b-4214-900e-26f4a891e306&amp;postname=Signs+of+the+Times-Shop+Signs%E2%80%99+Place+in+Taiwan%E2%80%99s+Streetscapes" rel="noopener" target="_blank">https://www.taiwan-panorama.com/en/Articles/Details?CatId=8&amp;Guid=e3a5faae-693b-4214-900e-26f4a891e306&amp;postname=Signs+of+the+Times-Shop+Signs%E2%80%99+Place+in+Taiwan%E2%80%99s+Streetscapes</a></p>
+<p class="ref">² Shopping Design（2025-12-18）— "拆解臺灣街景的雜，從 p.n.g.《招牌：》展看屬於我們的臺灣感性"
+<a href="https://www.shoppingdesign.com.tw/post/view/12966" rel="noopener" target="_blank">https://www.shoppingdesign.com.tw/post/view/12966</a></p>
+<p class="ref">³ GQ Taiwan（2025-03-24）— "你有認真看過台灣招牌嗎？p.n.g. 首檔展覽《招牌：》邀請觀眾重新理解台灣招牌美學的演變"
+<a href="https://www.gq.com.tw/article/png-signpromotional-narrative-guidance" rel="noopener" target="_blank">https://www.gq.com.tw/article/png-signpromotional-narrative-guidance</a></p>
+<p class="ref">⁴ MOT TIMES 明日誌（2025-03-26）— "沿岸制作p.n.g.首展《招牌：》登場！以社會學與設計拆解招牌"
+<a href="https://www.mottimes.com/article/detail/6211" rel="noopener" target="_blank">https://www.mottimes.com/article/detail/6211</a></p>
+<p class="ref">⁵ BIOS monthly（2025-03-24）— "非引戰：台灣的招牌就是醜嗎？──張柏韋╳陳彥安談《招牌：》"
+<a href="https://www.biosmonthly.com/article/11580" rel="noopener" target="_blank">https://www.biosmonthly.com/article/11580</a></p>
+<p class="ref">⁶ justfont（2016-06-11）— "那個讓人想到台灣的字體"
+<a href="https://blog.justfont.com/2016/06/liu-kai-ti/" rel="noopener" target="_blank">https://blog.justfont.com/2016/06/liu-kai-ti/</a></p>
+<p class="ref">⁷ 中央社文化+（2024-03-25）— "造字、寫書、識字再識字 justfont耕耘台灣文字風景之路"
+<a href="https://www.cna.com.tw/culture/article/20240325w002" rel="noopener" target="_blank">https://www.cna.com.tw/culture/article/20240325w002</a></p>
+<p class="ref">⁸ Shopping Design（2019-01-21）— "來趟字型採集小旅行！手寫創作、印刷字帖、電腦字型，台灣街頭老招牌裡的文字記憶"
+<a href="https://www.shoppingdesign.com.tw/post/view/3753" rel="noopener" target="_blank">https://www.shoppingdesign.com.tw/post/view/3753</a></p>
+<p class="ref">⁹ The News Lens 關鍵評論網（2020-08-10）— "傳統市場字型演化論：從手寫到卡點西德，逛市場和字型觀察"
+<a href="https://www.thenewslens.com/article/136615" rel="noopener" target="_blank">https://www.thenewslens.com/article/136615</a></p>
+<p class="ref">¹⁰ The News Lens International（2017-03-24）— "PHOTO STORY: The Neon Lights That Once Lit Up Taiwan"
+<a href="https://international.thenewslens.com/article/64392" rel="noopener" target="_blank">https://international.thenewslens.com/article/64392</a></p>
+<p class="ref">¹¹ BBC Travel（2018-08-30）— "Is Hong Kong losing its neon?"
+<a href="https://www.bbc.com/travel/article/20180829-is-hong-kong-losing-its-neon" rel="noopener" target="_blank">https://www.bbc.com/travel/article/20180829-is-hong-kong-losing-its-neon</a></p>
+<p class="ref">¹² New York Times 中文網（2015-10-30）— "藝術能否拯救香港的霓虹燈？"
+<a href="https://cn.nytimes.com/culture/20151014/t14hongkongneon/zh-hant/" rel="noopener" target="_blank">https://cn.nytimes.com/culture/20151014/t14hongkongneon/zh-hant/</a></p>
+<p class="ref">¹³ New York Times 中文網（2024-01-03）— "香港的霓虹燈都哪兒去了"
+<a href="https://cn.nytimes.com/china/20231211/hong-kong-neon-signs/zh-hant/" rel="noopener" target="_blank">https://cn.nytimes.com/china/20231211/hong-kong-neon-signs/zh-hant/</a></p>
+<p class="ref">¹⁴ The Guardian（2023-04-08）— "Fading glory: the fight to save Hong Kong’s beloved neon signs"
+<a href="https://www.theguardian.com/world/2023/apr/08/fading-glory-the-fight-to-save-hong-kongs-beloved-neon-signs" rel="noopener" target="_blank">https://www.theguardian.com/world/2023/apr/08/fading-glory-the-fight-to-save-hong-kongs-beloved-neon-signs</a></p>
+<p class="ref">¹⁵ 臺北市政府建築管理工程處（SOP）— "申請招牌廣告或樹立廣告許可證"
+<a href="https://www.laws.taipei.gov.tw/Law/SOPSearch/DownloadFile?sop_no=P13020075.pdf" rel="noopener" target="_blank">https://www.laws.taipei.gov.tw/Law/SOPSearch/DownloadFile?sop_no=P13020075.pdf</a></p>
+<p class="ref">¹⁶ 臺北市政府公報（2017-01-17）— "預告訂定臺北市北門周邊建築物廣告招牌設置辦法草案"
+<a href="https://data.taipei/api/dataset/4c812503-c284-4414-9939-ac5c9061f087/resource/93f29ce6-6194-4e5d-a59c-3a4d912299c3/download" rel="noopener" target="_blank">https://data.taipei/api/dataset/4c812503-c284-4414-9939-ac5c9061f087/resource/93f29ce6-6194-4e5d-a59c-3a4d912299c3/download</a></p>
+<p class="ref">¹⁷ 臺北市法規查詢系統（2020-03-04 修正）— "臺北市廣告物美化更置申請及補助作業須知"
+<a href="https://www.laws.taipei.gov.tw/Law/LawSearch/LawArticleAmend/FL025717" rel="noopener" target="_blank">https://www.laws.taipei.gov.tw/Law/LawSearch/LawArticleAmend/FL025717</a></p>
+<p class="ref">¹⁸ Lin, Ching-li; Guan, Shing-Sheng（2019-03-25）— "A Study on the Relationship between the Form Features and Image Perceptions of Signboards in Taiwan"
+<a href="https://doi.org/10.5281/zenodo.2605631" rel="noopener" target="_blank">https://doi.org/10.5281/zenodo.2605631</a></p>
+<p class="ref">¹⁹ justfont（2023-11-19）— "柑仔蜜的設計之道：在傳統手繪與當代數位的平衡挑戰"
+<a href="https://blog.justfont.com/2023/11/kamabit-designstory/" rel="noopener" target="_blank">https://blog.justfont.com/2023/11/kamabit-designstory/</a></p>
+<p class="ref">²⁰ Shopping Design（2026-05-06）— "漫步臺灣字體龐貝城！台中市中區『字體散步』地圖公開"
+<a href="https://www.shoppingdesign.com.tw/post/view/13407" rel="noopener" target="_blank">https://www.shoppingdesign.com.tw/post/view/13407</a></p>
+<p class="ref">²¹ BBC Culture（2014-10-21）— "Neon signs: An enduring love affair"
+<a href="https://www.bbc.com/culture/article/20140711-bright-lights-big-city" rel="noopener" target="_blank">https://www.bbc.com/culture/article/20140711-bright-lights-big-city</a></p>
+<p class="ref">²² The Guardian（2018-07-25）— "Hong Kong’s fight to save its neon shimmer – a photo essay"
+<a href="https://www.theguardian.com/travel/2018/jul/25/hong-kong-neon-lighting-threat-chinese-regulations" rel="noopener" target="_blank">https://www.theguardian.com/travel/2018/jul/25/hong-kong-neon-lighting-threat-chinese-regulations</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/613" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
