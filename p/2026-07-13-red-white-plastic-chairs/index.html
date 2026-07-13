@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>紅白椅子的臨時社會 · 穗稻忠武的專欄</title>
+<meta name="description" content="在台灣，最容易被忽略的公共家具，可能不是公園長椅，而是一張紅色或白色塑膠椅。它平常疊在倉庫、廟埕、活動中心或店家後門；一到婚喪喜慶、廟會、選前之夜、綜藝錄影、同人展或臨時市集，它就被搬出來，排成一片可以被拍照、被動員、被吃飯、被等待的場地。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-13-red-white-plastic-chairs/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="紅白椅子的臨時社會">
+<meta property="og:description" content="在台灣，最容易被忽略的公共家具，可能不是公園長椅，而是一張紅色或白色塑膠椅。它平常疊在倉庫、廟埕、活動中心或店家後門；一到婚喪喜慶、廟會、選前之夜、綜藝錄影、同人展或臨時市集，它就被搬出來，排成一片可以被拍照、被動員、被吃飯、被等待的場地。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-13-red-white-plastic-chairs/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Molded_Plastic_Stool.jpg/1280px-Molded_Plastic_Stool.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "紅白椅子的臨時社會", "description": "在台灣，最容易被忽略的公共家具，可能不是公園長椅，而是一張紅色或白色塑膠椅。它平常疊在倉庫、廟埕、活動中心或店家後門；一到婚喪喜慶、廟會、選前之夜、綜藝錄影、同人展或臨時市集，它就被搬出來，排成一片可以被拍照、被動員、被吃飯、被等待的場地。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-13-red-white-plastic-chairs/", "datePublished": "2026-07-13", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Molded_Plastic_Stool.jpg/1280px-Molded_Plastic_Stool.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">台灣文化</span><span class="tag">歷史</span><span class="tag">台灣</span><span class="tag">社會觀察</span><span class="tag">專欄</span></div>
+<h1>紅白椅子的臨時社會</h1>
+<p class="byline"><time>2026-07-13</time></p>
+</div>
+
+<p class="lead">在台灣，最容易被忽略的公共家具，可能不是公園長椅，而是一張紅色或白色塑膠椅。它平常疊在倉庫、廟埕、活動中心或店家後門；一到婚喪喜慶、廟會、選前之夜、綜藝錄影、同人展或臨時市集，它就被搬出來，排成一片可以被拍照、被動員、被吃飯、被等待的場地。</p>
+<p>這篇文章不是替塑膠椅辯護，也不是把庶民物件浪漫化。它要問的是：為什麼這種便宜、輕、可堆疊、可快速佈署的坐具，能在台灣把辦桌、信仰、政治、設計史、塑膠污染和街頭記憶連在一起？答案不在椅子本身，而在每一次有人把它們排開、坐下、起身、收回去的現場。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Molded_Plastic_Stool.jpg/1280px-Molded_Plastic_Stool.jpg" alt="紅色塑膠凳堆疊成街頭物件｜來源：Mk2010 / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>一張紅凳看似只是便宜坐具；當它被大量堆疊、搬運與重複使用時，才顯出它作為臨時公共空間工具的力量。</figcaption></figure>
+<h2>一張椅子，先把人排成一個現場</h2>
+<p>塑膠椅真正的功能，往往不是「坐」而已，而是先替一群人規劃彼此的位置。椅子一排，人群就知道哪裡是觀眾席；椅子圍桌，宴席就有了尺度；廟口擺出椅子，原本車來車往或香客流動的空間，就暫時變成會場。NPR 在 2024 年台灣選舉圖文報導中寫到，台灣造勢場合常有音樂、旗幟與戲劇性演出，也提到民進黨一場活動裡，支持者坐在整齊排列的凳子上，戴著候選人名字的白帽。這句看似只是照片說明，卻指出台灣選舉現場的一個基本工程：在候選人上台以前，椅子已經先把群眾變成觀眾。¹ Reuters 描述 2024 年大選前夕，數十萬人湧入最後造勢場。它關注的是兩岸政治與選舉結果；若把視線拉低，群眾的規模也需要被物理管理：通道、舞台、旗子、水、椅距與散場動線。2018 年三立新聞採訪高雄選前之夜椅子商，報導現場從三萬張椅子追加到四萬張，廠商先拉繩定位，再擺椅、插旗、放水，散場後還要檢查與回收。這不是花絮，而是大型民主儀式背後的基礎勞動。²³</p>
+<figure><img src="https://media.npr.org/assets/img/2024/01/12/arx_npr_01112024_dpp_rally_1207_slide-3effd3a2b001f9aecbf9b3a95889330fdb4e9160.jpg?s=1600&amp;c=85&amp;f=jpeg" alt="台灣選舉造勢中排列的群眾席｜來源：An Rong Xu / NPR" loading="lazy"><figcaption>大型政治活動看起來由舞台與候選人主導；但在現場，椅子的排列先決定了觀眾如何等待、觀看與被拍成「人潮」。</figcaption></figure>
+<h2>從 Monobloc 到紅色板凳：便宜不是沒有歷史</h2>
+<p>紅白塑膠椅在台灣街頭的親切感，容易讓人以為它沒有設計史。事實正好相反。Vitra Design Museum 2017 年展覽「Monobloc – A Chair for the World」稱白色塑膠椅是世界上最常被使用的家具之一；它之所以叫 Monobloc，是因為椅子以單一材料、單一成形方式製造。博物館指出，單件式椅子的想法可追溯到 1920 年代對金屬板、層壓木的實驗；1950 年代以後，塑膠技術讓一體成形的椅子更可行；1972 年法國工程師 Henry Massonnet 的 Fauteuil 300，則把生產週期壓到兩分鐘以下。⁴ 這套歷史在國際設計圈有不同版本。The Globe and Mail 2026 年追溯 Monobloc 的加拿大起源，提到 D.C. Simpson 與 A.J. Donahue 在 1946 年曾用環氧樹脂開發塑膠椅；Domus 則把焦點放在 Panton Chair、Bofinger Chair、Selene 與 1970 年代後的量產轉折。這些文章共同指向一件事：廉價不是沒有設計，只是設計的作者常被大量複製與匿名生產淹沒。⁵⁶ Kulturaustausch 刊出的策展人文章說，Monobloc 的矛盾在於它同時民主與惱人：它輕、可堆疊、便宜、耐候，讓更多人買得起新椅子；但在較富裕的地方，它也被視為廉價、破壞城市風景，甚至曾遭部分歐洲城市排斥。Surface 引述策展人 Heng Zhi 的說法，稱它是反映全球物質文化複雜性的爭議日常物件。這些爭議放回台灣，會變成另一個問題：一張被視為不上檯面的椅子，為什麼又最能上場？⁷⁸</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Monobloc_Chairs_1.jpg" alt="白色 Monobloc 椅排成半圓｜來源：Louisa Meyer / Wikimedia Commons（CC BY 4.0）" loading="lazy"><figcaption>Monobloc 的國際設計史提醒我們：便宜與大量生產本身就是一種設計選擇，也是一種社會選擇。</figcaption></figure>
+<h2>辦桌：椅子跟著廚房一起上車</h2>
+<p>在台灣，椅子最有生命力的場景之一是辦桌。國立臺灣歷史博物館整理辦桌文化指出，「辦桌」一詞在 1902 年日本對台灣舊慣調查中已被解釋為「備桌、辦酒食、張宴」；清代移民社會遇到婚喪祭典，常由村落鄰里互助備辦，較大型宴飲才委託專業廚師。民國 50 年代後，隨著工商社會、都市化與鄰里互助人手減少，專門承包宴席的辦桌業者逐漸成形，民國 60、70 年代成為風光產業。⁹ Taiwan Everything 把 bando 解釋為「set or manage tables」：婚禮、入厝、宗教節慶或尾牙，都可以在路邊、庭院、停車場、學校或公司場地發生；團隊會在餐前數小時到場，把廚房、食材、棚架、圓桌與椅子全數載來。這段描述使椅子不再只是家具，而是外燴系統的一部分：它和鍋、瓦斯、帆布、碗筷、水源一樣，是辦桌能否在一塊空地上成立的條件。¹⁰ 微笑台灣的新竹辦桌專題也寫到，廟埕、三合院門口埕或大馬路搭棚，底下擺著紅桌和鐵椅，等待上百位客人入席。文章指出，老一輩熟悉的戶外流水席，因都市地景改變、食安控管、勞動力老化與社會風氣變化，逐漸從日常生活退場，較常在宮廟慶典中被看見。這裡的椅子像時間標記：它一出現，某種「全村一起吃」的社會想像就被短暫召回。¹¹</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/2014-12-07_a_banquet_on_street_in_Tainan.jpg/1280px-2014-12-07_a_banquet_on_street_in_Tainan.jpg" alt="台南街道上的辦桌場景｜來源：測鏡者 / Wikimedia Commons（CC BY-SA 2.0）" loading="lazy"><figcaption>辦桌不是把餐廳搬到戶外而已；桌椅、棚架與廚房一起上車，讓一段街道暫時成為共同吃飯的地方。</figcaption></figure>
+<h2>廟埕與選前之夜：紅白椅如何量出動員</h2>
+<p>紅白椅子的另一個舞台，是廟埕與政治。Al Jazeera 2024 年報導台灣選舉中的宮廟拜訪，指出候選人到宮廟上香、與地方領袖互動，是台灣選舉文化的一部分；報導並引述內政部估計台灣有三萬三千處宗教場所，平均約每平方公里一處。宮廟不只是宗教場所，也常是社群集結、老人網絡、地方資訊與候選人接觸選民的場域。¹² Reuters 更進一步從安全與兩岸政治角度報導 Mazu 信仰與選舉，指出台灣官員擔心中國透過民間宗教交流影響輿論；同一篇報導也呈現宮廟人士認為宗教交流有助穩定與和平的看法。這種張力提醒我們：廟埕是一個多義空間。它可以是信仰、餐宴、慈善、政治與地方派系交會處；椅子在這裡不表示單一立場，而是提供人群停留、聽話、看戲、吃飯或表態的低門檻基礎設施。¹³ 選前之夜的椅子海，則把「動員」變成可見的幾何。三立新聞那篇報導的細節很具體：拉繩、排椅、插旗、放水、收椅；排上一張椅子有工錢，若超過二十萬張椅子，背後就是龐大的搬運、定位與檢查。報導不是學術研究，數字也來自當時競選現場與商家陳述；但它捕捉到政治場景的底層事實：人潮不是自然湧現就能被鏡頭理解，它必須先被一張張椅子安排成可觀看的秩序。³</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/2015-05-01_restaurant_before_a_temple_in_Tainan.jpg/1280px-2015-05-01_restaurant_before_a_temple_in_Tainan.jpg" alt="台南廟前餐飲與紅凳場景｜來源：Sun Taro / Wikimedia Commons（CC BY-SA 2.0）" loading="lazy"><figcaption>廟口、攤位與紅凳形成一種可坐、可吃、可等待的公共性；政治人物進入這種空間時，也進入地方社會的既有節奏。</figcaption></figure>
+<h2>勞動：排椅、收椅與「水跤」的身體</h2>
+<p>如果只看坐下的人，塑膠椅會顯得輕巧；若看搬椅的人，它就變重了。《報導者》2020 年疫情專題採訪內門總鋪師與水腳，寫到疫情期間辦桌場次大幅減少，工具堆在倉庫，部分師傅改做外帶或打工。報導中，總鋪師薛孟輝談到農曆二、三月被取消五百多桌；也有受訪者估計，外燴辦桌桌數從農曆年至少縮水九成。這些數字背後，不只有廚師，也有棚架、桌椅、食材、飲料、碗盤與臨時工的停擺。¹⁴ 料理台灣寫阿燦師的辦桌現場，描述他交代米、薑、蔥、芋頭、蒸籠、水源與工作檯面；若吃中午，常得凌晨準備，台語俗諺「總舖師驚食晝」說的就是這種時間壓力。文中也寫到小工「水跤」阿姨、四十度以上的廚房、油炸湯圓的火聲，以及菜品跟著賓客速度調整。椅子在這些場景裡不是孤立物件，而是龐大現場管理的一角：有人搭棚，有人備菜，有人端盤，有人排座，有人收拾。¹⁵ 這種勞動同樣出現在政治與活動現場。三立報導中的椅子商說，結束後還要收、要檢查，不知道晚會會拖到幾點。椅子能被大量使用，正因為它把每次活動的成本壓低；但成本沒有消失，只是轉到人的時間、腰、手、車與倉庫。這也是本文不能只用「庶民美學」四字概括塑膠椅的原因：美學如果不看勞動，就會把辛苦變成背景。³</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Preparing_Ban-toh_by_%E5%B0%8FP_of_g0v_02.jpg/1280px-Preparing_Ban-toh_by_%E5%B0%8FP_of_g0v_02.jpg" alt="外燴團隊準備辦桌｜來源：小P / g0v.tw 零時政府（CC BY 2.0）" loading="lazy"><figcaption>一場辦桌成立以前，已有多人提前到場處理桌椅、廚房與動線；椅子越容易被看見，搬椅的人越容易被忽略。</figcaption></figure>
+<h2>美學與階級：誰說塑膠椅不上檯面</h2>
+<p>塑膠椅常被批評為廉價、俗氣、破壞城市風景。這種批評並非毫無理由：破裂、褪色、隨意棄置的椅子確實會讓公共空間顯得粗糙。但若把它完全歸為「醜」，也會忽略其社會用途。Kulturaustausch 的策展人文章指出，在富裕社會，Monobloc 常被當成低階、廉價、可丟棄的象徵；但在資源有限地區，它可能是人們買得起的新家具，是可以修補、珍惜、提供尊嚴的坐具。⁷ 台灣設計師 Pili Wu 的 Plastic Classic 作品，正是把這種矛盾放到設計語言裡。Dezeen 2010 年報導寫道，Pili Wu 把台灣街頭常見、匿名、便宜的塑膠凳，結合傳統中國圈椅椅背；設計自述中說，台灣曾是塑膠生產王國，塑膠椅凳因便宜、結構簡單、快速生產而成為無人注意的「經典」。這件作品不是要把塑膠凳變高級，而是指出「高級」與「低俗」本來就受文化權力分配。¹⁶ 料理台灣也寫到汪義勇改革辦桌形式時，曾購置骨瓷餐具、布質桌巾、椅套與特殊棚架，讓外燴不再只等於塑膠桌巾、免洗餐具與簡陋板凳。這顯示辦桌自身也在與「上檯面」的標準談判：有人想保存古早味，有人想提高儀式感，有人想用文創或復古方式把辦桌重新搬上舞台。塑膠椅在這裡既是被改造的對象，也是被懷念的物件。¹⁵</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Comic_World_Taiwan_molded_plastic_stools_at_NTU_Sports_Center_B1_20161211.jpg/1280px-Comic_World_Taiwan_molded_plastic_stools_at_NTU_Sports_Center_B1_20161211.jpg" alt="活動現場使用的紅色塑膠凳｜來源：Solomon203 / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>塑膠凳可出現在廟口、展場、店門口與活動中心；它的「俗」不只是品味問題，也關乎誰有權定義公共生活的樣子。</figcaption></figure>
+<h2>環境帳本：民主設計也有塑膠成本</h2>
+<p>便宜、輕、可堆疊的優點，來自塑膠材料與射出成型；但同一套優點也帶來環境帳本。環境部 2023 年更新的塑膠資源循環處理頁面指出，台灣塑膠資源年需求約一千三百萬公噸，其中約三百四十一萬公噸在國內使用；使用後塑膠製品以物料及能源回收為主，推估物料回收再利用量約一百零四萬噸，回收率約四成，其餘廢塑膠多採能源回收。¹⁷ 中央社 2024 年報導環境部統計，2023 年全台塑膠廢棄量約二百五十三點九萬公噸，生活類約一百九十二點六萬公噸；其中回收再利用約一百零八點九萬公噸，焚化約一百四十點八萬公噸，掩埋約四點二萬公噸。環境部提出的方向包括綠色設計、減少一次用塑膠、加強回收與使用再生料，並設定包裝容器再生料比例目標。¹⁸ 需要小心的是，紅白塑膠椅不同於吸管、杯子、餐具等一次性塑膠；它可以長期重複使用，也常被修補、出租、轉場。把所有塑膠都簡化成同一種污染，會抹掉耐久物件與一次性包裝的差異。但另一方面，椅子若因劣質材料、紫外線脆化、價格太低而被快速汰換，也會落入 Monobloc 爭議：民主設計若沒有維修、回收與材料責任，最後仍可能變成廉價消耗。⁷¹⁷¹⁸</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/White_Monobloc_chair.jpg/1280px-White_Monobloc_chair.jpg" alt="一張白色 Monobloc 椅｜來源：Seniju / Wikimedia Commons（CC BY 2.0）" loading="lazy"><figcaption>塑膠椅的環境問題不能只看材質，也要看壽命、維修、出租、回收與是否被一次性消費邏輯取代。</figcaption></figure>
+<h2>當椅子被收藏：街頭物件如何變成文化符號</h2>
+<p>當一張塑膠椅被放進設計展、做成陶瓷小物、寫成散文，它就不再只是便宜坐具。Yun Hai Taiwan Stories 2024 年一篇〈紅椅頭：Little Red Stool〉把紅塑膠凳稱為台灣街景的基礎元素，說它能把街道變成夜市、把巷口變成小吃店、把公寓變成活動場；文中也提到以鶯歌陶瓷製作迷你紅凳收藏。這是商業 newsletter，必須標注其商品脈絡；但它同時反映海外台灣文化消費者如何把「紅椅頭」視為一種可攜帶的鄉愁。¹⁹ 這種轉譯不是沒有風險。當街頭物件被收藏，它可能被抽離原本的勞動、油煙、汗水與爭議，只剩可愛符號。Pili Wu 的 Plastic Classic 之所以有意思，在於它沒有把塑膠凳單純美化，而是把匿名、便宜、街頭與傳統高級家具的衝突放在同一身體。若紅白椅要成為文化符號，也必須保留這種衝突：它既是好客，也是動員；既是便利，也是塑膠；既是人情，也是勞動。¹⁶¹⁹ 因此，紅白椅不是「台灣味」的固定答案，而是一個問題：我們如何記錄那些沒有人署名、卻支撐公共生活的器物？國立臺灣歷史博物館的辦桌文章之所以重要，不只在料理史，也在它把灶、棚、桌凳、碗盤、鄰里互助與共食關係放進同一條歷史線。只有這樣，塑膠椅才不會被孤立成懷舊裝飾，而能回到它真正工作的地方。⁹</p>
+<figure><img src="https://substackcdn.com/image/fetch/w_1200,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9f7d30f7-7ad1-4b3b-b5b5-f88dbf1f03f8_3200x2400.jpeg" alt="台灣紅凳意象被轉譯為文化商品的影像｜來源：Yun Hai Taiwan Stories / Substack" loading="lazy"><figcaption>當紅凳變成迷你收藏或海外台灣符號，它帶出的不只是懷舊，也包括街頭物件被重新定義的商業與文化過程。</figcaption></figure>
+<h2>下一次坐下時</h2>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 紅白塑膠椅之所以值得寫，不是因為它美，也不是因為它台，而是因為它暴露了公共生活如何被臨時搭起來。台灣很多重要場景不是在永久建築裡發生，而是在可搬動的物件之間發生：棚架、帆布、圓桌、塑膠椅、擴音器、旗子、水桶、便當箱。這些東西讓一塊空地暫時有了秩序，也讓人與神、人與人、候選人與選民、師傅與客人之間，有了可以相遇的形式。 紅白椅子的問題，也因此不是「該不該懷念」。真正的問題是：當城市越來越不歡迎臨時性，當路權、噪音、衛生、環保、場租與鄰里關係都變得更制度化，這些臨時社會還能在哪裡坐下？如果辦桌只能進飯店，如果造勢只能被空拍成人數，如果廟埕只剩觀光節慶，如果塑膠只被視為待淘汰材料，那張椅子所代表的靈活、便宜與可共享，也會一起消失。 下一次你在廟口、夜市、活動中心或選舉場合坐上紅白塑膠椅時，可以先低頭看一眼。它可能有裂痕、刮痕、油漬、候選人貼紙或店家記號。那不是缺陷而已，也是它曾經到過的地方。它的價值不在於永恆，而在於每次被搬出來時，都能讓一群原本分散的人，暫時坐成一個社會。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Stage_and_audience_seating_of_Super_Night_Club_20160715.jpg/1280px-Stage_and_audience_seating_of_Super_Night_Club_20160715.jpg" alt="綜藝錄影舞台與觀眾席｜來源：Solomon203 / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>從廟會到電視錄影，臨時椅陣把表演者與觀眾分成可辨認的位置；散場後，這個社會又被重新疊回倉庫。</figcaption></figure>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Preparing_Ban-toh_by_%E5%B0%8FP_of_g0v_04.jpg/1280px-Preparing_Ban-toh_by_%E5%B0%8FP_of_g0v_04.jpg" alt="辦桌外燴團隊整理器具與現場｜來源：小P / g0v.tw 零時政府（CC BY 2.0）" loading="lazy"><figcaption>在臨時宴席裡，桌椅不只是讓客人舒服的配備，也是工作流程的一部分；它們要配合上菜、行走、敬酒與撤場。</figcaption></figure>
+<h2>倉庫、出租與保存：椅子如何在活動之間等待</h2>
+<p>紅白椅子的社會生命，大部分時間其實不在鏡頭裡。它們被收回倉庫，疊成高塔，等下一場婚宴、普渡、尾牙、遶境、校園活動或造勢晚會。這種等待狀態，讓塑膠椅不同於一次性物件：它不是用完即丟，而是依靠租借、搬運、清點與維修，在活動之間流動。Taiwan Everything 寫 bando 團隊會把廚房、食材、棚架、圓桌與椅子都載到現場；《報導者》疫情專題也提到，辦桌工具因場次稀少而只能存放在倉庫。這兩個畫面合起來，正好說明椅子既是流動資產，也是停滯時最沉默的證據。¹⁰¹⁴</p>
+<p>這種倉庫生命也改變了我們對「公共」的理解。一般談公共空間，容易想到公園、廣場、車站、廟埕等固定地點；但紅白椅子代表的是一種可移動公共性。只要有一台貨車、一批椅子、幾個懂得怎麼排的人，一塊停車場或校園角落就能暫時變成宴席或會場。相反地，若沒有倉庫、出租商、搬運人力與主辦單位願意承擔責任，空地仍只是空地。椅子使空間可被借用，也使活動必須有人善後。</p>
+<p>這裡的風險，是文化保存常只保存「表演」而不保存「後勤」。我們可能記得總鋪師的菜、候選人的演講、廟會的陣頭，卻很少記得桌椅出租行、棚架工、音響師與水腳如何把空地變成現場。若未來要談辦桌、廟埕與地方活動的傳承，不能只問菜單與儀式，也要問那些可搬動的物件系統還在不在：椅子去哪裡租？誰願意搬？誰負責壞掉的那一批？活動後誰把地面清回原樣？</p>
+<figure><img src="https://www.twreporter.org/images/20200613115406-8d52b8b80b1b38e3311b8be0e05c2148-desktop.jpg" alt="報導者拍攝的辦桌器具與疫情停擺現場｜來源：楊子磊 / 報導者" loading="lazy"><figcaption>疫情期間，辦桌器具從熱鬧現場退回倉庫；這張照片讓人看見臨時社會停止運轉時，物件也會一起失聲。</figcaption></figure>
+<h2>誰坐前排：椅陣裡的秩序與不平等</h2>
+<p>椅子看似平等：每張都一樣高，一樣塑膠，一樣可被任何人坐。但椅陣從來不是完全平等的。辦桌有主桌、親族桌、長輩桌、工作人員休息位置；造勢有貴賓區、媒體區、支持者區、動線與安全管制；廟埕活動也常有主委、爐主、貴賓、陣頭與香客的不同位置。椅子把人放在同一個平面上，卻也把關係排序變得可見。</p>
+<p>國立臺灣歷史博物館談辦桌時指出，共食可以分成人神共食、人鬼共食、主客共食，並連結生命禮儀、歲時祭慶、社團聚會與人情世故。這意味著坐下不是單純休息，而是進入一套關係。誰被邀請、誰坐哪裡、誰敬酒、誰可以打包、誰負責收拾，都在宴席裡被安排。塑膠椅的廉價與一致性，反而讓這些差異更清楚：椅子本身相同，差別來自人與人的社會位置。⁹</p>
+<p>政治場也一樣。Reuters 2024 年報導台灣選前之夜群眾規模時，焦點在民主選舉與中國壓力；NPR 的圖文則呈現旗幟、音樂、服裝與支持者表演。若把這些報導和椅子現場放在一起看，會發現「坐在哪裡」也是政治感受的一部分。前排能看見候選人的表情，後排看見的是螢幕與旗海；坐著的人像觀眾，站著的人像動員者，走動的人則維持現場秩序。椅子讓民主看起來整齊，也讓政治能被媒體以「人潮」形式翻譯。¹²</p>
+<p>因此，紅白椅子不是天然民主的物件。它讓更多人有位置坐下，但不保證每個位置同等重要。真正值得追問的是：在那些被椅子排出的場域裡，老人、小孩、身障者、工作人員、外籍移工、臨時工與晚到的人，有沒有同樣被考慮？如果沒有，椅子只是擺滿了場面；如果有，它才可能成為更實際的公共照顧。</p>
+<figure><img src="https://taiwaneverything.cc/wp-content/uploads/2019/05/04-900x600.jpg" alt="辦桌或活動中的座位安排也反映現場秩序｜來源：Travel in Taiwan / Taiwan Everything" loading="lazy"><figcaption>椅子排出來的不只是座位，也包括主客、動線、服務與觀看角度；臨時場域裡的秩序，常從座位開始。</figcaption></figure>
+<figure><img src="https://taiwaneverything.cc/wp-content/uploads/2019/05/05.jpg" alt="辦桌現場的大鍋與食材準備｜來源：Travel in Taiwan / Taiwan Everything" loading="lazy"><figcaption>桌椅把人留下來，廚房才有時間把菜送出去；臨時公共生活往往依靠這些看似普通的物件彼此配合。</figcaption></figure>
+<h2>後續觀察：如果椅子越來越少被搬出來</h2>
+<p>紅白塑膠椅的未來，未必是消失，而是使用場景縮小。微笑台灣提到，戶外流水席因都市地景、食安控管、勞動力老化與社會風氣變化而逐漸退場；《報導者》則把疫情視為加速器，指出許多總舖師不只擔心失業，更擔心失傳。若辦桌場次減少，椅子仍可能存在於倉庫、賣場、出租行與活動中心，但它和地方社會的連結會變淡：不再伴隨左鄰右舍借碗盤，不再讓整條街知道誰家有喜事，也不再讓年輕人透過幫忙排桌椅學會地方活動怎麼被做出來。¹¹¹⁴</p>
+<p>同時，紅白椅也可能被新的活動經濟重新吸收。大型展覽、同人誌販售會、戶外市集、社群聚會、地方創生節慶與競選活動，仍需要便宜、可堆疊、可快速部署的座位。差別在於，過去椅子常和親族、廟宇、街坊共同體連在一起；現在它也可能和售票、品牌、社群帳號、贊助商與拍照打卡連在一起。這不必然是壞事，但會改變椅子的意義：從「大家一起幫忙」的工具，變成「主辦方提供體驗」的設備。</p>
+<p>因此，後續最值得觀察的不是紅白塑膠椅會不會被更漂亮的椅子取代，而是台灣還剩多少能容納臨時聚會的空間。若公共空間只能安靜、乾淨、可管理，許多有聲音、有油煙、有等待、有老少同席的活動就會被擠到邊緣。反過來說，若城市願意設計可申請、可清理、可減廢、可照顧鄰里的臨時活動規則，紅白椅仍可能用較負責任的方式繼續服務人群。那時，它不只是懷舊物件，而是一種低成本公共生活的測試工具。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ NPR（2024-01-12）— "In photos: Costumes, color and singing candidates — welcome to a Taiwanese election"
+<a href="https://www.npr.org/2024/01/12/1224044586/taiwan-presidential-election-kmt-dpp-tpp-china-rally-candidates" rel="noopener" target="_blank">https://www.npr.org/2024/01/12/1224044586/taiwan-presidential-election-kmt-dpp-tpp-china-rally-candidates</a></p>
+<p class="ref">² Reuters（2024-01-12）— "Taiwanese pack election rallies, China vows to 'smash independence plots'"
+<a href="https://www.reuters.com/world/asia-pacific/taiwan-parties-make-final-push-support-critical-election-2024-01-12/" rel="noopener" target="_blank">https://www.reuters.com/world/asia-pacific/taiwan-parties-make-final-push-support-critical-election-2024-01-12/</a></p>
+<p class="ref">³ 三立新聞網（2018-11-23）— "藍綠選前之夜！數十萬塑膠椅排列「有學問」 全靠秘密武器"
+<a href="https://www.setn.com/News.aspx?NewsID=460869" rel="noopener" target="_blank">https://www.setn.com/News.aspx?NewsID=460869</a></p>
+<p class="ref">⁴ Vitra Design Museum（2017）— "Monobloc – A Chair for the World"
+<a href="https://www.design-museum.de/en/exhibitions/detailpages/monobloc-a-chair-for-the-world.html" rel="noopener" target="_blank">https://www.design-museum.de/en/exhibitions/detailpages/monobloc-a-chair-for-the-world.html</a></p>
+<p class="ref">⁵ The Globe and Mail（2026-06-06）— "The ubiquitous monobloc chair and its Canadian origin story"
+<a href="https://www.theglobeandmail.com/life/style/design/article-the-ubiquitous-monobloc-chair-and-its-canadian-origin-story/" rel="noopener" target="_blank">https://www.theglobeandmail.com/life/style/design/article-the-ubiquitous-monobloc-chair-and-its-canadian-origin-story/</a></p>
+<p class="ref">⁶ Domus（2025-02-20）— "The history of the Monobloc: the world’s best-selling chair"
+<a href="https://www.domusweb.it/en/design/2025/02/20/monobloc-chair-history.html" rel="noopener" target="_blank">https://www.domusweb.it/en/design/2025/02/20/monobloc-chair-history.html</a></p>
+<p class="ref">⁷ Kulturaustausch（未標日期）— "Chair Today, Gone Tomorrow"
+<a href="https://www.kulturaustausch.de/en/issues/indi-pendent/chair-today-gone-tomorrow/" rel="noopener" target="_blank">https://www.kulturaustausch.de/en/issues/indi-pendent/chair-today-gone-tomorrow/</a></p>
+<p class="ref">⁸ Surface（2017-04-08）— "How a Simple Plastic Chair Won Over the World"
+<a href="https://www.surfacemag.com/articles/design-exhibition-monobloc-a-chair-for-the-world-vitra-design-museum/" rel="noopener" target="_blank">https://www.surfacemag.com/articles/design-exhibition-monobloc-a-chair-for-the-world-vitra-design-museum/</a></p>
+<p class="ref">⁹ 國立臺灣歷史博物館（2021-08-11 更新）— "山珍海味都比不上的人情味，辦桌文化從何時開始席捲全臺？"
+<a href="https://collections.nmth.gov.tw/article.aspx?a=251" rel="noopener" target="_blank">https://collections.nmth.gov.tw/article.aspx?a=251</a></p>
+<p class="ref">¹⁰ Taiwan Everything（2019-05-01）— "The Art of Managing Tables"
+<a href="https://taiwaneverything.cc/2019/05/01/bando-banquets/" rel="noopener" target="_blank">https://taiwaneverything.cc/2019/05/01/bando-banquets/</a></p>
+<p class="ref">¹¹ 微笑台灣（2021-01-25）— "跟著新竹總鋪師直擊台灣辦桌現場，揭密宴席菜單、出菜順序和辦桌文化"
+<a href="https://smiletaiwan.cw.com.tw/article/4216" rel="noopener" target="_blank">https://smiletaiwan.cw.com.tw/article/4216</a></p>
+<p class="ref">¹² Al Jazeera（2024-01-04）— "Why temples are a top campaign stop in Taiwan’s election"
+<a href="https://www.aljazeera.com/news/2024/1/4/why-temples-are-a-top-campaign-stop-in-taiwans-election" rel="noopener" target="_blank">https://www.aljazeera.com/news/2024/1/4/why-temples-are-a-top-campaign-stop-in-taiwans-election</a></p>
+<p class="ref">¹³ Reuters（2023-12-21）— "China wields Mazu 'peace goddess' religion as weapon in Taiwan election"
+<a href="https://www.reuters.com/world/asia-pacific/china-wields-peace-goddess-religion-weapon-taiwan-election-2023-12-21/" rel="noopener" target="_blank">https://www.reuters.com/world/asia-pacific/china-wields-peace-goddess-religion-weapon-taiwan-election-2023-12-21/</a></p>
+<p class="ref">¹⁴ 報導者（2020-06-14）— "總舖師與水腳最漫長的寒冬──疫情下，失溫的古早菜和宴客文化"
+<a href="https://www.twreporter.org/a/after-covid-19-fading-taiwan-flavor-roadside-banquet-culture" rel="noopener" target="_blank">https://www.twreporter.org/a/after-covid-19-fading-taiwan-flavor-roadside-banquet-culture</a></p>
+<p class="ref">¹⁵ 料理・台灣（2025-05-13）— "阿燦師 承自辦桌活字典的台味"
+<a href="https://ryoritaiwan.fcdc.org.tw/columns/7856" rel="noopener" target="_blank">https://ryoritaiwan.fcdc.org.tw/columns/7856</a></p>
+<p class="ref">¹⁶ Dezeen（2010-01-04）— "Plastic Classic by Pili Wu"
+<a href="https://www.dezeen.com/2010/01/04/plastic-classic-by-pili-wu/" rel="noopener" target="_blank">https://www.dezeen.com/2010/01/04/plastic-classic-by-pili-wu/</a></p>
+<p class="ref">¹⁷ 環境部（2023-07-28，2024-09-30 更新）— "塑膠資源循環處理"
+<a href="https://www.moenv.gov.tw/affairs/resource-circulation/circular-treatment/plastics-resources-circular-treatment/103.html" rel="noopener" target="_blank">https://www.moenv.gov.tw/affairs/resource-circulation/circular-treatment/plastics-resources-circular-treatment/103.html</a></p>
+<p class="ref">¹⁸ 中央社（2024-12-10）— "2023年廢塑膠近254萬噸 環境部擬循環經濟應對"
+<a href="https://www.cna.com.tw/news/ahel/202412100241.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/ahel/202412100241.aspx</a></p>
+<p class="ref">¹⁹ Yun Hai Taiwan Stories（2024-08-29）— "紅椅頭: Little Red Stool"
+<a href="https://yunhai.substack.com/p/little-red-stool" rel="noopener" target="_blank">https://yunhai.substack.com/p/little-red-stool</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/763" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
