@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>推開還亮著的門：台灣漫畫租書店的百年日常 · 穗稻忠武的專欄</title>
+<meta name="description" content="下午兩點，台北巷子裡一家租書店的門還開著。黃藍相間的書架從地面堆到天花板，塑膠書套反射著日光燈；櫃檯邊放著一杯還沒喝完的手搖飲，店員用掃描槍「嗶」地一聲，把剛進的新書登錄進電腦。門口偶爾有人探頭，多半是三十多歲以上的常客，會用一種近乎熟練的節奏問：「那本最新的到了嗎？」">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-15-comic-rental-bookstore-taiwan/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="推開還亮著的門：台灣漫畫租書店的百年日常">
+<meta property="og:description" content="下午兩點，台北巷子裡一家租書店的門還開著。黃藍相間的書架從地面堆到天花板，塑膠書套反射著日光燈；櫃檯邊放著一杯還沒喝完的手搖飲，店員用掃描槍「嗶」地一聲，把剛進的新書登錄進電腦。門口偶爾有人探頭，多半是三十多歲以上的常客，會用一種近乎熟練的節奏問：「那本最新的到了嗎？」">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-15-comic-rental-bookstore-taiwan/">
+<meta property="og:image" content="https://live.staticflickr.com/2762/4385882612_efbc245854_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "推開還亮著的門：台灣漫畫租書店的百年日常", "description": "下午兩點，台北巷子裡一家租書店的門還開著。黃藍相間的書架從地面堆到天花板，塑膠書套反射著日光燈；櫃檯邊放著一杯還沒喝完的手搖飲，店員用掃描槍「嗶」地一聲，把剛進的新書登錄進電腦。門口偶爾有人探頭，多半是三十多歲以上的常客，會用一種近乎熟練的節奏問：「那本最新的到了嗎？」", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-15-comic-rental-bookstore-taiwan/", "datePublished": "2026-07-15", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/2762/4385882612_efbc245854_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">珍珠奶茶</span><span class="tag">台灣文化</span><span class="tag">歷史</span><span class="tag">藝術</span><span class="tag">台灣</span><span class="tag">科技與生活</span></div>
+<h1>推開還亮著的門：台灣漫畫租書店的百年日常</h1>
+<p class="byline"><time>2026-07-15</time></p>
+</div>
+
+<p class="lead">下午兩點，台北巷子裡一家租書店的門還開著。黃藍相間的書架從地面堆到天花板，塑膠書套反射著日光燈；櫃檯邊放著一杯還沒喝完的手搖飲，店員用掃描槍「嗶」地一聲，把剛進的新書登錄進電腦。門口偶爾有人探頭，多半是三十多歲以上的常客，會用一種近乎熟練的節奏問：「那本最新的到了嗎？」</p>
+<p>這幅畫面曾經遍及全台。國立臺灣歷史博物館的研究與特展指出，台灣租書店可追溯到日治時期的「貸本屋」，在 2000 年前後更進入黃金盛世；中央社報導台史博展覽時也寫道，網路與 3C 產品興起後，租書店魅力大減，想找藏書豐富的店變得困難。財政部營業稅行業統計被多家媒體引用：2019 年小說、漫畫與雜誌出租業者約 490 家，到 2023 年約 312 家，2024 年中再降至約 283 家。數字背後不是冷冰冰的產業曲線，而是一整代人如何以紙本交換時間、人情與想像。</p>
+<p>本文從日常物件與店面空間出發，追問：為什麼租書店會成為台灣大眾閱讀的核心基礎設施？審查、盜版、正版授權與手機螢幕如何改寫它？當店面一間間熄燈，留下的是不是只是懷舊？</p>
+<figure><img src="https://live.staticflickr.com/2762/4385882612_efbc245854_b.jpg" alt="租書店最常見的風景，是一排排被摸舊的書脊與書套｜來源：Enokson / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<figure><img src="https://live.staticflickr.com/8025/7176832432_bc993c93c6_b.jpg" alt="封面：密集的書牆，像是把幾代人的閱讀時間疊在同一個空間｜來源：Andrew Subiela / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<h2>貸本屋到尪仔冊：百年閱讀外包服務</h2>
+<p>租書在台灣不是二十一世紀才有的商業模式。台史博與後續展覽專刊整理指出，二十世紀初《臺灣日日新報》已有貸本屋記載；日治時期流動租書攤以講談本、俠義與偵探小說為主，租價約為售價十分之一，形成早期公共閱讀外包。戰後，固定式租書攤擴張，內容從歌仔冊、連環圖畫、武俠與報刊連載，逐漸納入漫畫。</p>
+<p>1950 年代仍有大量本土漫畫創作者，陳海虹、游龍輝等名字被研究與展覽反覆提及；1960 年代經濟起飛後，瓊瑤與金庸等通俗文學也在租書店開出一片天地。國立臺灣歷史博物館英文展頁《Our Comic Memories》進一步說明：戰後初期兒童雜誌是重要入口，但到了 1960 年代，塞滿漫畫單行本的租書店逐漸成為主流，雜誌式連載的地位被「整本租回家」取代。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 若把租書店理解成基礎設施，它做的事很像今天的串流：降低擁有成本、提高流通速度、讓同一本內容服務更多人。差別在於，租書店要求身體移動——你得走進店、聞紙張與塑膠套的味道、和店員交換一句推薦。這種空間性，正是後來螢幕閱讀最難複製的部分。</p>
+<figure><img src="https://live.staticflickr.com/4060/4385738784_513f49a01a_b.jpg" alt="紙本漫畫與圖文書架，讓人想起租書店以「量」堆出的閱讀風景｜來源：Enokson / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<p>邱德雲 1959 年在苗栗拍攝「有錢借書大家看」的影像，被國家文化記憶庫與後續書寫反覆引用，提醒我們：租書曾是庶民共享讀物的日常技術。台史博研究也指出，日治貸本屋之後，戰後小規模固定攤位承接小說雜誌，1960 年代才真正迎來漫畫單行本的店面化。換句話說，租書店的「店」形態，是經濟穩定與娛樂需求同步上升後的產物，不是突然冒出來的懷舊符號。</p>
+<h2>審查年代：本地創作斷層與日漫湧入</h2>
+<p>租書店的歷史不能只寫懷舊，也必須寫政治與法律如何介入圖像敘事。Taiwan Insight 轉載學者李衣雲相關研究指出，1960 年代是租書漫畫的高峰，卻幾乎同時碰上嚴格審查：1962 年政府公布漫畫出版相關規範，1965 年起要求送審，1966 年教育部才正式受理；審查費掛鉤教科書標準，對單價極低的漫畫造成沉重負擔，許多本地創作者停筆或轉業，形成世代斷層。</p>
+<p>中央社整理台史博展覽時也寫道，戒嚴氛圍下，歷史題材武俠與言情常被貼上統戰、敗德等標籤；不直接碰意識形態的山寨版日漫與翻譯漫畫反而盛行。心傳租書社轉型筆記與台史博專刊脈絡一致：1966 年《編印連環圖畫輔導辦法》以輔導之名壓縮本地創作空間；出版社以改名、改服裝、重繪等方式讓日漫過關，或以影印大量複製，市場被低價快速的無授權作品佔領。</p>
+<p>1982 年左右的「漫畫掃黃／淨化」運動與查扣，讓市場劇烈震盪；1987 年相關輔導辦法廢止後，盜版在法律空窗期一度更猛。直到 1992 年新《著作權法》與「六一二大限」落日條款，才迫使產業走向正式授權。東立與講談社簽下大友克洋《阿基拉》等案例，常被產業史視為正版日漫時代的里程碑。</p>
+<p>這段歷史說明：租書店不是單純「青少年娛樂店」，它是審查、市場與跨國圖像文化交會的現場。讀者在店裡看到的角色名、地名、服裝，有時是被改寫過的政治產物。</p>
+<figure><img src="https://live.staticflickr.com/4058/4426354238_a97b423769_b.jpg" alt="書架的縱深，像是把時間一層層疊起來｜來源：Apreche / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<p>李衣雲研究進一步指出，審查費在 1966 年可達每本約 140 元，而漫畫單價只有數元量級，等於用教科書邏輯懲罰大眾圖像閱讀。結果是本地創作者退出，學徒描摹與後來影印日漫填補貨架。解嚴前後的《少年快報》等無版權雜誌以超高印量把漫畫推進流行文化，也把日方的憤怒推到臨界點，成為 1992 年著作權體制重整的外部壓力之一。租書店貨架上的每一排書脊，其實都疊著這段法律與市場角力。</p>
+<h2>黃金盛世：連鎖、電腦系統與四千家店</h2>
+<p>1990 年代到 2000 年前後，是多數台灣讀者記憶中的租書店「正典年代」。今周刊與風傳媒引用產業與台史博研究指出，1992 年後正版漫畫印刷精美、學生族群加入；十大書坊、白鹿洞、漫畫王、花蝶、皇冠租書城等連鎖出現；「孟波系統」等租書軟體終結人工登記，讓進退書與會員管理電腦化。全台估計超過 4000 家，有說法甚至以 5000 家描述高峰。</p>
+<p>巴哈姆特 GNN 2025 年走訪多店，仍能在十大書坊遼寧店看到熟悉的黃藍書架；白鹿洞師大店保留白綠配色；漫畫王則延續內閱、飲料與電腦座位的複合型態。店主口述顯示，高峰期一週可進書多次，全家辦會員、同學約在店裡「看到飽」並不罕見。輔仁大學圖書資訊學相關碩士論文也觀察到：1990 年代租書店以明亮寬敞、合法新書與連鎖形象重塑公共觀感，從「昏暗小店」轉成可被教師帶領參觀的休閒空間。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 黃金盛世其實是三種基礎設施同時到位：正版供應鏈、學生可支配時間、與電腦化店務。少了任何一環，連鎖擴張都難以維持。後來崩盤時，也不是單一原因，而是這三環同時鬆動。</p>
+<figure><img src="https://live.staticflickr.com/2793/4336877224_f9238ea93c.jpg" alt="當書架仍在，但讀者的時間已被螢幕切碎｜來源：Ben Brown / Flickr（CC BY-SA 2.0）" loading="lazy"></figure>
+<p>連鎖化改變的不只是裝潢。十大書坊學習金石堂式明亮色塊，皇冠租書城累積消費者印象獎項，漫畫王引入包廂與餐飲，讓「租書」變成可久留的室內公共生活。孟波系統把會員、逾期與庫存變成可計算的數據，店務從人情帳本轉成資訊管理。高峰期全台四千家以上的密度，甚至被心傳作者拿來和後世便利商店家數比較：那意味著幾乎每個通学路、社區巷口都可能有一處紙本娛樂節點。</p>
+<h2>崩盤：手機、平板與財政部數字</h2>
+<p>若要找一個轉折年，業者與媒體常指向 2010 至 2012 年：智慧型手機成熟、平板普及，讀者「隨時可看」的門檻驟降。今周刊 2019 年報導，2013 年估計僅剩約 1000 家；財政部統計至 2019 年 6 月，小說、漫畫與雜誌出租業者約 490 家。NOWnews 2023 年引用財政部資料，全台租書店約 312 家，當月銷售總額約 1970 萬元，平均單店月營業額約 6.3 萬元。心傳租書社引用 2024 年 6 月財政部統計，全國租書業者約 283 家。Taipei Times 2025 年 3 月報導鹿港鎮最後一間租書店「金歡樂」熄燈，並寫 2023 年全台約 312 家，呼應同一下滑軌跡。</p>
+<p>店主口述把數字還原成人的處境。板橋皇冠租書城店員接受 NOWnews 訪問時說，近四年營收下滑，客人多落在三十多歲，學生族群幾乎消失；鹿港店主則說，文化部疫情補貼結束後房租難支，清出超過十萬冊書。巴哈姆特專訪中，多位老闆提到：進書量從一週六次降到兩次；年輕客改看 iPad；疫情期間養成電子閱讀習慣後，有人再也沒回來。</p>
+<p>科技在此不是主角，卻是改寫日常節奏的工具。串流、手遊、短影音與線上漫畫平台，把「專程出門租兩本」的儀式，拆成碎片化的拇指滑動。租書店 thrives 於「庫存型長尾」——一本冷門書可以租十年；但當讀者不再進門，長尾就變成壓垮店面坪效的死庫存。</p>
+<figure><img src="https://live.staticflickr.com/3137/3037733332_6ca15e8988_b.jpg" alt="店內閱讀與挑選，是租書店難以被 App 完全取代的身體經驗｜來源：eliazar / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<p>把 2019 年約 490 家、2023 年約 312 家、2024 年中約 283 家連成線，會看到的是連續失血而非一次休克。平均單店月營業額約 6.3 萬元的數字（2023 年 NOWnews 依財政部銷售額推估）幾乎只夠支付都會區一間小店的房租與一人人事，更別談進新書。疫情是加速器：居家期間讀者養成線上習慣，補貼結束後實體店失去最後緩衝。鹿港案例把全國曲線落實成地方句點。</p>
+<h2>店裡的時間政治：內閱、外借與同儕秩序</h2>
+<figure><img src="https://live.staticflickr.com/2504/4161628930_ea9f6f529b_b.jpg" alt="內閱與停留，讓租書店成為一種室內公共生活｜來源：coolmikeol / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<p>租書店的收費方式本身就是一套時間政治。有的店以本數計價，鼓勵「租回家慢慢看」；有的像漫畫王以內閱時數搭配餐飲，把閱讀變成停留經濟；還有複合式店把電腦、飲料吧與包廂並置，讓漫畫成為社交背景音。GNN 實訪顯示，漫畫王中和店仍保留自助飲料與熟食，老闆兒子說店齡約二十七年，留客靠的是老客人與不捨。白鹿洞則用原創商品與自製小報，試圖把「只租書」擴成社群識別。</p>
+<p>這種空間秩序也規範身體。你不能把最新集數藏起來不還，系統會記逾期；你也不能無限佔用熱門書，因為下一個人在排隊。與演算法推薦不同，租書店的稀缺是可見的：架上那一格空了，代表有人正在看。稀缺製造對話——「誰借走了？」「什麼時候還？」——也製造等待的倫理。對學生族群而言，這曾是便宜的休閒基礎設施；對店家而言，則是坪效、電費與冷氣的持續消耗。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 當閱讀遷移到個人螢幕，稀缺消失，對話也變少。便利提高了，但「共同等待同一本」的公共時間被取消。租書店衰退，不只是消費渠道改變，也是一種同儕時間制度的鬆動。</p>
+<h2>仍在營業的人：店主、客群與轉型</h2>
+<p>崩盤敘事容易寫成輓歌，但現場更複雜。GNN 2025 年專訪顯示，仍有店在撐：21 號萬隆漫畫店老闆 Michael 是退休銀行人，因女兒看漫畫而接手，現在會追日本獎項與論壇口碑來選書；內湖儷山是夫妻店，從花蝶體系獨立，已經營約二十年；白鹿洞師大店店長解永華從打工做到接手，甚至因家人反對而到廟裡求籤後才頂下；yaoi 會社則以 BL 主題切入分眾市場，結合販售與內閱。</p>
+<p>屏東內埔龍泉的心傳租書社開業近四十年，第二代在 2024 年啟動轉型實驗：拆掉中間書架空出停留空間，辦展覽、工作坊與社區走讀，並設立台漫選書區。他們引用的財政部數字與地方人口外流現實，說明「只靠租還」在小村莊難以存活，必須變成交流基地。漫漫喫則從錦城加盟轉成餐飲複合，書仍在，但營收邏輯已改變。</p>
+<p>台史博研究員劉維瑛在今周刊訪問中指出，年輕人改用平板、手機閱讀是跨國趨勢，受衝擊更大的可能是中老年客群——他們依賴紙本與店面，不一定會遷移到線上。奇異果文創劉定綱也說，主力客群大約是在 1990 年代度過青春期、現年三十多歲的人；店一關，這群人可能連漫畫都不看了。閱讀習慣養成很慢，消失卻可以很快。</p>
+<figure><img src="https://live.staticflickr.com/6169/6151046815_ff449ea177_b.jpg" alt="出版與流通的末端，是一排排等待被借走的書｜來源：Ruth and Dave / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<p>這些仍營業的店，幾乎都在做「縮小後的公共性」。有人主打 BL 分眾，有人做親子童書角，有人靠老書長尾與人情推薦。解永華說自己國小就夢想在書店工作；Michael 說那個年代老師家長不准看漫畫，他卻在退休後靠女兒推一把走進產業。這些生命史說明，租書店勞動常常混雜興趣、家族與社區責任，難以被純效率模型解釋。也因此，倒閉新聞讀來特別像失去一位熟人，而不只是少了一個 SKU 通路。</p>
+<h2>地方消失的速度：從鹿港到龍泉</h2>
+<figure><img src="https://live.staticflickr.com/4061/4385119699_82464de12f_b.jpg" alt="當地方店面消失，帶走的是一整座小鎮共享故事的介面｜來源：Enokson / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<p>都市連鎖熄燈會上新聞，地方店的消失往往更安靜。Taipei Times 記錄鹿港鎮最後一間租書店在 2025 年關閉：1990 年代鹿港曾有三家，後來只剩金歡樂；店主夫妻年中不休，孩子長大後客源仍回不去，疫情補貼結束後房租成為最後一根稻草。清點超過十萬冊書的畫面，像是把一個小鎮的娛樂史打包進紙箱。</p>
+<p>屏東龍泉的故事則相反：心傳沒有立刻倒，而是以「家即店面」省下租金，用老客人情撐過人口外流。第二代回來後，不把目標設成恢復 4000 家榮景，而設成地方漫畫交流基地——展覽、走讀、台漫選書。他們引用財政部 2024 年中約 283 家的數字，坦言全台產業已薄到可以用縣市兩位數計算。</p>
+<p>中央社在 2018 年報導台史博展覽時已預告這種趨勢：店租昂貴、需要大空間，網路閱讀又太方便，想找藏書豐富的店不容易。七年後，預告變成地方新聞的常態標題。若博物館展出的是「曾經的日常」，地方店主面對的是「還能撐多久的日常」。</p>
+<h2>出版產業的連動：版權組合與起印量</h2>
+<p>租書店消失，受傷的不只是店主。開拓動漫展執行長蘇微希向今周刊指出，出版社向日本取得版權時常是「套裝組合」：熱門作搭配冷門作；過去印 3000 本給租書店，就能對日方交代最低發行，租書店崩毀後，這些書的印刷成本直接變成赤字。他回顧 1990 年代出版社曾討厭租書店搶零售，但 2000 年後紙本通路萎縮，租書店 3000 到 4000 本的買斷量，反而成了維繫出版社底量的保證。</p>
+<p>心傳筆記進一步把產業鏈講清楚：全盛期一部作品可保底約 4000 本配送全台租書店；如今起印量常在 1000 本以下。東販行銷黃詠雪則提醒另一面：對部分出版社而言，租書網站每次租借有分潤，反而比實體租書店更受青睞；盜版網站短期衝擊大，長期有時被業界當作「需求探測器」——有漢化代表有讀者，沒有則可能冷門。這些說法彼此不完全一致，正好顯示產業內部的利益分裂：零售、出租、線上授權與盜版，從來不是單一道德劇本。</p>
+<p>學術研究也提醒，台灣漫畫史長期處於本地創作、中國連環圖畫傳統與日本漫畫語法的混雜。審查促成盜版，盜版又培養出讀者對日漫敘事語法的熟悉，正版時代到來後，本地創作土壤已出現斷層。租書店既是受害者，也曾是這套混雜流通體系的加速器。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Young_boy_reading_manga.jpg" alt="年輕讀者與漫畫的相遇，曾經高度依賴店面與紙本觸感｜來源：Ragesoss / Wikimedia Commons（CC BY-SA 3.0）" loading="lazy"></figure>
+<p>當租書店保底印量消失，冷門授權的風險全部回到出版社身上。反過來說，線上平台的按次分潤讓部分業者寧願擁抱網站而非實體出租。兩種邏輯並存：一種靠「買斷庫存換長尾租金」，一種靠「流量兌換微額授權金」。讀者若只在盜版站免費看，兩邊都更難養創作。店主對假正版介面的憤怒，其實是整條產業鏈的道德與會計問題同時爆發。</p>
+<h2>科技在生活裡的位置：便利、盜版與注意力</h2>
+<figure><img src="https://live.staticflickr.com/1226/867040119_ad60c0f160_b.jpg" alt="螢幕時代的漫畫取得更方便，也更個人化｜來源：kevin dooley / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<p>本欄允許科技出現，但主角仍是人與店。智慧型手機與平板降低取得成本，線上租書與電子書平台提供分潤新模型，盜版站則以近似正版的介面吸走流量。黃詠雪在今周刊專訪中認為，較大衝擊是網路與手機，而非「自古就有」的盜版；蘇微希則把問題上推到整個社會閱讀結構改變——印刷需要規模經濟，讀者行為卻變得不可控。</p>
+<p>店主的日常對策很具體：追論壇、看獎項、經營 Facebook 與 LINE、只進最有把握的書、沒有的就介紹給同業。這是一種低利潤的策展勞動。科技工具被用來選書與招客，卻無法自動生成願意付租金的人流。板橋店員說看紙本的感動比數位多；也有客人因螢幕傷害眼睛，被醫師建議改回紙本。這些細節提醒我們：數位轉換不是單向勝利，身體與情感會反彈，只是反彈未必撐得起整間店的損益表。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 若只歌頌紙本溫度，會忽略讀者確實在凌晨兩點需要即時更新；若只慶祝平台效率，又會忽略地方店作為弱勢閱讀人口（現金少、設備弱、不愛帳號登入）的入口。公共討論需要同時看見兩端。</p>
+<h2>紙本社群還能留下什麼</h2>
+<p>把租書店只寫成「被科技淘汰的店」太簡化。它同時是：</p>
+<p>第一，低門檻的文化近用裝置。沒錢買齊整套漫畫的學生，可以用租借完成同儕社交與敘事想像。第二，地方知識節點。店員的推薦、客人的留言、店內手寫標語，構成非正式的策展。第三，跨世代的時間容器。同一本被摸到起毛邊的書，可能服務過父子兩代。</p>
+<p>當然也有陰影。早期社會常把租書店與「影響課業」「不良場所」連結；2004 年前後出版品分級與兒少規範加嚴，店家面臨警察抽查與貼標成本，心傳筆記與產業口述都提到這波壓力加速退場。版權爭議也從未消失：無授權年代傷害創作者，正版年代則把成本轉嫁給通路與讀者。線上盜版平台把「看起來很專業」的介面做成假正版，仍是 2025 年店主氣憤的對象。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 真正難解的，是公共性的轉移。當閱讀從店面搬到演算法個人化清單，共同話題變少，分眾變多。yaoi 會社、台漫選書區、複合餐飲，都是對分眾時代的回應；但分眾也意味著，很難再出現「全校都在討論同一本」的租書店景觀。科技提供便利，也拆掉了偶然相遇的密度。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Manga_bookstore_in_Japan_%28hikikomorix%29.jpg" alt="漫畫專賣與租賃空間的密集書牆，是許多人青春記憶的物質證據｜來源：Justin Doub / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"></figure>
+<h2>博物館化之後：記憶如何不變成標本</h2>
+<figure><img src="https://live.staticflickr.com/2731/4385738848_472d35d4c7_b.jpg" alt="把大眾閱讀送進文化史敘事，是為了不讓日常只剩懷舊｜來源：Enokson / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<p>台史博把租書店寫進特展與國際展，2024 年出版展覽專刊，與日本北九州市漫畫博物館等機構合作，把台灣租書史送到海外觀眾眼前。這是重要的知識工程：讓「巷口那間店」進入文化史敘事，而不是只存在個人臉書回憶殺。學術方面，李衣雲的研究與 Stockholm University Press 專書，則把租書店放進戰後漫畫資本、審查與跨國語法的理論框架。</p>
+<p>但博物館化也有風險：當物件被玻璃櫃保護，店裡的吵雜、冷氣聲、塑膠套反光可能被美化成純懷舊。GNN 與心傳的當代口述之所以關鍵，是因為它們把仍在營業的人拉回現在式——他們還在進書、還在貼分級、還在煩惱下個月房租。文化政策若只做展覽而不思考通路、租稅與在地閱讀空間，記憶很容易變成標本。</p>
+<p>對讀者而言，最直接的行動其實很普通：去還活著的店借兩本、付正版、跟店員聊天。對產業而言，台漫推廣、學校與公共圖書館的圖像閱讀教育、以及線上線下分潤制度能否共榮，才是接下來十年的硬問題。租書店不必回到四千家，也可以以更少、更精、更社群化的型態存在；前提是我們承認，它承載的不是落伍娛樂，而是一種可被共享的敘事時間。</p>
+<p>走進還在營業的店，你會發現它的節奏很慢：掃描槍的嗶聲、翻書的沙沙聲、店員把逾期名單唸出來的聲音。這些聲音構不成科技新聞的標題，卻構成一個城市是否仍允許「非即時」娛樂存在的證據。租書店教我們的，不是拒絕螢幕，而是記得有些故事值得用身體去借、用時間去還。</p>
+<p>若把視野拉遠，租書店的起落也是台灣「可負擔文化」消長史的一頁。當房價與店租上升、注意力被平台壟斷、內容取得卻越來越「看似免費」，中間那層用小額租金交換共同閱讀的機制就被擠壓。留下來的店像是城市裡的低頻訊號：不是最大聲，但證明某種生活節奏還沒完全消失。對政策制定者與文化機構而言，展覽很重要，協助店家成為在地閱讀節點——哪怕只是周末活動、學校參訪、台漫試讀會——可能更接近讓記憶繼續呼吸。</p>
+<h2>結語：回到那排被摸舊的書脊</h2>
+<figure><img src="https://live.staticflickr.com/4058/4426354238_a97b423769_b.jpg" alt="結語回望：仍有人在書架前尋找下一個故事｜來源：Apreche / Flickr（CC BY 2.0）" loading="lazy"></figure>
+<p>鹿港店主清出十萬冊書時，搬走的不只是庫存，而是一個小鎮最後一個「用租借交換故事」的公共介面。台北巷子裡還亮著燈的店，靠的是老闆不支薪、老客人續卡、以及少數年輕人把開店當志向。台史博把租書店送進博物館與國際展，是在提醒：這不是邊緣消遣，而是台灣大眾文化史的主幹之一。</p>
+<p>從貸本屋、尪仔冊、審查室、盜版印刷廠、正版授權合約、孟波系統，到財政部那一列逐年變短的行業統計，租書店見證了台灣如何學習與世界交換圖像敘事，又如何在螢幕時代重新分配注意力。科技可以讓一個人半夜在被窩看完一話，卻很難複製店門口那句「這本你會喜歡」的溫度。</p>
+<p>下次若還看得到那扇門，也許值得推開。不是為了懷舊打卡，而是去確認：在這個什麼都能瞬間取得的年代，我們是否仍願意為一篇故事，留下一段被紙張摩擦過的時間。</p>
+<h2>引用來源</h2>
+<p class="ref">¹ 中央社（2018-07-03）—「台史博館租書店展覽 看見台灣變遷縮影」
+<a href="https://www.cna.com.tw/news/acul/201807030132.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/acul/201807030132.aspx</a></p>
+<p class="ref">² 國立臺灣歷史博物館（展覽頁）—「『臺灣租書店與漫畫的奇妙旅程』國際展」
+<a href="https://www.nmth.gov.tw/News_Content_Due.aspx?n=4106&amp;s=199589" rel="noopener" target="_blank">https://www.nmth.gov.tw/News_Content_Due.aspx?n=4106&amp;s=199589</a></p>
+<p class="ref">³ 國立臺灣歷史博物館（英文展頁）—「Our Comic Memories: A Special Exhibition on the History and Future of Comics in Taiwan」
+<a href="https://www.nmth.gov.tw/en/News_Content_Due.aspx?n=4315&amp;s=139939" rel="noopener" target="_blank">https://www.nmth.gov.tw/en/News_Content_Due.aspx?n=4315&amp;s=139939</a></p>
+<p class="ref">⁴ 政府出版品資訊網 / 文化部（2024）—《臺灣租書店與漫畫的奇妙旅程展覽專刊》
+<a href="https://www.gpi.culture.tw/books/1011300267" rel="noopener" target="_blank">https://www.gpi.culture.tw/books/1011300267</a></p>
+<p class="ref">⁵ 國家網路書店（2024）—《臺灣租書店與漫畫的奇妙旅程展覽專刊》書目頁
+<a href="https://www.govbooks.com.tw/books/143213" rel="noopener" target="_blank">https://www.govbooks.com.tw/books/143213</a></p>
+<p class="ref">⁶ 今周刊（2019-09-06）—「從4000家關到剩490家...台灣租書店『雪崩式倒閉』」
+<a href="https://www.businesstoday.com.tw/article/category/80392/post/201909060021/" rel="noopener" target="_blank">https://www.businesstoday.com.tw/article/category/80392/post/201909060021/</a></p>
+<p class="ref">⁷ 風傳媒（2019-08-30）—「從4000家倒到剩490家！租書店瀕臨絕種」
+<a href="https://www.storm.mg/article/1642246" rel="noopener" target="_blank">https://www.storm.mg/article/1642246</a></p>
+<p class="ref">⁸ NOWnews 今日新聞（2023-10-12）—「全台312家 單店超慘營業額曝」
+<a href="https://www.nownews.com/news/6279571" rel="noopener" target="_blank">https://www.nownews.com/news/6279571</a></p>
+<p class="ref">⁹ Taipei Times（2025-03-03）—「Lukang Township’s last book rental store closes」
+<a href="https://www.taipeitimes.com/News/taiwan/archives/2025/03/03/2003832796" rel="noopener" target="_blank">https://www.taipeitimes.com/News/taiwan/archives/2025/03/03/2003832796</a></p>
+<p class="ref">¹⁰ 巴哈姆特 GNN（2025-01-18）—「你記憶中的漫畫租書店還在嗎？」
+<a href="https://gnn.gamer.com.tw/detail.php?sn=279737" rel="noopener" target="_blank">https://gnn.gamer.com.tw/detail.php?sn=279737</a></p>
+<p class="ref">¹¹ 心傳 / S TSAI（2024-09-21）—「地方租書店的轉型可能？屏東開業近40年的心傳租書社」
+<a href="https://terepashimanga.com/the-transformation-potential-of-local-comic-bookstores/" rel="noopener" target="_blank">https://terepashimanga.com/the-transformation-potential-of-local-comic-bookstores/</a></p>
+<p class="ref">¹² Taiwan Insight / I-Yun Lee, trans. Chee-Hann Wu（2025-12-17）—「The History of Comics in Taiwan: 1940s to 1980s」
+<a href="https://taiwaninsight.org/2025/12/17/the-history-of-comics-in-taiwan-1940s-to-1980s/" rel="noopener" target="_blank">https://taiwaninsight.org/2025/12/17/the-history-of-comics-in-taiwan-1940s-to-1980s/</a></p>
+<p class="ref">¹³ I-yun Lee（2024）—《Taiwan Comics: History, Status, and Manga Influx 1930s–1990s》，Stockholm University Press
+<a href="https://doi.org/10.16993/bcp" rel="noopener" target="_blank">https://doi.org/10.16993/bcp</a></p>
+<p class="ref">¹⁴ Stockholm University Press 書頁 — Taiwan Comics
+<a href="https://www.stockholmuniversitypress.se/books/m/10.16993/bcp" rel="noopener" target="_blank">https://www.stockholmuniversitypress.se/books/m/10.16993/bcp</a></p>
+<p class="ref">¹⁵ 輔仁大學圖書資訊學研究所碩士論文（線上 PDF）— 租書店相關研究
+<a href="https://web.lins.fju.edu.tw/upload/gra/thesis/10002198_49810603.pdf" rel="noopener" target="_blank">https://web.lins.fju.edu.tw/upload/gra/thesis/10002198_49810603.pdf</a></p>
+<p class="ref">¹⁶ 國立臺灣歷史博物館（日文/國際展說明頁）— 租書店與漫畫國際展
+<a href="https://www.nmth.gov.tw/News_Content_Due.aspx?n=4106&amp;s=139916" rel="noopener" target="_blank">https://www.nmth.gov.tw/News_Content_Due.aspx?n=4106&amp;s=139916</a></p>
+<p class="ref">¹⁷ 文化部國家文化記憶庫 — 入口與開放素材說明
+<a href="https://memory.culture.tw/" rel="noopener" target="_blank">https://memory.culture.tw/</a></p>
+<p class="ref">¹⁸ 財政部營業稅行業統計（經 NOWnews / 今周刊 / 心傳轉引之公開統計敘述；原始行業代碼含小說、漫畫及雜誌出租）
+<a href="https://www.nownews.com/news/6279571" rel="noopener" target="_blank">https://www.nownews.com/news/6279571</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/a0a" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
