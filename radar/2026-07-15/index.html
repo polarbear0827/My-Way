@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI RADAR DAILY 2026-07-15 — Agent資安與無向量RAG崛起 · 穗稻忠武的專欄</title>
+<meta name="description" content="今天這份清單讀完，最清楚的訊號不是「又多了幾個 coding agent」，而是 Agent 真正要上線時，安全與可驗證性突然變成第一優先。半數以上專案直接打在 prompt injection、MCP 流量、egress 外洩、runtime 攔截與可驗證收據上；同時，檢索端出現明確的無向量路線，PageIndex ">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/radar/2026-07-15/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI RADAR DAILY 2026-07-15 — Agent資安與無向量RAG崛起">
+<meta property="og:description" content="今天這份清單讀完，最清楚的訊號不是「又多了幾個 coding agent」，而是 Agent 真正要上線時，安全與可驗證性突然變成第一優先。半數以上專案直接打在 prompt injection、MCP 流量、egress 外洩、runtime 攔截與可驗證收據上；同時，檢索端出現明確的無向量路線，PageIndex ">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/radar/2026-07-15/">
+<meta property="og:image" content="https://polarbear0827.github.io/My-Way/radar/2026-07-15/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI RADAR DAILY 2026-07-15 — Agent資安與無向量RAG崛起", "description": "今天這份清單讀完，最清楚的訊號不是「又多了幾個 coding agent」，而是 Agent 真正要上線時，安全與可驗證性突然變成第一優先。半數以上專案直接打在 prompt injection、MCP 流量、egress 外洩、runtime 攔截與可驗證收據上；同時，檢索端出現明確的無向量路線，PageIndex ", "url": "https://polarbear0827.github.io/My-Way/radar/2026-07-15/", "datePublished": "2026-07-15", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://polarbear0827.github.io/My-Way/radar/2026-07-15/cover.png"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span><span class="tag">RAG</span></div>
+<h1>AI RADAR DAILY 2026-07-15 — Agent資安與無向量RAG崛起</h1>
+<p class="byline"><time>2026-07-15</time></p>
+</div>
+<figure class="hero"><img src="https://polarbear0827.github.io/My-Way/radar/2026-07-15/cover.png" alt="AI RADAR DAILY 2026-07-15 — Agent資安與無向量RAG崛起" loading="lazy"></figure>
+<p class="lead">今天這份清單讀完，最清楚的訊號不是「又多了幾個 coding agent」，而是 Agent 真正要上線時，安全與可驗證性突然變成第一優先。半數以上專案直接打在 prompt injection、MCP 流量、egress 外洩、runtime 攔截與可驗證收據上；同時，檢索端出現明確的無向量路線，PageIndex 用層級樹與推理搜尋取代「靠相似度碰運氣」。一句話：生態正在從「能生成、能呼叫工具」切到「能控管、能審計、能可靠找回答案」。若你的團隊還把 Agent 資安當上線後再補的 checklist，今天這份清單會告訴你——那條路已經來不及了。</p>
+<h2>一、今天的趨勢</h2>
+<p>第一個洞察是：Agent 資安正在從「事後審計」轉成「即時攔截 + 可驗證收據」。過去一年大家常見的作法，是看 log、跑 pen-test、出事再追；但當 Agent 具備 shell、瀏覽器、MCP 工具與環境變數中的 API key 時，單一惡意工具呼叫就可能把金鑰打出去。今日清單裡的 pipelock、Adrian、api-relay-audit 都在回應同一個現實——威脅發生在「工具實際被呼叫的那一瞬間」，因此防火牆必須坐在 egress 與 MCP 邊界上，而不是只存在於合規報表裡。NSA 與產業聯盟對 MCP 安全設計的持續關注，也印證這不是少數專案的焦慮，而是基礎設施層的共識。</p>
+<p>第二個洞察是：MCP 已成為攻擊面與防禦面的交會點。多個專案專門做 MCP 流量掃描、SSRF 防護、工具描述投毒偵測、對手模擬與紅隊。企業若要部署 Agent，不能只問「接了哪些模型」，必須先做 egress 白名單、工具呼叫治理、以及「這個 MCP server 是否可被信任」的盤點。agent-opfor 把 OWASP LLM / Agentic AI / MCP Top 10 收進同一套對手模擬，本身就是訊號：紅隊已經把 MCP 當成一級目標，而不是附屬選項。</p>
+<p>第三個洞察是：生態同時在補「可靠檢索」與「可審計工作區」。PageIndex 推無向量、推理導向的文件索引；oh-my-pi 強化終端 coding agent 的工具 harness 與 LSP 深度整合；h5i 則把每個 Agent 丟進可沙箱、可稽核的 Git worktree，並記錄 prompt、指令與審核軌跡。這三條線合在一起，說明市場不再滿足於 demo 級生成——企業要的是可追溯的檢索、可重現的工作區、以及出事時能拿出證據的系統。</p>
+<h2>二、Top 8 工具</h2>
+<h3>#1 ifixai-ai/iFixAi（Score: 5.0，AI Agent）</h3>
+<p>用途：在五分鐘內對 AI Agent／部署跑一組對齊與風險檢查，輸出 A–F 字母成績與分項記分卡。核心 32 項檢查涵蓋 fabrication、manipulation、deception、unpredictability、opacity 五大支柱，另有 13 項 frontier 延伸（含 sabotage、sandbagging、oversight evasion 等）。支援 CLI 嚮導、顯式旗標與 Claude Code／Codex plugin；評分預設由不同廠商的 judge 完成，避免自我評分。評語：這不是「又一個 prompt 測試腳本」，而是把營運失準（operational misalignment）產品化成可重跑、可進 CI 的診斷。適合上線前做基線，也適合當漂移訊號。若你連「現在的 Agent 到底偏到哪裡」都講不清楚，先跑這支比再堆工具有用。</p>
+<h3>#2 luckyPipewrench/pipelock（Score: 4.8，MCP）</h3>
+<p>用途：開源 AI Agent 防火牆，坐在 Agent 與網路之間，掃描 HTTP、WebSocket、MCP、A2A 等中介流量，攔截憑證外洩、prompt injection、SSRF 等，並發出可離線驗證的 mediator-signed action receipts。內建大量 credential 與 injection pattern，支援 process sandbox（Linux Landlock／seccomp、macOS sandbox-exec），也可 wrap MCP server。評語：這條路的價值在「決策有內容感知的收據」——不是只記 log，而是第三方能驗證「當下實際過界的內容與裁決」。企業要做 egress 與工具呼叫治理，pipelock 是少數把 VEC（Verifiable Egress Control）講清楚並開源落地的專案。</p>
+<h3>#3 secureagentics/Adrian（Score: 4.5，MCP）</h3>
+<p>用途：開源 runtime 安全監控與控制引擎，同時看 Agent 的行為 log（工具呼叫、輸出）與 reasoning traces，在惡意工具使用、prompt injection、policy drift 真正落地前介入。提供 Python（LangChain／LangGraph）與 TypeScript SDK，可走 managed dashboard 或完全 self-host。評語：多數監控停在「它呼叫了什麼」；Adrian 強調還要理解「為什麼要呼叫、下一步想幹嘛」，這與近年行為＋推理聯合監控的研究方向一致。適合已有 Agent 產線、需要 runtime 關卡而非只做靜態掃描的團隊。</p>
+<h3>#4 toby-bridges/api-relay-audit（Score: 4.7，AI Security）</h3>
+<p>用途：本地執行的 AI API 中繼／LLM proxy 安全審計，偵測 prompt injection、model substitution 訊號、tool-call 改寫、SSE 異常、錯誤外洩，以及 Web3 wallet 相關風險。以 Python 腳本為主，API key 只送往你指定的 relay URL，產出可審閱 Markdown 報告與 LOW／MEDIUM／HIGH 結論；另提供 OpenClaw／Hermes skill 整合。評語：第三方 relay 與「相容代理」是 2026 很現實的供應鏈面。這工具不自稱認證安全，而是給你可重跑的本地證據邊界——在把 production 或錢包相關流量丟進陌生 proxy 之前，至少先有一份報告。</p>
+<h3>#5 can1357/oh-my-pi（Score: 4.8，MCP）</h3>
+<p>用途：功能完整的終端 AI coding agent（Pi 的 fork 強化版），強調 hash-anchored edits、優化 tool harness、LSP／DAP 整合、Python／browser、subagents 等。多 provider、多內建工具，編輯格式與重試迴圈針對實際模型行為調校，目標是「第一次就改對、少燒 token」。評語：在資安主題佔半壁江山的今天，oh-my-pi 提醒另一半現實——開發者仍需要高可靠的終端 coding surface。它代表生態在「能寫」這一側繼續硬化 harness，與「能控」那一側並行，而不是互相取代。</p>
+<h3>#6 KeyValueSoftwareSystems/agent-opfor（Score: 4.3，MCP）</h3>
+<p>用途：針對 AI Agent 與 MCP 的對手模擬（OPFOR）框架，覆蓋 OWASP LLM Top 10、Agentic AI Top 10、MCP Top 10 等 suite；支援 CLI、瀏覽器擴充、MCP server、IDE skills 與 SDK。可對 prompt、tools、memory、multi-turn 做紅隊，並以 LLM judge 產出 HTML／JSON 報告；另有 trace-aware 整合（如 Langfuse）以看內部工具軌跡。評語：防禦堆再厚，沒有紅隊就只是感覺安全。agent-opfor 把「像真攻擊者一樣打」產品化，且入口含非工程職也能用的瀏覽器路徑，適合把紅隊從安全團隊特權變成跨職能例行。</p>
+<h3>#7 h5i-dev/h5i（Score: 4.3，MCP）</h3>
+<p>用途：可審計的 AI coding agent 工作區：每個 Agent 一個 sandboxed Git worktree，記錄 prompts、commands、logs、policies 與 reviews；支援 conflict-free multi-agent orchestra，並聲稱可大幅降低 token 浪費。證據以 `refs/h5i/*` 留在 repo 內，不依賴 SaaS。評語：多 Agent 同時改同一 repo 最容易變成互相覆寫與無法稽核的黑箱。h5i 把「隔離 + 版本化證據 + 審核後再 merge」做成預設流程，對 platform／DevEx／安全負責人特別有用——你要的不是更多 Agent，而是 diff 仍可被辯護。</p>
+<h3>#8 VectifyAI/PageIndex（Score: 5.7，RAG）</h3>
+<p>用途：無向量、推理導向的文件索引 RAG：把長文件建成層級樹（類似目錄樹），再以 LLM 在樹上做 reasoning／tree search 檢索，強調可追溯、可解釋，無需 vector DB 與人工 chunking。在 FinanceBench 等專業文件場景有高準確率宣稱，並有 self-host、MCP／API 與 agentic demo。評語：今日清單裡它是「檢索範式」的代表作。當專業文件要的是 relevance 而非 similarity，「丟掉向量、改靠結構與推理」不再只是論文口號。若你的 RAG 卡在長 PDF、法規或財報，這條線值得認真對照既有 pipeline。</p>
+<h2>三、今日首選：ifixai-ai/iFixAi</h2>
+<p>今日首選給 ifixai-ai/iFixAi，理由很務實：在防火牆、紅隊、中繼審計都變多的同時，多數團隊仍缺一個「五分鐘內講清楚風險字母成績」的入口。iFixAi 的定位是 operational misalignment 診斷——抓的是 KPI 上看不到、卻會變成客訴、資安事件或監管問題的行為：捏造引用、被誘導越權、長對話人格漂移、決策不可重現、沒有審計軌跡等。</p>
+<p>它的產品設計有幾個值得肯定的點。第一，檢查分層清楚：32 項核心對應五大支柱，延伸項覆蓋 frontier agent 風險，headline grade 與 exploratory 信號分開，避免把所有結果糊成一個「安全分」。第二，評分角色分離：SUT 與 judge 預設不同廠商，Full 模式可 ensemble，這比「自己模型評自己」可信得多。第三，輸出是工程可用的：JSON／Markdown、content-addressed manifest、可進 CI 的重跑路徑，並且誠實標示它不是認證、不是 safety guarantee，而是可重現的 diagnostic。</p>
+<p>更重要的是使用時機：企業部署 Agent 前，應該先回答「我們現在偏到哪裡、哪一柱最弱」，再決定要先上 egress 防火牆、runtime 監控，還是紅隊。iFixAi 適合當第一刀基線；拿到字母成績與分項後，再用 pipelock／Adrian 補邊界、用 agent-opfor 打洞、用 h5i 管工作區。把診斷、防禦、紅隊串成閉環，比單點工具堆疊更接近可落地的治理。</p>
+<h2>四、評分方式說明</h2>
+<p>AI Radar 分數綜合多維訊號，而非單一 star 數。主要面向包括：與當日主題的相關度與時效性、問題定義是否對準真實痛點、技術路線是否可驗證（有 benchmark、收據、報告或可重跑流程）、開源可用性與文件完整度、以及是否具備可複用的工程入口（CLI、SDK、MCP、CI）。分數接近代表各有取捨：高分通常表示「今天就該看、且能動手驗證」；較低分不代表品質差，可能是範圍更窄、成熟度仍在爬升，或對多數讀者屬補強角色。閱讀時請以用途與風險面為主，分數只是排序輔助。</p>
+<h2>結語與 CTA</h2>
+<p>Agent 落地加速後，安全不再是加分項，而是能不能上線的門檻；無向量 RAG 則提醒我們：可靠檢索比炫技生成更決定業務價值。建議今天就挑一條線動手——先用 iFixAi 量基線，或把 pipelock／PageIndex 接到現有流程做小範圍驗證。歡迎回覆你最在意的痛點（egress、MCP、紅隊或長文件檢索），下期 Radar 會依現場需求加深追蹤。</p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
