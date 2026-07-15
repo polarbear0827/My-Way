@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>屋脊上的碎瓷之書：臺南剪黏如何留下手的痕跡 · 穗稻忠武的專欄</title>
+<meta name="description" content="在臺南一座廟宇前停下來，眼睛通常先被屋脊上的龍、武將與花鳥帶走。它們的顏色不是油漆平塗，而是由無數瓷片、玻璃片折射出來：一片是盔甲的鱗，一片是衣袖的摺，一片是鳳凰尾羽。剪黏因此常被稱為「屋頂上的藝術」，但它也可被讀作一種勞動紀錄：誰裁了材料、誰塑了胚、誰在高處把故事固定在風雨裡。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-15-tainan-jian-nian-roof/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="屋脊上的碎瓷之書：臺南剪黏如何留下手的痕跡">
+<meta property="og:description" content="在臺南一座廟宇前停下來，眼睛通常先被屋脊上的龍、武將與花鳥帶走。它們的顏色不是油漆平塗，而是由無數瓷片、玻璃片折射出來：一片是盔甲的鱗，一片是衣袖的摺，一片是鳳凰尾羽。剪黏因此常被稱為「屋頂上的藝術」，但它也可被讀作一種勞動紀錄：誰裁了材料、誰塑了胚、誰在高處把故事固定在風雨裡。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-15-tainan-jian-nian-roof/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/0/08/Dragon_on_Mengjia_Longshan_Temple.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "屋脊上的碎瓷之書：臺南剪黏如何留下手的痕跡", "description": "在臺南一座廟宇前停下來，眼睛通常先被屋脊上的龍、武將與花鳥帶走。它們的顏色不是油漆平塗，而是由無數瓷片、玻璃片折射出來：一片是盔甲的鱗，一片是衣袖的摺，一片是鳳凰尾羽。剪黏因此常被稱為「屋頂上的藝術」，但它也可被讀作一種勞動紀錄：誰裁了材料、誰塑了胚、誰在高處把故事固定在風雨裡。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-15-tainan-jian-nian-roof/", "datePublished": "2026-07-15", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/Dragon_on_Mengjia_Longshan_Temple.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>屋脊上的碎瓷之書：臺南剪黏如何留下手的痕跡</h1>
+<p class="byline"><time>2026-07-15</time></p>
+</div>
+
+<p class="lead">在臺南一座廟宇前停下來，眼睛通常先被屋脊上的龍、武將與花鳥帶走。它們的顏色不是油漆平塗，而是由無數瓷片、玻璃片折射出來：一片是盔甲的鱗，一片是衣袖的摺，一片是鳳凰尾羽。剪黏因此常被稱為「屋頂上的藝術」，但它也可被讀作一種勞動紀錄：誰裁了材料、誰塑了胚、誰在高處把故事固定在風雨裡。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Dragon_on_Mengjia_Longshan_Temple.jpg" alt="艋舺龍山寺屋脊龍飾｜來源：Bernard Gagnon／Wikimedia Commons（CC BY-SA）" loading="lazy"><figcaption>屋脊裝飾將遠看可辨的輪廓與近看才浮現的細部並置；剪黏的技術價值，正藏在這種觀看距離的改變裡。</figcaption></figure>
+<p>這篇文章聚焦臺南的剪黏脈絡，尤其是何金龍、王保原與其後繼者所代表的師承；同時不把傳統工藝浪漫化。它面對的不是抽象的「消失」，而是修復預算、材料選擇、廟方決策、戶外劣化與學徒養成互相拉扯的日常。文化部登錄資料把剪黏列為傳統工藝；臺南文資處則將多位藝師的技術與傳習列入保存工作。這使屋脊不只是宗教裝飾，也成為公共文化資產如何被維護的現場。¹²</p>
+<h2>一片瓷，先要成為一個身體</h2>
+<p>剪黏的字面意思很直接：「剪」是把瓷片或彩色玻璃裁成需要的形狀；「黏」是將材料嵌貼在尚未乾硬的灰塑上。可是成品並非先有平面圖案、再像磁磚般貼上。依文化部與臺南文資處的說明，工序通常從鐵絲或其他支架開始，接著以灰泥堆塑粗胚，最後才處理表面。人物的比例、動勢、臉部神情，往往在表面材料上去以前便已經決定。³⁴</p>
+<figure><img src="https://live.staticflickr.com/2934/14562136083_34204d8724_b.jpg" alt="寺廟檐獸與屋脊細節｜來源：See-ming Lee／Flickr（CC BY-NC）" loading="lazy"><figcaption>從側面可見屋脊裝飾不是平面拼圖；灰塑骨架與外觀碎片共同構成立體造形。</figcaption></figure>
+<p>研究者白士誼在《文化資產保存學刊》整理現場工序時指出，剪黏結合灰塑、鑲嵌與繪畫等能力；文章並追溯其在臺灣的發展，說明福建、廣東的建築裝飾傳統如何在清代以後落地。國立自然科學博物館的館藏解說也提醒，材料未必只限於破碗：不同年代會出現玻璃片、瓷片與預先燒製的構件，材料變動直接改變光澤、切割難度與作品辨識度。⁵⁶</p>
+<p>這也是為何只把剪黏理解成「回收碎瓷」並不充分。早期廟方確會蒐集破損碗盤與瓶罐，但匠師要先判斷釉色、厚薄、彎曲與破口，再決定它應成為衣褶、羽毛、花瓣或鱗甲。作品看似繁複，卻有一套材料語法：細小片材能描輪廓，弧面瓷片可帶出量感，玻璃則提供亮度。人們在地面看見的是神話人物，匠師在鷹架上處理的卻是比例、重心與耐候性。</p>
+<p>這種「先塑後飾」的結構，也說明剪黏為何比一般拼貼更依賴長期訓練。臺南市文資處記錄王保原的工作坊課程，學員並不是從完整人物開始，而是先學棉仔灰、切割玻璃、較簡單的角色與局部技法；能否讓一張尪仔面在高處仍有神情，是另一個層次的考驗。⁴</p>
+<h2>從佳里金唐殿開始，讀一條師承線</h2>
+<figure><img src="https://live.staticflickr.com/3821/11662234226_1e1b484bb3_b.jpg" alt="寺廟屋脊與龍飾｜來源：Prayitno／Flickr（CC BY）" loading="lazy"><figcaption>屋脊上的人物、瑞獸與花草並非單純填滿空間；它們把戲曲、傳說與信仰敘事編排在建築最醒目的位置。</figcaption></figure>
+<p>若要追索臺南剪黏的代表性脈絡，佳里金唐殿是一個不能略過的地點。國家文化資產網的登錄理由指出，該廟的剪黏作品是其特色，尤其何金龍在昭和三年（一九二八年）所作的作品具代表性；資料同時記錄，金唐殿曾有葉王交趾陶，後來由何金龍的剪黏取代。這段歷程不應被化約成新工藝「勝過」舊工藝，而是一次廟宇修建中材料、審美與匠師網絡的選擇。⁷</p>
+<p>何金龍的名字在臺南文資材料與學術研究中反覆出現。研究臺灣剪黏匠人群體的文獻指出，他來自潮汕系統，作品重視以手剪玻璃與瓷片表現人物的盔甲、羽毛和表情；此後形成的何派，影響南部不少寺廟。王保原則承襲父親王石發與何金龍一脈，作品分布於佳里金唐殿、震興宮與西羅殿等地。⁴⁸</p>
+<p>師承不是一張靜態家譜。它包含誰先做骨架、誰裁料、誰收面，也包含工作場域裡看、做、改的方式。王保原的「摃槌」與「甲毛」技法，分別以近似火柴棒與細毛狀的材料塑出鎧甲與細節；文資處形容它們需要耐心與細工。這類技巧之所以值得記錄，不只是因為少見，更因為它難以僅靠成品照片逆推出來。⁴</p>
+<h2>故事不只在廟裡，也在觀看的方法裡</h2>
+<figure><img src="https://live.staticflickr.com/43/86551452_4dd87c6e57_b.jpg" alt="龍與神祇的寺廟屋頂｜來源：sanbeiji／Flickr（CC BY-SA）" loading="lazy"><figcaption>屋脊裝飾需從遠處建立輪廓，又要能在近距離承受細看；這種雙重尺度讓工法與敘事不可分離。</figcaption></figure>
+<p>剪黏最容易被當成建築的背景，但它在傳統廟宇裡也承擔敘事功能。人物常取自歷史、戲曲與神話；龍鳳、花鳥與瑞獸則傳達吉祥、秩序與神聖性的語彙。臺灣宗教文化地圖在介紹祀典武廟時，將泥塑、交趾陶與剪黏列為山牆與屋頂常見裝飾，也特別說明同一座廟裡，工藝、儀式、教育與社群生活會交疊。⁹</p>
+<p>這個角度有助於避免把工藝從使用脈絡中抽離。廟宇是信眾捐資、節慶活動與地方組織長期運作的場域；工藝不是先在美術館被定義為藝術品，才被放到廟上。中央社報導臺南「宮廟博物館」計畫時，描述喜樹代天府萬皇宮把剪黏、泥塑、彩繪與石雕視為可供導覽、盤點與教育的資源，並與學校合作培育小小導覽員。ⁱ⁰</p>
+<p>不過，「宮廟就是博物館」也帶來新的問題：如何讓遊客看見而不把信仰場域變成只供消費的背景？如何在導覽中說清楚工藝作者、材料與修復年代，而不是只指著龍鳳說「很華麗」？本文的判斷是，好的轉譯應把觀者拉回製作條件：它提醒人們，屋脊之美來自長年技術、集體出資與看不見的維護，而非一個可無限複製的視覺符號。（以下為本文分析，非事實陳述。）</p>
+<h2>破損後，修復不是把它變成全新的</h2>
+<figure><img src="https://live.staticflickr.com/7074/7312735678_e5a43ee011_b.jpg" alt="臺南寺廟屋頂龍飾｜來源：kewl／Flickr（CC BY）" loading="lazy"><figcaption>戶外屋脊必須承受日照、雨水、風與污染；修護的目標因而不只關於外觀。</figcaption></figure>
+<p>剪黏長年暴露在屋頂，材料會面對雨水、溫濕度變化、鹽害、污染與過去修補留下的痕跡。二○二三年一篇以廟宇剪黏修復為題的碩士論文指出，既有資料常著重匠師生平與風格，卻較少對單件作品建立完整現況紀錄；作者以多個古蹟修復案例討論損壞分級、價值評估與後續修復原則。¹¹</p>
+<p>這個研究問題相當具體：若沒有修復前影像、材質辨識、位置圖與處理紀錄，下一次面對裂縫、剝落或重修時，就很難知道哪些是原作、哪些是後補，甚至難以判斷何種處置會再造成傷害。臺北大稻埕慈聖宮的一件剪黏士兵館藏，正保存了這種歷史。國立臺灣歷史博物館說明，該作原位於前殿水車堵，後來廟宇重修時被拆下、改換成交趾陶；捐贈者取得部分人物後自行修復保存。¹²</p>
+<p>修復倫理因此不是只有「修」或「不修」兩個答案。國家工藝研究發展中心在葉王交趾陶修護案例中說明，修護先做調查、檢測與清潔，再對斷裂、缺損、鹽害與結構問題採取相應處理；其工作者也明言，修護不等於使作品嶄新如初，而是讓歷史真實感仍可被辨認。¹³這個原則可作為理解剪黏的參照，但每一件作品仍須由專業調查決定，不能以單一案例取代所有廟宇。</p>
+<h2>經費、工時與預製材料：沒有容易的取捨</h2>
+<figure><img src="https://live.staticflickr.com/3071/2678914204_bdc5486d12_b.jpg" alt="臺灣陶瓷龍飾｜來源：Seth Kendall／Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>傳統屋脊的華麗往往掩蓋了工期與材料的選擇；修繕決策必須在視覺、耐候、技術與成本間平衡。</figcaption></figure>
+<p>「傳統工藝正在消失」是一句容易說出口的話，卻不足以解釋問題。二○一四年的〈剪黏材料與工法變遷對傳統剪黏工藝之保存及傳承影響〉把壓力指向更具體的條件：量產定型材料、工程造價和縮短工時，使以裁剪碎片為核心的技術與知識較難留在年輕匠師手中；同時，古蹟修復需求與仿古材料的再興，也可能提供新的工作機會。¹⁴</p>
+<p>臺南文資處介紹王保原時提到，一九六○年代興起較快速、省錢的「淋搪」作法；介紹陳三火時亦提及低成本灌模對傳統技術造成的衝擊。兩則官方紀錄沒有把任何材料一概判為好或壞，卻都指出速度、成本與技術門檻會改變工藝生態。⁴¹⁵</p>
+<p>Taipei Times 二○○九年對剪黏匠師的長篇報導則呈現另一面：受訪者批評公開修復工程的低價競標與有限預算，可能讓裝飾工項被壓縮，轉向較便宜或較易施工的材料；報導同時採訪學者與匠師，將此視為制度、品質與傳承交織的問題。¹⁶這是報導中的受訪觀點，而非對所有工程的總結。</p>
+<p>臺南近年推出寺廟彩繪、泥塑保存修護補助，明定由廟方提出計畫，並以專業審查及與大專院校合作等方式鼓勵修護與培育。這類政策顯示政府介入並非只能靠登錄；但補助能否長期對應各地廟宇的維護需求，仍要以後續執行與公開資料檢驗。¹⁷</p>
+<h2>三位藝師，三種把手藝留在現場的方法</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Dragon_on_Mengjia_Longshan_Temple.jpg" alt="臺灣寺廟屋脊龍飾｜來源：Bernard Gagnon／Wikimedia Commons（CC BY-SA）" loading="lazy"><figcaption>每一座屋脊都由眾多工項合作完成；以藝師為線索，能看見個人風格與工班分工如何交會。</figcaption></figure>
+<p>王保原、呂興貴與陳三火提供了三條可追索的傳承線。王保原在二○一一年被中央指定為文化資產保存技術保存者，臺南文資處記錄其師承、作品地點與工作坊；呂興貴則自少年時進入王石發、王保原父子門下，後來投入傳習教學。這些資料讓「師徒」不只是稱號，而能被放回具名場所、時間與作品中理解。⁴¹⁸</p>
+<p>陳三火的路徑並不完全相同。他師承洪坤福系統，官方資料稱其以陶瓷堆疊拼接見長，並在二○二○年被登錄為重要傳統工藝剪黏工藝保存者。其「以摃代剪」的創作方法，使用敲擊後自然形成的碎片組構形象；支持者視之為對材料的再發現，但它也提醒我們，所謂傳統從來不是凍結不動的公式。¹⁵</p>
+<p>不同路徑之間並沒有必要排名。對需要修復特定古蹟原貌的工程，材料、色彩和工序的可追溯性尤其重要；對教育、當代創作或社區推廣，是否能讓新學習者理解骨架、塑胚與材料語言，同樣關鍵。臺南文化局出版的陳三火專書，將其作品踏查、工序與創作思維並列，正反映這種「保存」同時包含實作、研究、影像與教育。¹⁹</p>
+<p>值得留意的是，保存者制度能確認某些人的成就，卻不能自動補足整個產業鏈。材料供應、工班安全、學徒收入、廟方與建築專業者的溝通，都會左右一項技術是否還有被完整實作的機會。這正是從人出發，而不是只從名錄出發，才看得到的部分。（以下為本文分析，非事實陳述。）</p>
+<h2>當屋脊變成公共記憶，誰負責看見細節</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Fort_Zeelandia_Dragons_%28231708093%29.jpeg" alt="府城遺址旁的龍飾｜來源：Benjamin Arnold／Wikimedia Commons（CC BY-SA）" loading="lazy"><figcaption>屋脊裝飾讓地方建築在城市天際線中保有可辨識的輪廓，也把工藝放進公共視野。</figcaption></figure>
+<p>把剪黏看成「地方的公共記憶」，並不表示每個人都必須具有同一種宗教信念。它的公共性來自多重層面：它位於人可看見的建築外部；它連結地方捐資、祭典與修建史；它承載匠師技術；它也被文化資產制度、學校與博物館納入紀錄。國家文化資產網對佳里金唐殿、學甲慈濟宮等處的登錄理由，正把剪黏列為古蹟價值的重要構成。⁷²⁰</p>
+<p>二○二五年臺南協助學甲慈濟宮葉王交趾陶修護的案例，雖非剪黏本身，卻提供一個可比較的現場：六件國寶歷經污染、斷裂、鹽害、風化與舊修補，經專業團隊處理後再回到文化館展示。官方材料描述X光檢測、材質細節與運送安排，顯示所謂「看起來漂亮」背後是大量研究與風險管理。²¹</p>
+<p>對讀者而言，下一次走進廟宇，可以先不急著拍全景。試著問：這片亮色是玻璃還是瓷？人物的臉與鎧甲如何被做出來？屋頂上是否有不同年代的修補？導覽或說明牌有沒有提到匠師？這些問題不會取代信仰，也不必把廟宇變成教室；它們只是讓觀看多出一層對勞動與時間的尊重。</p>
+<p>剪黏的未來未必只在「原封不動」與「全面更新」之間二選一。較可檢驗的方向，是建立個件紀錄、讓修護決策有足夠調查、讓材料與工序被清楚交代，並使傳習不只留在短期活動。能否做到，取決於廟方、藝師、修護專業者、政府與社群是否願意共同承擔。這是一個仍在進行、沒有單一答案的問題。</p>
+<h2>何謂「原作」：拆除、替換與紀錄的難題</h2>
+<figure><img src="https://live.staticflickr.com/43/86547193_6c17ebe140_b.jpg" alt="寺廟屋脊的多層裝飾｜來源：sanbeiji／Wikimedia Commons（CC BY-SA）" loading="lazy"><figcaption>屋脊同時容納瓦作、泥塑、剪黏與其他裝飾；辨識每個部位的年代與材料，是修護前調查的一部分。</figcaption></figure>
+<p>寺廟修建往往跨越數十年甚至數百年。一次重修可能保留梁柱、替換屋瓦，或只改變一部分裝飾；因此，今天看見的屋脊並不必然對應某一個單一年代。佳里金唐殿的登錄資料明確提到清代葉王交趾陶與一九二八年何金龍剪黏的先後關係，正說明替換本身也是歷史。若只以「最早」或「最漂亮」定義價值，容易忽略後來匠師、信眾與修繕行動留下的證據。⁷</p>
+<p>學術論文主張為剪黏建立個別檔案，核心理由就在於修復時不能只把損壞程度當作唯一依據。它建議把有形的材料與無形的工藝、故事與脈絡一起納入價值評估。這不代表每一次修復都必須保留所有後補材料；而是要求決策前先辨識、記錄，讓選擇可以被回顧與討論。¹¹</p>
+<p>制度也提供了不同層次的框架。文化部可登錄重要傳統工藝及保存技術，地方政府則可登錄傳統工藝、規畫傳習和補助；至於古蹟本體，又有修復設計、工程與審查程序。這些分類有助分配資源，卻也可能把「作品」「技術」「建築」「藝師」切成不同欄位。實務上，它們彼此相依：沒有能做的人，再完整的登錄名稱也無法完成細節；沒有記錄，技術又難以被後人讀懂。²²</p>
+<p>對於是否替換、補配或保留風化痕跡，本文不主張以單一答案處理。因為現場會受建築安全、信仰需求、材料狀態與法定身分影響。較可靠的底線是：讓調查者、廟方與公眾知道做了什麼、依據是什麼、哪些部分仍有不確定性。</p>
+<h2>傳習不是體驗課：從手感到職業的距離</h2>
+<figure><img src="https://live.staticflickr.com/2421/4054627508_ddf6de724f_b.jpg" alt="臺灣寺廟屋頂與龍飾｜來源：J. Arcenas／Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>鮮明色彩容易吸引第一次觀看者，但工藝的延續仍取決於是否有人能從觀賞走向長期學習與工作。</figcaption></figure>
+<p>近年不少文化活動安排剪黏手作，讓參與者用小片材料拼出圖案。這類課程可降低接觸門檻，但不等於完整傳習。王保原的傳習紀錄顯示，從備料、切玻璃、製作灰塑到人物細部，是循序累積的過程；呂興貴的經歷也顯示，傳統學藝常從工班中的基礎工作開始，再逐步接觸複雜部位。⁴¹⁸</p>
+<p>「體驗」與「職業」的差別首先是時間。能在桌上完成小型作品，並不代表能在高空、戶外、工期與團隊分工的條件下做出耐久的屋脊裝飾。其次是責任：若工程位於古蹟或重要廟宇，任何材料替換、補色或固定方法都可能影響後續修護。最後是經濟條件：學徒若無法獲得穩定收入與安全保障，就很難在數年內把技術練到可獨立作業。</p>
+<p>因此，校園課程、博物館展覽與短期工作坊不是沒有價值；它們能建立觀眾、讓地方社群辨認自家工藝，也可能讓潛在學習者出現。但政策若要談「傳承」，還必須問：是否有長期師資、實作場域、記錄系統與合理報酬？臺南二○二六年的文資傳匠工坊招募，將剪黏列入傳統修復工項培訓，顯示已有將教育連到修復實務的嘗試；其效果仍需要以完成率、就業與工程品質等資料觀察。²³</p>
+<p>這裡的衝突不在於年輕人是否「不夠熱愛傳統」，而在於社會是否提供足夠長的學習時間與能夠持續工作的條件。把問題全部歸咎於個人意願，反而會遮蔽制度、工期和市場的責任。（以下為本文分析，非事實陳述。）</p>
+<h2>結語：把抬頭看見的，變成能被追問的</h2>
+<figure><img src="https://live.staticflickr.com/9/86653704_fc0cf530f6_b.jpg" alt="臺灣寺廟屋脊裝飾｜來源：sanbeiji／Flickr（CC BY-SA）" loading="lazy"><figcaption>剪黏位在日常視線上方；要理解它，需要把視線從華麗外觀移向材料、手工與維護史。</figcaption></figure>
+<p>臺南剪黏的故事並不是一條從「古老」走向「消失」的直線。它包含跨海而來的技術、佳里金唐殿等具體場所、何金龍與王保原等藝師的師承、玻璃和預製材料的變化，以及廟方、政府、學校與修護者的持續協商。它也不是只能被稱為宗教裝飾：剪黏在公共建築外部留下了地方敘事與手工勞動的可見證據。</p>
+<p>對報導而言，最重要的不是替所有修復工程做道德裁判，而是讓決策條件可被看見。哪一件是原作？誰做過修補？材料從何而來？預算如何影響工法？有沒有留下影像、位置與處理紀錄？這些問題比一句「好看」更能保護工藝，也更能尊重仍在工作的人。</p>
+<p>最後，讀者也應保留一點謙遜。不是每一個屋脊故事都能從遠處辨認，不是每一項地方說法都能立即被獨立核實。本文所引用的官方登錄、館藏、研究和新聞，提供的是可查證的入口；但對單一作品的年代、修補範圍與作者歸屬，仍應以該案的調查報告和現場專業判讀為準。抬頭看見碎瓷的光，也意味著承認：它背後還有許多需要被繼續記錄的手。</p>
+<h2>修復前後，至少應留下哪些問題</h2>
+<figure><img src="https://live.staticflickr.com/5001/5365873948_2ba327b104_b.jpg" alt="廟宇屋脊的多重工藝｜來源：Kabacchi／Flickr（CC BY）" loading="lazy"><figcaption>從正面觀看，屋脊看似一條完整的視覺敘事；保存工作則必須把它拆回材料、部位、年代與工序逐項辨認。</figcaption></figure>
+<p>對一般讀者而言，文化資產修護常在工程圍籬撤除後才變得可見。可是，最重要的知識多發生在施工之前與施工之中：現況拍攝、材料採樣、結構檢查、原有與後補部位的區分、不同處置方案的討論，以及竣工後的紀錄。剪黏研究者主張建立個件資料，並非要增加行政表格，而是要避免後來的修護者只能猜測前人做過什麼。¹¹</p>
+<p>這種紀錄也能讓公共討論更精確。例如，當一座廟準備更換屋脊裝飾時，居民可以追問：舊件是否有保留價值？能否先完成測繪與影像存檔？新材料是為了耐候、安全、成本或視覺一致性？由誰判斷？是否有工藝師與修護專業者共同參與？這些提問不預設答案，但能讓「保存」不只是宣布結果。</p>
+<p>官方補助與登錄制度提供了一部分基礎，博物館館藏與學術研究也保存了拆卸、替換與修護的案例。不過，資料能否公開、是否容易被地方使用，以及是否寫明不確定性，將決定它是活的知識還是只留在檔案櫃裡。剪黏之所以值得被持續報導，正因它把這些抽象問題具體地放在每一個人抬頭可見的屋脊上。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ 國家文化資產網 —「剪黏」
+<a href="https://nchdb.boch.gov.tw/assets/overview/traditionalCraft/20101126000004" rel="noopener" target="_blank">https://nchdb.boch.gov.tw/assets/overview/traditionalCraft/20101126000004</a></p>
+<p class="ref">² 臺南市文化資產管理處 —「傳藝名人堂」
+<a href="https://tmach-culture.tainan.gov.tw/subhome.asp?orcaid=EBC4C10E-FD33-44B2-9FB0-975C020A656B" rel="noopener" target="_blank">https://tmach-culture.tainan.gov.tw/subhome.asp?orcaid=EBC4C10E-FD33-44B2-9FB0-975C020A656B</a></p>
+<p class="ref">³ 中央社（2022-12-22）—「3匠師獲選新科人間國寶」
+<a href="https://www.cna.com.tw/news/acul/202212220069.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/acul/202212220069.aspx</a></p>
+<p class="ref">⁴ 臺南市文化資產管理處 —「王保原／剪黏」
+<a href="https://tmach-culture.tainan.gov.tw/page.asp?mainid=D6AF5C8F-768B-47C2-80CE-AF8D962F2167" rel="noopener" target="_blank">https://tmach-culture.tainan.gov.tw/page.asp?mainid=D6AF5C8F-768B-47C2-80CE-AF8D962F2167</a></p>
+<p class="ref">⁵ 白士誼（2015）—「臺灣傳統剪黏藝術施作工序流程」
+<a href="https://www.airitilibrary.com/Article/Detail/P20200518001-201503-202203030013-202203030013-45-77" rel="noopener" target="_blank">https://www.airitilibrary.com/Article/Detail/P20200518001-201503-202203030013-202203030013-45-77</a></p>
+<p class="ref">⁶ 國立自然科學博物館（2025）—「科博館的剪黏蒐藏」
+<a href="https://epub.nmns.edu.tw/k202511-1/" rel="noopener" target="_blank">https://epub.nmns.edu.tw/k202511-1/</a></p>
+<p class="ref">⁷ 國家文化資產網／臺南市政府 —「佳里金唐殿」
+<a href="https://nchdb.boch.gov.tw/assets/advanceSearch/monument/19851127000076" rel="noopener" target="_blank">https://nchdb.boch.gov.tw/assets/advanceSearch/monument/19851127000076</a></p>
+<p class="ref">⁸ 日本設計學會 —「台灣における寺廟裝飾『剪黏』を支えた職人の出自と実像」
+<a href="https://www.jstage.jst.go.jp/article/jssdj/49/3/49_KJ00000848258/_pdf" rel="noopener" target="_blank">https://www.jstage.jst.go.jp/article/jssdj/49/3/49_KJ00000848258/_pdf</a></p>
+<p class="ref">⁹ 內政部臺灣宗教文化地圖 —「祀典武廟」
+<a href="https://taiwangods.moi.gov.tw/html/Cultural/3_0011.aspx?i=28" rel="noopener" target="_blank">https://taiwangods.moi.gov.tw/html/Cultural/3_0011.aspx?i=28</a></p>
+<p>ⁱ⁰ 中央社（2026-05-17）—「台南第10間宮廟博物館 喜樹代天府萬皇宮獲認證」 <a href="https://www.cna.com.tw/news/acul/202605170095.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/acul/202605170095.aspx</a></p>
+<p class="ref">¹¹ 蔡慈媛（2023）—「臺灣廟宇文化資產屋頂剪黏修復資料建立」
+<a href="https://www.airitilibrary.com/Article/Detail/U0017-2211202315234857" rel="noopener" target="_blank">https://www.airitilibrary.com/Article/Detail/U0017-2211202315234857</a></p>
+<p class="ref">¹² 國立臺灣歷史博物館 —「大稻埕慈聖宮剪黏士兵」
+<a href="https://collections.nmth.gov.tw/CollectionContent.aspx?a=132&amp;rno=2003.037.0011" rel="noopener" target="_blank">https://collections.nmth.gov.tw/CollectionContent.aspx?a=132&amp;rno=2003.037.0011</a></p>
+<p class="ref">¹³ 國立臺灣工藝研究發展中心 —「百年工藝的重生——葉王交趾陶的修護」
+<a href="https://cci.ntcri.gov.tw/Learn/Detail/166" rel="noopener" target="_blank">https://cci.ntcri.gov.tw/Learn/Detail/166</a></p>
+<p class="ref">¹⁴ 陳美玲（2014）—「剪黏材料與工法變遷對傳統剪黏工藝之保存及傳承影響」
+<a href="http://lawdata.com.tw/tw/detail.aspx?no=448601" rel="noopener" target="_blank">http://lawdata.com.tw/tw/detail.aspx?no=448601</a></p>
+<p class="ref">¹⁵ 臺南市文化資產管理處 —「陳三火／剪黏」
+<a href="https://tmach-culture.tainan.gov.tw/page.asp?mainid=75BBB810-6FD0-4DF6-968A-AC9C9E65DFFE" rel="noopener" target="_blank">https://tmach-culture.tainan.gov.tw/page.asp?mainid=75BBB810-6FD0-4DF6-968A-AC9C9E65DFFE</a></p>
+<p class="ref">¹⁶ Taipei Times（2009-10-06）—「Temple artisan tries to leave his mark」
+<a href="https://www.taipeitimes.com/News/taiwan/archives/2009/10/06/2003455293" rel="noopener" target="_blank">https://www.taipeitimes.com/News/taiwan/archives/2009/10/06/2003455293</a></p>
+<p class="ref">¹⁷ 臺南市文化資產管理處（2025）—「臺南推出彩繪泥塑保存補助」
+<a href="https://tmach-culture.tainan.gov.tw/page.asp?mainid=18A3A57F-41A9-47D3-987A-45E235CC46F1" rel="noopener" target="_blank">https://tmach-culture.tainan.gov.tw/page.asp?mainid=18A3A57F-41A9-47D3-987A-45E235CC46F1</a></p>
+<p class="ref">¹⁸ 臺南市文化資產管理處 —「呂興貴／剪黏技術」
+<a href="https://tmach-culture.tainan.gov.tw/page.asp?mainid=60ED857B-36C8-44AB-A7B2-B3D00FD0809F" rel="noopener" target="_blank">https://tmach-culture.tainan.gov.tw/page.asp?mainid=60ED857B-36C8-44AB-A7B2-B3D00FD0809F</a></p>
+<p class="ref">¹⁹ 臺南市政府文化局出版品 —《廟宇天空的藝行者：剪黏工藝陳三火》
+<a href="https://publications.culture.tainan.gov.tw/index.php?did=1421&amp;inter=publication" rel="noopener" target="_blank">https://publications.culture.tainan.gov.tw/index.php?did=1421&amp;inter=publication</a></p>
+<p class="ref">²⁰ 國家文化資產網／臺南市政府 —「學甲慈濟宮」
+<a href="https://nchdb.boch.gov.tw/assets/advanceSearch/monument/19850819000080" rel="noopener" target="_blank">https://nchdb.boch.gov.tw/assets/advanceSearch/monument/19850819000080</a></p>
+<p class="ref">²¹ 臺南市文化資產管理處（2025）—「國寶葉王交趾陶百年來第一次洗澎澎」
+<a href="https://tmach-culture.tainan.gov.tw/page.asp?mainid=8B97C420-3AD2-45D1-AC77-0B440127674E" rel="noopener" target="_blank">https://tmach-culture.tainan.gov.tw/page.asp?mainid=8B97C420-3AD2-45D1-AC77-0B440127674E</a></p>
+<p class="ref">²² 文化部政府出版品資訊網 —「100年度重要傳統藝術暨文化資產保存技術保存者授證專輯」
+<a href="https://gpi.culture.tw/books/1010003656" rel="noopener" target="_blank">https://gpi.culture.tw/books/1010003656</a></p>
+<p class="ref">²³ 臺南市文化資產管理處（2026）—「文資傳匠工坊臺南基地」
+<a href="https://tmach-culture.tainan.gov.tw/activity.asp?mainid=7832B10B-4423-4C9C-8929-0147F45B5F99" rel="noopener" target="_blank">https://tmach-culture.tainan.gov.tw/activity.asp?mainid=7832B10B-4423-4C9C-8929-0147F45B5F99</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
