@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>人走後，雲端怎麼辦？ · 穗稻忠武的專欄</title>
+<meta name="description" content="一個人離開後，家人留下的不只房屋、存款與相簿，還有雲端相片、聊天紀錄、訂閱、社群帳號與可能找不到鑰匙的加密資產。這些東西既像遺物，又不像紙箱裡的遺物：它們被帳戶、加密、服務條款和仍在世的通訊對象包圍。本文整理平台制度、台灣法制與家屬經驗，探問的不是「家人能不能登入」，而是誰應在何種範圍內替亡者作決定。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-20-digital-legacy/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人走後，雲端怎麼辦？">
+<meta property="og:description" content="一個人離開後，家人留下的不只房屋、存款與相簿，還有雲端相片、聊天紀錄、訂閱、社群帳號與可能找不到鑰匙的加密資產。這些東西既像遺物，又不像紙箱裡的遺物：它們被帳戶、加密、服務條款和仍在世的通訊對象包圍。本文整理平台制度、台灣法制與家屬經驗，探問的不是「家人能不能登入」，而是誰應在何種範圍內替亡者作決定。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-20-digital-legacy/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/20220318_Stitching_anomalies_in_smartphone_panoramic_photograph.jpg/1280px-20220318_Stitching_anomalies_in_smartphone_panoramic_photograph.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "人走後，雲端怎麼辦？", "description": "一個人離開後，家人留下的不只房屋、存款與相簿，還有雲端相片、聊天紀錄、訂閱、社群帳號與可能找不到鑰匙的加密資產。這些東西既像遺物，又不像紙箱裡的遺物：它們被帳戶、加密、服務條款和仍在世的通訊對象包圍。本文整理平台制度、台灣法制與家屬經驗，探問的不是「家人能不能登入」，而是誰應在何種範圍內替亡者作決定。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-20-digital-legacy/", "datePublished": "2026-07-20", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/20220318_Stitching_anomalies_in_smartphone_panoramic_photograph.jpg/1280px-20220318_Stitching_anomalies_in_smartphone_panoramic_photograph.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>人走後，雲端怎麼辦？</h1>
+<p class="byline"><time>2026-07-20</time></p>
+</div>
+
+<p class="lead">一個人離開後，家人留下的不只房屋、存款與相簿，還有雲端相片、聊天紀錄、訂閱、社群帳號與可能找不到鑰匙的加密資產。這些東西既像遺物，又不像紙箱裡的遺物：它們被帳戶、加密、服務條款和仍在世的通訊對象包圍。本文整理平台制度、台灣法制與家屬經驗，探問的不是「家人能不能登入」，而是誰應在何種範圍內替亡者作決定。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/20220318_Stitching_anomalies_in_smartphone_panoramic_photograph.jpg/1280px-20220318_Stitching_anomalies_in_smartphone_panoramic_photograph.jpg" alt="手機拍下的個人影像資料｜來源：Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>手機相簿讓日常記憶易於累積，也使它們在帳戶持有人離世後成為難以分開處理的數位遺物。</figcaption></figure>
+<h2>帳號、內容與財產，不是同一件事</h2>
+<p>把所有線上資料叫做「數位遺產」很方便，卻容易遮蔽差異。銀行存款、交易所託管的資產、網域或可授權的著作，涉及可估價的財產；相片、信件與訊息則同時承載回憶、隱私與其他人的資料；社群帳號本身通常又是使用者與平台之間的契約關係。英國《金融時報》曾以 iCloud 相片案說明：即使家人認為相片應屬遺物，平台條款與帳戶不可轉讓的設計仍可能令取回資料需要額外程序。¹</p>
+<p>這個區分不是文字遊戲。美國州法處理數位資產時，也曾在「通訊內容」與其他電子記錄之間劃線；美聯社報導，平台以電子通訊隱私法為由，通常不會因繼承關係自動交出信件或相片。² 德國聯邦最高法院在 2018 年判決父母可取得已故女兒的 Facebook 帳號資料，將帳號比擬為信件；但判決回答的是個案的繼承關係，並沒有建立全球一致的帳戶移轉規則。³ 因此，最常見的直覺——「我是繼承人，就該拿到密碼」——既未必符合平台規則，也未必符合亡者的意思。BBC 採訪過希望讀取女兒私人訊息的母親；Facebook 當時的回覆是可把頁面紀念化，卻不提供登入或私人訊息。⁴</p>
+<p>另一個角度是，私人對話不只有亡者一人：每一封信、每段對話都可能包含仍在世者未同意轉交的資訊。家屬的哀傷與查明需要是真實的，平台所說的安全與通訊隱私也不是可以略過的技術藉口。路透社關於死後虛擬人格的報導指出，多國對亡者資料的規範仍有缺口；這使家屬、平台與資料中的第三人，可能各自援引不同的權益。⁵</p>
+<p>（分析）與其問「數位遺產能否全部繼承」，較精確的問題是：哪一類資料有財產性、誰曾參與它、亡者是否留下明確意願，以及平台能否以不交出完整帳密的方式完成必要處理。這四個問題的答案可能不同，也正是單一「數位遺囑」難以一鍵解決的原因。</p>
+<h2>平台提供工具，卻不提供同一種答案</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Cloud_Computing_Architecture.jpg/1280px-Cloud_Computing_Architecture.jpg" alt="雲端運算架構的視覺圖示｜來源：Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>雲端服務把相片、文件與帳號集中到同一套基礎設施，但每一項資料的死後處理權限可能不同。</figcaption></figure>
+<p>大型平台已把「最後一次登入」當成產品設計的一部分，但制度彼此差異很大。Apple 的 Legacy Contact 讓帳戶持有人事先指定聯絡人；申請者需提交存取金鑰與死亡證明。Apple 說，聯絡人可取得 iCloud 中的相片、備忘錄、檔案與部分資料，但不能取得付款資訊、鑰匙圈密碼或受授權付款資料。⁶ 這不是把 Apple 帳號轉讓給別人，而是針對特定資料提供存取管道。</p>
+<p>Google 的 Inactive Account Manager 則以「長期未活動」而不是死亡證明作為觸發設計。使用者可設定閒置期間、通知對象、可分享的產品資料，或讓帳戶在後續刪除；Google 也說，家屬可以另循申請流程要求關閉帳戶或取得資料。⁷ 這種設計的優點是使用者能預先選擇資料範圍；限制則是未設定者，仍得由家屬面對平台個案審核。</p>
+<p>Meta 的做法更接近社群追思。平台提供追思帳號、指定 legacy contact 與刪除等選項；被指定者可管理某些公開層面的項目，例如追思貼文或個人檔案資訊，卻不能以亡者身分登入，也不能讀取私人訊息。⁸ 這個邊界反映平台的判斷：紀念空間可以保留，但私人通訊不應因死亡自動對家人開放。 同樣是帳戶，這三套制度已顯示一個關鍵事實：設定工具會先於死亡事件、也先於繼承程序發揮作用。AP 的 2024 年整理也指出，Apple、Google、Meta、TikTok 等公司各有不同文件要求、可存取資料與紀念機制；沒有可通用的單一窗口。⁹ Guardian 記者訪問處理親人帳戶的家庭後形容，死亡後要處理銀行、帳單、電郵、串流服務與社群，往往把行政負擔疊在喪親期間。¹⁰</p>
+<p>工具也可能改變保存的時間。2023 年，X 當時宣布清理長期未活動帳戶，引發部分家屬憂慮已故親人的貼文與檔案會消失；AP 報導一名女子多年以妹妹的帳戶維繫哀悼，卻發現帳戶已不在。¹¹ 這不能證明所有帳戶都會同樣被移除，卻提醒「留下」從不是自動的預設值。平台可能改名、改條款、關閉產品，或只保留可見的頁面而不保留可下載的完整資料。</p>
+<p>（分析）平台工具值得使用，但不宜被理解為萬全保險。它們能把意願轉成平台可執行的設定，卻無法替人決定哪些訊息該讓誰看、也無法保證未來所有產品都採相同規則。對使用者而言，重要的不是記住所有選單位置，而是把「誰可處理哪一類資料、可以做什麼、不能做什麼」說清楚。</p>
+<h2>台灣法制：有繼承原則，沒有帳號專法</h2>
+<figure><img src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1200" alt="法律文件與法制脈絡｜來源：Unsplash" loading="lazy"><figcaption>制度的難處不在於「資料是否存在」，而在於一份資料同時可能是財產、私人通信、契約紀錄與家族記憶。</figcaption></figure>
+<p>台灣現行民法第 1148 條規定，繼承人自繼承開始時承受被繼承人財產上的一切權利、義務，但專屬於被繼承人本身者不在此限。¹² 這可以處理部分具有財產性的項目，例如銀行帳戶中餘額或某些可證明的財產權利；但它不會自動回答 Gmail、LINE、社群帳號或雲端相簿的使用權能否移轉。平台帳號通常還受服務條款、驗證方式和通訊資料牽連。</p>
+<p>法務部的一則行政函釋顯示了較具體的金融邏輯：繼承人基於承受銀行帳戶的法律關係，提供合法繼承文件後，可以請求被繼承人帳戶往來資料；但銀行仍負有保密義務，而資料若牽涉生存第三人，也有個資與法規上的限制。¹³ 這則函釋談的是銀行帳戶，不宜擴張解讀成「所有網路帳號都可由繼承人登入」。它反而說明，不同資料類型要分別看權利基礎與被影響的人。</p>
+<p>公視 2026 年對數位遺產的專題採訪指出，台灣對數位遺產仍缺乏明確的專門定義與配套，實務上可能在民法、遺囑、信託、平台條款與虛擬資產監管之間處理。¹⁴ 報導訪問的學者把有經濟價值的虛擬資產、具有情感價值的郵件與社群內容區分討論；這與上述平台制度的差異相互呼應。</p>
+<p>需要特別避免兩種過度推論。第一，亡者不受現行個資法對「生存自然人」的定義保護，不等於任何人就能任意公開其資料；合約、通訊秘密、其他人的個資與人格利益仍可能構成限制。¹⁵ 第二，財產可以繼承，不表示平台帳號的登入權、訂閱授權或聊天內容也隨之完全移轉。就台灣而言，這些界線仍有待更多個案與制度釐清。</p>
+<h2>遺物會安慰人，也可能刺痛人</h2>
+<figure><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200" alt="家庭與數位記憶的關係｜來源：Unsplash" loading="lazy"><figcaption>從紙本相簿到雲端圖庫，家人面對的並非單純檔案，而是帶著關係脈絡的記憶。</figcaption></figure>
+<p>帳號的價值往往不是金額。紐約時報記者在繼父去世後翻看舊 iPad，發現相片、備忘錄、播放清單與訊息保存了日常中原本不會被當成遺物的碎片；這些數位痕跡能帶來意外的親近感，也會令人猶豫是否越過亡者未曾允許的界線。¹⁶ 這種矛盾不是技術故障，而是數位生活把「私人的」與「可保存的」疊在同一個裝置裡。</p>
+<p>追思帳號也不是對每一位家屬都同樣有益。AP 報導過一名男子在妹妹的 Facebook 追思帳戶中獲得社群支持，卻同時反覆看到妹妹與加害者同框的照片；他希望移除，平台僅處理一部分。¹⁷ 對一些人而言，公開留言牆是共同哀悼的場所；對另一些人，演算法推送的生日提醒、舊照片或不想保留的貼文，可能在未預期時重啟創傷。Meta 2019 年調整紀念帳號工具，便曾以降低令人痛苦的提醒為理由。¹⁸</p>
+<p>這也是家屬不應被視為單一意見團體的原因。配偶、父母、子女、朋友、工作夥伴與對話中的第三人，對同一批資料的關係並不相同。當亡者沒有留下指示時，平台採取謹慎限制，可能使某些家屬覺得冷酷；若平台毫無限制地開放，又可能讓另一位家屬或對話者覺得被背叛。</p>
+<p>（分析）比較可行的原則不是「保存一定比刪除好」，也不是「隱私一定壓過哀悼」，而是先將資料分層：公開貼文、家庭相片、私人通訊、財務與工作資料，分別確認目的、受託人與保存期限。這種分層不能消除傷痛，卻可避免在最混亂的時刻把不可逆的刪除或過度曝光當成唯一選項。</p>
+<h2>安全設計，讓「交出密碼」不再是好建議</h2>
+<figure><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200" alt="電腦工作區與帳號安全｜來源：Unsplash" loading="lazy"><figcaption>帳號安全的目標是避免冒用；身後規劃的難題在於，如何在不降低這個目標下交代必要權限。</figcaption></figure>
+<p>過去家庭常用一張紙記下帳密，期待在緊急時派上用場。但這個辦法會把詐騙、外洩與生前越權的風險一併交出去，也不會告訴家人哪些資料可以看、哪些只應刪除。金融時報提醒，遺囑可能成為可公開文件，密碼不宜直接寫進遺囑；它引用的建議是另行保存帳戶清單與處理意願。¹⁹ 這不是鼓勵家人繞過平台驗證，而是承認「知道帳密」與「獲適當授權」是兩件事。</p>
+<p>近年的設計趨勢也提高了這個難度。雙重驗證、硬體金鑰、通行密鑰與端對端加密，能降低帳號被盜的機率；同時，持有人若未設置恢復與受託程序，家屬即使拿到裝置也未必能合法或技術上進入。以 Apple 的 Advanced Data Protection 為例，蘋果說啟用後部分 iCloud 資料採端對端加密，使用者需自行建立帳號復原方式；這強化隱私，也增加使用者規畫復原資訊的重要性。²⁰</p>
+<p>加密資產把這種張力推到極端。路透社 2019 年報導加拿大 Quadriga 事件時，該交易平台創辦人死亡後，客戶資產因冷錢包與密碼問題遭凍結；後續事件本身還有公司治理與刑事調查脈絡，不能簡化成「忘了留密碼」的單一教訓。²¹ 不過它確實顯示：對自我保管資產而言，法律上可繼承不必然等於技術上可取得。</p>
+<p>（分析）安全與繼承不是互相排斥的目標。較低風險的做法，是分別留下帳戶清單、資料位置、各項處理指示與可由受託人啟動的平台功能；實際憑證則放在適當的安全機制或專業規畫中。是否需要遺囑、信託、律師或會計師，取決於資產、家庭與法律情況，本文不提供個別法律或投資建議。</p>
+<h2>當資料開始「模仿說話」，同意應更早被問</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/01152023_Using_the_Wayback_Machine_for_refs_-_ComplexRational_-_Wikipedia_Day_2023.jpg/1280px-01152023_Using_the_Wayback_Machine_for_refs_-_ComplexRational_-_Wikipedia_Day_2023.jpg" alt="使用網路典藏工具的活動畫面｜來源：Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>保存數位資料與讓資料被重新組合、模擬或生成新的互動內容，是不同層次的決定。</figcaption></figure>
+<p>數位遺產的爭論正在從「能否讀取」延伸到「能否再造」。路透社基金會 2020 年報導，利用已故者資料打造聊天機器人、影像或虛擬人格的服務，引出死後同意、資料來源與商業使用的問題；受訪研究者指出，多國對亡者資料的保護仍不完整。²² 這些服務不必然相同：有些是生前由本人錄製故事，有些則可能主要依賴既有訊息、影像或社群資料。差異在於本人是否知情、同意的具體範圍及後人是否能停止使用。</p>
+<p>2025 年《紐約時報》長篇報導所稱的 grief tech，呈現的正是這種分歧：有家庭希望留下可回答問題的影像化故事，也有研究者與親人質疑，互動式替身是否把哀傷交給商業產品來定義。²³ 對讀者而言，這不是要求大家立刻接受或拒絕虛擬分身，而是提醒資料處理指示不該只寫「保留」或「刪除」。</p>
+<p>至少可以再問三件事：能否使用文字與聲音訓練模型？能否公開發布？受託人是否有權撤回？若未說明，保守做法通常比推定「家人會喜歡」更能尊重本人。英國《衛報》引述心理學者 Elaine Kasket 的觀點，數位空間使亡者仍可在社會互動中被遇見；正因如此，是否延續、如何延續，不只是資料保存的技術題，也關乎生者如何繼續建立關係。²⁴</p>
+<p>（分析）AI 沒有創造這個倫理問題，而是放大了它。相片、語音與聊天紀錄原已足以讓親人感覺亡者仍在場；生成式工具把這些痕跡轉成可回應的介面。越接近「代替一個人說話」，越需要明確、可撤回、可被理解的同意，而不是只依家屬的善意推定。</p>
+<h2>預先整理，不是替家人留下萬用鑰匙</h2>
+<figure><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200" alt="共同整理數位生活的工作場景｜來源：Unsplash" loading="lazy"><figcaption>家庭長年累積的裝置與帳戶，往往沒有一張清單可以說明哪些資料重要、哪些只需結清。</figcaption></figure>
+<p>準備數位身後事，最容易落入兩個極端：完全不碰，或把全部帳密交給一人。前者會讓家屬在急難中從信用卡帳單、舊手機與收件匣猜測資產和訂閱；後者則可能讓受託人過早接觸不該看的私人資料。NYT 2025 年的實用指引建議把線上帳戶、資料與處理指示納入遺產規畫；重點並非某一款產品，而是留下可辨認的資料地圖。²⁵</p>
+<p>較可操作的方式，是把清單分為四欄。第一欄是「位置」：有哪些電子郵件、雲端、付款、社群、工作與裝置帳戶。第二欄是「目的」：哪些是財產或持續扣款，哪些是家庭相片，哪些是私人通信。第三欄是「指示」：保存、下載後刪除、申請紀念化、關閉，或僅通知特定人。第四欄是「進入方式」：優先使用平台的 Legacy Contact、閒置帳戶管理或官方身後申請程序，而不是鼓勵冒用。</p>
+<p>這張清單不必包含密碼，也不應因存在清單就自動授權查看所有內容。它應定期更新，並讓被指定的人知道自己被指定、知道責任範圍。AP 的整理指出，多家平台要求死亡證明與身分、親屬或法定代表文件；事先告知受託人，至少能減少家人根本不知道要向哪一家公司提出什麼申請的困境。²⁶</p>
+<p>有財產、跨國帳戶、企業資料、未成年子女或加密資產者，情況可能牽涉稅務、遺囑與專業保管，宜尋求合格法律或財務專業人士協助。這裡的清單只是生活整理，不替代台灣的遺囑要件、平台契約或個案法律意見。更重要的是，受託人也可以被指定為「只負責通知與保存」，而不是被授權成為亡者的完整替身。</p>
+<h2>誰能決定，取決於先前有沒有說明</h2>
+<figure><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200" alt="個人裝置中的資料與連線｜來源：Unsplash" loading="lazy"><figcaption>資料在技術上可被集中保存，並不等於它在倫理或法律上可以被同一個人完整接手。</figcaption></figure>
+<p>數位遺產最不尋常之處，是它把看似不同的問題擠進同一個登入頁面：一張已故父親的照片、未讀的私人訊息、一筆待取消的訂閱、可被繼承的資產、與他人共同擁有的工作檔案，都可能被同一組帳號保護。平台以帳戶安全回應，家屬以親屬關係回應，法律再以財產、契約或隱私回應；彼此不是必然錯誤，只是問的問題不同。</p>
+<p>德國 Facebook 判決與美國數位資產立法的新聞都說明，制度可把某些帳戶或資料放進繼承框架；但 Reuters 與 AP 所呈現的案例也提醒，真正難處往往是存取範圍，而不是抽象地承認「有數位遺產」。²⁷ 例如，管理人能否下載相片？能否讀私人信？能否代表亡者發文？能否訓練聊天機器人？每一題都應有不同門檻。</p>
+<p>對平台而言，更清楚的資料分級、可匯出格式、可撤回的身後設定與對家屬的文件說明，能減少灰色地帶。對政府而言，若未來討論制度，也需同時看見財產保護、亡者意願、活著的對話者隱私與弱勢家屬取得必要資料的需求。對個人而言，最小但實際的開始，或許是把最重要的資料位置與意願說給可信任的人。</p>
+<p>（分析）這不是把死亡變成待辦事項，也不是把親密關係外包給平台。它是承認：當生活被大量記錄在可驗證、可複製又可被演算法重新喚起的系統裡，我們需要在仍能表達時，替他人留下界線。界線越具體，家人越不必在哀傷中猜測，平台也越不必替一個沉默的人做決定。 回到普通家庭的場景，數位遺產不一定從巨額加密資產或重大訴訟開始。它更可能從一支無法解鎖的舊手機、一個持續扣款卻找不到取消入口的帳戶、孩子想保存的旅行照片，或某人不希望家人讀到的對話開始。這些問題沒有共同的答案，因為家庭關係與亡者意願不同；但沒有答案，不等於只能等問題發生才處理。</p>
+<p>可以先做一個不涉及密碼的盤點：哪些帳戶與資料若三個月後仍無人處理，會造成損失或遺憾？哪些資料希望某人保存？哪些只要通知關閉？哪些絕不希望被閱讀或拿來模擬聲音？再把這些意願交給知道其存在、且願意承擔有限責任的人。若後來意願改變，應更新這份指示及平台設定。</p>
+<p>這樣的安排也承認一個容易忽略的事實：受託人不是檔案管理員而已。他可能正經歷喪親，還要面對客服文件、帳單、親族意見與隱私界線。清楚的資料地圖可以減少行政摩擦，但不應把所有情感難題塞給一個人。若有多位家屬，預先說明誰處理財務、誰保管家庭相片、誰有權申請刪除或追思狀態，通常比事後以猜測亡者心意來協商更能避免衝突。</p>
+<p>最後，值得保留的是「拒絕被保存」的可能。人們有理由希望後代看到照片，也有人希望某些訊息與帳戶隨自己停止。尊重數位遺產，不只意味著替資料找到下一位主人，也意味著承認有些資料不該有下一位主人。這個選擇若能在生前說明，才有機會在死後被真正聽見。 還有一個實務上的原則，是把「可取得」與「應取得」分開。技術上解得開的裝置，不代表家人應該瀏覽所有內容；技術上無法解鎖的帳戶，也不代表家人無法透過平台的正式程序完成停止扣款、保存公開追思頁或申請資料副本。前者需要自我節制，後者需要耐心與證明文件。</p>
+<p>在此意義上，數位身後規畫並非只有法律文件或資安工具，也是一種家庭溝通。它讓人討論相片要留在哪裡、哪些私人訊息不宜查看、哪些訂閱與付款須先結清、哪些資料具有工作保密性，以及若發生意外誰能先收到通知。這些談話未必容易，卻比在失去一個人之後，從沉默的登入畫面猜測他的意願更有機會保留尊嚴。</p>
+<p>平台的制度仍會變、法律仍可能補上空白，裝置與加密方法也會演進；所以最耐用的安排不是某一份永不改動的密碼表，而是一份可更新的意願、一個知道如何取得協助的受託人，以及對他人隱私的清楚界線。對大多數人來說，這或許已是讓數位生活在自己離開後不至成為家人額外負擔的起點。</p>
+<p>本文所述平台功能與法規均可能更新；讀者應在採取個別行動前查閱原始政策，並依自身情況取得專業意見。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ Financial Times（2019-11-22）— “What happens to your digital assets when you die?”
+<a href="https://www.ft.com/content/8ed79406-06f3-11ea-9afa-d9e2401fa7ca" rel="noopener" target="_blank">https://www.ft.com/content/8ed79406-06f3-11ea-9afa-d9e2401fa7ca</a></p>
+<p class="ref">² Associated Press（2016-10-02）— “Who inherits a selfie? States seek to fill privacy law gaps”
+<a href="https://apnews.com/article/a5cffa3176e84fe5b99367877001e07c" rel="noopener" target="_blank">https://apnews.com/article/a5cffa3176e84fe5b99367877001e07c</a></p>
+<p class="ref">³ Reuters（2018-07-12）— “Heirs can access Facebook account of deceased relatives”
+<a href="https://www.reuters.com/article/world/heirs-can-access-facebook-account-of-deceased-relatives-german-court-idUSKBN1K219T/" rel="noopener" target="_blank">https://www.reuters.com/article/world/heirs-can-access-facebook-account-of-deceased-relatives-german-court-idUSKBN1K219T/</a></p>
+<p class="ref">⁴ BBC News（2015-04-01）— “Facebook: Mother fights to access dead daughter’s account”
+<a href="https://www.bbc.com/news/uk-32151999" rel="noopener" target="_blank">https://www.bbc.com/news/uk-32151999</a></p>
+<p class="ref">⁵ Reuters（2020-04-17）— “Data of the dead: Virtual immortality exposes holes in privacy laws”
+<a href="https://www.reuters.com/article/world/data-of-the-dead-virtual-immortality-exposes-holes-in-privacy-laws-idUSKBN21Z0NE/" rel="noopener" target="_blank">https://www.reuters.com/article/world/data-of-the-dead-virtual-immortality-exposes-holes-in-privacy-laws-idUSKBN21Z0NE/</a></p>
+<p class="ref">⁶ Apple Support（更新於 2024）— “How to add a Legacy Contact for your Apple Account”
+<a href="https://support.apple.com/en-us/102631" rel="noopener" target="_blank">https://support.apple.com/en-us/102631</a></p>
+<p>若把這件事留到「以後再說」，以後通常只會多出帳戶、更多相片、更多人際關係與更多資料類型。真正需要被保存的也許不是每一筆歷史，而是本人對界線的判斷：哪些可交給誰、哪些只留給自己、哪些應在適當時候安靜結束。當這份判斷被說出來，家人面對的就不再只是一個要求輸入密碼的畫面，而是一份能理解、也能尊重的選擇。</p>
+<p class="ref">⁷ Google Account Help（查閱：2026-07-20）— “Inactive Account Manager”
+<a href="https://support.google.com/accounts/answer/6357606?hl=en" rel="noopener" target="_blank">https://support.google.com/accounts/answer/6357606?hl=en</a></p>
+<p class="ref">⁸ Meta Transparency Center（查閱：2026-07-20）— “Memorialization”
+<a href="https://transparency.meta.com/en-us/policies/community-standards/memorialization/" rel="noopener" target="_blank">https://transparency.meta.com/en-us/policies/community-standards/memorialization/</a></p>
+<p class="ref">⁹ Associated Press（2024-10-24）— “One Tech Tip: How to prepare your online accounts for when you die”
+<a href="https://apnews.com/article/apple-google-instagram-facebook-tiktok-03f23c18e54e2d81edc66c3adf6e3838" rel="noopener" target="_blank">https://apnews.com/article/apple-google-instagram-facebook-tiktok-03f23c18e54e2d81edc66c3adf6e3838</a></p>
+<p class="ref">¹⁰ The Guardian（2024-01-21）— “Digital afterlife – how to deal with social media accounts when someone dies”
+<a href="https://www.theguardian.com/society/2024/jan/21/digital-afterlife-how-to-deal-with-social-media-accounts-when-someone-dies" rel="noopener" target="_blank">https://www.theguardian.com/society/2024/jan/21/digital-afterlife-how-to-deal-with-social-media-accounts-when-someone-dies</a></p>
+<p class="ref">¹¹ Associated Press（2023-05-23）— “Twitter plans to purge inactive accounts, alarming some users”
+<a href="https://apnews.com/article/twitter-elon-musk-dead-users-inactive-accounts-49c96ee9c0723a60c82da55f3616c96d" rel="noopener" target="_blank">https://apnews.com/article/twitter-elon-musk-dead-users-inactive-accounts-49c96ee9c0723a60c82da55f3616c96d</a></p>
+<p class="ref">¹² 全國法規資料庫（查閱：2026-07-20）—「民法第 1148 條」
+<a href="https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?PCode=B0000001" rel="noopener" target="_blank">https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?PCode=B0000001</a></p>
+<p class="ref">¹³ 法務部行政函釋（2010-06-07）—「繼承人向金融機構申請被繼承人帳戶資料」
+<a href="https://mojlaw.moj.gov.tw/LawContentExShow.aspx?id=FE277219&amp;type=e" rel="noopener" target="_blank">https://mojlaw.moj.gov.tw/LawContentExShow.aspx?id=FE277219&amp;type=e</a></p>
+<p class="ref">¹⁴ 公視新聞網（2026-04-06）—「數位遺產怎麼處理？帳號、虛擬資產與遺囑的法律難題」
+<a href="https://news.pts.org.tw/article/802330" rel="noopener" target="_blank">https://news.pts.org.tw/article/802330</a></p>
+<p class="ref">¹⁵ 法務部（查閱：2026-07-20）—「Personal Data Protection Act」
+<a href="https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?PCode=I0050021" rel="noopener" target="_blank">https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?PCode=I0050021</a></p>
+<p class="ref">¹⁶ The New York Times（2023-05-02）— “Digital Remembrances”
+<a href="https://www.nytimes.com/interactive/2023/05/02/business/digital-remembrances.html" rel="noopener" target="_blank">https://www.nytimes.com/interactive/2023/05/02/business/digital-remembrances.html</a></p>
+<p class="ref">¹⁷ Associated Press（2024-10-24）— “One Tech Tip: How to prepare your online accounts for when you die”
+<a href="https://apnews.com/article/apple-google-instagram-facebook-tiktok-03f23c18e54e2d81edc66c3adf6e3838" rel="noopener" target="_blank">https://apnews.com/article/apple-google-instagram-facebook-tiktok-03f23c18e54e2d81edc66c3adf6e3838</a></p>
+<p class="ref">¹⁸ Meta Transparency Center（查閱：2026-07-20）— “Memorialization”
+<a href="https://transparency.meta.com/en-us/policies/community-standards/memorialization/" rel="noopener" target="_blank">https://transparency.meta.com/en-us/policies/community-standards/memorialization/</a></p>
+<p class="ref">¹⁹ Financial Times（2019-11-22）— “What happens to your digital assets when you die?”
+<a href="https://www.ft.com/content/8ed79406-06f3-11ea-9afa-d9e2401fa7ca" rel="noopener" target="_blank">https://www.ft.com/content/8ed79406-06f3-11ea-9afa-d9e2401fa7ca</a></p>
+<p class="ref">²⁰ Apple Support（更新於 2024）— “About Advanced Data Protection for iCloud”
+<a href="https://support.apple.com/en-us/102651" rel="noopener" target="_blank">https://support.apple.com/en-us/102651</a></p>
+<p class="ref">²¹ Reuters（2019-02-05）— “Millions in cryptocurrencies frozen after Canadian founder’s death”
+<a href="https://www.reuters.com/article/technology/millions-in-cryptocurrencies-frozen-after-canadian-founders-death-idUSKCN1PU024/" rel="noopener" target="_blank">https://www.reuters.com/article/technology/millions-in-cryptocurrencies-frozen-after-canadian-founders-death-idUSKCN1PU024/</a></p>
+<p class="ref">²² Reuters（2020-04-17）— “Data of the dead: Virtual immortality exposes holes in privacy laws”
+<a href="https://www.reuters.com/article/world/data-of-the-dead-virtual-immortality-exposes-holes-in-privacy-laws-idUSKBN21Z0NE/" rel="noopener" target="_blank">https://www.reuters.com/article/world/data-of-the-dead-virtual-immortality-exposes-holes-in-privacy-laws-idUSKBN21Z0NE/</a></p>
+<p class="ref">²³ The New York Times（2025-02-12）— “The Rise of Grief Tech”
+<a href="https://www.nytimes.com/2025/02/12/technology/personaltech/social-media-accounts-death.html" rel="noopener" target="_blank">https://www.nytimes.com/2025/02/12/technology/personaltech/social-media-accounts-death.html</a></p>
+<p class="ref">²⁴ The Guardian（2024-01-21）— “Digital afterlife – how to deal with social media accounts when someone dies”
+<a href="https://www.theguardian.com/society/2024/jan/21/digital-afterlife-how-to-deal-with-social-media-accounts-when-someone-dies" rel="noopener" target="_blank">https://www.theguardian.com/society/2024/jan/21/digital-afterlife-how-to-deal-with-social-media-accounts-when-someone-dies</a></p>
+<p class="ref">²⁵ The New York Times（2025-02-12）— “The Rise of Grief Tech”
+<a href="https://www.nytimes.com/2025/02/12/technology/personaltech/social-media-accounts-death.html" rel="noopener" target="_blank">https://www.nytimes.com/2025/02/12/technology/personaltech/social-media-accounts-death.html</a></p>
+<p class="ref">²⁶ Associated Press（2024-10-24）— “One Tech Tip: How to prepare your online accounts for when you die”
+<a href="https://apnews.com/article/apple-google-instagram-facebook-tiktok-03f23c18e54e2d81edc66c3adf6e3838" rel="noopener" target="_blank">https://apnews.com/article/apple-google-instagram-facebook-tiktok-03f23c18e54e2d81edc66c3adf6e3838</a></p>
+<p class="ref">²⁷ Reuters（2018-07-12）— “Heirs can access Facebook account of deceased relatives”
+<a href="https://www.reuters.com/article/world/heirs-can-access-facebook-account-of-deceased-relatives-german-court-idUSKBN1K219T/" rel="noopener" target="_blank">https://www.reuters.com/article/world/heirs-can-access-facebook-account-of-deceased-relatives-german-court-idUSKBN1K219T/</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
