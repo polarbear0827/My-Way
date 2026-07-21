@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>銀幕還未發聲時 · 穗稻忠武的專欄</title>
+<meta name="description" content="電影抵達臺灣的歷史，常被壓縮成「技術傳入」：一臺放映機、一面銀幕、幾家戲院。然而，日治時期的放映現場同時是商品市場、語言轉譯、文化啟蒙與殖民治理的交會處。從大稻埕的早期映演，到臺灣文化協會的巡迴電影隊，再到戰時的宣傳片，銀幕從來不是中性的背景。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-21-colonial-taiwan-cinema-public-space/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="銀幕還未發聲時">
+<meta property="og:description" content="電影抵達臺灣的歷史，常被壓縮成「技術傳入」：一臺放映機、一面銀幕、幾家戲院。然而，日治時期的放映現場同時是商品市場、語言轉譯、文化啟蒙與殖民治理的交會處。從大稻埕的早期映演，到臺灣文化協會的巡迴電影隊，再到戰時的宣傳片，銀幕從來不是中性的背景。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-21-colonial-taiwan-cinema-public-space/">
+<meta property="og:image" content="https://tlvm.nmtl.gov.tw/FileUploads/e21e87df-1fc.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "銀幕還未發聲時", "description": "電影抵達臺灣的歷史，常被壓縮成「技術傳入」：一臺放映機、一面銀幕、幾家戲院。然而，日治時期的放映現場同時是商品市場、語言轉譯、文化啟蒙與殖民治理的交會處。從大稻埕的早期映演，到臺灣文化協會的巡迴電影隊，再到戰時的宣傳片，銀幕從來不是中性的背景。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-21-colonial-taiwan-cinema-public-space/", "datePublished": "2026-07-21", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://tlvm.nmtl.gov.tw/FileUploads/e21e87df-1fc.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>銀幕還未發聲時</h1>
+<p class="byline"><time>2026-07-21</time></p>
+</div>
+
+<p class="lead">電影抵達臺灣的歷史，常被壓縮成「技術傳入」：一臺放映機、一面銀幕、幾家戲院。然而，日治時期的放映現場同時是商品市場、語言轉譯、文化啟蒙與殖民治理的交會處。從大稻埕的早期映演，到臺灣文化協會的巡迴電影隊，再到戰時的宣傳片，銀幕從來不是中性的背景。¹²</p>
+<figure><img src="https://tlvm.nmtl.gov.tw/FileUploads/e21e87df-1fc.jpg" alt="日治時期臺灣影像史料｜來源：國立臺灣文學館" loading="lazy"><figcaption>這張典藏影像提醒我們：早期電影史能留下來的，往往先是被機構保存與命名的片段。</figcaption></figure>
+<p>本文以博物館典藏、電影機構研究、學術期刊與新聞報導重建這段歷史。可被多方確認的是：電影在二十世紀初已進入臺灣、辯士是重要的觀影中介、民間與官方都曾運用巡迴放映。至於「觀眾如何理解每一場放映」，受限於留存材料，不能被單一官方影像或報紙廣告完全代表。本文因此把殖民政府、商業戲院、文化運動者與觀眾可能的經驗分開討論。³</p>
+<h2>一、不是一條技術時間線</h2>
+<figure><img src="https://tlvm.nmtl.gov.tw/FileUploads/e21e87df-1fc.jpg" alt="早期電影與文學展覽影像｜來源：國立臺灣文學館" loading="lazy"><figcaption>國立臺灣文學館的展覽將電影、流行歌與文學材料並置，說明影像並非獨立於其他媒介之外。</figcaption></figure>
+<p>國立臺灣文學館的整理指出，高松豐次郎1901年來臺巡迴放映，1907年受官方委託拍攝《臺灣實況介紹》；該片被列為臺灣最早的紀錄片之一。館方同時指出，1911年西門町芳乃亭開設後，電影逐漸嵌入娛樂、教育與政治宣傳。¹國立臺灣圖書館刊載的蔡錦堂文章亦將高松視為早期關鍵人物，並記錄其1907年拍攝由總督府委託的作品。⁴</p>
+<p>這些說法不等於「臺灣電影由一位日本人創造」。它們描述的是設備、資本與行政網絡如何進入殖民地。研究者Laura Jo-Han Wen以「殖民臺灣的電影與其他媒介交會」為問題，提醒早期電影還得與幻燈、報紙及流行音樂一起理解；其研究把1899年大稻埕的活動影像放映視為可考的早期紀錄。⁵因此，所謂起點其實取決於問的是第一次公開放映、第一部在地拍攝影像，還是穩定的放映制度。</p>
+<h2>二、戲院把城市變成市場</h2>
+<figure><img src="https://uc.udn.com.tw/photo/2020/05/27/99/7942563.jpg" alt="日治時期電影廣告圖像｜來源：聯合報系鳴人堂" loading="lazy"><figcaption>廣告留下片名、辯士與場館競爭的線索，但它首先是招徠觀眾的商業文本。</figcaption></figure>
+<p>1910年代臺北的戲院並非只在播放影片。聯合報系鳴人堂以《臺灣日日新報》廣告與記事追溯芳乃亭、世界館競爭：1917年芳乃亭刊登商業電影廣告，1918年世界館跟進；報導並指出兩館以日活片源、辯士與新建築彼此競逐。⁶同一研究提到，新世界館1920年落成，設一、二樓座位及不同等級票價，可容納1,500人。這是報紙記載與作者解讀，不宜延伸成所有城市、所有觀眾都有同樣的消費能力。</p>
+<p>研究資料也顯示影片來源並不單一。Wen的論文寫到，至1925年，臺北戲院與不同片商建立關係，放映日本、美國等來源的影片；影片跨境流通與殖民管道相互交織。⁵陳景峰的研究則認為，日治後期總督府與日商透過配銷、戲院改善和宣傳，形成強大的觀影市場，同時壓縮本地製作空間。⁷這是對制度的解釋，不是對每位經營者動機的判決；它也使「有很多戲院」與「有自主的電影工業」成為兩件不同的事。</p>
+<p>電影廣告可告訴我們當時想賣什麼，卻較少告訴我們誰沒有買票、誰被排除在語言與票價之外。這是材料的偏差，也是閱讀城市娛樂史時必須保留的空白。</p>
+<h2>三、辯士不是配音員</h2>
+<figure><img src="https://collections.culture.tw/files/11/JPG640/T20180018089_A001.jpg" alt="王雲峰武俠片演出廣告單｜來源：國立臺灣歷史博物館典藏" loading="lazy"><figcaption>一張廣告把片目、場館與「特聘辯士」放在同一頁，顯示解說本身就是賣點。</figcaption></figure>
+<p>默片時代，影像的跨語言移動需要人在現場處理。臺史博典藏的王雲峰演出廣告說明，新竹座邀其講解《火燒平陽城》與《英雄義俠傳》；館方介紹，辯士在放映現場解說劇情，有聲電影普及後才逐漸消失。⁸這張單據是具體的一次演出證據，不能單獨推論全臺辯士的收入、風格或政治立場。</p>
+<p>不過，學術研究支持把辯士看成不只是「替影片念字幕」。Chiu Kuei-fen在《Journal of Asian Studies》分析殖民臺灣的電影空間，認為日語對西方電影的翻譯、臺灣語對日語的再翻譯，打破了單一路徑；她也提醒，不能把辯士浪漫化為單純的抵抗者。⁹林淑美研究1926至1933年辯士與語言疆界，指出與臺灣文化協會相關的辯士活動曾與警察發生衝突；方言既可能形成暫時公共空間，也受殖民治理限制。¹⁰</p>
+<p>這兩項論點構成必要的平衡：辯士確實能改變影片被理解的方式，但他的話語並不自動等於自由。現場表演會受警察、戲院、片商與觀眾期待共同框限。把他們稱為「翻譯者」比稱為透明傳聲筒更準確，卻也不應抹去權力不對等。</p>
+<h2>四、誰能借銀幕說話</h2>
+<figure><img src="https://collections.culture.tw/files/11/JPG640/20050010195_I001.jpg" alt="《南進臺灣》膠卷典藏｜來源：國立臺灣歷史博物館典藏" loading="lazy"><figcaption>保存下來的膠卷既是史料，也是特定機構與時代選擇拍攝、剪接與保存的結果。</figcaption></figure>
+<p>電影並不只屬於戲院。國立臺灣文學館指出，臺灣文化協會1926年成立活動寫真部，在蔡培火等人支援下購置設備與影片，巡迴放映；協會分裂後，美臺團延續部分放映工作。¹¹國立臺灣圖書館的文章也記載，1920年代可攜式放映機讓學校、團體與巡迴映演更可行，並提到文化協會利用其作為文化啟蒙工具。⁴</p>
+<p>這條路線不應被寫成一段無摩擦的「銀幕解放史」。淡江大學論文比較愛國婦人會與臺灣文化協會的電影運用，指出兩個立場不同的組織都把放映視為傳達理念的工具。¹²學術材料的共同點是：電影的說服力同時被官方社會組織與文化運動者看見；差別在於目的、敘事、語言和治理位置。</p>
+<p>王文玲、李政亮等研究所引的報紙材料，也顯示上海電影、報紙連載、唱片和辯士在1930年代互相支撐。¹³把電影只當作「看一部片」會漏掉這些媒介之間的流動。觀眾在同一天可能讀廣告、聽唱片、進戲院、再從辯士口中聽到另一種說法。這種交叉並不必然推翻殖民秩序，卻使銀幕意義不完全由底片決定。</p>
+<h2>五、宣傳影像與可見的治理</h2>
+<figure><img src="https://collections.culture.tw/files/11/JPG640/20050010195_I001.jpg" alt="《南進臺灣》所記錄的殖民時期影像｜來源：國立臺灣歷史博物館典藏" loading="lazy"><figcaption>同一卷片的可見街景與不可見的拍攝選擇，必須一起被放回權力脈絡理解。</figcaption></figure>
+<p>1937至1940年間製作的《南進臺灣》是最直接的例子。臺史博典藏說明，影片由實業時代社、財界之日本社製作，臺灣總督府協助拍攝，主旨是將臺灣呈現為日本南進的基地；館方並指出，片中以旁白與剪接建構治理成果及「和諧」圖像。¹⁴這是典藏機構的脈絡說明，亦與影像研究常見的警告一致：紀錄片不是未經選擇的現實。</p>
+<p>國立臺灣圖書館文章指出，1941至1945年日本的電影審查、膠卷配給與新聞片義務放映加強，戰爭期劇情片和紀錄片難以脫離國策與宣傳。⁴臺灣傳播學刊2024年研究更從原住民族經驗切入，主張早期電影活動可能與殖民政府的綏撫、軍事鎮壓及文化清洗相連。¹⁵這是學者的分析框架，並非所有觀眾的內在感受都有直接證據；但它要求讀者不把影像中的「文明」和「進步」直接當成事實描述。</p>
+<p>反方或至少較審慎的立場是：即使宣傳片有明確意圖，它們仍保留衣著、道路、產業與日常景觀等可供研究的線索。臺史博亦如此定位《南進臺灣》：統治者的旁白有其意識形態，片中影像仍是研究時代的重要材料。¹⁴兩件事可以同時成立——影像可用，且必須被質疑。</p>
+<h2>六、保存不是把歷史洗乾淨</h2>
+<figure><img src="https://file.moc.gov.tw/001/Upload/552/relpic/15632/222926/03d823c9-cac3-49c6-a3cd-58854e68d6bb@710x470.jpg" alt="日治時期寫真帖中的臺灣｜來源：國家攝影文化中心" loading="lazy"><figcaption>典藏與數位化讓舊影像重見天日，也要求今日觀眾辨認其拍攝與展示的權力關係。</figcaption></figure>
+<p>近年修復使「只存在目錄裡」的材料回到公眾視野。Focus Taiwan報導，國家電影及視聽文化中心2025年公開其認為最早、可追至1920年代的臺灣紀錄影像；報導把它稱為罕見的日治時期社會景象。¹⁶臺史博與南藝大合作修復的材料亦在2026年於臺南放映，活動說明把《幸福的農民》及多部教育、宣傳片重新帶回老戲院。¹⁷修復提高可看性，但不會自動補回失去的聲音、缺片或未被拍攝的人。</p>
+<p>國家攝影文化中心對日治寫真帖的說明尤其清楚：照片冊一方面是歷史、社會與經濟的珍貴影像檔案，另一方面也反映統治者選擇、安排的官方觀點與宣傳意圖。¹⁸這個判斷同樣適用於電影。典藏者、修復者、策展人與研究者並非「取消」過去的影像，而是為它提供新的觀看條件。</p>
+<p>因此，修復放映不是把殖民影像變成純粹懷舊。2018年《台北時報》報導《全臺灣》放映時，參與修復者說目的在重新連結歷史、理解日本當時如何觀看臺灣。¹⁹這種說法比「回到美好舊時光」更接近檔案工作的倫理：看見畫面，也追問畫面由誰拍、為誰而拍、沒有拍到誰。</p>
+<h2>七、今天再進戲院，該帶著什麼問題</h2>
+<figure><img src="https://file.moc.gov.tw/001/Upload/552/relpic/15632/222926/d359495d-326b-415d-ab9c-ad0101582343@710x470.jpg" alt="日治時期影像展覽典藏｜來源：國家攝影文化中心" loading="lazy"><figcaption>影像展覽以標示、編目與脈絡協助觀看；它不能代替歷史本身，卻能讓觀眾辨認歷史如何被製作。</figcaption></figure>
+<p>日治時期電影史的價值不在於替今天尋找一條必然通往「臺灣電影」的直線。它讓我們看見，現代媒介從一開始就牽涉場地、票價、語言、審查、物流與誰有權解釋畫面。戲院商業競爭帶來選片與廣告；辯士使翻譯成為表演；巡迴隊把銀幕帶離都市；戰時制度又把影像拉回國策。這些力量並行、相撞，沒有任何一方能概括全部經驗。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong>若把這段歷史只寫成科技擴散，觀眾便容易忽略媒介如何分配發言權；若只寫成宣傳工具，又可能抹掉觀眾、辯士與文化工作者在縫隙中的實作。較穩妥的閱讀，是同時保留制度的強制性與接收的未定性。研究者能從廣告、影片、警察紀錄與口述材料拼出局部，但不應替缺席者補寫確定的情緒。</p>
+<p>今日的數位修復正讓這種閱讀重新成為可能。它不要求觀眾對舊畫面立即敬仰或否定，而要求更具體地提問：誰被放在鏡頭中央？誰在鏡頭外？旁白的語言遮住了什麼？在銀幕還未發聲時，真正讓畫面「說話」的人又是誰？</p>
+<h2>結語</h2>
+<p>早期臺灣電影不是一個安靜的技術序章。它是殖民地城市的消費現場、跨語言的表演舞台、文化運動的工具與戰時國家的宣傳裝置。保存與修復讓這些影像更容易被看見，卻也更需要被讀懂。對歷史負責的觀看，不是把舊膠卷當作透明窗戶，而是連同它的邊框、旁白、缺口與保存史一併看見。</p>
+<h2>八、失落的影片，留下的是旁證</h2>
+<figure><img src="https://file.moc.gov.tw/001/Upload/552/relpic/15632/222926/6218134c-1670-4ce5-b069-de3efd1eb2a7@710x470.jpg" alt="日治時期寫真帖中的都市影像｜來源：國家攝影文化中心" loading="lazy"><figcaption>靜態照片不能替代電影，但能與廣告、目錄、報紙及膠卷互相校讀，避免只依賴一種材料。</figcaption></figure>
+<p>日治電影史最棘手的問題之一，是大量片目、劇本與放映紀錄存在，作品本身卻未必留存。國立臺灣文學館介紹，1925年由臺灣映畫研究會製作的《誰之過》被視為本地人才集體製作的里程碑；這不表示今日研究者能完整重看它，而是代表相關資料足以證明其曾被製作與討論。¹¹同館也提到，1932年上海聯華公司把默片《桃花泣血記》帶到臺灣，詹天馬為宣傳寫詞，歌曲成為流行記憶的一部分。¹¹</p>
+<p>這使得「電影史」往往必須由周邊材料拼成。國家圖書館的學位論文把《戀愛與義務》與《桃花泣血記》作為案例，指出研究者需要同時對讀修復影像、字幕、訪談與文獻；其摘要稱辯士陳錘鐘的口述為理解默片解說經驗的材料之一。²⁰但口述回憶有時間距離，廣告有促銷目的，官方目錄則有行政分類，沒有一種材料可單獨充當全貌。</p>
+<p>因此，研究上的「不知道」不是失敗。譬如，某張海報可確認片名與場次，卻不能證明滿座；某段膠卷能看見街景，卻不必然讓我們知道鏡頭外的衝突。把證據的能力與限度一起寫出，才不會把殘片加工成過度完整的故事。</p>
+<h2>九、跨境影片如何在本地被重新聽見</h2>
+<figure><img src="https://uc.udn.com.tw/photo/2020/05/27/99/7942562.jpg" alt="早期電影廣告與戲院競爭｜來源：聯合報系鳴人堂" loading="lazy"><figcaption>片源的跨境流通需要在地場館、廣告、字幕與解說才能成為一次具體的觀影經驗。</figcaption></figure>
+<p>殖民期臺灣的電影文化從不是只有日本片的單向輸入。鳴人堂的廣告研究指出，1910年代末期世界館與芳乃亭既放映日活片，也出現法國與美國影片；它以日本上映與臺灣放映的時間差來描述戲院如何競爭。⁶Wen的研究同樣強調，影片、幻燈、新聞與流行音樂形成跨國而非封閉的文化網絡。⁵這些來源支持「多重來源」的判斷，卻不應讓我們忽略當時進口、審查與發行權並不對稱。</p>
+<p>上海電影的到來提供了另一個角度。李政亮的研究指出，上海影片約自1924年開始進入臺灣；在1930年代，本地的報紙、流行歌曲與辯士共同參與通俗文化的形成，並討論《望春風》如何在這個環境中成為電影實踐的一環。¹³國立臺灣文學館亦把《桃花泣血記》的電影、宣傳歌與唱片並列，讓我們看到影片不是進戲院才開始，也不在散場時結束。¹¹</p>
+<p>「本地化」因此不是把外來內容變成純粹本土的神話。三澤真美惠的研究以「在地化」描述殖民時期的接受過程，特別指出不同語言和發行管道的重要性。²¹較審慎的說法是：在地觀眾、辯士與商人可能重組影片意義，但仍在殖民市場、審查與語言權力的限制中活動。</p>
+<h2>十、原住民族影像不能只當風景</h2>
+<figure><img src="https://file.moc.gov.tw/001/Upload/552/relpic/15632/222926/d359495d-326b-415d-ab9c-ad0101582343@710x470.jpg" alt="國家攝影文化中心典藏之殖民時期影像｜來源：國家攝影文化中心" loading="lazy"><figcaption>殖民影像裡的風景、人群與建設常被安排為治理成果；閱讀時須追問被攝者是否有發言位置。</figcaption></figure>
+<p>早期電影與原住民族的關係尤其不能只以「珍貴民俗畫面」帶過。國立臺灣文學館指出，高松豐次郎受官方委託拍攝的《臺灣實況介紹》收錄原住民族生活與日本軍事行動；這正說明早期紀錄影像同時可能服務於展示與治理。¹臺灣傳播學刊的研究把焦點放在原住民族最初的電影經驗，主張殖民政府利用電影及巡映作為綏撫、威嚇與治理的一部分，並區分其對不同族群採取的策略。¹⁵</p>
+<p>此一論文用「文化清洗」框架，屬研究者的解釋，讀者應清楚區分它與當時官方自我描述。可是，官方材料本身也不完全中性。臺史博對《南進臺灣》的介紹明說，影片以統治者視角展示建設與產業，並以剪接和旁白建構秩序。¹⁴當影像安排原住民族、勞工或農村居民出現時，他們是否被當成具名主體，或只是展示「帝國成果」的元素，是今日觀看應提出的問題。</p>
+<p>這並不意味著所有既存影像都只能封存。相反地，修復、公開與補充脈絡可讓研究者及社群重新檢視它們。前提是拒絕把被拍攝者只當成景色，也拒絕讓殖民旁白成為唯一的說話者。</p>
+<h2>十一、從老戲院到資料庫的公共性</h2>
+<figure><img src="https://file.moc.gov.tw/001/Upload/552/relpic/15632/222926/03d823c9-cac3-49c6-a3cd-58854e68d6bb@710x470.jpg" alt="日治時期影像展覽照片｜來源：國家攝影文化中心" loading="lazy"><figcaption>今日的資料庫與展覽延續公共觀看的形式，但應以更完整的來源資訊取代單一旁白。</figcaption></figure>
+<p>早期戲院把陌生人放進共同空間，今日的數位典藏則把部分材料帶進可搜尋、可連結的公共領域。國家攝影文化中心說明，其日治寫真帖典藏已有72冊，並與學者及文史工作者合作，將研究成果轉化為開放線上資源。¹⁸這種作法至少讓觀眾能查看照片之外的題名、時間、來源與研究說明；但資料庫的中介仍存在，檢索詞與分類方式也會影響什麼容易被看見。</p>
+<p>電影修復也是如此。Focus Taiwan所報導的罕見日治影像發布，以及臺史博在老戲院舉辦的修復放映，都把材料從庫房移回觀看現場。¹⁶¹⁷這種「再放映」的公共性，和1920年代文化協會巡迴隊並不相同：技術、法律、策展倫理與受眾組成都已改變。但兩者都提出同一個問題：影像由誰選擇、在什麼脈絡下被看見？</p>
+<p>本文的結論並非要為早期電影指定單一政治含義。較可確認的是，它曾被商業、教育、文化運動與國家治理反覆使用；不同用途留下不同的材料與盲點。對今日讀者而言，最重要的不是替百年前的觀眾下定論，而是在每一次重看時，將來源、權力與缺席者一併放進畫面。</p>
+<h2>十二、把「觀眾」放回歷史裡</h2>
+<figure><img src="https://file.moc.gov.tw/001/Upload/552/relpic/15632/222926/6218134c-1670-4ce5-b069-de3efd1eb2a7@710x470.jpg" alt="殖民時期臺灣影像典藏｜來源：國家攝影文化中心" loading="lazy"><figcaption>群眾影像容易被解讀為一致的支持或服從；實際上，照片與影片通常無法完整記錄個人的理解與保留。</figcaption></figure>
+<p>關於早期電影，最容易被忽略的是觀眾。戲院座位、廣告版面、巡迴場次與影片目錄，比較容易保存；一個人為何買票、聽完辯士後如何轉述，則常常不在檔案裡。這種不對稱不代表觀眾不存在，反而提醒研究者不可把場館紀錄直接改寫成內心史。當史料不足時，最負責任的做法是描述可核實的行為和制度，並坦承無法量化的感受。</p>
+<p>例如，陳景峰從報章雜誌與口述資料討論觀影消費習性，認為日治時期的映演業持續發展，電影逐漸成為多人經驗的休閒活動。⁷這一判斷能幫助我們理解市場規模；但它不能證明每位入場者都接受片中的價值。反過來，辯士的在地語言與文化協會的巡映，提示了觀眾不是被動容器；可是，這也不能直接推導出一種統一的「民眾抵抗」。</p>
+<p>史料的沉默需要被保留在文章裡。對於城市中買票的勞工、鄉村映演的家庭、被帶往觀光與放映現場的原住民族，以及從未進入戲院的人，現有紀錄提供的視角並不均等。讓這些差距可見，比用一個想像的集體觀眾填滿空白，更接近調查報導的克制。</p>
+<h2>最後的結語：一面銀幕，多種權力</h2>
+<figure><img src="https://file.moc.gov.tw/001/Upload/552/relpic/15632/222926/03d823c9-cac3-49c6-a3cd-58854e68d6bb@710x470.jpg" alt="日治時期影像史料展覽｜來源：國家攝影文化中心" loading="lazy"><figcaption>重新編目與展示舊影像，讓不同世代得以提問，而非只接受畫面原有的旁白。</figcaption></figure>
+<p>從高松豐次郎的早期放映與官方委託拍攝，到城市戲院的競爭、辯士的語言工作、文化協會的巡迴映演，再到《南進臺灣》式的國策影像，日治臺灣的銀幕始終處在多種權力之間。它能帶來娛樂與商機，也被用來教育、動員、展示和規訓。這不是事後套上的抽象結論，而是從典藏說明、廣告、學術研究與修復資料反覆出現的脈絡。</p>
+<p>本文也刻意不把「電影帶來現代性」當成足夠答案。這個說法若沒有追問誰提供設備、誰掌握配銷、誰被要求學習特定語言、誰被拍成展示對象，便會掩蓋不平等。相反地，若把所有觀影都視為被動受宣傳，也會錯過辯士、歌曲、巡映與在地轉譯所留下的複雜痕跡。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong>今天再看修復膠卷，最值得保留的也許不是一個簡單的結論，而是一套問題：畫面提出了什麼主張？它如何安排人的位置？現場的聲音由誰提供？檔案為何留下這一段、失去那一段？當觀眾把這些問題帶進戲院與資料庫，早期電影不再只是遙遠的黑白風景，而成為理解臺灣公共生活如何被影像塑造的一條入口。 這些問題也能避免一種常見誤讀：把修復後的清晰度誤認為歷史已經完整。4K掃描能看清膠卷上的紋理，卻不能補回拍攝當下被排除的語言、沒有保存的鏡頭與未被留下姓名的人。資料越容易取得，越需要交代它來自何處、由誰編目，以及原始用途為何。對讀者而言，這不是降低欣賞的門檻，而是讓欣賞不必建立在遺忘之上。早期銀幕的光確實穿越了時間；但它照亮什麼、遮蔽什麼，仍要由每一次有來源意識的觀看重新判斷。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ 國立臺灣文學館（無日期）— "The Arrival of the Silver Screen"
+<a href="https://tlvm.nmtl.gov.tw/en/Theme/ExhibitionArticleCont?Exbid=363" rel="noopener" target="_blank">https://tlvm.nmtl.gov.tw/en/Theme/ExhibitionArticleCont?Exbid=363</a></p>
+<p class="ref">² University of Wisconsin–Madison（2021）— "Cinema, Media, and Colonial Taiwan"
+<a href="https://asset.library.wisc.edu/1711.dl/Z3QJI3RFEWBVJ8N/R/file-6b786.pdf" rel="noopener" target="_blank">https://asset.library.wisc.edu/1711.dl/Z3QJI3RFEWBVJ8N/R/file-6b786.pdf</a></p>
+<p class="ref">³ 國家電影及視聽文化中心（2024-07-22）— "銀幕前方的複數『小』歷史"
+<a href="https://fa.tfai.org.tw/fa/article/38721" rel="noopener" target="_blank">https://fa.tfai.org.tw/fa/article/38721</a></p>
+<p class="ref">⁴ 國立臺灣圖書館（2019）— "日治時期的電影與紀錄片"
+<a href="https://www.ntl.edu.tw/public/Attachment/83149544184.pdf" rel="noopener" target="_blank">https://www.ntl.edu.tw/public/Attachment/83149544184.pdf</a></p>
+<p class="ref">⁵ Wen, Laura Jo-Han（2021）— "Cinema, Media, and Colonial Taiwan"
+<a href="https://asset.library.wisc.edu/1711.dl/Z3QJI3RFEWBVJ8N/R/file-6b786.pdf" rel="noopener" target="_blank">https://asset.library.wisc.edu/1711.dl/Z3QJI3RFEWBVJ8N/R/file-6b786.pdf</a></p>
+<p class="ref">⁶ 鳴人堂／聯合報系（2020-05-28）— "電影廣告百年物語（下）：日治時代的電影館『搶片』大亂鬥"
+<a href="https://opinion.udn.com/opinion/story/11655/4594187" rel="noopener" target="_blank">https://opinion.udn.com/opinion/story/11655/4594187</a></p>
+<p class="ref">⁷ 陳景峰（2011）— "日治台灣配銷型態下的電影市場"
+<a href="https://www.tcll.ntnu.edu.tw/twnica/downloadfile.php?issue_id=18&amp;paper_id=113&amp;periodicalsPage=2" rel="noopener" target="_blank">https://www.tcll.ntnu.edu.tw/twnica/downloadfile.php?issue_id=18&amp;paper_id=113&amp;periodicalsPage=2</a></p>
+<p class="ref">⁸ 國立臺灣歷史博物館（無日期）— "日治時期辯士王雲峰武俠片演出廣告單"
+<a href="https://collections.nmth.gov.tw/CollectionContent.aspx?a=132&amp;rno=T2018.001.8089" rel="noopener" target="_blank">https://collections.nmth.gov.tw/CollectionContent.aspx?a=132&amp;rno=T2018.001.8089</a></p>
+<p class="ref">⁹ Chiu, Kuei-fen（2011）— "The Question of Translation in Taiwanese Colonial Cinematic Space"
+<a href="https://doi.org/10.1017/S0021911810002950" rel="noopener" target="_blank">https://doi.org/10.1017/S0021911810002950</a></p>
+<p class="ref">¹⁰ Lin, Shu-mei（2022）— "Borders in the film viewing space: Benshi and linguistic territorialization in colonial Taiwan, 1926–1933"
+<a href="https://doi.org/10.1080/17508061.2022.2120746" rel="noopener" target="_blank">https://doi.org/10.1080/17508061.2022.2120746</a></p>
+<p class="ref">¹¹ 國立臺灣文學館（無日期）— "The Arrival of the Silver Screen"
+<a href="https://tlvm.nmtl.gov.tw/en/Theme/ExhibitionArticleCont?Exbid=363" rel="noopener" target="_blank">https://tlvm.nmtl.gov.tw/en/Theme/ExhibitionArticleCont?Exbid=363</a></p>
+<p class="ref">¹² 江佩諭（2011）— "日治時期社會組織對於電影的應用"
+<a href="https://etds.lib.tku.edu.tw/ETDS/Home/Detail/U0002-0607201101010500" rel="noopener" target="_blank">https://etds.lib.tku.edu.tw/ETDS/Home/Detail/U0002-0607201101010500</a></p>
+<p class="ref">¹³ 李政亮（2006）— "日治時期台灣人的電影實踐"
+<a href="https://www.tisanet.org/activity/20060610/conference/3-1.pdf" rel="noopener" target="_blank">https://www.tisanet.org/activity/20060610/conference/3-1.pdf</a></p>
+<p class="ref">¹⁴ 國立臺灣歷史博物館（無日期）— "《南進臺灣》第1卷"
+<a href="https://collections.nmth.gov.tw/CollectionContent.aspx?a=132&amp;rno=2005.001.0195" rel="noopener" target="_blank">https://collections.nmth.gov.tw/CollectionContent.aspx?a=132&amp;rno=2005.001.0195</a></p>
+<p class="ref">¹⁵ 劉現成（2024）— "殖民視覺暴力與文化清洗見證"
+<a href="http://www.tjctaiwan.org/viewArticle.asp?CA_ID=412&amp;P_No=49" rel="noopener" target="_blank">http://www.tjctaiwan.org/viewArticle.asp?CA_ID=412&amp;P_No=49</a></p>
+<p class="ref">¹⁶ Focus Taiwan（2025-07-18）— "Taiwan film institute releases rare footage from Japanese colonial era"
+<a href="https://focustaiwan.tw/culture/202507180014" rel="noopener" target="_blank">https://focustaiwan.tw/culture/202507180014</a></p>
+<p class="ref">¹⁷ 國立臺灣歷史博物館（2026）— "穿透歷史的光：日治後期教育宣傳膠卷影片4K數位修復成果"
+<a href="https://www.nmth.gov.tw/" rel="noopener" target="_blank">https://www.nmth.gov.tw/</a></p>
+<p class="ref">¹⁸ 國家攝影文化中心（無日期）— "典藏開卷：日治時期寫真帖中的臺灣"
+<a href="https://ncpi.ntmofa.gov.tw/News_Content_OnlineExhibitionpic.aspx?n=8006&amp;s=222926" rel="noopener" target="_blank">https://ncpi.ntmofa.gov.tw/News_Content_OnlineExhibitionpic.aspx?n=8006&amp;s=222926</a></p>
+<p class="ref">¹⁹ Taipei Times（2018-12-23）— "All Taiwan documentary features footage from 1930s"
+<a href="https://www.taipeitimes.com/News/taiwan/archives/2018/12/24/2003706703" rel="noopener" target="_blank">https://www.taipeitimes.com/News/taiwan/archives/2018/12/24/2003706703</a></p>
+<p class="ref">²⁰ 國家圖書館（2018）— "日治時期無聲電影的探究──以《戀愛與義務》、《桃花泣血記》為例"
+<a href="https://ndltd.ncl.edu.tw/r/2x627v" rel="noopener" target="_blank">https://ndltd.ncl.edu.tw/r/2x627v</a></p>
+<p class="ref">²¹ Misawa, Mamie（2014）— "Colony, Empire, and De-colonization in Taiwanese Film History"
+<a href="https://doi.org/10.22372/ijkh.2014.19.2.35" rel="noopener" target="_blank">https://doi.org/10.22372/ijkh.2014.19.2.35</a></p>
+<p class="ref">²² 國立臺灣歷史博物館（無日期）— "《南進臺灣》第4卷原拷貝片"
+<a href="https://collections.nmth.gov.tw/CollectionContent.aspx?a=132&amp;rno=2005.001.0175.0003" rel="noopener" target="_blank">https://collections.nmth.gov.tw/CollectionContent.aspx?a=132&amp;rno=2005.001.0175.0003</a></p>
+<p class="ref">²³ 國家電影及視聽文化中心（無日期）— "台中州高砂族內地觀光"
+<a href="https://vod.tfai.org.tw/Video/1676" rel="noopener" target="_blank">https://vod.tfai.org.tw/Video/1676</a></p>
+<p class="ref">²⁴ National Center of Photography and Images（無日期）— "Collection Unveiled: Taiwan in Photo Albums from the Japanese Colonial Period"
+<a href="https://ncpi.ntmofa.gov.tw/en/News_Content_OnlineExhibitionPic.aspx?n=8102&amp;s=224153" rel="noopener" target="_blank">https://ncpi.ntmofa.gov.tw/en/News_Content_OnlineExhibitionPic.aspx?n=8102&amp;s=224153</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
