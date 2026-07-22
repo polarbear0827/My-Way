@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>你買到的是書，還是讀取權？ · 穗稻忠武的專欄</title>
+<meta name="description" content="在書店買紙本書，讀者可以放進書架、借給朋友、轉賣、捐給圖書館；這些行為通常不需要回到原出版商的伺服器請求同意。但當付款畫面換成「立即購買」的電子書按鈕，交易看似相似，法律與技術關係卻常已改變。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-22-ebooks-license-not-ownership/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你買到的是書，還是讀取權？">
+<meta property="og:description" content="在書店買紙本書，讀者可以放進書架、借給朋友、轉賣、捐給圖書館；這些行為通常不需要回到原出版商的伺服器請求同意。但當付款畫面換成「立即購買」的電子書按鈕，交易看似相似，法律與技術關係卻常已改變。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-22-ebooks-license-not-ownership/">
+<meta property="og:image" content="https://live.staticflickr.com/5010/5320038741_fe8dc31c81_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "你買到的是書，還是讀取權？", "description": "在書店買紙本書，讀者可以放進書架、借給朋友、轉賣、捐給圖書館；這些行為通常不需要回到原出版商的伺服器請求同意。但當付款畫面換成「立即購買」的電子書按鈕，交易看似相似，法律與技術關係卻常已改變。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-22-ebooks-license-not-ownership/", "datePublished": "2026-07-22", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/5010/5320038741_fe8dc31c81_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>你買到的是書，還是讀取權？</h1>
+<p class="byline"><time>2026-07-22</time></p>
+</div>
+
+<p class="lead">在書店買紙本書，讀者可以放進書架、借給朋友、轉賣、捐給圖書館；這些行為通常不需要回到原出版商的伺服器請求同意。但當付款畫面換成「立即購買」的電子書按鈕，交易看似相似，法律與技術關係卻常已改變。</p>
+<p>Amazon 在 Kindle Store 條款中明定，Kindle Content 是由內容提供者「授權、非出售」給使用者；使用權為非專屬、個人、非商業，且限於支援裝置。條款也禁止轉售、出租、散布、再授權或規避數位權利管理（DRM）。這不代表每一本電子書一定會突然消失，卻說明消費者付費取得的，往往不是一本可自由處分的物件，而是在平台規則內閱讀的權利¹。</p>
+<p>2025 年，Amazon 停止讓使用者以「Download &amp; Transfer via USB」方式下載 Kindle 購書的報導，再次把這個差異帶回讀者面前。Ars Technica 指出，該改變影響的是在電腦上下載檔案、再用 USB 傳至 Kindle 的既有途徑；Amazon 的雲端同步與裝置下載仍可使用。這不是「所有 Kindle 書一夜消失」的同義詞，而是離線保存、跨裝置管理與避免未來服務變動的空間縮小²。</p>
+<figure><img src="https://live.staticflickr.com/5010/5320038741_fe8dc31c81_b.jpg" alt="手持 Kindle 閱讀器｜來源：pedrik / Flickr（CC BY-SA）" loading="lazy"><figcaption>一台閱讀器能容納許多書名，但讀者能否把內容帶離特定帳號與平台，取決於格式、授權與 DRM 的共同設定。</figcaption></figure>
+<p>本文不把 DRM 一概視為不當，也不把「購買」一詞當成已經證明所有權的法律結論。它要追問的是較日常的問題：若數位書櫃不是由紙張、而是由帳戶、格式與授權構成，讀者在付款前究竟需要知道什麼？</p>
+<h2>「買書」為何不必然等於擁有副本</h2>
+<p>紙本書的交易其實分成兩件事：作品的著作權仍在作者或權利人手上；但那一本印刷、裝訂完成的特定副本，通常成為買方可占有與處分的動產。美國著作權法中的首次銷售原則，正是以「合法製作的特定副本之所有人」可以出售或以其他方式處分該副本為出發點。美國著作權局在 DMCA 第 104 條報告中說明，這項原則限制的是散布權，而不是重製權；實體的數位載體，例如光碟上的合法副本，仍可適用此邏輯³。</p>
+<p>然而，網路傳輸讓問題多了一層。把檔案交給另一個人，往往同時在對方裝置上形成新的重製；即使傳送者宣稱已刪除自己的檔案，法律上仍不只是把同一件物品遞出去。著作權局在同一份報告中因此建議，當時不修改法律來擴張「數位首次銷售」；它的理由不是否認讀者需求，而是認為技術與市場證據尚不足以處理重製、複製品質不會耗損及盜版風險⁴。</p>
+<figure><img src="https://live.staticflickr.com/5015/5427966969_0be5263eb5_b.jpg" alt="紙本書架與可見書脊｜來源：tachyondecay / Flickr（CC BY）" loading="lazy"><figcaption>紙本藏書的使用痕跡與保存成本由持有人承擔；其可借、可贈、可轉售的慣例，也建立在「這一本」可被辨識的實體副本上。</figcaption></figure>
+<p>因此，不能簡化成「電子書完全沒有權利」或「紙本書可任意複製」。較精確的說法是：讀者對紙本的特定副本通常具有較強的處分空間；對多數平台電子書，則先受合約授權與技術限制約束。BBC 2010 年對電子書權利的解釋也指出，讀者購買數位副本時支付的是取得一份或多份文本的授權，能做什麼同時受到著作權與授權契約限制⁵。</p>
+<p>這種安排有支持者。出版者與零售平台主張，電子檔可以不失真、低成本地複製與快速散布；DRM 與授權能協助避免未經授權的複製，並讓作者、譯者、編輯與出版社持續獲得報酬。反對者則認為，若「購買」的介面語言掩蓋了不可移轉、不可備份或可能失去存取的條件，消費者預期與實際權利會出現落差。這是合約設計與消費者資訊問題，並非一句「盜版」或「自由」可以結束的爭論。</p>
+<h2>Kindle 的 2009 年事件：一個已發生過的警訊</h2>
+<p>這個落差並不只是理論。2009 年，Amazon 從部分 Kindle 使用者裝置遠端刪除 George Orwell 的《1984》與《動物農莊》電子版。Reuters 當時報導，Amazon 表示是因第三方上架者沒有取得適當權利；公司後來向受影響客戶提供免費替換本，或 30 美元禮券／支票，執行長 Jeff Bezos 也為刪除決定道歉⁶。這件事最具諷刺意味的地方，正是被刪除的作品之一叫《1984》；但新聞價值不在諷刺，而在它讓讀者看見遠端控制能力的存在。</p>
+<p>該事件後的和解也值得放回脈絡。Reuters 報導，Amazon 與提出訴訟的 Kindle 使用者達成 15 萬美元和解；報導稱和解條款限制 Amazon 除非符合特定情況，否則不刪除已購作品⁷。AP 在 2014 年回顧出版商與 Amazon 的爭議時，同樣記錄 Amazon 曾因未授權版本而刪除《1984》與《動物農莊》，並承諾改變政策⁸。這些報導可交叉確認事件及其權利來源背景；但它們不等於可推論今日所有 Kindle 書都會被遠端刪除。</p>
+<figure><img src="https://live.staticflickr.com/4082/4826939037_3c18d7cc92.jpg" alt="一位讀者使用 Kindle｜來源：Mike Licht, NotionsCapital.com / Flickr（CC BY）" loading="lazy"><figcaption>2009 年事件把「裝置在手」與「內容控制權在誰手」拆開來看：兩者在連網閱讀系統中不必相同。</figcaption></figure>
+<p>此後的其他案例顯示，風險也不必以遠端刪除的形式出現。BBC 2019 年報導 Microsoft 關閉電子書商店後，消費者將失去既有電子書庫的可讀性；受訪者指出，DRM 電子書通常是可能到期的授權，而不是完全由買方持有的副本⁹。這是不同公司、不同產品，但共同提醒是：當閱讀權依賴帳戶驗證與服務基礎設施，零售商退出市場、改變條款或停止支援，都可能改變已付款內容的實際可近性。</p>
+<h2>USB 下載退場，改變了什麼、沒有改變什麼</h2>
+<p>Amazon 在 2025 年停用 USB 下載與傳輸途徑時，最容易被誤讀的兩種說法分別是「Kindle 從此不能離線閱讀」與「Amazon 把所有書收回」。兩者都不準確。Ars Technica 的實測與說明指出，已在 Kindle 裝置或官方 App 下載的內容仍可離線閱讀；變動在於讀者不再能經由網站下載某些已購內容的檔案，再以 USB 載入 Kindle²。The Verge 也把這個改變定位為終結舊式的下載、轉檔與手動傳輸選項，而不是 Kindle 商店全面關閉¹⁰。</p>
+<p>但「只是少一個按鈕」仍可能有實質差異。第一，USB 傳輸讓讀者能在網路不穩或裝置不同步時自行管理內容；第二，下載檔案可讓人檢查格式、保存閱讀檔案，或在相容條件下搬移到另一台閱讀器；第三，當平台未來調整支援範圍時，離線持有的檔案與只存在帳戶清單中的書，韌性不同。這些並不自動賦予規避 DRM 或任意散布的權利；它們談的是在授權允許範圍內，使用者對自己的閱讀環境能保有多少操作空間。</p>
+<figure><img src="https://live.staticflickr.com/8193/8091234505_e1879eba36_b.jpg" alt="平板與手機上的數位閱讀介面｜來源：tribehut / Flickr（CC BY-SA）" loading="lazy"><figcaption>數位閱讀通常跨越多個螢幕；便利的雲端同步也讓內容存取更緊密地綁定帳戶與服務狀態。</figcaption></figure>
+<p>Amazon 沒有把這項政策變更描述為對消費者所有權的宣告，而是產品功能的調整。對公司而言，集中透過 Wi‑Fi、應用程式與帳戶發送內容，能減少不同格式、舊裝置與人工傳檔的支援負擔，也有助執行出版權利與 DRM。對讀者而言，問題不是每個人都必須用 USB，而是付費之後，哪些使用方式可被取消、取消前是否清楚告知，以及是否存在可理解的替代方案。</p>
+<p>這也解釋了為何 USB 議題會超出 Kindle 社群。它是一個具體介面改動，讓抽象的授權條款變成日常經驗：同一份「已購」清單，在平台端仍存在，卻未必意味著使用者手上留有可獨立保存、遷移的副本。</p>
+<h2>圖書館看到的，是另一種授權市場</h2>
+<p>個人購書的限制，放到公共圖書館會更清楚。圖書館買一冊紙本，通常能在館藏壽命內反覆出借；電子書則常以期限、同時使用人數或借閱次數設計合約。AP 2024 年追蹤美國公共圖書館時，以康乃狄克州 West Haven Library 為例：一本 Cook 的精裝書約 18 美元，數位版本授權可達 55 美元，且常在一、兩年或 26 次借閱後到期，先到者為準¹¹。這是個案，不宜當作所有出版品的統一價格；但它顯示圖書館面對的是取得「可持續使用的副本」以外的採購模式。</p>
+<p>紐約時報 2011 年報導 HarperCollins 對圖書館電子書實施 26 次借閱後到期的規則。出版社表示，這是要在圖書館價值、作者報酬與長期公共服務之間取得平衡；圖書館員則認為，原本已取得的館藏權利被改寫¹²。多年後，爭議仍在法律與政策層面延續：AP 報導，馬里蘭州一項要求出版社以合理條件提供電子書給圖書館的州法，在聯邦法院被判無效；出版社協會主張該法與聯邦著作權制度衝突¹³。</p>
+<figure><img src="https://live.staticflickr.com/3334/3493038584_fb28e25bef_b.jpg" alt="圖書館書架｜來源：Patrick Feller / Flickr（CC BY）" loading="lazy"><figcaption>在圖書館場景，電子書的條件不只影響單一讀者，也影響預算能買到多少使用權與等待隊列能否縮短。</figcaption></figure>
+<p>出版者的立場不能略過。若一份可無限複製、同時被大量讀取的數位檔案，以一次性的紙本價格授權給機構，可能壓縮作者與出版商的收益，也改變新書的市場。讀者與圖書館的反問則是，公共資金採購的數位文化內容若到期、撤回或限制過多，公共記憶與平等近用將如何維持。兩邊談的不是同一種「擁有」：前者關切權利作品的報酬與授權控制，後者關切長期保存、可預期成本與公共服務。</p>
+<p>因此，電子書的所有權問題並不只是一位讀者能否把一本小說轉給朋友。它也會影響圖書館如何建館、地方政府如何編列數位館藏預算，以及讀者在一個月、五年或平台撤出後，能否繼續接近曾經以為已經取得的文字。</p>
+<h2>歐盟保護的是合約符合性，不是自動的轉售權</h2>
+<p>面對數位內容，消費者法提供的答案和著作權法不同。歐盟《數位內容與數位服務指令》（Directive (EU) 2019/770）適用於付費取得、或以個人資料作為對價的數位內容與數位服務；歐盟執委會的說明把電子書明列為其範圍之一¹⁴。它要求商家供應符合主觀與客觀要求的內容，並就未供應、瑕疵、更新與救濟設下規則。</p>
+<p>例如，歐盟消費者入口說明，數位內容或服務不符合約定時，消費者可以要求使其符合；若無法在合理期間、或問題嚴重，可能減價或解除合約。對於持續供應的數位服務，商家也可能有提供必要更新的義務¹⁵。這些規定的重要性在於：讀者不是只能接受「服務變了就算了」。如果內容不符合購買時承諾，法律可能提供救濟路徑。</p>
+<figure><img src="https://live.staticflickr.com/7204/6966883093_5fa64ed49e_b.jpg" alt="以電子裝置閱讀書籍｜來源：Johan Larsson / Flickr（CC BY）" loading="lazy"><figcaption>消費者保護規則處理的是商家是否依約供應與維護數位內容；它與可否自由轉售檔案是兩個不同問題。</figcaption></figure>
+<p>但指令沒有因此創造一條「電子書可像紙本書一樣無限制轉售」的通行證。數位內容的著作權、授權條款、技術保護措施與各國法律仍會一起作用。把歐盟規則說成已經賦予讀者完整電子書所有權，是錯誤的；反過來說，把授權條款當作能免除所有消費者義務，也同樣不準確。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 對一般讀者而言，這個區分或許不夠直覺，卻很實用。若問題是「我能否把檔案賣給陌生人」，需要先看著作權與授權；若問題是「平台承諾可離線讀，卻無法供應」，則更接近消費契約符合性。把不同法律問題混成一個「我有沒有所有權」的口號，反而會讓可主張的權利變模糊。</p>
+<h2>格式與 DRM：不是只有 Kindle 一種路線</h2>
+<p>平台化不等於所有電子書都採同一種技術。AP 在 2015 年的格式比較指出，Amazon 使用自有 Kindle 格式；其他零售商較多採用 EPUB。理論上，開放格式可以提高跨裝置可讀性，但實務上若檔案另有 DRM，讀者仍可能必須經由特定帳戶或 Adobe Digital Editions 完成授權¹⁶。格式開放與使用自由，並不是同義詞。</p>
+<p>Kobo 的官方支援文件仍教使用者透過 Adobe Digital Editions 將具 DRM 的 Kobo EPUB 轉移到非 Kobo 閱讀器；它也說明並非所有書都能下載為檔案，是否可下載取決於出版商權利設定¹⁷。這至少提供了一種不同於 Kindle 的遷移路徑，但不應被誇大成「完全沒有鎖定」。讀者仍得處理 Adobe 帳戶、授權裝置數量與各書的下載資格。</p>
+<figure><img src="https://live.staticflickr.com/8219/8296635339_fc04a117a2_b.jpg" alt="實體媒體與書架｜來源：Zepfanman.com / Flickr（CC BY）" loading="lazy"><figcaption>格式與帳戶設定決定了讀者能否在不同閱讀器間移動內容；一個看似簡單的「下載」按鈕，背後常有多層權利規則。</figcaption></figure>
+<p>支持 DRM 的觀點認為，若沒有可執行的保護，出版者可能不願提供熱門新書的數位版本，或提高價格來補償風險。倡議數位權利的 EFF 則長期批評，DRM 可能使合法使用者在換裝置、修復舊設備或進行保存時受到比盜版者更多的限制¹⁸。兩種擔憂都不是虛構的：作者與出版社需要報酬，讀者也需要在技術淘汰與平台變更時維持合理的使用能力。</p>
+<p>真正需要比較的，不是「有沒有 DRM」這一題而已，而是它如何與資訊揭露、離線使用、跨裝置相容、救濟機制及公共保存一起運作。讀者若只看封面價格，會漏掉後面的差異；若只看格式名稱，也可能忽略同一格式在不同授權下的實際限制。</p>
+<h2>付款前後，讀者可以做的幾件小事</h2>
+<p>第一步不是假設每家平台都會撤回內容，而是把「閱讀」與「保管」分開思考。對只想在一台裝置上即時讀新書的人，雲端同步、字典、標註與跨 App 續讀可能比檔案管理更重要。對需要長期保存研究資料、工作參考書或已絕版文本的人，則應在付款前確認：該書是否可下載、格式是什麼、是否需要特定程式授權、能否在自己的裝置離線開啟，以及平台停止服務時的處置條款。</p>
+<p>第二步是保存交易資訊，而不只是書名。收據、訂單頁、當時的產品頁截圖與條款版本，不能保證內容永久可讀，卻能在發生爭議時協助釐清平台曾經承諾什麼。Amazon 條款本身就把 Kindle Content 的使用權與帳戶、支援裝置及服務條件綁在一起¹；若讀者只在多年後才回頭找規則，條款與功能可能已經改版。</p>
+<figure><img src="https://live.staticflickr.com/4136/4857693316_36769ab42c.jpg" alt="讀者與電子閱讀器｜來源：Pen Waggener / Flickr（CC BY）" loading="lazy"><figcaption>選擇電子書平台不只是選螢幕大小，也是在選擇帳戶制度、格式支援與未來服務變動時可採取的路徑。</figcaption></figure>
+<p>第三步是分散，而不是把所有閱讀都當成同類商品。公共領域作品可從 Project Gutenberg、Internet Archive 等不同來源取得，通常比受商業 DRM 保護的新書更易保存；但仍須確認版本品質與權利狀態。研究或專業讀物可優先使用圖書館、出版社直接提供的 PDF／EPUB 或機構典藏；純粹休閒閱讀則可根據價格、選書與便利性使用單一商店。這不是要每個人建立複雜檔案庫，而是承認不同用途需要不同風險承受度。</p>
+<p>第四步是不要把技術繞過當作唯一答案。規避 DRM 可能觸及法律與契約風險，並非本文建議的消費對策。較具建設性的方向包括：要求零售頁在「購買」旁清楚顯示授權性質、下載與離線限制；支持圖書館爭取可預期的授權條件；以及讓出版者、平台與讀者能在保存和報酬之間討論可驗證的選項。</p>
+<p>讀者當然不必因為上述風險就拒絕電子書。電子書能放大字體、提供即時字典、降低攜帶重量，對行動不便者、旅行者與需要輔助閱讀者尤其有實際價值。重要的是，便利不應要求讀者假裝不知道交換條件。</p>
+<h2>當書架變成服務：需要更清楚的語言</h2>
+<p>「購買」是一個強烈的日常詞。它讓人想到付款完成後，物品從商店移到自己手中。但在數位商店裡，介面上的同一個詞可能同時遮住幾件不同的事：內容是否可下載、下載後能否在沒有帳戶驗證時開啟、帳戶遭停用時如何處理、平台退出市場時是否退款或提供替代存取、以及能否轉贈或轉售。這些不是小字附註，而是交易的核心條件。</p>
+<p>2009 年 Kindle 刪除《1984》、Microsoft 關閉電子書商店、2025 年 Kindle USB 下載途徑退場，分別來自不同年份與商業情境。它們共同說明的不是「數位閱讀注定失敗」，而是數位購買的持續可用性由技術架構和契約共同決定。相較之下，紙本書也會損壞、遺失、絕版，並非沒有保存成本；差別是讀者多能自行決定修補、轉交或收藏的方式。</p>
+<figure><img src="https://live.staticflickr.com/4082/4826939037_3c18d7cc92.jpg" alt="紙本與數位閱讀的並置｜來源：Mike Licht, NotionsCapital.com / Flickr（CC BY）" loading="lazy"><figcaption>紙本與電子書各有成本與優勢；爭點不在要求兩者完全相同，而在讓限制與救濟在付款前被清楚看見。</figcaption></figure>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 比起把每個平台都描述為剝奪者，更有效的公共討論或許是要求可比較性：零售商能否用一致圖示說明「可下載」「僅限 App」「可離線」「可遷移」；出版者能否說明哪些限制是權利人要求、哪些是平台選擇；監管者能否在不取代著作權制度的前提下，要求數位內容交易提供可理解的資訊與適當救濟。</p>
+<p>對讀者來說，最實際的結論不是恐慌性地清空書單，而是在按下付款鍵前多問一句：我取得的是哪一種閱讀權？若答案清楚，讀者可以依自身需要選擇便利或可攜性；若答案含糊，問題就不只是某一台 Kindle 或某一個按鈕，而是數位市場是否用足夠誠實的語言描述了它正在賣的東西。</p>
+<h3>從資訊不對稱回到讀者選擇</h3>
+<p>數位市場裡最常見的困難是資訊不對稱：平台與出版者知道檔案格式、授權期間、伺服器依賴和例外條款；讀者多半只看見封面、價格、評分與「購買」按鈕。英國競爭與市場管理局在 2024 年針對訂閱服務提出的消費者保護原則，雖不專指電子書，仍反映相同的政策方向：關鍵條款、取消機制與續訂安排必須能被理解，而不應被埋在冗長流程中¹⁹。對一次性取得的數位內容而言，能否離線、是否會失去帳戶存取、內容移除後的補救，也應得到同等清楚的揭露。</p>
+<p>一個可行的產品設計不一定要推翻 DRM。平台可以標示「僅雲端／App 存取」「可在已授權裝置離線讀取」「可取得 DRM EPUB」「出版商不允許下載」等狀態；也可以在下架、停止服務或關閉特定功能前，提供合理通知與既有內容的處置說明。對讀者，這些標示能讓選擇與需求相配；對平台與權利人，清楚界定也能減少「我以為我買到什麼」的爭議。</p>
+<p>圖書館的經驗再度提醒，技術並不天然決定公平或不公平。相同的數位檔案可以被設計成一次性銷售、訂閱、按次借閱、多人同時使用或限期授權；每一種模型都把成本、風險與控制權分配給不同的人。採取哪一種模型，涉及作者收入、出版投資、讀者便利、公共近用與保存責任。公開討論應要求各方提出資料與條款，而不是以抽象口號替代細節。</p>
+<p>最後，電子書的價值不只在能否轉售。它也在於讀者能否在真正需要時打開文本：出差途中、視力改變時、借閱期限內、網路中斷後、或多年以後回頭查一句話時。當「買到什麼」能被清楚回答，讀者才有條件衡量一份授權是否值得那個價格。 還有一個容易被忽略的時間尺度。今天的裝置不會永遠支援同一套加密方式，帳戶認證服務也不會永遠以同樣方式運作；反之，紙本書雖會受潮、破損或遺失，讀者至少能自行決定是否修復、掃描、借出或放進下一個人的書架。電子書的保存不是不可能，而是需要平台、出版商、圖書館與讀者各自承擔部分責任。</p>
+<p>對產業來說，較透明的授權不必犧牲商業模式。清楚說明權利範圍、提供可讀的帳戶與服務終止政策、讓既有客戶有合理過渡，都是降低爭議的方式。對讀者來說，最好的問題也許不是「這是不是一本真正的書」，而是「這份交易讓我在什麼條件下讀它、保存它，又在什麼情況下失去它」。能回答這個問題的產品，才更接近值得信任的數位書櫃。 這裡也有一項閱讀習慣的轉變。過去人們把「收藏」理解為擁有一排可觸碰的書；現在，收藏往往是一個雲端帳戶內可搜尋的清單。清單極為方便，卻可能把保存責任從讀者手中移往服務提供者。這不是要否定雲端，而是提醒人們：把責任交出去時，必須看見對方承諾的範圍、期限與退出方式。</p>
+<p>同樣地，討論電子書不應只停留在技術熟練者的備份方法。若一個消費品只有懂格式、懂授權、懂帳戶遷移的人才能長期使用，問題的一部分就在設計本身。可理解的標示、合理的通知、可尋求的客服與可預期的救濟，讓普通讀者也能作出知情選擇；這正是消費者保護在數位內容市場應持續追問的地方。</p>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ Amazon（存取於 2026-07-22）— "Kindle Store Terms of Use"
+<a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=G200144510" rel="noopener" target="_blank">https://www.amazon.com/gp/help/customer/display.html?nodeId=G200144510</a></p>
+<p class="ref">² Ars Technica（2025-02-26）— "Amazon removes download and transfer via USB option for Kindle books"
+<a href="https://arstechnica.com/gadgets/2025/02/amazon-removes-download-and-transfer-via-usb-option-for-kindle-books/" rel="noopener" target="_blank">https://arstechnica.com/gadgets/2025/02/amazon-removes-download-and-transfer-via-usb-option-for-kindle-books/</a></p>
+<p class="ref">³ 美國著作權局（2017）— "The Making Available Right in the United States"
+<a href="https://www.copyright.gov/docs/making_available/making-available-right.pdf" rel="noopener" target="_blank">https://www.copyright.gov/docs/making_available/making-available-right.pdf</a></p>
+<p class="ref">⁴ 美國著作權局（2016）— "DMCA Section 104 Report"
+<a href="https://www.copyright.gov/policy/section104/" rel="noopener" target="_blank">https://www.copyright.gov/policy/section104/</a></p>
+<p class="ref">⁵ BBC News（2010-01-06）— "E-books: The death of ownership?"
+<a href="https://www.bbc.com/news/technology-50949185" rel="noopener" target="_blank">https://www.bbc.com/news/technology-50949185</a></p>
+<p class="ref">⁶ Reuters（2009-09-05）— "Amazon offers to replace deleted copies of 1984"
+<a href="https://www.reuters.com/article/world/amazon-offers-to-replace-deleted-copies-of-1984-idUSTRE584009/" rel="noopener" target="_blank">https://www.reuters.com/article/world/amazon-offers-to-replace-deleted-copies-of-1984-idUSTRE584009/</a></p>
+<p class="ref">⁷ Reuters（2009-10-02）— "Amazon settles Kindle lawsuit over 1984 copy"
+<a href="https://www.reuters.com/article/technology/amazon-settles-kindle-lawsuit-over-1984-copy-idUSTRE59151X/" rel="noopener" target="_blank">https://www.reuters.com/article/technology/amazon-settles-kindle-lawsuit-over-1984-copy-idUSTRE59151X/</a></p>
+<p class="ref">⁸ AP News（2014-08-14）— "Orwell rep accuses Amazon of doublespeak"
+<a href="https://apnews.com/general-news-arts-and-entertainment-dda3dbfa717b4c7fb3626e369b9471e2" rel="noopener" target="_blank">https://apnews.com/general-news-arts-and-entertainment-dda3dbfa717b4c7fb3626e369b9471e2</a></p>
+<p class="ref">⁹ BBC News（2019-04-03）— "Microsoft to delete ebooks from customers’ libraries"
+<a href="https://www.bbc.com/news/technology-47810367" rel="noopener" target="_blank">https://www.bbc.com/news/technology-47810367</a></p>
+<p class="ref">¹⁰ The Verge（2025-02-14）— "Amazon is removing the option to download Kindle books over USB"
+<a href="https://www.theverge.com/news/617249/amazon-kindle-download-transfer-usb-ending" rel="noopener" target="_blank">https://www.theverge.com/news/617249/amazon-kindle-download-transfer-usb-ending</a></p>
+<p class="ref">¹¹ AP News（2024-03-12）— "Libraries struggle to afford the demand for e-books"
+<a href="https://apnews.com/article/libraries-ebooks-publishers-expensive-laws-5d494dbaee0961eea7eaac384b9f75d2" rel="noopener" target="_blank">https://apnews.com/article/libraries-ebooks-publishers-expensive-laws-5d494dbaee0961eea7eaac384b9f75d2</a></p>
+<p class="ref">¹² The New York Times（2011-03-15）— "Publisher Limits Shelf Life for Library E-Books"
+<a href="https://www.nytimes.com/2011/03/15/business/media/15libraries.html" rel="noopener" target="_blank">https://www.nytimes.com/2011/03/15/business/media/15libraries.html</a></p>
+<p class="ref">¹³ AP News（2022-06-14）— "Judge in Maryland strikes down library e-book law"
+<a href="https://apnews.com/article/politics-business-maryland-publishing-b324a2b5881d80037d4ec9b52f63215a" rel="noopener" target="_blank">https://apnews.com/article/politics-business-maryland-publishing-b324a2b5881d80037d4ec9b52f63215a</a></p>
+<p class="ref">¹⁴ European Commission（存取於 2026-07-22）— "Digital content and digital services"
+<a href="https://commission.europa.eu/law/law-topic/consumer-protection-law/consumer-contract-law/digital-contracts/digital-content-and-digital-services_en" rel="noopener" target="_blank">https://commission.europa.eu/law/law-topic/consumer-protection-law/consumer-contract-law/digital-contracts/digital-content-and-digital-services_en</a></p>
+<p class="ref">¹⁵ Your Europe（存取於 2026-07-22）— "Digital content and services"
+<a href="https://europa.eu/youreurope/citizens/consumers/shopping/guarantees-returns/digital-content-services/index_en.htm" rel="noopener" target="_blank">https://europa.eu/youreurope/citizens/consumers/shopping/guarantees-returns/digital-content-services/index_en.htm</a></p>
+<p class="ref">¹⁶ AP News（2015-01-21）— "Review: Open e-book format comes with headaches"
+<a href="https://apnews.com/general-news-domestic-news-domestic-news-a41b477484434be3a58e055a11c283e2" rel="noopener" target="_blank">https://apnews.com/general-news-domestic-news-domestic-news-a41b477484434be3a58e055a11c283e2</a></p>
+<p class="ref">¹⁷ Kobo Help（存取於 2026-07-22）— "Download Kobo Books to your computer"
+<a href="https://help.kobo.com/hc/en-us/articles/360017605514" rel="noopener" target="_blank">https://help.kobo.com/hc/en-us/articles/360017605514</a></p>
+<p class="ref">¹⁸ Electronic Frontier Foundation（2015-04-21）— "The Right to Tinker with Your E-Reader"
+<a href="https://www.eff.org/deeplinks/2015/04/right-tinker-your-e-reader" rel="noopener" target="_blank">https://www.eff.org/deeplinks/2015/04/right-tinker-your-e-reader</a></p>
+<p class="ref">¹⁹ Competition and Markets Authority（2024-01-31）— "Helping consumers navigate subscriptions"
+<a href="https://www.gov.uk/government/publications/helping-consumers-navigate-subscriptions" rel="noopener" target="_blank">https://www.gov.uk/government/publications/helping-consumers-navigate-subscriptions</a></p>
+<p class="ref">²⁰ Reuters（2017-05-04）— "EU accepts Amazon e-book commitments to settle antitrust case"
+<a href="https://www.reuters.com/article/business/eu-accepts-amazon-e-book-commitments-to-settle-antitrust-case-idUSKBN180119/" rel="noopener" target="_blank">https://www.reuters.com/article/business/eu-accepts-amazon-e-book-commitments-to-settle-antitrust-case-idUSKBN180119/</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
