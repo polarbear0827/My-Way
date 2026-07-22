@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一雙鞋的修理經濟學 · 穗稻忠武的專欄</title>
+<meta name="description" content="鞋底磨平、鞋跟磨斜，通常是人在街角修鞋攤前才會重新注意到一件物品的生命週期。修理並不保證永遠比買新更便宜，但它把「還能不能用」從單純的消費判斷，變成材料、技能、保固、可得零件與制度的共同問題。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-22-repairing-shoes-and-repair-culture/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一雙鞋的修理經濟學">
+<meta property="og:description" content="鞋底磨平、鞋跟磨斜，通常是人在街角修鞋攤前才會重新注意到一件物品的生命週期。修理並不保證永遠比買新更便宜，但它把「還能不能用」從單純的消費判斷，變成材料、技能、保固、可得零件與制度的共同問題。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-22-repairing-shoes-and-repair-culture/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cobbler_repairing_shoes_in_old_workshop_%28Bazaar_in_Bitola%2C_Macedonia%2C_2025%29.jpg/960px-Cobbler_repairing_shoes_in_old_workshop_%28Bazaar_in_Bitola%2C_Macedonia%2C_2025%29.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "一雙鞋的修理經濟學", "description": "鞋底磨平、鞋跟磨斜，通常是人在街角修鞋攤前才會重新注意到一件物品的生命週期。修理並不保證永遠比買新更便宜，但它把「還能不能用」從單純的消費判斷，變成材料、技能、保固、可得零件與制度的共同問題。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-22-repairing-shoes-and-repair-culture/", "datePublished": "2026-07-22", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cobbler_repairing_shoes_in_old_workshop_%28Bazaar_in_Bitola%2C_Macedonia%2C_2025%29.jpg/960px-Cobbler_repairing_shoes_in_old_workshop_%28Bazaar_in_Bitola%2C_Macedonia%2C_2025%29.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>一雙鞋的修理經濟學</h1>
+<p class="byline"><time>2026-07-22</time></p>
+</div>
+
+<p class="lead">鞋底磨平、鞋跟磨斜，通常是人在街角修鞋攤前才會重新注意到一件物品的生命週期。修理並不保證永遠比買新更便宜，但它把「還能不能用」從單純的消費判斷，變成材料、技能、保固、可得零件與制度的共同問題。</p>
+<p>本文從臺灣的修鞋現場出發，對照國際維修權與紡織循環政策；它不把修繕浪漫化，也不把回收視為萬靈丹，而是追問：一雙鞋若值得被修，市場與政策要提供哪些條件？</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cobbler_repairing_shoes_in_old_workshop_%28Bazaar_in_Bitola%2C_Macedonia%2C_2025%29.jpg/960px-Cobbler_repairing_shoes_in_old_workshop_%28Bazaar_in_Bitola%2C_Macedonia%2C_2025%29.jpg" alt="一名修鞋匠在工作室修補登山鞋｜來源：Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>鞋楦、縫紉機與鞋底構成的工作臺，提醒人們「修理」需要場地、工具與熟練勞動，而不只是一個環保口號。</figcaption></figure>
+<h2>修鞋首先是一項判斷</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Shoe_cobbler_2026.jpg/960px-Shoe_cobbler_2026.jpg" alt="露天市場裡的修鞋職人正在處理鞋面與鞋底｜來源：Wikimedia Commons（CC BY 4.0）" loading="lazy"><figcaption>修鞋攤的工作從辨認破損開始：同樣是鞋底脫膠，處置方式會因鞋面、鞋楦與使用需求而不同。</figcaption></figure>
+<p>把鞋交給職人，第一步不是黏合，而是判斷。鞋底磨耗是否已觸及中底、鞋面裂痕是否沿著受力處延伸、縫線與拉鍊能否拆換、鞋楦是否還保有支撐，會決定修復是補強、換底、重縫、清潔保養，或根本不值得做。這些判斷不等於「舊物必須留下」；它們是在安全、成本與物品剩餘壽命之間做選擇。</p>
+<p>國立臺灣工藝研究發展中心採訪屏東鞋包修護工作室時，記錄的正是這種把材料重新讀一遍的工作：皮革表面髒污、乾裂、褪色，可能要先清潔、補傷、上色與保護；不同皮料、織物、鞋底膠與五金，不能用一種方式處理。¹ 對消費者而言，修繕服務的價值因而不只在把外觀「變新」，也在得到一段可理解的損壞說明與後續保養建議。</p>
+<p>鞋子特別能看出這件事。它同時承受濕氣、摩擦、體重與地面衝擊；鞋面、鞋底、內裡與黏著層的壽命不會同步。若只把它當成一件整體商品，任何一處破損都容易被理解為報廢；若把它看成可拆解的多個部位，修理才有討論空間。英國廣播公司在報導維修權討論時也指出，產品是否容易拆修、零件是否可得，會直接左右消費者選擇修理或替換。²</p>
+<p>但「可修」不是道德命令。嚴重變形、結構斷裂、發霉或安全機能受損的鞋，未必適合繼續使用；低價製品的人工與材料成本，也可能高於新品。歐洲環境署提醒，勞動成本高而新品價格低，會使大規模修繕在商業上難以成立。³ 因此較誠實的問題不是每雙鞋都該修，而是當修理合理時，消費者是否找得到資訊、零件與可信任的服務。</p>
+<h2>技術不是懷舊，而是可傳遞的知識</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Cordonnerie_-_Shoemaking%2C_footwear_shoe_repair%2C_cobbling%2C_etc_-_Public_domain_book_illustration_from_French_encyclopedia_Larousse_du_XX%C3%A8me_si%C3%A8cle_1932.jpg/960px-Cordonnerie_-_Shoemaking%2C_footwear_shoe_repair%2C_cobbling%2C_etc_-_Public_domain_book_illustration_from_French_encyclopedia_Larousse_du_XX%C3%A8me_si%C3%A8cle_1932.jpg" alt="1932 年百科全書中的製鞋與修鞋工序圖｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>歷史工序圖並非今日修鞋店的完整寫照，但可見修繕一直涉及鞋楦、切削、縫製與替換零件的組合。</figcaption></figure>
+<p>修鞋常被歸進「老行業」，容易把重點放在店面年代或職人故事；然而，真正決定服務能否延續的是知識能不能被傳遞。皮革需要辨識鞣製、厚薄與表面塗層；橡膠底、EVA 中底與複合材料需要不同黏著與補強方法；鞋型、步態與原有支撐結構，又會影響修後是否仍舒適。這些不是把一件東西黏回去的單一步驟。</p>
+<p>國立臺灣工藝研究發展中心的資料把皮革照護區分為預防、清潔、補傷、補色與保護，並提醒先在不顯眼處測試材料反應。⁴ 這項原則值得從皮件推到鞋類：材料與工法不明時，快速處理可能造成更大的色差、硬化或脫膠。修繕的技術含量，往往就在「先不動手」的辨識。</p>
+<p>臺北一間經營多年的修鞋店在 TaiwanPlus 報導中，將來件從鞋底、鞋面到拉鍊分別處理，也提到工作量、零件與客人對成品的期待都會影響報價。⁵ 這是個案，不足以代表全臺修鞋業；但它說明修繕價格不應只與新品售價相比。報價中包含診斷、拆卸、尋料、手工、風險與返工，而這些成本在標準化商品價格中往往不易被看見。</p>
+<p>工藝也不必與新技術對立。材料資料、維修紀錄、可替換零件規格與清楚保養說明，都能讓修鞋店更容易接手陌生產品。問題在於，若產品一開始就以難拆、難辨識或無零件供應的方式設計，技術再成熟也只能在很窄的空間內補救。歐盟後來把可修性與產品資訊放進規範，正是將這個原本留給巷口師傅解決的難題，拉回設計與供應鏈的責任。⁶</p>
+<h2>臺灣現場：從修好物件到維持一段關係</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Geta_repairer_as_pedlar_in_Japan_%281915_by_Elstner_Hilton%29.jpg/960px-Geta_repairer_as_pedlar_in_Japan_%281915_by_Elstner_Hilton%29.jpg" alt="日本行商修理木屐的歷史照片｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>行動修繕曾是生活服務的一部分。今日城市修鞋店未必沿用相同形式，但仍面對同一個問題：服務能否在住處附近被找到。</figcaption></figure>
+<p>臺灣的修鞋店沒有一份足以描述全貌的官方名冊，因此不宜用少數老店的故事推論整個產業正在復興或消失。能較確定的是，在臺北、屏東等地的採訪中，修鞋與鞋包修護仍是可被找到的服務，工作範圍從換鞋底、補鞋面到皮革照護。⁵⁷ 而這類服務的價值，常常和客戶的使用史綁在一起：長年穿出的楦型、旅行帶回的鞋、因工作需求反覆穿著的鞋，未必能由新品立即取代。</p>
+<p>這種關係有其限制。客戶相信職人的經驗，不代表每次都必須修，也不代表修後能恢復原廠狀態。合理的說明應包括可做與不可做的範圍、材料差異、可能色差、費用與交期。行政院消費者保護法要求企業經營者提供充分正確資訊，並規定書面保證至少載明內容與期間等事項；這是一般消費保障，不是專為修鞋訂出的制度。⁸ 因此在小型修繕交易裡，收據、施工項目與材料說明，往往就是避免期待落差的基本工具。</p>
+<p>「在地」也不只是店址。修理若要成為日常選項，顧客得知道什麼能修、何時該送修，店家則需要穩定材料、工具與接案量。把所有責任放給個別手藝人，會忽略新鞋設計與零件供應如何決定修繕難度；把所有希望放在品牌維修方案，也可能忽略社區店家對小額、急件與非標準品的處理能力。較可行的想像，是兩種服務並存：品牌提供資料、零件與保固，地方職人提供判斷與操作。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 修鞋攤的公共意義不必被誇大為拯救環境的單一答案。它更像一個提醒：消費者若只在「買新」與「丟棄」之間選擇，物品的可用性會被產品設計與市場價格預先決定。修繕服務讓第三種選擇可見，但能否擴大，仍要看制度是否降低資訊與零件的門檻。</p>
+<h2>國際制度把「修不修」放回產品責任</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Shoe_Maker_at_Work.jpg" alt="鞋匠在工作臺前處理鞋子｜來源：Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>職人的工作臺顯示修繕仰賴專業勞動；政策討論的核心，則是如何讓這項勞動不被零件與資訊不足卡住。</figcaption></figure>
+<p>近年「維修權」多從手機、家電與農機進入公共討論，鞋類卻能讓它更容易理解：如果一件商品在保固後沒有零件、拆解資訊或合理的服務價格，消費者縱使想修也未必做得到。美國聯邦貿易委員會（FTC）2021 年提交國會的報告指出，製造商施加的維修限制可能傷害消費者與獨立維修者，並建議執法機關處理反競爭限制。⁹ 報告並非宣稱所有製造商限制都不合理；它要求以競爭、資安、安全與智慧財產的證據來檢驗各種主張。</p>
+<p>歐盟的做法是把修理選項寫入消費者制度。歐盟理事會 2024 年正式通過「修理商品指令」，涵蓋受歐盟可修理要求約束的產品；在法定保證期間，消費者在一定條件下可選擇修理，保證期外則要求製造商提供修理途徑。¹⁰ Reuters 報導指出，制度的目標是減少可用商品因故障而被替換，並讓零件與獨立修理者取得更清楚的路徑。¹¹ 這些規則主要針對列管產品，不能直接套用到每一雙鞋；但它提供了同一套政策語言：修理不是「消費者自己想辦法」，而與售後服務及產品設計有關。</p>
+<p>法國則把誘因放到衣物與鞋類。法國政府 2023 年啟動修繕獎勵，讓消費者在參與計畫的修繕業者處理衣物與鞋類時獲得折抵。¹² 聯合國環境規劃署將此列為以生產者責任費用支持修繕的例子，也提醒它的目的在縮小修理勞動與廉價新品之間的價格差。¹³ 這不是證明補助必然成功：政策成效還要看網絡覆蓋、費用、民眾使用率和可修產品數量。</p>
+<p>國際規範的共同點，是把「延長使用」放在回收之前思考。若產品仍可安全使用，修理、再使用與轉售保留的是已投入的材料與勞動；若只在報廢後談回收，許多價值已經流失。這也解釋了為何修鞋看似微小，卻會連到產品資訊、保固和市場公平。</p>
+<h2>臺灣政策正在從回收走向延長使用</h2>
+<figure><img src="https://enews.moenv.gov.tw/img/MOENV/frxsxq1m.2k5.jpg" alt="環境部資源循環政策活動畫面｜來源：環境部（政府網站）" loading="lazy"><figcaption>環境部的資源循環政策討論，已把維修、延長使用與產品資訊列入制度工具；這與一雙鞋能否送修的日常經驗相連。</figcaption></figure>
+<p>臺灣近年的資源循環政策，開始把重點從末端回收往前推。環境部 2025 年預告修正資源回收再利用法、改名為《資源循環推動法》時，提出永續產品政策、維修保養機制、可維修資訊與延長產品壽命等方向。¹⁴ 立法院其後於 2026 年通過該法；環境部說明，新法納入產品的設計、生產、消費、回收和再使用全生命週期，也將讓指定業者揭露耐用度、可修復性與回收方法等資訊。¹⁵</p>
+<p>這不是一部「修鞋法」。它建立的是較寬的制度框架：未來可能依產品類別要求綠色設計、延長使用或資訊揭露，實際適用範圍仍須看子法與公告。把法規直接解讀成所有品牌立即必須提供修鞋，會超出現有資料；但把它理解為政策開始承認「維修」是資源循環的一環，則有明確依據。</p>
+<p>環境部資源循環署的循環產品與服務作業要點，將「提供維修服務及設置維修點」和一定保固年限列為可維修延長使用的服務條件之一。¹⁶ 這提供服務端被辨識的可能性，也同時顯示政府在意的不是單一材料回收率，而是產品與服務是否能減少新品需求。第一波循環服務技術規格已納入資訊物品、家具等服務；紡織品則先著重再生料與單一材質設計。¹⁷ 鞋類如何納入、用何種耐用或可維修標準衡量，仍有待後續規格與產業對話。</p>
+<p>對修鞋店而言，政策語言若停在大方向，日常改變有限。能讓小型修繕服務受益的細節，可能包括維修點資訊、消費者辨識、產品零件供應、保固條款與技能培訓。對品牌而言，也要面對材料與設計的取捨：可拆解不必然等於耐用，單一材料也未必適合所有性能需求。這些衝突需要公開的類別標準，而非只在廣告裡使用「永續」二字。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 臺灣的制度轉向為修繕留下入口，但入口不是成果。若未來的指標只計算回收量，修理服務很容易在統計上隱形；若能同時記錄維修量、可得零件與產品實際使用年限，才較可能看見延長使用究竟有沒有發生。</p>
+<h2>回收不是修理的同義詞</h2>
+<figure><img src="https://cci.ntcri.gov.tw/files/文章封面/皮革/皮革日常保養與預防_2.jpg" alt="皮革材料保養示意｜來源：國立臺灣工藝研究發展中心（政府機關網站）" loading="lazy"><figcaption>材料在進入回收系統前，先經過使用、保養與修復；不同階段保留的價值並不相同。</figcaption></figure>
+<p>循環經濟常被縮寫成「回收」，但修理、再使用與回收處在不同階段。回收處理的是已無法以原用途使用的材料；修理處理的是仍可能安全使用、但局部失效的物件。兩者都可能必要，卻不能互相替代。鞋類尤其如此：一雙鞋通常混合鞋面、黏著層、發泡中底、橡膠外底、金屬或塑膠配件，拆解與分流本身就有成本。</p>
+<p>歐洲環境署 2025 年指出，歐盟居民 2022 年平均消費 19 公斤衣物、鞋類與家用紡織品，其中鞋類約 4 公斤；同年紡織廢棄物約為每人 16 公斤。¹⁸ 該機構強調，耐用、再使用、修理與回收須一起推進，也同時承認使用階段、修理量與循環商業模式的資料仍有缺口。這個提醒很重要：環境影響的數字多半來自整體紡織系統，不能直接換算成「修一雙鞋就減少多少碳」。</p>
+<p>針對未售與退貨品，歐洲環境署估計，歐洲市場上 4% 至 9% 的紡織產品可能在未使用前就被銷毀；鞋類網購退貨率的研究範圍也高於衣物。¹⁹ 這些是歐洲資料，不是臺灣的統計，不能移植為本地市場現況；它們說明的問題則具有普遍性：當過度生產、尺寸不合、快速退貨與低價新品交織，修理端會面臨「修比買貴」的結構壓力。</p>
+<p>聯合國環境規劃署在 2025 年的零廢棄日資料中，呼籲以減量、再使用與修理取代線性消費，並警告紡織廢棄物的全球規模與處理不均。²⁰ 這類全球數字適合說明方向，不能代替一間修鞋店的績效評估。真正的效益還取決於鞋子是否真的延長使用、是否避免了新品購買、修理運輸距離和材料替換量。</p>
+<p>因此，修繕敘事最需要避免兩個極端：一是把回收當成萬全解答；二是宣稱只要修理就天然無代價。更好的順序是先減少不必要購買、把安全可用的物件修好並使用更久，最後才處理確實無法使用的材料。這個順序也更接近資源在生活中被保留價值的方式。</p>
+<h2>修理的代價，也需要被誠實計算</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Shoe_Maker_at_Work.jpg" alt="製鞋職人在工作臺前處理材料｜來源：Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>工時、技術與材料是修繕價格的一部分；這張圖不代表臺灣修鞋業的統計，僅呈現手工修繕的勞動性。</figcaption></figure>
+<p>修理文化若只談情感，很容易忽略它的門檻。鞋底、皮革、拉鍊或縫線的損壞程度不同；修理需要的零件也未必容易取得。當新品以低價販售，手工工時、門市租金與材料成本往往讓修繕顯得昂貴。歐洲環境署在分析紡織循環時明確指出，勞動成本與低價新品的競爭，使大量修繕可能缺乏商業可行性。³</p>
+<p>政策可以改變部分價格訊號，卻不能取消所有取捨。法國的衣物與鞋類修繕折抵，試圖讓消費者在合格業者處修理時少付一些費用；但補助若沒有足夠店家、可修產品與清楚條件，也可能只成為少數人使用的方案。¹² 歐盟維修權規則則著重列管產品的售後修理，仍需各國落實、業者提供零件與消費者實際採用。¹⁰</p>
+<p>業界對制度的疑慮也值得記錄。BBC 報導歐盟相關討論時引述部分業者的看法：擴大修理義務會帶來成本與行政負擔，且有些產品的安全、資安或技術複雜度需要被考慮。²¹ 這些意見不等於維修權沒有必要；它們提醒政策必須按產品類別設計，並以證據檢驗「無法修」究竟是安全需求、技術限制，還是商業選擇。</p>
+<p>鞋類也有自己的界限。部分運動鞋或複合材質鞋款，修後可能無法恢復原有的防水、支撐或避震性能；安全工作鞋、登山鞋與醫療輔具更不宜只以外觀決定是否續用。可信任的修繕服務應願意拒絕不安全或無法保證的案件。這種拒絕不是修理文化的失敗，而是專業的邊界。</p>
+<p>消費者能做的，並非把所有舊鞋送去補。較實際的是在購買前問保固、可否換底、零件與維修點；送修時保留收據、明確說明用途；當店家指出無法安全修復時，也把那份判斷納入決定。品牌與政府則需要讓這些問題有可查的答案，而非要求每個人靠運氣找到巷口職人。</p>
+<h2>結語：讓第三種選擇留在生活裡</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cobbler_repairing_shoes_in_old_workshop_%28Bazaar_in_Bitola%2C_Macedonia%2C_2025%29.jpg/960px-Cobbler_repairing_shoes_in_old_workshop_%28Bazaar_in_Bitola%2C_Macedonia%2C_2025%29.jpg" alt="修鞋匠在工作臺修補鞋子的畫面｜來源：Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>物件的壽命不是單由製造日期決定；能否被看見、被判斷、被修復，取決於人和制度是否提供了中間的選項。</figcaption></figure>
+<p>一雙鞋是否修理，最後仍是個別決定。有人會選擇更換，因為修復不安全、費用不合理或需求改變；有人會選擇修理，因為它仍合腳、材料仍好，或因為那雙鞋承載一段無法替代的使用經驗。中立地看，兩種選擇都不該被簡化成道德測驗。</p>
+<p>不過，真正的選擇必須有條件。若消費者不知道產品能否拆修、不知道哪裡有維修點、零件完全不可得，或修繕師傅被迫在資訊不足下承擔風險，「買新」就會成為幾乎唯一的路徑。反過來說，若品牌把耐用、零件與服務寫清楚，政府把修繕納入循環制度，地方技術能被培養與信任，修理才會成為可衡量、可使用的第三種選擇。</p>
+<p>這也是修鞋攤值得被重新看見的原因：它不只補上一塊鞋底，也把產品設計、材料知識、勞動價格與公共政策放到同一張工作臺上。修繕無法單獨解決過度生產與廢棄問題；但它讓人看見，物品報廢之前，仍存在一段需要被認真對待的時間。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ 國立臺灣工藝研究發展中心（2024）—「皮革日常保養與預防」
+<a href="https://cci.ntcri.gov.tw/Learn/Detail/31" rel="noopener" target="_blank">https://cci.ntcri.gov.tw/Learn/Detail/31</a></p>
+<p class="ref">² BBC News（2023-07-12）—「EU right to repair: What it means for consumers」
+<a href="https://www.bbc.com/news/world-europe-66174349" rel="noopener" target="_blank">https://www.bbc.com/news/world-europe-66174349</a></p>
+<p class="ref">³ European Environment Agency（2024-05-21）—「Management of used and waste textiles in Europe’s circular economy」
+<a href="https://www.eea.europa.eu/en/analysis/publications/management-of-used-and-waste-textiles-in-europes-circular-economy" rel="noopener" target="_blank">https://www.eea.europa.eu/en/analysis/publications/management-of-used-and-waste-textiles-in-europes-circular-economy</a></p>
+<p class="ref">⁴ 國立臺灣工藝研究發展中心（2024）—「皮革日常保養與預防」
+<a href="https://cci.ntcri.gov.tw/Learn/Detail/31" rel="noopener" target="_blank">https://cci.ntcri.gov.tw/Learn/Detail/31</a></p>
+<p class="ref">⁵ TaiwanPlus（2024-03-27）—「Taipei’s 50-Year-Old Cobbler Shop Gives Old Shoes New Life」
+<a href="https://www.taiwanplus.com/news/taiwan-news/taiwan-culture/240327010/taipeis-50-year-old-cobbler-shop-gives-old-shoes-new-life" rel="noopener" target="_blank">https://www.taiwanplus.com/news/taiwan-news/taiwan-culture/240327010/taipeis-50-year-old-cobbler-shop-gives-old-shoes-new-life</a></p>
+<p class="ref">⁶ European Commission（2024）—「Directive on repair of goods」
+<a href="https://commission.europa.eu/law/law-topic/consumer-protection-law/directive-repair-goods_en" rel="noopener" target="_blank">https://commission.europa.eu/law/law-topic/consumer-protection-law/directive-repair-goods_en</a></p>
+<p class="ref">⁷ 國立臺灣工藝研究發展中心（2024）—「皮革日常保養與預防」
+<a href="https://cci.ntcri.gov.tw/Learn/Detail/31" rel="noopener" target="_blank">https://cci.ntcri.gov.tw/Learn/Detail/31</a></p>
+<p class="ref">⁸ 法務部全國法規資料庫（現行法）—「消費者保護法」
+<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0170001" rel="noopener" target="_blank">https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=J0170001</a></p>
+<p class="ref">⁹ U.S. Federal Trade Commission（2021-05）—「Nixing the Fix: An FTC Report to Congress」
+<a href="https://www.ftc.gov/reports/nixing-fix-ftc-report-congress-repair-restrictions" rel="noopener" target="_blank">https://www.ftc.gov/reports/nixing-fix-ftc-report-congress-repair-restrictions</a></p>
+<p class="ref">¹⁰ Council of the European Union（2024-05-30）—「Right to repair: Council gives its final approval」
+<a href="https://www.consilium.europa.eu/en/press/press-releases/2024/05/30/right-to-repair-council-gives-its-final-approval-to-a-directive-that-will-encourage-consumers-to-repair-defective-goods/" rel="noopener" target="_blank">https://www.consilium.europa.eu/en/press/press-releases/2024/05/30/right-to-repair-council-gives-its-final-approval-to-a-directive-that-will-encourage-consumers-to-repair-defective-goods/</a></p>
+<p class="ref">¹¹ Reuters（2024-04-23）—「EU Parliament approves rules requiring companies to repair worn-out products」
+<a href="https://www.reuters.com/sustainability/eu-parliament-approves-rules-requiring-companies-repair-worn-out-products-2024-04-23/" rel="noopener" target="_blank">https://www.reuters.com/sustainability/eu-parliament-approves-rules-requiring-companies-repair-worn-out-products-2024-04-23/</a></p>
+<p class="ref">¹² Service-Public.fr（2023-11-08）—「Bonus réparation: une aide pour faire réparer vos vêtements et chaussures」
+<a href="https://www.service-public.fr/particuliers/actualites/A16951" rel="noopener" target="_blank">https://www.service-public.fr/particuliers/actualites/A16951</a></p>
+<p class="ref">¹³ United Nations Environment Programme（2023）—「Sustainability and Circularity in the Textile Value Chain: A Global Roadmap」
+<a href="https://circulareconomy.europa.eu/platform/sites/default/files/2023-12/Full%20Report%20-%20UNEP%20Sustainability%20and%20Circularity%20in%20the%20Textile%20Value%20Chain%20A%20Global%20Roadmap_0.pdf" rel="noopener" target="_blank">https://circulareconomy.europa.eu/platform/sites/default/files/2023-12/Full%20Report%20-%20UNEP%20Sustainability%20and%20Circularity%20in%20the%20Textile%20Value%20Chain%20A%20Global%20Roadmap_0.pdf</a></p>
+<p class="ref">¹⁴ 環境部（2025-05-29）—「資源回收再利用法修正草案預告」
+<a href="https://www.moenv.gov.tw/en/news/press-releases/33110.html" rel="noopener" target="_blank">https://www.moenv.gov.tw/en/news/press-releases/33110.html</a></p>
+<p class="ref">¹⁵ 環境部（2026-06-02）—「立法院三讀通過資源循環推動法」
+<a href="https://www.moenv.gov.tw/en/news/press-releases/36044.html" rel="noopener" target="_blank">https://www.moenv.gov.tw/en/news/press-releases/36044.html</a></p>
+<p class="ref">¹⁶ 環境部資源循環署（2026）—「循環產品及循環服務推動作業要點」
+<a href="https://tcpip.moenv.gov.tw/source/category-24/post-104" rel="noopener" target="_blank">https://tcpip.moenv.gov.tw/source/category-24/post-104</a></p>
+<h2>資料的盲點，正是下一步要補的地方</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Cordonnerie_-_Shoemaking%2C_footwear_shoe_repair%2C_cobbling%2C_etc_-_Public_domain_book_illustration_from_French_encyclopedia_Larousse_du_XX%C3%A8me_si%C3%A8cle_1932.jpg/960px-Cordonnerie_-_Shoemaking%2C_footwear_shoe_repair%2C_cobbling%2C_etc_-_Public_domain_book_illustration_from_French_encyclopedia_Larousse_du_XX%C3%A8me_si%C3%A8cle_1932.jpg" alt="修鞋工序的歷史圖解｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>工序可以被畫成圖，但修繕服務的實際量、價格與延壽效果，仍需要更透明的資料才能被比較。</figcaption></figure>
+<p>本文沒有估算臺灣修鞋店家數、修鞋市場規模，或單次修繕可減少多少碳排，因為在本次查閱的政府與公開研究資料中，找不到可重複檢驗、且能對應臺灣鞋類修繕的完整統計。這不是空白可以用國外數字填補的地方。歐洲環境署雖提供紡織品消費、廢棄與退貨的估計，但也明確承認修理、產品壽命與循環商業模式的監測資料不足。¹⁸¹⁹</p>
+<p>對臺灣而言，政策要評估「維修」是否真的擴大，至少可逐步建立幾類資料：產品或服務的維修件數與類型、零件與說明書的可得性、保固內外的價格差、修後的使用時間，以及不同地區維修點的可近性。這些資料既能避免把單一成功個案吹捧成趨勢，也能讓消費者知道哪些選擇較可能有效。</p>
+<p>同樣地，職人觀點需要被記錄，但不應替代勞動條件的調查。修繕業者面對的不只是技術傳承，還有租金、材料、平台競爭、學徒與收入穩定性。未來若有針對臺灣修鞋與鞋類維修的正式普查、學術研究或政策成效資料，本文的個案觀察應由那些資料補正，而非被當成結論。</p>
+<p class="ref">¹⁷ 環境部資源循環署（2026-05-28）—「循環產品及循環服務技術規格」
+<a href="https://tcpip.moenv.gov.tw/source/category-9/post-132" rel="noopener" target="_blank">https://tcpip.moenv.gov.tw/source/category-9/post-132</a></p>
+<p class="ref">¹⁸ European Environment Agency（2025-03-26）—「Circularity of the EU textiles value chain in numbers」
+<a href="https://www.eea.europa.eu/en/analysis/publications/circularity-of-the-eu-textiles-value-chain-in-numbers" rel="noopener" target="_blank">https://www.eea.europa.eu/en/analysis/publications/circularity-of-the-eu-textiles-value-chain-in-numbers</a></p>
+<p class="ref">¹⁹ European Environment Agency（2024-03-04）—「The destruction of returned and unsold textiles in Europe’s circular economy」
+<a href="https://www.eea.europa.eu/en/analysis/publications/the-destruction-of-returned-and-unsold-textiles-in-europes-circular-economy" rel="noopener" target="_blank">https://www.eea.europa.eu/en/analysis/publications/the-destruction-of-returned-and-unsold-textiles-in-europes-circular-economy</a></p>
+<p class="ref">²⁰ United Nations Environment Programme（2025-03-27）—「Unsustainable fashion and textiles in focus for International Day of Zero Waste 2025」
+<a href="https://www.unep.org/news-and-stories/press-release/unsustainable-fashion-and-textiles-focus-international-day-zero" rel="noopener" target="_blank">https://www.unep.org/news-and-stories/press-release/unsustainable-fashion-and-textiles-focus-international-day-zero</a></p>
+<p class="ref">²¹ BBC News（2023-07-12）—「EU right to repair: What it means for consumers」
+<a href="https://www.bbc.com/news/world-europe-66174349" rel="noopener" target="_blank">https://www.bbc.com/news/world-europe-66174349</a></p>
+<p class="ref">²² Associated Press（2026-03-27）—「French nonprofit fights fast-fashion waste, one sneaker at a time」
+<a href="https://apnews.com/article/fast-fashion-paris-sneakers-waste-recycling-7eee22253a42bd069e98b49b9653e51a" rel="noopener" target="_blank">https://apnews.com/article/fast-fashion-paris-sneakers-waste-recycling-7eee22253a42bd069e98b49b9653e51a</a></p>
+<p class="ref">²³ Reuters（2024-03-14）—「France proposes EU ban on exports of used clothes」
+<a href="https://www.reuters.com/business/environment/france-proposes-eu-ban-exports-used-clothes-2024-03-14/" rel="noopener" target="_blank">https://www.reuters.com/business/environment/france-proposes-eu-ban-exports-used-clothes-2024-03-14/</a></p>
+<p class="ref">²⁴ European Parliament（2024-04-23）—「Parliament adopts right-to-repair rules」
+<a href="https://www.europarl.europa.eu/news/en/press-room/20240419IPR20584/parliament-adopts-right-to-repair-rules" rel="noopener" target="_blank">https://www.europarl.europa.eu/news/en/press-room/20240419IPR20584/parliament-adopts-right-to-repair-rules</a></p>
+<p class="ref">²⁵ U.S. Federal Trade Commission（2021-05-06）—「FTC Report to Congress Examines Anti-Competitive Repair Restrictions」
+<a href="https://www.ftc.gov/news-events/news/press-releases/2021/05/ftc-report-congress-examines-anti-competitive-repair-restrictions-recommends-ways-expand-consumers" rel="noopener" target="_blank">https://www.ftc.gov/news-events/news/press-releases/2021/05/ftc-report-congress-examines-anti-competitive-repair-restrictions-recommends-ways-expand-consumers</a></p>
+<h3>資料與方法說明</h3>
+<p>本文以官方法規、主管機關公告、國際組織報告與新聞報導交叉查核。涉及歐盟的消費、廢棄、退貨或修繕成本資料，均明確標記為歐洲脈絡，不推估為臺灣數字；涉及臺灣修鞋現場的敘述，僅援引可公開查閱的採訪和工藝資料，不將個別店家經驗概括為全國趨勢。對於修繕是否較環保，本文採條件式描述：必須在產品仍可安全使用、確實延長使用期，且未以不合理的材料與運輸成本抵銷效益時，才可能保留較多既有價值。這是依資源循環階序作出的分析，不是對每一件修繕案件的量化判決。</p>
+<p>讀者若要作個人選擇，最具體的起點不是把舊物一律留下，而是在購買、保養與故障時留下資訊：商品型號、保固、材料、維修紀錄與施工收據。這些看似零碎的資料，能讓下一位維修者理解物件的狀態，也讓消費者在替換前真正比較修理的可行性。公共制度若要支持維修，最終也必須把這些原本分散在使用者、職人和品牌手上的資訊，變成可被查詢與檢驗的共同基礎。</p>
+<p>資訊透明不會消除所有成本，卻能讓成本被看見、被比較，也能讓修繕與替換的決定更接近真實需求。</p>
+<p>而這正是循環社會從口號走向日常時，必須接受的細緻工作。 。 它也需要耐心。</p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
