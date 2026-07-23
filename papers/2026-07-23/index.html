@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HF 論文速讀 2026-07-23 · 穗稻忠武的專欄</title>
+<meta name="description" content="影像編輯 SOTA 互搶榜，自駕則往可編譯場景生成與端到端軌跡蒸餾兩邊推進。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/papers/2026-07-23/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HF 論文速讀 2026-07-23">
+<meta property="og:description" content="影像編輯 SOTA 互搶榜，自駕則往可編譯場景生成與端到端軌跡蒸餾兩邊推進。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/papers/2026-07-23/">
+<meta property="og:image" content="https://polarbear0827.github.io/My-Way/papers/2026-07-23/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "HF 論文速讀 2026-07-23", "description": "影像編輯 SOTA 互搶榜，自駕則往可編譯場景生成與端到端軌跡蒸餾兩邊推進。", "url": "https://polarbear0827.github.io/My-Way/papers/2026-07-23/", "datePublished": "2026-07-23", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://polarbear0827.github.io/My-Way/papers/2026-07-23/cover.png"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">HF 速讀</span><span class="tag">AI 論文</span></div>
+<h1>HF 論文速讀 2026-07-23</h1>
+<p class="byline"><time>2026-07-23</time></p>
+</div>
+<figure class="hero"><img src="https://polarbear0827.github.io/My-Way/papers/2026-07-23/cover.png" alt="HF 論文速讀 2026-07-23" loading="lazy"></figure>
+<p class="lead">影像編輯 SOTA 互搶榜，自駕則往可編譯場景生成與端到端軌跡蒸餾兩邊推進。</p>
+<blockquote class="onesent">今天重點：高效 native-resolution 生成編輯棧、統一模型把 editing 當通才任務，自駕用 RAG 產 Scenic 場景與 JEPA 軌跡蒸餾刷 NAVSIM。</blockquote>
+<h2>今天先記三件事</h2><ol class="rem3"><li>GEdit-Bench：JoyAI-Image-Edit 以 G_O 8.290 居冠，Mage-Flow 4B 棧以 8.271 緊追並…</li><li>Chat2Scenic 在 123 條法規對齊場景基準拿下 CSR 76.42%、FA 58.17%，把自然語言變成可編譯 Scenic。</li><li>Drive-JEPA 單前視 512×256，V-JEPA 影片預訓練加軌跡蒸餾，NAVSIM v2 EPDMS 87.8、v1 PDMS…</li></ol>
+<h2>五篇速讀</h2>
+<div class="paper">
+<h3>Mage-Flow：高效原生解析度影像生成與編輯基礎模型</h3>
+<p class="role">高效生成編輯棧</p>
+<p><strong>為什麼重要：</strong>4B 級 Mage-VAE 加 native-resolution MM-DiT，GEdit-Bench G_O 8.271 排第二，訓練吞吐約 2.5 倍並有 4-step T…</p>
+<p><strong>帶走什麼：</strong>高保真 tokenizer 可再砍一個數量級成本；RL 對齊與 few-step 蒸餾可同時顧畫質、跟隨與延遲。</p>
+<p><strong>下一步：</strong>優先看 Mage-VAE、native packing 與 Base/RL/Turbo 家族分工，對照 GEdit 與延遲需求。</p></div>
+<div class="paper">
+<h3>Chat2Scenic：迭代式 RAG 自駕場景生成框架</h3>
+<p class="role">法規場景生成</p>
+<p><strong>為什麼重要：</strong>123 場景法規對齊基準 FA 58.17、CSR 76.42 第一；把 NL 編成可在 CARLA 跑的 Scenic 3.1 程式。</p>
+<p><strong>帶走什麼：</strong>Contextual prompting、CoT、CodeICL 取 top-3 Scenic snippet，比純文件 ICL 更能拉高編譯成功率與品質。</p>
+<p><strong>下一步：</strong>打開公開 repo 與基準，用自家規章庫換 retrieval，評估 CSR 與 Scenario Quality。</p></div>
+<div class="paper">
+<h3>Drive-JEPA：影片 JEPA 遇見多模態軌跡蒸餾的端到端駕駛</h3>
+<p class="role">端到端自駕SOTA</p>
+<p><strong>為什麼重要：</strong>完整 ViT/L 系統 NAVSIM v2 navtest EPDMS 87.8、v1 PDMS 93.7 皆列第一；單前相機加 32 條軌跡提案。</p>
+<p><strong>帶走什麼：</strong>駕駛影片 V-JEPA 預訓練加多模態軌跡蒸餾與 momentum-aware 選擇，可不靠重感測堆疊衝分。</p>
+<p><strong>下一步：</strong>抓 HF 上公開 ckpt，對 NAVSIM v2.2 協議重現，再測自家前視-only 設定。</p></div>
+<div class="paper">
+<h3>在統一多模態理解與生成中喚醒空間智能</h3>
+<p class="role">編輯榜首統一模</p>
+<p><strong>為什麼重要：</strong>JoyAI-Image-Edit 全量 GEdit-Bench-EN 以 G_O 8.290 拿下第一，強調空間智能與 prompt-enhancing 推論。</p>
+<p><strong>帶走什麼：</strong>統一理解—生成路線若把空間關係叫醒，再加 PE 推論，可直接推高編輯 overall 分數。</p>
+<p><strong>下一步：</strong>對照 Mage-Flow 的效率敘事，評估要極致分數還是可部署 4B 級棧。</p></div>
+<div class="paper">
+<h3>Uni-Edit：智能編輯作為統一模型微調的通用任務</h3>
+<p class="role">編輯當通才任務</p>
+<p><strong>為什麼重要：</strong>BAGEL-Uni-Edit stage-1 在 RISEBench 全套 thinking 模式 Overall Accuracy 17.2 排第二，約 14.7B 參數。</p>
+<p><strong>帶走什麼：</strong>把 intelligent editing 當通用 tuning 任務，可覆蓋 Temporal、Causal、Spatial、Logical 多維推理編輯。</p>
+<p><strong>下一步：</strong>若做統一多模態，用 RISEBench 嚴苛「全維滿分才算過」協議壓測，不只看 GEdit 美學分。</p></div>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
