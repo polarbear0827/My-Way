@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>點亮螢幕的香火：台灣宮廟如何把祈福搬上網 · 穗稻忠武的專欄</title>
+<meta name="description" content="在臺灣，手機螢幕上的一筆資料，可能對應一盞真正掛在廟殿裡的光明燈。線上祈福看似把宗教服務變成表單與付款頁，卻沒有讓儀式完全離開現場：姓名、生辰與願望仍由廟方人員安奉、誦念或登錄；信眾則在另一端等待通知。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-25-digital-faith-taiwan-temples/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="點亮螢幕的香火：台灣宮廟如何把祈福搬上網">
+<meta property="og:description" content="在臺灣，手機螢幕上的一筆資料，可能對應一盞真正掛在廟殿裡的光明燈。線上祈福看似把宗教服務變成表單與付款頁，卻沒有讓儀式完全離開現場：姓名、生辰與願望仍由廟方人員安奉、誦念或登錄；信眾則在另一端等待通知。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-25-digital-faith-taiwan-temples/">
+<meta property="og:image" content="https://live.staticflickr.com/3771/33215418291_9913eb5157_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "點亮螢幕的香火：台灣宮廟如何把祈福搬上網", "description": "在臺灣，手機螢幕上的一筆資料，可能對應一盞真正掛在廟殿裡的光明燈。線上祈福看似把宗教服務變成表單與付款頁，卻沒有讓儀式完全離開現場：姓名、生辰與願望仍由廟方人員安奉、誦念或登錄；信眾則在另一端等待通知。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-25-digital-faith-taiwan-temples/", "datePublished": "2026-07-25", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/3771/33215418291_9913eb5157_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>點亮螢幕的香火：台灣宮廟如何把祈福搬上網</h1>
+<p class="byline"><time>2026-07-25</time></p>
+</div>
+
+<p class="lead">在臺灣，手機螢幕上的一筆資料，可能對應一盞真正掛在廟殿裡的光明燈。線上祈福看似把宗教服務變成表單與付款頁，卻沒有讓儀式完全離開現場：姓名、生辰與願望仍由廟方人員安奉、誦念或登錄；信眾則在另一端等待通知。</p>
+<p>這篇報導追問的不是科技是否取代信仰，而是當祈福可以在通勤、出差或深夜完成，誰仍留在廟埕處理那些不可見的工作？螢幕帶來便利，也把個資、金流、服務設計與儀式感放進同一個問題裡。</p>
+<figure><img src="https://live.staticflickr.com/3771/33215418291_9913eb5157_b.jpg" alt="北港朝天宮的廟宇外觀｜來源：Chi-Hung Lin／Flickr（CC BY-SA）" loading="lazy"><figcaption>廟宇的屋脊與廟埕是地方生活的實體座標；數位服務並未使這些空間消失。</figcaption></figure>
+<h2>廟埕不是背景：信仰原本就有一個地方</h2>
+<p>把宮廟理解成單純的服務據點，很容易忽略它原有的地方功能。文化部的文化資產資料把多座廟宇描述為移民拓墾、商業市街、地方議事與工藝累積的見證；以艋舺龍山寺為例，官方登錄理由特別提到其與萬華發展、移民社群及祭祀儀典的連結¹。這提醒我們，信徒到廟裡不只為了完成一項交易，也會在香案、志工、熟識的鄰居和節令裡確認自己屬於哪一個地方。</p>
+<figure><img src="https://live.staticflickr.com/2485/3793888258_3edf5e0f76_b.jpg" alt="艋舺龍山寺建築細節｜來源：Luke Hoagland／Flickr（CC BY）" loading="lazy"><figcaption>建築、供桌與人流共同構成儀式的環境；這正是線上介面難以完整重現的部分。</figcaption></figure>
+<p>大溪普濟堂關聖帝君聖誕在疫情停辦遶境時，研究者以數位網站與社群頁面為例指出，地方博物館的數位轉譯能協助離鄉者維繫對活動的理解與地方感²。但研究的前提恰好是：那份地方感已有長期的居民、商家、社頭與志工共同支撐。數位工具可以搭橋，不能憑空造出橋兩端的共同生活。</p>
+<h2>把點燈搬上網：交易完成後，儀式仍回到廟裡</h2>
+<p>線上點燈最容易被誤認為一種純數位商品。實際閱讀宮廟的操作說明，會看見另一幅圖像。鹿耳門天后宮要求申請者填寫姓名、性別、農曆生辰、地址與電話；其說明也列出不同燈別與油香金額，並表示完成線上資料後仍須進入付款與後續處理程序³。這些欄位不是網站裝飾，而是傳統燈位上原本就會出現的身分資料，被轉移成了後台資料。</p>
+<figure><img src="https://live.staticflickr.com/7352/11639806253_f1e9156c73_b.jpg" alt="線香與供品的細節｜來源：Prayitno／Flickr（CC BY）" loading="lazy"><figcaption>點燈的網路申請只處理一段流程；供奉、誦念與日常維護仍發生在有香火、器物與人員的現場。</figcaption></figure>
+<p>東港東隆宮的2026年服務頁面更把這個混合模式寫得具體：線上安太歲與光明燈申請形成訂單後，廟方確認資料、依時程安奉，並寄送收據或贈品；初一、十五的呈疏與年末送神，也仍由廟方依其科儀進行⁴。換句話說，信眾操作的是入口，廟方承擔的是一整年的時間表。</p>
+<p>這項區別也有助於理解「線上」的邊界。它可以讓海外或無法到場的人完成登記，降低交通與排隊門檻；但它不必然等於虛擬神桌取代實體神桌。研究台灣道教服務數位化的設計論文發現，真正困難之處包括前台登記、後台管理、志工與廟務角色協調，以及線上與實體觸點如何接合⁵。便利是可見的，協調成本通常不可見。</p>
+<p>有些宮廟已把線上服務做得像會員系統；另一些仍採較簡單的表單、劃撥或電話確認。這種差異提醒讀者，不能把全臺宮廟當成同一套技術或營運能力。</p>
+<h2>疫情留下的混合實驗</h2>
+<p>2021年5月臺灣進入三級警戒，聚會受限，許多宗教活動被迫重新安排。當時臺北聖興天后宮以直播間提供線上參拜、點燈、抽籤與解籤；報導稱，廟方人員會代信眾將福燈與祈願紙在堂前禮拜，信眾可以看見過程⁶。這不是把儀式縮成一個按鈕，而是用影像建立一種委託關係：人在家裡，廟方在場。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/6/62/July_1996_General_Hu%C4%81n_and_Si%C4%81_in_a_traditional_religious_procession_in_Taiwan.jpg" alt="臺灣傳統宗教陣頭｜來源：Joe Lewis／Wikimedia Commons（CC BY-SA）" loading="lazy"><figcaption>遶境與陣頭依靠人群共同移動；疫情時的直播擴大觀看，卻不能把街道上的身體經驗搬進手機。</figcaption></figure>
+<p>學術研究也記下了相似的轉變。針對華藏淨宗學會的案例，研究者指出，直播讓人可以從住家、工作地或交通途中參與，錄影也能事後觀看；但現場參與者的誦念、禮拜、供養與共同時間，和螢幕前的個人觀看並不相同⁷。這項比較不判定哪一種比較真實，而是界定兩種參與各自擁有、也各自失去的條件。</p>
+<p>桃園大溪在2021年暫停普濟堂遶境後，以「關聖帝君線上」網站與社群轉譯活動。研究認為，這讓不能返鄉的居民仍能接近地方知識；但網站之所以有內容，是因為博物館與社群長期記錄了商家、社頭與節慶⁸。疫情加速了媒介的採用，沒有取消地方社會的勞動。</p>
+<p>因此，將疫情視為單純的數位轉型起點並不完整。更準確地說，它迫使宮廟、宗教團體與信眾測試：在不能聚集時，哪些程序可以遠距交接，哪些關係仍必須被保留在同一個時間與空間。</p>
+<h2>抽籤、提醒與年輕使用者</h2>
+<p>數位信仰並不只發生在付款頁。Rest of World在2024年採訪一名27歲自由舞臺工作者與一名廟務人員，報導臺灣部分道教宮廟提供線上抽籤、解籤與問事；受訪者把它用於從日常行程到升學選擇的猶豫，廟方則把網站視為讓偏遠漁村接觸更廣泛信眾的方法⁹。這是個別受訪者的經驗，不能推論為所有年輕人的習慣，卻提供了觀察入口：手機讓求籤進入原本不會特地走進廟門的零碎時間。</p>
+<figure><img src="https://live.staticflickr.com/65535/52273859070_68e59660aa_b.jpg" alt="臺東廟宇外觀｜來源：Chipmunk LIN／Flickr（CC BY）" loading="lazy"><figcaption>對許多信眾而言，網頁與社群帳號首先是找到一座廟的路徑，而不是取代到廟裡的理由。</figcaption></figure>
+<p>線上問事的介面往往把傳統步驟拆成可點選的順序：先默念問題，再從動畫籤筒取籤，接著閱讀籤詩或進一步請示。這樣的設計省去了距離，也重新安排了等待與不確定性。實體求籤通常有香火、擲筊、旁人的腳步聲與廟祝的解說；螢幕上則可能是獨自面對文字。兩者不必被簡化成新舊對立，因為同一個人也可能先在網上問，再在南下旅行時回到廟裡還願。</p>
+<p>服務設計研究指出，寺廟若把前台申請、LINE訊息、後台資料和志工工作串接，登記時間可能縮短；但研究同時點出角色協調、觸點流程與實體—數位整合等結構性斷裂¹⁰。其研究個案雖不能代表全臺，仍說明「使用者體驗」背後不是單一App，而是有人要維護資料、回答例外情況、把電子資料轉成儀式行動。</p>
+<p>對使用者而言，線上服務的吸引力可能是即時；對廟方而言，真正的考驗是如何不把信眾只理解成流量。當提醒訊息、節令通知和捐款連結更頻繁出現，信仰的親近感與行銷的界線也需要被說清楚。</p>
+<h2>志工、後台與個資：真正被改寫的工作</h2>
+<p>一份線上祈福申請，通常至少包含可識別個人的姓名、生日、聯絡方式與付款紀錄；某些服務還會記下住址、燈別、安奉年度與家人資料。這些資料在紙本時代也可能存在，只是被寫在名冊、紅紙或收據上。差別在於，數位化讓它們更容易搜尋、複製、串接與保存，也因此必須被更嚴格地管理。</p>
+<figure><img src="https://live.staticflickr.com/7352/11639806253_f1e9156c73_b.jpg" alt="供桌上的供品與香火｜來源：Prayitno／Flickr（CC BY）" loading="lazy"><figcaption>看似傳統的供桌背後，可能已連接到登記名冊、付款確認與志工排班等現代行政流程。</figcaption></figure>
+<p>台灣的個人資料保護法把姓名、出生年月日、聯絡方式等列為個人資料，蒐集、處理或利用須有特定目的與法定基礎¹¹。對宮廟而言，這不只是法律文字：誰能下載名冊？資料保存多久？外包的金流或網站廠商是否可接觸資料？信眾要如何更正或詢問？這些問題往往比漂亮的祈福頁面更決定一個服務是否值得信任。</p>
+<p>宮廟並不是只有「廟方」一個人。大型活動可能涉及董事會、主委、總幹事、櫃檯、志工、法師、香燈腳、資訊廠商與物流人員。前述服務設計研究發現，整合後台、前台與LINE模組可改善流程，但也必須處理不同角色之間的責任分配¹²。任何聲稱把宗教數位化做得很順的案例，都應被追問：順的是信眾下單，還是每一位工作者都得到足夠的工具、訓練與權限？</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 當一座廟把服務搬到網路，最重要的新「神聖物件」未必是螢幕上的神像，而可能是那一套決定資料如何流動、誰可看見、誰對錯誤負責的規則。沒有這些規則，便利很容易變成對志工與信眾都不透明的負擔。</p>
+<h2>不能被搬走的事：身體、時間與數位落差</h2>
+<p>「能不能在網上完成」不是衡量儀式價值的唯一問題。華藏淨宗學會的案例研究明確區分：現場的人要誦念、禮拜、供養，並在被神聖化的時間與空間裡和他人同步；遠端觀看者則是在家中或通勤途中，以個人方式接收畫面¹³。這不是對遠端信眾的否定，而是承認媒介改變了參與的身體條件。</p>
+<figure><img src="https://live.staticflickr.com/3701/12873411214_7d7b82fc5d_b.jpg" alt="台北慈祐宮元宵前準備的雞蛋｜來源：Romain Pontida／Flickr（CC BY-SA）" loading="lazy"><figcaption>節日前的備料、清潔與人情往來，是線上訂單無法看見、卻支撐儀式運作的日常。</figcaption></figure>
+<p>這個差異尤其出現在節令。初一、十五、神明聖誕、普渡或遶境，並非只有一個結果；人們為了那個結果提前採買、集合、走路、等候、聊天、幫忙抬轎或收拾。即使有人全程看直播，影像也很難傳遞汗水、焚香氣味、雨天的隊伍節奏，或臨時被鄰居叫去幫忙的關係。這些不是浪漫化傳統，而是儀式如何在具體生活中被生產。</p>
+<p>數位服務也可能帶來新的排除。熟悉手機付款、OTP驗證和表單的人，能更快使用它；不熟悉者可能需要子女、鄰居或櫃檯協助。官方數位近用調查長期將年齡、教育、居住地與設備使用列為影響網路利用的因素¹⁴。本文無法從現有資料估計宮廟服務的實際數位落差規模，因此不把它誇大成既定事實；但設計服務時保留電話、現場窗口與清楚的人工協助，至少是可被檢驗的回應。</p>
+<p>線上入口的價值在於多一種抵達方式，不在於要求每個人都從同一個入口進來。對遠地、行動不便或時間受限的信眾，這種選項可能很重要；對習慣親自來的人，保留原有方式同樣重要。</p>
+<h2>當信仰也成為資料：商業、治理與政治邊界</h2>
+<p>宗教科技並不是中性的容器。當線上點燈、數位捐款、社群直播與定位服務被接在同一套系統上，服務提供者可能是廟方自己，也可能是金流公司、電信商、網站工作室或平台。各自的商業模式、資料保護能力與責任分工不同；使用者不應因為畫面帶有神像，就假定背後不存在一般網路服務會有的風險。</p>
+<figure><img src="https://live.staticflickr.com/4457/37292437810_047a00af32_b.jpg" alt="馬祖文化節活動中的神像與人群｜來源：rx1230／Flickr（CC BY-ND）" loading="lazy"><figcaption>大型信仰活動同時是地方文化、組織動員與公共敘事的場域；任何數位化都會牽涉誰設定規則。</figcaption></figure>
+<p>數位發展部在北港朝天宮2024年遶境合作中，以5G行動車、360度直播、AI影像與AR互動打造「數位藝閣」；官方說明的目標包括讓難以靠近犁炮或藝閣車的人獲得不同觀看視角¹⁵。這是政府與宮廟合作的具體示範，也應按其性質閱讀：它是主管機關對計畫成果的說明，能證實活動與技術內容，不能單獨證明信眾是否因此獲得較深的宗教經驗。</p>
+<p>政治脈絡也使「誰在談媽祖」成為敏感問題。Reuters在2023年報導，中國方面試圖透過共同的媽祖信仰影響臺灣敘事；BBC同年則以北港朝天宮等場域報導選舉時宗教與政治的交會¹⁶ ¹⁷。這些報導討論的是特定兩岸政治情境，不應被延伸為所有信眾或所有宮廟都有同樣立場。更審慎的結論是：當信仰被直播、定位、數據化和行銷化，它不只改變服務，也可能改變誰能向公眾定義那個服務代表什麼。</p>
+<p>因此，使用「創新」描述宮廟數位化之前，先問三個普通但關鍵的問題：資料由誰保管？收入與成本如何說明？地方社群是否能對服務規則表示意見？答案往往比技術名稱更接近信任。</p>
+<h2>數位轉譯能保存什麼，又遺漏什麼</h2>
+<p>線上服務與數位保存常被放在一起談，卻不是同一件事。點燈系統處理的是當下的申請、付款與通知；文化保存處理的則是讓後來的人理解一項儀式為何存在、由誰準備、在哪些地方行走。文化部文資局的導覽系統提供古蹟、歷史建築與其他文化資產的定位、圖片與資料，目的之一是讓民眾透過空間資訊理解文化資產¹⁸。它所保存的不是一次按鈕，而是場域脈絡。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Penghu_Mazu_Temple_1919.jpg" alt="澎湖天后宮歷史照片｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>一張歷史照片保存的是某時刻的空間樣貌；但儀式的聲音、分工與人際關係，仍需要口述與長期記錄補足。</figcaption></figure>
+<p>臺東忠合宮的文化資產人才培育計畫提供另一種路徑：研究團隊不只記錄廟史，也整理春秋祭典流程、採訪家將與耆老，並把影像與文字回到廟埕公開發表；其數位專區再把資料轉成可讀、可教、可分享的內容¹⁹。這種做法的重點不是把傳統「做成內容」，而是讓社群能回看、補充甚至質疑記錄。</p>
+<p>數位化也可能讓某些東西被過度放大。最容易被攝影機拍到的，是轎班、煙火、神將、藝閣與大量人潮；最不容易被拍到的，是廟婆整理供桌、志工打電話核對姓名、孩子在廟埕等長輩、店家為進香客準備飲水。若平台只獎勵流量，地方信仰可能被壓縮成節慶亮點，而不是一年四季的互助網絡。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 因此，好的數位轉譯不應只追求把觀看做得更沉浸，也應讓被記錄的人知道資料要用在哪裡，並留下回應、修正與撤回的權利。這和個資治理一樣，都是對關係而不是對技術本身負責。</p>
+<h2>誰有權定義一個好用的祈福服務</h2>
+<p>在多數數位產品裡，「好用」常被量化為完成率、點擊率、等待時間或回訪率。若把這組指標直接搬進宮廟，很可能漏掉更重要的問題：長者能否不靠家人完成申請？志工能否說明資料用途？信眾填錯生辰或誤付款項時，有沒有真人能處理？儀式被轉成線上流程後，主持與參與者是否仍能理解彼此在做什麼？</p>
+<figure><img src="https://live.staticflickr.com/181/389012994_bde3d4704c.jpg" alt="臺灣廟宇石柱細節｜來源：nickyfern／Flickr（CC BY）" loading="lazy"><figcaption>一座廟的秩序由許多細節支撐；數位服務也需要同樣細緻的說明、分工與可追問性。</figcaption></figure>
+<p>兩項不同領域的研究都提供了可參照的答案。大溪的個案強調，數位平台在地方文化被迫中斷時，可以作為人與地方連結的橋梁²⁰；台科大服務設計個案則把問題拆成角色、溝通、觸點與實體—數位整合²¹。前者提醒服務不要脫離地方脈絡，後者提醒服務不能只看一個漂亮入口。</p>
+<p>實務上，宮廟可以把可理解的告知當成基本設計：申請頁說明資料的用途與保存方式；付款後讓人清楚知道後續由誰、何時處理；提供非智慧手機的替代管道；讓更正、取消與詢問不必穿過一層層自動回覆。這些不是外加的公關裝飾，而是把信眾看作有權理解流程的人。</p>
+<p>同樣地，政府或企業以數位科技合作時，也應避免只用參觀人次或曝光量判斷成敗。數位部對北港案例所說的360度直播，的確可以讓無法靠近藝閣車的民眾看到不同視角²²；但是否真正服務地方，需要再問當地保存者、廟方、志工與參與者如何評價。這些聲音往往比發布會更慢出現，也更接近日常。</p>
+<p>本文未進行訪談，不能替這些群體下結論。下一步若要把討論做實，應以具名宮廟為單位訪問廟務人員、香燈腳、年長信徒與未使用線上服務者，並檢視實際隱私告知與申請流程，而不是只從新聞稿或介面推測。</p>
+<h2>結語：香火沒有搬進手機，而是多了一條路</h2>
+<p>線上祈福最容易引發兩種過度簡化的想像：一種認為科技一來，傳統就會被取代；另一種認為只要掛上神像與紅色按鈕，任何數位服務都自然具有儀式意義。從現有案例看，兩者都不準確。宮廟服務的數位化通常是混合的：信眾在遠端填資料、付款或觀看，實體場所裡仍有人安燈、誦念、整理名冊、接電話、處理節令與接待來客。</p>
+<figure><img src="https://live.staticflickr.com/8355/8313694443_e3cdcb9408.jpg" alt="松山慈祐宮附近的紅燈籠｜來源：littleyiye／Flickr（CC BY）" loading="lazy"><figcaption>燈籠能被拍成影像、做成按鈕，卻仍依賴被懸掛、點亮與守護的現場勞動。</figcaption></figure>
+<p>真正的問題因而不是「線上是否夠虔誠」。對於海外、行動不便、輪班工作或暫時無法返鄉的人，線上入口可能讓參與不必完全中斷；對習慣親自走進廟埕的人，現場的身體感、偶遇與地方關係也沒有可被替代的理由。較負責任的服務，不該強迫任一方接受另一方的方式，而是說清楚各種方式能做什麼、不能做什麼。</p>
+<p>本文檢視的官方頁面、新聞與學術個案呈現的是不同尺度的證據：宮廟頁面能說明其服務規則，學術研究能解釋特定個案的張力，新聞能補足公共脈絡；它們都不能代替全面普查或對每一位信眾的訪問。因此，關於使用規模、滿意度與實際個資治理的效果，本文不作超出證據的推斷。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 若數位化的結果是讓遠方的人更容易抵達、讓現場的人更少被忽略、讓資料與金流更可追問，它可以成為信仰日常的補充。若結果只剩下蒐集資料、追逐流量與把志工的勞動藏在介面後面，便利便會失去它原本應有的公共意義。香火沒有搬進手機；手機只是替人們多開了一條通往廟埕、也通往責任的路。 這個題目也需要一個謙抑的採訪起點。本文把線上點燈、直播參拜、數位藝閣與線上抽籤放在同一張地圖上，是為了看見它們共同涉及的媒介與勞動；但它們在宗教意義、組織規模與使用目的上並不相同。以一座大型媽祖廟的技術合作，推論所有里鄰小廟都已數位化，是不成立的；以一項佛教團體的直播實踐，推論所有民間信仰都接受遠距參與，也沒有依據。</p>
+<p>後續採訪可從一筆具體申請開始追蹤：信眾在哪裡看到服務？填了哪些欄位？付款後由誰核對？燈位或法會如何被實際安奉？若資料有誤或信眾反悔，哪一個人接起電話？同時也應走到現場，記錄不用手機的人如何仍被服務，並詢問志工是否有足夠的時間、設備與資料保護訓練。這些看似瑣碎的問題，才會讓「數位信仰」從抽象名詞回到人的日常。</p>
+<p>報導中的案例與分析刻意保留不確定性。沒有訪談到的動機，不以猜測填補；沒有可比數據的使用規模，不用市場故事替代；來源之間若只提出可能性，本文也只把它當作可能性。對一個長在地方關係裡的信仰現象而言，這樣的克制不是缺少結論，而是避免把他人的祈願寫成我們預先設好的答案。 也因此，讀者面對任何線上祈福服務時，可以不必先問它夠不夠新，而先看幾個可實際確認的訊號：頁面是否寫明主辦與聯絡窗口；金額、服務期間與後續程序是否清楚；隱私告知是否可讀；無法上網者是否仍有替代方式；以及服務宣稱的效果，究竟是廟方的信念敘述、使用者感受，還是可由外部查核的事實。這些提問不要求信仰必須接受技術官僚的評分，而是讓信眾、廟方與公共部門在使用技術時，都能保留理解與選擇的空間。 最終，所謂數位轉型若要配得上公共信任，不該只問系統能否運作，也應問它是否保留了拒絕、詢問、修正與親自抵達的可能。對宮廟這種同時承擔記憶、互助、儀式與地方秩序的場域，這些可能性本身，就是服務的一部分。 在這個意義上，保留多種參與方式不是效率的妥協，而是對不同生活條件、地方關係與宗教經驗的基本尊重。 補充來說，技術帶來的選項越多，資訊告知與人工協助的重要性就越高。這不是抵制數位，而是讓數位仍能服務不同的人。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ 文化部文化資產局（查閱：2026-07-25）— 文化資產導覽地圖
+<a href="https://nav.boch.gov.tw/" rel="noopener" target="_blank">https://nav.boch.gov.tw/</a></p>
+<p class="ref">² Chen, Chi-Hui；Shih, Chih-Ming（2022）— Digital Interpretation as a Bridge to Support the Sense of Place: Lord Guan Online! DaxiDaxi Website
+<a href="https://doi.org/10.2478/aup-2022-0003" rel="noopener" target="_blank">https://doi.org/10.2478/aup-2022-0003</a></p>
+<p class="ref">³ 鹿耳門天后宮（查閱：2026-07-25）— 線上點燈祈福
+<a href="https://luerhmen.org.tw/online01.php" rel="noopener" target="_blank">https://luerhmen.org.tw/online01.php</a></p>
+<p class="ref">⁴ 東港東隆宮（查閱：2026-07-25）— 線上祈福服務
+<a href="https://66.org.tw/003_pray/" rel="noopener" target="_blank">https://66.org.tw/003_pray/</a></p>
+<p class="ref">⁵ Chen, Shin-Ying；Tang, Hsien-Hui（2025）— Utilizing AI-Assisted Service Design to Address the Digitalization Challenges of Religious Services
+<a href="https://dl.designresearchsociety.org/cgi/viewcontent.cgi?article=1652&amp;context=iasdr" rel="noopener" target="_blank">https://dl.designresearchsociety.org/cgi/viewcontent.cgi?article=1652&amp;context=iasdr</a></p>
+<p class="ref">⁶ ETtoday新聞雲（2021-06-04）— 疫情下的線上參拜與點燈報導
+<a href="https://www.ettoday.net/news/20210604/1999429.htm" rel="noopener" target="_blank">https://www.ettoday.net/news/20210604/1999429.htm</a></p>
+<p class="ref">⁷ Kukowka, Stefan（2022）— Protecting the Country and Preventing Calamities: The Pure Land Practice of Hwadzan Pure Land Society in the Physical and Virtual Realm
+<a href="https://doi.org/10.2478/vjeas-2022-0006" rel="noopener" target="_blank">https://doi.org/10.2478/vjeas-2022-0006</a></p>
+<p class="ref">⁸ Chen, Chi-Hui；Shih, Chih-Ming（2022）— Digital Interpretation as a Bridge to Support the Sense of Place
+<a href="https://doi.org/10.2478/aup-2022-0003" rel="noopener" target="_blank">https://doi.org/10.2478/aup-2022-0003</a></p>
+<p class="ref">⁹ Rest of World（2024）— How Taiwanese temples are adapting to the digital age
+<a href="https://restofworld.org/2024/divinity-altered-reality-taiwan-temples/" rel="noopener" target="_blank">https://restofworld.org/2024/divinity-altered-reality-taiwan-temples/</a></p>
+<p class="ref">¹⁰ Chen, Shin-Ying；Tang, Hsien-Hui（2025）— Utilizing AI-Assisted Service Design to Address the Digitalization Challenges of Religious Services
+<a href="https://doi.org/10.21606/iasdr.2025.591" rel="noopener" target="_blank">https://doi.org/10.21606/iasdr.2025.591</a></p>
+<p class="ref">¹¹ 法務部全國法規資料庫（查閱：2026-07-25）— 個人資料保護法
+<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021" rel="noopener" target="_blank">https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021</a></p>
+<p class="ref">¹² Design Research Society（2025）— Taiwanese Taoist Temple Service case study
+<a href="https://dl.designresearchsociety.org/cgi/viewcontent.cgi?article=1652&amp;context=iasdr" rel="noopener" target="_blank">https://dl.designresearchsociety.org/cgi/viewcontent.cgi?article=1652&amp;context=iasdr</a></p>
+<p class="ref">¹³ National Taiwan University Buddhist Studies Database（2021）— Protecting the Country and Preventing Calamities
+<a href="https://buddhism.lib.ntu.edu.tw/DLMBS/en/search/search_detail.jsp?comefrom=fulltextproceeding&amp;seq=650751" rel="noopener" target="_blank">https://buddhism.lib.ntu.edu.tw/DLMBS/en/search/search_detail.jsp?comefrom=fulltextproceeding&amp;seq=650751</a></p>
+<p class="ref">¹⁴ 數位發展部（2024）— 2024 Digital Access Survey Report
+<a href="https://moda.gov.tw/en/press/press-releases/14558" rel="noopener" target="_blank">https://moda.gov.tw/en/press/press-releases/14558</a></p>
+<p class="ref">¹⁵ 數位發展部數位產業署（2024）— 5G文化科技瘋媽祖：北港朝天宮5G數位藝閣車
+<a href="https://moda.gov.tw/ADI/news/latest-news/12464" rel="noopener" target="_blank">https://moda.gov.tw/ADI/news/latest-news/12464</a></p>
+<p class="ref">¹⁶ Reuters（2023-12-21）— China wields peace goddess religion as a weapon in Taiwan election
+<a href="https://www.reuters.com/world/asia-pacific/china-wields-peace-goddess-religion-weapon-taiwan-election-2023-12-21/" rel="noopener" target="_blank">https://www.reuters.com/world/asia-pacific/china-wields-peace-goddess-religion-weapon-taiwan-election-2023-12-21/</a></p>
+<p class="ref">¹⁷ BBC News（2023）— Taiwan religion and politics reporting
+<a href="https://www.bbc.com/news/world-asia-67779220" rel="noopener" target="_blank">https://www.bbc.com/news/world-asia-67779220</a></p>
+<p class="ref">¹⁸ 文化部文化資產局（查閱：2026-07-25）— 國家文化資產網
+<a href="https://nchdb.boch.gov.tw/" rel="noopener" target="_blank">https://nchdb.boch.gov.tw/</a></p>
+<p class="ref">¹⁹ 內政部（2024）— Ministry of the Interior Annual Report: Religious and Ceremonial Affairs
+<a href="https://ws.moi.gov.tw/001/Upload/400/RelFile/0/31/2024-MOI-web/download/2024MOIebook-en.pdf" rel="noopener" target="_blank">https://ws.moi.gov.tw/001/Upload/400/RelFile/0/31/2024-MOI-web/download/2024MOIebook-en.pdf</a></p>
+<p class="ref">²⁰ 內政部統計處／政府資料開放平臺（查閱：2026-07-25）— 寺廟登記概況：按區域別、宗教別分
+<a href="https://data.gov.tw/dataset/13953" rel="noopener" target="_blank">https://data.gov.tw/dataset/13953</a></p>
+<p class="ref">²¹ Associated Press（2020-05-16）— Houses of worship gain audience by going online during virus
+<a href="https://apnews.com/article/5e772dae7ec85d66ee785e460a266d68" rel="noopener" target="_blank">https://apnews.com/article/5e772dae7ec85d66ee785e460a266d68</a></p>
+<p class="ref">²² The New York Times（2024-05-03）— Noisy, Gaudy and Spiritual: Young Pilgrims Embrace an Ancient Goddess
+<a href="https://www.nytimes.com/2024/05/03/world/asia/taiwan-religion-mazu-pilgrimage.html" rel="noopener" target="_blank">https://www.nytimes.com/2024/05/03/world/asia/taiwan-religion-mazu-pilgrimage.html</a></p>
+<p class="ref">²³ The Guardian（2021-03-24）— How Taiwan triumphed over Covid as the UK faltered
+<a href="https://www.theguardian.com/world/2021/mar/24/how-taiwan-triumphed-over-covid-as-uk-faltered" rel="noopener" target="_blank">https://www.theguardian.com/world/2021/mar/24/how-taiwan-triumphed-over-covid-as-uk-faltered</a></p>
+<p class="ref">²⁴ Financial Times（2019-12-04）— Religions show faith in power of technology
+<a href="https://www.ft.com/content/e002e7be-f973-11e9-a354-36acbbb0d9b6" rel="noopener" target="_blank">https://www.ft.com/content/e002e7be-f973-11e9-a354-36acbbb0d9b6</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
