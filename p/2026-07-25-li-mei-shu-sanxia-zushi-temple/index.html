@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一座廟如何成為一件作品 · 穗稻忠武的專欄</title>
+<meta name="description" content="三峽的廟埕，龐大石刻與彩繪，也可能是一位畫家的作品。李梅樹是三峽土生土長的畫家與教育者；他從《三峽的町裡》到東京美術學校的訓練，最後把個人對寫實、材料與構圖的要求，帶進一座信眾日常出入的廟宇。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-25-li-mei-shu-sanxia-zushi-temple/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一座廟如何成為一件作品">
+<meta property="og:description" content="三峽的廟埕，龐大石刻與彩繪，也可能是一位畫家的作品。李梅樹是三峽土生土長的畫家與教育者；他從《三峽的町裡》到東京美術學校的訓練，最後把個人對寫實、材料與構圖的要求，帶進一座信眾日常出入的廟宇。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-25-li-mei-shu-sanxia-zushi-temple/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%E4%B8%89%E5%B3%BD%E9%95%B7%E7%A6%8F%E5%B7%96%E6%B8%85%E6%B0%B4%E7%A5%96%E5%B8%AB%E5%BB%9F_20220929.jpg/1280px-%E4%B8%89%E5%B3%BD%E9%95%B7%E7%A6%8F%E5%B7%96%E6%B8%85%E6%B0%B4%E7%A5%96%E5%B8%AB%E5%BB%9F_20220929.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "一座廟如何成為一件作品", "description": "三峽的廟埕，龐大石刻與彩繪，也可能是一位畫家的作品。李梅樹是三峽土生土長的畫家與教育者；他從《三峽的町裡》到東京美術學校的訓練，最後把個人對寫實、材料與構圖的要求，帶進一座信眾日常出入的廟宇。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-25-li-mei-shu-sanxia-zushi-temple/", "datePublished": "2026-07-25", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%E4%B8%89%E5%B3%BD%E9%95%B7%E7%A6%8F%E5%B7%96%E6%B8%85%E6%B0%B4%E7%A5%96%E5%B8%AB%E5%BB%9F_20220929.jpg/1280px-%E4%B8%89%E5%B3%BD%E9%95%B7%E7%A6%8F%E5%B7%96%E6%B8%85%E6%B0%B4%E7%A5%96%E5%B8%AB%E5%BB%9F_20220929.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>一座廟如何成為一件作品</h1>
+<p class="byline"><time>2026-07-25</time></p>
+</div>
+
+<p class="lead">三峽的廟埕，龐大石刻與彩繪，也可能是一位畫家的作品。李梅樹是三峽土生土長的畫家與教育者；他從《三峽的町裡》到東京美術學校的訓練，最後把個人對寫實、材料與構圖的要求，帶進一座信眾日常出入的廟宇。¹</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%E4%B8%89%E5%B3%BD%E9%95%B7%E7%A6%8F%E5%B7%96%E6%B8%85%E6%B0%B4%E7%A5%96%E5%B8%AB%E5%BB%9F_20220929.jpg/1280px-%E4%B8%89%E5%B3%BD%E9%95%B7%E7%A6%8F%E5%B7%96%E6%B8%85%E6%B0%B4%E7%A5%96%E5%B8%AB%E5%BB%9F_20220929.jpg" alt="三峽長福巖清水祖師廟正面｜來源：S099／Wikimedia Commons（CC BY 4.0）" loading="lazy"><figcaption>祖師廟不是博物館展櫃中的單件藏品：祭祀、觀光與地方生活仍在這座建築裡並行。</figcaption></figure>
+<p>這個故事的重點不在把祖師廟浪漫化為單一作者的傑作。它有清水祖師信仰、捐資者、廟方管理者、畫家、木石雕匠與學生共同參與；各方留下的痕跡，正構成它今日受到保護與討論的原因。內政部的宗教文化地圖把它列為全年開放的宗教景觀；文化資產資料則將其定為新北市市定古蹟。²³</p>
+<p>本文依據官方文化資產資料、國立臺灣美術館典藏與研究、紀念館檔案、學術研究，以及多家媒體報導交叉整理。能由多方資料確認的，是1947年以後的重建與李梅樹的主持角色；對於個人動機與傳聞，本文則明確標示來源，避免將後人的詮釋當成可驗證事實。</p>
+<h2>從畫布走到地方公共空間</h2>
+<p>李梅樹1902年生於三峽，早年受師範教育，之後進入東京美術學校西洋畫科。國美館與紀念館資料都記載，他的《靜物》與《三峽後街》分別入選第一、二屆臺展；1934年，他與陳澄波、顏水龍、廖繼春等人共創臺陽美術協會。⁴⁵</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Li_Mei-shu.jpg" alt="李梅樹肖像｜來源：未知作者／Wikimedia Commons（公有領域）" loading="lazy"><figcaption>這張肖像提醒讀者：祖師廟的第三次重建，是一位受西洋畫訓練的地方畫家介入民間建築的案例。</figcaption></figure>
+<p>他的身份並不限於畫家。紀念館資料稱他曾任地方民意職務，並在文化大學、國立藝專與師大等校教學；文化部也把他置於石川欽一郎師生脈絡和臺灣近代美術發展中。⁶ 這些經歷不必然使他比匠師更懂傳統工法，卻解釋了他為何能把同儕畫家、學生與地方組織連接進工程。</p>
+<h2>一場重建，不是一個人的決定</h2>
+<p>祖師廟創建於1769年，1833年因地震毀損後重建；1895年後又遭戰火波及，1899年再建。三峽區公所與交通部觀光署對這段沿革的記載相互吻合。二戰結束後，地方面對的是老舊建物如何處置的問題；1947年，李梅樹開始主持第三次重建。⁷⁸</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Sanxia_Qingshui_Zushi_Temple.jpg" alt="祖師廟外觀與屋脊｜來源：Rutger van der Maar／Wikimedia Commons（CC BY 2.0）" loading="lazy"><figcaption>重建不是把原有建築原封不動復原；建物的空間、材料與裝飾，反映了戰後三峽對信仰與地方公共性的重新想像。</figcaption></figure>
+<p>紀念館所述的靈籤故事，是家族保存下來的敘事，可用來理解後人如何詮釋他接下工程，卻不能獨立證明他的內心動機。較能確認的是，他長期投入設計、畫稿、監工與募資，工程延續到1983年他去世時仍未完全收束。國美館的影音資料也記錄，這是一位西畫家帶領民間工匠的長期工程。⁹¹⁰</p>
+<p>「主持」並不等於「創作全部」。廟宇屬於持續使用的宗教空間，工匠對構件、技法和現場判斷具有關鍵作用。英國藝術大學學者菊池優子以「臺灣地方性的現代性」討論李梅樹與祖師廟，提醒研究者不能只用西方建築史或單一作者概念理解它。¹¹</p>
+<h2>畫家、匠師與學生如何共作</h2>
+<p>廟內最容易看見的合作，是名家畫稿與匠師雕刻的轉換。內政部資料稱，許多石刻與木雕由畫家提供畫稿，再由工匠完成；紀念館則記錄李梅樹邀請于右任、傅狷夫、閻錫山、林玉山、陳進、郭雪湖等人提供書畫底稿。¹²¹³</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Roof_ornamentation%2C_Zushi_Temple.jpg" alt="祖師廟屋頂裝飾｜來源：D. Gordon E. Robertson／Wikimedia Commons（CC BY-SA 3.0）" loading="lazy"><figcaption>屋脊的剪黏與陶飾，是材料、工法與地方信仰一起發聲的部分，不能只被當作建築的附屬裝飾。</figcaption></figure>
+<p>這種分工有兩層意義。第一，畫稿讓學院繪畫、書法與傳統裝飾進入同一個空間；第二，工匠不是被動的複製者。石材的硬度、透雕的深度、木材的榫接與現場比例，都需要職人的技術決定。若只把成品歸於畫家，容易抹去工藝知識的作者性；若只把它視為民俗，又會忽略畫家與學生確實帶進來的圖像與訓練。</p>
+<p>國美館資料記載，李梅樹讓國立藝專雕塑科學生參與金屬浮雕工程。宗教文化地圖進一步說明，三川門十扇門的銅雕門神、四大天王等構件，是以銅質浮雕鑄作；其理由之一是降低香煙對彩繪的損害。¹⁴¹⁵ 這是技術選擇，也是維護問題的早期答案。</p>
+<p>紀念館用民間美術館形容這個空間。此說法是詮釋而非法律類別，但它指出一個可觀察的事實：作品不在白盒子展場裡，而是在參拜動線、節慶和日常視線中被觀看。這也使保存與使用難以切開。</p>
+<h2>石頭、鳥與看得見的知識</h2>
+<p>祖師廟的石材語言尤其鮮明。官方宗教地圖稱目前廟內已完成130多根石柱，分龍柱、花鳥柱與對聯柱；正殿三對透雕石柱被列為代表性作品。¹⁶ 這些數字會隨後續修繕與統計口徑改變，本文因此採官方頁面的目前描述，而不把它當作永久不變的總量。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Altar_in_Zushi_Temple%2C_Sanxia%2C_Taiwan.jpg/1280px-Altar_in_Zushi_Temple%2C_Sanxia%2C_Taiwan.jpg" alt="祖師廟室內祭壇與雕飾｜來源：D. Gordon E. Robertson／Wikimedia Commons（CC BY-SA 3.0）" loading="lazy"><figcaption>室內密集的柱、龕與裝飾，呈現祖師廟以材料細節累積視覺經驗的方式。</figcaption></figure>
+<p>最常被提及的百鳥朝梅柱，並非只是觀光標籤。官方資料說明，一對石柱各刻50隻禽鳥，合計百鳥；鳥類依圖鑑雕作，柱身並以梅樹串連。¹⁷ 2006年和2010年的媒體報導引述觀鳥團體調查，指廟內雕飾可辨識出106種鳥、逾千隻，當中包括臺灣特有種。¹⁸¹⁹ 這類調查屬團體辨識結果，並非生物學普查；它的價值在於顯示雕刻如何成為觀察物種、圖像與地方自然史的入口。</p>
+<p>李梅樹紀念館把百鳥朝梅與石獅的故事寫成地方美育材料：石獅的模型若不合乎要求，他曾親自作出粗胚；百鳥則由圖鑑與觀察轉化為石刻。²⁰ 這是紀念館的敘述，反映家族與地方的保存觀點。能較穩妥地說的是，這些作品把寫實觀察放進傳統吉祥圖像，讓參拜者可以從鳥、花、龍與人物之間看見不同知識系統的交會。</p>
+<p>石材也關乎維修。祖師廟不燒香或限制香客在大殿外參拜，是官方導覽所列的保護措施之一，目的在減少香煙對神龕與藻井的影響。²¹ 美學在此不是一張靜態照片，而是管理者每天要面對的空氣、觸摸、流量和耗損。</p>
+<h2>保存不是一句口號</h2>
+<p>祖師廟的保護歷程，也說明藝術價值並不會自動轉換成保存制度。2017年底的報導記載，屋頂大修與修繕品質引發文化資產提報及暫定古蹟討論；主張保存的一方憂慮，若沒有法定程序與專業修復，材料與工法可能改變。²² 同一時期也有意見指出，廟方擔心法定身分增加管理與修繕限制。這是所有使用中的宗教建築都可能面對的權衡，不能簡化為任何一方反文化或反信仰。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Roof_ornamentation%2C_Zushi_Temple.jpg" alt="祖師廟天花與藻井裝飾｜來源：D. Gordon E. Robertson／Wikimedia Commons（CC BY-SA 3.0）" loading="lazy"><figcaption>木作藻井需要長期維護；對現場管理者而言，保存涉及材料、消防、香火與參觀秩序。</figcaption></figure>
+<p>文化部國家文化資產網現將三峽長福巖清水祖師廟列為市定古蹟，公告指定日期為2018年4月13日；新北市文化局的市定古蹟清冊亦列出同一資訊。²³²⁴ 因此，早期爭論中的「是否會被指定」與今日的法定狀態應清楚區分。本文未找到足以單獨確認所有修復細節的最新工程文件，對具體施工成效不作推論。</p>
+<p>保存並不等於凍結。廟宇需要祭典、信眾、管理組織和收入；古蹟制度則要求調查、審議與專業方法。兩者衝突時，真正需要被問的不是哪個名稱更漂亮，而是決策是否留有可查證的記錄、工法是否尊重既有價值、社區能否參與討論。</p>
+<p>這也是為何「東方藝術殿堂」必須被當作描述，而非免於檢驗的結論。它可以召喚珍惜，但不能取代對材料來源、修繕方式與權責關係的逐項確認。</p>
+<h2>2026年的轉場：紀念館暫停開放</h2>
+<p>這個題目之所以值得此刻回看，也與紀念館的轉場有關。李梅樹紀念館官網在2026年2月發布休館公告；自由時報報導，原址自3月1日起暫停對外營運，新館預計2029年於國立臺北大學三峽校區完成。²⁵²⁶ 這是館方與媒體所述的規畫時程，仍可能因工程或營運安排調整。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Li_Mei-shu_Memorial_Gallery_and_Li_Mei-shu.jpg" alt="李梅樹紀念館與藝術家塑像｜來源：WQL／Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>舊館暫停開放，讓作品、文件與地方知識如何被延續，成為新館落成前的實際問題。</figcaption></figure>
+<p>私人紀念館的角色很特殊：它一面保存家族文件、畫具與作品，一面面對典藏環境、經費、人力與公共服務。紀念館自述1990年初設、1995年遷至現址；文化部2020年報導的梅樹月展覽，則可見它長期把近代美術史、地方團體與學校串聯。²⁷²⁸ 將來的新館是否能延續這些功能，仍有待營運內容實際展開。</p>
+<p>因此，休館不只是參觀資訊。它迫使我們問：藝術史是否只能靠原作展出來傳遞？還是能透過數位典藏、校園課程、廟宇現場與地方導覽持續被閱讀？答案不必排斥其中任何一種，但各種形式提供的證據與體驗並不相同。</p>
+<p>對一般讀者而言，最直接的接觸仍是祖師廟本身。站在柱前，看到的不是一段完結的歷史，而是被使用、被拍攝、被修繕、被管理的文化資產。這也意味著參觀者應遵循廟方規範，不觸摸雕刻、不把祭祀空間僅當作拍照背景。</p>
+<h2>一座可被反覆閱讀的作品</h2>
+<p>從美術史角度看，李梅樹的畫作可在典藏機構與紀念館被逐件研究；從地方史角度看，他投入祖師廟的時間、金錢與人際網絡，則把藝術創作帶進一項公共工程。兩種閱讀都重要，但不應互相吞沒。若只談畫壇成就，會低估廟宇這件集體作品；若只談廟宇傳奇，也會把畫家與同代臺灣美術的關係變得模糊。²⁹³⁰</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Sanxia_Qingshui_Zushi_Temple.jpg" alt="三峽祖師廟全景｜來源：JakGajewski／Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>從遠景看，建築是地方地標；走近之後，它又由無數可閱讀的細節組成。</figcaption></figure>
+<p><strong>（以下為本文分析，非事實陳述）</strong>李梅樹與祖師廟的關係，提供了一種不同於單向保存的視角：文化資產並不是先被專家判定重要、再交由民眾遠觀的物件。它可以先在地方日常中被使用，經由不同世代的工匠、研究者、信眾與行政制度，逐漸被辨認為值得保存的內容。這個過程不會沒有衝突；恰恰因為它仍活著，關於修繕、展示、教育與權利的問題才會一直回來。</p>
+<p>2024年，李梅樹紀念館以李石樵《橫臥裸婦》作為展覽戶外看板曾引發部分家長抗議，館方後來覆蓋畫面並以QR Code說明策展脈絡。³¹ 這一事件不是李梅樹或祖師廟的保存爭議，卻顯示同一個地方藝術機構仍須在公共空間、教育與藝術呈現之間協調。CNA報導並引述學術研究指出，該畫1936年曾遭殖民當局以風紀理由禁展；88年後的爭論讓歷史與當代的觀看標準再次碰面。</p>
+<p>不宜據此替任何一方下道德結論。放在藝術場館、校園周邊或其他公共媒介，觀眾組成與解說條件不同；館方、學校、家長與藝術工作者對適當性也可能有不同判斷。可確定的是，將爭議化為可查閱的脈絡與對話，比只剩下撤除或標籤，更接近公共文化機構應有的工作。</p>
+<p>祖師廟也一樣。它需要被敬重，不是因為人們必須同意每一種詮釋，而是因為它讓人看見藝術、信仰與地方社會如何共同留下可供討論的實物。</p>
+<h2>從時間線辨認不同的問題</h2>
+<p>把不同年代的事件排開，有助於避免把它們誤寫成同一場危機。1769年的創建、1833年的震災重建、1895年至1899年間的戰火與第二次重建，是廟宇自身的早期沿革；1947年以後的工程，則是戰後地方社會與李梅樹共同推動的第三次重建。³² 對建築來說，這些不是單純的年份，而是每次材料、匠師與權力關係被重新安排的節點。</p>
+<p>李梅樹於1983年過世，工程未以他個人規畫完全結束。此後的維護、管理與法定保存，又是另一個階段。2018年列為市定古蹟，則代表政府已以文化資產制度確認其價值。³³ 從「傳說中的作品」到「受法定規範的古蹟」，中間橫跨數十年，不能用一句「一直受到保護」抹平。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/%E4%B8%89%E5%B3%BD%E9%95%B7%E7%A6%8F%E5%B7%96%E6%B8%85%E6%B0%B4%E7%A5%96%E5%B8%AB%E5%BB%9F_20220929_HDR.jpg" alt="祖師廟正面與城市環境｜來源：S099／Wikimedia Commons（CC BY 4.0）" loading="lazy"><figcaption>建築置於街區與河岸環境中；保存的範圍不只包括單一雕刻，也包括觀看它的距離與動線。</figcaption></figure>
+<p>1982年長福橋規畫所引發的景觀爭論，也常被納入這條時間線。臺北時報和多篇地方報導提到，李梅樹反對可能影響廟埕視覺的車行橋計畫，後來規畫改變。³⁴ 這些報導採訪的細節並不完全一致，因此本文只採取多方重複出現的核心：橋梁與廟前景觀確實成為地方與專家討論的焦點，而非將個別回憶中的對話當成逐字史料。</p>
+<p>區分層次也能避免過度延伸。文化部資料、國美館資料與紀念館資料都能支持李梅樹在工程中的核心角色；至於他每一個設計細節的歸屬，則須依個別畫稿、照片、施工紀錄或工匠證言判定。對沒有充足文獻支持的部分，最誠實的寫法是保留未知。</p>
+<h2>在現場看見什麼，也看不見什麼</h2>
+<p>第一次走進祖師廟的讀者，可能先被密度吸引：柱子、門神、屋脊、藻井、香客與人流同時出現。這種密度容易讓人急著拍攝或尋找「最厲害」的局部，卻也容易忽略工藝在空間中的關係。例如，內政部導覽說明三對正殿石柱的題材、藻井的螺旋結構與銅雕門神分別位於不同動線；它們不是孤立展品，而是透過前殿、正殿、門與柱互相組織。³⁵</p>
+<p>到現場能看見的，是完成後的物件；看不見的，往往是勞動、採料、翻模、爭論、重做與維護。國美館影音資料所記錄的石獅故事，正把這種看不見的勞動轉成易懂的敘事：畫家對成品不滿、親手作出粗胚，工匠才重新看待他的要求。³⁶ 不論故事的細節日後如何被補充，它至少指出一件重要的事：現場品質不是抽象的審美名詞，而是漫長協商的結果。</p>
+<p>也因此，參觀時不宜把作品神祕化。傳統雕刻有可辨認的故事題材、吉祥語彙與材料技術；畫家、匠師與學生的合作則是可從文獻與構件追索的歷史問題。理解它們不必先具備專業背景，但需要接受一件事：美感的形成往往依賴許多人，而不是天才突然降臨。</p>
+<p>若把祖師廟只當成旅遊景點，就會錯過它作為地方檔案的層次；若只把它當成受保護的古蹟，又會錯過它仍被信眾使用的現實。兩種看法可以並存，但都要對現場保持節制與尊重。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Sanxia_3_070513.jpg" alt="祖師廟側面細節｜來源：Wikimedia Commons（CC BY-SA）" loading="lazy"><figcaption>廟宇細部的觀看需要時間；同一座建築會因步行路徑與光線而呈現不同資訊。</figcaption></figure>
+<h2>讀者能帶走的，不只是名詞</h2>
+<p>李梅樹與三峽祖師廟的故事，最容易被濃縮為幾個漂亮名詞：東方藝術殿堂、民間美術館、百鳥朝梅、地方畫家。但這些稱呼若不回到資料，會掩蓋它們背後不同的來源與立場。官方資料著重建築與信仰價值；紀念館強調藝術家、家族與美育；研究者關注現代性與跨文化方法；媒體則在爭議發生時記錄衝突。把它們並置，比任選一個版本更能接近這座廟的複雜性。</p>
+<p>對文化資產政策而言，這是一個「活的遺產」案例：使用者不會因為指定古蹟就停止祭祀，管理者也不能因為日常需求而放棄記錄與專業。對美術史而言，它提醒我們，作品不只在畫框內；藝術家可能透過組織、教育、採購、設計和協調，留下更分散卻同樣重要的成果。對地方讀者而言，它則保留了一條可步行的路徑：從三峽的街區走進廟宇，讀出臺灣近代藝術與民間工藝交纏的線索。</p>
+<p>這些結論不是要宣告任何人已替祖師廟定義完成。真正的保存與研究，應讓後來的人仍能查資料、看構件、提出不同問題。當李梅樹紀念館在新館開幕前暫停營運，祖師廟持續承擔信仰與日常功能，這條路徑反而更值得被保留下來。</p>
+<h2>結語</h2>
+<p>一座廟如何成為一件作品？答案不是由一位畫家單獨完成，也不是一個稱號就能說明。三峽祖師廟由歷史、信仰、工藝、地方治理、藝術教育與後來的保存制度共同塑造。李梅樹的重要性，在於他把畫家的訓練與地方公共工程相連；匠師、學生、捐資者、廟方與信眾的重要性，則在於沒有他們，這個連結不會變成看得見、也仍在使用的空間。 這個理解也要求更細緻地處理資料的層級。廟方和紀念館所保存的敘事，是理解地方記憶的重要一手材料；但其目的包含推廣與紀念，讀者應與官方公告、典藏資料、學術研究與獨立報導對讀。政府文化資產頁面能確認法定身分與公告資訊，卻不會回答每一個藝術史問題；新聞能記錄當下爭議，卻未必等同完整的工程史。不同來源各有適用範圍，彼此不能任意替代。</p>
+<p>對寫作者來說，這也是一項方法上的提醒。面對「某建築很美」「某藝術家很偉大」這類廣泛說法，最有效的辦法不是添加更多形容詞，而是問：誰做了什麼？何時做？根據什麼文件？是否有不同說法？在祖師廟的案例中，答案往往會把讀者帶向石柱的材料、門神的技術、名家畫稿與工匠施作、橋梁的景觀爭論、古蹟的公告日期，以及紀念館的轉型。</p>
+<p>這些問題看似瑣碎，卻是避免文化報導只剩頌揚的基礎。它們也為不同立場保留空間：有人優先在乎宗教空間的自主與使用，有人擔心技術傳承與原貌，有人從教育或觀光看其價值。本文不替任一立場裁決，而主張把可核實的事實、當事人的說法和分析判斷分開呈現。</p>
+<p>若未來新館順利完成，它可能讓更多人透過作品與檔案理解李梅樹；若祖師廟持續受到妥善維護，讀者也能在原地看見這段歷史如何被日常使用。兩者並不是競爭關係：一個保存畫家及其材料，一個保存他參與建造、卻從來不屬於他一人的公共空間。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/%E4%B8%89%E5%B3%BD%E9%95%B7%E7%A6%8F%E5%B7%96_%E7%A5%96%E5%B8%AB%E5%BB%9F_%E5%A4%9C%E6%99%AF.jpg" alt="祖師廟夜景｜來源：Wikimedia Commons（CC BY-SA）" loading="lazy"><figcaption>夜間的祖師廟仍是宗教與社區空間；文化資產的意義，最終要在持續使用中接受檢驗。</figcaption></figure>
+<p>最後，將這座廟稱為作品，也不意味著它應被安放在不可觸碰的神壇上。作品可以被研究、被質疑、被修復，也可以被新的世代重新理解；前提是任何改變都留下足夠的資訊，讓後人知道原本是什麼、為何改變、由誰決定。這種可追溯性，既是文化資產保存的倫理，也是面對地方記憶最基本的誠實。</p>
+<p>李梅樹的名字讓這座建築進入美術史；祖師廟裡無數未必被完整記名的匠師與使用者，則讓它持續存在於生活裡。把兩者一起寫進歷史，並不是平均分配讚美，而是承認公共文化從來不是單人完成。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ 李梅樹紀念館（無日期）—「認識李梅樹」
+<a href="https://tw.limeishu.org/" rel="noopener" target="_blank">https://tw.limeishu.org/</a></p>
+<p class="ref">² 內政部（2026）—「三峽祖師廟」
+<a href="https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=17" rel="noopener" target="_blank">https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=17</a></p>
+<p class="ref">³ 文化部文化資產局（無日期）—「三峽長福巖清水祖師廟」
+<a href="https://nchdb.boch.gov.tw/assets/overview/monument/20180426000001" rel="noopener" target="_blank">https://nchdb.boch.gov.tw/assets/overview/monument/20180426000001</a></p>
+<p class="ref">⁴ 國立臺灣美術館（2021）—「李梅樹－郊遊」
+<a href="https://ntmofa-collections.ntmofa.gov.tw/GalData.aspx?FROM=MN0F5K5M595L5MKLMT5J5R58&amp;RNO=MQMYMRMLMAM6MLM2" rel="noopener" target="_blank">https://ntmofa-collections.ntmofa.gov.tw/GalData.aspx?FROM=MN0F5K5M595L5MKLMT5J5R58&amp;RNO=MQMYMRMLMAM6MLM2</a></p>
+<p class="ref">⁵ 李梅樹紀念館（無日期）—「關於紀念館」
+<a href="https://tw.limeishu.org/" rel="noopener" target="_blank">https://tw.limeishu.org/</a></p>
+<p class="ref">⁶ 文化部（2020-09-26）—「Li Mei-shu Memorial Gallery exhibits inheritance and development of fine arts in Taiwan」
+<a href="https://www.moc.gov.tw/en/News_Content2.aspx?n=467&amp;s=15795" rel="noopener" target="_blank">https://www.moc.gov.tw/en/News_Content2.aspx?n=467&amp;s=15795</a></p>
+<p>這正是它對今日的意義：不是要求讀者只接受一個完美版本，而是讓人能在同一座建築裡看見臺灣近代美術、民間工藝、宗教生活與公共保存如何彼此拉扯、又彼此支撐。當我們願意追問來源並尊重現場，這座廟才不會只剩下被複製的地標影像。</p>
+<p class="ref">⁷ 新北市三峽區公所（無日期）—「三峽祖師廟」
+<a href="https://www.sanxia.ntpc.gov.tw/home.jsp?id=b2ff21fbcb234003" rel="noopener" target="_blank">https://www.sanxia.ntpc.gov.tw/home.jsp?id=b2ff21fbcb234003</a></p>
+<p class="ref">⁸ 交通部觀光署（無日期）—「三峽清水祖師廟」
+<a href="https://www.tad.gov.tw/m1.aspx?id=R126&amp;sNo=0001091" rel="noopener" target="_blank">https://www.tad.gov.tw/m1.aspx?id=R126&amp;sNo=0001091</a></p>
+<p class="ref">⁹ 李梅樹紀念館（2018）—「三峽祖師廟蛻變成東方藝術殿堂」
+<a href="https://tw.limeishu.org/1368/" rel="noopener" target="_blank">https://tw.limeishu.org/1368/</a></p>
+<p class="ref">¹⁰ 國立臺灣美術館（2007）—「藝界顛峰——台灣前輩美術家 李梅樹」
+<a href="https://twfineartsarchive.ntmofa.gov.tw/TW/Literature/liMakehistory.aspx?QID=04M2" rel="noopener" target="_blank">https://twfineartsarchive.ntmofa.gov.tw/TW/Literature/liMakehistory.aspx?QID=04M2</a></p>
+<p class="ref">¹¹ 菊池優子（2001）—「Li Mei-shu and the Sanxia Zushi Temple」
+<a href="https://ualresearchonline.arts.ac.uk/id/eprint/11793/" rel="noopener" target="_blank">https://ualresearchonline.arts.ac.uk/id/eprint/11793/</a></p>
+<p class="ref">¹² 李梅樹紀念館（2018）—「李梅樹營造家鄉的雕刻藝術神廟」
+<a href="https://tw.limeishu.org/1375/" rel="noopener" target="_blank">https://tw.limeishu.org/1375/</a></p>
+<p class="ref">¹³ 內政部（2026）—「三峽祖師廟：景觀價值」
+<a href="https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=17" rel="noopener" target="_blank">https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=17</a></p>
+<p class="ref">¹⁴ 國立臺灣美術館（2021）—「李梅樹－郊遊：典藏詮釋」
+<a href="https://ntmofa-collections.ntmofa.gov.tw/GalData.aspx?FROM=MN0F5K5M595L5MKLMT5J5R58&amp;RNO=MQMYMRMLMAM6MLM2" rel="noopener" target="_blank">https://ntmofa-collections.ntmofa.gov.tw/GalData.aspx?FROM=MN0F5K5M595L5MKLMT5J5R58&amp;RNO=MQMYMRMLMAM6MLM2</a></p>
+<p>這些材料的價值，在於讓後人仍能繼續提問，而非替所有問題畫下句點。</p>
+<p class="ref">¹⁵ 內政部（2026）—「三峽祖師廟：特色導覽」
+<a href="https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=17" rel="noopener" target="_blank">https://taiwangods.moi.gov.tw/html/landscape/1_0011.aspx?i=17</a></p>
+<p class="ref">¹⁶ 新北市文化局（2026）—「新北市市定古蹟一覽表」
+<a href="https://www.culture.ntpc.gov.tw/files/file_pool/1/0Q125404696477210834/%E6%9C%89%E5%BD%A2-%E6%96%B0%E5%8C%97%E5%B8%82%E5%B8%82%E5%AE%9A%E5%8F%A4%E8%B9%9F%E4%B8%80%E8%A6%BD%E8%A1%A81150417.pdf" rel="noopener" target="_blank">https://www.culture.ntpc.gov.tw/files/file_pool/1/0Q125404696477210834/%E6%9C%89%E5%BD%A2-%E6%96%B0%E5%8C%97%E5%B8%82%E5%B8%82%E5%AE%9A%E5%8F%A4%E8%B9%9F%E4%B8%80%E8%A6%BD%E8%A1%A81150417.pdf</a></p>
+<p class="ref">¹⁷ 中央通訊社（2024-05-03）—「李石樵裸婦圖看板引爭議 李梅樹紀念館覆蓋畫作」
+<a href="https://www.cna.com.tw/news/acul/202405030103.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/acul/202405030103.aspx</a></p>
+<p class="ref">¹⁸ 自由時報（2026-02-21）—「新北三峽李梅樹紀念館3/1起暫停營運 新館2029年完工」
+<a href="https://news.ltn.com.tw/news/NewTaipei/breakingnews/5347413" rel="noopener" target="_blank">https://news.ltn.com.tw/news/NewTaipei/breakingnews/5347413</a></p>
+<p class="ref">¹⁹ Artouch（2017-12-07）—「東方藝術殿堂不應該是文化資產嗎？」
+<a href="https://artouch.com/art-views/content-1074.html" rel="noopener" target="_blank">https://artouch.com/art-views/content-1074.html</a></p>
+<p class="ref">²⁰ Taipei Times（2006-07-11）—「Sanxia temple is a birdwatchers paradise」
+<a href="https://www.taipeitimes.com/News/taiwan/archives/2006/07/11/2003317785" rel="noopener" target="_blank">https://www.taipeitimes.com/News/taiwan/archives/2006/07/11/2003317785</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
