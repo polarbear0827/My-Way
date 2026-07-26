@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>當蒙娜麗莎搬進新房間：一幅肖像如何改寫盧浮宮的觀看 · 穗稻忠武的專欄</title>
+<meta name="description" content="盧浮宮計畫在2031年前，把《蒙娜麗莎》移至可獨立進入、另行售票的專屬空間。這不是單純的搬畫：它把一幅16世紀小肖像，放到當代博物館最棘手的幾件事中央——人流、建築老化、作品保存、公共財政與「看見名作」究竟意味什麼。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-26-mona-lisa-new-room-louvre/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="當蒙娜麗莎搬進新房間：一幅肖像如何改寫盧浮宮的觀看">
+<meta property="og:description" content="盧浮宮計畫在2031年前，把《蒙娜麗莎》移至可獨立進入、另行售票的專屬空間。這不是單純的搬畫：它把一幅16世紀小肖像，放到當代博物館最棘手的幾件事中央——人流、建築老化、作品保存、公共財政與「看見名作」究竟意味什麼。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-26-mona-lisa-new-room-louvre/">
+<meta property="og:image" content="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/6/6a/Mona_Lisa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "當蒙娜麗莎搬進新房間：一幅肖像如何改寫盧浮宮的觀看", "description": "盧浮宮計畫在2031年前，把《蒙娜麗莎》移至可獨立進入、另行售票的專屬空間。這不是單純的搬畫：它把一幅16世紀小肖像，放到當代博物館最棘手的幾件事中央——人流、建築老化、作品保存、公共財政與「看見名作」究竟意味什麼。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-26-mona-lisa-new-room-louvre/", "datePublished": "2026-07-26", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/6/6a/Mona_Lisa.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>當蒙娜麗莎搬進新房間：一幅肖像如何改寫盧浮宮的觀看</h1>
+<p class="byline"><time>2026-07-26</time></p>
+</div>
+
+<p class="lead">盧浮宮計畫在2031年前，把《蒙娜麗莎》移至可獨立進入、另行售票的專屬空間。這不是單純的搬畫：它把一幅16世紀小肖像，放到當代博物館最棘手的幾件事中央——人流、建築老化、作品保存、公共財政與「看見名作」究竟意味什麼。¹²</p>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/6/6a/Mona_Lisa.jpg" alt="《蒙娜麗莎》｜來源：盧浮宮／Wikimedia Commons（公有領域）" loading="lazy"><figcaption>這幅油彩肖像的實物尺度遠小於它在觀光文化中的份量；未來的展示設計，正要處理兩者之間的落差。</figcaption></figure>
+<h2>從一段排隊開始</h2>
+<p>在巴黎盧浮宮的 Salle des États，觀看《蒙娜麗莎》通常不是安靜地站在一幅畫前，而是穿過人群、舉起手機、在防護玻璃與工作人員引導下短暫停留。BBC引述館長 Laurence des Cars 的說法：約四分之三、每日約三萬名訪客把達文西的肖像列為目的，平均觀看時間約50秒。³ 這些數字不是用來責怪觀眾；它們反而說明，作品的藝術史地位和它在大眾旅遊中的功能，早已彼此纏繞。</p>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/b/b7/Paris_20130809_-_Mona_Lisa_room.jpg" alt="Salle des États 的《蒙娜麗莎》展示空間｜來源：Wikimedia Commons（CC授權）" loading="lazy"><figcaption>展廳裡的圍欄、距離與人流本身，已經構成今日觀眾接近這幅畫的方式。</figcaption></figure>
+<p>2025年1月，法國總統 Emmanuel Macron 在作品所在的展廳宣布「Louvre Nouvelle Renaissance」計畫：在靠近塞納河的一側增加入口、規劃地下展覽空間，並讓《蒙娜麗莎》進入獨立展廳。AP與BBC均報導，新空間預定由特別票券進入，官方的理由是把想看名畫的人流與其餘館藏的參觀路線分開。¹³</p>
+<h2>一幅畫先是一件物</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/5/55/Mona_Lisa_headcrop.jpg" alt="《蒙娜麗莎》細部肖像｜來源：盧浮宮／Wikimedia Commons（公有領域）" loading="lazy"><figcaption>局部影像使觀眾能較清楚辨認薄紗、明暗層次與細緻筆觸；展廳的距離與人流往往壓縮這種觀看。</figcaption></figure>
+<p>在「打卡地標」之外，它首先仍是一件有尺寸、材料與脆弱性的物件。盧浮宮收藏資料庫將全名登錄為〈佛羅倫斯人 Francesco del Giocondo 之妻 Lisa Gherardini 肖像，通稱《La Joconde》或《Mona Lisa》〉，作者為 Leonardo da Vinci，年代標為1503至1519年之間，登錄號 INV 779。⁴ 館方的名稱保留了辨識模式與年代的學術表述，也提醒人們：我們常說的「蒙娜麗莎」不是一個不需解釋的自然名詞。</p>
+<p>它畫在白楊木板上，不是在今日較常見的畫布上。長期保存研究指出，這塊木板自2004年起由跨國團隊以非侵入方式監測；研究人員記錄展示櫃裡的受力與變形，用以理解濕度、溫度和裝框條件如何影響作品。⁵ 另一篇發表於《Journal of the American Chemical Society》的材料分析，從底層微量樣本辨識出含鉛油料與罕見化合物 plumbonacrite，提出達文西可能以含鉛氧化物處理油料、製作較厚的底層。⁶ 這些研究不替作品「解碼」一個神祕答案；它們讓保育人員更具體地看見顏料、木頭與時間如何共同構成畫面。</p>
+<p>因而，專屬展廳的核心問題不只是把隊伍移走。它還涉及光線、微氣候、玻璃反射、觀眾距離與緊急處置能否在不損害木板與顏料的前提下安排。對一件需要持續監測的作品而言，展示空間並非中性的背景。</p>
+<h2>名聲不是從一開始就這麼大</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/3/38/Leonardo_da_Vinci_-_presumed_self-portrait_-_WGA12798.jpg" alt="達文西可能的自畫像｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>這幅傳統上歸為達文西自畫像的圖像，提示了後世如何把藝術家本人與《蒙娜麗莎》的傳奇緊密綁定。</figcaption></figure>
+<p>作品在達文西生前如何完成、何時抵達法國王室收藏，仍有史料與研究上的細節問題。Getty 的藝術與建築索引資料以1503至1506年為常用創作日期，稱畫中人被認為是佛羅倫斯商人 Francesco del Giocondo 的妻子 Lisa Gherardini，並列出法蘭西斯一世於1518年取得作品的傳承資訊。⁷ 盧浮宮資料庫則採較寬的1503至1519年範圍。⁴ 兩種年代標法不必被硬湊成單一答案；它們反映研究者面對作品製作、修改與在達文西手中停留時間時的不同表述尺度。</p>
+<p>它的巨大名聲也不是只靠畫面本身自然長出。盧浮宮的教育資源列出大量專著、研究目錄與技術影像，包括紅外線反射、斜光、紫外線與X光照片。⁸ 這些材料讓博物館把一件肖像從「神祕微笑」的流行敘事，帶回筆觸、轉描、顏料與保存史。研究者以多光譜方法辨識可能的 spolvero 轉描痕跡，並把它放回達文西工作坊的繪畫程序中討論。⁹</p>
+<p>但公眾記憶的速度另有其邏輯。1911年的失竊與1913年在義大利尋回，常被視為它進入全球新聞與複製文化的一個轉折；後來的展覽、印刷、廣告、電影與觀光又不斷放大它。這不表示「名氣」可取代藝術史，而是說名氣已成為作品後來的歷史條件：任何重新展示，都必須同時面對實物與其被複製的形象。</p>
+<h2>金字塔承受的是另一個時代</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/a/a2/Louvre_Courtyard%2C_Looking_West.jpg" alt="盧浮宮金字塔與 Cour Napoléon｜來源：Wikimedia Commons（CC授權）" loading="lazy"><figcaption>1989年啟用的玻璃金字塔原本是重組入口的建築方案；今日的爭論則是它能否繼續承受更大的旅客規模。</figcaption></figure>
+<p>盧浮宮的問題也不是由一幅畫單獨造成。Reuters在2025年1月報導，館長致文化部長的信件警告，館舍有漏水與令人憂慮的溫度波動，可能危及作品保存；同年入館人次為870萬，主要入口集中於金字塔。¹⁰ Guardian則報導，金字塔原先約按每年400萬名訪客設計，而盧浮宮在2024年接待超過兩倍的客流。¹¹ 這些報導的共同點是：人潮、基礎設施與保育壓力並不是可彼此切開的三個議題。</p>
+<p>I. M. Pei 的金字塔曾是法國總統 François Mitterrand「大盧浮宮」計畫的象徵，把原先分散的入口與地下空間重新組織。新的方案並非否定它的建築史位置，而是承認一個在1980年代構想的入口，面對21世紀低成本航空、社群媒體與跨國旅遊的密度時，已出現容量與服務問題。BBC指出，計畫預計改造東側 Colonnade de Perrault，讓新的入口銜接 Cour Carrée 下方空間，並舒緩金字塔下的壓力。³</p>
+<p>把《蒙娜麗莎》獨立出來在此脈絡中是一種「分流」技術。它可能使只想看名畫的訪客不必穿越整座博物館，也可能讓本來被人流推擠而略過的《迦拿的婚宴》等同廳作品，有較完整的觀看條件。這是官方與支持者提出的效益；它是否真能改變參觀行為，仍要等空間、票價與動線真正落地後才可評估。</p>
+<h2>「新文藝復興」究竟要蓋什麼</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/e/ed/Paris_-_Palais_du_Louvre%2C_Colonnade_de_Perrault%2C_9_December_2016.jpg" alt="盧浮宮 Colonnade de Perrault｜來源：Wikimedia Commons（CC授權）" loading="lazy"><figcaption>工程把新的公共入口放在盧浮宮東側歷史立面附近，因而同時是博物館營運與古蹟介入問題。</figcaption></figure>
+<p>Macron在2025年宣布的方案包括新的塞納河側入口、地下空間與《蒙娜麗莎》的專屬展示區；AP報導，工程期可能長達十年，新的入口目標在2031年啟用。¹ BBC與NPR亦報導，專屬展廳將可由特別票券進入，並希望讓其他館藏的參觀不再被單一作品的人潮主導。³¹² 這裡值得保留用語的精確性：這是政府及館方提出的規劃與目標，不是已完成的事實。</p>
+<p>2026年5月，法國文化部選出由 Selldorf Architects 與 Studios Architecture Paris 領軍的團隊，負責擴建與新入口設計；Smithsonian整理的公開資訊稱，計畫包含約3.3萬平方英尺的《蒙娜麗莎》展示空間，並以新增入口、商店與休憩機能處理客流。¹³ 這項資訊讓去年較抽象的宣示進入設計執行階段，但不代表預算、施工條件與最終空間樣貌都已無爭議。</p>
+<p>工程的語言很容易把畫說成一個需要「容納」的客流單位；然而博物館也是收藏、研究、教育與休息的場所。若把新入口視為純粹的觀光基礎建設，就會忽略它如何改變觀眾接觸不同時代、不同地區館藏的機會。反過來說，若只把人潮視為不應存在的干擾，又可能忽略公共博物館面對大量、不同背景觀眾的責任。</p>
+<p>這正是專屬展廳的難題：設計是否能提供一條短路徑給匆忙的旅客，同時仍讓作品有足夠的歷史、材料與比較脈絡，而非把它縮減成一個必須完成的景點？</p>
+<h2>保存不是觀眾看不見的後台</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/4/4d/Ceiling_of_the_Grande_Galerie%2C_Louvre%2C_Paris.jpg" alt="盧浮宮 Grande Galerie 的天花板｜來源：Wikimedia Commons（CC授權）" loading="lazy"><figcaption>歷史宮殿內的展示條件牽涉天花、管線、溫濕度與維修；名作的展間無法與整體館舍條件完全分開。</figcaption></figure>
+<p>2025年工程消息之所以引起廣泛注意，並不只因《蒙娜麗莎》要換位置。Reuters所見的館方警訊包括漏水、溫度波動和服務設施不足；Guardian則引述 des Cars 對「身體上的折磨」的描述。¹⁰¹¹ 這類主張有官方來源的立場，但不同媒體的現場訪談與後續報導，也描繪出排隊、路標和休息設施造成的具體困難。¹⁴</p>
+<p>保育的時間尺度比旅遊旺季長得多。關於木板的研究並非宣稱作品正處於立即危險，而是說明保護一幅歷經數世紀的木板畫，需要把微小變化轉成持續的資料。⁵ 在此意義下，展示櫃與建築空調都像作品的一部分延伸：看似不在畫面內，卻決定木頭的受力、表面能否穩定，以及保育人員是否能取得必要讀數。</p>
+<p>《蒙娜麗莎》也曾因攻擊與運輸成為保安議題。盧浮宮的技術資源保留1956年玻璃破裂後的照片，並在不同光學條件下留下影像紀錄。⁸ 對外界而言，這些往往只是逸聞；對機構而言，它們是風險管理的歷史。新的專屬空間若要合理，不應只用更長的動線或更清楚的販售入口衡量，也須說明如何改善保護、疏散與日常維護。</p>
+<p>保存和可近性有時被說成對立：前者要限制，後者要開放。其實更精確的問題是，博物館如何讓更多人以不加速損害的方式接近原作，並把不能近看的部分以研究、影像和教育材料補足。</p>
+<h2>把人潮分開，也把問題分開嗎</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/2/28/Cour_Napol%C3%A9on_at_night_-_Louvre.jpg" alt="盧浮宮 Cour Napoléon 夜景｜來源：Wikimedia Commons（CC授權）" loading="lazy"><figcaption>夜間的外觀沒有顯示白日隊伍，但入口、安檢與售票如何配置，直接形塑白天的參觀經驗。</figcaption></figure>
+<p>專屬票券有一個清楚的營運邏輯：把大部分只為名畫而來的客流，從通往其他展廳的路徑中抽離。AP在2025年6月報導盧浮宮員工罷工時，把此館放進歐洲各地「過度觀光」的脈絡；員工主張，長期的人流與資源壓力已讓工作條件與服務品質難以維持。¹⁵ 這是工會與現場工作者的觀點，但它使討論不只停在遊客是否滿意，也涉及誰在維持博物館的日常運作。</p>
+<p>支持者可主張，若未來的隊伍不再塞進 Salle des États，觀眾有機會在較少推擠下看原作，其餘大尺幅作品也可重新進入視野。官方發言同樣把這視為公共服務的改善。³ 然而，票券分層也可能改變盧浮宮作為一張入場券可通往多種藝術史的想像：有人可能把它理解為更有效率的選擇，有人則可能視為把一件公共收藏轉化為更明確的附加消費。</p>
+<p>這兩種結果尚不能提前斷言。票價、免費日安排、入場配額、動線銜接與教育內容都還會決定實際效果。因此，比起把獨立展廳稱為必然的解方或必然的商品化，更應追問未來公布的制度細節。</p>
+<h2>批評指向優先順序</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/5/53/Le_Louvre_-_Aile_Richelieu.jpg" alt="盧浮宮黎塞留翼外觀｜來源：Wikimedia Commons（CC授權）" loading="lazy"><figcaption>盧浮宮是一座由不同時代建築層累積而成的宮殿；擴建的爭論也因此牽涉既有空間的修繕先後。</figcaption></figure>
+<p>反對或保留意見並非全都否定改善人流。Guardian 藝術評論者 Jonathan Jones 認為，為《蒙娜麗莎》另設付費空間可能把一個本可吸引人走進整座博物館的作品，變成可孤立消費的目標；他擔心解法把高人氣本身誤當成問題。¹⁶ 這是評論，不是可被單一數字驗證的結論，但它提出了一個重要的博物館學問題：傑作應是進入館藏的門，還是可獨立販售的終點？</p>
+<p>另一路批評聚焦資源。France 24 訪問藝術史學者與《La Tribune de l’Art》創辦人 Didier Rykner，他主張盧浮宮的核心困境不是沒有資源，而是資源優先放在顯眼、政治性的建築擴張，而非既有建築與收藏的維護。¹⁷ 他的判斷代表一種批評立場；館方與政府則以安全、基礎設施與接待能力的整體更新回應。</p>
+<p>2025年後的安全事件與審計討論，讓優先順序問題更尖銳。BBC報導法國審計機構對盧浮宮2018至2024年管理提出批評，並提到「新文藝復興」的預算估計與研究程序受到質疑；盧浮宮回應說，審計未充分理解其安全工作，並接受多數建議。¹⁸ 此一來一回的重要處不在替任何一方裁決，而在指出大型文化工程的驗證標準必須公開：工程費用、保全、維修與教育是否能被清楚交代。</p>
+<h2>觀眾需要的未必只是靠近</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/6/63/Grande_Galerie_Louvre_by_Thomas_Allom.jpg" alt="盧浮宮大畫廊的歷史圖像｜來源：Wikimedia Commons（公有領域）" loading="lazy"><figcaption>19世紀版畫中的大畫廊呈現另一種博物館觀看：停留、比對與行走，而非只在單一作品前完成任務。</figcaption></figure>
+<p>「看見」不只由物理距離決定。若觀眾在五十秒裡只能隔著人群看見一個熟悉輪廓，展示完成的可能是辨認，而不必然是觀看。³ 反過來說，即使未來專屬展廳讓人停留得更久，若只提供排隊、拍照與離場，它仍可能複製同一種短促的經驗。</p>
+<p>盧浮宮已經擁有一套可用來抵抗這種縮減的材料：收藏資料庫、作品的紅外線與X光影像、書目、技術研究，以及作品與同時代肖像、達文西其他創作之間的比較。⁴⁸ 它們不必取代原作；恰恰相反，這些資料能讓原作不只是「那幅人人認得的畫」。</p>
+<p>以木板的長期監測為例，對一般訪客來說，四角的感測器與受力資料似乎遠離美感；但若展示能用平實語言說明，觀眾就可明白眼前的微笑為何不能任意靠近、任意照明或任意搬運。⁵ 把保存工作說清楚，可能比增加一塊宣傳看板更接近公共博物館的教育使命。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 一個較好的新空間，應把「有沒有拍到」轉成「看到了什麼」。它可以容納快節奏的旅客，也應給願意停留的人一條能理解材料、製作、傳承與保存的路徑。</p>
+<h2>一張票與一個公共機構</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/6/66/Louvre_Museum_Wikimedia_Commons.jpg" alt="盧浮宮 Cour Napoléon 與金字塔｜來源：Wikimedia Commons（CC授權）" loading="lazy"><figcaption>金字塔不只是辨識度極高的外觀，也是安檢、售票、等候與進入公共收藏的節點。</figcaption></figure>
+<p>盧浮宮的收入結構也是討論不可略過的背景。Macron在宣布計畫時說，工程不由納稅人直接負擔，而以票房、捐款及盧浮宮阿布達比的贊助協議等方式支應；BBC如實轉述這項說法。³ 這是政府的資金規劃，不等於成本已獲最終保證，也不表示每一類使用者承受的費用相同。</p>
+<p>對非歐盟旅客的票價調整，與日後專屬展廳特別票的設想，讓誰付費、付多少、是否能免費或低價接近國家收藏，成為具體的公平問題。¹² 對於希望以短時間看名畫的旅客而言，分離門票可被理解為便利；對於將博物館視為公共教育資源的人而言，制度設計則可能提高門檻。這兩種理解都需要公開票價與配額資料才能進一步檢驗。</p>
+<p>公共性不必等同於所有服務完全免費，也不必被簡化為票房最大化。它更接近一套可被質詢的承諾：資金來源是否透明、維護是否優先、不同收入與不同國籍的訪客是否有合理途徑，以及被人流遮蔽的館藏是否仍獲展示與詮釋。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 如果新空間只提高單一明星作品的變現效率，它會加深問題；若它把收入、修繕、保存與更多元觀看重新連結，才可能把熱度轉為可持續的公共資源。</p>
+<h2>2031以前，仍有可被檢驗的承諾</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/4/43/Salle_des_%C3%89tats_-_salle_de_la_Joconde_-_Mona_Lisa_room_-_after_2109_renovation.jpg" alt="Salle des États 展廳與人流｜來源：Wikimedia Commons（CC授權）" loading="lazy"><figcaption>目前展廳已多次調整，但新方案的成敗仍取決於未來對人流、保育與資訊提供的實際安排。</figcaption></figure>
+<p>2031是工程目標，不是魔法日期。在它之前，盧浮宮與法國政府可被持續檢驗的事項至少有四項。第一，公開設計如何處理古蹟結構、地下施工與氣候控制。第二，清楚交代工程預算的來源、變動與用於既有建築維修的比例。第三，讓工作人員、保育專業與不同類型的觀眾能在制度設計中被聽見。第四，說明新票券如何與一般入館、教育活動及低收入觀眾的近用權相互連結。</p>
+<p>這些問題不是苛求一個尚未落成的空間，而是因為工程的理由正是公共服務、保護與減少擁擠。官方已提出新入口和專屬展示的方向，設計團隊也已選定；接下來的施工資訊、費用與營運規則，應能讓外界判斷它是否兌現最初宣稱。¹³</p>
+<p>同時，不能把所有壓力都推給《蒙娜麗莎》。它只是最容易被看見的瓶頸。漏水、溫度、館舍維修、安全、人員配置及數百萬訪客的服務問題，影響的是整座博物館與其中大量不會登上明信片的作品。¹⁰¹⁵ 若後續更新只讓明星展項更流暢，卻沒有改善整體條件，便難以回應館方當初提出的危機。</p>
+<p>工程的真正尺度，因而不只是新房間有多大，而是它是否讓一座巨型博物館更能保存、說明並分享其收藏。</p>
+<h2>一幅畫帶來的尺度問題</h2>
+<figure><img src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/5/55/Mona_Lisa_headcrop.jpg" alt="《蒙娜麗莎》局部：手勢與薄紗｜來源：盧浮宮／Wikimedia Commons（公有領域）" loading="lazy"><figcaption>在大眾傳播中常被縮小為「微笑」的肖像，仍包含手勢、衣料、地景與層層薄染等可供細看的要素。</figcaption></figure>
+<p>《蒙娜麗莎》的處境有一個不尋常的矛盾。它越容易被所有人辨認，越不容易被當作具體的作品來看；它越成功地把人帶進盧浮宮，越可能讓其他作品被當成抵達它的走廊。新展廳試圖處理這個矛盾，但空間本身不能自動提供答案。</p>
+<p>從保存科學看，這是一塊必須被持續照顧的木板與多層顏料。⁵⁶ 從藝術史看，它是達文西的肖像創作、工作程序與法國王室收藏傳承的一個節點。⁴⁷ 從大眾文化看，它又是被偷竊新聞、複製技術、電影與旅遊業不斷放大的圖像。這三種尺度都是真實存在的；好的展示不是假裝可以只選其一，而是避免讓其中一種完全吞沒另外兩種。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 對博物館而言，最困難的工作也許不是讓人潮消失，而是承認人潮的合理性，同時拒絕把人潮當成唯一的成功指標。觀眾需要入口、廁所、座位、清楚方向與安全的動線；作品需要穩定的條件、專業保護與不被過度消費的解釋；工作者需要足夠的資源。這些並非彼此互斥，但它們要求透明的選擇。</p>
+<p>因此，2031年前真正值得追蹤的不是「蒙娜麗莎是否搬家」這個是非題，而是盧浮宮如何用一次重大工程回答：一座國家博物館，如何讓最有名的畫不遮住其他藝術，也不遮住支撐它們存在的人與制度。</p>
+<h2>結語：重新安排觀看，而不是逃離觀看</h2>
+<p>《蒙娜麗莎》將在未來幾年離開現有展間的計畫，至今仍主要是一份工程承諾。它的成敗不能只用照片中的空曠程度來衡量。若新空間確實減輕瓶頸、改善館舍條件、把保存工作轉成可理解的知識，並使更多作品重新得到觀看的時間，這次調整可為大型博物館提供一種實驗。若它只把擁擠轉移到另一條付費隊伍，或把資源從既有維修與安全工作抽走，批評者的疑慮就會更有根據。</p>
+<p>對遠在巴黎以外的讀者而言，這件事的價值不只在一座名館的改造。世界各地的美術館、古蹟與文化場館都面臨相似選擇：如何面對突然放大的流量，如何在數位影像無限複製的時代說明原作，如何在有限經費裡安排修繕、保安、研究與教育。盧浮宮的規模特殊，但問題並不陌生。</p>
+<p>一件藝術品不會因為獲得獨立房間就恢復沉默；也不會因為人多就失去其藝術價值。真正需要重新安排的，是讓人、作品、建築和工作者可以在同一個制度裡不互相耗損。這也是未來工程最值得被公開檢驗的承諾。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p>本文以盧浮宮館藏資料與保存研究確認作品材料、登錄與研究脈絡；以法國政府／館方公開規劃及多家獨立媒體確認工程、人流、財務與安全爭點。涉及未完成工程的資訊均按「規劃」「目標」表述。對於專屬票、公共性與建築優先順序的判斷，本文刻意保留不同觀點；下列來源包含官方材料、同儕審查研究、通訊社報導、現場新聞與明確標註為評論的文章。 媒體來源之間對訪客人數、工程成本及完成時間偶有不同的估計，本文不把尚未定案的數字視為既定事實；能由館方或多個獨立來源互相支持者才用於正文。圖片選用可重用的公有領域或 Creative Commons 圖檔，並以圖說標示來源與授權脈絡。</p>
+<p class="ref">¹ Associated Press（2025-01-28）— "France announces major renovation of Louvre, including new space for Mona Lisa"
+<a href="https://apnews.com/article/france-louvre-museum-paris-renovation" rel="noopener" target="_blank">https://apnews.com/article/france-louvre-museum-paris-renovation</a></p>
+<p class="ref">² 法國總統府 Élysée（2025-01-28）— "Le Louvre, une Nouvelle Renaissance"
+<a href="https://www.elysee.fr/emmanuel-macron/2025/01/28/le-louvre-une-nouvelle-renaissance" rel="noopener" target="_blank">https://www.elysee.fr/emmanuel-macron/2025/01/28/le-louvre-une-nouvelle-renaissance</a></p>
+<p class="ref">³ BBC News（2025-01-28）— "Mona Lisa to be moved as part of major Louvre overhaul"
+<a href="https://www.bbc.co.uk/news/articles/cde9r0xgk67o" rel="noopener" target="_blank">https://www.bbc.co.uk/news/articles/cde9r0xgk67o</a></p>
+<p class="ref">⁴ Musée du Louvre Collections（更新於2025-09-25）— "Portrait de Lisa Gherardini… dit La Joconde ou Mona Lisa"
+<a href="https://collections.louvre.fr/en/ark:/53355/cl010062370" rel="noopener" target="_blank">https://collections.louvre.fr/en/ark:/53355/cl010062370</a></p>
+<p class="ref">⁵ Journal of Cultural Heritage（2022）— "A method to assess hygro-mechanical behaviour… through in situ non-invasive continuous monitoring"
+<a href="https://doi.org/10.1016/j.culher.2022.10.002" rel="noopener" target="_blank">https://doi.org/10.1016/j.culher.2022.10.002</a></p>
+<p class="ref">⁶ Journal of the American Chemical Society（2023）— "X-ray and Infrared Microanalyses of Mona Lisa’s Ground Layer"
+<a href="https://pubs.acs.org/doi/10.1021/jacs.3c07000" rel="noopener" target="_blank">https://pubs.acs.org/doi/10.1021/jacs.3c07000</a></p>
+<p class="ref">⁷ Getty Research Institute, CONA — "Mona Lisa (painting)"
+<a href="https://www.getty.edu/cona/CONAFullSubject.aspx?subid=700000213" rel="noopener" target="_blank">https://www.getty.edu/cona/CONAFullSubject.aspx?subid=700000213</a></p>
+<p class="ref">⁸ Musée du Louvre Focus — "La Joconde: Resources"
+<a href="https://focus.louvre.fr/en/la-joconde/resources" rel="noopener" target="_blank">https://focus.louvre.fr/en/la-joconde/resources</a></p>
+<p class="ref">⁹ HAL Open Science（2023）— "Mona Lisa’s spolvero revealed"
+<a href="https://hal.science/hal-03907357" rel="noopener" target="_blank">https://hal.science/hal-03907357</a></p>
+<p class="ref">¹⁰ Reuters（2025-01-23）— "Paris’ Louvre museum, in dire state, cries for help"
+<a href="https://www.reuters.com/world/europe/paris-louvre-museum-dire-state-cries-help-2025-01-23/" rel="noopener" target="_blank">https://www.reuters.com/world/europe/paris-louvre-museum-dire-state-cries-help-2025-01-23/</a></p>
+<p class="ref">¹¹ The Guardian（2025-01-23）— "Visiting leaky, crowded Louvre is ‘physical ordeal’, museum’s boss says"
+<a href="https://www.theguardian.com/world/2025/jan/23/louvre-museum-leaky-damaged-overcrowded" rel="noopener" target="_blank">https://www.theguardian.com/world/2025/jan/23/louvre-museum-leaky-damaged-overcrowded</a></p>
+<p class="ref">¹² NPR（2025-01-28）— "The Louvre Museum will get an overhaul, with the Mona Lisa in a new room"
+<a href="https://www.npr.org/2025/01/28/nx-s1-5277817/louvre-museum-renovation-mona-lisa" rel="noopener" target="_blank">https://www.npr.org/2025/01/28/nx-s1-5277817/louvre-museum-renovation-mona-lisa</a></p>
+<p class="ref">¹³ Smithsonian Magazine（2026-05-19）— "Mona Lisa Is Moving to a New Home…"
+<a href="https://www.smithsonianmag.com/smart-news/mona-lisa-is-moving-to-a-new-home-the-louvre-just-announced-the-architects-who-will-design-her-private-suite-180988763/" rel="noopener" target="_blank">https://www.smithsonianmag.com/smart-news/mona-lisa-is-moving-to-a-new-home-the-louvre-just-announced-the-architects-who-will-design-her-private-suite-180988763/</a></p>
+<p class="ref">¹⁴ The Guardian（2025-01-28）— "We won’t come again: dazed visitors fed up with overcrowded Louvre"
+<a href="https://www.theguardian.com/culture/2025/jan/28/we-wont-come-again-dazed-visitors-fed-up-with-overcrowded-louvre-paris" rel="noopener" target="_blank">https://www.theguardian.com/culture/2025/jan/28/we-wont-come-again-dazed-visitors-fed-up-with-overcrowded-louvre-paris</a></p>
+<p class="ref">¹⁵ Associated Press（2025-06-16）— "Louvre shuts down in a staff strike, sounding the alarm on overtourism"
+<a href="https://apnews.com/article/louvre-museum-paris-closed-lines-delay-2bbf9be4f49de739fd14dd4d908e4d72" rel="noopener" target="_blank">https://apnews.com/article/louvre-museum-paris-closed-lines-delay-2bbf9be4f49de739fd14dd4d908e4d72</a></p>
+<p class="ref">¹⁶ The Guardian（評論，2025-01-28）— "Louvre’s decision to move Mona Lisa is a misguided act of snobbery"
+<a href="https://www.theguardian.com/artanddesign/2025/jan/28/louvres-decision-to-move-mona-lisa-is-a-misguided-act-of-snobbery" rel="noopener" target="_blank">https://www.theguardian.com/artanddesign/2025/jan/28/louvres-decision-to-move-mona-lisa-is-a-misguided-act-of-snobbery</a></p>
+<p class="ref">¹⁷ France 24（2026-07-22）— "Art historian Didier Rykner warns Emmanuel Macron’s vision is ‘useless &amp; bad for the museum’"
+<a href="https://www.france24.com/en/louvre-art-historian-didier-rykner-warns-emmanuel-macron-s-vision-is-useless-bad-for-the-museum" rel="noopener" target="_blank">https://www.france24.com/en/louvre-art-historian-didier-rykner-warns-emmanuel-macron-s-vision-is-useless-bad-for-the-museum</a></p>
+<p class="ref">¹⁸ BBC News（2025-11-06）— "Louvre criticised for spending money on art instead of security in years before heist"
+<a href="https://www.bbc.com/news/articles/c93dj92d5y0o" rel="noopener" target="_blank">https://www.bbc.com/news/articles/c93dj92d5y0o</a></p>
+<p>以上資料顯示，圍繞盧浮宮的論辯並無單一答案。工程的必要性、成本與社會效果，仍應以後續公開設計、預算、施工與營運資料持續檢驗；本文不把任何一方的預測視為已經發生的結果。</p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
