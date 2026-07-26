@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>穗稻忠武 · 每日短影音</title><link>https://polarbear0827.github.io/My-Way/</link><description>AI Radar / HF Papers / 專欄 每日直式短影音 (Reels/Shorts/TikTok)</description><language>zh-Hant</language><lastBuildDate>Sun, 26 Jul 2026 09:32:07 +0800</lastBuildDate><item><title>今天 GitHub 哪些 AI 工具值得看？2026-07-26 AI Radar Daily</title><link>https://polarbear0827.github.io/My-Way/radar/2026-07-26/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-07-26-short.mp4</guid><pubDate>2026-07-26</pubDate><description>🛸 AI RADAR DAILY 2026-07-26
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>穗稻忠武 · 每日短影音</title><link>https://polarbear0827.github.io/My-Way/</link><description>AI Radar / HF Papers / 專欄 每日直式短影音 (Reels/Shorts/TikTok)</description><language>zh-Hant</language><lastBuildDate>Sun, 26 Jul 2026 13:02:16 +0800</lastBuildDate><item><title>今天最值得看的 AI 論文？2026-07-26 HF Daily Papers</title><link>https://polarbear0827.github.io/My-Way/papers/2026-07-26/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-07-26-short.mp4</guid><pubDate>2026-07-26</pubDate><description>📄 HF DAILY PAPERS 2026-07-26
+
+今日趨勢：今天的共同趨勢是：AI 能力競爭正從單點模型分數，轉向資料規模、集合級檢索與多代理推理流程的系統化協作。
+
+今日必讀：
+→ Xiaomi-Robotics-1
+→ 超越相關性檢索
+→ OneVision-Encoder
+
+⭐ 今日首選：Xiaomi-Robotics-1
+
+完整每日論文速讀 → HF Daily Papers（link in bio）
+
+#arxiv #AI #LLM #MachineLearning #DeepLearning #AI論文 #人工智慧 #開源</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-07-26-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-07-26-short.mp4" medium="video" type="video/mp4"/></item><item><title>今天 GitHub 哪些 AI 工具值得看？2026-07-26 AI Radar Daily</title><link>https://polarbear0827.github.io/My-Way/radar/2026-07-26/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-07-26-short.mp4</guid><pubDate>2026-07-26</pubDate><description>🛸 AI RADAR DAILY 2026-07-26
 
 今日趨勢：AI 工具生態持續演進
 
@@ -732,20 +745,7 @@
 
 ▶ 全文：https://polarbear0827.github.io/My-Way/p/summer-on-the-ac-remote/
 
-#科技人文 #穗稻忠武觀察室 #台灣 #科技與生活 #觀察筆記 #數位生活</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-04-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-04-short.mp4" medium="video" type="video/mp4"/></item><item><title>今天最值得看的 AI 論文？2026-07-04 HF Daily Papers</title><link>https://polarbear0827.github.io/My-Way/papers/2026-07-04/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-07-04-short.mp4</guid><pubDate>2026-07-04</pubDate><description>📄 HF DAILY PAPERS 2026-07-04
-
-今日趨勢：今日聚焦一步式視覺生成、複雜場景控圖、專業領域 grounding 基準，以及 LLM Agent 記憶管理優化。
-
-今日必讀：
-→ RDM
-→ InstanceControl
-→ AnyGroundBench
-
-⭐ 今日首選：AgenticSTS
-
-完整每日論文速讀 → HF Daily Papers（link in bio）
-
-#arxiv #AI #LLM #MachineLearning #DeepLearning #AI論文 #人工智慧 #開源</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-07-04-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-07-04-short.mp4" medium="video" type="video/mp4"/></item><item><title>今天 GitHub 哪些 AI 工具值得看？2026-07-04 AI Radar Daily</title><link>https://polarbear0827.github.io/My-Way/radar/2026-07-04/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-07-04-short.mp4</guid><pubDate>2026-07-04</pubDate><description>🛸 AI RADAR DAILY 2026-07-04
+#科技人文 #穗稻忠武觀察室 #台灣 #科技與生活 #觀察筆記 #數位生活</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-04-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-04-short.mp4" medium="video" type="video/mp4"/></item><item><title>今天 GitHub 哪些 AI 工具值得看？2026-07-04 AI Radar Daily</title><link>https://polarbear0827.github.io/My-Way/radar/2026-07-04/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-07-04-short.mp4</guid><pubDate>2026-07-04</pubDate><description>🛸 AI RADAR DAILY 2026-07-04
 
 今日趨勢：AI Agent 記憶與 MCP 工具崛起
 
