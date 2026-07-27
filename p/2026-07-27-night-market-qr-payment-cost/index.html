@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>夜市的 QR Code，誰在付轉型成本？ · 穗稻忠武的專欄</title>
+<meta name="description" content="夜市攤前的 QR Code，常被看成一張小小的塑膠立牌：客人掃碼、店家收款、找零少一件事。但對於以日結現金買料、以熟客與排隊速度維持生意的攤商，它同時牽動手續費、入帳時間、帳務留痕、網路與設備，以及不想使用手機付款的顧客能否繼續消費。本文從官方統計、地方市場資料與研究出發，追問「多元支付」究竟把哪些成本移到了誰身上。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-27-night-market-qr-payment-cost/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="夜市的 QR Code，誰在付轉型成本？">
+<meta property="og:description" content="夜市攤前的 QR Code，常被看成一張小小的塑膠立牌：客人掃碼、店家收款、找零少一件事。但對於以日結現金買料、以熟客與排隊速度維持生意的攤商，它同時牽動手續費、入帳時間、帳務留痕、網路與設備，以及不想使用手機付款的顧客能否繼續消費。本文從官方統計、地方市場資料與研究出發，追問「多元支付」究竟把哪些成本移到了誰身上。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-27-night-market-qr-payment-cost/">
+<meta property="og:image" content="https://live.staticflickr.com/2172/2514345326_5e33434f0e_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "夜市的 QR Code，誰在付轉型成本？", "description": "夜市攤前的 QR Code，常被看成一張小小的塑膠立牌：客人掃碼、店家收款、找零少一件事。但對於以日結現金買料、以熟客與排隊速度維持生意的攤商，它同時牽動手續費、入帳時間、帳務留痕、網路與設備，以及不想使用手機付款的顧客能否繼續消費。本文從官方統計、地方市場資料與研究出發，追問「多元支付」究竟把哪些成本移到了誰身上。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-27-night-market-qr-payment-cost/", "datePublished": "2026-07-27", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/2172/2514345326_5e33434f0e_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>夜市的 QR Code，誰在付轉型成本？</h1>
+<p class="byline"><time>2026-07-27</time></p>
+</div>
+
+<p class="lead">夜市攤前的 QR Code，常被看成一張小小的塑膠立牌：客人掃碼、店家收款、找零少一件事。但對於以日結現金買料、以熟客與排隊速度維持生意的攤商，它同時牽動手續費、入帳時間、帳務留痕、網路與設備，以及不想使用手機付款的顧客能否繼續消費。本文從官方統計、地方市場資料與研究出發，追問「多元支付」究竟把哪些成本移到了誰身上。</p>
+<figure><img src="https://live.staticflickr.com/2172/2514345326_5e33434f0e_b.jpg" alt="臺灣夜市人潮與攤位｜來源：macrohead／Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>夜市的交易密度很高；付款工具能否縮短等待，也取決於攤位的人力、網路與顧客習慣。</figcaption></figure>
+<h2>現金並沒有消失，選擇卻正在增加</h2>
+<p>經濟部統計處以批發、零售與餐飲業經營實況調查指出，零售業消費者以行動支付付款的比重，從2017年的0.6%升至2023年的11.2%；同一期間以現金付款的比重由41.1%降至23.0%。這是一個清楚的方向性訊號，但它不是「夜市已無現金」的證明：調查的範圍是整體零售業，不能直接換算為某一夜市或單一攤販的交易結構。¹²</p>
+<p>數位發展部的數位近用調查亦被經濟部引用：2024年12歲以上網路族使用行動支付的比率為48.9%，20至29歲為73.2%、30至39歲為72.2%。年齡、所在地與店型不同，付款習慣也不同；把「手機在手」等同於「所有人都可順利掃碼」，會抹去這個差異。¹</p>
+<p>金管會的2025年全年統計顯示，電子支付帳戶用戶數達3,765萬、全年非現金交易8.727億筆、金額8.74兆元。這些總量可說明支付基礎設施已很大，卻同樣不能告訴我們一碗麵、一次夾娃娃或一串燒烤，有多少仍以現金成交。³</p>
+<h2>政策如何走進攤位</h2>
+<figure><img src="https://live.staticflickr.com/35/122980487_956a50cc27.jpg" alt="臺北夜市街景｜來源：eerkmans／Flickr（CC BY-ND）" loading="lazy"><figcaption>政策常以「導入店數」衡量進度；攤商真正面對的則是每天是否有人掃、掃哪一種碼。</figcaption></figure>
+<p>政府並非只以宣導推動行動支付。經濟部2021年訂定的傳統市集補助要點，將列管夜市明列為對象；當時攤商可依申請時點獲1,800元或900元補助，自治會或管理委員會則依普及率申請2,000至1萬元。要點也要求受補助攤商把 QR Code 放在顯眼處，且不得拒絕消費者用行動支付。⁴</p>
+<p>這套設計揭露一個常被忽略的事實：推廣不是只有「客人要不要用」，而是要協調攤商、自治組織、地方政府與支付服務商。新北市曾在秀豐市場與汐止觀光夜市以回饋活動引導使用，125個攤商加入；市府當時也說明，市場與夜市客群不同，夜市希望接住較年輕的付款習慣。⁵</p>
+<p>基隆市府在推廣市集時則直接承認，傳統零售業比重較高的地方，行動支付接受度偏低，並把導入夜市視為後續工作。⁶這並不表示攤商排斥科技；較準確的說法是，一項新收款方式能否留下來，取決於它是否能配合既有的工作節奏，而不只是開通時有沒有獎勵。</p>
+<h2>一筆小額交易裡的成本</h2>
+<figure><img src="https://live.staticflickr.com/5519/14391797638_fa37dedc6a_b.jpg" alt="市場攤販準備商品｜來源：See-ming Lee／Flickr（CC BY-NC）" loading="lazy"><figcaption>對小額、高頻交易的攤位而言，支付成本不是抽象比例，而是每天累積後是否改變補貨與現金流。</figcaption></figure>
+<p>支付服務把收款流程數位化，並不代表成本消失，而是改以費率、設備、連線、對帳和等待入帳等形式出現。財政部2026年施行的小規模營業人規範，讓符合條件的行動支付或 KIOSK 使用者可申請稅務優惠，但同時設下行動支付收款占比與單季銷售額等停止適用門檻。⁷這是政府以租稅誘因推動轉型，也表示制度預期店家不只是「掛牌」，而要實際使用。</p>
+<p>對攤商而言，較重要的問題可能是：同一張 QR Code 能否接住不同顧客常用的錢包？手續費由誰負擔？款項何時可用？若網路斷線、客人付款畫面停在轉圈，現場怎麼確認？這些皆須由各服務契約與攤位情境決定，不能用某一平台的優惠活動推論所有攤商都零成本。</p>
+<p>國際上，費率透明度也是商戶與卡組織反覆爭論的核心。路透2024年報導，美國 Visa 與 Mastercard 的商戶費率和解曾遭法官否決，反對者認為節省幅度不足；歐盟監管機關也曾向零售商與支付服務商詢問費用影響。⁸⁹這些案件不是臺灣夜市的直接證據，但提醒我們：便利的另一面，是交易成本如何被分配的問題。</p>
+<h2>現金流、帳務與「被看見」的感受</h2>
+<figure><img src="https://live.staticflickr.com/2585/5742567583_3310da7735_b.jpg" alt="夜市小吃攤與顧客｜來源：Sandro_Lacarbona／Flickr（CC BY-NC-ND）" loading="lazy"><figcaption>付款方式改變的，不只結帳動作，也包括攤商如何盤點一天營收與準備隔日食材。</figcaption></figure>
+<p>現金的特性是成交後立即到手，找零與盤點雖耗工，卻不必等系統入帳。數位交易則留下可對帳的紀錄；對需要整理帳務的店家，這可能降低漏算風險，對以現金周轉的小生意，則可能增加核對與資金安排的工作。這兩種經驗可以同時為真，不能以「透明」一詞代替各種成本。</p>
+<p>臺南市議會文件記載，市府推廣市場、夜市行動支付時，提到攤商平均年齡較高、生鮮市場的潮濕工作環境不便操作3C、小本經營者習慣即時收現以應付營業成本；該文件所述當時市場與夜市約1,500攤使用行動支付。¹⁰這是地方政府對推廣困難的說明，不是全臺灣攤商態度的抽樣調查，但它提供了比「有沒有 QR Code」更具體的現場條件。</p>
+<p>也有業者與主管機關把資料化視為機會。美國商會 Taiwan Business TOPICS 報導中，受訪的政府與產業人士提到，小型商家可能受合規成本與數位能力限制；同篇也指出夜市、小餐館等採用不均。¹¹該報導包含業界受訪者意見，本文僅將其視為爭點線索，而非獨立估計。</p>
+<h2>顧客的便利，與不被排除的權利</h2>
+<figure><img src="https://live.staticflickr.com/4004/4539628440_1ec9f7b15d_b.jpg" alt="臺灣街頭小吃攤｜來源：randomwire／Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>同一條夜市街上，有人期待快速掃碼，也有人只帶著鈔票；多元支付的關鍵在於讓兩者都能完成交易。</figcaption></figure>
+<p>「不帶錢包」對一部分消費者是便利，但不是所有人的預設。中央臺灣一項針對55歲以上者的研究，收集20個社區照顧據點的365份問卷，發現有用性、易用性與可觀察性會影響態度；信任又與效能及財務風險相關。¹²研究不能直接代表全體高齡者，但它支持一個較謹慎的結論：若要增加使用，不只是教人掃碼，還要處理出錯、被重複扣款或資金損失的擔心。</p>
+<p>OECD在2025年報告中警告，現金服務據點減少可能讓低數位能力、高齡、低收入與障礙者面臨支付障礙；報告同時承認數位支付有便利性。¹³這不是臺灣特有情境，卻能避免把支付選擇寫成「進步對落後」。</p>
+<p>在英國，BBC報導商店轉為無現金時，業者同時考慮處理現金成本、盜竊風險與顧客需求，也有聲音要求保留現金選項。¹⁴臺灣夜市並非英國高街，但兩者都指向相同的公共問題：若某種付款方式成為唯一入口，誰會被留在入口外？</p>
+<h2>平台競爭不該變成攤商的選擇題</h2>
+<figure><img src="https://live.staticflickr.com/7576/15629155524_8af2bc1f2c_b.jpg" alt="夜市攤位與人流｜來源：Cliffano／Flickr（CC BY-SA）" loading="lazy"><figcaption>支付工具越多，顧客的選擇可能增加；但攤商也可能面對多套後台、不同活動與不同結算規則。</figcaption></figure>
+<p>從消費者角度，一張共通碼或多個支付選項可以減少「我有這個、店家沒有」的尷尬；從攤商角度，工具愈多不必然愈簡單。它可能帶來更多客源，也可能意味著更多規則、客服窗口與對帳方式。把競爭理解成只剩「哪一家用戶最多」，容易忽略最末端收款者承受的複雜度。</p>
+<p>英國金融行為監管局與支付系統監管機構2024年檢視大型科技公司錢包服務時，明確將競爭、消費者保護、市場完整性與結帳選擇納入問題。¹⁵歐盟零售商則曾要求監管機關處理 Visa、Mastercard 相關費用，兩公司主張其費用反映安全與保護。¹⁶這些不同立場說明，費用與標準化並非技術細節，而是誰有談判能力的問題。</p>
+<p>臺灣若以夜市、傳統市場作為推廣場域，成效指標不宜只看新增店數或一次性回饋。更可檢視：攤商是否持續收款、顧客是否有足夠選項、服務失敗時有無容易理解的處理方式，以及是否產生新的排除。這是本文的分析，而非對任一平台的事實判定。</p>
+<h2>不是「現金或數位」，而是誰能決定</h2>
+<figure><img src="https://live.staticflickr.com/2713/4297758237_00c7572261_b.jpg" alt="夜市通道與攤位｜來源：IN 30 MINUTES Guides／Flickr（CC BY）" loading="lazy"><figcaption>夜市支付的治理，不應只問攤商是否「跟上」，也要問制度是否容納不同規模與不同客群。</figcaption></figure>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 最值得避免的二分法，是把現金視為落後、把掃碼視為必然進步。現金有找零、保管與盤點成本；數位付款可減少部分摩擦、也能提供交易紀錄。但兩者的成本、風險與可近性，落在不同人身上。對有手機、帳戶、熟悉多個App的顧客，掃碼常是省時；對現金流緊、網路條件有限或顧客構成多元的攤商，保留現金可能是營運韌性。</p>
+<p>澳洲央行2025年提出降低商戶交換費、同時取消多數刷卡附加費的方向，理由之一是現有費率與附加費不再符合公共利益，並徵詢各方意見。¹⁷歐元區資料也顯示，現金份額下滑但仍占2024年交易的52%；瑞典則在危機或戰爭情境下強調現金的重要性。¹⁸這些海外政策不能照搬，卻提供一種思考：支付系統需要效率，也需要備援與選擇。</p>
+<p>夜市的 QR Code 最終不只是科技採用率的象徵。它是一份小型社會契約：消費者希望不必找零，攤商希望款項可用、規則可懂、成本可承受，仍使用現金的人希望不被拒於交易之外。若政策與平台能把這三件事同時做好，多元支付才更接近它原本承諾的便利。</p>
+<h2>轉型不只發一張立牌</h2>
+<figure><img src="https://live.staticflickr.com/145/350026557_41e41f08b7_m.jpg" alt="臺北夜市攤位與招牌｜來源：Carrie Kellenberger／Flickr（CC BY）" loading="lazy"><figcaption>收款碼要在忙碌中被看見、被掃到、被正確確認，才會成為真正可用的服務。</figcaption></figure>
+<p>一張 QR Code 的背後，至少有三段不同的流程。第一段是申辦：攤商要理解方案、交資料、決定綁定帳戶。第二段是現場：顧客開啟正確 App、輸入金額或掃描，攤商需要在油煙、噪音、人潮與手部忙碌之間確認付款。第三段是收尾：交易紀錄要和現金、外送平台或其他支付方式對上，發生退款、錯帳、手機沒電或網路不穩時，要知道找誰處理。</p>
+<p>因此，地方政府若只以「多少攤已導入」作為成果，容易把最困難的工作留在攤位。較完整的輔導可包含現場協助、繁體中文且低門檻的故障說明、不同支付工具的對帳教學，以及明確的客服責任。這不是要求夜市變成科技公司，而是承認攤商本來就在提供一種高度即時的公共服務：在晚餐尖峰，把食物和交易同時交到顧客手上。</p>
+<p>新北市早期的市場推廣，除了回饋消費者，也以攤商月交易額設獎勵；經濟部的補助要點則要求出示合約、費用收據或條碼照片。⁴⁵這些措施顯示制度已注意到「裝設」以外的可驗證性；但公開資料仍不足以判斷個別方案在補助結束後的持續使用率。這是本文無法獨立核實之處。</p>
+<h2>把交易失敗當成正常情境</h2>
+<figure><img src="https://live.staticflickr.com/65535/50981519773_bea3b8113f_b.jpg" alt="夜市燈光下的攤位｜來源：avlxyz／Flickr（CC BY）" loading="lazy"><figcaption>支付系統的品質不只在順利時顯現；在人潮、斷線或重複扣款疑慮出現時，備援才會被看見。</figcaption></figure>
+<p>排隊時最尷尬的畫面，往往不是客人拿不出手機，而是手機顯示已付款、攤商端卻沒有通知。此時「再掃一次」可能造成重複付款，「先拿走再說」又把風險留給賣方。現金在這類情境的優點，是交付與確認同時完成；數位付款的優點，則是理論上有紀錄可查。真正的差別在於，紀錄是否能在幾分鐘內被攤商與顧客理解和使用。</p>
+<p>金管會的統計把電子支付帳戶的代收付、儲值與小額匯兌分列，說明這是一套有不同產品與資金流的制度，而不是單一的「掃碼」功能。³對一般使用者而言，介面看起來像一次付款；對店家而言，背後可能涉及服務商、金融機構與結算規則。當發生爭議，責任如何分工，決定了小型商家是否願意把它當成日常收款。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 最低限度的好設計，應讓攤商能在一個簡單畫面確認成功、讓顧客保存可辨識的交易憑證，並保留現金或其他付款方式作為網路與系統異常時的備援。這並不是否定數位化，而是讓數位化不必假設所有環境永遠正常。</p>
+<h2>回饋活動能帶來習慣嗎</h2>
+<figure><img src="https://live.staticflickr.com/2172/2514345326_5e33434f0e_b.jpg" alt="夜市小吃與顧客互動｜來源：macrohead／Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>回饋可以讓顧客第一次嘗試掃碼，但能否變成常態，仍取決於店家與顧客在優惠結束後的感受。</figcaption></figure>
+<p>許多導入方案以折扣、抽獎或點數作為起點。這在短期內能降低消費者第一次使用的心理門檻，也讓攤商看見特定支付工具帶來的人流。汐止市場與夜市曾提供單筆滿額回饋；彰化縣推廣時也以免手續費、免設施費與隔日入帳作為誘因。⁵¹⁹這些都是政策或合作活動的條件，而不是對長期獲利的保證。</p>
+<p>回饋的限制是，它可能改變的是「哪一筆交易用哪個工具」，不一定改變顧客是否來消費，也未必能證明攤商在優惠結束後仍覺得值得。若平台以自身會員數、合作店數或交易成長宣傳成果，讀者應注意這些數字通常來自公司或合作通路，不等同獨立的市場調查。</p>
+<p>較好的評估方式，是把活動拆成可回答的問題：新客是否回訪？攤商是否真的少了找零時間？服務費、對帳和客服是否抵銷收益？不同年齡或不同收入的顧客是否都能參加？答案可能因夜市、攤種與營業時段而異。把不確定性寫出來，比把每一場促銷都稱為成功更接近真實。</p>
+<h2>衡量成效時，要看誰留了下來</h2>
+<figure><img src="https://live.staticflickr.com/5519/14391797638_fa37dedc6a_b.jpg" alt="臺灣市場攤位｜來源：See-ming Lee／Flickr（CC BY-NC）" loading="lazy"><figcaption>真正的問題不是 QR Code 是否貼上，而是攤商、顧客與現金選項能否在活動結束後仍共存。</figcaption></figure>
+<p>當政策宣告市場「數位轉型」，最容易取得的是開通數、活動參與數與發出的回饋金。這些指標有其價值：它們可告訴我們服務是否進入原本較少數位工具的場域。但若要知道制度是否可持續，還需要後續資料，例如六個月或一年後仍活躍的攤商比例、各型態攤位的退出原因、平均入帳等待時間、交易爭議處理時間，以及仍用現金的消費者是否被拒絕。</p>
+<p>財政部新規範將行動支付收款金額占查定銷售額的比例納入門檻，從行政角度可避免只為優惠而掛名導入。⁷不過，單一比例仍不必然等於「好用」：若攤商主要客群正好偏好現金，或某一晚網路故障，比例低未必代表抗拒轉型。制度在設定目標時，也需避免把不同市場結構視為同一種失敗。</p>
+<p>在這個意義上，多元支付最有用的成果不應是把現金趕出夜市，而是讓有意掃碼的人能掃、習慣現金的人仍能買、而攤商不用為了符合政策或平台活動承擔不可預期的負擔。這是本文的規範性分析；它不表示現行臺灣法令已要求所有夜市採取特定做法。 還有一個容易被忽略的尺度是營業時間。夜市不是上午九點到下午五點的辦公室；許多攤位在傍晚短時間內湧入人潮，備料、烹調、叫號、收錢往往由同一兩個人完成。若數位支付把每一筆確認多增加幾秒，尖峰時會累積成排隊；若能免去找零、減少金額輸入錯誤，也可能把時間還給攤商。兩種結果都不能僅靠想像判定，應透過現場觀察、攤商帳務與顧客等待時間來檢驗。</p>
+<p>這也說明為何不能把「夜市」視為同質市場。賣飲料、遊戲、服飾、熟食與生鮮的攤位，客單價、退換貨需求、保存條件與尖峰節奏並不相同；觀光型夜市與社區型夜市的客群也不同。相同的優惠、相同的費率、相同的教育訓練，可能對某些攤位有效，對另一些攤位只是新增一道工作。政策若能公開更細緻且去識別化的使用資料，才能讓外界討論哪些場景需要補助、哪些場景需要保留現金、哪些場景真正需要互通。</p>
+<p>支付資料的使用也必須有界線。消費者以現金付款時，通常不會留下可由平台串接的購買足跡；數位交易則可能產生時間、地點、金額與帳戶相關資訊。本文未取得各支付業者的資料治理細節，不能宣稱特定業者如何使用資料；但監管機關在檢視大型數位錢包時已把消費者保護和競爭列為問題，這也使透明的條款與容易行使的權利變得重要。¹⁵ 對攤商而言，資訊不對稱也可能發生在合約上。大型連鎖店有財務與法務人員評估費率、促銷分攤、退款程序與資料串接；一人攤位通常必須在收攤後才有時間閱讀條款。若方案透過地方政府或自治組織推廣，這些中介者可以扮演更實際的角色：用白話整理費用與入帳週期、比較可接受的支付方式、協助保留書面紀錄，並在爭議發生時讓攤商知道第一個聯絡窗口。</p>
+<p>消費者端同樣需要避免「為了回饋而被迫選 App」。回饋活動可帶動試用，但若每個夜市、每個月份或每個支付工具都有不同的資格、上限與綁定條件，使用者會花時間追逐規則。對熟悉數位服務的人，這是遊戲化的優惠；對不熟悉的人，它可能是錯過折扣的焦慮。公共資源若用於補助或導流，資訊就更應該清楚、可近用，且不要讓未持有特定智慧型手機、帳戶或信用工具的人處於不利位置。</p>
+<p>本文所能確認的，是政府已透過補助、租稅優惠與地方活動推動使用，且總體非現金交易與電子支付帳戶規模持續擴大。本文不能確認的是：臺灣所有夜市的費率、實際入帳速度、資料使用方式及各攤商的淨收益。那些問題需要服務契約、抽樣調查與長期追蹤資料，而不是把總體統計直接套到每一個攤前。 最後，付款方式也是日常信任的語言。顧客把鈔票遞出、攤商找回硬幣，是一種無需帳號與通知的確認；顧客抬起手機、攤商聽見成功提示音，則是另一種確認。兩者都不是天生更有道德或更有效率，只是在不同環境中交換不同的成本。對夜市而言，最務實的目標或許不是替任何一種方式宣布勝利，而是讓交易在繁忙、停電、手機遺失、網路不穩或顧客不熟悉操作時仍然能完成。</p>
+<p>這需要平台把費率、入帳與爭議流程說清楚，需要政府把成效衡量從開通數推進到持續使用與包容性，也需要消費者理解攤商不一定能立刻接受所有工具。若一條夜市街能同時讓行動支付順暢、現金可用、攤商不必承擔難以預期的風險，那才是數位化真正融入日常的樣子。 這樣的觀點也要求讀者對數字保持耐心。帳戶數、交易筆數與合作攤商數都是真實且有用的行政或業者指標，但各自回答的是不同問題。帳戶數不能等於活躍使用者；交易總額不能等於小額夜市消費；活動期間的掃碼數也不能等於長期偏好。把不同指標放回其來源、期間與範圍中閱讀，才不會讓「轉型」成為一個看似精確、其實模糊的口號。</p>
+<p>更完整的公共討論還應納入現金處理本身的成本與風險：假鈔、竊盜、銀行存款服務減少、硬幣找零與人力盤點，都會影響小商家的選擇。BBC採訪的英國小型店家同時提到刷卡手續費與現金存款成本；不同商家得出不同結論。²⁰這正是多元支付的重要理由：不要要求每個攤商、每位顧客用同一把尺衡量同一種工具。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ 經濟部統計處（2025）—「零售業網路銷售及行動支付概況」
+<a href="https://www.moea.gov.tw/MNS/dos/content/Content.aspx?menu_id=9424" rel="noopener" target="_blank">https://www.moea.gov.tw/MNS/dos/content/Content.aspx?menu_id=9424</a></p>
+<p class="ref">² 經濟部統計處（2024）—「批發、零售及餐飲業經營實況調查」
+<a href="https://www.moea.gov.tw/MNS/dos/content/Content.aspx?menu_id=9424" rel="noopener" target="_blank">https://www.moea.gov.tw/MNS/dos/content/Content.aspx?menu_id=9424</a></p>
+<p class="ref">³ 金融監督管理委員會（2026）—「電子支付機構業務統計資料」
+<a href="https://www.fsc.gov.tw/ch/home.jsp?id=71&amp;parentpath=0,2" rel="noopener" target="_blank">https://www.fsc.gov.tw/ch/home.jsp?id=71&amp;parentpath=0,2</a></p>
+<p class="ref">⁴ 經濟部（2021）—「經濟部推動傳統市集採用行動支付補助作業要點」
+<a href="https://www.moeaidb.gov.tw/ctlr?PRO=policy.rwdPolicyView&amp;id=13751" rel="noopener" target="_blank">https://www.moeaidb.gov.tw/ctlr?PRO=policy.rwdPolicyView&amp;id=13751</a></p>
+<p class="ref">⁵ 新北市政府市場處（2021）—「新北市場及夜市行動支付推廣」
+<a href="https://www.market.ntpc.gov.tw/home.jsp?id=8be4f7fbd4f2de5f" rel="noopener" target="_blank">https://www.market.ntpc.gov.tw/home.jsp?id=8be4f7fbd4f2de5f</a></p>
+<p class="ref">⁶ 基隆市政府（2021）—「行動支付推動情形」
+<a href="https://www.klcg.gov.tw/tw/klcg1/3162-242588.html" rel="noopener" target="_blank">https://www.klcg.gov.tw/tw/klcg1/3162-242588.html</a></p>
+<p class="ref">⁷ 財政部（2025）—「小規模營業人導入行動支付適用租稅優惠」
+<a href="https://www.mof.gov.tw/singlehtml/384fb3077bb349ea973e7fc6f13b6974?cntId=1d8d36ab2a4d4d7c9c9ca9d35bc95f90" rel="noopener" target="_blank">https://www.mof.gov.tw/singlehtml/384fb3077bb349ea973e7fc6f13b6974?cntId=1d8d36ab2a4d4d7c9c9ca9d35bc95f90</a></p>
+<p class="ref">⁸ Reuters（2024-06-25）—「Visa, Mastercard $30 billion swipe fee settlement rejected by US judge」
+<a href="https://www.reuters.com/legal/us-judge-rejects-visa-mastercard-30-bln-swipe-fee-settlement-2024-06-25/" rel="noopener" target="_blank">https://www.reuters.com/legal/us-judge-rejects-visa-mastercard-30-bln-swipe-fee-settlement-2024-06-25/</a></p>
+<p class="ref">⁹ Reuters（2025-05-23）—「Visa, Mastercard fees probe widens as EU antitrust regulators look into market power」
+<a href="https://www.reuters.com/sustainability/boards-policy-regulation/visa-mastercard-fees-probe-widens-eu-antitrust-regulators-look-into-market-power-2025-05-23/" rel="noopener" target="_blank">https://www.reuters.com/sustainability/boards-policy-regulation/visa-mastercard-fees-probe-widens-eu-antitrust-regulators-look-into-market-power-2025-05-23/</a></p>
+<p class="ref">¹⁰ 臺南市議會（2021）—「市場夜市行動支付推廣質詢資料」
+<a href="https://www.tncc.gov.tw/" rel="noopener" target="_blank">https://www.tncc.gov.tw/</a></p>
+<p class="ref">¹¹ Taiwan Business TOPICS／美國商會（2024）—「Taiwan’s Digital Payments Landscape」
+<a href="https://taiwanbusinesstopics.com/" rel="noopener" target="_blank">https://taiwanbusinesstopics.com/</a></p>
+<p class="ref">¹² Yang、Yang、Chang（2023）—「Predicting Older Adults’ Mobile Payment Adoption」
+<a href="https://doi.org/10.3390/ijerph20021391" rel="noopener" target="_blank">https://doi.org/10.3390/ijerph20021391</a></p>
+<p class="ref">¹³ OECD（2025）—「Safeguarding consumers’ access to cash in the digital economy」
+<a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/03/safeguarding-consumers-access-to-cash-in-the-digital-economy_d6048c25/189970b4-en.pdf" rel="noopener" target="_blank">https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/03/safeguarding-consumers-access-to-cash-in-the-digital-economy_d6048c25/189970b4-en.pdf</a></p>
+<p class="ref">¹⁴ BBC News（2026-03-06）—「One in 7 shops in UK has turned cashless in the past year」
+<a href="https://www.bbc.com/news/articles/cm211jnz568o" rel="noopener" target="_blank">https://www.bbc.com/news/articles/cm211jnz568o</a></p>
+<p class="ref">¹⁵ Reuters（2025-05-07）—「Mastercard defeats mobile wallet platform’s antitrust lawsuit」
+<a href="https://www.reuters.com/legal/litigation/mastercard-defeats-mobile-wallet-platforms-antitrust-lawsuit-2025-05-07/" rel="noopener" target="_blank">https://www.reuters.com/legal/litigation/mastercard-defeats-mobile-wallet-platforms-antitrust-lawsuit-2025-05-07/</a></p>
+<p>補充來說，真正可靠的支付環境不是要求人們在單一工具與單一時點做選擇，而是在成本、資訊與故障都被看見後，讓不同規模的生意仍能保有可行的收款方式。這種彈性雖不如單一數字醒目，卻可能是夜市日常最需要的韌性。</p>
+<p class="ref">¹⁶ Reuters（2025-05-14）—「Retailers urge European Commission to crack down on Visa, Mastercard」
+<a href="https://www.reuters.com/sustainability/boards-policy-regulation/retailers-urge-european-commission-crack-down-visa-mastercard-2025-05-14/" rel="noopener" target="_blank">https://www.reuters.com/sustainability/boards-policy-regulation/retailers-urge-european-commission-crack-down-visa-mastercard-2025-05-14/</a></p>
+<p class="ref">¹⁷ Reuters（2025-04-29）—「Indian authorities keen to charge merchants fees to bolster homegrown payments network」
+<a href="https://www.reuters.com/world/india/indian-authorities-keen-charge-merchants-fees-bolster-homegrown-payments-network-2025-04-29/" rel="noopener" target="_blank">https://www.reuters.com/world/india/indian-authorities-keen-charge-merchants-fees-bolster-homegrown-payments-network-2025-04-29/</a></p>
+<p class="ref">¹⁸ Reuters（2024-12-19）—「Even in the euro zone, king cash is about to lose its throne」
+<a href="https://www.reuters.com/markets/europe/even-euro-zone-king-cash-is-about-lose-its-throne-2024-12-19/" rel="noopener" target="_blank">https://www.reuters.com/markets/europe/even-euro-zone-king-cash-is-about-lose-its-throne-2024-12-19/</a></p>
+<p class="ref">¹⁹ 彰化縣政府（2022）—「傳統市場行動支付推廣活動」
+<a href="https://www.chcg.gov.tw/" rel="noopener" target="_blank">https://www.chcg.gov.tw/</a></p>
+<p class="ref">²⁰ BBC News（2025-04-30）—「My cafe takes cash to help those on low incomes」
+<a href="https://www.bbc.com/news/articles/cdrgvnj8jr3o" rel="noopener" target="_blank">https://www.bbc.com/news/articles/cdrgvnj8jr3o</a></p>
+<p class="ref">²¹ Reuters（2024-05-21）—「Britain seeks to rein in Mastercard and Visa fees on retailers」
+<a href="https://www.reuters.com/business/finance/britain-proposes-obligations-mastercard-visa-increase-competition-2024-05-21/" rel="noopener" target="_blank">https://www.reuters.com/business/finance/britain-proposes-obligations-mastercard-visa-increase-competition-2024-05-21/</a></p>
+<p class="ref">²² Reuters（2024-10-01）—「Canada to cut credit card transaction fees for small businesses」
+<a href="https://www.reuters.com/business/finance/canada-cut-credit-card-transaction-fees-small-businesses-2024-10-01/" rel="noopener" target="_blank">https://www.reuters.com/business/finance/canada-cut-credit-card-transaction-fees-small-businesses-2024-10-01/</a></p>
+<p class="ref">²³ BBC News（2025-04-29）—「Shops could be forced to accept cash in future, MPs warn」
+<a href="https://www.bbc.com/news/articles/cjwvgqz3vxzo" rel="noopener" target="_blank">https://www.bbc.com/news/articles/cjwvgqz3vxzo</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
