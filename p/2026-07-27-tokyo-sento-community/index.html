@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>東京錢湯：一座城市如何在浴氣裡留住公共生活 · 穗稻忠武的專欄</title>
+<meta name="description" content="傍晚的東京巷弄裡，暖簾與高煙囪仍是很容易被忽略的城市標記。跨過鞋櫃、洗淨身體、把小毛巾留在池外，這套次序並不只是旅遊禮儀；它曾是住宅尚無浴室時的日常基礎設施，如今則在老闆高齡、地價與燃料成本之間，重新被說成社區空間、建築遺產與廉價休閒。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-27-tokyo-sento-community/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="東京錢湯：一座城市如何在浴氣裡留住公共生活">
+<meta property="og:description" content="傍晚的東京巷弄裡，暖簾與高煙囪仍是很容易被忽略的城市標記。跨過鞋櫃、洗淨身體、把小毛巾留在池外，這套次序並不只是旅遊禮儀；它曾是住宅尚無浴室時的日常基礎設施，如今則在老闆高齡、地價與燃料成本之間，重新被說成社區空間、建築遺產與廉價休閒。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-27-tokyo-sento-community/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sento_public_bath_Taishoyu_-_Joyful_Minowa_Shopping_Street_in_Taito_Ward_%2850119416172%29.jpg/1280px-Sento_public_bath_Taishoyu_-_Joyful_Minowa_Shopping_Street_in_Taito_Ward_%2850119416172%29.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "東京錢湯：一座城市如何在浴氣裡留住公共生活", "description": "傍晚的東京巷弄裡，暖簾與高煙囪仍是很容易被忽略的城市標記。跨過鞋櫃、洗淨身體、把小毛巾留在池外，這套次序並不只是旅遊禮儀；它曾是住宅尚無浴室時的日常基礎設施，如今則在老闆高齡、地價與燃料成本之間，重新被說成社區空間、建築遺產與廉價休閒。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-27-tokyo-sento-community/", "datePublished": "2026-07-27", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sento_public_bath_Taishoyu_-_Joyful_Minowa_Shopping_Street_in_Taito_Ward_%2850119416172%29.jpg/1280px-Sento_public_bath_Taishoyu_-_Joyful_Minowa_Shopping_Street_in_Taito_Ward_%2850119416172%29.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>東京錢湯：一座城市如何在浴氣裡留住公共生活</h1>
+<p class="byline"><time>2026-07-27</time></p>
+</div>
+
+<p class="lead">傍晚的東京巷弄裡，暖簾與高煙囪仍是很容易被忽略的城市標記。跨過鞋櫃、洗淨身體、把小毛巾留在池外，這套次序並不只是旅遊禮儀；它曾是住宅尚無浴室時的日常基礎設施，如今則在老闆高齡、地價與燃料成本之間，重新被說成社區空間、建築遺產與廉價休閒。</p>
+<p>本文採訪式整理東京都、業界組合、學術與國際媒體資料，追問的不是「錢湯會不會復興」，而是：一個以平價、共浴與鄰里熟客為前提的制度，能否在現代都市留下位置。組合與政府推廣資料有保存與觀光的利益，本文將其與獨立媒體、研究與制度文件分開使用；對成效尚無獨立定論處，亦會明示。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sento_public_bath_Taishoyu_-_Joyful_Minowa_Shopping_Street_in_Taito_Ward_%2850119416172%29.jpg/1280px-Sento_public_bath_Taishoyu_-_Joyful_Minowa_Shopping_Street_in_Taito_Ward_%2850119416172%29.jpg" alt="東京錢湯外觀｜來源：Wikimedia Commons（CC BY 2.0）" loading="lazy"><figcaption>煙囪與暖簾把洗浴設施放在街道上；本文關心的正是這種仍嵌在住區尺度裡的公共服務。</figcaption></figure>
+<h2>先分清楚：錢湯不是溫泉</h2>
+<p>日文的「錢湯」通常指都市住宅區裡、以加熱自來水或一般水源供浴的公眾浴場；「溫泉」則須符合源泉溫度或礦物成分等法定條件。這一差異看似瑣碎，卻決定其經濟與空間位置：溫泉可以是旅館或景區目的地，錢湯較常是步行可達的鄰里設施。AP 的解說也將兩者區分為天然泉水與通常以木材或其他燃料加熱的公共浴場。¹ 東京浴場組合稱，錢湯原本服務沒有自家浴室的人；在家庭浴室普及後，它被重新定位為較低門檻的放鬆場所。² 這是業界的自我說法，而非對所有居民需求的量化證明。不過 BBC 對多間錢湯的實地報導可見，入場費受規範，三溫暖、毛巾與用品可能另計；「廉價」並不表示沒有額外消費。³</p>
+<p>裸體、性別分區、先洗後泡、毛巾不入池，是空間秩序的一部分。紐約時報的近年東京指南提醒，浴衣與手機相機均不進入浴池區，刺青規則也應逐店確認。⁴ 這些規矩使錢湯有別於泳池或水療館，也說明它對首次造訪者仍有文化門檻。</p>
+<h2>從防火到浴室：江戶城市為何需要共浴</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/%E6%BB%9D%E9%87%8E%E5%B7%9D%E7%A8%B2%E8%8D%B7%E6%B9%AF_2025.jpg/1280px-%E6%BB%9D%E9%87%8E%E5%B7%9D%E7%A8%B2%E8%8D%B7%E6%B9%AF_2025.jpg" alt="稻荷湯的建築外觀｜來源：Wikimedia Commons（CC0）" loading="lazy"><figcaption>寺社式屋頂並非單純懷舊裝飾；它把錢湯置於東京木造都市與震災重建的建築史中。</figcaption></figure>
+<p>東京的錢湯並非從「日本人愛泡澡」這句文化概括自然長出。全國公眾浴場業組合的歷史頁面記載，江戶第一間商業錢湯可追至1591年；其文獻例證還把「錢湯」一詞的書面使用追到1266年。⁵ 對東京而言，制度與都市條件同樣重要：東京都的英文專題指出，江戶時代為防密集城區火災，私人住宅不得自行燒水，公共浴場因而擴散。⁶</p>
+<p>這段歷史不能被浪漫化。早期浴室的低矮入口、蒸氣與黑暗，首先是保溫和供水條件下的技術解法；公共性也並不等同今日語境的平等。可是，二樓休憩空間與洗浴後停留的設計，確實讓浴場超出「洗去污垢」的功能。全國組合把它描述為江戶至明治常見的休憩沙龍；這是業界史料的說法，仍可與後來新聞與研究裡的鄰里互動敘述相互對照。⁵</p>
+<p>關東大地震後，熟悉神社寺院工法的木匠參與重建，形成不少宮造式錢湯。東京都資料將這種寺社般立面的出現，連到1923年震災後的重建；小金井江戶東京建築園保存的子寶湯也成為其例。⁶ 因此，今天看到的高屋脊、唐破風與富士山壁畫，不只是「傳統日本」的視覺符號，也有災後都市復原、木構技術與街區記憶的來源。</p>
+<p>戰後情況又改變了。BBC 對壁畫師田中瑞穗的報導指出，1968年日本錢湯達18,325間的高峰；私人浴室隨經濟成長普及後，數量持續下滑。⁷ 這不表示當年所有人都依戀共浴，也不表示今日的存續能只靠歷史價值。它只是說明：錢湯曾在住宅設備不足時承接大規模、日常且便宜的需求，而這個需求的結構已經改寫。</p>
+<h2>消失不是單一原因：老闆、鍋爐與土地</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Shoes_boxes_at_a_Sento_-_Tokyo_area_-_Dec_22_2021.jpeg/1280px-Shoes_boxes_at_a_Sento_-_Tokyo_area_-_Dec_22_2021.jpeg" alt="東京錢湯入口與鞋櫃｜來源：Wikimedia Commons（CC BY 4.0）" loading="lazy"><figcaption>鞋櫃是進入共浴規則的第一道門檻；它也提醒人們，錢湯的價值依賴有人每天開門、清潔、燒水。</figcaption></figure>
+<p>數量的滑落有可核對的輪廓。朝日新聞以東京都資料報導，2022年12月尚營業者為462間，15年間幾乎減半；相較1968年下降超過八成。該報同時指出，2008年至2022年間年度使用人次從3,381萬降至2,002萬。⁸ 東京都其後的資料稱，2024年12月約剩430間。⁶ 兩個年份與統計口徑不同，不能把它們拼成精確的線性曲線，但方向一致：設施總量長期下降。</p>
+<p>關門的理由也不是單一的「年輕人不來」。朝日整理462家歇業浴場的回答：設備老化84件、經營者年紀太大69件、找不到繼承人39件、財務困難20件。⁸ 這些是業者自陳，未必能測量各項原因的相對因果；但它至少顯示，住宅附浴室只是長期背景，接班、修繕與資金決策才常是最後一道門檻。</p>
+<p>英國《衛報》同樣把私人浴室普及、經營者高齡、家族接班與都市重建並列為壓力來源。⁹ 這裡的「重建」尤其重要：錢湯往往佔一塊完整街角土地，鍋爐、浴池、排煙與更衣室都難以用低成本局部更新。當屋主面對多年投資、繼承稅或出售選項時，保存倡議者的文化論述要與可立即變現的地產價格競爭。</p>
+<p>Sento &amp; Neighborhood 的研究團隊稱，東京錢湯從1960年代末逾2,500間降至2024年不足430間，並把壓力歸為經營者年齡、生活型態、維護成本與再開發。¹⁰ 這是保存組織的觀點，須保留其倡議立場；不過其在北區進行逐店訪談、工作坊與閉店前紀錄，也提供了單靠統計表看不見的材料：消失的不只是浴池，而是某條巷子的晚間人流、熟客與小店網絡。</p>
+<h2>平價的代價：受統制費率的生意</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Tatsuno-yu_Sento_Tokyo_1.jpg/1280px-Tatsuno-yu_Sento_Tokyo_1.jpg" alt="東京龍野湯外觀｜來源：Wikimedia Commons（CC0）" loading="lazy"><figcaption>小型錢湯的外觀不會顯示鍋爐、清潔與人力帳本，但這些固定成本決定它能否繼續作為平價公共服務。</figcaption></figure>
+<p>錢湯的難題不只在顧客數，也在它不能像一般休閒業者那樣即時調價。日本經濟新聞7月21日報導，東京都決定自8月起把成人公眾浴場上限從550日圓調為600日圓，未滿12歲者維持原價；報導說明費率依物價統制令，由各都道府縣設定上限。¹¹ 這是最新的制度變化，不應倒推為每一家都收同一價格或已改善獲利。</p>
+<p>價格統制的原意是讓基本衛生服務可負擔；但燃料、水電與維修上漲時，調整往往慢於成本。荒川區2025年度的補助規定，明列都市瓦斯、重油、廢油、薪與電費都可納入，單一浴場每月最多補助5萬日圓。¹² 一個行政區持續設置此類補助，至少證明地方政府認定成本衝擊需要政策回應；它不等同於證明補助已使所有浴場可持續。</p>
+<p>縣級調查更能看見帳面壓力。神奈川縣對23間公眾浴場的成本試算，估計2023年平均每月收入約163.7萬日圓、支出約180.9萬日圓；以2024年成本推估，平均月度不足約21.6萬日圓。¹³ 這不是東京全體的代表樣本，且估算依假設而定，但它說明為何「一張入場券只多幾十日圓」的討論，在營運端可被放大成鍋爐與人力能否維持。</p>
+<p>2026年春天，共同社報導中東供油干擾後的燃料成本又使部分錢湯縮短營業或決定歇業；該報引述全國組合稱約三成錢湯使用重油鍋爐。¹⁴ 這是一個特定時點的衝擊，不能蓋過長期的人口與接班因素。相反地，它顯示傳統錢湯在低費率、重資本設備與能源波動三者交會時，比可自由定價的「超級錢湯」更缺乏緩衝。</p>
+<h2>新客人進來以後：三溫暖、設計與過夜床位</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tatsuno-yu_Sento_Tokyo_2.jpg/1280px-Tatsuno-yu_Sento_Tokyo_2.jpg" alt="東京龍野湯外觀之一｜來源：Wikimedia Commons（CC0）" loading="lazy"><figcaption>外觀的延續與內部更新可以並存，但「更新」所服務的究竟是熟客、年輕人還是旅客，會改變浴場的性格。</figcaption></figure>
+<p>把錢湯只寫成衰退產業，會漏掉一批嘗試改造的經營者。路透社2020年報導，Kogane-yu 的翻修規劃加入精釀啤酒、現場音樂與住宿，希望把共浴從必要服務改寫為可停留的體驗；疫情一度打亂計畫。¹⁵ 這類案例不是全體行業的代表，卻提出一個具體問題：若單靠洗澡收入不足，浴後消費與活動是否能成為新的收入來源？</p>
+<p>BBC 2023年走訪同一類型的新錢湯，描述Kogane-yu翻修後增加咖啡館、洗衣店、宿舍式房間與活動；同篇也保留了另一面——傳統家族錢湯未必有資本或客群條件做同樣投資。³ 從商業角度看，三溫暖加價、飲食與住宿提供交叉補貼；從社會角度看，它也可能將原本為附近居民而設的低價設施，轉向較能消費的都市客群。</p>
+<p>《金融時報》2025年將這一趨勢放在建築保存與新設計之間理解：傳統宮造式錢湯、提供按摩餐飲的大型超級錢湯，以及結合啤酒、DJ活動的改造案例，並不是同一種設施。¹⁶ 因此，「錢湯復興」應拆開看：某間店客流增加，不自動代表傳統小店普遍獲救；新式空間成功，也不必然否定傳統常客所重視的安靜與低價。</p>
+<p>東京都的專題則引述浴場組合副理事長佐伯正敏說，近年三溫暖熱潮讓部分年輕人發現錢湯費用較低。⁶ 這是業界人士的觀察，尚缺全市性客群年齡與回訪率資料來驗證其規模。不過朝日的統計提供一個較審慎的訊號：雖然總使用人次下降，單店日均客數曾因店數減少而上升。⁸ 分母變小與需求回流可以同時存在，不能只挑其中一個敘事。</p>
+<h2>稻荷湯旁的長屋：保存不是把建物封起來</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/%E7%A8%B2%E8%8D%B7%E6%B9%AF%E9%95%B7%E5%B1%8B_2025.jpg/1280px-%E7%A8%B2%E8%8D%B7%E6%B9%AF%E9%95%B7%E5%B1%8B_2025.jpg" alt="稻荷湯長屋｜來源：Wikimedia Commons（CC0）" loading="lazy"><figcaption>浴場旁長屋被修復為可使用的社區空間，顯示保存方案若要成立，通常得處理浴場以外的街區關係。</figcaption></figure>
+<p>北區瀧野川的稻荷湯，提供了另一條路：不是只修浴池，也修浴池旁邊的生活。東京大學人文中心介紹，其與 Sento &amp; Neighborhood 合作建立稻荷湯長屋修復與再生的虛擬檔案；計畫包含2019年起的修復照片、記錄、街道掃描與可公開查閱的報告。¹⁷ 這是一項由研究機構與保存團體共同呈現的案例，目的本來就包含推廣，不能把它當成對所有錢湯的成效評估。</p>
+<p>不過，做法的細節值得注意：一棟長屋被修復，並被設計為沙龍與活動場所；團隊把錢湯視為地方社會關係的節點，而不是孤立的古建築。東京大學的材料說，虛擬檔案所關心的題目包含公共浴場、都市更新、生活史與都市史。¹⁷ 這種把建築、聲音、照片、口述與日常使用並置的方式，讓保存不只剩下立面與年份。</p>
+<p>稻荷湯的修復在2024年獲 UNESCO 亞太文化遺產保護獎卓越獎，東京大學與團隊皆有記載。¹⁷ 但得獎不等於可複製的財務模型。保存需要所有權人同意、專業團隊、募資能力與可再利用的附屬空間；許多面臨結業的浴場未必有這些條件。保存人士 Sam Holden 也坦言，東京土地交易快，若屋主決定出售後才通知社區，往往已來不及籌集替代方案。¹⁸</p>
+<p>學者 Haruka Kuryu 將錢湯稱作支撐街區的「地方生態系」，指出閉店後可能連帶改變無浴室住宅、周邊店鋪與夜間步行路線。¹⁹ 這是一個分析框架，不是已被普遍因果證明的結論；不同街區的替代設施、人口與租金皆不同。但它提醒公共政策別只問「一間浴場的營收」，也問它原先替誰提供日常接觸與最低限度的公共服務。</p>
+<h2>觀光客也能進來嗎：開放與規則的拉鋸</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Tatsuno-yu_Sento_Tokyo_3.jpg/1280px-Tatsuno-yu_Sento_Tokyo_3.jpg" alt="東京龍野湯的街角立面｜來源：Wikimedia Commons（CC0）" loading="lazy"><figcaption>面向街道的入口需要清楚可見，真正的門檻卻在入內後的語言、裸體規則、付款與彼此的默契。</figcaption></figure>
+<p>旅客是錢湯最新的希望之一，也是最需要細緻處理的一群人。東京都與浴場組合在2025年推出 WELCOME! SENTO 計畫，認定63間能提供多語協助、標示、無現金付款與用品的示範店，並以折價券鼓勵遊客造訪。²⁰ 這是政府與業界共同推廣方案，能證明政策投入，不能單獨證明觀光客足以支撐行業。</p>
+<p>政策的理由不難理解。海外訪客可能不熟悉先洗後泡、裸體、男女分區、毛巾與刺青規定；小型家族店也未必有英文人力或刷卡設備。計畫網站把多語、支付與暖簾標記列為設計重點，正說明「歡迎」不是一句口號，而是一串額外成本。²¹ 對經營者而言，新增客群可能帶來收入；對熟客而言，若禮儀衝突或空間過度擁擠，也可能改變原有安靜的使用感。</p>
+<p>東京浴場組合聲稱，相較部分溫泉，許多錢湯對刺青較寬容，並強調不應把社區成員排除在外。² 但這不應被寫成全東京所有店家的統一保證。各店規則、當地顧客期待與刺青大小遮蔽要求仍不同，旅客應事先查詢。AP 的入浴指南也提醒，錢湯和溫泉的文化與設施不同，無法以單一「日本澡堂」概括。¹</p>
+<p>這裡有一個難以量化的張力。錢湯最常被歌頌的，是陌生人脫去身分符號後的「裸體交往」；BBC 將其描述為在社會地位暫時淡出的共浴經驗。²² 但若把這套親密規則商品化成觀光體驗，使用者就不再全是同一個街區的人。究竟會形成新的跨文化公共性，還是把地方日常轉為消費景觀，目前沒有定論，也需要店家與使用者各自協商。</p>
+<h2>留下什麼：不是每一間都要變成景點</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Public_Bath_%2840470987631%29.jpg/1280px-Public_Bath_%2840470987631%29.jpg" alt="東京公共浴場外觀｜來源：Wikimedia Commons（CC BY-SA 2.0）" loading="lazy"><figcaption>公共浴場的存在不等於它必須成為觀光名所；對許多使用者而言，它首先是晚餐後可步行抵達的一池熱水。</figcaption></figure>
+<p>當一個設施被稱為「文化資產」，最容易被掩蓋的是它仍需每天營業。門票統制要維持可近性，補貼要回應能源成本；翻修要吸引新客，卻不能假定每間店都有精釀啤酒、設計師或民宿可做。保存也不能只留下拍照好看的外牆，把原本的洗浴功能擠到只供短暫參觀。</p>
+<p>地方政府已有一些把錢湯視為社會基礎設施的做法。荒川區補助目的明列「確保公眾浴場」、提高區民便利與衛生；東京都也以觀光預算協助改善多語與支付條件。¹²²⁰ 兩者的政策語言不同：一個把錢湯當民生服務，另一個將其納入城市魅力。未來能否兼容，取決於資源是否仍讓附近居民負擔得起，而不是只看遊客是否願意排隊。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 更可行的問題或許不是「保存所有錢湯」，那既不現實也未必符合所有業主意願；而是建立一套辨識：哪些地區缺乏私人浴室或替代公共設施、哪些店仍有穩定熟客、哪些建物有修復價值、哪些老闆想找接班人。對前幾類，可用燃料、設備與無障礙更新支持；對有改造意願者，則可在不犧牲低價時試辦餐飲、文化活動或多語服務。</p>
+<p>這樣的框架也承認反方：私人浴室已普及，公共資源未必應長期支持所有私營店；部分人本來就偏好個人衛浴與更現代的水療設施。問題不是要求城市回到1960年代，而是承認城市的居住品質不只由住宅內部設備構成。當公共場所愈少，能不必預約、不必消費昂貴套餐就與陌生人共享一段時間的地方，也愈稀有。 錢湯的公共性也不該被過度神化。共浴本身不會自動消除性別、年齡、身體或國籍帶來的不安；有些人會因裸體規範、刺青限制、噪音、衛生疑慮或行動不便而卻步。全國組合與觀光宣傳雖強調「人人可入」，實際上每個店的樓梯、門檻、置物櫃、語言能力、營業時間與規則都不同。若公共性只用抽象的「大家一起泡」描述，就會忽略誰能輕易進門、誰需要額外協助。</p>
+<p>也因此，衡量錢湯政策不宜只用店數或觀光入場人次。一間店在兩年後仍營業，可能是價格調整、家庭接班、區府補助、翻修成功或地主暫未出售的組合結果；同樣地，一間結業未必表示社區失敗，可能是老闆的自主退休選擇。較可信的評估應把營業日、日常客群、費率、能耗、無障礙、使用者滿意度與周邊替代設施一起公開。</p>
+<p>這種制度視角也能避免把老闆當成文化景觀的一部分。每晚燒水、檢測水質、擦洗地板、處理失物與熟客抱怨，是勞動，不是可無限供應的「職人精神」。在能源昂貴與人手不足時，媒體喜愛的木造立面、富士壁畫與復古招牌，都建立在經營者願意繼續承擔這些工作之上。正因如此，支持錢湯不能只在閉店消息傳出後才去打卡。</p>
+<p>回到那片暖簾，它標示的或許不是一種將永遠存在的日本傳統，而是一個仍在協商中的城市選擇。東京可以讓錢湯成為高價體驗、旅遊清單上的文化符號；也可以在少數需要的街區裡，把它維持成不昂貴、可步行抵達的共同設施。兩條路不一定互斥，但若只選前者，最先失去的可能正是錢湯原本讓人珍惜的部分：一座城市裡，不必先認識彼此，也能短暫共同生活的地方。</p>
+<h3>本文如何核對</h3>
+<p>本文以東京都、區政府、全國及東京浴場組合的歷史、費率與補助資料作為制度與政策的一手來源；以朝日、共同社、路透、BBC、金融時報、衛報與紐約時報交叉檢視經營困境、空間改造及使用規則；並以東京大學與 UNESCO 的稻荷湯材料理解單一保存案例。不同來源的數字年份與範圍不完全一致，文中因此保留原有年份與口徑，而不把它們合併為單一精確估算。</p>
+<p>需要特別說明的是，浴場組合與觀光機構對「年輕客回流」「社區交流」與「歡迎外國旅客」的陳述，具有推廣自身服務的合理利益。本文將其當作業界與政策正在做什麼的證據，而非已被獨立驗證的效果。相對地，媒體個案也可能偏向成功翻修或即將閉店的戲劇性場景，無法取代全體店家的普查。這正是錢湯議題的限制：它很適合被拍成感性故事，卻仍需要更持續、公開的營運與使用資料。 還有一個常被忽略的時間問題：錢湯的使用並非只發生在假日。它曾配合工廠下班、家庭晚餐、學童放學與高齡者的散步路線；當營業時間因燃料或人力改變，受影響的是一日作息裡原本可預期的一段空檔。共同社報導的延後開門與減少燃料供應，正把這種看似微小的調整具體化。¹⁴ 對不靠自家浴室、或把浴場視為社交節點的人而言，少一小時不是抽象統計，而是生活安排被打斷。</p>
+<p>反過來說，夜間營業也有成本：熱水要維持、清潔與監管要有人做，鄰里可能在意煙囪、噪音與人流。公共服務不意味所有成本都由店主吸收。若社會希望錢湯維持某種基本可近性，就必須在價格、能源補貼、修繕融資與地方土地政策上做出可見選擇；若不願意做，則也應坦白承認，市場會將更多浴場轉化為其他用途。這比用「保存傳統」或「市場淘汰」二選一來得誠實。</p>
+<p>至於臺灣讀者，錢湯的經驗不需要被複製為某種東亞懷舊範本。它更像一面鏡子：當洗衣店、菜市場、圖書館、診所候診區與小公園都被效率、消費與私人設備取代時，都市是否還保留一些低成本、可重複相遇的場所？東京的答案仍在變動；真正可帶走的，不是泡澡禮儀，而是把日常基礎設施視作文化與社會關係的一部分。 錢湯並非城市問題的萬靈丹。它無法處理住房負擔，也不能取代完整的照護、衛生與社會福利制度。但在高度私有化的都市生活裡，它讓人看見一種不必先成為顧客會員、也不必交代身分背景的相遇可能。這種可能會不會被保留，最後不是由懷舊感決定，而是由每天仍有人洗、有人燒、有人付費、有人願意共同承擔成本的選擇決定。</p>
+<hr>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ Associated Press（2023-08-02）— "Japanese sento: what they are and how to use them"
+<a href="https://apnews.com/article/japan-sento-public-bath-guide" rel="noopener" target="_blank">https://apnews.com/article/japan-sento-public-bath-guide</a></p>
+<p class="ref">² 東京浴場組合（無日期）— "About Sento"
+<a href="https://www.1010.or.jp/english/" rel="noopener" target="_blank">https://www.1010.or.jp/english/</a></p>
+<p class="ref">³ BBC Travel（2023-02-24）— "Japan’s sento revival"
+<a href="https://www.bbc.com/travel/article/20230223-japans-sento-revival" rel="noopener" target="_blank">https://www.bbc.com/travel/article/20230223-japans-sento-revival</a></p>
+<p class="ref">⁴ The New York Times（2025-11-19）— "Tokyo Travel Guide: What to Do, Eat and Where to Stay"
+<a href="https://www.nytimes.com/interactive/2026/travel/tokyo-japan-guide.html" rel="noopener" target="_blank">https://www.nytimes.com/interactive/2026/travel/tokyo-japan-guide.html</a></p>
+<p class="ref">⁵ Japan National Sento Association（2023-08-14）— "The public bath SENTO history"
+<a href="https://www.zenyoku.1010.or.jp/language/history01/" rel="noopener" target="_blank">https://www.zenyoku.1010.or.jp/language/history01/</a></p>
+<p class="ref">⁶ Tokyo Metropolitan Government（2025-09-10）— "Soaking In Tokyo’s Rich Sento Culture"
+<a href="https://www.tokyoupdates.metro.tokyo.lg.jp/en/post-1607/" rel="noopener" target="_blank">https://www.tokyoupdates.metro.tokyo.lg.jp/en/post-1607/</a></p>
+<p class="ref">⁷ BBC News（2019-11-06）— "The last of Japan’s public bathhouse mural painters"
+<a href="https://www.bbc.com/news/world-asia-50282661" rel="noopener" target="_blank">https://www.bbc.com/news/world-asia-50282661</a></p>
+<p class="ref">⁸ The Asahi Shimbun（2023-01-14）— "Tokyo’s public bathhouses struggle to stay afloat"
+<a href="https://www.asahi.com/ajw/articles/14806224" rel="noopener" target="_blank">https://www.asahi.com/ajw/articles/14806224</a></p>
+<p class="ref">⁹ The Guardian（2022-08-20）— "The sento owners making group bathing in Japan cool again"
+<a href="https://www.theguardian.com/world/2022/aug/20/the-sento-owners-making-group-bathing-in-japan-cool-again" rel="noopener" target="_blank">https://www.theguardian.com/world/2022/aug/20/the-sento-owners-making-group-bathing-in-japan-cool-again</a></p>
+<p class="ref">¹⁰ Sento &amp; Neighborhood（2024）— "The future of Tokyo’s sento"
+<a href="https://sentoandneighborhood.com/" rel="noopener" target="_blank">https://sentoandneighborhood.com/</a></p>
+<p class="ref">¹¹ 日本經濟新聞（2026-07-21）— "東京都の銭湯料金、大人600円へ"
+<a href="https://www.nikkei.com/article/DGXZQOCC216JQ0R20C26A7000000/" rel="noopener" target="_blank">https://www.nikkei.com/article/DGXZQOCC216JQ0R20C26A7000000/</a></p>
+<p class="ref">¹² 荒川區（2025）— "令和7年度荒川区公衆浴場燃料費等緊急補助金交付要綱"
+<a href="https://www.city.arakawa.tokyo.jp/reiki_int/reiki_honbun/p800RG00001459.html" rel="noopener" target="_blank">https://www.city.arakawa.tokyo.jp/reiki_int/reiki_honbun/p800RG00001459.html</a></p>
+<p class="ref">¹³ 神奈川縣（2024）— "公衆浴場入浴料金等協議会資料"
+<a href="https://www.pref.kanagawa.jp/documents/117609/shiryou.pdf" rel="noopener" target="_blank">https://www.pref.kanagawa.jp/documents/117609/shiryou.pdf</a></p>
+<p class="ref">¹⁴ Kyodo News（2026-04-25）— "Japan bathhouses in deep water as energy costs boil over"
+<a href="https://english.kyodonews.net/articles/-/74875" rel="noopener" target="_blank">https://english.kyodonews.net/articles/-/74875</a></p>
+<p class="ref">¹⁵ Reuters（2020-10-23）— "Tokyo bathhouse gets makeover to appeal to younger customers"
+<a href="https://www.reuters.com/article/world/tokyo-bathhouse-gets-makeover-to-appeal-to-younger-customers-idUSKBN2781CN/" rel="noopener" target="_blank">https://www.reuters.com/article/world/tokyo-bathhouse-gets-makeover-to-appeal-to-younger-customers-idUSKBN2781CN/</a></p>
+<p class="ref">¹⁶ Financial Times（2025-04-11）— "Inside Japan’s most beautiful bathhouses"
+<a href="https://www.ft.com/content/085fa1cb-458b-4086-a1f4-dc11514d1e22" rel="noopener" target="_blank">https://www.ft.com/content/085fa1cb-458b-4086-a1f4-dc11514d1e22</a></p>
+<p class="ref">¹⁷ University of Tokyo Center for Digital Humanities（2024）— "Inariyu Nagaya restoration project"
+<a href="https://dhc.iii.u-tokyo.ac.jp/en/projects/inariyu-nagaya/" rel="noopener" target="_blank">https://dhc.iii.u-tokyo.ac.jp/en/projects/inariyu-nagaya/</a></p>
+<p class="ref">¹⁸ The New York Times（1974-05-19）— "Mixed Baths Survive In Japan, but Barely"
+<a href="https://www.nytimes.com/1974/05/19/archives/mixed-baths-survive-in-japan-but-barely-edward-schumacher-is-a.html" rel="noopener" target="_blank">https://www.nytimes.com/1974/05/19/archives/mixed-baths-survive-in-japan-but-barely-edward-schumacher-is-a.html</a></p>
+<p class="ref">¹⁹ UNESCO Bangkok（2024）— "Inariyu Nagaya Restoration Project"
+<a href="https://bangkok.unesco.org/content/2024-unesco-asia-pacific-awards-cultural-heritage-conservation" rel="noopener" target="_blank">https://bangkok.unesco.org/content/2024-unesco-asia-pacific-awards-cultural-heritage-conservation</a></p>
+<p class="ref">²⁰ 東京都（2025）— "観光客向け銭湯の魅力発信・利用促進プロジェクト"
+<a href="https://www.shouhiseikatu.metro.tokyo.lg.jp/chousa/yokujyo/hojyokin/kankoukyakumuke.html" rel="noopener" target="_blank">https://www.shouhiseikatu.metro.tokyo.lg.jp/chousa/yokujyo/hojyokin/kankoukyakumuke.html</a></p>
+<p class="ref">²¹ WELCOME! SENTO Campaign（2025）— "Foreign Visitors WELCOME! SENTO"
+<a href="https://welcome-sento.com/" rel="noopener" target="_blank">https://welcome-sento.com/</a></p>
+<p class="ref">²² BBC Travel（2024-01-23）— "Why Japan’s public baths are making a comeback"
+<a href="https://www.bbc.com/travel/article/20240122-why-japans-public-baths-are-making-a-comeback" rel="noopener" target="_blank">https://www.bbc.com/travel/article/20240122-why-japans-public-baths-are-making-a-comeback</a></p>
+<p class="ref">²³ Mainichi／共同社（2026-04-25）— "Japan bathhouses in deep water as energy costs boil over"
+<a href="https://mainichi.jp/english/articles/20260425/p2g/00m/0bu/002000c" rel="noopener" target="_blank">https://mainichi.jp/english/articles/20260425/p2g/00m/0bu/002000c</a></p>
+<p class="ref">²⁴ Financial Times（2025）— "Five of the best sento bathhouse experiences in Tokyo"
+<a href="https://www.ft.com/content/942ea8b9-08f3-482a-bd4a-acec5f1d0633" rel="noopener" target="_blank">https://www.ft.com/content/942ea8b9-08f3-482a-bd4a-acec5f1d0633</a></p>
+<p>補記：上述資料呈現的是一個仍在縮小、也仍有局部創新的產業；任何單一浴場的未來，都不能由一則成功案例或一項補助政策替代判斷。</p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
