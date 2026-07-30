@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一枚追蹤器，兩種自由：遺失、跟蹤與手機的防線 · 穗稻忠武的專欄</title>
+<meta name="description" content="一只行李箱、一串鑰匙、停在巷口的機車，都是藍牙追蹤器最容易被想像到的用途。這類小型裝置把「我忘了放在哪裡」變成手機上可查的座標；但同一個座標，也可能在未獲同意時成為另一個人移動的軌跡。AirTag 在 2021 年上市後，關於其遭用於跟蹤的通報、訴訟與安全倡議，迫使蘋果、Google 與追蹤器製造商重新處理…">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-30-bluetooth-trackers-safety/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一枚追蹤器，兩種自由：遺失、跟蹤與手機的防線">
+<meta property="og:description" content="一只行李箱、一串鑰匙、停在巷口的機車，都是藍牙追蹤器最容易被想像到的用途。這類小型裝置把「我忘了放在哪裡」變成手機上可查的座標；但同一個座標，也可能在未獲同意時成為另一個人移動的軌跡。AirTag 在 2021 年上市後，關於其遭用於跟蹤的通報、訴訟與安全倡議，迫使蘋果、Google 與追蹤器製造商重新處理…">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-30-bluetooth-trackers-safety/">
+<meta property="og:image" content="https://live.staticflickr.com/4536/24479050358_4346d0b2b0.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "一枚追蹤器，兩種自由：遺失、跟蹤與手機的防線", "description": "一只行李箱、一串鑰匙、停在巷口的機車，都是藍牙追蹤器最容易被想像到的用途。這類小型裝置把「我忘了放在哪裡」變成手機上可查的座標；但同一個座標，也可能在未獲同意時成為另一個人移動的軌跡。AirTag 在 2021 年上市後，關於其遭用於跟蹤的通報、訴訟與安全倡議，迫使蘋果、Google 與追蹤器製造商重新處理…", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-30-bluetooth-trackers-safety/", "datePublished": "2026-07-30", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/4536/24479050358_4346d0b2b0.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">科技與生活</span><span class="tag">專欄</span></div>
+<h1>一枚追蹤器，兩種自由：遺失、跟蹤與手機的防線</h1>
+<p class="byline"><time>2026-07-30</time></p>
+</div>
+
+<p class="lead">一只行李箱、一串鑰匙、停在巷口的機車，都是藍牙追蹤器最容易被想像到的用途。這類小型裝置把「我忘了放在哪裡」變成手機上可查的座標；但同一個座標，也可能在未獲同意時成為另一個人移動的軌跡。AirTag 在 2021 年上市後，關於其遭用於跟蹤的通報、訴訟與安全倡議，迫使蘋果、Google 與追蹤器製造商重新處理一個原本被視為產品附加功能的問題：如何讓失物仍可被找回，卻不把人變成可被默默尋找的物件。¹²</p>
+<figure><img src="https://live.staticflickr.com/4536/24479050358_4346d0b2b0.jpg" alt="鑰匙圈上的藍牙裝置｜來源：ThinkGizmo / Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>一枚可掛在鑰匙上的裝置，正是「找東西」與「跟著人」之間界線最容易模糊的日常場景。</figcaption></figure>
+<p>這不是只屬於 iPhone 用戶的議題。2024 年上路的跨平台「偵測非自願位置追蹤器」規格，讓 iOS 與 Android 在相容裝置長時間隨人移動時都能發出警示。³ 然而，警示不是保證：它必須由手機、作業系統設定、藍牙與定位服務、裝置相容性，以及使用者能否在安全情境下回應，共同構成。本文梳理這條從失物網路到反跟蹤防線的路徑，並區分已經可用的功能、尚有缺口的保護，以及使用者在收到警示時應優先考量的安全步驟。⁴</p>
+<h2>從「找東西」開始的定位網路</h2>
+<figure><img src="https://live.staticflickr.com/79/275195908_58fbdb0220_b.jpg" alt="行李與行李牌｜來源：youMayCallMeSheep / Flickr（CC BY-SA）" loading="lazy"><figcaption>行李是追蹤器最常見、也最容易理解的使用情境；產品的便利性正由此進入日常。</figcaption></figure>
+<p>藍牙追蹤器通常不依靠自己直接上網，而是以低功耗藍牙訊號被附近參與尋找網路的手機偵測，再回傳位置給登錄者。這使它能被做得很小、價格也相對低；美國國會研究處在 2022 年的報告指出，這類裝置原本用於錢包、鑰匙等物品，卻也可以被放入汽車或個人物品以監看人的行蹤。⁵ Apple 將 AirTag 定位為追蹤「物品而非人」；Google 與 Apple 在共同聲明中同樣承認，定位裝置能幫忙找回個人物品，卻可能被濫用於非自願追蹤。⁶</p>
+<p>便利的關鍵也是風險的來源：失主不必在裝置旁，仍能透過周遭手機形成的網路取得大致位置。這並不表示所有追蹤器都同樣運作，也不代表任何位置回報都精確到同一程度；不同品牌、手機型號與周遭設備密度都會影響結果。可確定的是，當物件一直被某人攜帶，系統對「物」的服務就可能外溢為對「人」的觀察。這也是討論不能只停在某一品牌廣告或單一犯罪新聞的原因：它是一個由硬體、手機作業系統與周邊設備共同形成的生活基礎設施問題。⁷</p>
+<p>對一般使用者而言，正當用途仍很多：旅行時確認行李是否同行、在停車場找回車輛，或尋找遺落的鑰匙。這些用途不等同於把追蹤器用於竊盜防制或人身監控。產品被放在誰的物品上、對方是否知情、是否能自由拒絕，才是判斷界線的核心。</p>
+<h2>當「物品」開始跟著人走</h2>
+<figure><img src="https://live.staticflickr.com/7460/13935397827_c002e294df_b.jpg" alt="手機與社會技術實驗｜來源：Waag Society / Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>追蹤風險不是單一硬體故障，而是手機、帳號、藍牙與社會關係共同組成的情境。</figcaption></figure>
+<p>AirTag 上市後，媒體與民間組織開始收集被藏在包包、車輛或其他物品中的案例。BBC 在 2022 年報導兩名女性指稱前伴侶利用 AirTag 跟蹤；報導同時記錄 Apple 的立場，即裝置原為物品設計、公司已加入防止非自願追蹤的措施。⁸ Reuters 報導的同一訴訟則指出，原告主張產品讓前伴侶或跟蹤者更容易定位受害者；這是當事人的法律主張，不等於法院對所有使用情形的定論。⁹ 2024 年，美聯社報導法官未准許 Apple 駁回該集體訴訟的全部主張，使部分訴求得以繼續。¹⁰</p>
+<p>這些案件提醒兩件常被混在一起的事。第一，裝置本身不是意圖的證明：借用有掛追蹤器的鑰匙、與家人同車而車內留下耳機，都可能觸發或接近觸發警示。Apple 也公開說明，曾觀察到借用鑰匙或搭乘留有家人 AirPods 的車輛等良性情境。¹¹ 第二，良性情境不能消除控制或暴力關係中的風險。若使用者認為自己正處於危險，直接拆除裝置可能向設置者透露已被發現；EFF 建議先建立安全計畫，並在必要時聯繫可信任的人、倡議者或執法機關。¹²</p>
+<p>因此，「收到警示就立刻拔電池」不是適合所有人的通用指令。官方說明與安全倡議的共同點是先移至安全公開場所、保留畫面與序號等資訊、評估人身安全，再決定是否停用。這不是把防護責任推給受害者，而是承認科技提示與現實中的人際風險之間仍有距離。</p>
+<h2>一開始的防護，為何不夠</h2>
+<figure><img src="https://live.staticflickr.com/65535/52560191035_8a33566813_b.jpg" alt="藍牙裝置與連線｜來源：7C0 / Flickr（CC BY）" loading="lazy"><figcaption>訊號在背景運作時，使用者往往看不見它；警示時間與可偵測範圍因而格外重要。</figcaption></figure>
+<p>早期的防護在平台之間並不對稱。BBC 在 2021 年報導，AirTag 原有的聲響與 iPhone 警示引起外界質疑：聲響觸發可能等待一段時間，Android 使用者當時也不會自動收到螢幕警告。¹³ 之後 Apple 推出 Android 的 Tracker Detect，並在 2022 年宣布調整警示邏輯、加強音效與精確尋找功能。¹⁴ 這些改動反映的不是問題已經消失，而是公司在上市後根據使用回饋與外部批評持續改動設計。</p>
+<p>獨立研究提供了更保守的評估。2024 年 EuroUSEC 論文以多個品牌的裝置與情境檢視反跟蹤功能，結論是現有功能未必足以避免所有非自願追蹤，並指出聲音可被遮蔽、手動掃描需要使用者額外操作、不同平台與品牌的覆蓋也不一致。¹⁵ 另一篇 USENIX Security 論文則把問題描述為結構性的權衡：若識別碼頻繁變更，可降低第三方藉訊號追蹤正當使用者的機會；但受害者要判斷「同一枚」追蹤器是否持續跟著自己，又需要某種可連結性。¹⁶</p>
+<p>這代表沒有一個單純的「更快警示」按鈕能完全解題。警示過快可能增加誤報，例如借來的物品；警示過慢又可能延後發現。研究者並未主張取消失物追蹤，而是要求把背景偵測、定位協助、實體尋找與跨品牌相容性視為同一套安全設計，而非讓使用者各自下載不同 App 後自行拼湊。</p>
+<h2>跨平台警示，補上了哪一塊</h2>
+<figure><img src="https://live.staticflickr.com/7238/7223045392_5c9eb9f9d7_b.jpg" alt="智慧型手機與個人資料｜來源：dullhunk / Flickr（CC BY）" loading="lazy"><figcaption>跨平台警示把安全功能放進手機作業系統，降低使用者必須先知道特定品牌的門檻。</figcaption></figure>
+<p>2023 年，Apple 與 Google 向 IETF 提出「Detecting Unwanted Location Trackers」草案；文件的目的，是讓具定位能力的配件能與行動平台的非自願追蹤偵測與警示相容，並處理跟蹤、騷擾與竊盜等濫用風險。¹⁷ 2024 年 5 月，兩公司宣布支援跨平台警示：iOS 17.5 與 Android 6.0 以上裝置，對符合規格且被觀察到隨人移動的未知追蹤器，可顯示警示。¹⁸</p>
+<p>這項改變的實際意義是，追蹤器配對在哪一個平台，不再決定另一個平台的使用者能否獲知它。Apple 表示，iPhone 收到警示時，可以查看識別資訊、要求裝置播放聲音並取得停用指示；Google 的說明則表示，Android 使用者可播放聲音、查看偵測到的移動路徑，並使用「尋找附近」協助定位。¹⁹²⁰ 兩者都說明，系統的判斷前提是裝置與擁有者分離、且被觀察到隨使用者移動一段時間；這不是「附近有任何藍牙裝置」就必然代表遭人跟蹤。</p>
+<p>規格同時把責任延伸到製造商。IETF 草案要求相容裝置以 Bluetooth Low Energy 進行可被平台辨識的廣播，並要求提供讓非擁有者尋找裝置的機制，例如聲響或其他方式。²¹ 但規格是相容性的基礎，不是市場上所有舊產品或所有類型定位器已自動納入。閱讀手機的實際支援清單、保持作業系統更新，仍是使用者最能直接掌握的部分。</p>
+<h2>手機上的通知，不是一張安全保證書</h2>
+<figure><img src="https://live.staticflickr.com/8406/8643165097_873b6c8240_b.jpg" alt="手機與日常通訊｜來源：AngsCopy / Flickr（CC BY-SA）" loading="lazy"><figcaption>通知讓未知追蹤器變得可見，但能否安全處理仍取決於使用者所處的關係與環境。</figcaption></figure>
+<p>Google 的 Android 說明明確提醒：關閉藍牙、定位服務或開啟飛航模式，並不會阻止追蹤器擁有者取得追蹤器所在地；要停止位置更新，必須依製造商指示實體停用裝置。²² 同一頁也指出，手動掃描可能找到只是暫時離開擁有者的裝置，因此結果需要情境判讀。Apple 的支援文件同樣提醒，警示地圖上的紅點顯示裝置曾在使用者附近被偵測到，並不顯示擁有者何時查看位置。²³</p>
+<p>這些細節避免兩種誤解：第一，把警示當成對他人意圖的立即判決；第二，把沒有警示當成沒有風險。EFF 的實測與指南指出，不同品牌與型號的自動偵測覆蓋並非完全一致，偵測時間也可能不同，因此不應只依賴單一 App 或單一功能。²⁴ 這是安全倡議的觀點；相對地，製造商強調透過作業系統層級整合、聲響與尋找功能，已使偵測更普及。兩者並不必然矛盾：前者要求看見殘餘缺口，後者描述已部署的工具。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 對日常使用者較合理的理解，或許是把通知看成一個「需要查證的安全訊號」，而非警報器替自己完成判斷。借用物品、共用車輛、家庭帳號與親密關係，都會使「誰有權知道物品位置」變得不只是設定頁面的問題。好用的功能應該讓人能找回物品，也讓不想被看見的人有清楚、低門檻且不必先猜品牌的拒絕路徑。</p>
+<h2>收到未知追蹤器警示時，可以怎麼做</h2>
+<figure><img src="https://live.staticflickr.com/7559/15975717586_07af2e8320_b.jpg" alt="手機、包與外出物品｜來源：J. Tewell / Flickr（CC BY-NC）" loading="lazy"><figcaption>包袋、外套與車輛的角落，是官方指引要求檢查的日常位置；但在疑似危險時，先照顧人身安全。</figcaption></figure>
+<p>以下步驟綜合 Apple、Google 與 EFF 的公開指引；它們不是法律意見，也不應取代在地警方、社工或反暴力服務的專業判斷。首先，打開警示，截圖保存地圖、裝置名稱、序號與時間。Apple 表示，在找到未知 AirTag 後可讀取序號與登錄電話末四碼；Google 也建議保留相關資訊，並能從設定中查看先前警示。²⁵²⁶</p>
+<p>其次，若處於危險或不確定狀態，先到安全公開場所，通知可信任的人，必要時聯繫執法機關；不要為了找裝置而單獨回到可能有風險的地點。官方工具通常允許播放聲音，部分支援裝置也能用近距離導引縮小範圍。若裝置確實與自己同行、又無法以借用物品等情況合理解釋，再依畫面說明停用；Apple 與 Google 都提醒，實體停用會使擁有者無法再取得後續位置，但也可能讓對方知道裝置已被發現。²⁷</p>
+<p>最後，對有親密關係暴力或持續騷擾疑慮的人，技術步驟只是安全計畫的一環。EFF 特別指出，停用追蹤器可能引發設置者的反應，因而建議在採取動作前衡量風險與求助資源。²⁸ 不必因為裝置小、看起來像日用品，就把擔心說成小題大作；同樣地，也不必在尚未釐清前直接指控身邊的人。保存證據、找安全支援、再處理硬體，讓手機功能回到輔助而不是替代判斷的位置。</p>
+<h2>防線之外：仍待回答的問題</h2>
+<figure><img src="https://live.staticflickr.com/3011/2669799461_da89f527ee_b.jpg" alt="旅行中的行李｜來源：Rennett Stowe / Flickr（CC BY）" loading="lazy"><figcaption>同一種行李追蹤需求，會在不同使用者與不同關係中產生不同的安全代價。</figcaption></figure>
+<p>反跟蹤設計面對一個難以完全消除的衝突：對被偷物品的擁有者而言，裝置越隱密、越不容易被關閉，找回物品的機會可能越高；對可能遭跟蹤的人而言，同樣的隱密性就是風險。EFF 的立場很直接，不能同時要求裝置讓竊賊不知情，又期待它不會成為秘密跟蹤人的工具；該組織主張人的安全應優先於財物。²⁹ 這是倡議立場，不是所有製造商或使用者都接受的唯一答案。</p>
+<p>研究者提出的問題更技術，也更接近日常隱私：要讓受害者辨認同一枚裝置持續隨行，系統需要某種可連結的訊號；但過度可連結又可能讓第三方蒐集正當使用者的移動資訊。USENIX 研究團隊提出不同的密碼學設計，試圖在不增加可信第三方的前提下，兼顧跟蹤偵測與正常使用者的隱私；這是研究方案，尚不能視為所有商業產品已採用的功能。³⁰</p>
+<p>對台灣讀者而言，最務實的結論不是恐懼所有追蹤器，也不是假定手機通知已把風險歸零。選購前可確認產品是否列入手機的未知追蹤器警示支援範圍；使用時避免未經同意把追蹤器放在他人的隨身物品或車上；手機則保持更新並確認警示功能未被關閉。當一枚小小的圓形裝置能幫人找回行李，它也提醒我們：數位安全的邊界，往往從一串鑰匙、一次借車、或一個不想被問起的移動開始。</p>
+<h2>結語：把「找到」留給物品，把選擇還給人</h2>
+<figure><img src="https://live.staticflickr.com/3082/3251579331_6b49468fec_b.jpg" alt="鑰匙圈與日常物件｜來源：woody1778a / Flickr（CC BY-SA）" loading="lazy"><figcaption>科技能記住物品的位置，但關係中的同意與安全，仍需要人與制度共同維護。</figcaption></figure>
+<p>AirTag 與其他藍牙追蹤器不是單純的消費性配件。它們把尋找失物的能力分散到每一部附近手機，也把隱私與安全的考題帶進行李、鑰匙、包袋與車輛。從 2021 年的爭議，到 iOS 與 Android 在 2024 年納入跨平台警示，系統確實增加了辨認、發聲、定位與停用的工具；訴訟、倡議與研究則持續提醒，工具的存在不等於每個人都能在正確時間、安全地使用它。³¹</p>
+<p>真正值得追問的，並非某一個品牌是否「足夠安全」的二元判斷，而是設計能否同時接受兩件事：失主需要尋物，非擁有者也有不被秘密追蹤的權利。這個問題目前沒有完全無爭議的答案。跨平台標準把不同手機使用者納入保護，是可核實的進展；聲響可被遮蔽、相容範圍有限與安全計畫不能由 App 取代，則是同樣需要被看見的限制。下一次把追蹤器掛上鑰匙圈之前，或許最重要的設定不是地圖，而是對同意與界線的清楚理解。 值得注意的是，所謂「相容」也不是消費者可以在貨架上憑外觀判斷的特性。裝置是否支援跨平台警示，牽涉韌體、發表時間、製造商是否採納規格，以及手機系統版本。Apple 的公告列舉 Chipolo、eufy、Jio、Motorola 與 Pebblebee 等業者承諾讓未來標籤相容；The Verge 報導亦指出，這種承諾與既有產品實際更新之間可能有時間差。³¹ 因此，使用者不宜把「藍牙追蹤器」當成單一品類：一枚能被某個網路找到的標籤，未必同樣能被所有手機偵測；一個能夠播放聲音的產品，也未必提供同等的近距離導引。</p>
+<p>在家庭與職場情境，透明說明比技術規格更先一步。若要把追蹤器放在共用行李、公司設備、長者隨身物品或孩子書包上，應先說明誰可以看見位置、資料會留多久、何時停止，以及被追蹤的人是否有拒絕或詢問的途徑。這些不是產品說明書通常能代答的問題，卻直接決定追蹤是協助、照顧還是控制。即使當事人同意，也應避免把一次同意擴張成永久、無限制的可見性。 技術設計也必須面對非智慧型手機使用者。國會研究處早期報告已提醒，部分保護取決於受害者能否持有相容手機、下載 App 或開啟正確設定。³² 新的作業系統警示降低了一部分門檻，但並未讓所有人都獲得同樣的提示、網路連線或支援資源。對不熟悉裝置的人而言，聽見聲響、看見通知、讀懂英文介面、辨別借來的物品與可疑裝置，都是不同層次的障礙。</p>
+<p>這也說明反跟蹤不應只被當成消費者的自助問題。廠商能提供預設開啟的偵測、清楚的相容性資訊與不易被繞過的實體提示；手機平台能把警示放在不必下載特定 App 的位置；警方、校園、旅宿業與反暴力服務則可建立理解這類證據與風險的流程。每一個環節都有責任，但任何一個環節都不能代替其他環節。把責任全交給「使用者記得掃描」或「受害者趕快找出來」，反而忽略了裝置設計與支援體系可改善的部分。 從產品史看，AirTag 的爭議也提供了較一般的教訓：新的便利技術在上市前未必能預測所有社會用途，而「後續以更新修補」既是必要過程，也可能意味著最先承受風險的人沒有被充分納入設計。Apple 對更新的說法是提高可尋找性、改善提示與提供資源；學術研究與倡議者則要求以測試、跨平台設計及外部檢視，確認保護不只是存在於設定頁面。這兩條路徑應並行：公開透明地說明能力與限制，讓獨立研究能挑戰它們。</p>
+<p>對讀者來說，這篇報導不建議把任何單一品牌、App 或法律程序當作萬靈丹。可做的基本檢查包括更新手機、保留未知追蹤器警示、閱讀自己購買標籤的安全功能；而在人際關係中，則以告知、同意與能夠撤回同意作為使用的最低原則。若已感到不安全，優先找得到人、看得到彼此的場所與可信任支援，而非獨自測試一枚小裝置是否還在發訊號。</p>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ Apple（2021-04-20）— "Apple introduces AirTag"
+<a href="https://www.apple.com/newsroom/2021/04/apple-introduces-airtag/" rel="noopener" target="_blank">https://www.apple.com/newsroom/2021/04/apple-introduces-airtag/</a></p>
+<p class="ref">² Apple、Google（2023-05-02）— "Apple and Google partner on an industry specification to address unwanted tracking"
+<a href="https://www.apple.com/newsroom/2023/05/apple-google-partner-on-an-industry-specification-to-address-unwanted-tracking/" rel="noopener" target="_blank">https://www.apple.com/newsroom/2023/05/apple-google-partner-on-an-industry-specification-to-address-unwanted-tracking/</a></p>
+<p class="ref">³ Apple（2024-05-01）— "Apple and Google deliver support for unwanted tracking alerts in iOS and Android"
+<a href="https://www.apple.com/newsroom/2024/05/apple-and-google-deliver-support-for-unwanted-tracking-alerts-in-ios-and-android/" rel="noopener" target="_blank">https://www.apple.com/newsroom/2024/05/apple-and-google-deliver-support-for-unwanted-tracking-alerts-in-ios-and-android/</a></p>
+<p class="ref">⁴ Google Android Help（查閱：2026-07-30）— "Find unknown trackers"
+<a href="https://support.google.com/android/answer/13658562" rel="noopener" target="_blank">https://support.google.com/android/answer/13658562</a></p>
+<p class="ref">⁵ Congressional Research Service（2022-02-15）— "Stalking Concerns Raised by Bluetooth Tracking Technologies"
+<a href="https://www.congress.gov/crs-product/R47035" rel="noopener" target="_blank">https://www.congress.gov/crs-product/R47035</a></p>
+<p class="ref">⁶ USENIX Security（2024）— "Abuse-Resistant Location Tracking"
+<a href="https://www.usenix.org/system/files/usenixsecurity24-eldridge.pdf" rel="noopener" target="_blank">https://www.usenix.org/system/files/usenixsecurity24-eldridge.pdf</a></p>
+<p class="ref">⁷ BBC News（2022-12-06）— "Apple sued by women over AirTag stalking"
+<a href="https://www.bbc.com/news/technology-63880969" rel="noopener" target="_blank">https://www.bbc.com/news/technology-63880969</a></p>
+<p class="ref">⁸ Reuters（2022-12-07）— "Apple is sued by women who say AirTag lets stalkers track victims"
+<a href="https://www.reuters.com/legal/apple-is-sued-by-women-who-say-airtag-lets-stalkers-track-victims-2022-12-06/" rel="noopener" target="_blank">https://www.reuters.com/legal/apple-is-sued-by-women-who-say-airtag-lets-stalkers-track-victims-2022-12-06/</a></p>
+<p class="ref">⁹ Associated Press（2024-03-19）— "AirTag stalking lawsuit against Apple can move forward"
+<a href="https://apnews.com/article/apple-airtags-stalking-lawsuits-e59166988920c4ba1e82956ea85c1677" rel="noopener" target="_blank">https://apnews.com/article/apple-airtags-stalking-lawsuits-e59166988920c4ba1e82956ea85c1677</a></p>
+<p class="ref">¹⁰ CNN（2022-12-06）— "Apple sued by two women alleging their exes used AirTags to stalk them"
+<a href="https://www.cnn.com/2022/12/06/tech/apple-airtag-lawsuit" rel="noopener" target="_blank">https://www.cnn.com/2022/12/06/tech/apple-airtag-lawsuit</a></p>
+<p class="ref">¹¹ NPR（2022-12-07）— "Two women who allege they were stalked and harassed using AirTags are suing Apple"
+<a href="https://www.npr.org/2022/12/07/1141176120/apple-airtag-harassment-stalker-lawsuit" rel="noopener" target="_blank">https://www.npr.org/2022/12/07/1141176120/apple-airtag-harassment-stalker-lawsuit</a></p>
+<p class="ref">¹² BBC News（2021-06-04）— "Apple updates AirTags after stalking fears"
+<a href="https://www.bbc.co.uk/news/technology-57351554" rel="noopener" target="_blank">https://www.bbc.co.uk/news/technology-57351554</a></p>
+<p class="ref">¹³ BBC News（2022-02-10）— "Apple moves to stop AirTag tracking misuse"
+<a href="https://www.bbc.co.uk/news/technology-60333771" rel="noopener" target="_blank">https://www.bbc.co.uk/news/technology-60333771</a></p>
+<p class="ref">¹⁴ Apple（2022-02-10）— "An update on AirTag and unwanted tracking"
+<a href="https://www.apple.com/newsroom/2022/02/an-update-on-airtag-and-unwanted-tracking/" rel="noopener" target="_blank">https://www.apple.com/newsroom/2022/02/an-update-on-airtag-and-unwanted-tracking/</a></p>
+<p class="ref">¹⁵ ACM EuroUSEC（2024）— "Stop Following Me! Evaluating the Malicious Uses of Personal Item Tracking Devices"
+<a href="https://dl.acm.org/doi/fullHtml/10.1145/3688459.3688477" rel="noopener" target="_blank">https://dl.acm.org/doi/fullHtml/10.1145/3688459.3688477</a></p>
+<p class="ref">¹⁶ IETF（2023）— "Detecting Unwanted Location Trackers"
+<a href="https://datatracker.ietf.org/doc/draft-ledvina-apple-google-unwanted-trackers/02/" rel="noopener" target="_blank">https://datatracker.ietf.org/doc/draft-ledvina-apple-google-unwanted-trackers/02/</a></p>
+<p class="ref">¹⁷ The Verge（2024-05-13）— "Apple and Google’s cross-platform anti-stalking Bluetooth alerts are now live"
+<a href="https://www.theverge.com/2024/5/13/24155630/apple-google-airtag-bluetooth-tracker-alert-standard" rel="noopener" target="_blank">https://www.theverge.com/2024/5/13/24155630/apple-google-airtag-bluetooth-tracker-alert-standard</a></p>
+<p class="ref">¹⁸ Apple Support（查閱：2026-07-30）— "What to do if you get an alert that an AirTag is with you"
+<a href="https://support.apple.com/en-us/119874" rel="noopener" target="_blank">https://support.apple.com/en-us/119874</a></p>
+<h2>把防護做成生活習慣，而非恐慌儀式</h2>
+<figure><img src="https://live.staticflickr.com/4125/5095080945_2cce727961.jpg" alt="旅行箱與移動中的物件｜來源：MowT / Flickr（CC BY-ND）" loading="lazy"><figcaption>追蹤器可以在移動中提供線索；安全習慣則要在平常就建立，而不是等到警示出現才開始。</figcaption></figure>
+<p>日常使用追蹤器時，最容易被忽略的是「可見性」的設計。把標籤放進自己的行李、鑰匙或自行車，不代表可以把同一套做法套用在共同生活者、同事或服務對象身上。若用途涉及共用物品，應採取能被理解的做法：直接告知標籤存在、說明帳號的可視權限、不要以「安全」作為跳過詢問的理由，並留下移除或停止共享的方法。這些原則不需要等待法規細節才成立；它們是把物件定位與人的自主權分開的最小界線。</p>
+<p>同樣地，收到未知裝置警示也不必讓人把每一個提示都解讀為犯罪。系統本來就得處理借物、共用車輛、遺留耳機與人群交錯等情境，因而會把「隨行」而非「出現在附近」作為判斷的一部分。使用者可先問：我是否正在攜帶別人的物品？今天是否搭過他人的車？這個裝置名稱是否能對應已知物品？若答案仍不清楚，才按官方程序尋找並保留資訊。這種依序判讀既減少誤解，也避免真正的警訊被通知疲勞淹沒。 平台的透明度也會影響信任。理想的介面應清楚說明：為何現在出現警示、系統觀察到的時間範圍是什麼、哪些資料留在手機上、怎樣播放聲音或停止追蹤，以及何時應找人協助。Google 表示其警示會使用位置資訊、時間戳與追蹤器裝置識別碼來判斷，並讓使用者看到被偵測的地點；Apple 說明地圖是追蹤器被偵測在身邊的位置，而非擁有者觀看位置的紀錄。這些看似細小的介面說明，關係到使用者能否避免錯誤推論。³²³³</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 消費性科技常把安全描繪成一個切換鈕：開啟後就受保護，關閉後就承擔風險。但藍牙追蹤器的案例顯示，安全更像一段關係中的協商與一套公共支援網。作業系統可以改善預設值，製造商可以提高相容性與可發現性，使用者可以保留通知並尊重他人同意；然而，當存在暴力或脅迫時，最需要的可能不是更複雜的設定，而是有人可以同行、記錄與協助。追蹤器的下一步評價，應看它是否把這些不同處境的人都納入設計。 如果把這件事放回最普通的生活畫面，結論反而很簡單：追蹤器應當用來縮短找回自己物品的時間，而不是擴大他人必須交代行蹤的範圍。購買者可在啟用時替每一枚標籤命名、設定用途並檢查共享權限；被要求攜帶的人則應能知道它的存在、知道誰可看見位置，也能說不。這些做法不會消除所有風險，卻能在技術尚未給出完整答案以前，先把日常關係中的界線說清楚。當系統出現陌生警示，保留資訊、先確保安全、再判讀與求助，仍比倉促拆除或忽略通知更穩妥。</p>
+<h2 class="refs-head">引用來源（補充）</h2>
+<p class="ref">²⁵ Google Android Help（查閱：2026-07-30）— "Find unknown trackers"
+<a href="https://support.google.com/android/answer/13658562" rel="noopener" target="_blank">https://support.google.com/android/answer/13658562</a></p>
+<p class="ref">²⁶ Apple Support（查閱：2026-07-30）— "What to do if you get an alert that an AirTag is with you"
+<a href="https://support.apple.com/en-us/119874" rel="noopener" target="_blank">https://support.apple.com/en-us/119874</a></p>
+<p class="ref">²⁷ Google（2024-12-11）— "Updates to Android's unknown tracker alerts"
+<a href="https://blog.google/feed/android-unknown-tracker-alerts/" rel="noopener" target="_blank">https://blog.google/feed/android-unknown-tracker-alerts/</a></p>
+<p class="ref">²⁸ Electronic Frontier Foundation（2025）— "How to: Detect Bluetooth Trackers"
+<a href="https://ssd.eff.org/module/how-to-detect-bluetooth-trackers" rel="noopener" target="_blank">https://ssd.eff.org/module/how-to-detect-bluetooth-trackers</a></p>
+<p class="ref">²⁹ Electronic Frontier Foundation（2023-08-15）— "The Industry Discussion About Standards For Bluetooth-Enabled Physical Trackers"
+<a href="https://www.eff.org/deeplinks/2023/08/industry-discussion-about-standards-bluetooth-enabled-physical-trackers-finally" rel="noopener" target="_blank">https://www.eff.org/deeplinks/2023/08/industry-discussion-about-standards-bluetooth-enabled-physical-trackers-finally</a></p>
+<p class="ref">³⁰ Apple Personal Safety Guide（查閱：2026-07-30）— "Detect unwanted trackers"
+<a href="https://support.apple.com/guide/personal-safety/detect-unwanted-trackers-ips139b15fd9/web" rel="noopener" target="_blank">https://support.apple.com/guide/personal-safety/detect-unwanted-trackers-ips139b15fd9/web</a></p>
+<p class="ref">³¹ The Verge（2024-05-13）— "Apple and Google’s cross-platform anti-stalking Bluetooth alerts are now live"
+<a href="https://www.theverge.com/2024/5/13/24155630/apple-google-airtag-bluetooth-tracker-alert-standard" rel="noopener" target="_blank">https://www.theverge.com/2024/5/13/24155630/apple-google-airtag-bluetooth-tracker-alert-standard</a></p>
+<p class="ref">³² Google Android Help（查閱：2026-07-30）— "Find unknown trackers"
+<a href="https://support.google.com/android/answer/13658562" rel="noopener" target="_blank">https://support.google.com/android/answer/13658562</a></p>
+<p class="ref">³³ Apple Support（查閱：2026-07-30）— "What to do if you get an alert that an AirTag is with you"
+<a href="https://support.apple.com/en-us/119874" rel="noopener" target="_blank">https://support.apple.com/en-us/119874</a></p>
+<h2>從 2021 到跨平台：一條被迫補上的時間線</h2>
+<figure><img src="https://live.staticflickr.com/1177/763353381_ac8d8d7284.jpg" alt="鑰匙與個人物件｜來源：Swansea Photographer / Flickr（CC BY-NC-ND）" loading="lazy"><figcaption>追蹤器的歷史不是單一產品更新，而是不同手機平台、倡議者與研究者持續拉扯出的安全規則。</figcaption></figure>
+<p>時間線有助於理解為何今天的警示功能不能被視為最初設計的原貌。2021 年 4 月 AirTag 發表，Apple 把它放進 Find My 生態系，並宣稱有反非自願追蹤設計；同年 6 月，BBC 已報導外界對聲響觸發與 Android 使用者缺乏自動警示的疑慮。此後 Apple 調整聲響與提示、推出 Android 掃描工具；2023 年 Apple 與 Google 將共同草案送至 IETF；2024 年，兩家公司的作業系統開始支援相容追蹤器的跨平台警示。這條歷程說明，現在可見的安全功能是爭議、回報、媒體調查、倡議與標準化程序共同推動的結果，而不是一開始就完整存在的預防網。³⁴³⁵</p>
+<p>同一時間，討論也從「AirTag 有沒有問題」擴展為更大的問題：其他品牌是否可被偵測？沒有最新手機的人怎麼辦？手機是否會因安全機制而暴露正當擁有者的行蹤？不同答案仍在形成。IETF 草案與學術論文提供可公開檢驗的設計方向，但商業採用速度、地方支持系統與實際案例中的安全判斷，仍需要持續觀察。這正是消費科技報導應保留不確定性的地方：更新已經做了什麼可以驗證；它是否足夠，則必須容納受害者、研究者、製造商與司法程序不同的證據。</p>
+<h2 class="refs-head">引用來源（最終補充）</h2>
+<p class="ref">³⁴ Apple（2021-04-20）— "Apple introduces AirTag"
+<a href="https://www.apple.com/newsroom/2021/04/apple-introduces-airtag/" rel="noopener" target="_blank">https://www.apple.com/newsroom/2021/04/apple-introduces-airtag/</a></p>
+<p class="ref">³⁵ BBC News（2021-06-04）— "Apple updates AirTags after stalking fears"
+<a href="https://www.bbc.co.uk/news/technology-57351554" rel="noopener" target="_blank">https://www.bbc.co.uk/news/technology-57351554</a></p>
+<p class="ref">³⁶ IETF（2023）— "Detecting Unwanted Location Trackers"
+<a href="https://datatracker.ietf.org/doc/draft-ledvina-apple-google-unwanted-trackers/02/" rel="noopener" target="_blank">https://datatracker.ietf.org/doc/draft-ledvina-apple-google-unwanted-trackers/02/</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/1ec" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
