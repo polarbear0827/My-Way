@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>修書的人：在數位時代替紙頁留時間 · 穗稻忠武的專欄</title>
+<meta name="description" content="導言">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-31-book-hospital-taiwan/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修書的人：在數位時代替紙頁留時間">
+<meta property="og:description" content="導言">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-31-book-hospital-taiwan/">
+<meta property="og:image" content="https://live.staticflickr.com/3866/15207923290_b9df39d5f4_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "修書的人：在數位時代替紙頁留時間", "description": "導言", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-31-book-hospital-taiwan/", "datePublished": "2026-07-31", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/3866/15207923290_b9df39d5f4_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>修書的人：在數位時代替紙頁留時間</h1>
+<p class="byline"><time>2026-07-31</time></p>
+</div>
+
+<p class="lead">導言</p>
+<p>一本書破了，通常很容易被當成替代品：買新的、掃描舊的、把內容放進雲端。但在新北中和的國立臺灣圖書館，修復師面對的不是可快速替換的商品，而是曾被閱讀、潮濕、蟲蛀、黏貼與搬運過的物件。2025年，該館完成七冊清同治年間《法華經》的修護；修復師處理膠帶痕跡、脆裂書頁與裝幀結構，歷時兩年。¹</p>
+<figure><img src="https://live.staticflickr.com/3866/15207923290_b9df39d5f4_b.jpg" alt="圖書修復工作檯｜來源：Karen Roe / Flickr（CC BY）" loading="lazy"><figcaption>修復不是把書變新；它先要求修復師辨認一本書曾經歷過什麼。</figcaption></figure>
+<p>本文以臺灣圖書醫院的古籍修護為中心，梳理一門看似安靜、實則同時牽涉材料科學、宗教文本、圖書館制度與數位保存的工作。技術在此不是主角，而是延長閱讀與研究可能性的工具。以下所稱的「修復」與「數位化」各有目的，不能互相取代。²</p>
+<h2>一本書為何會「生病」</h2>
+<p>紙本的老化並非只由年分決定。中興大學2026年圖書修復展把酸化、氧化、水解、光線、黴菌與蟲害列為紙質劣化因素，並把恆溫恆濕、照明控制與無酸包裝放在預防性保存的核心。³ 這意味著修復室面對的常是長期環境與材料共同留下的結果，而不只是單一破洞。</p>
+<figure><img src="https://live.staticflickr.com/4010/4386221658_da4d088550_b.jpg" alt="書籍與紙張保存環境｜來源：ell brown / Flickr（CC BY）" loading="lazy"><figcaption>保存條件往往比一次性的修補更早決定紙頁能否繼續被翻閱。</figcaption></figure>
+<p>國際案例也提醒，書的風險可來自製作材料本身。BBC報導指出，部分19世紀綠色書封使用含砷顏料，今日館藏仍須透過非破壞性檢測與使用限制來管理風險。⁴ 因此，修復的第一步通常不是立刻黏補，而是登錄材質、結構、污損、墨跡與可承受的處理範圍；美國文物保存學會的專業資料也將事前評估與攝影紀錄列為治療計畫的基礎。⁵</p>
+<h2>從製本室到「圖書醫院」</h2>
+<p>Openbook對臺灣圖書醫院的現場報導指出，國立臺灣圖書館前身為1915年成立的臺灣總督府圖書館，當時即設有製本室；戰後的修護工作一度因人力與制度因素式微，1976年裝訂室成立後才逐步恢復專責與傳承。⁶ 這條時間線使修書不只是個人的手藝，也是一種由公共機構維持的專業。</p>
+<figure><img src="https://live.staticflickr.com/4029/4386213456_3c0de4576d_b.jpg" alt="傳統裝訂與手工修補｜來源：ell brown / Flickr（CC BY）" loading="lazy"><figcaption>裝訂結構本身保存了書籍的使用史，因此不能只用「外觀修好」衡量修護。</figcaption></figure>
+<p>學術界較早的臺灣觀察亦記錄，傳統線裝書的修補牽涉拆線、托紙、校對、裁切與重新裝訂；選用的紙與漿糊若不穩定，可能反而縮短原件壽命。⁷ 這與現代保存倫理中的「可逆性」或最低干預方向相呼應：修復師必須留下可追溯的判斷，而非把自己的手工痕跡覆蓋到原件之上。</p>
+<h2>一部經書，兩年的決定</h2>
+<p>《法華經》修護提供了具體尺度。Taipei Times報導，國臺圖修復的七冊經本印於1864至1874年間，書頁脆裂且有多處膠帶；團隊花兩年完成修護。¹ 這些資訊來自館方與受訪修復人員，能說明案件的時間與損壞情形，但不宜據此推論所有古籍皆須採同一方法。</p>
+<figure><img src="https://live.staticflickr.com/2793/4386220396_166599d9a8_b.jpg" alt="紙頁檢視與修補工具｜來源：ell brown / Flickr（CC BY）" loading="lazy"><figcaption>同一種「破損」在不同紙張、墨料與裝幀上，可能需要截然不同的處置。</figcaption></figure>
+<p>另一個跨宗教案例是古蘭經手稿。慈濟的紀錄稱，國臺圖團隊花近三年修復一本約500年歷史的手稿，並描述低溫低氧除蟲、清潔、選紙與染紙等流程。⁸ 此為委託方的敘事，本文將其視為案件當事人的資料；其技術細節仍應與專業保存文獻交叉閱讀。這類工作也提出一個難題：原件所帶的污損與缺失，究竟是應被消除的損傷，還是需要被保留的歷史痕跡？</p>
+<h2>修復不是讓它看起來「像新的」</h2>
+<p>這個問題沒有放諸四海皆準的答案。BBC在2026年關於杜倫大學《第一對開本》的報導中，修復專業人員提出，完整重裝訂可能具破壞性；該書遭竊後失去封面與部分結構，而團隊選擇先讓它穩定並把損傷納入展示與研究，而非立即重建成傳統書貌。⁹ 支持重裝訂與保留現況的人都存在，館方表示將經過長期諮詢後再決定。⁹</p>
+<figure><img src="https://live.staticflickr.com/4021/4385485343_b818396cfa_b.jpg" alt="古書裝訂細節｜來源：ell brown / Flickr（CC BY）" loading="lazy"><figcaption>「完整」與「真實」並不必然相同；修護決策常須在可讀性、結構與歷史證據間取捨。</figcaption></figure>
+<p><strong>（以下為分析，非事實陳述）</strong> 臺灣圖書醫院所強調的「修舊如舊」，可被理解為一種對此取捨的回應：讓物件可以被保存與理解，同時避免把當代對完美外觀的期待偽裝成原貌。這不表示不處理損傷，而是要求每一次處理都能說明必要性與代價。</p>
+<h2>數位化能保存什麼，不能保存什麼</h2>
+<p>數位化擴大了接觸範圍，也能減少讀者直接翻動脆弱原件的頻率。路透2019年報導，聖凱瑟琳修道院的計畫以多光譜與數位攝影處理脆弱手稿，目標是建立館藏檔案；報導同時指出，操作須使用支撐脆弱手稿的專用書架。¹⁰ 影像技術因此仍依賴對原件物理狀況的理解。</p>
+<figure><img src="https://live.staticflickr.com/4025/4386251024_655e3f58a0_b.jpg" alt="圖書館典藏與數位保存｜來源：ell brown / Flickr（CC BY）" loading="lazy"><figcaption>掃描可降低接觸壓力，但不能取代原件的環境管理、材料分析與結構修護。</figcaption></figure>
+<p>國家圖書館2025年的合作新聞稿說，與大專院校合作數位化臺灣古籍與文獻，對象包含教科書、字典、交通與城市資料。¹¹ 從研究使用者的角度，這能讓原件內容更容易被檢索；但影像不必然傳達紙張厚薄、裝訂線、修補層次與使用痕跡。保存原件與建立數位副本因此是互補的兩條工作線，不宜以「已掃描」視作「已保存」。</p>
+<h2>技藝、勞動與公共經費</h2>
+<p>修復的時間成本常被忽略。早期臺灣全景雜誌記述，國家圖書館的修書人每月只能處理三、四冊待修善本；當時館藏已有數千冊等待修理。¹² 這是特定時代的記錄，不應直接套用於今日人力與設備，但它清楚顯示手工處理的瓶頸。</p>
+<figure><img src="https://live.staticflickr.com/2691/4385483403_f28d02482e_b.jpg" alt="修復室中的紙本作業｜來源：ell brown / Flickr（CC BY）" loading="lazy"><figcaption>紙頁上的小孔與裂縫，背後往往是無法用自動化完全壓縮的專業時間。</figcaption></figure>
+<p>公共投入的另一面是可近性。英國三一學院啟動圖書館整修時，衛報報導其需搬移75萬冊書與手稿，工程與典藏管理交織；¹³ BBC對舊書毒性顏料的報導則指出，較小機構未必擁有昂貴檢測設備。⁴ 因此，保存政策不只是在「修或不修」之間選擇，也關乎誰有能力進行風險評估、誰能取得專業服務，以及典藏是否仍能向研究者與公眾開放。</p>
+<h2>讓一本書繼續成為證據</h2>
+<p>修復完成並不代表故事結束。它可能讓一部宗教經典重新可讀，也可能讓研究者看見裝訂、紙張、黏貼與破損所留下的線索。古籍修護的價值不在於把所有書都送回展示櫃，而在於為不同用途保留更多選項：展覽、研究、閱讀、數位轉製，或在條件合適時安靜地收藏。</p>
+<figure><img src="https://live.staticflickr.com/2711/4385446217_3c8c512169_b.jpg" alt="保存中的書籍與檔案｜來源：ell brown / Flickr（CC BY）" loading="lazy"><figcaption>一套可信的保存制度，讓讀者得以接近內容，也讓後人仍能檢視物件本身。</figcaption></figure>
+<p>從《法華經》到古蘭經，從臺灣的製本室到國際檔案館，修書師處理的並非抽象的「文化」，而是會吸水、變脆、留痕、也能被錯誤處置的材料。當數位複本日益容易取得時，這份工作提醒我們：內容可以被複製，物件的生命史卻不能被完整複製。 修復師的工作往往從細小的判讀開始：先確認紙張纖維是否仍能承受展開，墨跡遇到濕度會否暈染，封面與書芯的連接是否已鬆脫，再決定應否拆解。這與一般家庭修補不同。家庭保存常以「能再讀」為優先，專業修護還必須考慮數十年後能否辨識哪些部位是原件、哪些部位來自後來的介入。AIC的資料將處置前後的描述、照片與治療報告視為重要程序，原因正是讓後來的管理者能檢視前一位修復師做了什麼。⁵</p>
+<p>在臺灣濕熱的氣候下，預防性保存尤其難以被看見。臺灣全景對國圖善本的早期報導提到，溫濕度控制、避光與防蟲均是典藏的一環；¹² 舊書的病狀可能在讀者注意到以前就已累積多年。修復室的工作因而有兩個時間尺度：一方面搶救已受損的紙頁，另一方面設法減慢尚未損壞的材料繼續變化。這也是為何修補本身不能替代庫房、包裝與借閱管理。 「數位時代是否還需要修紙本」經常被簡化為媒介之爭，但實務上的答案更接近分工。路透所報導的修道院數位化計畫，透過不同光源拍攝來建立高品質影像；¹⁰ 這能使遠方研究者閱讀內容，也能降低原件被頻繁取閱的壓力。然而每次翻頁、固定與拍攝，都仍需要依書況選擇支撐方式。數位化的設備、檔案格式、長期儲存與權利管理也會帶來新的維護問題。</p>
+<p>反過來說，僅保存原件而沒有適當的數位近用，也可能使研究者被迫反覆要求調閱脆弱材料。國家圖書館的合作案把地方教育、語言與城市資料納入數位化，¹¹ 展示了內容可及性如何擴大研究問題。真正值得討論的不是紙本或數位哪一方勝出，而是公共機構是否同時為原件提供穩定條件，並為讀者提供可信、註明來源的替代使用方式。 修復倫理也會觸及記憶的選擇。杜倫的莎士比亞對開本在被竊與受損後，失去的封面和裸露的書頁成了它歷史的一部分。BBC引述修復人員的說法：把它重新製作成看似完整的書，需要移除或覆蓋一些現存證據；而保持現況也並非不作為，仍須穩定結構、控制展示與蒐集意見。⁹ 這種爭論不只屬於歐洲古籍，對任何帶有戰爭、災害、宗教使用或私人閱讀痕跡的文獻都具有啟發性。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 臺灣的修書工作之所以值得被視為文化公共服務，正因它把這類選擇放進制度與紀錄之中，而不是交由市場對「漂亮」的偏好決定。是否保留一塊舊膠帶的污漬、如何支撐脫落封面，可能看來微小，卻會影響未來研究者能否判斷這本書曾如何被閱讀與修補。 修復還有一層較少被提到的勞動問題。從清潔、調漿、選紙、染紙，到托裱、縫製與建檔，許多步驟要求反覆測試，難以用一個固定工時概括。大愛電視對古蘭經案件的紀錄描述，修復人員為了選擇接近原紙的材料曾多次試驗；⁸ Taipei Times對《法華經》的報導則記錄團隊處理脆弱紙頁與膠帶痕跡。¹ 這些均是個案報導，而非全產業統計，但說明專業能力並不只等於一雙手的熟練。</p>
+<p>當經費緊縮時，最先被看見的通常是展覽與數位平台，較不易被看見的是庫房監測、基礎耗材與訓練。英國案例中的三一學院搬遷工程規模龐大，¹³ BBC則指出有些機構未必負擔得起毒性顏料檢測。⁴ 這些情況不能直接對照臺灣預算，但可提醒公共討論：保存的成本分散在日常維護，而非僅在一件珍寶受損時才突然出現。 回到讀者的角度，一本被修過的書可能不再像剛出廠時平整，卻更接近一份可被負責任使用的歷史證據。衛報對愛爾蘭中世紀文書的報導提到，修護與數位化並行，使脆弱文獻得以被保存並提供可讀版本；¹⁴ 另一篇關於沼澤詩篇的報導則顯示，從發現到穩定保存可耗費多年。¹⁵ 這些例子均說明，文化保存不保證永恆，只是在損失不可逆之前爭取時間。</p>
+<p>臺灣圖書醫院的故事因此不是對紙本的懷舊。它涉及信仰文本如何跨越宗教、地方館藏如何被研究、修復師如何與材料協商，以及數位工具如何服務而非取代保存。對讀者而言，最直接的啟示或許很簡單：不要把修補看成最後一刻的補救。妥善放置、避免不當膠帶、尊重借閱規範與支持公共典藏，都是讓書少一次進入急救室的方式。 紙張修護常被誤認為只是「手作」的細緻，實際上它同時需要材料判讀與風險控制。BBC對蘇格蘭檔案信件的報導描述，修復人員先檢測墨水，才決定採取何種保存方式，並使用日式修補紙支撐破洞。¹⁶ 在臺灣的古籍案例裡，紙張來源、纖維長度、顏色與吸水性同樣會影響處理結果。研究臺灣檔案修復用紙的論文提出，低木質素、長纖維材料與適當的鹼性處理有助於紙本保存；¹⁹ 但這類結論是針對材料與保存原則，個別古書是否適用仍須由專業人員檢測。</p>
+<p>這也是為何「自己動手修古書」不是值得鼓勵的通用做法。透明膠帶看似迅速，膠質老化後可能留下痕跡或拉扯纖維；太濕的處理可能讓墨色擴散；不相容的紙材也可能在受潮後造成新的張力。專業修復的價值，除了完成某個看得見的成果，更在於它知道何時應該停止、何時應該只做包裝或環境控制。對家庭書籍而言，較安全的原則是避免自行使用壓敏膠帶與不明黏著劑，遇到有歷史、情感或研究價值的物件，先尋求圖書館、檔案館或修復專業建議。 制度史也能解釋為何修書工作不該只被當成展示的配角。臺灣圖書館從製本室、裝訂室到圖書醫院的演變，顯示技術的延續依賴編制、學徒或訓練、設備與跨單位合作。⁶ 中興大學的修復展把工具、材料、流程與案例向校內外觀眾公開，³ 使修復不只是被隱藏在庫房背後的服務，而能成為理解知識如何留下來的教育。</p>
+<p>國際上，圖書保存同樣被迫與大型基礎設施交涉。路透2009年對英國圖書館高密度典藏中心的報導，提到氣候控制、機器人取件與龐大館藏管理；²⁰ 這並不代表自動化能取代修復師，而是指出保存包含不同層次的勞動：大量館藏需要可預測的儲存系統，脆弱或特殊材料則需要個別的手工判斷。當公共資源有限時，兩者如何分配，是館藏機構需要公開說明的治理問題。 還有一項容易被忽略的面向是災害準備。火災、漏水、戰爭與極端氣候都可能在短時間內把「長期保存」變成緊急搶救。路透報導開普敦大學圖書館火災後，館員與保存人員必須在現場評估可搶救的歷史文獻；¹⁸ BBC關於埃及研究院火災的報導，則描寫濕書須被分批打開、檢查與重新包裝以降低發黴風險。²¹ 這些事件不等同於臺灣情境，但提醒任何典藏機構，修復能力必須與災害計畫、備份策略與跨機構支援一起思考。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 數位備份可在災害後保留部分內容，原件修護則可保留材料與使用史；兩者的準備都不應等到危機發生才開始。對一座城市而言，看似不起眼的修復室、穩定庫房與能被訓練的新一代專業人員，或許正是文化記憶最實際的保險。 修書也並非只面向少數「國寶」。公共圖書館、學校、地方文史館與私人捐贈者都會遇到不同層級的紙本保存問題：日治時期的校史簿冊、家族書信、地方社團刊物、早期教科書與宗教經卷。它們未必有昂貴市場價格，卻可能是理解地方生活的唯一材料。國圖近年的古籍文獻數位合作，正把這些在教育、交通、語言與都市發展脈絡中出現的資料，轉換為可被更多研究者看見的資源。¹¹</p>
+<p>因此，修復的公共意義不應只以「修回多少件」衡量。更重要的問題包括：誰能提出申請、哪些社群的記憶被列為值得保存、處理資訊是否透明、修復後能否被合理近用，以及是否有足夠的描述資料讓後人知道物件的來歷。這些問題沒有單一機構能獨自回答，但它們讓修書從一項工藝，成為關於知識、公平與時間的公共對話。 最後，對紙本的尊重也不必被理解為拒絕新科技。較好的數位工具可以協助建立影像、改善檢索、追蹤環境數據，或讓無法親赴館舍的人閱讀內容；修復師的判斷則可避免工具為了效率傷害原件。路透對康德著作數位化的報導指出，掃描計畫將珍貴書籍的內容提供給更廣泛的讀者；¹⁷ 而其成敗仍取決於館方如何處理稀有書的物理條件。</p>
+<p>把這兩條路放在一起看，修書的意義就不只是修好一本書。它是替未來的讀者保留選擇：可以在螢幕上讀內容，也可以在需要時研究紙張、縫線、批註、裝訂和損壞本身。那份選擇的空間，正是修復師以緩慢工作所爭取到的時間。 若從讀者經驗出發，紙本的材料性也會影響理解。一段內容被轉成文字檔後可以搜尋、複製與引用；但原書的版面、紙張色澤、摺頁、印章、借閱痕跡與修補位置，可能揭示出版、流通與使用的歷史。這不是說每位讀者都必須接觸原件，而是說保存決策應承認「內容」與「物件」是兩種相關但不相同的證據。圖書修復者在補洞、托紙或重新縫線時，處理的正是這種證據的脆弱關係。</p>
+<p>這份關係也要求媒體與觀眾節制使用「重生」這類詞。一次修復可以讓材料更穩定、讓閱讀更安全，卻無法回到某本書剛被印製時的狀態；過度處理反而可能把後來的使用史抹去。BBC對杜倫對開本的討論之所以重要，在於它把「要不要修得完整」留在公共辯論中，而非假定外觀越新越好。⁹ 這種不確定性不是修復工作的失敗，而是專業面對有限資訊時必須誠實承認的條件。 對臺灣而言，這門工作還連結到手工紙、裝訂、宗教典籍、校史與地方文獻等不同傳統。它們使用的紙材、文字系統、保存環境與社群期待並不一致，不能由單一西方書籍修復模式完全概括。國際保存資料強調，處理計畫應納入物件的文化與社會脈絡；⁵ 這也支持修復機構與原典藏者、研究者及相關社群進行溝通。</p>
+<p>當一冊書被送進修復室，問題不只是「值不值得花錢」，而是「我們要為何種未來保留什麼」。臺灣圖書醫院近年處理的經典，讓這個問題具體化：修護使脆弱文本仍有被閱讀與研究的可能，也讓人看見維持這種可能所需的材料知識、手工時間與公共支持。 在這個意義上，修復室也像一個提出問題的地方。它會問：一本被水泡過的書，應優先保存文字、封面、裝訂還是污損痕跡？一本私人的筆記本被捐入機構後，誰能決定它如何被展示？一份宗教典籍被修復時，技術程序是否需要回應信仰社群的禁忌與期待？這些問題並非都能從材料科學得出答案，卻必須在材料不再安全之前被討論。</p>
+<p>對外界而言，最容易看見的是修護前後的照片；最不容易看見的是決策留下的紀錄、反覆失敗的測試與選擇不做某些處理的理由。若公共機構能把這些判斷以可理解的方式說明，讀者也較能理解保存不是奢侈裝飾，而是讓社會對自己的文字、記憶與證據保持責任的一種基礎服務。 修復師並不替歷史下結論。他們的工作較像替歷史保留被重新提問的條件：一張墨跡尚能辨讀的紙、一條尚能研究的縫線、一份有完整處置紀錄的檔案。這些條件看似瑣碎，卻使未來研究者不必只依賴前人的轉述。對於城市、學校、家庭與信仰社群來說，保存不只是把物品鎖起來，而是設計一種能夠在保護與近用之間持續調整的關係。</p>
+<p>當「效率」成為主要尺度時，這種緩慢的工作常顯得不合時宜。但從已受損的經典、失火後的圖書館、被污染的書封與等待數位化的地方文獻來看，效率之外仍有另一個問題：如果今天不留下足夠時間、空間與專業，明天還能拿什麼來確認我們曾經如何閱讀、相信與生活？ 這正是修書工作的公共價值：它不承諾讓時間倒流，而是要求社會在時間造成不可逆損失以前，認真決定要留下什麼、如何留下，以及讓誰能在未來重新讀懂它。</p>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ Taipei Times（2025-06-26）— "National library completes ‘Lotus Sutra’ restoration"
+<a href="https://www.taipeitimes.com/News/taiwan/archives/2025/06/26/2003839279" rel="noopener" target="_blank">https://www.taipeitimes.com/News/taiwan/archives/2025/06/26/2003839279</a></p>
+<p class="ref">² Openbook閱讀誌（2022-08-04）— "在電子書的年代，他們修復古書：臺灣圖書醫院導覽"
+<a href="https://matters.town/a/eg7n89utbi1q" rel="noopener" target="_blank">https://matters.town/a/eg7n89utbi1q</a></p>
+<p class="ref">³ 國立中興大學（2026-02-01）— "時光醫生—圖書修復展"
+<a href="https://secret.nchu.edu.tw/2026/02/01/26013/" rel="noopener" target="_blank">https://secret.nchu.edu.tw/2026/02/01/26013/</a></p>
+<p class="ref">⁴ BBC News（2025-06-06）— "If books could kill: The poison legacy lurking in libraries"
+<a href="https://www.bbc.com/news/articles/c4g2y9xq58no" rel="noopener" target="_blank">https://www.bbc.com/news/articles/c4g2y9xq58no</a></p>
+<p class="ref">⁵ American Institute for Conservation（2025-12-12）— "Book Conservation Wiki"
+<a href="https://conservation-wiki.com/wiki/Book_Conservation_Wiki" rel="noopener" target="_blank">https://conservation-wiki.com/wiki/Book_Conservation_Wiki</a></p>
+<p class="ref">⁶ Openbook閱讀誌（2022-08-04）— "臺灣圖書醫院導覽"
+<a href="https://matters.town/a/eg7n89utbi1q" rel="noopener" target="_blank">https://matters.town/a/eg7n89utbi1q</a></p>
+<p class="ref">⁷ ScholarsArchive, Brigham Young University（1980）— "Preserving Rare Books in Taiwan"
+<a href="https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=1173&amp;context=jeal" rel="noopener" target="_blank">https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=1173&amp;context=jeal</a></p>
+<p class="ref">⁸ 大愛電視（2024-06-08）— "修舊如舊｜還原500年歷史古蘭經"
+<a href="https://event.daai.tv/better-world-together/documentary/restoration/" rel="noopener" target="_blank">https://event.daai.tv/better-world-together/documentary/restoration/</a></p>
+<p class="ref">⁹ BBC News（2026-02-15）— "Should Durham's stolen Shakespeare folio be repaired?"
+<a href="https://www.bbc.com/news/articles/cg5n722vj4ro" rel="noopener" target="_blank">https://www.bbc.com/news/articles/cg5n722vj4ro</a></p>
+<p class="ref">¹⁰ Reuters（2019-04-17）— "Ancient Christian manuscripts digitized at monastery beneath Mount Sinai"
+<a href="https://www.reuters.com/article/lifestyle/ancient-christian-manuscripts-digitized-at-monastery-beneath-mount-sinai-idUSKCN1RT17J/" rel="noopener" target="_blank">https://www.reuters.com/article/lifestyle/ancient-christian-manuscripts-digitized-at-monastery-beneath-mount-sinai-idUSKCN1RT17J/</a></p>
+<p class="ref">¹¹ 國家圖書館（2025）— "Digital Preservation of Ancient Books and Documents"
+<a href="https://nclfile.ncl.edu.tw/files/202509/3f41efba-8ab9-488a-8b94-a6dcff7a4440.pdf" rel="noopener" target="_blank">https://nclfile.ncl.edu.tw/files/202509/3f41efba-8ab9-488a-8b94-a6dcff7a4440.pdf</a></p>
+<p class="ref">¹² Taiwan Panorama（1980）— "Preserving Rare Chinese Books"
+<a href="https://www.taiwan-panorama.com/en/Articles/Details?CatId=8&amp;Guid=dc6afd3e-69ad-4d5e-844b-87070a3d0f4d&amp;postname=Preserving+Rare+Chinese+Books" rel="noopener" target="_blank">https://www.taiwan-panorama.com/en/Articles/Details?CatId=8&amp;Guid=dc6afd3e-69ad-4d5e-844b-87070a3d0f4d&amp;postname=Preserving+Rare+Chinese+Books</a></p>
+<p class="ref">¹³ The Guardian（2022-01-07）— "Trinity College Dublin begins €90m project to relocate vulnerable books"
+<a href="https://www.theguardian.com/world/2022/jan/07/trinity-college-dublin-begins-90m-project-to-relocate-vulnerable-books" rel="noopener" target="_blank">https://www.theguardian.com/world/2022/jan/07/trinity-college-dublin-begins-90m-project-to-relocate-vulnerable-books</a></p>
+<p class="ref">¹⁴ The Guardian（2024-12-26）— "Painstaking work to conserve Ireland’s oldest paper documents begins"
+<a href="https://www.theguardian.com/world/2024/dec/26/painstaking-work-to-conserve-irelands-oldest-paper-documents-begins" rel="noopener" target="_blank">https://www.theguardian.com/world/2024/dec/26/painstaking-work-to-conserve-irelands-oldest-paper-documents-begins</a></p>
+<p class="ref">¹⁵ The Guardian（2021-11-21）— "Ancient book’s journey from Irish bog to museum treasure"
+<a href="https://www.theguardian.com/culture/2021/nov/21/it-was-terrifying-ancient-books-journey-from-irish-bog-to-museum-treasure" rel="noopener" target="_blank">https://www.theguardian.com/culture/2021/nov/21/it-was-terrifying-ancient-books-journey-from-irish-bog-to-museum-treasure</a></p>
+<p class="ref">¹⁶ BBC News（2024-04-19）— "Mary Queen of Scots: Argyll letter conserved by Inverness team"
+<a href="https://www.bbc.com/news/articles/cedx4kq72l3o" rel="noopener" target="_blank">https://www.bbc.com/news/articles/cedx4kq72l3o</a></p>
+<p class="ref">¹⁷ Reuters（2023-12-01）— "Russia's Kaliningrad digitises hometown philosopher Kant's works"
+<a href="https://www.reuters.com/world/europe/russias-kaliningrad-digitises-hometown-philosopher-kants-works-2023-12-01/" rel="noopener" target="_blank">https://www.reuters.com/world/europe/russias-kaliningrad-digitises-hometown-philosopher-kants-works-2023-12-01/</a></p>
+<p class="ref">¹⁸ Reuters（2021-04-20）— "S. Africa’s UCT campus salvaging books from burned library"
+<a href="https://www.reuters.com/world/africa/safricas-uct-campus-salvaging-books-burned-library-2021-04-20/" rel="noopener" target="_blank">https://www.reuters.com/world/africa/safricas-uct-campus-salvaging-books-burned-library-2021-04-20/</a></p>
+<p class="ref">¹⁹ David Publishing（2017）— "The Use and Restoration of Papers for Archival Preservation"
+<a href="https://www.davidpublisher.com/index.php/Home/Article/index?id=35698.html" rel="noopener" target="_blank">https://www.davidpublisher.com/index.php/Home/Article/index?id=35698.html</a></p>
+<p class="ref">²⁰ Reuters（2009-11-24）— "High tech storage to preserve British Library books"
+<a href="https://www.reuters.com/article/lifestyle/high-tech-storage-to-preserve-british-library-books-idUSTRE5AN4C1/" rel="noopener" target="_blank">https://www.reuters.com/article/lifestyle/high-tech-storage-to-preserve-british-library-books-idUSTRE5AN4C1/</a></p>
+<p class="ref">²¹ BBC News（2012-01-14）— "Saving Egypt's precious fire-bombed books"
+<a href="https://www.bbc.com/news/magazine-16534331" rel="noopener" target="_blank">https://www.bbc.com/news/magazine-16534331</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
