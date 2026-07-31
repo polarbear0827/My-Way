@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一具小便斗之後：杜象如何把「藝術是什麼」變成未完成的棋局 · 穗稻忠武的專欄</title>
+<meta name="description" content="1917 年春天的紐約，一具被翻轉的瓷器小便斗被送進「獨立藝術家協會」的審查現場。它沒有華麗的筆觸，也沒有傳統雕塑的量體雕琢；署名不是藝術家本人熟悉的名字，而是「R. Mutt 1917」。這件後來被稱作《噴泉》（Fountain）的作品，在開展前約一小時被拒絕。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-31-duchamp-readymade-after-dada/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一具小便斗之後：杜象如何把「藝術是什麼」變成未完成的棋局">
+<meta property="og:description" content="1917 年春天的紐約，一具被翻轉的瓷器小便斗被送進「獨立藝術家協會」的審查現場。它沒有華麗的筆觸，也沒有傳統雕塑的量體雕琢；署名不是藝術家本人熟悉的名字，而是「R. Mutt 1917」。這件後來被稱作《噴泉》（Fountain）的作品，在開展前約一小時被拒絕。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-31-duchamp-readymade-after-dada/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/2/29/%27Fountain%27_by_Marcel_Duchamp_%28replica%29.JPG">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "一具小便斗之後：杜象如何把「藝術是什麼」變成未完成的棋局", "description": "1917 年春天的紐約，一具被翻轉的瓷器小便斗被送進「獨立藝術家協會」的審查現場。它沒有華麗的筆觸，也沒有傳統雕塑的量體雕琢；署名不是藝術家本人熟悉的名字，而是「R. Mutt 1917」。這件後來被稱作《噴泉》（Fountain）的作品，在開展前約一小時被拒絕。", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-31-duchamp-readymade-after-dada/", "datePublished": "2026-07-31", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/%27Fountain%27_by_Marcel_Duchamp_%28replica%29.JPG"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>一具小便斗之後：杜象如何把「藝術是什麼」變成未完成的棋局</h1>
+<p class="byline"><time>2026-07-31</time></p>
+</div>
+
+<p class="lead">1917 年春天的紐約，一具被翻轉的瓷器小便斗被送進「獨立藝術家協會」的審查現場。它沒有華麗的筆觸，也沒有傳統雕塑的量體雕琢；署名不是藝術家本人熟悉的名字，而是「R. Mutt 1917」。這件後來被稱作《噴泉》（Fountain）的作品，在開展前約一小時被拒絕。¹²</p>
+<p>一個世紀之後，觀眾在美術館玻璃櫃裡看到的，多半是 1960 年代重製的複製品；原件早已消失。BBC Culture 在百年紀念文章中寫道，這次出手像棋手的一步，改變了藝術遊戲的規則本身。³ 問題因此不再只是「這算不算藝術」，而是：當選擇、命名、制度與複製品都能構成作品時，我們到底在看什麼？</p>
+<p>本文沿著馬塞爾·杜象（Marcel Duchamp, 1887–1968）的生平與關鍵作品，從諾曼第畫家家庭、立體派爭議、《下樓的裸女》、現成物、達達與超現實主義交會、西洋棋的隱退，到死後才公開的《既予》（Étant donnés），說明「現成物」如何改寫二十世紀藝術的觀看契約，以及為何這場棋局至今未完。⁴⁵</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/%27Fountain%27_by_Marcel_Duchamp_%28replica%29.JPG" alt="杜象《噴泉》複製品｜來源：Kim Traynor / Wikimedia Commons（CC BY-SA 3.0）" loading="lazy"><figcaption>今日館藏中的《噴泉》多半是後製複本；原件消失本身，也成為這件作品討論「原真性」的一部分。</figcaption></figure>
+<h2>諾曼第到巴黎：一位不想被風格綁住的畫家</h2>
+<figure><img src="https://live.staticflickr.com/7570/15869278160_ba42640d27_b.jpg" alt="馬塞爾·杜象肖像畫｜來源：Abode of Chaos / Flickr（CC BY）" loading="lazy"></figure>
+<p>馬塞爾·杜象 1887 年 7 月 28 日出生於法國諾曼第的 Blainville。根據《大英百科》記載，父親是公證人，家族卻有藝術傳統；六個孩子中有四人成為藝術家，包括後來的 Jacques Villon、Raymond Duchamp-Villon，以及妹妹 Suzanne Duchamp。⁴ 1904 年 10 月，他抵達巴黎時，兩位兄長已能提供初步支援。</p>
+<p>接下來幾年，他一邊為漫畫雜誌畫諷刺圖，一邊快速走過後印象、塞尚影響、野獸派與立體派。Britannica 強調，他並不認為有必要把任何單一風格變成習慣；他也不追求高產量或頻繁展出。⁴ MoMA 的藝術家頁則引他 1966 年回顧時的說法：那些早期風格轉換像「游泳課」，用來消化過去三十年現代繪畫的哲學與限制。¹</p>
+<p>這種「實驗而不駐留」的態度，預告了後來的現成物：重點不在磨練某一筆法到極致，而在測試藝術系統允許什麼被算作作品。對讀者來說，這也意味著不能只用「達達惡作劇」概括他——他先是一位認真走過主流現代主義訓練的畫家，然後才選擇離開。</p>
+<p>*肖像提醒我們：在小便斗與西洋棋之前，杜象首先是一個在巴黎學習、試錯、改道的年輕畫家。*</p>
+<h2>《下樓的裸女》：立體派的門檻與紐約的醜聞</h2>
+<figure><img src="https://live.staticflickr.com/29/40696339_d8e1f160a9.jpg" alt="《Tu m'》相關現場｜來源：StrangeInterlude / Flickr（CC BY-SA）" loading="lazy"></figure>
+<p>1910 年代初期，杜象移居巴黎並採用接近立體派的手法：人體被畫得像機械，色調偏向棕、赭與灰。¹ 他與兄長們一起工作，並創作出《下樓的裸女（第二號）》（Nude Descending a Staircase, No. 2, 1912）。The Art Story 指出，此作先在以立體派為主的獨立沙龍遭遇不利反應，被認為帶有未來主義傾向；但 1913 年在紐約軍械庫展（Armory Show）卻成為醜聞式成功。⁵</p>
+<p>費城美術館收藏此作，並把它放在 Louise and Walter Arensberg 收藏脈絡中。⁶ BBC 與 MoMA 都把這幅畫視為杜象畫家生涯的重要轉折：它不只是研究身體在空間中的移動，也像 Eadweard Muybridge 連續攝影那樣，把時間切片壓進單一畫面。¹⁵ Britannica 則說，在這幅畫造成轟動後，他很少再畫其他油畫。⁴</p>
+<p>對當代觀眾，這幅畫的意義不只是「很抽象」。它顯示杜象已經在找一種把運動、機械與欲望同時編碼的語言；而當繪畫仍不足以承載他的問題時，他會把戰場移到物件、標題與制度。</p>
+<p>*杜象晚期繪畫與現成物之間的界線並不乾淨；標題、影子與現成物件常一起出現在觀看經驗裡。*</p>
+<h2>現成物：把手的技術換成腦的選擇</h2>
+<figure><img src="https://live.staticflickr.com/1422/562977850_32c3855ea2_b.jpg" alt="MoMA《腳踏車輪》｜來源：Wally Gobetz / Flickr（CC BY-NC-ND）" loading="lazy"></figure>
+<p>MoMA 寫道，杜象最著名的問題是：「人能否做出『非藝術』的作品？」¹ 現成物（readymade）把工業生產的日常物件——小便斗、腳踏車輪、雪鏟——移出原本的使用脈絡，僅憑藝術家的選擇與展示，把它抬到藝術地位。杜象解釋，他把美學考量縮減為「心的選擇，而非手的靈巧」；選擇時要追求一種「美學冷淡」，「避免情緒，對它保持盡可能乾燥的感覺」。¹</p>
+<p>Tate 與 MoMA 都將 readymade 定義為把量產日常物移出日常語境、僅因藝術家選擇而成為作品的做法。⁷⁸ SFMOMA 對《噴泉》的說明更具體：1915 年杜象從巴黎到紐約後，成為美國獨立藝術家協會創始成員；1917 年 4 月首展，他以假名提交在 J. L. Mott Iron Works 展間購買的小便斗，側放、置於底座、簽名「R. Mutt 1917」並命名 Fountain。²</p>
+<p>這一步的關鍵不在「醜」或「髒」。它攻擊的是：藝術是否必須等於手工技藝？原創是否必須等於獨一無二的物質原件？當杜象匿名在媒體為作品辯護，說自己「為那物件創造了新的思想」時，他把二十世紀藝術最深遠的原則之一推上檯面——作品首先關於觀念。²</p>
+<p>*《腳踏車輪》把可旋轉的工業零件裝上凳面；觀眾看到的是運動的暗示，也是「選擇」本身被展示。*</p>
+<h2>1917：《噴泉》如何測試一個協會的良心</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/%27Fountain%27_by_Marcel_Duchamp_%28replica%29.JPG" alt="《噴泉》複製品｜來源：Kim Traynor / Wikimedia Commons（CC BY-SA 3.0）" loading="lazy"></figure>
+<p>BBC Culture 的百年回顧把場景寫得很清楚：獨立藝術家協會公開承諾不拒絕成員提交的作品；杜象作為創始成員，以「R. Mutt」測試這套原則是否經得起真正刺耳的物件。投票結果拒絕了它，理由是美學上的粗鄙；杜象隨後辭職。³ SFMOMA 也記載，作品在開展前一小時被拒。²</p>
+<p>被拒之後，原件如何離開現場，成為帶點偵探小說色彩的細節。BBC 寫道，杜象必須在不暴露自己是作者的情況下取回這件笨重瓷器；偏見幫了他——旁人很難相信那塊衛浴瓷器值得保護。取回後，作品被送到好友、攝影師 Alfred Stieglitz 面前拍攝，那張黑白影像迅速進入文化記憶。³</p>
+<p>這裡有兩個必須分開陳述的事實層次。第一，制度層：一個宣稱「開放」的前衛協會，仍可能以品味否決物件。第二，媒介層：真正讓《噴泉》長存的，往往不是 1917 年的那具實體，而是照片、論戰文字與後來的複製品。SFMOMA 指出，原件很快消失；自 1938 年起杜象開始發行後續版本，1964 年的全尺寸版本即為其收藏所見。² Tate 亦收藏 1917 年作品、1964 年複製品。⁹</p>
+<p><strong>（以下為分析，非事實陳述）</strong>《噴泉》之所以難被「看完」，是因為它同時是物件、行為、簽名、拒絕事件與傳播史。觀眾若只盯著瓷器曲線，會錯過它真正作用的場域：藝術界如何定義准入門檻。</p>
+<h2>腳踏車輪、雪鏟與標題的幽默</h2>
+<figure><img src="https://live.staticflickr.com/23/28640948_7a21bc7fd7_b.jpg" alt="《腳踏車輪》｜來源：spDuchamp / Flickr（CC BY）" loading="lazy"></figure>
+<p>現成物不是只有小便斗。MoMA 收藏《腳踏車輪》（Bicycle Wheel）：金屬輪裝在上色木凳上；館方標示為 1951 年紐約第三版，依據 1913 年已佚失原作。¹⁰ 另一件《預見斷臂》（In Advance of the Broken Arm）是雪鏟，MoMA 藏 1964 年 8 月第四版，依據 1915 年 11 月已佚失原作。¹¹</p>
+<p>標題常常比物件更「尖」。The Art Story 指出，杜象的標題常帶幽默甚至無厘頭，用來嘲弄高雅藝術的一本正經；這種態度後來被稱為「反藝術」（anti-art），卻不是他的起點——他是從繪畫走來的。⁵ MoMA 也說，這類標題戳破嚴肅性，並把語言遊戲帶進視覺藝術。¹</p>
+<p>把這些作品並列，可以看出方法的一致性：選一個工業物件；改變方位或組合；給一個會讓人愣住的名字；讓「選擇」本身成為可見的姿態。對後世裝置、觀念、行為藝術而言，這等於打開一扇門：材料可以來自五金行，意義可以來自語境。</p>
+<p>*可轉動的輪子讓現成物不是靜物標本，而是帶著時間與偶然的裝置原型。*</p>
+<h2>達達、超現實與「不隸屬」的位置</h2>
+<figure><img src="https://live.staticflickr.com/5173/5444625740_13c568e435_b.jpg" alt="杜象與皮卡比亞相關影像｜來源：Eneas / Flickr（CC BY）" loading="lazy"></figure>
+<p>Britannica 指出，杜象與達達主義者友好，1930 年代也協助組織超現實主義展覽；他 1955 年成為美國公民。⁴ The Art Story 則強調：儘管作品與超現實主義在欲望機制、文字遊戲上相近，他堅拒被歸入任何特定運動；在堅持藝術應由觀念驅動這點上，他常被視為觀念藝術之父。⁵</p>
+<p>達達誕生於一次大戰的創傷與荒謬感之中，以拼貼、表演、嘲諷與反戰姿態衝擊既有文化秩序。把杜象完全等同於達達會過度簡化：他的現成物路徑有自身邏輯，且他對「視網膜快感」的拒絕——The Art Story 所稱 retinal pleasure——是長期美學立場，而不只是戰時情緒。⁵ 他仍研究透視與光學，並做動態裝置實驗，顯示「反繪畫」並非反思考視覺。⁵</p>
+<p>對讀者而言，重點是位置感：杜象游走在達達、超現實、紐約前衛與歐洲網絡之間，卻把「不重複、不產量化、不站隊」當成方法。這種位置後來被制度收編時，張力反而更大——一個拒絕流派徽章的人，成了教科書章節的固定標題。</p>
+<p>*杜象與 Francis Picabia 等人的交往，把巴黎與紐約的前衛網絡連成可追蹤的人際地圖。*</p>
+<h2>《大玻璃》：欲望被畫成機械圖</h2>
+<figure><img src="https://live.staticflickr.com/3481/3218091404_176640f856_b.jpg" alt="《腳踏車輪》另一視角｜來源：Wagner T. Cassimiro / Flickr（CC BY）" loading="lazy"></figure>
+<p>若說現成物把藝術從「手」拉開，那麼《新娘甚至被光棍們脫光了衣服》（The Bride Stripped Bare by Her Bachelors, Even），通稱《大玻璃》（The Large Glass, 1915–23），則把性與機械以更長時間的研究攤在兩層玻璃上。MoMA 描述：上方面板是新娘朦朧的身體，下方左側是九個光棍的叢集；雙方透過活塞、篩子、雪橇等enigmatic mechanical devices溝通，其內部運作部分寫在藝術家潦草筆記裡。¹</p>
+<p>這件作品花了多年，最終仍以「未完成」狀態進入藝術史。它提醒我們，杜象並非只會「挑東西簽名」。他願意用近乎工程圖與煉金術筆記的耐心，去構造一個無法被一眼消費的視覺系統。Philadelphia 與相關館藏脈絡長期把它視為理解杜象思想的核心裝置之一；觀眾走近時，看到的是透明、灰塵、裂縫與圖示，而不是傳統油畫的「完成美」。</p>
+<p><strong>（以下為分析，非事實陳述）</strong>《大玻璃》與《噴泉》看似相反——一個極度複雜，一個極度簡省——卻共享同一問題：藝術能否離開「漂亮的表面」，改去處理觀念、欲望與制度？一個用玻璃與符號，一個用衛浴瓷器與簽名，路徑不同，靶心相近。</p>
+<h2>西洋棋、隱退與「不生產」的表演</h2>
+<figure><img src="https://live.staticflickr.com/4534/37669758415_8df9cb7911_b.jpg" alt="展牆杜象引言｜來源：Jean-Pierre Dalbéra / Flickr（CC BY）" loading="lazy"></figure>
+<p>BBC 以西洋棋比喻《噴泉》，並非修辭遊戲。文章指出杜象迷戀棋藝，甚至付出私人生活代價：1927 年 11 月，新婚妻子 Lydie 受不了他不斷推演棋步，在他睡著時把棋子黏在棋盤上；兩人一個月後離婚。³ The Art Story 也寫，他後來把時間花在下棋，甚至因此從藝術界抽身，同時卻秘密進行最後一件作品，死後才揭曉。⁵</p>
+<p>這種「隱退」不應被浪漫化成高人遠遁。它比較像一種對藝術產業節奏的拒絕：不重複自己、不維持產量、不讓風格變成可預期商品。但歷史的反諷在於，當觀念藝術、普普、裝置與後現代批評把杜象重新放回中心，他的「不生產」反而成為最具生產力的神話之一——美術館、拍賣與教科書都需要一個可以反覆講述的起源故事。</p>
+<p>*當引言被印在博物館牆上，反體制的句子也進入體制的展示語法；這正是杜象遺產最棘手的部分之一。*</p>
+<h2>複製品、原件消失與真偽焦慮</h2>
+<figure><img src="https://live.staticflickr.com/8199/8276910959_cd7a06bd05_b.jpg" alt="《噴泉》展示｜來源：profzucker / Flickr（CC BY-NC-SA）" loading="lazy"></figure>
+<p>SFMOMA 明言：原版《噴泉》很快消失，其後版本的發行反而強化了杜象對原創與真實性的根本提問。² 今日觀眾在 Tate、SFMOMA 等機構看到的，是被授權、被編年、被保險與運輸規範妥善處理的複製品。⁹² 這與傳統雕塑「原模／翻鑄」的討論有重疊，卻更尖銳——因為作品的核心主張，本來就是「觀念可以先於獨特物件」。</p>
+<p>於是出現一種制度悖論：要保存一個質疑原真性的作品，博物館仍必須建立版次、來源、保存與教育敘事。Kim Traynor 在 Wikimedia 上傳的《噴泉》複製品照片，正是這種公共可見性的一環：人們分享的是可辨識的圖像，而不是 1917 年那具已佚失的瓷器。¹²</p>
+<p>批評者常問：如果誰都能買尿斗簽名，藝術豈不崩壞？支持者則反問：若藝術只剩手藝競賽，觀念、制度與語言是否被排除？兩種問題都真實，且不互相取消。較穩妥的史實表述是：杜象沒有「結束繪畫」，但他確實迫使繪畫之外的選擇被認真討論；後世藝術家如 Robert Rauschenberg、Bruce Nauman、Cindy Sherman 等被 SFMOMA 點名為受其觀念影響的不同路徑。²</p>
+<h2>Rrose Sélavy 與身份的現成物</h2>
+<figure><img src="https://live.staticflickr.com/65535/52016055469_e3b07094cc_b.jpg" alt="Box in a Valise 相關｜來源：fadedreq21 / Flickr（PDM）" loading="lazy"></figure>
+<p>杜象不只挪動物件，也挪用身份。他以女性化名 Rrose Sélavy 出現在照片與作品簽名中，把「藝術家是誰」變成可操作的變數。The Art Story 將其雙關與情色暗示視為整體方法的一部分：語言可以像物件一樣被翻轉。⁵ Man Ray 等友人拍攝的肖像，使這個化名不僅是簽名，也是可被觀看的表演。</p>
+<p>對當代讀者，這條線連向性別展演、作者權與自拍文化的長遠討論。需要謹慎的是：不能把 1920 年代的化名遊戲直接等同於今日的性別政治語彙；較穩妥的說法是，杜象示範了作者身份可以被設計、被拍攝、被流通，就像現成物可以被選擇與命名。</p>
+<p>*杜象的「旅行箱中的盒子」把作品縮小、複製、攜帶，使藝術家像策展自己的微型博物館。*</p>
+<h2>死後揭曉的《既予》：偷窺孔裡的最後一手</h2>
+<figure><img src="https://live.staticflickr.com/8224/8277969152_f17b2bede3_b.jpg" alt="《噴泉》展場細節｜來源：profzucker / Flickr（CC BY-NC-SA）" loading="lazy"></figure>
+<p>The Art Story 指出，杜象表面沉浸棋局之際，仍秘密製作最後一件enigmatic 傑作，死後才公開。⁵ 這件常被稱為《既予》（Étant donnés）的裝置，以門上窺孔迫使觀眾進入特定觀看位置：你不是在大廳「瀏覽」，而是被迫成為窺視者。它把透視法、情色、風景與裝置結合成私密劇場。</p>
+<p>這與《噴泉》的公開挑釁形成對照。《噴泉》在協會大廳引發投票與辭職；《既予》則把爭議藏進觀看機制本身。一個挑戰「什麼可以被展出」，一個挑戰「我們如何被迫觀看」。兩件作品橫跨半世紀，卻共同把觀眾的身體與倫理位置算進作品。</p>
+<p><strong>（以下為分析，非事實陳述）</strong>若只記得小便斗，會誤以為杜象的遺產只有「反美學的玩笑」。秘密長時製作的裝置說明：他可以極簡，也可以極繁；可以公開，也可以隱匿。方法的核心是控制問題的提法，而不是固定某一視覺風格。</p>
+<h2>反對的聲音：太容易、太男性、太被神化</h2>
+<figure><img src="https://live.staticflickr.com/8350/8276911379_4b71e218d2_b.jpg" alt="《噴泉》側寫｜來源：profzucker / Flickr（CC BY-NC-SA）" loading="lazy"></figure>
+<p>任何把杜象奉為「現代藝術之父」的敘事，都該同時聽到反對與修正。常見批評包括三類。第一，技術民主化的幻覺：若藝術等於選擇，是否貶低長期訓練的工匠與畫家？第二，性別與身體：現成物經典清單與《大玻璃》的欲望結構，長期由男性前衛圈書寫，女性藝術家的平行實驗常被邊陲化。第三，市場收編：當現成物與觀念作品進入天價拍賣與博物館 retro，原本的制度批判可能變成可投資的風格史。</p>
+<p>BBC 的棋喻也暗示另一種風險：把一切讀成高明算計，可能忽略偶然、合作與傳播。³ Stieglitz 的照片、協會的拒絕、媒體的轉述，都不是杜象一人能獨力編劇。SFMOMA 強調原件消失與後續版本，等於承認作品生命史是集體與制度共同寫成。²</p>
+<p>因此，較負責任的寫法不是選邊站「神作」或「骗局」，而是呈現：它確實改變了問題清單；它也確實被後來的教育與市場簡化成一句口號。讀者可以同時承認其歷史效力，並拒絕把效力神化成不可批評的教條。</p>
+<h2>博物館如何講述一個「反博物館」的人</h2>
+<figure><img src="https://live.staticflickr.com/8081/8276911253_a836a2b328_b.jpg" alt="《噴泉》近景｜來源：profzucker / Flickr（CC BY-NC-SA）" loading="lazy"></figure>
+<p>走進 MoMA、Tate 或 SFMOMA，觀眾會發現杜象被安放在極為穩固的敘事位置：詞條、語音導覽、教室講義與商店書區都有他。¹⁷⁸² 這是歷史效力的證明，也是張力來源。一個以挑戰展示體制聞名的藝術家，最終成為展示體制最可靠的教學案例。</p>
+<p>館方書寫通常強調三件事：readymade 的定義、1917 年拒絕事件，以及觀念優先於手工。¹²³ 教育部門需要清晰句子，但清晰句子也容易把複雜人生壓成口號。對認真的觀眾，補課清單應包括：他早期如何認真學畫；為何厭惡重複；為何下棋；為何要秘密做最後一件作品；以及複製品如何成為作品生命的一部分。¹⁴⁵</p>
+<p>台灣觀眾若在北美館、北師美術館或國際巡迴展遇到相關討論，不妨把問題帶回自己的看展習慣：我是在消費一個名句，還是在追一個仍會刺痛制度的問題？前者只要打卡；後者需要把牆上文案與作品之間的縫留下來，不急著用「原來如此」填平。</p>
+<h2>與同代人的對話：皮卡比亞、史蒂格利茨與紐約圈子</h2>
+<figure><img src="https://live.staticflickr.com/81/248928094_e159f2f66b_b.jpg" alt="現成物語境現場｜來源：Max Braun / Flickr（CC BY-SA）" loading="lazy"></figure>
+<p>Britannica 提到杜象與詩人 Guillaume Apollinaire、畫家 Francis Picabia 的交往，並指出他與 Picabia 都覺得立體派過於系統、靜態與「無聊」，因而轉向對運動的非具象表達。⁴ 紐約方面，Stieglitz 的攝影不只記錄《噴泉》，也參與了作品進入公共記憶的方式。³ 這些名字說明前衛不是 Isolated genius 的獨白，而是信件、畫廊、雜誌、攝影工作室與協會政治交織的網絡。</p>
+<p>Arensberg 夫婦在費城脈絡中的收藏角色，也讓杜象的美國歲月不只是漂泊傳奇，而是有贊助、討論與保存條件的社會史。⁶ 當我們說「杜象改變藝術」，其實也在說：有一群人願意把資源與論述押在當時仍不被主流品味接受的實驗上。少了這層，英雄敘事會過度乾淨。</p>
+<p>*不同攝影角度會改變小便斗的「雕塑感」；影像生產本身，一直是這件作品史的一部分。*</p>
+<h2>從紐約到全球課綱：觀念如何成為基礎設施</h2>
+<figure><img src="https://live.staticflickr.com/8063/8185270602_9a0a4d013a_b.jpg" alt="書寫與討論杜象的現場｜來源：Kelly Writers House / Flickr（CC BY）" loading="lazy"></figure>
+<p>MoMA 藝術家頁把 readymade 放在拆解並擴張「何謂藝術作品」邊界的戰役高峰。¹ Tate 以藝術詞彙條目教學 readymade，顯示概念已進入公共教育基礎設施。⁸ 對藝術學校而言，這改變了評圖語言：學生可以被要求解釋選擇、語境、引用與制度位置，而不只是描摹體積與色彩。</p>
+<p>影響是雙向的。一方面，它讓更多材料與生命經驗進入展場，裝置、檔案、社群參與與數位物件都獲得論述工具。另一方面，它也可能造成「概念說明書」壓過感官經驗的疲勞——觀眾走進展場，先讀牆上文案，再看到物件，審美經驗變成閱讀測驗。這不是杜象單人造成的後果，卻是其遺產在制度化之後的真實症狀。</p>
+<p>在亞洲與台灣的當代展場，現成物語法同樣常見：市場包裝、政治文件、家庭遺物與網路截圖都可能被納入作品。理解杜象，不是為了證明「我們也會玩概念」，而是為了辨認：何時是有力的問題重構，何時只是快捷的風格借用。</p>
+<h2>當代館場：排隊、自拍與被馴化的前衛</h2>
+<figure><img src="https://live.staticflickr.com/8486/8185266654_df32390689_b.jpg" alt="藝術寫作課中的杜象討論｜來源：Kelly Writers House / Flickr（CC BY）" loading="lazy"></figure>
+<p>一個世紀後，現成物與觀念裝置早已是全球雙年展與美術館的日常語言。BBC 在 2017 年回顧時，把《噴泉》定位為改變藝術遊戲規則的事件，而不只是單一醜聞。³ 對今天的觀眾，挑戰可能反過來：當「這也算藝術嗎」變成導覽開場白，前衛的刺痛是否被教育部門溫和地吸收？</p>
+<p>同時，沉浸式鏡屋、大型裝置與社群媒體打卡，讓「可拍照的當代藝術」成為博物館營運的重要引擎。這與杜象的「美學冷淡」並不完全同路。杜象要的是減少情緒化的品味反應；當代展場有時要的是最大化可傳播圖像。兩者都使用物件與空間，倫理卻不同。</p>
+<p><strong>（以下為分析，非事實陳述）</strong>若只把杜象讀成「什麼都可以」，會低估他的嚴格：他挑選、命名、限制產量，並對重複感到厭惡。⁵ 更貼近史料的讀法或許是：他擴大了藝術的合法問題集，而不是發放一張永遠有效的「任意物件通行證」。</p>
+<h2>時間線上的幾個轉折點</h2>
+<figure><img src="https://ichef.bbci.co.uk/images/ic/976xn/p04znnl3.jpg" alt="BBC 百年回顧配圖引用頁｜來源：BBC Culture 頁面圖" loading="lazy"></figure>
+<p>把杜象的關鍵年分排開，有助於避免「突然冒出小便斗」的誤解。1887 年生於 Blainville；1904 年到巴黎；1910 年代初期進入立體派語彙；1912 年完成《下樓的裸女（第二號）》；1913 年軍械庫展引發轟動；同年開始《腳踏車輪》一系實驗；1915 年移居紐約並發展雪鏟等現成物；1917 年《噴泉》被拒；1915–23 年長時間製作《大玻璃》；1920 年代起加深與棋的關係並以 Rrose Sélavy 出現；1930 年代協助超現實展；1955 年入美籍；1960 年代發行《噴泉》等複製品；1968 年 10 月 2 日於 Neuilly 去世；死後《既予》揭曉。¹⁴⁵</p>
+<p>這條時間線顯示兩件事。一，現成物不是青年氣盛的一次性惡作劇，而是橫跨數十年的方法。二，複製品與博物館化發生在他仍在世時，他並非對「被收藏」毫無意識；相反，版次與再製本身就是提問的延續。²</p>
+<p>對策展人而言，這條線也解釋為何杜象展覽很難做成單一風格回顧：你必須同時處理繪畫、物件、照片、語言、棋與窺視裝置。少了任何一環，故事都會變扁。</p>
+<h2>形式分析：冷淡、翻轉、命名</h2>
+<figure><img src="https://live.staticflickr.com/8346/8185229461_bfe28e7769_b.jpg" alt="杜象主題講座現場｜來源：Kelly Writers House / Flickr（CC BY）" loading="lazy"></figure>
+<p>若要用較慢的眼睛看現成物，可以抓住三個形式動作。第一是方位翻轉：小便斗側放，功能被懸置，曲線變成可被凝視的造型。² 第二是底座與展示：一旦放上 pedestal，物件進入雕塑語法，即使它來自衛浴展間。² 第三是簽名與日期：「R. Mutt 1917」把作者權變成謎題，也把時間釘死在戰爭年代的紐約。²³</p>
+<p>《腳踏車輪》多了第四個動作：可動性。輪子暗示時間與偶然，觀者即使不被允許觸碰，仍會在心裡完成旋轉。¹⁰ 《預見斷臂》則靠標題把勞動傷害的預告灌進雪鏟，使工具的未來事故成為作品的一部分。¹¹ 這些都不是「隨便找東西」，而是精密的語用操作。</p>
+<p>杜象所謂美學冷淡，並不是作品沒有感覺，而是拒絕把「我喜不喜歡這個表面」當成唯一判決。¹ 他要觀眾把判斷移到思想上：這個選擇做了什麼？它讓哪些制度現形？它如何改寫物與人之間的契約？</p>
+<h2>今日意義：AI 圖像時代為何仍要談現成物</h2>
+<figure><img src="https://live.staticflickr.com/8202/8185266972_da50e57d49_b.jpg" alt="觀眾與文本｜來源：Kelly Writers House / Flickr（CC BY）" loading="lazy"></figure>
+<p>在生成式影像隨手可得的年代，杜象的問題意外地再次尖銳。當圖像可以由模型大量生產，手工唯一性不再是藝術價值的穩定擔保；選擇、提示詞、資料集、展示語境與署名政治，反而更像新的「現成」戰場。這不是說 AI 作品等於 readymade，而是說：公眾再次被迫辯論「作者做了什麼才算創作」。</p>
+<p>回看 1917，協會用品味拒絕了一具尿斗；回看今日，平台與機構用政策、版權與美學審核決定什麼可以被流通。SFMOMA 所歸納的原則——作品可以首先關於觀念——既解放也危險：解放在於打開材料與方法；危險在於若只有口號沒有嚴格的選擇與責任，觀念會變成空話。²</p>
+<p>因此，閱讀杜象的當代用處，或許不是複製他的物件清單，而是學習他如何設計一個無法被簡單投票打發的問題。好的問題會逼制度露出縫；壞的借用只會讓展場多一件可有可無的現成物。</p>
+<h2>還能看什麼：給讀者的延伸路徑</h2>
+<figure><img src="https://live.staticflickr.com/4220/35005443740_e70352a001_b.jpg" alt="當代腳踏車裝置回聲｜來源：sbmeaper1 / Flickr（CC0）" loading="lazy"></figure>
+<p>若讀完希望繼續走訪或深讀，可以從三條路徑選一。路徑一是作品：對照《下樓的裸女》、《腳踏車輪》、《噴泉》、《大玻璃》與《既予》的不同策略，不要只收集名句。¹⁶¹⁰²⁵ 路徑二是制度：重讀獨立藝術家協會的開放承諾與實際投票，思考今日公開徵件、獎項與雙年展的相似張力。²³ 路徑三是當代回聲：在看任何「現成物式」作品時，問三個問題——選擇是否嚴格？語境是否必要？批判是否被商品化吞沒？</p>
+<p>對家中沒有美術館可去的讀者，MoMA、Tate、SFMOMA 的線上作品頁已提供基礎事實與高解析影像入口。¹⁷² 重要的是保持來源意識：維基可以當索引，但論斷應回到博物館、主流通訊社與可核對的研究寫作。本文亦遵循此原則，把可確認的年分與事件寫進正文，並把分析段落另外標示。</p>
+<p>藝術史不會替任何人下完那盤棋。它只保證：只要還有人把物件送進展場、把規則寫進章程、把照片送進媒體，杜象提出的問題就會以新的材料重新出現。那不是懷舊，而是現代文化的結構性餘震。</p>
+<h2>結語：棋局未完，小便斗仍在發問</h2>
+<figure><img src="https://live.staticflickr.com/8199/8276910959_cd7a06bd05_b.jpg" alt="《噴泉》再次出現在視線裡｜來源：profzucker / Flickr（CC BY-NC-SA）" loading="lazy"></figure>
+<p>回到 1917 年的紐約大廳。一具被拒絕的瓷器，一張 Stieglitz 的照片，一份辭職，以及一個世紀的複述，共同寫成了《噴泉》的生命。²³ 杜象在 1968 年去世，但他留下的不是一句「什麼都是藝術」的許可證，而是一組更難的作業：如何在手藝、觀念、制度與市場之間保持清醒；如何在被博物館收編之後仍聽得到最初的刺耳聲。</p>
+<p>站在複製品面前，觀眾其實站在雙重時間裡：1917 年的挑釁，與 1964 年以降的保存體制。² 那圓潤的白瓷反光很乾淨，問題卻一點也不乾淨。藝術是什麼？誰有權決定？原件重要嗎？照片是否比物件更真？這些問題沒有一次投票可以結束，正如一盤好棋很少在中局就認輸。</p>
+<p>若你離開展場後，只記得「那個小便斗」，故事只完成一半。另一半是：從諾曼第的畫家家庭走到紐約的協會政治，從《下樓的裸女》走到《大玻璃》與窺孔，有一個人用一生把「觀看」改成需要負責任的動作。⁴⁵ 棋盤還在。下一手，輪到每個時代的觀眾與制度自己下。</p>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ MoMA（undated）— "Marcel Duchamp" artist page
+<a href="https://www.moma.org/artists/1634" rel="noopener" target="_blank">https://www.moma.org/artists/1634</a></p>
+<p class="ref">² SFMOMA（undated）— "Marcel Duchamp, Fountain, 1917/1964"
+<a href="https://www.sfmoma.org/artwork/98.291/" rel="noopener" target="_blank">https://www.sfmoma.org/artwork/98.291/</a></p>
+<p class="ref">³ BBC Culture / Kelly Grovier（2017-04-11）— "The urinal that changed how we think"
+<a href="https://www.bbc.com/culture/article/20170410-the-urinal-that-changed-how-we-think" rel="noopener" target="_blank">https://www.bbc.com/culture/article/20170410-the-urinal-that-changed-how-we-think</a></p>
+<p class="ref">⁴ Encyclopaedia Britannica（updated ongoing；entry orig. 1998-07-20）— "Marcel Duchamp"
+<a href="https://www.britannica.com/biography/Marcel-Duchamp" rel="noopener" target="_blank">https://www.britannica.com/biography/Marcel-Duchamp</a></p>
+<p class="ref">⁵ The Art Story（undated）— "Marcel Duchamp Art, Bio, Ideas"
+<a href="https://www.theartstory.org/artist/duchamp-marcel/" rel="noopener" target="_blank">https://www.theartstory.org/artist/duchamp-marcel/</a></p>
+<p class="ref">⁶ Philadelphia Museum of Art（undated）— "Nude Descending a Staircase (No. 2)"
+<a href="https://www.philamuseum.org/collection/object/51449" rel="noopener" target="_blank">https://www.philamuseum.org/collection/object/51449</a></p>
+<p class="ref">⁷ MoMA（undated）— "Readymade" art term
+<a href="https://www.moma.org/collection/terms/readymade" rel="noopener" target="_blank">https://www.moma.org/collection/terms/readymade</a></p>
+<p class="ref">⁸ Tate（undated）— "Readymade" art term
+<a href="https://www.tate.org.uk/art/art-terms/r/readymade" rel="noopener" target="_blank">https://www.tate.org.uk/art/art-terms/r/readymade</a></p>
+<p class="ref">⁹ Tate（undated）— "Fountain, Marcel Duchamp, 1917, replica 1964"
+<a href="https://www.tate.org.uk/art/artworks/duchamp-fountain-t07573" rel="noopener" target="_blank">https://www.tate.org.uk/art/artworks/duchamp-fountain-t07573</a></p>
+<p class="ref">¹⁰ MoMA（undated）— "Bicycle Wheel" (1951 third version after 1913)
+<a href="https://www.moma.org/collection/works/81631" rel="noopener" target="_blank">https://www.moma.org/collection/works/81631</a></p>
+<p class="ref">¹¹ MoMA（undated）— "In Advance of the Broken Arm" (1964 fourth version after 1915)
+<a href="https://www.moma.org/collection/works/105050" rel="noopener" target="_blank">https://www.moma.org/collection/works/105050</a></p>
+<p class="ref">¹² Wikimedia Commons / Kim Traynor（photo）— "'Fountain' by Marcel Duchamp (replica)"
+<a href="https://commons.wikimedia.org/wiki/File:%27Fountain%27_by_Marcel_Duchamp_(replica).JPG" rel="noopener" target="_blank">https://commons.wikimedia.org/wiki/File:%27Fountain%27_by_Marcel_Duchamp_(replica).JPG</a></p>
+<p class="ref">¹³ Tate（undated）— "Marcel Duchamp 1887–1968" artist page
+<a href="https://www.tate.org.uk/art/artists/marcel-duchamp-1036" rel="noopener" target="_blank">https://www.tate.org.uk/art/artists/marcel-duchamp-1036</a></p>
+<p class="ref">¹⁴ Encyclopaedia Britannica（undated）— "Dada"
+<a href="https://www.britannica.com/art/Dada" rel="noopener" target="_blank">https://www.britannica.com/art/Dada</a></p>
+<p class="ref">¹⁵ The Art Story（undated）— "Nude Descending A Staircase (1912)" work entry on Duchamp page
+<a href="https://www.theartstory.org/artist/duchamp-marcel/" rel="noopener" target="_blank">https://www.theartstory.org/artist/duchamp-marcel/</a></p>
+<p class="ref">¹⁶ SFMOMA（undated）— Fountain object interpretation (influence on Rauschenberg, Nauman, Sherman)
+<a href="https://www.sfmoma.org/artwork/98.291/" rel="noopener" target="_blank">https://www.sfmoma.org/artwork/98.291/</a></p>
+<p class="ref">¹⁷ MoMA（undated）— Duchamp quote and readymade campaign context
+<a href="https://www.moma.org/artists/1634" rel="noopener" target="_blank">https://www.moma.org/artists/1634</a></p>
+<p class="ref">¹⁸ BBC Culture（2017-04-11）— Society of Independent Artists vote and Stieglitz photograph narrative
+<a href="https://www.bbc.com/culture/article/20170410-the-urinal-that-changed-how-we-think" rel="noopener" target="_blank">https://www.bbc.com/culture/article/20170410-the-urinal-that-changed-how-we-think</a></p>
+<p class="ref">¹⁹ Guggenheim（undated）— "Marcel Duchamp" artist collection landing
+<a href="https://www.guggenheim.org/artwork/artist/marcel-duchamp" rel="noopener" target="_blank">https://www.guggenheim.org/artwork/artist/marcel-duchamp</a></p>
+<p class="ref">²⁰ Philadelphia Museum of Art collection context for Arensberg-related Duchamp holdings
+<a href="https://www.philamuseum.org/collection/object/51449" rel="noopener" target="_blank">https://www.philamuseum.org/collection/object/51449</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
