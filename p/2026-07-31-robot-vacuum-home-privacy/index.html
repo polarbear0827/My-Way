@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>掃地機器人進客廳後：便利、地圖與被看見的家 · 穗稻忠武的專欄</title>
+<meta name="description" content="每天出門前按下清掃，晚上回家看見地板整潔，這是掃地機器人最容易被理解的一面。但對具備 Wi‑Fi、地圖、鏡頭、麥克風或遠端觀看功能的機型而言，它同時也是一個會反覆進出臥室、客廳與走道的連網感測器。問題不在於「所有掃地機器人都會監控人」，而在於消費者是否能辨認自己買的是哪一種感測器、資料會不會離開家、誰能在何種條件下存取">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-07-31-robot-vacuum-home-privacy/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="掃地機器人進客廳後：便利、地圖與被看見的家">
+<meta property="og:description" content="每天出門前按下清掃，晚上回家看見地板整潔，這是掃地機器人最容易被理解的一面。但對具備 Wi‑Fi、地圖、鏡頭、麥克風或遠端觀看功能的機型而言，它同時也是一個會反覆進出臥室、客廳與走道的連網感測器。問題不在於「所有掃地機器人都會監控人」，而在於消費者是否能辨認自己買的是哪一種感測器、資料會不會離開家、誰能在何種條件下存取">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-07-31-robot-vacuum-home-privacy/">
+<meta property="og:image" content="https://live.staticflickr.com/8508/8499549941_717873b9cd_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "掃地機器人進客廳後：便利、地圖與被看見的家", "description": "每天出門前按下清掃，晚上回家看見地板整潔，這是掃地機器人最容易被理解的一面。但對具備 Wi‑Fi、地圖、鏡頭、麥克風或遠端觀看功能的機型而言，它同時也是一個會反覆進出臥室、客廳與走道的連網感測器。問題不在於「所有掃地機器人都會監控人」，而在於消費者是否能辨認自己買的是哪一種感測器、資料會不會離開家、誰能在何種條件下存取", "url": "https://polarbear0827.github.io/My-Way/p/2026-07-31-robot-vacuum-home-privacy/", "datePublished": "2026-07-31", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/8508/8499549941_717873b9cd_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>掃地機器人進客廳後：便利、地圖與被看見的家</h1>
+<p class="byline"><time>2026-07-31</time></p>
+</div>
+
+<p class="lead">每天出門前按下清掃，晚上回家看見地板整潔，這是掃地機器人最容易被理解的一面。但對具備 Wi‑Fi、地圖、鏡頭、麥克風或遠端觀看功能的機型而言，它同時也是一個會反覆進出臥室、客廳與走道的連網感測器。問題不在於「所有掃地機器人都會監控人」，而在於消費者是否能辨認自己買的是哪一種感測器、資料會不會離開家、誰能在何種條件下存取，以及產品停止更新後還剩下多少防線。</p>
+<figure><img src="https://live.staticflickr.com/8508/8499549941_717873b9cd_b.jpg" alt="一台掃地機器人在室內地板運作｜來源：dvanzuijlekom／Flickr（CC BY-SA）" loading="lazy"><figcaption>這種低矮、可自主移動的家電，必須持續感知周邊，因而讓「清掃」與「家庭資料」相互交織。</figcaption></figure>
+<p>本文以公開政策、資安通報、同行評審研究與媒體調查，區分已確認的產品設計、特定型號的漏洞、以及仍待各品牌說明的資料治理問題。它不替任何品牌下結論；同一類產品的攝影機、雲端與帳號設定差異很大，讀者需以手邊型號的隱私頁面與更新紀錄為準。</p>
+<h2>先把它當成會移動的感測器</h2>
+<p>機器人要避開電線、寵物排泄物、鞋子與樓梯，通常要依賴不同組合的碰撞感測器、光學鏡頭、LiDAR、輪速計與地圖演算法。iRobot 說明，部分具智慧功能的裝置可能蒐集機器人移動、樓層圖、房名、物件類型、地板種類、Wi‑Fi 訊號與裝置運作資料¹；其相機避障功能則可為使用者在 App 中檢視障礙物影像²。這些資料並不等於自動公開，更不等於每一款都錄影，但它們說明「掃地」已不是只靠吸力完成的工作。</p>
+<p>當地圖上出現房間邊界、禁區、充電座與清掃時間，資料足以描述空間如何被使用。DFRWS 的雲端鑑識研究發現，從 Roomba 的雲端介面可取得任務紀錄、導航資料、物件資訊與加密影像的相關資料³。研究是在受控、合法的鑑識脈絡下進行，不能推論一般人或第三方都能任意取得；但它提醒我們，便利功能留下的是具時間與空間脈絡的紀錄。</p>
+<h2>地圖不是地址，卻可能成為生活輪廓</h2>
+<p>家庭地圖的用途很具體：讓使用者指定廚房、把臥室列為禁區，或讓機器避開地毯。iRobot 的公開說明稱，使用者可在 App 偏好中選擇不傳送地圖資料；未連上 Wi‑Fi 或藍牙時，連網型機器仍可離線清掃，但排程、客製清掃、地圖報告與語音助理連結等功能會受限⁴。這是典型的取捨：少傳輸資料，也少了部分遠端便利。</p>
+<figure><img src="https://live.staticflickr.com/8525/8500681094_9a49489def_b.jpg" alt="停在充電座旁的掃地機器人｜來源：dvanzuijlekom／Flickr（CC BY-SA）" loading="lazy"><figcaption>充電座、清掃路徑與房間命名，讓裝置能回到正確位置，也使空間資料具有持續性。</figcaption></figure>
+<p>2017 年《紐約時報》報導 iRobot 的地圖資料可能描繪牆面與家具位置，並引發資料是否會和大型平台合作的討論⁵。那是當時的商業與政策爭議，不是現行資料交易的證明；iRobot 目前政策則列出地圖、房名、物件與 Wi‑Fi 環境資訊等可能蒐集類別¹。兩者放在一起看，重點不是預設某公司會濫用，而是地圖的敏感性來自它把原本分散的生活線索整合成可讀的平面。</p>
+<p><strong>（以下為分析，非事實陳述）</strong>一張平面圖未必標有姓名，卻可能透露住處格局、房間用途與家庭成員活動的節奏。判斷風險時，應把「是否識別個人」之外的問題也列入：資料能否與帳號、地址、設備識別碼或其他智慧家庭服務重新連結。</p>
+<h2>鏡頭帶來的避障能力，也改變了同意的範圍</h2>
+<p>相機避障能避免機器捲入充電線或碰到寵物排泄物，對家庭確有實際價值。iRobot 的支援頁稱，開啟 Obstacle Image Review 後，機器會拍下障礙物與周圍區域，供帳號持有人在 App 檢視；公司表示若未把影像貢獻給影像資料庫，該些加密影像會在伺服器保存 30 天後自動刪除²。這是廠商對特定功能的說法，實際保留與分享選項仍須依型號、地區及 App 版本確認。</p>
+<figure><img src="https://live.staticflickr.com/657/21312710464_09936081e6_b.jpg" alt="掃地機器人前方的感測區域｜來源：crises_crs／Flickr（CC BY-NC-ND）" loading="lazy"><figcaption>前向感測能看見地面障礙物；在家庭情境中，畫面也可能帶到人、寵物與室內陳設。</figcaption></figure>
+<p>MIT Technology Review 2022 年取得 15 張源自 iRobot 開發機的家庭影像截圖；iRobot 確認影像來自 2020 年、供付費資料蒐集者與員工使用的改裝開發機，並稱非販售給消費者的產品。報導指出，資料曾交由 Scale AI 的標註流程處理，iRobot 後來終止與該服務供應商的關係⁶。此事不能直接套用到一般消費者機型，卻把一個常被忽略的環節攤開：資料一旦為了訓練而跨越裝置、雲端與受託標註者，能接觸資料的人與流程會增加。</p>
+<h2>漏洞與事故：必須精確到品牌、型號與時間</h2>
+<p>資安風險最容易被聳動敘事放大，因此必須區分「研究示範」、「已編號漏洞」與「已發生事故」。2024 年，ABC 與研究者在取得同意的測試中，透過 Bluetooth 從約 140 公尺外接觸一台 Ecovacs Deebot X2，取得裝置控制後讀取感測器並拍攝影像；Ecovacs 當時表示會釋出更新，並稱重視產品與資料安全⁷。這份報導描述的是特定廠牌與型號的測試，不能推論所有掃地機器人均可被同法入侵。</p>
+<figure><img src="https://live.staticflickr.com/2863/11399420514_b2fa4c0e45_b.jpg" alt="掃地機器人與家用底座｜來源：kohrogi34／Flickr（CC BY）" loading="lazy"><figcaption>是否能由近距離連線、是否需要帳號、以及修補是否已安裝，都是判斷一項漏洞是否與自家設備相關的前提。</figcaption></figure>
+<p>NIST 的 NVD 對 CVE-2024-12078 記錄指出，部分 Ecovacs 機器人割草機與吸塵器在 BLE GATT 訊息加密中使用共用的靜態祕密金鑰；CISA 的描述為，藍牙範圍內、未經驗證的攻擊者可能控制受影響機器⁸。官方登錄同時給出中等嚴重度評分，並列出多個產品配置；它不能替代消費者逐一查閱品牌公告與韌體版本。</p>
+<p>ABC 後續報導一些美國使用者的 Ecovacs X2 出現被遠端控制與播放辱罵語音的事件，Ecovacs 則表示未發現其系統遭入侵的證據，並提及帳密填充攻擊可能性⁹。兩種說法並未完全釐清事件成因；能確認的是，遠端觀看、麥克風、揚聲器與移動控制一旦集中在同一設備，帳號保護與修補速度就不只是技術細節。</p>
+<h2>加密不等於沒有風險，離線也不等於沒有資料</h2>
+<p>廠商通常把加密、存取控制與使用者選項放在安全承諾的核心。iRobot 的 2024 隱私政策稱，個人資料在傳輸與靜置時加密，且將可直接連回個人的資訊分開儲存並限制存取¹；Roborock 2026 年 Trust Center 則稱，其障礙物影像加密保留在裝置上、App 閱讀時經加密傳送，雲端僅作暫時通道，並表示 AI 訓練用的是模擬家庭環境而非真實使用者資料¹⁰。這些是公司自己的聲明，不能由外部報導替它們背書。</p>
+<figure><img src="https://live.staticflickr.com/5125/5343742497_3747c9b933_b.jpg" alt="在家中運作的掃地機器人｜來源：David Berkowitz／Flickr（CC BY）" loading="lazy"><figcaption>產品頁上的「智慧」功能可能來自不同資料流：本機感測、App 同步、雲端處理或第三方語音服務。</figcaption></figure>
+<p>安全並非只有「資料有沒有上雲」的二選一。USENIX 研究人員 2019 年分析 Neato 與 Vorwerk 的連網吸塵器生態系，指出若裝置與雲端介面遭串連攻破，可能造成地圖、感測資料與本地網路風險¹¹；2024 年一篇研究則顯示，即使應用程式與雲端採端對端加密，網路封包的中繼資料仍可能讓旁觀者辨識部分清掃事件¹²。這些研究是特定裝置和實驗條件的結果，並非日常使用一定發生的攻擊。</p>
+<p>因此，宣稱使用 TLS 或通過 IoT 標準，代表有採取特定防護，卻不代表不存在漏洞。ABC 的調查中，受測 Ecovacs 裝置曾獲 ETSI EN 303 645 相關驗證，但研究者與認證方對測試範圍仍有爭論⁷。對消費者而言，更可操作的問題是：更新由誰推送、停止支援時會否告知、異常登入是否有紀錄、以及帳戶是否有第二道驗證。</p>
+<h2>從併購爭議看見資料以外的權力問題</h2>
+<p>2022 年 Amazon 宣布收購 iRobot，外界除競爭外也關注家庭地圖等資料的意義。The Guardian 當時引述隱私倡議者對家庭平面圖的疑慮，同時記錄 Amazon 對 Reuters 表示會保護客戶隱私、且不出售資料¹³。這份表態是企業立場，而不是資料流向的獨立稽核。</p>
+<figure><img src="https://live.staticflickr.com/8195/8362007749_f9e1dca86e.jpg" alt="消費電子展上的掃地機器人展示｜來源：David Berkowitz／Flickr（CC BY）" loading="lazy"><figcaption>在零售平台上被看見、被推薦與被搜尋的程度，也會影響消費者最後能選到哪些產品。</figcaption></figure>
+<p>交易最後並未完成。歐盟執委會 2024 年聲明指出，其深入調查初步認為，Amazon 收購 iRobot 可能藉由降低對手在 Amazon 商店的可見性、上架或廣告條件來排擠競爭者，進而影響價格、品質與創新¹⁴。Reuters、BBC 與 AP 也報導，雙方以歐盟監管障礙為由終止交易¹⁵¹⁶¹⁷。執委會的關切主要是電商平台的競爭條件，並非判定 Amazon 已經濫用 Roomba 的家庭資料；兩個問題可以相關，但不可混為同一個已證實事實。</p>
+<p>這段插曲說明了另一層日常性：家電的資料治理不只取決於感測器規格，也取決於誰擁有帳號系統、App 商店、雲端服務、語音助理與銷售入口。消費者可問的並非單純「這台好不好用」，而是當品牌更換所有權、合併服務或停止一條產品線時，舊有的地圖、影像與帳號權限將如何處理。</p>
+<p><strong>（以下為分析，非事實陳述）</strong>競爭政策與隱私政策都在處理權力集中，只是觀看角度不同。前者問平台是否讓對手難以進入市場；後者問個人是否仍知道並能控制資料的用途。把兩者拆開，才能避免把合理的警覺寫成未經證實的監控指控。</p>
+<h2>家中每一位被拍到的人，都沒有按下購買鍵</h2>
+<p>隱私同意常以帳號持有人為單位：一個人註冊、勾選條款、在手機開啟功能。然而掃地機器人行經的是共享空間，畫面裡可能有室友、孩子、長者、清潔人員、訪客與寵物。MIT Technology Review 的調查特別指出，開發機影像中的人不都能直接掌控蒐集設定，且報導未能取得完整同意文件以判斷參與者對資料標註流程的理解⁶。這不是對一般家用產品的概括，而是提醒「帳號同意」與「所有受影響者知情」之間有距離。</p>
+<figure><img src="https://live.staticflickr.com/7859/32754262648_66c83fedf6_b.jpg" alt="圓形掃地機器人在室內清掃｜來源：TheBetterDay／Flickr（CC BY-ND）" loading="lazy"><figcaption>裝置由一人設定，但它的移動範圍可能穿過整個家庭的共同生活空間。</figcaption></figure>
+<p>同樣的邊界問題也出現在資料訓練。ABC 2024 年報導，Ecovacs 表示選擇加入其產品改善計畫的使用者資料會用於訓練模型，並稱上傳前會在機器端匿名化¹⁸；Roborock 2026 年的官方說法則是其 AI 訓練使用模擬家庭資料，而非真實使用者資料¹⁰。兩家公司描述的設計與政策不同，不能用一方來推估另一方。消費者最需要的是在 App 內看到清楚、可撤回、可理解的選項，而不是只在長篇政策末端找到模糊措辭。</p>
+<p>研究者也在尋找較少暴露原始資料的技術路徑。ABC 報導雪梨大學團隊研發的「隱私保護」視覺方法，嘗試在影像數位化前先破壞可辨識細節，同時保留導航所需訊號¹⁸。這仍非通用商品功能，且無法單靠技術解決帳號、雲端與人員存取問題；但它指出，便利與最小蒐集不必然完全互斥。</p>
+<h2>購買前與設定後，可以核對的不是恐懼，而是控制權</h2>
+<p>第一步是辨認硬體：產品是否有前向鏡頭、麥克風、遠端觀看、語音控制、LiDAR 或純碰撞導航？規格表把它們都寫成「智慧」，但它們不是同一種資料風險。第二步是讀到實際型號與所在地區的隱私頁面，確認地圖、影像、語音、診斷資料與帳號資料是否各自列出；若政策只寫「改善服務」而沒有說明資料類型、保留期間與退出方式，應把它視為需要向廠商追問的空白。</p>
+<figure><img src="https://live.staticflickr.com/7137/7125974293_b08be40996_b.jpg" alt="掃地機器人的產品展示｜來源：Dutch Blythe Fashion／Flickr（CC BY-NC-ND）" loading="lazy"><figcaption>選購時最有用的比較，不只是吸力或續航，而是感測器、App 權限、更新政策與刪除途徑。</figcaption></figure>
+<p>第三步是把設定當成持續工作，而非首次配對時的勾選。iRobot 說明其客戶可透過 App 選擇是否傳送地圖資料，也可以不把產品連上網使用⁴；這類選項是否存在、名稱為何、會犧牲哪些功能，品牌之間不相同。若使用遠端功能，應使用長且不重複的密碼、開啟可用的雙重驗證、定期檢查登入裝置與更新紀錄，並移除不再使用的家庭成員或第三方語音助理連結。這些是降低帳號遭濫用的通用作法，不能消除裝置端或供應鏈漏洞。</p>
+<p>第四步是規劃裝置的最後一天。出售、送人、維修或淘汰前，應先解除帳號綁定、刪除 App 裝置、依原廠程序要求刪除雲端資料，並完成原廠建議的重設。因為地圖、歷史任務與 Wi‑Fi 設定的敏感程度，遠高於一般不連網的吸塵器；先清除資料不是多慮，而是把數位家電當成帳號與資料容器。</p>
+<h2>規格與承諾之外，更新生命週期才是長期測驗</h2>
+<p>連網家電的安全狀態不是結帳當天決定，而是在數年使用期間持續改變。漏洞可能在新品上市後才被研究者找到；雲端服務的認證方式可能更新；手機 App 也可能改變權限與資料分享的呈現。NIST 的 CVE 登錄與品牌的安全公告，都是比廣告文案更適合追蹤的資料來源⁸。遇到媒體報導漏洞時，第一個問題應是「是否涵蓋我的型號與韌體版本」，第二個才是「如何修補」。</p>
+<figure><img src="https://live.staticflickr.com/8342/8199209069_8b8c8fc5ee.jpg" alt="家用掃地機器人近照｜來源：todoleo／Flickr（CC BY-SA）" loading="lazy"><figcaption>真正的安全能力包含產品賣出後是否持續提供修補、公告與易懂的更新路徑。</figcaption></figure>
+<p>歐盟執委會在 iRobot 交易的說明裡，把智慧家庭產品描述為讓家務更容易的數位化趨勢¹⁴；這個描述也提示了政策難題：當日用品加入帳號、雲端與遠端控制，它同時跨進消費品安全、資安、隱私、競爭與售後服務。單一認證、單一條款或單次設定都很難涵蓋全部。</p>
+<p>廠商也有責任提供能被一般使用者理解的資訊：哪些感測器在何時啟用、照片是否只留在機器上、雲端資料由誰處理、資料外流時如何通知、以及韌體支援會到何時。反過來說，消費者不應只憑網路貼文把每款產品當作相同風險；有些風險涉及特定舊型號、特定功能或已修補的版本。準確的公共討論需要把「可能性」與「已證實事件」分開。</p>
+<p><strong>（以下為分析，非事實陳述）</strong>如果一個產品的價值建立在它懂得家裡的樣子，那麼使用者應有同等清楚的能力知道：它記得什麼、記多久、能否忘掉，以及誰替它負責更新。這不是反對自動化，而是把可控性視為便利的一部分。</p>
+<h2>風險如何被證實：研究、通報與新聞各自能回答什麼</h2>
+<p>關於智慧家電的故事，最容易把不同層級的證據混成一句話。媒體調查可以記錄公司回應、受影響者經驗與實際測試情境；CVE 登錄能標出已知弱點、受影響產品與評分；同行評審研究則說明在明確實驗條件下能做到什麼。三者互相補足，但任何一種都不該被擴張成「所有產品、所有使用者、所有時間」的結論。</p>
+<figure><img src="https://live.staticflickr.com/7916/45713911205_56cca672e9_b.jpg" alt="機器人吸塵器的機身細節｜來源：TheBetterDay／Flickr（CC BY-ND）" loading="lazy"><figcaption>理解資安報導時，先辨認它是實驗、漏洞通報、公司政策，還是已獨立確認的使用者事故。</figcaption></figure>
+<p>例如，馬里蘭大學研究團隊的 LidarPhone 論文，曾在改裝的 Xiaomi Roborock S5 上把 LiDAR 反射訊號當作聲學側通道，針對數字語音與音樂分類取得約九成準確度¹⁹。這是一項具有技術門檻的研究原型，不能寫成市售吸塵器正在常態偷聽；它的價值在於證明，看似只為導航而設的感測器也可能在特定條件下產生意料之外的隱私面向。</p>
+<p>同樣地，DFRWS 研究中的雲端鑑識工具，是在研究者合法取得帳戶資料、分析未公開介面的情況下擷取任務與地圖³；它不表示陌生人能從網路直接下載任何人的地圖。反過來，若品牌僅宣稱「已匿名化」或「已加密」，也不足以回答資料是否會被用於訓練、保存多久、以及退出後如何刪除。對公共討論最有用的態度，是把主張放回它的證據範圍。</p>
+<p>這也是本文不列「最安全品牌」排行的原因。不同系列的硬體、地區隱私條款、App 設定、帳號保護、支援年限與已安裝更新，都可能使答案不同。真正可比較的是透明度：能否查到資料類別、能否關閉或撤回、能否清除，以及漏洞出現時是否有可驗證的修補紀錄。</p>
+<h2>結語：讓它把地板掃乾淨，不必把判斷也一併交出去</h2>
+<p>掃地機器人是很容易被簡化的商品：它不是「無害的家電」，也不是「必然的監控器」。它是一種能力隨型號而改變的連網設備。沒有鏡頭的機型與具遠端觀看功能的機型不同；只在本機建立地圖的設計與需要雲端同步的服務不同；還在安全更新期的產品與停止支援的產品也不同。把這些差異抹平，無論是用恐慌或用廣告語言，都會讓消費者失去做判斷的工具。</p>
+<figure><img src="https://live.staticflickr.com/4864/45903978534_1d538ab920_b.jpg" alt="掃地機器人在家用地板上行進｜來源：TheBetterDay／Flickr（CC BY-ND）" loading="lazy"><figcaption>家庭自動化的可信度，不只來自裝置做得多聰明，也來自使用者能否看懂並收回它的資料權限。</figcaption></figure>
+<p>可以確定的是，掃地機器人會因導航與服務功能產生資料；公開政策、研究與漏洞通報都顯示，資料類型可能包括地圖、任務歷程、物件資訊、影像或連線中繼資料¹²³。也可以確定的是，具體安全事件與漏洞必須依品牌、型號、版本及時間核對，而不能以一則報導涵蓋整個市場⁷⁸⁹。至於「某一台是否值得買」，本文無法替每個家庭下結論：住家結構、是否有幼兒或室友、對遠端功能的需求、以及使用者願意管理設定的程度，都會改變答案。</p>
+<p>對產業而言，最有價值的競爭不只是在更短時間掃完房間，而是讓人一眼看懂資料從哪裡來、到哪裡去、如何停止。對使用者而言，最實際的姿態不是恐懼，而是每次開啟一個地圖、影像或遠端功能時，都追問一次：它為了什麼而需要？誰能看？我能否撤回？當答案清楚，便利才是可以被信任的便利。</p>
+<h2>一份放在說明書旁的家庭提問清單</h2>
+<p>在設定新機器的第一晚，可以先問五個問題。第一，它有哪些感測器，而我會不會用到每一項功能？若不需要遠端查看、語音控制或障礙物影像回饋，關閉功能是否仍能完成日常清掃。第二，App 的權限是否只限於必要範圍，例如附近裝置、位置、相簿、麥克風或通知；權限一經授予，也應在系統設定與 App 內各看一次。</p>
+<figure><img src="https://live.staticflickr.com/8508/8499549941_717873b9cd_b.jpg" alt="家用掃地機器人與清掃空間｜來源：dvanzuijlekom／Flickr（CC BY-SA）" loading="lazy"><figcaption>把隱私問題帶回每天使用的介面，才能從抽象擔心變成可執行的選擇。</figcaption></figure>
+<p>第三，家庭裡誰可以開啟 App、看到地圖、操控設備？共享帳號看似省事，卻使責任與存取紀錄變得模糊；較妥當的做法是分別建立權限，並在家庭成員搬離、保母或清潔服務結束後立即收回。第四，品牌在哪裡公布更新、召回或資安公告？若找不到明確支援頁面、型號清單與聯絡窗口，購買前就應把這視為售後資訊不足。第五，當我賣掉或報廢它，能否證明帳號、地圖與配對關係已解除？</p>
+<p>這份清單不保證消除所有風險。它的作用是把注意力從單一事件，移回可反覆檢查的控制點：連線、影像、帳號、更新、刪除與共同居住者。家庭科技的風險管理不必要求每個人都成為資安研究者；但產品若要進入最私密的空間，就應提供足夠清楚的控制介面，讓一般人能真正作選擇。 還有一項容易被忽略的界線：不要把安全功能與資料功能混在一起。地圖可讓機器避開樓梯，卻不表示一定要長期保留每次任務；相機可協助辨識電線，卻不表示所有影像都必須送去訓練；遠端控制有助於不在家時處理卡住的機器，卻也使帳號被盜的後果更大。好的設計應把這些選項拆開，讓使用者依需求開啟，而非用一個籠統的「同意」交換所有功能。</p>
+<p>對有幼兒、室友或頻繁訪客的家庭，最重要的未必是技術名詞，而是溝通：裝置何時運作、是否啟用攝影或遠端觀看、誰持有管理權，以及若有人不希望被拍到，能否設定禁區或暫停。這些安排不會讓家變成實驗室，反而能讓自動化維持它原本的目的——替人省下家務時間，而不是製造新的不確定。 最後，若發現品牌公告新漏洞，不必急著轉傳最驚人的截圖。先保存型號、韌體版本與公告連結，依廠商步驟更新；若涉及帳號異常，立即更換密碼並檢查綁定裝置。當資訊不足時，暫停遠端、影像或語音功能，比在未知狀態下繼續授權更可逆。 技術會變，使用者能否理解並介入資料流向，才是家庭信任能否持續的條件。 清楚的選項，才有真正的同意。</p>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ iRobot（2024-11-06）— "The iRobot Corporation Cookie and Privacy Policy"
+<a href="https://www.irobot.com/en_US/legal/privacy-policy.html" rel="noopener" target="_blank">https://www.irobot.com/en_US/legal/privacy-policy.html</a></p>
+<p class="ref">² iRobot Support（未標示日期）— "Camera, PrecisionVision™, and Obstacle Image Review"
+<a href="https://homesupport.irobot.com/s/article/31161" rel="noopener" target="_blank">https://homesupport.irobot.com/s/article/31161</a></p>
+<p class="ref">³ Onik 等（2024）— "So fresh, so clean: Cloud forensic analysis of the Amazon iRobot Roomba vacuum"
+<a href="https://www.dfrws.org/wp-content/uploads/2024/03/So-fresh-so-clean-Cloud-forensic-analysi_2024_Forensic-Science-Internation.pdf" rel="noopener" target="_blank">https://www.dfrws.org/wp-content/uploads/2024/03/So-fresh-so-clean-Cloud-forensic-analysi_2024_Forensic-Science-Internation.pdf</a></p>
+<p class="ref">⁴ iRobot Support（未標示日期）— "iRobot Privacy and Data Sharing Common Questions"
+<a href="https://homesupport.irobot.com/s/article/964" rel="noopener" target="_blank">https://homesupport.irobot.com/s/article/964</a></p>
+<p class="ref">⁵ The New York Times（2017-07-25）— "Your Roomba May Be Mapping Your Home, Collecting Data"
+<a href="https://www.nytimes.com/2017/07/25/technology/roomba-irobot-data-privacy.html" rel="noopener" target="_blank">https://www.nytimes.com/2017/07/25/technology/roomba-irobot-data-privacy.html</a></p>
+<p class="ref">⁶ MIT Technology Review（2022-12-19）— "A Roomba recorded a woman on the toilet. How did screenshots end up on Facebook?"
+<a href="https://www.technologyreview.com/2022/12/19/1065306/roomba-irobot-robot-vacuums-artificial-intelligence-training-data-privacy.html" rel="noopener" target="_blank">https://www.technologyreview.com/2022/12/19/1065306/roomba-irobot-robot-vacuums-artificial-intelligence-training-data-privacy.html</a></p>
+<p class="ref">⁷ ABC News（2024-10-04）— "We hacked a robot vacuum — and could watch live through its camera"
+<a href="https://www.abc.net.au/news/2024-10-04/robot-vacuum-hacked-photos-camera-audio/104414020" rel="noopener" target="_blank">https://www.abc.net.au/news/2024-10-04/robot-vacuum-hacked-photos-camera-audio/104414020</a></p>
+<p class="ref">⁸ NIST NVD（2025-01-23）— "CVE-2024-12078 Detail"
+<a href="https://nvd.nist.gov/vuln/detail/CVE-2024-12078" rel="noopener" target="_blank">https://nvd.nist.gov/vuln/detail/CVE-2024-12078</a></p>
+<p class="ref">⁹ ABC News（2024-10-10）— "Hackers take control of robot vacuums in multiple cities, yell racial slurs"
+<a href="https://www.abc.net.au/news/2024-10-11/robot-vacuum-yells-racial-slurs-at-family-after-being-hacked/104445408" rel="noopener" target="_blank">https://www.abc.net.au/news/2024-10-11/robot-vacuum-yells-racial-slurs-at-family-after-being-hacked/104445408</a></p>
+<p class="ref">¹⁰ Roborock（2026-01）— "Trust Center - Your Privacy, Our Top Priority"
+<a href="https://global.roborock.com/pages/roborock-trust-center" rel="noopener" target="_blank">https://global.roborock.com/pages/roborock-trust-center</a></p>
+<p class="ref">¹¹ USENIX WOOT（2019）— "Vacuums in the Cloud: Analyzing Security in a Hardened IoT Ecosystem"
+<a href="https://www.usenix.org/system/files/woot19-paper_ullrich.pdf" rel="noopener" target="_blank">https://www.usenix.org/system/files/woot19-paper_ullrich.pdf</a></p>
+<p class="ref">¹² Ulsmaag、Lin、Lee（2024）— "Investigating the Privacy Risk of Using Robot Vacuum Cleaners in Smart Environments"
+<a href="https://doi.org/10.48550/arxiv.2407.18433" rel="noopener" target="_blank">https://doi.org/10.48550/arxiv.2407.18433</a></p>
+<p class="ref">¹³ The Guardian（2022-08-16）— "How to stop your vacuum from spying on you"
+<a href="https://www.theguardian.com/technology/2022/aug/16/ask-all-the-time-why-do-i-need-this-how-to-stop-your-vacuum-from-spying-on-you" rel="noopener" target="_blank">https://www.theguardian.com/technology/2022/aug/16/ask-all-the-time-why-do-i-need-this-how-to-stop-your-vacuum-from-spying-on-you</a></p>
+<p class="ref">¹⁴ European Commission（2024-01-29）— "Statement by Executive Vice-President Vestager"
+<a href="https://ec.europa.eu/commission/presscorner/api/files/document/print/pl/statement_24_521/STATEMENT_24_521_EN.pdf" rel="noopener" target="_blank">https://ec.europa.eu/commission/presscorner/api/files/document/print/pl/statement_24_521/STATEMENT_24_521_EN.pdf</a></p>
+<p class="ref">¹⁵ Reuters（2024-01-29）— "Amazon and iRobot abandon merger deal"
+<a href="https://www.reuters.com/markets/deals/amazon-irobot-abandon-merger-face-eu-opposition-2024-01-29/" rel="noopener" target="_blank">https://www.reuters.com/markets/deals/amazon-irobot-abandon-merger-face-eu-opposition-2024-01-29/</a></p>
+<p class="ref">¹⁶ BBC News（2024-01-29）— "Amazon-iRobot deal scrapped after EU challenge"
+<a href="https://www.bbc.com/news/business-68131819" rel="noopener" target="_blank">https://www.bbc.com/news/business-68131819</a></p>
+<p class="ref">¹⁷ AP News（2024-01-29）— "Amazon Roomba bid is called off"
+<a href="https://apnews.com/article/amazon-roomba-european-union-antitrust-decision-53bc9fdc780fa312cf6d83e2fdc96351" rel="noopener" target="_blank">https://apnews.com/article/amazon-roomba-european-union-antitrust-decision-53bc9fdc780fa312cf6d83e2fdc96351</a></p>
+<p class="ref">¹⁸ ABC News（2024-10-05）— "Insecure Deebot robot vacuums collect photos and audio to train AI"
+<a href="https://www.abc.net.au/news/2024-10-05/robot-vacuum-deebot-ecovacs-photos-ai/104416632" rel="noopener" target="_blank">https://www.abc.net.au/news/2024-10-05/robot-vacuum-deebot-ecovacs-photos-ai/104416632</a></p>
+<p class="ref">¹⁹ Sami 等（2020）— "Spying with Your Robot Vacuum Cleaner"
+<a href="https://www.cs.umd.edu/~nirupam/images/2_publication/papers/LidarPhone_SenSys20_nirupam.pdf" rel="noopener" target="_blank">https://www.cs.umd.edu/~nirupam/images/2_publication/papers/LidarPhone_SenSys20_nirupam.pdf</a></p>
+<p class="ref">²⁰ TechCrunch（2024-08-09）— "Ecovacs robots can be hacked to spy on owners"
+<a href="https://techcrunch.com/2024/08/09/ecovacs-home-robots-can-be-hacked-to-spy-on-their-owners-researchers-say/" rel="noopener" target="_blank">https://techcrunch.com/2024/08/09/ecovacs-home-robots-can-be-hacked-to-spy-on-their-owners-researchers-say/</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
