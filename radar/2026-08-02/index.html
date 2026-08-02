@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI RADAR DAILY 2026-08-02 — AI Agent基建與工作流爆發 · 穗稻忠武的專欄</title>
+<meta name="description" content="今天的訊號很清楚：AI 開發正在離開「挑一個最強模型、接一段 API、做一個聊天介面」的早期階段，進入 Agent 基建與工作流競賽。這波熱門 repo 沒有集中在某個更會推理的模型，而是分布在多 Agent 框架、工具連接層、前端生成式介面、桌面工作室、程式碼審查，以及交易與跨平台資訊讀取。它們共同回答同一個問題：當">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/radar/2026-08-02/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI RADAR DAILY 2026-08-02 — AI Agent基建與工作流爆發">
+<meta property="og:description" content="今天的訊號很清楚：AI 開發正在離開「挑一個最強模型、接一段 API、做一個聊天介面」的早期階段，進入 Agent 基建與工作流競賽。這波熱門 repo 沒有集中在某個更會推理的模型，而是分布在多 Agent 框架、工具連接層、前端生成式介面、桌面工作室、程式碼審查，以及交易與跨平台資訊讀取。它們共同回答同一個問題：當">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/radar/2026-08-02/">
+<meta property="og:image" content="https://polarbear0827.github.io/My-Way/radar/2026-08-02/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI RADAR DAILY 2026-08-02 — AI Agent基建與工作流爆發", "description": "今天的訊號很清楚：AI 開發正在離開「挑一個最強模型、接一段 API、做一個聊天介面」的早期階段，進入 Agent 基建與工作流競賽。這波熱門 repo 沒有集中在某個更會推理的模型，而是分布在多 Agent 框架、工具連接層、前端生成式介面、桌面工作室、程式碼審查，以及交易與跨平台資訊讀取。它們共同回答同一個問題：當", "url": "https://polarbear0827.github.io/My-Way/radar/2026-08-02/", "datePublished": "2026-08-02", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://polarbear0827.github.io/My-Way/radar/2026-08-02/cover.png"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">AI</span><span class="tag">Agent</span><span class="tag">MCP</span><span class="tag">RAG</span></div>
+<h1>AI RADAR DAILY 2026-08-02 — AI Agent基建與工作流爆發</h1>
+<p class="byline"><time>2026-08-02</time></p>
+</div>
+<figure class="hero"><img src="https://polarbear0827.github.io/My-Way/radar/2026-08-02/cover.png" alt="AI RADAR DAILY 2026-08-02 — AI Agent基建與工作流爆發" loading="lazy"></figure>
+<p class="lead">今天的訊號很清楚：AI 開發正在離開「挑一個最強模型、接一段 API、做一個聊天介面」的早期階段，進入 Agent 基建與工作流競賽。這波熱門 repo 沒有集中在某個更會推理的模型，而是分布在多 Agent 框架、工具連接層、前端生成式介面、桌面工作室、程式碼審查，以及交易與跨平台資訊讀取。它們共同回答同一個問題：當 Agent 不只是回答問題，而是要讀資料、調工具、修改程式、提交變更，甚至形成交易判斷時，開發團隊如何讓它真正進入工作流程，同時保有可觀測性、權限邊界與人工覆核？</p>
+<p>這也是今天最值得注意的轉折。Agent 的能力上限不再只由模型決定，而是由整個執行堆疊決定：它能接觸哪些資料、可以使用哪些工具、每一步是否留下軌跡、出錯後能否回滾、最後誰負責批准。從 HKUDS/Vibe-Trading 到 agentscope-ai/agentscope，再到 CopilotKit/CopilotKit 與 ComposioHQ/composio，熱門專案正在把「能對話」改造成「能完成任務，但不能失控」。</p>
+<h2>今天的趨勢：AI Agent基建與工作流爆發</h2>
+<p>第一個洞察是，Agent 框架正在從提示詞編排工具，升級成可觀測的應用執行系統。agentscope-ai/agentscope 的熱度說明，開發者不再滿足於讓多個 Agent 彼此傳話；更重要的是掌握每一輪推理、工具呼叫、訊息流轉與任務結果。當 Agent 開始串接資料庫、瀏覽器、自動化工具與內部服務，失敗不再只是「回答品質不好」，而可能是錯誤寫入資料、誤發訊息或錯誤執行商業流程。可追蹤、可重現、可除錯，因而成為 Agent 系統的基本要求，而不是企業級附加功能。</p>
+<p>第二個洞察是，MCP 正迅速成為 Agent 的工具與資料連接語言。Panniantong/Agent-Reach、HKUDS/Vibe-Trading、ComposioHQ/composio 都指向同一件事：模型本身不會創造價值，能否安全而穩定地接上外部世界才會。過去每個團隊都得自行處理 OAuth、API 規格、權限、重試、資料格式與工具描述；現在 MCP 與工具整合平台正把這些重複成本壓縮成可重用介面。真正的差異化將從「我有沒有串 API」變成「我的 Agent 知不知道何時該呼叫工具、能不能帶著正確上下文執行，以及能否在高風險操作前停下來請人確認」。</p>
+<p>第三個洞察是，Agent 的安全治理開始落在工作流末端，而不只是模型輸出端。modem-dev/hunk 與 HexmosTech/git-lrc 都選擇切入程式碼變更的關鍵節點：diff 與 commit。這個位置非常務實。AI 寫程式的瓶頸已逐漸不是產生速度，而是人類能否理解、審核與信任它改了什麼。讓 Agent 直接修改大量檔案很容易；讓工程師在提交前快速辨識不必要變更、潛在漏洞、規格偏移與副作用，才是讓 AI coding 真正進入團隊流程的核心。今日熱門工具傳達的訊息是：未來的 AI 開發環境，不會只比誰生成得快，而會比誰能把生成結果變成可審核、可回滾、可承擔責任的變更。</p>
+<p>此外，CherryHQ/cherry-studio 與 CopilotKit/CopilotKit 的同日高熱，也顯示 Agent 體驗開始往兩端延伸：一端是個人桌面的多模型與自治工作室，另一端是產品端的 Agent-native 介面。前者讓使用者能組合模型、知識庫與助理；後者讓開發者能把 Agent 的中間狀態、可操作元件與生成式 UI 直接呈現在產品裡。Agent 不再只存在於對話框，而會成為應用程式的執行層與互動層。</p>
+<h2>Top 8 工具</h2>
+<h3>1. HKUDS/Vibe-Trading</h3>
+<p>評分：4.5｜分類：MCP</p>
+<p>HKUDS/Vibe-Trading 的定位很直接：讓使用者透過一個指令，建立具備量化交易、資料分析與回測能力的 AI 交易搭檔。它的價值不在於宣稱能預測市場，而在於把交易研究工作中高度零散的流程整合起來：取得資料、形成假設、建立策略、測試歷史表現、比較條件與輸出解讀。這類工作原本需要熟悉金融資料、Python、策略框架與回測概念，現在被包裝成 Agent 可調度的能力集合。</p>
+<p>評語：交易 Agent 是最容易被過度包裝的類別，但 Vibe-Trading 值得關注的原因，是它把焦點放在「研究與回測工作流」而不是神奇獲利承諾。若團隊把它視為投資決策輔助、研究加速器與策略驗證工具，會比把它當成自動提款機更有價值。真正需要檢驗的是資料品質、交易成本假設、樣本外測試與風險控制，而不是回測曲線是否漂亮。</p>
+<h3>2. modem-dev/hunk</h3>
+<p>評分：3.9｜分類：AI Agent</p>
+<p>modem-dev/hunk 是專為 Agent 改碼場景設計的終端 diff 審查器。隨著 Claude Code、Codex 類工具與各種 coding Agent 能一次修改多個模組，傳統逐檔檢查 git diff 的方式開始跟不上變更規模。hunk 的切入點不是替人決定程式碼是否正確，而是提供更適合審視 AI 變更的終端工作流，協助開發者快速定位修改範圍、理解變更上下文，並在提交前建立最後一道人工判斷。</p>
+<p>評語：這個 repo 反映了 AI coding 下一階段的真問題。工程團隊不是缺少能產生程式碼的工具，而是缺少能處理「AI 一次產生太多變更」的審查介面。hunk 的價值在於把焦點從生成轉回驗證。對個人開發者而言，它能降低盲目接受 Agent 修改的風險；對團隊而言，它則有機會成為 AI 輔助開發流程中的品質閘門。</p>
+<h3>3. Panniantong/Agent-Reach</h3>
+<p>評分：5.1｜分類：MCP</p>
+<p>Panniantong/Agent-Reach 主打以單一 CLI，讓 Agent 免費讀取主流社群與影音平台內容。這是一個看似簡單、實際上很關鍵的能力：許多資訊並不存在於正式 API、搜尋引擎摘要或乾淨的 RSS 中，而是散落在社群貼文、討論串、影片字幕、留言與即時話題裡。對研究型 Agent、內容情報 Agent、競品追蹤 Agent 與市場洞察 Agent 而言，能否跨平台取得足夠原始訊號，直接決定分析是否可靠。</p>
+<p>評語：Agent-Reach 的吸引力在於降低資料取得門檻，但也因此需要特別重視來源可靠性、平台規範、內容變動與雜訊過濾。「讀得到」不等於「知道真相」。將它接入 Agent 後，建議加入來源標示、時間戳、交叉驗證與引用鏈路，避免 Agent 把熱門貼文、轉述內容或過時影片當成事實。資訊觸及範圍擴大後，判讀紀律必須同步升級。</p>
+<h3>4. HexmosTech/git-lrc</h3>
+<p>評分：3.8｜分類：Developer Tool</p>
+<p>HexmosTech/git-lrc 是一個在 Git 提交當下觸發的免費微型 AI 審查工具。它的設計思路非常務實：不要要求團隊額外開一套平台，也不要讓審查流程變成冗長儀式，而是把 AI 檢查放進開發者已經存在的 commit 節點。當工程師準備提交變更時，工具可對差異內容提出簡短檢視，協助發現常見問題，例如未使用程式碼、可疑邏輯、命名不一致、遺漏測試或明顯安全風險。</p>
+<p>評語：git-lrc 不會取代完整 code review，也不應被視為自動放行機制；它更像是廉價且低摩擦的「提交前第二雙眼睛」。這類工具最適合處理人類容易因趕時間而略過的基本錯誤，讓資深工程師把注意力留給架構、商業邏輯與系統性風險。若能和 CI、測試覆蓋率、靜態分析與 PR 審查結合，效果會比單獨使用更完整。</p>
+<h3>5. agentscope-ai/agentscope</h3>
+<p>評分：5.7｜分類：MCP</p>
+<p>agentscope-ai/agentscope 是今日最具代表性的 Agent 框架之一，核心訴求是讓多 Agent 應用具備可觀測性與可信賴性。多 Agent 系統的問題從來不只是「多個角色一起工作」；真正困難的是任務如何拆分、上下文如何傳遞、工具如何呼叫、失敗如何重試，以及出現錯誤時如何追查責任路徑。AgentScope 將開發焦點拉回這些工程化問題，讓開發者有機會把 Agent 行為視為可監控系統，而不是不可預測的黑盒子。</p>
+<p>評語：評分 5.7 的背後，是市場對可觀測 Agent 基建的強烈需求。企業真正採用 Agent 時，最先問的往往不是模型有多聰明，而是「它剛才做了什麼」、「為何這樣做」、「出事時怎麼停止」。AgentScope 類框架的戰略價值，在於提供把實驗性 Agent 轉成可營運服務的基礎。若你的專案需要多角色協作或長任務執行，這比單純堆疊 prompt 更值得優先投資。</p>
+<h3>6. CherryHQ/cherry-studio</h3>
+<p>評分：5.7｜分類：AI Agent</p>
+<p>CherryHQ/cherry-studio 把多模型聊天、自治 Agent 與大量助理能力整合為桌面工作室。它代表另一條值得注意的產品路線：不是所有 Agent 都要先進入企業系統，有很大一部分需求來自進階個人使用者，他們需要在本機或桌面環境中管理不同模型、提示詞、知識庫、工作助理與任務流程。當模型選擇越來越多、資料來源越來越分散，單一對話視窗已不足以承載個人的 AI 工作台。</p>
+<p>評語：Cherry Studio 的優勢在於把複雜的模型與 Agent 能力封裝成可探索的使用者體驗。對不想自行搭建整套 Agent 平台的使用者來說，桌面工作室是很合理的入口。不過，功能多不等於工作流成熟；使用前仍應釐清模型資料流向、外部工具權限、助理設定是否可匯出，以及敏感資料是否可能離開預期環境。個人生產力工具越強，資料治理越不能靠直覺。</p>
+<h3>7. CopilotKit/CopilotKit</h3>
+<p>評分：5.7｜分類：AI Agent</p>
+<p>CopilotKit 聚焦在 Agent-native 應用與 Generative UI 前端堆疊。它處理的是 Agent 產品化最常被低估的一層：使用者不應只看到一段文字答案，而應能看見 Agent 正在做什麼、如何取得資訊、哪些步驟可調整，以及下一步可以批准、取消或介入什麼。Generative UI 的意義不是讓頁面看起來更炫，而是讓 Agent 把任務狀態轉譯為可理解、可操作的互動介面。</p>
+<p>評語：這個 repo 的高熱度證明，Agent 的競爭將逐漸從模型能力移向互動設計。當 Agent 能代表使用者執行動作時，純聊天介面很快會遇到限制：它難以呈現計畫、難以預覽結果，也難以建立信任。CopilotKit 的方向值得肯定，因為它把人保留在迴路中。好的 Agent UI 應該讓使用者感到自己在駕駛，而不是坐在一台看不見控制台的自動車裡。</p>
+<h3>8. ComposioHQ/composio</h3>
+<p>評分：5.7｜分類：MCP</p>
+<p>ComposioHQ/composio 提供大規模工具整合能力，讓 Agent 能連接上千種服務，將自然語言意圖轉換成真實動作。對開發團隊而言，真正難的通常不是讓模型說「我可以幫你建立工單」，而是讓它正確登入服務、取得合適權限、辨識所需欄位、執行操作、處理失敗並留下稽核紀錄。Composio 的角色就是把大量外部服務的接入成本標準化，讓 Agent 開發者不必從零處理每一個整合。</p>
+<p>評語：工具數量不是唯一指標，但廣泛的整合覆蓋確實會加速 Agent 原型落地。關鍵在於，工具越多，權限面積也越大。團隊導入時應避免給 Agent 過度寬泛的帳號授權，應採用最小權限、明確操作範圍、敏感動作確認、可撤銷憑證與審計日誌。Composio 能讓 Agent 更快「做事」，而成熟團隊要同時確保它不會更快「做錯事」。</p>
+<h2>今日首選：HKUDS/Vibe-Trading</h2>
+<p>今天的 Best Pick 是 HKUDS/Vibe-Trading。原因不是交易題材本身更熱門，而是它把 Agent 的完整價值鏈呈現得最具體：從資料接入、分析推理、策略形成、回測驗證，到最終輸出可被人類檢視的研究結論。這是一個比一般聊天助理更有挑戰的場景，因為金融市場具備高雜訊、高時效、高風險與高度事後解釋誘惑。若一個 Agent 能在這樣的工作流中提供可追蹤、可比較、可質疑的產出，它的設計思路也能遷移到供應鏈、行銷、營運與競品研究等領域。</p>
+<p>Vibe-Trading 最值得肯定的是「一指令打造交易搭檔」背後的工作流抽象。它降低的不是投資風險，而是研究與驗證的操作摩擦。使用者可以更快把模糊想法轉為可測試假設，例如某種指標組合、資產篩選條件、持倉規則或再平衡頻率，再透過回測看見策略在不同期間的表現。這種能力的正確使用方式，是加速否定錯誤假設，而不是挑選一條最好看的歷史績效曲線。</p>
+<p>也因此，Vibe-Trading 的實務價值取決於使用者是否建立足夠嚴謹的驗證流程。至少應注意四件事：第一，回測資料是否包含除權息、下市股票、停牌與交易成本等現實條件；第二，策略是否避開前視偏誤與倖存者偏誤；第三，是否保留樣本外資料與走勢不同的市場週期做驗證；第四，Agent 的結論能否連回具體資料、參數與程式邏輯。沒有這些條件，再流暢的 Agent 也可能只是更有效率地產生過度擬合。</p>
+<p>從產品觀點看，Vibe-Trading 也是「垂直 Agent」的好範例。通用 Agent 擅長泛用協助，但在高專業領域，真正的護城河來自內建領域工作流、評估標準與風險限制。交易不是唯一方向；法律研究、資安事件處理、醫療文獻整理、採購分析都會出現類似模式。未來最有競爭力的 Agent 產品，未必是最會聊天的那一個，而是最知道如何把專業任務拆解、驗證與交付的那一個。</p>
+<h2>評分方式說明</h2>
+<p>AI Radar 採用固定評分模板，目的是衡量 repo 在當日開源生態中的綜合訊號，而不是對專案做絕對品質排名。評分主要觀察五個面向：第一，市場關注度，包括社群討論、收藏與傳播速度；第二，技術新穎性，評估是否提出新的架構、互動方式或工作流切入點；第三，實用性，判斷開發者能否在合理成本下實際導入；第四，生態系整合能力，特別關注 MCP、主流模型、工具服務與開發流程的連接程度；第五，長期可持續性，包括文件、維護活躍度、擴充空間與治理風險。</p>
+<p>分數高不代表適合所有團隊，也不保證能直接進入正式環境。評分反映的是「值得優先研究的程度」，不是採購建議。導入前仍應依照自身需求檢查授權條款、資料安全、權限模型、部署方式、社群維護狀況與相依套件風險。尤其是具備外部工具操作能力的 Agent，功能越完整，越需要完整的測試、審計與人工核准設計。</p>
+<h2>結語</h2>
+<p>今天的 AI Radar 不只是八個熱門 repo 的清單，而是一張 Agent 產業往工程化邁進的地圖。從 AgentScope 的可觀測性、Composio 的工具行動能力，到 hunk 與 git-lrc 的變更審查，再到 Vibe-Trading 的垂直工作流，下一輪競爭重點已經浮現：誰能讓 Agent 安全地接入真實工作，並讓人類始終看得懂、管得住、接得回來。若你正在打造 Agent 產品，現在最該補上的未必是另一個模型，而是工具權限、執行軌跡、審核節點與可回滾流程。</p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
