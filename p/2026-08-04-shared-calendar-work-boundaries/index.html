@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>行事曆公開後的工作邊界 · 穗稻忠武的專欄</title>
+<meta name="description" content="當同事開啟「找時間」頁面，畫面上的一格格色塊看似只是在安排會議，卻也把一個人何時忙碌、何時可被打斷，變成組織可以閱讀的訊號。混合工作常靠 Google Calendar、Outlook 等工具協調；但行事曆的預設分享、管理者權限與「私人」設定，讓便利與可見性同時進入日常。本文不把共享行事曆等同監控，而是檢視它何時是協作">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-08-04-shared-calendar-work-boundaries/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="行事曆公開後的工作邊界">
+<meta property="og:description" content="當同事開啟「找時間」頁面，畫面上的一格格色塊看似只是在安排會議，卻也把一個人何時忙碌、何時可被打斷，變成組織可以閱讀的訊號。混合工作常靠 Google Calendar、Outlook 等工具協調；但行事曆的預設分享、管理者權限與「私人」設定，讓便利與可見性同時進入日常。本文不把共享行事曆等同監控，而是檢視它何時是協作">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-08-04-shared-calendar-work-boundaries/">
+<meta property="og:image" content="https://live.staticflickr.com/2837/33572876081_7618124453_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "行事曆公開後的工作邊界", "description": "當同事開啟「找時間」頁面，畫面上的一格格色塊看似只是在安排會議，卻也把一個人何時忙碌、何時可被打斷，變成組織可以閱讀的訊號。混合工作常靠 Google Calendar、Outlook 等工具協調；但行事曆的預設分享、管理者權限與「私人」設定，讓便利與可見性同時進入日常。本文不把共享行事曆等同監控，而是檢視它何時是協作", "url": "https://polarbear0827.github.io/My-Way/p/2026-08-04-shared-calendar-work-boundaries/", "datePublished": "2026-08-04", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/2837/33572876081_7618124453_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>行事曆公開後的工作邊界</h1>
+<p class="byline"><time>2026-08-04</time></p>
+</div>
+
+<p class="lead">當同事開啟「找時間」頁面，畫面上的一格格色塊看似只是在安排會議，卻也把一個人何時忙碌、何時可被打斷，變成組織可以閱讀的訊號。混合工作常靠 Google Calendar、Outlook 等工具協調；但行事曆的預設分享、管理者權限與「私人」設定，讓便利與可見性同時進入日常。本文不把共享行事曆等同監控，而是檢視它何時是協作基礎、何時又可能使工作邊界變得模糊。¹²</p>
+<figure><img src="https://live.staticflickr.com/2837/33572876081_7618124453_b.jpg" alt="桌上紙本行事曆與工作規劃｜來源：freestocks.org / Flickr（CC0）" loading="lazy"><figcaption>行事曆原本是協調時間的工具；數位化後，同一個排程也可能成為他人判斷工作狀態的介面。</figcaption></figure>
+<h2>一格「忙碌」到底透露了什麼</h2>
+<p>共享行事曆不是單一功能，而是一組權限。Google 說明，「僅看得到忙碌／空閒」的使用者可以知道一段時間是否被占用，卻看不到活動名稱或細節；較高權限則可看見名稱、時間、地點與描述。² Microsoft Graph 對 Outlook 的分類也從 `freeBusyRead`、可看標題與地點的 `limitedRead`，延伸到可讀取非私人活動全部細節的 `read`，以及可編輯或代理的權限。⁶</p>
+<p>這些差異影響的不是抽象的隱私偏好。醫療預約、績效面談、求職聯絡、照顧家人或專案代號，可能都會被人從標題、位置、參與者或重複出現的時段推知。把活動標成私人，通常可隱藏細節，但仍可能留下「Busy」色塊；Google 也提醒，受邀者把活動複製到自己的行事曆後，該副本的可見範圍還會受受邀者自身分享設定影響。³⁵</p>
+<figure><img src="https://live.staticflickr.com/7173/6812484625_32b8378cd9_b.jpg" alt="會議與日期規劃的桌面場景｜來源：photosteve101 / Flickr（CC BY）" loading="lazy"><figcaption>「看得到空檔」與「看得到事情」之間不是技術細節，而是組織如何理解可用性的界線。</figcaption></figure>
+<h2>共享的效率，來自減少來回確認</h2>
+<p>從協作一方看，行事曆公開有明確用途：同事可以避開衝突時段、安排跨時區會議，行政人員也能代為處理邀請。Outlook 的代理權限甚至允許受託者代表行事曆主人收取與回覆會議請求；這在主管支援、團隊協調或照護情境中可以減少等待。⁶⁷ Google Workspace 管理者還能設定組織內與外部分享的上限，將外部分享限制在只看忙碌／空閒，或允許更完整資訊。⁴</p>
+<p>因此，問題不宜被簡化成「公開一定不好」。行事曆研究指出，知識工作者往往把開放行事曆理解為透明與協作；研究中的受訪者也確實用它來協調工作。⁸ 金融、醫療或資安敏感部門另有留存紀錄、資安控管與工作安全需求。Reuters 對遠距監測的法律整理同樣指出，雇主可能為合規、資安、效率或安全而使用位置、系統使用與生產力工具。¹⁵</p>
+<p>真正要問的是：哪一種目的需要哪一種資料。知道某人週三下午不可安排會議，通常只需忙碌狀態；若要看見標題、地點、描述與參與者，則應有更具體的工作理由、明確權限及可回溯的規則。</p>
+<figure><img src="https://live.staticflickr.com/4150/4832655997_065e18bd29_b.jpg" alt="筆電旁的協作與工作文件｜來源：bengrey / Flickr（CC BY-SA）" loading="lazy"><figcaption>共享行事曆能減少反覆詢問，但所需資訊的最小範圍，應隨協作任務而定。</figcaption></figure>
+<h2>「私密」不等於不被看見</h2>
+<p>最容易造成誤解的是介面上的「私人」。Google 的說明指出，私人且標為忙碌的活動，對具部分編輯權限者仍呈現忙碌區塊；只有取得更高權限的人能看見細節。³ Microsoft 的文件也列出：代理人可被另外授予查看私人活動的權限。⁶ 這代表使用者不能只看活動的鎖頭圖示，還要知道整個行事曆對組織、群組、個別同事與代理人的設定。 英國倫敦政經學院一項針對加拿大軟體工作者的質性研究發現，多數受訪者的專業行事曆設為開放；非資深員工把行事曆關起來，可能被解讀成不透明，而資深者的隱私又較容易被視為合理。研究也指出，即使設定為私密，忙碌輪廓仍可見，部分高階人員仍可能看見內容。⁸ 這是特定樣本的訪談研究，不能直接外推到所有公司；但它提示，權限設定是在組織權力關係中被理解，而非只有個人偏好。</p>
+<figure><img src="https://live.staticflickr.com/103/253380341_41d0586d93_b.jpg" alt="桌面行事曆與筆記工具｜來源：greggman / Flickr（CC BY）" loading="lazy"><figcaption>私人活動可隱藏主旨，卻未必隱藏「這段時間被占用」；這正是許多使用者忽略的差別。</figcaption></figure>
+<h2>從排程到評價：資料用途會漂移嗎</h2>
+<p>行事曆本身未必用於考核，但它與打卡、登入、訊息狀態、門禁與專案工具放在一起時，可能形成更完整的工作輪廓。2023 年 Reuters 報導，法國巴黎銀行曾告知倫敦員工，會比對進出門禁與公司網路登入，以追蹤到辦公室工作的要求；該行在備忘錄中稱此舉與空間需求及團隊間公平有關，員工不能選擇退出。¹⁶ 2025 年 Reuters 也報導，美國環保署計畫以門禁刷卡、筆電登入等資料檢視到辦公室情況。¹⁷ 兩案各有其特定制度背景，不能據此推定所有公司都以行事曆做考核，但它們說明：原本用於營運的時間與出勤資料，可能被接到管理決策。</p>
+<p>歐盟聯合研究中心 2021 年檢視 398 篇文獻後指出，電子監測的設計、用途、透明度與組織環境都會影響心理社會風險；資料蒐集若沒有明確目的，可能與公平感下降、滿意度降低與壓力增加有關。¹¹ 加拿大一項以 3,508 名工作者為樣本的研究，也發現較高的監控感受與較低自主性、更高工作壓力與隱私侵害感有關，並透過這些因素與心理困擾、工作滿意度產生關聯。¹⁴ 這些都是關聯與機制研究，並不表示任何共享行事曆都會造成傷害。</p>
+<figure><img src="https://live.staticflickr.com/2261/2430152247_be2e06ecc0_b.jpg" alt="共同規劃的會議空間｜來源：clarkbw / Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>當行事曆資料被連結到門禁、登入或訊息狀態，原本的排程功能便可能被賦予不同管理意義。</figcaption></figure>
+<h2>臺灣的規範：目的、告知與最小侵害</h2>
+<p>臺灣勞動部對科技管理工具的提醒，涵蓋電子郵件監控、電腦側錄、GPS、RFID、生物辨識與大數據分析，指出這些做法涉及個人資料的蒐集、處理與利用。勞動部建議雇主先確認特定目的與法規要件、事前與勞工溝通、妥善保存資料且不作目的外利用，並衡量是否已選擇侵害最小的方式。⁹</p>
+<p>個人資料保護法把可直接或間接識別個人的資料納入保護範圍，並規定蒐集、處理或利用不得逾越特定目的必要範圍，且必須與目的具有正當合理關聯。¹⁰ 因此，本文不能把「忙碌狀態」一概斷言為在任何情境都受同一法律評價：是否構成個資、誰可識別、資料如何結合使用，以及具體工作目的，都要依個案判斷。不過，當排程揭露足以辨識個人生活、健康、職務或社會活動的資訊時，組織更應說明蒐集與使用範圍。</p>
+<p>加拿大隱私專員的工作場所指引也提出相近原則：雇主可能有薪資、安全、管理與資安需要，但監控應限於具體、適當目的，採取侵害較小的方式，且要讓員工知道監控的性質、範圍、理由與可能後果。¹³ 這不是臺灣法的直接適用內容，而可作為比較性原則。</p>
+<figure><img src="https://live.staticflickr.com/2857/10870502265_b5c8801e97.jpg" alt="工作桌上的計畫與時間安排｜來源：romanlily / Flickr（CC BY-NC-ND）" loading="lazy"><figcaption>臺灣勞動部強調目的特定、事前溝通與避免目的外利用；行事曆權限是這些原則可落實的具體場域。</figcaption></figure>
+<h2>不同立場：管理可見性與勞工自主</h2>
+<p>管理者可能主張，可見的空檔有助減少空會議、協調跨組工作與分配支援，尤其在混合工作中不再能靠辦公室走動確認彼此是否在場。BBC 對「生產力焦慮」的報導引述 Microsoft 2022 年調查：85% 領導者說，混合工作使他們難以確信員工是否有生產力；同篇也引述專家主張，知識工作更適合以成果與溝通，而非可見工時來管理。¹⁹ 這是一份公司調查與專家觀點，不能當成所有職場的實測結論。</p>
+<p>勞工與隱私倡議者則擔心，低成本、持續性的可見性會把「可被找到」混同為「有貢獻」。BBC 2025 年報導英國研究者警告，新技術使監看更密集，可能影響隱私、自主與壓力；報導亦提到政府擬讓新監測技術接受諮商與協商。¹⁸ 《金融時報》曾報導，部分雇主確實將監測從工時轉向產出，但同時也有勞工團體擔心資料被用於紀律與評價。²⁰</p>
+<p>目前沒有一個通用的「最佳公開程度」。工作性質、法規、資安義務與團隊規模都會改變取捨。較能同時回應兩方的做法，往往不是把所有細節一律關閉或一律打開，而是先區分協調所需資料、考核資料與敏感內容，並讓員工理解與參與規則。</p>
+<figure><img src="https://live.staticflickr.com/35/65065422_705780365e_b.jpg" alt="紙本日期表與工作流程｜來源：Esthr / Flickr（CC BY-NC）" loading="lazy"><figcaption>爭點不只在「要不要共享」，還在共享的範圍是否與協作需求相稱、規則是否能被理解與討論。</figcaption></figure>
+<h2>可操作的檢查：先看權限，再談文化</h2>
+<p>對個人使用者而言，第一步不是假設「私人」就萬無一失，而是逐一檢查：組織預設能看見什麼、特定群組或主管是否有更高權限、代理人可否看私人活動、個別事件是否包含不必要的敏感標題、邀請是否會把內容帶到另一份行事曆。Google 與 Microsoft 都提供從忙碌狀態到完整細節、編輯與代理的多層權限；設定應對照實際協作需求。²³⁶ 對組織而言，較重要的是在上線或變更規則前回答四個可稽核問題：蒐集哪些欄位？誰可見、保存多久？是否會與門禁、登入或績效資料合併？員工能否提出疑問或更正？國際勞工組織在勞工資料權利簡報中，將資料生命週期與集體行動列為重點；近年的 ILO 工作報告也指出，勞工在數位化工作場域面對權力不對等與保護落差。¹²²¹</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 如果共同找時間只需要色塊，就不必把會議主旨變成常態可見資訊；如果因法令或資安確有更高可視需求，公開說明用途、存取者、保留期限與申訴管道，比把可見性包裝成抽象的「透明」更有助於建立信任。共享行事曆並不必然是監控工具，但它提醒我們：工作數位化後，最普通的介面也可能重新定義一個人有多少時間可以不被解釋。</p>
+<figure><img src="https://live.staticflickr.com/4099/4827013488_60953318d3_b.jpg" alt="行事曆上的工作規劃與空白時間｜來源：Generationbass.com / Flickr（CC BY）" loading="lazy"><figcaption>把權限、目的與保存規則講清楚，才可能讓協作工具服務安排，而非讓安排成為持續自證。</figcaption></figure>
+<h2>結語：時間不是只屬於效率的資料</h2>
+<p>共享行事曆讓團隊不必為每一次會議往返十封訊息，這是它的實際價值；同時，它把忙碌、可用與不在場轉譯為可被搜尋的訊號。平台已提供多種權限與私人設定，法律與監管指引也反覆提醒目的、告知、比例與最小侵害。²⁴⁶⁹¹⁰</p>
+<p>對日常工作者來說，定期檢查權限與活動標題，是數位衛生的一部分；對主管與管理者來說，真正需要被管理的，未必是每一格時間，而是工作目標、資源與溝通。當一個人必須不斷向日曆證明自己正在工作時，團隊也應回頭問：我們是在協調彼此，還是在把可見性誤當成信任？</p>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ Google Calendar Help（無日期）— "Choose what others can do with your calendar"
+<a href="https://support.google.com/calendar/answer/15716974" rel="noopener" target="_blank">https://support.google.com/calendar/answer/15716974</a></p>
+<p class="ref">² Google Calendar Help（無日期）— "Control access to a shared calendar"
+<a href="https://support.google.com/calendar/answer/15716974" rel="noopener" target="_blank">https://support.google.com/calendar/answer/15716974</a></p>
+<p class="ref">³ Google Calendar Help（無日期）— "Change event &amp; task visibility on your calendar"
+<a href="https://support.google.com/calendar/answer/34580" rel="noopener" target="_blank">https://support.google.com/calendar/answer/34580</a></p>
+<p class="ref">⁴ Google Workspace Admin Help（無日期）— "Set Google Calendar sharing options"
+<a href="https://support.google.com/a/answer/60765" rel="noopener" target="_blank">https://support.google.com/a/answer/60765</a></p>
+<p class="ref">⁵ Google for Developers（無日期）— "Calendar sharing"
+<a href="https://developers.google.com/workspace/calendar/api/concepts/sharing" rel="noopener" target="_blank">https://developers.google.com/workspace/calendar/api/concepts/sharing</a></p>
+<p class="ref">⁶ Microsoft Learn（無日期）— "Share or delegate a calendar in Outlook"
+<a href="https://learn.microsoft.com/en-us/graph/outlook-share-or-delegate-calendar" rel="noopener" target="_blank">https://learn.microsoft.com/en-us/graph/outlook-share-or-delegate-calendar</a></p>
+<p class="ref">⁷ Microsoft Support（無日期）— "Share and access a calendar with edit or delegate permissions in Outlook"
+<a href="https://support.microsoft.com/en-us/outlook/sharing/share-and-access-a-calendar-with-edit-or-delegate-permissions-in-outlook" rel="noopener" target="_blank">https://support.microsoft.com/en-us/outlook/sharing/share-and-access-a-calendar-with-edit-or-delegate-permissions-in-outlook</a></p>
+<p class="ref">⁸ Journal of Computer-Mediated Communication（2023）— "Transparency, openness and privacy among software professionals"
+<a href="https://doi.org/10.1093/jcmc/zmad015" rel="noopener" target="_blank">https://doi.org/10.1093/jcmc/zmad015</a></p>
+<p class="ref">⁹ 勞動部（無日期）— "科技管理很便利，隱私保護要注意"
+<a href="https://www.mol.gov.tw/1607/1632/1640/51806/" rel="noopener" target="_blank">https://www.mol.gov.tw/1607/1632/1640/51806/</a></p>
+<p class="ref">¹⁰ 全國法規資料庫（2025）— "個人資料保護法"
+<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021" rel="noopener" target="_blank">https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021</a></p>
+<p class="ref">¹¹ European Commission Joint Research Centre（2021）— "Electronic Monitoring and Surveillance in the Workplace"
+<a href="https://publications.jrc.ec.europa.eu/repository/bitstream/JRC125716/jrc125716_electronic_monitoring_and_surveillance_in_the_workplace_final.pdf" rel="noopener" target="_blank">https://publications.jrc.ec.europa.eu/repository/bitstream/JRC125716/jrc125716_electronic_monitoring_and_surveillance_in_the_workplace_final.pdf</a></p>
+<p class="ref">¹² International Labour Organization（2022-11-28）— "Improving Workers' Data Rights"
+<a href="https://www.ilo.org/publications/improving-workers-data-rights" rel="noopener" target="_blank">https://www.ilo.org/publications/improving-workers-data-rights</a></p>
+<p class="ref">¹³ Office of the Privacy Commissioner of Canada（2025-05-29）— "Privacy in the Workplace"
+<a href="https://www.priv.gc.ca/en/privacy-topics/employers-and-employees/02_05_d_17/" rel="noopener" target="_blank">https://www.priv.gc.ca/en/privacy-topics/employers-and-employees/02_05_d_17/</a></p>
+<p class="ref">¹⁴ Social Currents（2024）— "Private Eyes, They See Your Every Move: Workplace Surveillance and Worker Well-Being"
+<a href="https://journals.sagepub.com/doi/10.1177/23294965241228874" rel="noopener" target="_blank">https://journals.sagepub.com/doi/10.1177/23294965241228874</a></p>
+<p class="ref">¹⁵ Reuters Practical Law（2022-12-06）— "High-tech, high-risk: potential pitfalls from remote employee monitoring"
+<a href="https://www.reuters.com/legal/legalindustry/high-tech-high-risk-potential-pitfalls-remote-employee-monitoring-2022-12-06/" rel="noopener" target="_blank">https://www.reuters.com/legal/legalindustry/high-tech-high-risk-potential-pitfalls-remote-employee-monitoring-2022-12-06/</a></p>
+<p class="ref">¹⁶ Reuters（2023-09-28）— "BNP Paribas to track UK staff to enforce office attendance"
+<a href="https://www.reuters.com/business/finance/bnp-paribas-track-uk-staff-enforce-office-attendance-2023-09-28/" rel="noopener" target="_blank">https://www.reuters.com/business/finance/bnp-paribas-track-uk-staff-enforce-office-attendance-2023-09-28/</a></p>
+<p class="ref">¹⁷ Reuters（2025-04-09）— "US EPA tracking card swipes and laptop logins to check staff office return"
+<a href="https://www.reuters.com/world/us/us-epa-tracking-card-swipes-laptop-logins-check-staff-office-return-memo-shows-2025-04-09/" rel="noopener" target="_blank">https://www.reuters.com/world/us/us-epa-tracking-card-swipes-laptop-logins-check-staff-office-return-memo-shows-2025-04-09/</a></p>
+<p class="ref">¹⁸ BBC News（2025-05-31）— "Report warns of right to privacy threats at work"
+<a href="https://www.bbc.com/news/articles/cwy61w2gg8go" rel="noopener" target="_blank">https://www.bbc.com/news/articles/cwy61w2gg8go</a></p>
+<p class="ref">¹⁹ BBC Worklife（2022-10-19）— "The productivity paranoia managers can't shake"
+<a href="https://www.bbc.com/worklife/article/20221014-the-productivity-paranoia-managers-cant-shake" rel="noopener" target="_blank">https://www.bbc.com/worklife/article/20221014-the-productivity-paranoia-managers-cant-shake</a></p>
+<p class="ref">²⁰ Financial Times（2021-09-22）— "Growth of staff monitoring software stokes debate over rights and morals"
+<a href="https://www.ft.com/content/ab61541a-b6c1-45cb-b9ad-f338ec08cf61" rel="noopener" target="_blank">https://www.ft.com/content/ab61541a-b6c1-45cb-b9ad-f338ec08cf61</a></p>
+<p class="ref">²¹ International Labour Organization（2025）— "Navigating workers' data rights in the digital age"
+<a href="https://webapps.ilo.org/static/english/intserv/working-papers/wp149/index.html" rel="noopener" target="_blank">https://webapps.ilo.org/static/english/intserv/working-papers/wp149/index.html</a></p>
+<p class="ref">²² The New York Times（2022-08-15）— "The Rise of the Worker Productivity Score"
+<a href="https://www.nytimes.com/interactive/2022/08/14/business/worker-productivity-tracking.html" rel="noopener" target="_blank">https://www.nytimes.com/interactive/2022/08/14/business/worker-productivity-tracking.html</a></p>
+<p class="ref">²³ BBC Worklife（2023-01-30）— "How worker surveillance is backfiring on employers"
+<a href="https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers" rel="noopener" target="_blank">https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers</a></p>
+<p class="ref">²⁴ Reuters（2023-04-25）— "Watched while working: Use of monitoring and AI in the workplace increases"
+<a href="https://www.reuters.com/legal/legalindustry/watched-while-working-use-monitoring-ai-workplace-increases-2023-04-25/" rel="noopener" target="_blank">https://www.reuters.com/legal/legalindustry/watched-while-working-use-monitoring-ai-workplace-increases-2023-04-25/</a></p>
+<h2>設定之外：誰能說明工作時間</h2>
+<p>行事曆權限之所以容易被忽略，是因為它常在帳號建立時就被管理者預設。Google Workspace 說明，管理者可以設定組織內主行事曆的預設分享程度，從完全不分享、只顯示忙碌／空閒，到分享全部資訊；使用者若沒有自行調整，該設定可套用於新舊行事曆。⁴ 此外，Google 也說超級管理員與具有管理行事曆權限的管理員，無論行事曆本身如何分享，都能檢視所有活動細節。⁴ 這是企業帳號的管理設計，不能拿來推論所有雇主都在日常查看內容；但它表示「我只分享給同事」並不完整描述資料存取結構。</p>
+<p>在 Outlook 生態裡，權限同樣包含超出一般同事檢視的角色。Microsoft 支援文件區分編輯者與代理人：兩者都可編輯，代理人還能代表本人收取、安排與回覆會議；只有在主人額外勾選時，代理人才可看私人活動。⁷ 對有行政支援或共同管理會議的人，這是必要功能；對使用者而言，卻也意味著「私人」的保護範圍取決於既有代理設定，而不是只取決於自己在事件裡按下的按鈕。</p>
+<figure><img src="https://live.staticflickr.com/3663/3430679845_ee1192c354.jpg" alt="筆記、行事曆與工作排程｜來源：dbking / Flickr（CC BY）" loading="lazy"><figcaption>了解組織預設、個別分享與代理權限，才能知道一段行程實際被誰看見。</figcaption></figure>
+<p>當公司要求共享行事曆時，一份可理解的說明至少應區分三件事：為了找會議空檔而顯示的忙碌狀態；為了支援或交接而必要的活動細節；以及可能被另作出勤、資源配置或績效分析的資料。把這三者混成「提升透明度」，會使使用者難以判斷自己實際同意什麼。臺灣勞動部的建議正把事前溝通、資料類別、利用範圍、保存管理與不得目的外利用放在同一組原則裡。⁹ 在資料治理上，還要避免以技術設定替代人事管理。當團隊真正的問題是會議過多、優先順序不清、跨部門等待或照顧責任難以安排時，要求員工把更多細節放進行事曆，未必能解決問題。EU 聯合研究中心的文獻回顧把「目的」「侵入性」「透明度」和組織氣候都列為影響後果的條件。¹¹ 換言之，同樣是忙碌色塊，在一個可討論、可調整、以成果為主的團隊裡，與在一個將每次空檔都視為待命義務的團隊裡，意義並不相同。</p>
+<p>對使用者可採取的務實做法，是先以不含敏感資訊的標題保留排程功能，將必要的健康、家庭與人事事項標成私人，再按季檢查「我的組織」「特定人員」「群組」與代理人清單；若公司規則不清楚，要求資安、人資或管理者用書面回答資料用途、可存取角色與保存期間。這不是要員工單獨承擔法律判斷，而是把模糊的介面選項轉換為可被組織回答的管理問題。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 最值得保護的或許不是每一筆行程的絕對祕密，而是人能在不必詳述私事的情況下，保有一段不可安排、不可被任意推論、也不必反覆自證的時間。共享行事曆可以是協作的公共基礎；前提是它的可見性不被默默擴充成對人格與投入的總評分。</p>
+<h2 class="refs-head">引用來源（續）</h2>
+<p class="ref">¹ Google Calendar Help（無日期）— "Choose what others can do with your calendar"
+<a href="https://support.google.com/calendar/answer/15716974" rel="noopener" target="_blank">https://support.google.com/calendar/answer/15716974</a></p>
+<p class="ref">² Google Calendar Help（無日期）— "Control access to a shared calendar"
+<a href="https://support.google.com/calendar/answer/15716974" rel="noopener" target="_blank">https://support.google.com/calendar/answer/15716974</a></p>
+<p class="ref">³ Google Calendar Help（無日期）— "Change event &amp; task visibility on your calendar"
+<a href="https://support.google.com/calendar/answer/34580" rel="noopener" target="_blank">https://support.google.com/calendar/answer/34580</a></p>
+<p class="ref">⁴ Google Workspace Admin Help（無日期）— "Set Google Calendar sharing options"
+<a href="https://support.google.com/a/answer/60765" rel="noopener" target="_blank">https://support.google.com/a/answer/60765</a></p>
+<p class="ref">⁵ Google for Developers（無日期）— "Calendar sharing"
+<a href="https://developers.google.com/workspace/calendar/api/concepts/sharing" rel="noopener" target="_blank">https://developers.google.com/workspace/calendar/api/concepts/sharing</a></p>
+<p class="ref">⁶ Microsoft Learn（無日期）— "Share or delegate a calendar in Outlook"
+<a href="https://learn.microsoft.com/en-us/graph/outlook-share-or-delegate-calendar" rel="noopener" target="_blank">https://learn.microsoft.com/en-us/graph/outlook-share-or-delegate-calendar</a></p>
+<p class="ref">⁷ Microsoft Support（無日期）— "Share and access a calendar with edit or delegate permissions in Outlook"
+<a href="https://support.microsoft.com/en-us/outlook/sharing/share-and-access-a-calendar-with-edit-or-delegate-permissions-in-outlook" rel="noopener" target="_blank">https://support.microsoft.com/en-us/outlook/sharing/share-and-access-a-calendar-with-edit-or-delegate-permissions-in-outlook</a></p>
+<p class="ref">⁸ Journal of Computer-Mediated Communication（2023）— "Transparency, openness and privacy among software professionals"
+<a href="https://doi.org/10.1093/jcmc/zmad015" rel="noopener" target="_blank">https://doi.org/10.1093/jcmc/zmad015</a></p>
+<p class="ref">⁹ 勞動部（無日期）— "科技管理很便利，隱私保護要注意"
+<a href="https://www.mol.gov.tw/1607/1632/1640/51806/" rel="noopener" target="_blank">https://www.mol.gov.tw/1607/1632/1640/51806/</a></p>
+<p class="ref">¹⁰ 全國法規資料庫（2025）— "個人資料保護法"
+<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021" rel="noopener" target="_blank">https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021</a></p>
+<p class="ref">¹¹ European Commission Joint Research Centre（2021）— "Electronic Monitoring and Surveillance in the Workplace"
+<a href="https://publications.jrc.ec.europa.eu/repository/bitstream/JRC125716/jrc125716_electronic_monitoring_and_surveillance_in_the_workplace_final.pdf" rel="noopener" target="_blank">https://publications.jrc.ec.europa.eu/repository/bitstream/JRC125716/jrc125716_electronic_monitoring_and_surveillance_in_the_workplace_final.pdf</a></p>
+<p class="ref">¹² International Labour Organization（2022-11-28）— "Improving Workers' Data Rights"
+<a href="https://www.ilo.org/publications/improving-workers-data-rights" rel="noopener" target="_blank">https://www.ilo.org/publications/improving-workers-data-rights</a></p>
+<p class="ref">¹³ Office of the Privacy Commissioner of Canada（2025-05-29）— "Privacy in the Workplace"
+<a href="https://www.priv.gc.ca/en/privacy-topics/employers-and-employees/02_05_d_17/" rel="noopener" target="_blank">https://www.priv.gc.ca/en/privacy-topics/employers-and-employees/02_05_d_17/</a></p>
+<p class="ref">¹⁴ Social Currents（2024）— "Private Eyes, They See Your Every Move: Workplace Surveillance and Worker Well-Being"
+<a href="https://journals.sagepub.com/doi/10.1177/23294965241228874" rel="noopener" target="_blank">https://journals.sagepub.com/doi/10.1177/23294965241228874</a></p>
+<p class="ref">¹⁵ Reuters Practical Law（2022-12-06）— "High-tech, high-risk: potential pitfalls from remote employee monitoring"
+<a href="https://www.reuters.com/legal/legalindustry/high-tech-high-risk-potential-pitfalls-remote-employee-monitoring-2022-12-06/" rel="noopener" target="_blank">https://www.reuters.com/legal/legalindustry/high-tech-high-risk-potential-pitfalls-remote-employee-monitoring-2022-12-06/</a></p>
+<p class="ref">¹⁶ Reuters（2023-09-28）— "BNP Paribas to track UK staff to enforce office attendance"
+<a href="https://www.reuters.com/business/finance/bnp-paribas-track-uk-staff-enforce-office-attendance-2023-09-28/" rel="noopener" target="_blank">https://www.reuters.com/business/finance/bnp-paribas-track-uk-staff-enforce-office-attendance-2023-09-28/</a></p>
+<p class="ref">¹⁷ Reuters（2025-04-09）— "US EPA tracking card swipes and laptop logins to check staff office return"
+<a href="https://www.reuters.com/world/us/us-epa-tracking-card-swipes-laptop-logins-check-staff-office-return-memo-shows-2025-04-09/" rel="noopener" target="_blank">https://www.reuters.com/world/us/us-epa-tracking-card-swipes-laptop-logins-check-staff-office-return-memo-shows-2025-04-09/</a></p>
+<p class="ref">¹⁸ BBC News（2025-05-31）— "Report warns of right to privacy threats at work"
+<a href="https://www.bbc.com/news/articles/cwy61w2gg8go" rel="noopener" target="_blank">https://www.bbc.com/news/articles/cwy61w2gg8go</a></p>
+<p class="ref">¹⁹ BBC Worklife（2022-10-19）— "The productivity paranoia managers can't shake"
+<a href="https://www.bbc.com/worklife/article/20221014-the-productivity-paranoia-managers-cant-shake" rel="noopener" target="_blank">https://www.bbc.com/worklife/article/20221014-the-productivity-paranoia-managers-cant-shake</a></p>
+<p class="ref">²⁰ Financial Times（2021-09-22）— "Growth of staff monitoring software stokes debate over rights and morals"
+<a href="https://www.ft.com/content/ab61541a-b6c1-45cb-b9ad-f338ec08cf61" rel="noopener" target="_blank">https://www.ft.com/content/ab61541a-b6c1-45cb-b9ad-f338ec08cf61</a></p>
+<p class="ref">²¹ International Labour Organization（2025）— "Navigating workers' data rights in the digital age"
+<a href="https://webapps.ilo.org/static/english/intserv/working-papers/wp149/index.html" rel="noopener" target="_blank">https://webapps.ilo.org/static/english/intserv/working-papers/wp149/index.html</a></p>
+<p class="ref">²² The New York Times（2022-08-15）— "The Rise of the Worker Productivity Score"
+<a href="https://www.nytimes.com/interactive/2022/08/14/business/worker-productivity-tracking.html" rel="noopener" target="_blank">https://www.nytimes.com/interactive/2022/08/14/business/worker-productivity-tracking.html</a></p>
+<p class="ref">²³ BBC Worklife（2023-01-30）— "How worker surveillance is backfiring on employers"
+<a href="https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers" rel="noopener" target="_blank">https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers</a></p>
+<p class="ref">²⁴ Reuters（2023-04-25）— "Watched while working: Use of monitoring and AI in the workplace increases"
+<a href="https://www.reuters.com/legal/legalindustry/watched-while-working-use-monitoring-ai-workplace-increases-2023-04-25/" rel="noopener" target="_blank">https://www.reuters.com/legal/legalindustry/watched-while-working-use-monitoring-ai-workplace-increases-2023-04-25/</a></p>
+<h2>會議文化如何放大一個色塊</h2>
+<p>行事曆的壓力也來自會議文化。當組織習慣把每個空白時段視為可被預約，使用者可能以更多「暫留」「專注時間」或模糊標題保留工作與休息；這些做法表面是個人技巧，背後卻反映排程規則不足。Google 的文件把工作區帳號的分享選項交給管理者與帳號權限，並允許管理者限制使用者可選擇的分享範圍。²⁴ 這讓制度選擇先於個人設定：若預設是完整內部可見，個人必須主動收緊；若預設只顯示忙碌，想共享細節的人才需要主動擴大。</p>
+<p>遠距與混合工作使這個差別更明顯。現場辦公時，同事可能透過座位、走廊碰面或口頭詢問來協調；數位行事曆則把這些零碎線索集中為可查詢的時間表。BBC 2022 年報導所稱的「生產力焦慮」，正是領導者和工作者對可見勞動有落差：同一篇報導引述 Microsoft 調查，領導者對混合工作生產力的信心低於工作者自我評估。¹⁹ 不過，這一數字來自企業調查，不足以判定個別公司的管理是否合理；它比較能說明，行事曆與線上狀態之所以容易被過度解讀，部分源於管理者對看不見的工作缺乏共同評量方式。</p>
+<figure><img src="https://live.staticflickr.com/3513/3204369496_14d4b0070b_b.jpg" alt="桌面上的日期規劃與工作安排｜來源：woodleywonderworks / Flickr（CC BY）" loading="lazy"><figcaption>若每一個空白格都被視為可預約，員工便可能以更多色塊保護專注與休息，協作工具反而增加協調成本。</figcaption></figure>
+<p>一個較可檢驗的替代方式，是把「何時能開會」和「如何評估工作」拆開。前者可以依靠忙碌狀態、團隊共同時段與明確回覆期限；後者則應由可交付成果、服務品質、專案風險與資源障礙來討論。這不表示時間資料永遠無用。輪班、客服、安全或需要即時覆蓋的工作，確實可能需較細緻的班表與在位資訊。但把同一套可見性直接套用於所有知識工作，可能忽略閱讀、思考、照護與非同步協作不總是留下即時數位痕跡。 《紐約時報》對勞工生產力追蹤的調查曾描述，部分遠距工作者認為軟體只記錄鍵盤活動，難以捕捉紙本閱讀、思考與帶領同事等勞動。²² 這是特定採訪案例，不可代表每一種軟體或雇主；但它與共享行事曆的問題有共同提醒：容易被系統數出的東西，不一定等於工作最重要的部分。管理若只獎勵可見訊號，使用者自然會調整行為去製造可見訊號。</p>
+<h2>把選擇留在介面與制度之間</h2>
+<p>平台功能提供了幾種直接的風險控制。Google 明列「只看忙碌／空閒」「看所有活動細節」「可修改但私人活動只顯示忙碌」等層級；Microsoft 同樣將只看忙碌、有限細節、完整讀取與代理權分開。²³⁶ 對小型團隊而言，先採最低足以安排會議的權限，再為特定職務增設例外，通常比先全面開放、再要求每個人自行隱藏私事更容易說清責任。</p>
+<p>制度層面則需要定期重新檢查，而不是把一次性的 IT 設定當成永恆規則。人員異動、工具整合、委外支援、資安事件與回辦公室政策，都可能改變誰取得資料、資料被保存多久、以及原有的行事曆資訊能否與其他紀錄串連。臺灣個資法規範蒐集、處理與利用應在特定目的必要範圍內，並與目的有正當合理關聯；勞動部也建議不做目的外利用。⁹¹⁰ 這些原則若要在組織裡可操作，便需要權限盤點、告知文件與提出疑問的窗口。</p>
+<figure><img src="https://live.staticflickr.com/2014/2213543201_a1d8780443_b.jpg" alt="數位行事曆與時間規劃介面｜來源：tomas carrillo / Flickr（CC BY-NC-ND）" loading="lazy"><figcaption>介面提供多層權限，但真正的保護取決於組織是否把用途、存取與申訴程序說清楚。</figcaption></figure>
+<p>最後，本文無法根據公開資料判定任何臺灣企業的共享行事曆慣例，也不主張所有排程資料都應對管理者關閉。較窄且可驗證的結論是：共享行事曆的可見性並非自然事實，而是平台預設、行政權限、團隊文化與法律義務共同形成的選擇。當選擇被明示、可調整且與目的相稱，行事曆較可能幫人安排工作；當選擇被隱藏或無限延伸，它才容易從協作工具滑向壓力來源。</p>
+<h2 class="refs-head">引用來源（最終索引）</h2>
+<p class="ref">¹ Google Calendar Help（無日期）— "Choose what others can do with your calendar"
+<a href="https://support.google.com/calendar/answer/15716974" rel="noopener" target="_blank">https://support.google.com/calendar/answer/15716974</a></p>
+<p class="ref">² Google Calendar Help（無日期）— "Control access to a shared calendar"
+<a href="https://support.google.com/calendar/answer/15716974" rel="noopener" target="_blank">https://support.google.com/calendar/answer/15716974</a></p>
+<p class="ref">³ Google Calendar Help（無日期）— "Change event &amp; task visibility on your calendar"
+<a href="https://support.google.com/calendar/answer/34580" rel="noopener" target="_blank">https://support.google.com/calendar/answer/34580</a></p>
+<p class="ref">⁴ Google Workspace Admin Help（無日期）— "Set Google Calendar sharing options"
+<a href="https://support.google.com/a/answer/60765" rel="noopener" target="_blank">https://support.google.com/a/answer/60765</a></p>
+<p class="ref">⁵ Google for Developers（無日期）— "Calendar sharing"
+<a href="https://developers.google.com/workspace/calendar/api/concepts/sharing" rel="noopener" target="_blank">https://developers.google.com/workspace/calendar/api/concepts/sharing</a></p>
+<p class="ref">⁶ Microsoft Learn（無日期）— "Share or delegate a calendar in Outlook"
+<a href="https://learn.microsoft.com/en-us/graph/outlook-share-or-delegate-calendar" rel="noopener" target="_blank">https://learn.microsoft.com/en-us/graph/outlook-share-or-delegate-calendar</a></p>
+<p class="ref">⁷ Microsoft Support（無日期）— "Share and access a calendar with edit or delegate permissions in Outlook"
+<a href="https://support.microsoft.com/en-us/outlook/sharing/share-and-access-a-calendar-with-edit-or-delegate-permissions-in-outlook" rel="noopener" target="_blank">https://support.microsoft.com/en-us/outlook/sharing/share-and-access-a-calendar-with-edit-or-delegate-permissions-in-outlook</a></p>
+<p class="ref">⁸ Journal of Computer-Mediated Communication（2023）— "Transparency, openness and privacy among software professionals"
+<a href="https://doi.org/10.1093/jcmc/zmad015" rel="noopener" target="_blank">https://doi.org/10.1093/jcmc/zmad015</a></p>
+<p class="ref">⁹ 勞動部（無日期）— "科技管理很便利，隱私保護要注意"
+<a href="https://www.mol.gov.tw/1607/1632/1640/51806/" rel="noopener" target="_blank">https://www.mol.gov.tw/1607/1632/1640/51806/</a></p>
+<p class="ref">¹⁰ 全國法規資料庫（2025）— "個人資料保護法"
+<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021" rel="noopener" target="_blank">https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=I0050021</a></p>
+<p class="ref">¹¹ European Commission Joint Research Centre（2021）— "Electronic Monitoring and Surveillance in the Workplace"
+<a href="https://publications.jrc.ec.europa.eu/repository/bitstream/JRC125716/jrc125716_electronic_monitoring_and_surveillance_in_the_workplace_final.pdf" rel="noopener" target="_blank">https://publications.jrc.ec.europa.eu/repository/bitstream/JRC125716/jrc125716_electronic_monitoring_and_surveillance_in_the_workplace_final.pdf</a></p>
+<p class="ref">¹² International Labour Organization（2022-11-28）— "Improving Workers' Data Rights"
+<a href="https://www.ilo.org/publications/improving-workers-data-rights" rel="noopener" target="_blank">https://www.ilo.org/publications/improving-workers-data-rights</a></p>
+<p class="ref">¹³ Office of the Privacy Commissioner of Canada（2025-05-29）— "Privacy in the Workplace"
+<a href="https://www.priv.gc.ca/en/privacy-topics/employers-and-employees/02_05_d_17/" rel="noopener" target="_blank">https://www.priv.gc.ca/en/privacy-topics/employers-and-employees/02_05_d_17/</a></p>
+<p class="ref">¹⁴ Social Currents（2024）— "Private Eyes, They See Your Every Move: Workplace Surveillance and Worker Well-Being"
+<a href="https://journals.sagepub.com/doi/10.1177/23294965241228874" rel="noopener" target="_blank">https://journals.sagepub.com/doi/10.1177/23294965241228874</a></p>
+<p class="ref">¹⁵ Reuters（2022-12-06）— "High-tech, high-risk: potential pitfalls from remote employee monitoring"
+<a href="https://www.reuters.com/legal/legalindustry/high-tech-high-risk-potential-pitfalls-remote-employee-monitoring-2022-12-06/" rel="noopener" target="_blank">https://www.reuters.com/legal/legalindustry/high-tech-high-risk-potential-pitfalls-remote-employee-monitoring-2022-12-06/</a></p>
+<p class="ref">¹⁶ Reuters（2023-09-28）— "BNP Paribas to track UK staff to enforce office attendance"
+<a href="https://www.reuters.com/business/finance/bnp-paribas-track-uk-staff-enforce-office-attendance-2023-09-28/" rel="noopener" target="_blank">https://www.reuters.com/business/finance/bnp-paribas-track-uk-staff-enforce-office-attendance-2023-09-28/</a></p>
+<p class="ref">¹⁷ Reuters（2025-04-09）— "US EPA tracking card swipes and laptop logins to check staff office return"
+<a href="https://www.reuters.com/world/us/us-epa-tracking-card-swipes-laptop-logins-check-staff-office-return-memo-shows-2025-04-09/" rel="noopener" target="_blank">https://www.reuters.com/world/us/us-epa-tracking-card-swipes-laptop-logins-check-staff-office-return-memo-shows-2025-04-09/</a></p>
+<p class="ref">¹⁸ BBC News（2025-05-31）— "Report warns of right to privacy threats at work"
+<a href="https://www.bbc.com/news/articles/cwy61w2gg8go" rel="noopener" target="_blank">https://www.bbc.com/news/articles/cwy61w2gg8go</a></p>
+<p class="ref">¹⁹ BBC Worklife（2022-10-19）— "The productivity paranoia managers can't shake"
+<a href="https://www.bbc.com/worklife/article/20221014-the-productivity-paranoia-managers-cant-shake" rel="noopener" target="_blank">https://www.bbc.com/worklife/article/20221014-the-productivity-paranoia-managers-cant-shake</a></p>
+<p class="ref">²⁰ Financial Times（2021-09-22）— "Growth of staff monitoring software stokes debate over rights and morals"
+<a href="https://www.ft.com/content/ab61541a-b6c1-45cb-b9ad-f338ec08cf61" rel="noopener" target="_blank">https://www.ft.com/content/ab61541a-b6c1-45cb-b9ad-f338ec08cf61</a></p>
+<p class="ref">²¹ International Labour Organization（2025）— "Navigating workers' data rights in the digital age"
+<a href="https://webapps.ilo.org/static/english/intserv/working-papers/wp149/index.html" rel="noopener" target="_blank">https://webapps.ilo.org/static/english/intserv/working-papers/wp149/index.html</a></p>
+<p class="ref">²² The New York Times（2022-08-15）— "The Rise of the Worker Productivity Score"
+<a href="https://www.nytimes.com/interactive/2022/08/14/business/worker-productivity-tracking.html" rel="noopener" target="_blank">https://www.nytimes.com/interactive/2022/08/14/business/worker-productivity-tracking.html</a></p>
+<p class="ref">²³ BBC Worklife（2023-01-30）— "How worker surveillance is backfiring on employers"
+<a href="https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers" rel="noopener" target="_blank">https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers</a></p>
+<p class="ref">²⁴ Reuters（2023-04-25）— "Watched while working: Use of monitoring and AI in the workplace increases"
+<a href="https://www.reuters.com/legal/legalindustry/watched-while-working-use-monitoring-ai-workplace-increases-2023-04-25/" rel="noopener" target="_blank">https://www.reuters.com/legal/legalindustry/watched-while-working-use-monitoring-ai-workplace-increases-2023-04-25/</a></p>
+<p>補充來說，行事曆裡的「空白」也未必表示可工作。它可能是移動時間、需要安靜完成的深度工作、照顧責任、休息、時區差異，或只是尚未把事情記錄進系統。共享者若把空白直接解讀為可安排，使用者往往只能用更多暫留活動抵抗，讓真正的會議協調反而變得不準確。這不只是個人時間管理技巧的問題，也和團隊是否承認非同步工作、是否為回覆設定合理期待有關。</p>
+<p>同樣地，滿滿的行事曆也不必然代表高產出。行事曆能呈現約定，卻不會自動呈現會議品質、決策是否完成、閱讀與撰寫的成果，或一段談話對同事的支持。國際研究與媒體報導對電子監測提出的共同警訊，是目的不清、侵入性高或缺乏透明時，資料容易被使用者感受為不信任；但它們也沒有證明所有協作紀錄都沒有價值。¹¹¹⁴²³</p>
+<p>因此，較穩健的原則是把行事曆視為「可協調性」的有限描述，而不是人的完整工作檔案。對員工而言，這提供了檢查權限與標題的理由；對組織而言，則要求在導入整合工具、改變預設或把資料用於新目的前，先做清楚說明與風險檢視。當這些步驟能被紀錄與討論，共享才有可能保持為一種互相節省時間的安排。</p>
+<h2 class="refs-head">引用來源（補遺）</h2>
+<p class="ref">¹¹ European Commission Joint Research Centre（2021）— "Electronic Monitoring and Surveillance in the Workplace"
+<a href="https://publications.jrc.ec.europa.eu/repository/bitstream/JRC125716/jrc125716_electronic_monitoring_and_surveillance_in_the_workplace_final.pdf" rel="noopener" target="_blank">https://publications.jrc.ec.europa.eu/repository/bitstream/JRC125716/jrc125716_electronic_monitoring_and_surveillance_in_the_workplace_final.pdf</a></p>
+<p class="ref">¹⁴ Social Currents（2024）— "Private Eyes, They See Your Every Move: Workplace Surveillance and Worker Well-Being"
+<a href="https://journals.sagepub.com/doi/10.1177/23294965241228874" rel="noopener" target="_blank">https://journals.sagepub.com/doi/10.1177/23294965241228874</a></p>
+<p class="ref">²³ BBC Worklife（2023-01-30）— "How worker surveillance is backfiring on employers"
+<a href="https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers" rel="noopener" target="_blank">https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers</a></p>
+<p>這個界線的維護，最後仍需要日常習慣：新進同事加入時說明分享範圍；工具整合時重新盤點存取角色；碰到敏感會議時，不用靠含糊標題獨自猜測，而由制度提供可理解的保護。把這些小步驟放進團隊的工作流程，行事曆才不會只記錄每個人何時被占用，也能保留人如何安排自己的工作與生活。</p>
+<h2 class="refs-head">引用來源（完）</h2>
+<p class="ref">⁹ 勞動部（無日期）— "科技管理很便利，隱私保護要注意"
+<a href="https://www.mol.gov.tw/1607/1632/1640/51806/" rel="noopener" target="_blank">https://www.mol.gov.tw/1607/1632/1640/51806/</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
