@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>共享辦公室：遠距工作之後的第三個地點 · 穗稻忠武的專欄</title>
+<meta name="description" content="辦公室沒有消失；它先從每天必到的場所，變成一個需要被重新選擇的地點。疫情迫使大量知識工作改採線上協作，而後企業、工作者與房東都在調整：有人回到總部，有人留在家，也有人在住家附近租一張桌子、一間小會議室，或只是找一個能安靜接電話的角落。共享辦公室正是在這種重新分配工作地點的過程裡，被賦予新的角色。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-08-05-coworking-third-place/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="共享辦公室：遠距工作之後的第三個地點">
+<meta property="og:description" content="辦公室沒有消失；它先從每天必到的場所，變成一個需要被重新選擇的地點。疫情迫使大量知識工作改採線上協作，而後企業、工作者與房東都在調整：有人回到總部，有人留在家，也有人在住家附近租一張桌子、一間小會議室，或只是找一個能安靜接電話的角落。共享辦公室正是在這種重新分配工作地點的過程裡，被賦予新的角色。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-08-05-coworking-third-place/">
+<meta property="og:image" content="https://live.staticflickr.com/4848/32365147778_447afa919c_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "共享辦公室：遠距工作之後的第三個地點", "description": "辦公室沒有消失；它先從每天必到的場所，變成一個需要被重新選擇的地點。疫情迫使大量知識工作改採線上協作，而後企業、工作者與房東都在調整：有人回到總部，有人留在家，也有人在住家附近租一張桌子、一間小會議室，或只是找一個能安靜接電話的角落。共享辦公室正是在這種重新分配工作地點的過程裡，被賦予新的角色。", "url": "https://polarbear0827.github.io/My-Way/p/2026-08-05-coworking-third-place/", "datePublished": "2026-08-05", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/4848/32365147778_447afa919c_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>共享辦公室：遠距工作之後的第三個地點</h1>
+<p class="byline"><time>2026-08-05</time></p>
+</div>
+
+<p class="lead">辦公室沒有消失；它先從每天必到的場所，變成一個需要被重新選擇的地點。疫情迫使大量知識工作改採線上協作，而後企業、工作者與房東都在調整：有人回到總部，有人留在家，也有人在住家附近租一張桌子、一間小會議室，或只是找一個能安靜接電話的角落。共享辦公室正是在這種重新分配工作地點的過程裡，被賦予新的角色。</p>
+<figure><img src="https://live.staticflickr.com/4848/32365147778_447afa919c_b.jpg" alt="共享辦公空間裡的工作座位｜來源：GoToVan / Flickr（CC BY）" loading="lazy"><figcaption>這類空間出售的不只是桌椅；使用者實際購買的是網路、安靜、通勤距離與可與陌生人共處的工作條件。</figcaption></figure>
+<p>但「第三個工作地點」不是單一解方。WeWork 的破產讓人看見長期租約與短期會員收入的風險¹²；居家工作研究則同時記錄了彈性帶來的好處，以及孤立、工時邊界與設備不足的問題³。臺灣的勞動與房市資料也顯示，遠距並未使辦公空間失去意義，而是讓不同工作、不同家庭與不同公司，對空間提出更細碎的要求⁷⁸。本文以公開資料、學術研究與國際報導梳理：共享辦公室在臺灣可能承接什麼，又不能替誰解決什麼。</p>
+<h2>WeWork 的教訓：彈性不是免於成本</h2>
+<figure><img src="https://live.staticflickr.com/4848/32365147778_447afa919c_b.jpg" alt="溫哥華 WeWork 共享辦公室｜來源：GoToVan / Flickr（CC BY）" loading="lazy"><figcaption>WeWork 的案例提醒，空間看似可按月取得，營運商與房東背後承擔的租約期限卻可能很長。</figcaption></figure>
+<p>共享辦公室常被濃縮成「把一層樓切成很多張桌子」。但商業結構更複雜：營運商向房東取得空間、裝修與提供網路、會議室及接待，再向個人或企業收取較短週期的費用。金融時報對此模式的描述指出，彈性辦公室業者常承擔多年期租約，卻向客戶出售較短期的使用權；在需求下滑時，兩者的期限不對稱就會暴露⁶。 WeWork 在 2023 年依美國破產法第 11 章聲請保護，AP 報導指出，疫情後辦公需求變化、高利率與既有租約共同使其承壓；公司於 2024 年完成重整並表示削減超過 40 億美元債務¹。BBC 報導的重整計畫則提到，該公司預計營運的據點數比 2023 年中少約一半²。這些數字說明的是一間公司的財務處境，不能直接推論所有共享空間都會失敗；但它確實將「會員制」背後的地產風險攤在檯面上。</p>
+<p>因此，把 WeWork 的故事當成共享辦公室整體的死亡宣告，同樣過度簡化。Reuters 2024 年與 2025 年關於英國彈性辦公供應商 Workspace 的報導，分別記錄了小型單位需求與大型單位承租壓力並存的情況⁴⁵。可見需求並非單向消失，而是從一整層、長年期的辦公室，轉向更小、更短、也更容易變動的配置。對工作者而言，這種彈性可能減少一次性承諾；對營運商而言，則要求更細緻地管理空置、裝修與租約。</p>
+<h2>臺灣的遠距現實：不是所有工作都能搬走</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Compal_Electronics_Taipei_Office_20150926.jpg" alt="臺北企業辦公大樓｜來源：Solomon203 / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>台北的辦公建築仍是許多企業的主要工作場域；遠距與共享空間只覆蓋其中一部分職務和時段。</figcaption></figure>
+<p>討論共享辦公室時，容易先把「可以用電腦完成」想成「可以完全離開辦公室」。勞動部 2024 年公布的 112 年調查顯示，75.7% 受訪勞工的工作無法遠距執行；近一年曾實施遠距者占 10.5%，在可遠距職務中以主管、經理人員與專業人員比例較高⁹。這是以投保勞工為對象的調查，不能代表每一種就業型態，卻提醒我們：能選擇工作地點本身是一種職務條件，不是普遍待遇。</p>
+<p>勞動部更新的 114 年調查也把問題延伸到下班後：近一年收到電話、網路、App 或 Line 工作交辦者占 24.6%，其中當下執行工作的占 5.1%¹⁰。空間的彈性若沒有時間規則，可能只是把工作推進住家、餐桌與通勤時間。共享辦公室能提供地點，卻不能自動界定何時算下班。 官方指引對這個差異有更具體的描述。勞動部職安署的《居家工作職業安全衛生參考指引》要求雇主與工作者評估光線、通風、桌椅、顯示器與電器設備，也特別提到單獨作業可能帶來孤立、焦慮及工作生活失衡¹¹。它不是要求所有人回到公司，而是承認家裡並非天然就是可長期工作的場所。</p>
+<p>這也解釋了為何共享辦公室不應被描述為「遠距工作的下一步」。它比較像在總部與住家之間增加一個選項：對有獨立房間、穩定網路與照顧資源的人，可能沒有必要；對合租者、照顧者、剛入職需要學習的人，或需要臨時會客的小型團隊，意義可能不同。臺灣 2025 年啟動數位遊牧簽證，政策也將遠距工作者視作具有特定資格與資源的群體，而非一般勞工的同義詞¹²。</p>
+<h2>第三個地點的功能：不是咖啡館的升級版</h2>
+<figure><img src="https://live.staticflickr.com/7255/13971789931_84201af7e8_b.jpg" alt="共享辦公室的會議情境｜來源：Manuel Schmalstieg / Flickr（CC BY）" loading="lazy"><figcaption>會議室、電話亭與可預約座位，讓共享空間與單純停留的咖啡館有所區別。</figcaption></figure>
+<p>「第三個地點」並不表示每個人都要在三處輪流打卡。它描述的是一種可選的中介場所：不是雇主總部，也不是私人住所。BBC 對 WeWork 破產後產業的採訪提到，部分遠距工作者與企業仍把共同工作空間視為補足居家設備、社交互動或鄰近會面的地方³。這是採訪和業者觀點，不等於已證實的普遍效果；但它指出使用情境比「每天去不去公司」更細。</p>
+<p>學術文獻也沒有把共享空間等同於桌位出租。2024 年一項針對義大利受僱工作者的質性研究發現，受訪者所說的好處包括彈性、效率與關係機會；但研究同時強調，關係與合作是否發生，取決於使用者期待、組織支持與空間條件¹³。另一項以德國、奧地利 181 名使用者為樣本的研究指出，「社群需求」與空間供給的契合，和工作滿意度、離開意願有關¹⁴。兩項研究的國家、樣本與方法不同，不能直接套用到臺灣；可用來避免一種常見誤解：人坐在同一個空間，不等於社群已經形成。</p>
+<h2>一張桌子牽動的身體條件</h2>
+<figure><img src="https://live.staticflickr.com/8704/16373766674_0086bdfa27_b.jpg" alt="居家工作的書桌與螢幕｜來源：ourmaninjapan / Flickr（CC BY）" loading="lazy"><figcaption>居家工作並非只要帶著筆電；桌椅高度、視線、照明與可中斷程度都會改變一天的工作感受。</figcaption></figure>
+<p>工作地點的選擇常被講成效率或通勤的算術題，但它也牽涉身體。勞動部指引列舉桌椅型式與高度、顯示器和鍵盤滑鼠配置、通風、電器及伸展空間，並建議雇主提供必要設備或協助¹¹。這些要求意味著：把筆電帶回家不是把辦公環境一比一地帶回家。租用共享座位對某些人可能是取得螢幕、穩定連線、會議室與人體工學桌椅的方式；但對另一些人，月費、交通與固定座位不足也可能形成新成本。</p>
+<p>2023 年一項範疇回顧檢視共享辦公室與工作表現、心理及身體健康的研究，納入的文獻只有 11 篇。作者發現正向關係多於負向關係，但特別提醒噪音控制、隱私與知識分享程度需要設計，否則可能不利於心理健康¹⁵。這個結論的力度有限：它是對既有研究的整理，不是對任何一間空間的保證。它反而提供了一個實用尺度——評估一處空間時，除了拍照好不好看，也應問是否有安靜區、電話區、可調整座椅、無障礙動線與清楚的使用規則。</p>
+<p>對有幼兒、室友或照顧責任的工作者而言，「家」可能同時是休息、照護與生產的現場。共享辦公室有時可把工作從私人生活裡切出一段時間；然而，若雇主把它當作不用提供總部座位、設備補助或合理工時的理由，負擔就只是從公司移到個人。這不是裝潢能解決的問題，而是勞雇責任的分配。</p>
+<h2>社群不是裝潢：需要被維持的互動</h2>
+<figure><img src="https://live.staticflickr.com/7743/18008661489_19813edf96_b.jpg" alt="協作空間的書架與公共區｜來源：HALDANE MARTIN / Flickr（CC BY）" loading="lazy"><figcaption>公共區域可創造相遇的機會，但是否能成為支持關係，仍取決於日常使用與管理。</figcaption></figure>
+<p>共享辦公室最常用來行銷的詞是「社群」。這個詞容易讓人想像，一群接案者、創業者與遠距員工坐在一起，就會自然交換客戶、技術與友誼。Frontiers 2016 年的兩項研究則提供較克制的說法：工作者之間的互動可以成為社會支持，且與表現滿意度相關，但支持需要被動員，並非只因為共處便必然發生¹⁶。</p>
+<p>這與空間中的角色有關。社群經理、固定活動、共用廚房、介紹新會員的方式，甚至噪音規則，都會影響人們是能專注、短暫打招呼，還是被迫社交。2025 年一項瑞典鄉村共享空間的質性評估也發現，當設施與使用者數量不足時，受訪公務員寧可留在家；條件較成熟的空間才可能提供社交互動¹⁷。這不是對城市據點的直接比較，卻說明「有人」與「可用」同樣重要。</p>
+<p>從勞動者角度，社群還有一層不易量化的問題：當同事不再每天在同一間公司出現，誰負責傳遞新人的默會知識、給予回饋、或發現有人長期沉默？《衛報》2023 年報導，混合工作下部分管理者感到缺少社會連結⁶；同報另有研究報導則記錄不少工作者重視混合安排帶來的健康與生活益處⁷。兩種經驗可以同時成立。關鍵不在宣稱哪一方勝過另一方，而在組織是否願意讓團隊就任務、見面頻率與照顧責任進行協商。</p>
+<h2>城市裡的空間經濟：租約仍然重要</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Compal_Electronics_Taipei_Office_20150926.jpg" alt="臺北辦公大樓外觀｜來源：Solomon203 / Wikimedia Commons（CC BY-SA 4.0）" loading="lazy"><figcaption>城市核心區的辦公大樓不會因遠距而立刻空置；租金、供給與企業升級需求同時影響選址。</figcaption></figure>
+<p>共享辦公室不是漂浮在市場之外的「數位服務」，它仍需要真實的樓層、消防、電力、電梯與租約。Cushman &amp; Wakefield 的 2025 年第二季台北辦公室報告指出，A 級辦公室整體空置率為 6.9%，平均租金每坪每月為新台幣 2,810 元，且下半年預計有新供給進場⁸。Savills 的 2025 年第四季報告則估計台北 A 級市場空置率為 6.9%、平均租金每坪每月 3,258 元⁹。兩家商業顧問的口徑與季度不同，數字不能混為同一統計序列；它們共同能說明的是，臺北的正式辦公市場仍在調整，而不是已被居家工作取代。</p>
+<p>這些報告也有利益位置：顧問公司服務的客戶包含房東、投資人與租戶。因此，本文不把它們對未來需求的預測當成中立事實，而只把已揭示的市場觀察與方法說明作為參考。對共享辦公室營運者來說，核心問題不是「所有人會不會回公司」，而是能否在租金、空置率與企業需求變動之間，提供足夠可預測的服務。</p>
+<p>Reuters 在 2025 年報導，倫敦的 Workspace 面對較大單位出租困難，同時持續把較大樓層改成較小單位⁵。這個英國案例無法直接移植到台北，但它提示一個可比較的機制：當企業縮短承諾、團隊規模變化更快，建築內部的可分割性與租約條件就變得重要。共享空間可能因此成為新供給的使用方式之一，也可能在景氣轉弱時更先承受會員流失。</p>
+<h2>誰負擔彈性的風險</h2>
+<figure><img src="https://live.staticflickr.com/1026/995181917_36f6eefd0b_b.jpg" alt="辦公室的公共休憩區｜來源：jyri / Flickr（CC BY）" loading="lazy"><figcaption>舒適的公共區可以提高停留意願，但它不回答設備費、月費與工作時間由誰承擔。</figcaption></figure>
+<p>「可以在任何地方工作」聽起來像個人自由，實際上會拆成一串成本：筆電與螢幕誰買、網路中斷誰處理、居家電費誰付、到共享空間的月費是否報銷、資料外洩與客戶會議在哪裡進行。勞動部的居家工作指引主張雇主應依風險評估，在合理可行範圍內提供設備、措施或資源¹¹。這種寫法沒有替每一個雇主規定同一套餐，卻否定了「人在家裡，所以一切由個人承擔」的想法。</p>
+<p>遠距工作也可能改變監督方式。勞動部 2024 年研究《國內企業實施遠距工作勞動權益現況及問題之研究》把離線權、工作回報、隱私、資訊安全、設備費用和職災列為需要處理的問題¹⁸。這些不是共享空間業者單獨能解決的議題。若公司改以登入紀錄、視訊鏡頭或訊息回應速度衡量工作，地點更彈性未必代表控制更少。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 若把共享辦公室納入企業的混合工作安排，最基本的提問應是：這是員工可以拒絕的選擇嗎？費用是否透明？是否仍能取得公司設備與資訊支援？若答案不清楚，所謂彈性可能只是把企業的不確定性轉嫁給個人。反之，若有明確補助、資安規範與聯繫邊界，它可成為對特定工作情境有用的選項，而不是取代辦公室的口號。</p>
+<h2>在臺灣談共享空間，不能只談臺北</h2>
+<figure><img src="https://live.staticflickr.com/1267/882618342_a648b35cb5_b.jpg" alt="傳統辦公桌與工作設備｜來源：AMagill / Flickr（CC BY）" loading="lazy"><figcaption>共享空間的需求與價值會因通勤、住房、產業聚落與可近性而改變。</figcaption></figure>
+<p>多數共享辦公室的討論集中在核心商業區，但工作地點的改變也可能改寫地方的日常：少一段跨區通勤，午餐與採買可能留在居住地；小型團隊可在不簽長約下接近客戶；離都會中心更遠的工作者則可能找不到足夠密集的使用者與服務。這些都是空間網絡的問題，而不只是 App 能不能訂位。</p>
+<p>臺灣政府於 2025 年推出數位遊牧簽證，申請條件包含遠距工作經驗與財力文件¹²。這項政策的對象是外國專業人士，並不直接等於國內共享辦公室的需求統計；但它顯示政策端開始把「工作地點可移動」與住宿、交通、網路和地方消費一起思考。若要判斷共享空間能否帶來地方效益，仍需公開的在地使用率、會員來源、交通方式與長期就業資料，而非只靠開幕新聞。</p>
+<p>地方型共享空間還有另一種可能：它不必複製都會連鎖據點的玻璃隔間與會員制度。偏鄉或小城鎮的使用者密度低，可能更需要結合地方創生團隊、圖書館、學校、青年基地或公共服務窗口。但公共空間若被當成廉價辦公室，也可能排擠原本需要安靜閱讀、休息或取得行政服務的人。因此，公共投資前應清楚界定服務對象、開放時段、費用與評估方式。</p>
+<p>學術研究對農村共享空間的提醒值得參考：空間若沒有合適的工作條件與穩定使用者，並不會因掛上「共同工作」招牌而產生效果¹⁷。對臺灣而言，合理的問題不是「每個縣市要不要一間潮流共享辦公室」，而是某個地方是否有特定族群、交通可達性與長期營運能力，能支持一處被反覆使用的工作節點。</p>
+<h2>重新選擇地點，也重新選擇界線</h2>
+<figure><img src="https://live.staticflickr.com/4848/32365147778_447afa919c_b.jpg" alt="共享空間中的工作座位｜來源：GoToVan / Flickr（CC BY）" loading="lazy"><figcaption>一張可租用的桌子提供的是選擇；是否形成好的工作生活，仍取決於選擇背後的制度與關係。</figcaption></figure>
+<p>共享辦公室的未來不必押在「辦公室已死」或「所有人終將回去」兩種預言上。AP、BBC 與 Reuters 的報導已顯示，彈性空間業者的商業情況各異，重整、縮點、小單位需求與較大單位壓力可以同時存在¹²⁴⁵。這種不整齊，正是後疫情工作型態的現實。</p>
+<p>對個人來說，一處空間值不值得去，可能取決於能否專心、能否保護隱私、是否負擔得起，以及是否真的縮短了通勤。對公司而言，重要的是工作任務、團隊培養、資訊安全與公平補助；對城市而言，則是交通、租金與公共設施如何讓不同職業取得可用場所。把三者混成「共享辦公很有效率」的單一敘事，反而遮蔽了必須回答的分配問題。</p>
+<p>研究對此提供的是條件，而非保證。Springer 的受訪者研究把彈性和關係機會都列為優點，但同時指出使用成果依賴關係、支持與期待¹³；針對健康與工作表現的文獻回顧，則提醒噪音、隱私及設計品質可能轉化為風險¹⁵。居家工作的大型研究亦提醒，孤立的影響可能集中在獨居或社會接觸較少的人身上¹⁹。這些發現不能代替個人的選擇，卻反對一種過度簡單的承諾：只要換一個地方工作，生活就會自動變好。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 更合理的做法或許不是替所有人指定每週幾天到哪裡，而是先把不可協商的條件列清楚：工作時間、回應期待、設備與月費補助、機密資料的處理、會議所需空間、以及在家或在外工作時的安全支援。當這些條件被說明，工作者才有機會按任務和生活狀態選擇場所，而不是為了證明自己「夠彈性」而隨時可被找到。</p>
+<h2>結語：一個地點，不能替代一套制度</h2>
+<figure><img src="https://live.staticflickr.com/7255/13971789931_84201af7e8_b.jpg" alt="共享辦公室的討論與會議｜來源：Manuel Schmalstieg / Flickr（CC BY）" loading="lazy"><figcaption>共享空間可提供會面與協作的條件，但其成效仍須由使用者、雇主與營運者共同承擔。</figcaption></figure>
+<p>共享辦公室可以是家與總部之間有用的一站：它讓沒有合適居家環境的人取得設備，讓小型團隊短暫聚合，也讓遠距工作者有機會離開獨處的房間。它同時是一種租賃與服務生意，受房地產、景氣、會員流動與營運品質制約。WeWork 的重整並未證明所有共享空間無法存活；它只是證明「彈性」也有租約、負債與需求波動的帳。</p>
+<p>在臺灣，遠距工作的可行性受職業類型限制，且下班後通訊交辦、設備與身心健康仍是實際議題⁹¹⁰¹¹。因而，共享辦公室最值得追問的不是它是否時髦，而是它是否讓使用者有更多可負擔、可拒絕、可被保障的選擇。若沒有清楚的勞動界線與成本分擔，再漂亮的公共區域也可能只是把原有問題換一個地址。</p>
+<p>這個問題也要求營運者提供更多可檢驗的資訊。例如據點是否有固定座位與安靜區、尖峰時段使用情況、無障礙與兒少照顧需求如何處理、月費之外有哪些設備或列印成本、取消與調價規則為何。對企業客戶而言，還須揭露資料處理、訪客管理與緊急應變流程。這些看似瑣碎的項目，往往比品牌宣傳更決定一個空間能否成為可信賴的日常環境。</p>
+<p>對政策制定者，則不宜把共享空間視為只要補助開設即可完成的「創新」。若公共資源投入，成果應能被檢視：服務了誰、使用是否持續、是否替原本缺乏合適工作場所的人降低障礙、是否造成新的排除。這些問題沒有快速答案，但提出它們能避免把工作場所的困難，包裝成單靠個人選擇即可解決的問題。</p>
+<p>最後，工作之所以需要地點，不只是因為網路與插座。人們還需要能專心的時間、被尊重的休息、可預期的協作與安全的界線。共享辦公室可以參與提供其中一部分；要讓它成為真正有用的第三個地點，則需要勞工、雇主、營運者和城市一起把條件說清楚。 還有一個容易被忽略的時間尺度。共享空間的價值未必出現在第一次參觀：使用者可能需要在不同任務、不同季節與不同家庭狀況下，才知道它是否真正節省通勤、改善專注或增加不必要的支出。企業也不應只用出勤率或座位使用率衡量成敗；新人是否獲得指導、跨部門是否仍能合作、工作者是否能在下班後斷開聯繫，同樣屬於混合工作的結果。</p>
+<p>這代表任何制度設計都需要回饋與修正。勞動部指引建議雇主建立溝通、追蹤與檢討機制¹¹；它的意義不在把居家或外部工作場所變成可被全天候監看的延伸辦公室，而在發現設備、健康與協作上的問題後，有人負責處理。共享辦公室若成為企業選項，也應納入這套回饋，而不是把會員卡發下去便宣告轉型完成。</p>
+<p>從公共生活看，工作者在不同地點出現，可能讓街區的白天活動更分散，也可能使核心商業區承受不同壓力。這些變化需要長期交通、消費與租賃資料才能判讀。現在能確定的較少：工作地點正在增加選項；而選項是否公平，仍取決於誰有資源使用、誰能說不、誰在出問題時得到支援。 換句話說，第三個地點不該成為新的工作義務。它的可貴之處，在於人們能在需要專注、會議、設備或有限社交時使用它，也能在不需要時回到其他場所。保留這個選擇與拒絕的權利，才是比空間品牌更重要的衡量標準。</p>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ AP News（2024-06-12）— "WeWork has emerged from bankruptcy. What’s next?"
+<a href="https://apnews.com/article/wework-bankrutpcy-chapter-11-emergence-24a8de16e9e7e401ff63f536de65bc86" rel="noopener" target="_blank">https://apnews.com/article/wework-bankrutpcy-chapter-11-emergence-24a8de16e9e7e401ff63f536de65bc86</a></p>
+<p class="ref">² BBC News（2024-05-30）— "WeWork set to emerge from bankruptcy"
+<a href="https://www.bbc.co.uk/news/articles/cljj3nxze6lo" rel="noopener" target="_blank">https://www.bbc.co.uk/news/articles/cljj3nxze6lo</a></p>
+<p class="ref">³ BBC Worklife（2023-11-16）— "After WeWork’s bankruptcy, what is the future of coworking?"
+<a href="https://www.bbc.com/worklife/article/20231115-after-weworks-bankruptcy-what-is-the-future-of-coworking" rel="noopener" target="_blank">https://www.bbc.com/worklife/article/20231115-after-weworks-bankruptcy-what-is-the-future-of-coworking</a></p>
+<p class="ref">⁴ Reuters（2024-11-22）— "London-focused Workspace resizes units as demand rises for smaller offices"
+<a href="https://www.reuters.com/world/uk/london-focused-workspace-resizes-units-demand-rises-smaller-offices-2024-11-22/" rel="noopener" target="_blank">https://www.reuters.com/world/uk/london-focused-workspace-resizes-units-demand-rises-smaller-offices-2024-11-22/</a></p>
+<p class="ref">⁵ Reuters（2025-06-05）— "UK’s Workspace Group expects subdued rental demand for larger office spaces to persist"
+<a href="https://www.reuters.com/markets/europe/uks-workspace-group-expects-subdued-rental-demand-larger-office-spaces-persist-2025-06-05/" rel="noopener" target="_blank">https://www.reuters.com/markets/europe/uks-workspace-group-expects-subdued-rental-demand-larger-office-spaces-persist-2025-06-05/</a></p>
+<p class="ref">⁶ The Guardian（2023-03-22）— "Managers are human too: leaders left lonely by hybrid working"
+<a href="https://www.theguardian.com/business/2023/mar/22/managers-are-human-too-leaders-left-lonely-by-hybrid-working" rel="noopener" target="_blank">https://www.theguardian.com/business/2023/mar/22/managers-are-human-too-leaders-left-lonely-by-hybrid-working</a></p>
+<p class="ref">⁷ The Guardian（2024-06-16）— "Hybrid working makes employees happier, healthier and more productive, study shows"
+<a href="https://www.theguardian.com/business/article/2024/jun/16/hybrid-working-makes-employees-happier-healthier-and-more-productive-study-shows" rel="noopener" target="_blank">https://www.theguardian.com/business/article/2024/jun/16/hybrid-working-makes-employees-happier-healthier-and-more-productive-study-shows</a></p>
+<p class="ref">⁸ Cushman &amp; Wakefield（2025-Q2）— "Taipei Office MarketBeat Q2 2025"
+<a href="https://assets.cushmanwakefield.com/-/media/cw/marketbeat-pdfs/2025/q2/apac-and-gc/taipei-office-marketbeat-q2-2025-final.pdf" rel="noopener" target="_blank">https://assets.cushmanwakefield.com/-/media/cw/marketbeat-pdfs/2025/q2/apac-and-gc/taipei-office-marketbeat-q2-2025-final.pdf</a></p>
+<p class="ref">⁹ Savills（2026-03）— "Office Leasing Office – Taiwan – March 2026"
+<a href="https://pdf.savills.asia/asia-pacific-research/taiwan-research/taiwan-office/twoff03-2026.pdf" rel="noopener" target="_blank">https://pdf.savills.asia/asia-pacific-research/taiwan-research/taiwan-office/twoff03-2026.pdf</a></p>
+<p class="ref">¹⁰ 勞動部（2026）— "114年勞工生活及就業狀況調查統計結果"
+<a href="https://www.mol.gov.tw/1607/1632/1633/87690/" rel="noopener" target="_blank">https://www.mol.gov.tw/1607/1632/1633/87690/</a></p>
+<p class="ref">¹¹ 勞動部職安署（2021）— "居家工作職業安全衛生參考指引"
+<a href="https://www.mol.gov.tw/media/wzhla1kr/%E9%99%84%E4%BB%B6_%E5%B1%85%E5%AE%B6%E5%B7%A5%E4%BD%9C%E8%81%B7%E6%A5%AD%E5%AE%89%E5%85%A8%E8%A1%9B%E7%94%9F%E5%8F%83%E8%80%83%E6%8C%87%E5%BC%95.pdf?mediaDL=true" rel="noopener" target="_blank">https://www.mol.gov.tw/media/wzhla1kr/%E9%99%84%E4%BB%B6_%E5%B1%85%E5%AE%B6%E5%B7%A5%E4%BD%9C%E8%81%B7%E6%A5%AD%E5%AE%89%E5%85%A8%E8%A1%9B%E7%94%9F%E5%8F%83%E8%80%83%E6%8C%87%E5%BC%95.pdf?mediaDL=true</a></p>
+<p class="ref">¹² 外交部領事事務局（2025-01-02）— "Digital nomad visitor visa"
+<a href="https://www.boca.gov.tw/cp-158-7718-c0382-2.html" rel="noopener" target="_blank">https://www.boca.gov.tw/cp-158-7718-c0382-2.html</a></p>
+<p class="ref">¹³ Review of Managerial Science（2024-07-08）— "Coworking spaces for remote workers: an inclusive solution?"
+<a href="https://link.springer.com/article/10.1007/s11846-024-00787-5" rel="noopener" target="_blank">https://link.springer.com/article/10.1007/s11846-024-00787-5</a></p>
+<p class="ref">¹⁴ Frontiers in Psychology（2021-02-09）— "Do We Have a Match?"
+<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.620794/full" rel="noopener" target="_blank">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.620794/full</a></p>
+<p class="ref">¹⁵ WORK（2023-07-21）— "The impact of coworking spaces on workers’ performance, mental and physical health"
+<a href="https://doi.org/10.3233/wor-220353" rel="noopener" target="_blank">https://doi.org/10.3233/wor-220353</a></p>
+<p class="ref">¹⁶ Frontiers in Psychology（2016-04-25）— "Coworking Spaces: A Source of Social Support for Independent Professionals"
+<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.00581/full" rel="noopener" target="_blank">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2016.00581/full</a></p>
+<p class="ref">¹⁷ Frontiers in Organizational Psychology（2025-03-28）— "Addressing work-from-home challenges through rural coworking"
+<a href="https://www.frontiersin.org/journals/organizational-psychology/articles/10.3389/forgp.2025.1569140/full" rel="noopener" target="_blank">https://www.frontiersin.org/journals/organizational-psychology/articles/10.3389/forgp.2025.1569140/full</a></p>
+<p class="ref">¹⁸ 勞動部勞動及職業安全衛生研究所（2024-06）— "國內企業實施遠距工作勞動權益現況及問題之研究"
+<a href="https://gpi.culture.tw/books/1011300775" rel="noopener" target="_blank">https://gpi.culture.tw/books/1011300775</a></p>
+<p class="ref">¹⁹ Science（2026）— "Home alone: Remote work, isolation, and mental health"
+<a href="https://www.science.org/doi/10.1126/science.aec7671" rel="noopener" target="_blank">https://www.science.org/doi/10.1126/science.aec7671</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
