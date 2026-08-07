@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>跌倒之後，誰先接到通知：智慧手錶如何改寫獨居照顧的責任 · 穗稻忠武的專欄</title>
+<meta name="description" content="傍晚六點多，公寓走廊的聲控燈還沒亮。客廳電視仍開著，遙控器掉在地毯邊。若此刻有人跌倒，第一個「看見」的，往往不是鄰居，也不是住在另一座城市的子女，而是手腕上一枚還在計步的裝置：它先震動，再響鈴，螢幕跳出類似「看起來你摔了一跤」的提示；若約一分鐘內沒有回應、也偵測不到移動，它就會自行撥打緊急服務，並把位置訊息…">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-08-07-smartwatch-fall-detection-elderly-care/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跌倒之後，誰先接到通知：智慧手錶如何改寫獨居照顧的責任">
+<meta property="og:description" content="傍晚六點多，公寓走廊的聲控燈還沒亮。客廳電視仍開著，遙控器掉在地毯邊。若此刻有人跌倒，第一個「看見」的，往往不是鄰居，也不是住在另一座城市的子女，而是手腕上一枚還在計步的裝置：它先震動，再響鈴，螢幕跳出類似「看起來你摔了一跤」的提示；若約一分鐘內沒有回應、也偵測不到移動，它就會自行撥打緊急服務，並把位置訊息…">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-08-07-smartwatch-fall-detection-elderly-care/">
+<meta property="og:image" content="https://live.staticflickr.com/3749/13856169244_4075b3997f_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "跌倒之後，誰先接到通知：智慧手錶如何改寫獨居照顧的責任", "description": "傍晚六點多，公寓走廊的聲控燈還沒亮。客廳電視仍開著，遙控器掉在地毯邊。若此刻有人跌倒，第一個「看見」的，往往不是鄰居，也不是住在另一座城市的子女，而是手腕上一枚還在計步的裝置：它先震動，再響鈴，螢幕跳出類似「看起來你摔了一跤」的提示；若約一分鐘內沒有回應、也偵測不到移動，它就會自行撥打緊急服務，並把位置訊息…", "url": "https://polarbear0827.github.io/My-Way/p/2026-08-07-smartwatch-fall-detection-elderly-care/", "datePublished": "2026-08-07", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/3749/13856169244_4075b3997f_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">社會觀察</span><span class="tag">科技與生活</span><span class="tag">專欄</span></div>
+<h1>跌倒之後，誰先接到通知：智慧手錶如何改寫獨居照顧的責任</h1>
+<p class="byline"><time>2026-08-07</time></p>
+</div>
+
+<p class="lead">傍晚六點多，公寓走廊的聲控燈還沒亮。客廳電視仍開著，遙控器掉在地毯邊。若此刻有人跌倒，第一個「看見」的，往往不是鄰居，也不是住在另一座城市的子女，而是手腕上一枚還在計步的裝置：它先震動，再響鈴，螢幕跳出類似「看起來你摔了一跤」的提示；若約一分鐘內沒有回應、也偵測不到移動，它就會自行撥打緊急服務，並把位置訊息丟給事先設定好的緊急聯絡人。</p>
+<p>這不是科幻預告片，而是 Apple、Samsung、Google 等消費級智慧手錶已經寫進說明文件的流程。對許多家庭來說，問題不再只是「要不要買醫療警報吊墜」，而是：當跌倒偵測被預設打開、當緊急聯絡人名單寫進 Medical ID、當子女的手機半夜震動——這條自動責任鏈，究竟把誰放在第一線？</p>
+<figure><img src="https://live.staticflickr.com/3749/13856169244_4075b3997f_b.jpg" alt="封面｜長者居家與日常照護場景｜來源：aag_photos / Flickr（CC BY-SA）" loading="lazy"></figure>
+<h2>為什麼現在談「跌倒偵測」</h2>
+<p>跌倒在公共衛生裡不是邊緣議題。世界衛生組織（WHO）指出，跌倒是全球非故意傷害死亡的第二大原因；每年估計約有 68.4 萬人死於跌倒，其中超過八成發生在中低收入國家，六十歲以上成人承受最多致命跌倒。WHO 亦估計，每年約有 3730 萬次跌倒嚴重到需要就醫。</p>
+<p>在美國，疾病管制與預防中心（CDC）的 MMWR 報告以 2020 年行為危險因子監測系統（BRFSS）與 2021 年生命統計資料指出：約 1400 萬名、相當於 27.6% 的六十五歲以上長者在過去一年曾跌倒；2021 年有 38,742 名長者死於非故意跌倒，粗死亡率約每十萬人 78.0。CDC 同時強調，跌倒並非「老化必然」，可透過可改變的風險因子介入；其 STEADI 計畫要求醫療端篩檢、評估並採取預防策略。</p>
+<p>這些數字之所以與手腕上的裝置有關，是因為公共衛生界長期討論的，不只是「會不會跌倒」，還有跌倒之後「會不會長時間躺在地上」。英國《BMJ》2008 年針對高齡者跌倒後無法起身的研究指出，長時間躺地（long lie）比過去想像更常見於「超高齡」族群，並與嚴重後果相關；後續系統性回顧也持續把 long lie 與住院、失能、機構化安置甚至死亡風險連在一起。換句話說，家庭真正害怕的，常常不是那一下撞擊本身，而是撞擊之後沒有人知道。</p>
+<p>消費級智慧手錶把這個恐懼商品化成一個可穿戴流程：偵測硬摔 → 倒數與警報 → 自動呼叫 → 通知緊急聯絡人。它看起來像「多一層安全網」，實際上也重新分配了誰該待命、誰該解釋誤報、誰該為「沒設好」負責。</p>
+<figure><img src="https://live.staticflickr.com/2050/2181784585_7204c1549d_b.jpg" alt="公寓走廊：跌倒後最常被忽略的空間｜來源：noricum / Flickr（CC BY-SA）" loading="lazy"></figure>
+<h2>從吊墜按鈕到手腕感應：緊急呼叫的簡史</h2>
+<p>在智慧手錶之前，居家緊急救援長期依賴個人緊急應變系統（PERS）。美國市場上，Lifeline（前 Philips Lifeline）等品牌以吊墜或腕帶按鈕、基地台與二十四小時監控中心運作數十年；其官方敘事強調超過四十年服務與數百萬訂戶。這類系統的核心契約很清楚：使用者按按鈕（或在有 AutoAlert 等自動跌倒偵測的方案中由裝置觸發），監控中心接聽，再決定是否派遣緊急服務。</p>
+<p>按鈕模式有一個殘酷前提：人必須還能按。若跌倒造成昏迷、骨折無法伸手、或吊墜當天沒戴，系統就沉默。於是「自動跌倒偵測」成為加購賣點——也成為月費結構的一部分。美國國家老化委員會（NCOA）在 2026 年醫療警報系統評測中指出，許多品牌可加購跌倒偵測，費用常見落在每月額外約八至十二美元區間；其 2025 年二月針對近期購買者的調查更顯示，近七成五受訪者是在經歷跌倒或醫療緊急之後才決定購買，且自動跌倒偵測是最受歡迎的特殊功能之一。NCOA 也特別寫到：經典品牌 Life Alert 並未提供跌倒偵測，仍高度依賴「我跌倒了，自己起不來」的按鈕文化。</p>
+<p>消費級智慧手錶走的是另一條路。2018 年 9 月 12 日，Apple 發表 Apple Watch Series 4，把跌倒偵測與消費端 ECG 一併推進新聞稿；營運長 Jeff Williams 稱手錶成為「健康的智慧守護者」。此後，Samsung 在 Galaxy Watch Active2、Galaxy Watch3 與後續 Wear OS 機種提供 Hard fall detection；Google 則在 Pixel Watch 系列以動作感測與機器學習模型推動 Fall Detection，並在 2023 年公開說明如何用實驗室、電腦視覺與特技替身資料訓練模型，以區分「硬摔」與波比跳、小絆倒等日常動作。</p>
+<p>這條史線的轉折，不只是感測器變便宜，而是「誰付月費、誰接電話」的模型改變：專業醫療警報把人接進監控中心；消費級手錶常把人直接接進 911／當地緊急號碼與家庭緊急聯絡人。前者像訂閱制保全，後者像把家庭通訊錄寫進程式。</p>
+<figure><img src="https://live.staticflickr.com/3790/13467474815_be54810773_b.jpg" alt="智慧手錶成為日常穿戴介面｜來源：Janitors / Flickr（CC BY）" loading="lazy"></figure>
+<h2>手錶怎麼「判斷」你跌倒了</h2>
+<p>以 Apple 官方支援文件為準，Apple Watch SE 或更新機種、Series 4 或更新、以及 Ultra 系列，在佩戴時若偵測到 hard fall，會輕點手腕、發出警報並顯示提示；使用者可選擇撥打緊急服務，或點「我沒事」關閉。若手錶偵測到你仍在移動，它會等待你回應，不會自動撥號；若約一分鐘無動作，則開始自動呼叫。自動呼叫前還有約三十秒倒數，警報音量會加大，讓附近的人有機會聽見。接通後，手錶播放預錄訊息，說明偵測到硬摔，並提供經緯度；若使用者開啟相關設定，Medical ID 也可能一併分享。跌倒紀錄會進入 iPhone 的健康 App，除非使用者回報「我沒有跌倒」。</p>
+<p>Apple 也把預設策略寫得很清楚：若設定年齡且年滿五十五歲，跌倒偵測會自動開啟；功能僅適用十八歲以上。使用者可改為「一律開啟」或「只在運動時開啟」。文件同時以兩句話劃下產品邊界：Apple Watch 無法偵測所有跌倒；高衝擊活動可能被誤判為跌倒。</p>
+<p>Samsung 的路徑類似但預設更保守。美國 Samsung 支援頁說明，Galaxy Watch Active2、Galaxy Watch3 與所有 Wear OS 機種具備 hard fall detection，可在偵測硬摔時送出 SOS；功能預設關閉，需在 Galaxy Wearable App 的 Safety and emergency 中手動開啟，並先設定緊急聯絡人。使用者還能選擇 Always、During physical activity 或 Only during workouts，以降低運動誤報。Samsung 同樣提醒高衝擊運動可能被登記為跌倒，並聲明裝置與 Samsung Health 資訊並非用於診斷或治療疾病。</p>
+<p>Google 對 Pixel Watch 的公開說明則強調「硬摔後約三十秒仍無動作 → 震動響鈴詢問是否需要協助；約一分鐘仍無回應 → 自動呼叫緊急服務並分享位置」。Google 部落格描述其模型同時看「墜落過程的肢體反射」與「撞擊力」，並坦言日常生活中許多動作的運動模式與跌倒相似，因此必須用大量資料與 AI 區分。官方支援也標明：Wi-Fi 版 Pixel Watch 呼叫緊急服務依賴附近且以藍牙連線的手機；LTE 版才較能在手機不在旁時獨立運作（仍需有效連線條件）。</p>
+<figure><img src="https://live.staticflickr.com/8107/8580487187_b20de0e766_b.jpg" alt="手腕上的裝置，正在重新定義「有人知道我跌倒了」｜來源：Ivan Radic / Flickr（CC BY）" loading="lazy"></figure>
+<h2>一分鐘之後：自動撥號把誰推上第一線</h2>
+<p>若把各家流程抽象成同一條時間軸，關鍵幾乎都落在「短暫等待」：大約三十秒到一分鐘。這段時間的設計意圖很務實——減少把波比跳誤報成急救——但對獨居場景，它也是家庭協議必須對齊的空窗。</p>
+<p>自動撥號成功後，責任並未結束，只是換人上場。Apple 文件寫明：通話結束後，手錶會傳訊給緊急聯絡人，告知偵測到硬摔並已撥打緊急服務，訊息含位置；緊急聯絡人來自 Medical ID，且不能把緊急服務本身設成緊急聯絡人。若使用者所在地的緊急系統需要按鍵選擇（例如「按 1…」），手錶可能無法代為完成選單，但仍會通知緊急聯絡人。若 Messages 不是預設簡訊 App 或被刪除，緊急聯絡人通知也可能失效。換句話說，系統假設一份「還活著、還正確、還收得到通知」的家庭通訊錄。</p>
+<p>對住在外縣市或國外的子女，這意味著一種新型待命：不是二十四小時盯螢幕，而是手機可能在任何時刻變成調度中心——要不要回撥？要不要打給鄰居？要不要叫當地救護？要不要解釋這是誤報？NCOA 評測中的照護者 App、Care Circle 概念，其實是把同一問題做成產品：讓多個家人同步知道發生什麼。消費級手錶較少提供完整監控中心話務，卻把「第一個解釋者」的角色，更直接地丟回家人。</p>
+<p>還有一層常被忽略的基礎設施條件。Apple 註明跌倒偵測自動呼叫需要衛星（在支援情境）、行動網路，或手錶／附近 iPhone 的 Wi-Fi 通話與網際網路；部分電信網路在手錶未開通、不相容或未設定行動服務時，可能不接受緊急呼叫。Google 也區分 Wi-Fi 版與 LTE 版的依賴關係。於是「有手錶」不等於「倒地時一定打得出去」：電量、佩戴、錶帶鬆緊、腕部偵測（Wrist Detection）、門號、Wi-Fi、緊急聯絡人是否仍是舊號碼，任何一環斷裂，整條鏈就停在客廳地毯上。</p>
+<figure><img src="https://live.staticflickr.com/7007/6444826991_a2d211cdcd_b.jpg" alt="家庭聯絡仍是緊急鏈的最後一哩｜來源：Ralph Zuranski / Flickr（CC BY）" loading="lazy"></figure>
+<h2>誤報、漏報，以及演算法不敢保證的事</h2>
+<p>消費級跌倒偵測的誠實聲明，其實比行銷文案重要。Apple 直接寫：不能偵測所有跌倒；高衝擊活動可能觸發。Samsung 提醒運動場景。Google 花整篇文章解釋為何需要 AI 來降低「看起來像跌倒」的誤判。這些句子不是免責的裝飾，而是產品物理極限：手腕加速度計與陀螺儀看到的是運動模式，不是「醫療意義上的跌倒事件」。</p>
+<p>同側手腕、跌倒方向、著地表面、是否用手撐地、是否緩慢滑倒而非硬摔，都會改變訊號。2022 年發表於 *JMIR Formative Research* 的觀察性研究，以二十二名健康成人、二百二十六次誘發性跌倒與錄影金標準，評估一款智慧手錶跌倒 App：整體敏感度約 77%、特異度約 99%、偽陽性率約 1.7%、偽陰性率約 16.4%、準確率約 89%；研究並指出，跌倒發生在配戴手錶的同一側時，較容易被偵測到。這不是針對某一品牌消費韌體的官方認證數字，卻提供一個有用的數量級：即便在控制場地的誘發跌倒，漏報仍可能落在一成五上下。</p>
+<p>NCOA 在介紹跌倒偵測時也引用文獻觀點：戴在手腕的偵測，可能不如頸部或腰帶位置準確，因為手臂活動遠多於軀幹，較易造成假警報；專家建議即使有感測，能按求助鍵仍應按。這與家庭實務一致：誤報會消耗信任。當手錶在 quant 課、拾取重物或突然坐進沙發時連續誤觸，有些長者會關掉功能，有些家人會開始忽略通知——而「狼來了」之後，真正的 hard fall 可能剛好碰上被關閉的開關。</p>
+<p>漏報的代價更難被看見，因為系統保持沉默。緩慢坐下式跌倒、從床沿滑落、被軟墊或地毯吸收衝擊、手錶當下沒戴（洗澡、充電、皮膚不適），都可能讓「自動守護」變成空集合。公共衛生端仍把重點放在預防：肌力與平衡訓練、居家環境改善、用藥檢視、視力與維生素 D 等；WHO 與 CDC STEADI 的菜單裡，穿戴裝置只是工具箱的一小格，不是取代扶手、照明與步態訓練的主菜。</p>
+<figure><img src="https://live.staticflickr.com/7006/26918784512_1360f7f38d_b.jpg" alt="緊急車輛與到院前救援，是自動撥號後的下一棒｜來源：Katzennase / Flickr（CC BY-NC-SA）" loading="lazy"></figure>
+<h2>兩種安全商品：監控中心月費，或家庭通訊錄</h2>
+<p>把市場分成「醫療警報訂閱」與「消費級手錶」有助於看清權責。</p>
+<p>醫療警報系統通常包含：穿戴按鈕或跌倒感測配件、家用基地台或行動裝置、以及付費的二十四小時監控中心。NCOA 2026 評測列出 Medical Guardian、Bay Alarm Medical、MobileHelp 等選項，月費從二十多美元起跳到更高階方案；跌倒偵測常是加價項。優點是有人接聽、可協調派遣、對不熟悉智慧型手機的長者介面較單純；代價是持續月費、設備歸還規則、以及「看起來像病人裝置」的污名——這也是為何品牌近年強調更輕薄、更像手錶或飾品。</p>
+<p>消費級智慧手錶的優點是日常穿戴率可能較高：它同時是手錶、通知中心、心率與活動紀錄，比較不像「等跌倒的機器」。對已在 Apple／Galaxy／Pixel 生態的家庭，設定路徑也較短。但責任模型不同：沒有專人話務坐鎮時，誤報要由使用者向派遣員解釋；漏設緊急聯絡人、手機不在旁、手錶沒電，後果由家庭吸收。Apple 甚至提醒：若不需要協助，請勿直接掛斷，應等到回應者接聽再說明——這是把「與緊急系統對話」的公民義務，寫進消費電子說明書。</p>
+<p>兩者不必互斥。有的家庭用醫療警報當主系統、手錶當輔；有的反過來。真正該比較的不是規格表上有沒有「Fall Detection」四個字，而是：跌倒當下誰會被叫醒、誰有鑰匙、誰知道藥盒在哪、誰能在十五分鐘內抵達、以及裝置在浴室與夜間是否仍被佩戴。</p>
+<figure><img src="https://live.staticflickr.com/65535/49166848552_bdbc8c0107_b.jpg" alt="笑容背後是獨立生活的願望，也是家庭的風險計算｜來源：Includovate / Flickr（CC BY）" loading="lazy"></figure>
+<h2>家庭協議：通知誰，誰來負責</h2>
+<p>技術把「知道」變快，卻不能自動生成照顧倫理。當手錶把位置與跌倒事件推給緊急聯絡人，名單本身就是權力與義務的清單。只填一位子女，等於把所有誤報與真警報壓在同一人身上；填了已疏遠的親戚，可能在最混亂的夜晚叫錯人；填了外籍看護的舊號碼，等於沒填。</p>
+<p>還有同意問題。五十五歲以上 Apple Watch 使用者可能發現功能被預設開啟——這對高風險族群是公共衛生友善的預設，卻也可能讓「我還沒準備好被監看」的人措手不及。位置分享、Medical ID、緊急聯絡人，都是在正常日子顯得多餘、在倒地那一秒才顯得致命的資料。家庭若把裝置當成秘密安裝的監看工具，信任會先碎，穿戴率也會掉；若能把它談成「我希望自己盡量住在家裡，所以我們一起把這條鏈設好」，裝置才比較像共同協議，而不是孝道考核。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 在台灣與許多東亞家庭，獨居或老老照顧並不罕見，子女常以「多打幾通電話」代替結構性安排。手錶跌倒偵測很適合被誤解成一勞永逸：買了就等於請到數位看護。更穩妥的理解是：它縮短「沒人知道」的時間，但把「知道之後怎麼辦」暴露得更清楚。需要被討論的是鑰匙盒、鄰居聯絡、白天誰可到場、夜間誰值守、以及何時該從消費級工具升級到含監控中心的方案。裝置是劇本裡的道具；家庭仍要寫分鏡。</p>
+<figure><img src="https://live.staticflickr.com/1255/1365084318_97508b2d88_b.jpg" alt="行動不便者的日常動線，提醒預防仍重於事後偵測｜來源：neovain / Flickr（CC BY-SA）" loading="lazy"></figure>
+<h2>預防仍比偵測更大：公共衛生沒有把球全丟給手錶</h2>
+<p>回到 WHO 與 CDC 的框架，有效介入仍然是多因子的：步態與平衡訓練、太極、居家評估與改造、精神作用藥物減量、視力與環境、維生素 D 缺乏者的補充等。STEADI 要臨床端做的是篩檢與轉介，不是開一張「請買智慧手錶」的處方。對政策與社區來說，照明不足的走廊、沒有扶手的浴室、過滑的地磚，不會因為某品牌發表新感測器就自動改善。</p>
+<p>這並不是要否定穿戴裝置。對已有跌倒史、骨質疏鬆、帕金森氏症、中風後平衡不佳、或確實長時間獨居的人，自動呼叫可能改寫 long lie 的機率。重點是把裝置放回正確位置：它是「倒地後的通訊」，不是「倒地前的平衡」。家庭若只做購物、不做防跌環境與運動，等於買了一套昂貴的事後簡訊。</p>
+<figure><img src="https://cdn.stocksnap.io/img-thumbs/960w/TMNVHGYBTL.jpg" alt="醫療現場承接的是系統沒能在家處理完的後果｜來源：Direct Media / StockSnap（CC0）" loading="lazy"></figure>
+<figure><img src="https://live.staticflickr.com/7357/10289807426_bfb2c54d2f_b.jpg" alt="另一代穿戴介面：消費電子把安全功能寫進日常手錶｜來源：Janitors / Flickr（CC BY）" loading="lazy"></figure>
+<h2>接下來要看什麼</h2>
+<p>未來幾年，值得追蹤的不是更多「我們也有跌倒偵測」的發表會口號，而是三條更具體的線。</p>
+<p>第一，準確度如何在真實高齡族群被驗證。實驗室誘發跌倒與特技替身有助於工程，但緩慢跌倒、合併昏迷、不同體型與居家地面，仍需要透明的臨床與實地資料；消費品牌若只給行銷案例、不給可檢驗的敏感度／偽陽性區間，家庭只能用誤報經驗自己做 A/B 測試。</p>
+<p>第二，責任介面會不會變得比較像公共服務。從監控中心、到緊急醫療派遣、到衛星 SOS，誰在幾秒內接手、跨國旅遊時號碼如何切換、語音選單地區能否被機器處理，都會決定「自動」到底自動到哪一步。Apple 與 Google 已把衛星緊急求援寫進高階機種情境，這顯示連線本身仍是戰場。</p>
+<p>第三，家庭與長期照顧制度如何吸收這些通知。當通知變多，照護者負荷可能上升而非下降；當長者拒絕穿戴，再強的模型也無用。比較健康的產品方向，或許是讓設定變得可理解、讓誤報可解釋、讓緊急聯絡人可以分層（先鄰居後子女、先簡訊後電話），而不是用恐懼行銷逼每個家庭再多買一層訂閱。</p>
+<p>傍晚走廊的聲控燈終會再亮一次。若有人跌倒，手錶可能比任何人更早震動。但震動之後的世界，仍由人組成：派遣員、子女、鄰居、到場的救護技術員。科技能縮短沉默，不能代簽照顧契約。對想在家裡老去的人來說，真正的問題從來不是手錶聰不聰明，而是——跌倒之後，誰已經答應要接那一通電話，而且知道接下來該做什麼。</p>
+<figure><img src="https://live.staticflickr.com/3876/14781432977_509d8bb75c_b.jpg" alt="獨坐的日常：獨立生活與風險並存｜來源：philos from Athens / Flickr（CC BY）" loading="lazy"></figure>
+<h2>場景細讀：獨居不是統計名詞</h2>
+<p>把公共衛生曲線翻譯成家庭場景，通常從很普通的一天開始。清晨充電座上的手錶電量是否滿格；浴室是否仍是最危險、也最常脫下手錶的地方；午后用藥後是否較昏沉；傍晚光線變差時，地毯邊緣與拖鞋是否變成關卡。CDC 用千萬人的問卷描繪「過去一年是否跌倒」，但每個「是」的背後，都是一次可能改變居住安排的事件：要不要裝扶手、要不要放棄獨居、要不要讓外籍看護住進來、要不要把鑰匙複製給樓下鄰居。</p>
+<p>跌倒偵測裝置進入這個場景時，行銷語言喜歡說「獨立」與「安心」。這兩個詞對父母與子女的意義並不完全相同。對長者，獨立往往是「我還能自己決定今天吃什麼、何時出門」；對子女，安心往往是「萬一倒了，我會知道」。裝置承諾同時滿足兩者，前提卻是長者願意天天戴、家人願意被隨時呼叫、而且雙方對誤報有共同容忍度。若只有一方單方面下單，裝置很容易變成抽屜裡的禮物。</p>
+<p>在台灣語境裡，這條線還會碰到居住型態與照顧文化。子女未必同住，卻仍被期待「有孝心就該知道」；鄰里關係可能比西方公寓更緊密，也可能因都市化而更疏離。手錶通知若只打給遠方子女、不打給五分鐘可到的鄰居，地理優勢就被設定檔浪費。反之，若緊急聯絡人塞滿整個家族群組，誤報會變成公開事件，讓長者覺得丟臉而關閉功能。好的設定不是把通訊錄全部貼上，而是依「距離、鑰匙、醫療決策權、情緒負擔」分層。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Grab_bar.jpg" alt="浴室扶手等居家改造，是說明書之外的安全基礎設施｜來源：Gramody / Wikimedia Commons（CC BY-SA）" loading="lazy"></figure>
+<h2>產品邊界寫在哪裡：官方文件比廣告誠實</h2>
+<p>回到一手文件，三家主要消費品牌其實都用近似的句式畫線。Apple 說無法偵測所有跌倒，高衝擊活動可能觸發；Samsung 說高衝擊運動可能被登記為跌倒，健康資料不供診治；Google 說明模型必須區分硬摔與模仿跌倒的動作，並把連線條件寫進支援頁。這些句子若被讀成「反正不準，不必設」，會錯失工具；若被讀成「設了就等於請到看護」，又會過度承諾。</p>
+<p>更細的產品邊界還包括年齡與預設。Apple 將功能限於十八歲以上，並對五十五歲以上採自動開啟；這是風險分層的預設，不是道德指控。Samsung 預設關閉，把選擇權留給使用者，但也提高「買了卻沒開」的機率。Google 則把 Fall Detection 與其他安全功能（Emergency SOS、車撞偵測等）放在同一套安全敘事中，讓手錶比較像個人安全裝置，而不只是健身配件。家庭在選購時，與其比較誰的廣告片更催淚，不如直接打開設定頁，把緊急聯絡人、腕部偵測、運動時是否啟用、以及 Wi-Fi／LTE 依賴，一項一項勾完。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Old_man_sitting_alone_reminiscing_on_his_past_days.jpg" alt="獨居長者的時間感，往往在無人聽見時被拉長｜來源：Bundleofgreens / Wikimedia Commons（CC BY-SA）" loading="lazy"></figure>
+<h2>長時間躺地：為什麼「晚一點知道」代價那麼高</h2>
+<p>《BMJ》與後續老年醫學文獻反覆碰到同一個臨床現實：跌倒後若無法起身，躺地超過一小時，後果可能比撞擊本身更棘手，包括壓瘡、脫水、低體溫、橫紋肌溶解、腎損傷、後續失能與死亡風險上升。對獨居者，long lie 的發生條件很單純——沒有人聽見、自己按不到鈕、電話不在身邊。自動偵測與自動撥號，理論上就是針對這段「無人聽見」的時間。</p>
+<p>但 long lie 的預防仍有一半發生在跌倒之前。WHO 列舉的高齡介入包含平衡訓練、太極、居家改造與用藥調整；CDC STEADI 把篩檢放進臨床流程。若浴室沒有防滑與扶手，手錶再靈敏，也只是更早通知家人「又跌倒了」。若藥物導致眩暈卻從未被檢視，通知鏈再完整，也只是重複接同一類警報。穿戴裝置最適合補的，是「已盡力預防之後仍發生」的通訊缺口，而不是取代預防本身。</p>
+<figure><img src="https://live.staticflickr.com/3387/3228248548_1dce5db0c0_b.jpg" alt="手杖與行動輔助：預防工具箱比單一感測器更寬｜來源：Adventures of Pam &amp; Frank / Flickr（CC BY）" loading="lazy"></figure>
+<h2>誤報經濟學：信任比感測器更脆弱</h2>
+<p>每次誤報都會產生成本：緊急單位的出勤或至少一通電話、家人的工作中斷、長者的尷尬、以及下一次通知被滑掉的機率。JMIR 研究在控制條件下得到約 1.7% 的偽陽性率，看起來不高，但換算到全年每日佩戴，家庭感受到的是「偶發但印象深刻」的擾動。NCOA 提醒手腕位置先天容易因手臂動作誤觸，並建議能按鍵仍要按——這等於承認自動化是備援，不是唯一通道。</p>
+<p>因此，產品若只提供「開／關」，對真實家庭往往不夠。更有用的是可理解的模式：運動時提高門檻、睡眠時維持警戒、誤報後一鍵回報「這不是跌倒」以改善個人化、以及讓緊急聯絡人區分「已自動呼叫救援」與「僅提醒家人」。目前各品牌已有「只在運動時偵測」等選項，顯示工程師知道誤報會殺死功能；下一步應是讓照護者端的通知也帶足夠脈絡，減少半夜驚醒後的資訊真空。</p>
+<figure><img src="https://live.staticflickr.com/5238/7385246162_ebd884b19b_b.jpg" alt="家庭與公共空間中的高齡者：通知之後仍要有人到場｜來源：Public Places / Flickr（CC BY）" loading="lazy"></figure>
+<h2>結語之外的行動清單</h2>
+<p>若把本文收成家庭可執行的步驟，大致是五條。第一，先做跌倒風險與居家環境，再決定裝置層級。第二，若選擇消費級手錶，完成年齡資料、緊急聯絡人、腕部偵測、LTE／手機依賴檢查，並實際演練一次「我沒事」與「取消倒數」。第三，把鑰匙與藥物資訊交給至少一位能在短時間抵達的人，不要只依賴外縣市子女。第四，對高風險且拒絕複雜介面的長者，認真評估含監控中心的醫療警報，而非堅持潮流手錶。第五，把誤報當成系統維護事件：記錄情境、調整模式，而不是互相指責「誰又亂叫救護」。</p>
+<p>走廊燈會亮，也會灭。技術可以讓黑暗裡的撞擊更快被世界聽見；但聽見之後，仍需要一雙知道密碼箱位置的手。</p>
+<p>裝置不會替家庭完成最難的那部分對話：承認父母可能跌倒、承認子女無法隨傳隨到、承認有些獨立必須用結構性安排來交換。把這些話說開，比糾結該買哪一款手錶更接近問題核心。消費電子可以把「沉默的跌倒」變成「有聲音的事件」；至於事件之後是恐慌、是協調、還是早就演練過的流程，仍取決於人。</p>
+<p>若從產業觀察，醫療警報與消費手錶的界線也會繼續模糊：前者做出更像手錶的外表，後者加入更像救援服務的連線；有的方案開始把照護者 App、位置歷史與家庭群組做成標準配備。對使用者而言，重點仍是合約與失敗模式是否清楚——沒電時怎麼辦、出差時誰接通知、搬到新家後基地台或 Wi-Fi 是否重設、以及取消訂閱後設備如何歸還。這些「無聊細節」決定裝置在第三個月是否仍被佩戴。</p>
+<p>公共討論若只停留在「科技改變照護」，容易忽略勞動與性別：夜間接電話的往往是特定子女，白天能到場的可能是看護或鄰居。自動通知不會自動平均分配照顧負荷，有時反而讓遠距子女產生「我已經盡力」的錯覺，而近距照顧者仍承擔實體工作。好的家庭協議應把通知對象與到場對象分開設計，並定期重談，而不是設定一次就永久有效。</p>
+<h2>引用來源</h2>
+<p class="ref">¹ WHO（頁面持續更新）— "Falls" fact sheet
+<a href="https://www.who.int/news-room/fact-sheets/detail/falls" rel="noopener" target="_blank">https://www.who.int/news-room/fact-sheets/detail/falls</a></p>
+<p class="ref">² CDC MMWR（2023-09-01）— "Nonfatal and Fatal Falls Among Adults Aged ≥65 Years — United States, 2020–2021"
+<a href="https://www.cdc.gov/mmwr/volumes/72/wr/mm7235a1.htm" rel="noopener" target="_blank">https://www.cdc.gov/mmwr/volumes/72/wr/mm7235a1.htm</a></p>
+<p class="ref">³ CDC（2024-05 更新／2026-01 審閱）— "Facts About Falls"
+<a href="https://www.cdc.gov/falls/data-research/facts-stats/index.html" rel="noopener" target="_blank">https://www.cdc.gov/falls/data-research/facts-stats/index.html</a></p>
+<p class="ref">⁴ CDC STEADI — Older Adult Fall Prevention
+<a href="https://www.cdc.gov/steadi/index.html" rel="noopener" target="_blank">https://www.cdc.gov/steadi/index.html</a></p>
+<p class="ref">⁵ Apple Newsroom（2018-09-12）— "Redesigned Apple Watch Series 4 revolutionizes communication, fitness and health"
+<a href="https://www.apple.com/newsroom/2018/09/redesigned-apple-watch-series-4-revolutionizes-communication-fitness-and-health/" rel="noopener" target="_blank">https://www.apple.com/newsroom/2018/09/redesigned-apple-watch-series-4-revolutionizes-communication-fitness-and-health/</a></p>
+<p class="ref">⁶ Apple Support（2026-05-06）— "Use Fall Detection with Apple Watch"
+<a href="https://support.apple.com/en-us/108896" rel="noopener" target="_blank">https://support.apple.com/en-us/108896</a></p>
+<p class="ref">⁷ Samsung Support — "Use the Detect fall feature on your Samsung smart watch"
+<a href="https://www.samsung.com/us/support/answer/ANS10003423/" rel="noopener" target="_blank">https://www.samsung.com/us/support/answer/ANS10003423/</a></p>
+<p class="ref">⁸ Google The Keyword（2023-06-13）— "How Google Pixel Watch knows when you fall"
+<a href="https://blog.google/products-and-platforms/devices/pixel/google-pixel-watch-fall-detection-ai/" rel="noopener" target="_blank">https://blog.google/products-and-platforms/devices/pixel/google-pixel-watch-fall-detection-ai/</a></p>
+<p class="ref">⁹ Google Support — "Get help in an emergency with Google Pixel Watch safety features"
+<a href="https://support.google.com/googlepixelwatch/answer/12663810?hl=en" rel="noopener" target="_blank">https://support.google.com/googlepixelwatch/answer/12663810?hl=en</a></p>
+<p class="ref">¹⁰ Google The Keyword（2023-02-28）— "Google Pixel Watch can now detect when you fall"
+<a href="https://blog.google/products-and-platforms/devices/pixel/fall-detection-on-pixel-watch/" rel="noopener" target="_blank">https://blog.google/products-and-platforms/devices/pixel/fall-detection-on-pixel-watch/</a></p>
+<p class="ref">¹¹ Brew B, Faux SG, Blanchard E. JMIR Formative Research（2022-03-21）— "Effectiveness of a Smartwatch App in Detecting Induced Falls: Observational Study"
+<a href="https://formative.jmir.org/2022/3/e30121/" rel="noopener" target="_blank">https://formative.jmir.org/2022/3/e30121/</a></p>
+<p class="ref">¹² PubMed 摘要頁 — 同上研究
+<a href="https://pubmed.ncbi.nlm.nih.gov/35311686/" rel="noopener" target="_blank">https://pubmed.ncbi.nlm.nih.gov/35311686/</a></p>
+<p class="ref">¹³ Fleming J, Brayne C. BMJ（2008-11-17）— "Inability to get up after falling, subsequent time on floor, and calling for help: prospective cohort study in people over 90"
+<a href="https://www.bmj.com/content/337/bmj.a2227" rel="noopener" target="_blank">https://www.bmj.com/content/337/bmj.a2227</a></p>
+<p class="ref">¹⁴ NCOA（2026-07-01）— "The Best Medical Alert Systems of 2026: Tested and Reviewed"
+<a href="https://www.ncoa.org/product-resources/medical-alert-systems/best-medical-alert-systems/" rel="noopener" target="_blank">https://www.ncoa.org/product-resources/medical-alert-systems/best-medical-alert-systems/</a></p>
+<p class="ref">¹⁵ Lifeline — Medical alert systems home
+<a href="https://www.lifeline.com/" rel="noopener" target="_blank">https://www.lifeline.com/</a></p>
+<p class="ref">¹⁶ Lifeline — Automatic Fall Detection Systems for Seniors
+<a href="https://www.lifeline.com/medical-alert-systems/fall-detection/" rel="noopener" target="_blank">https://www.lifeline.com/medical-alert-systems/fall-detection/</a></p>
+<p class="ref">¹⁷ Philips（2019-12-04）— "Philips Lifeline Medical Alert Services with AutoAlert" media library
+<a href="https://www.philips.com/a-w/about/news/media-library/20191204-Philips-Lifeline-Medical-Alert-Services-with-AutoAlert.html" rel="noopener" target="_blank">https://www.philips.com/a-w/about/news/media-library/20191204-Philips-Lifeline-Medical-Alert-Services-with-AutoAlert.html</a></p>
+<p class="ref">¹⁸ Samsung Australia Support（頁面更新 2026-06-16）— "Activate Hard Fall Detection on my Samsung Watch"
+<a href="https://www.samsung.com/au/support/mobile-devices/activate-hard-fall-detection/" rel="noopener" target="_blank">https://www.samsung.com/au/support/mobile-devices/activate-hard-fall-detection/</a></p>
+<p class="ref">¹⁹ Google Store — "Your Guide to Pixel Watch Safety Features"
+<a href="https://store.google.com/us/magazine/pixel-watch-safety-features?hl=en-US" rel="noopener" target="_blank">https://store.google.com/us/magazine/pixel-watch-safety-features?hl=en-US</a></p>
+<p class="ref">²⁰ Florence CS et al. / CDC 引述路徑見 MMWR 與 Facts About Falls 參考文獻（跌倒醫療成本相關）
+<a href="https://pubmed.ncbi.nlm.nih.gov/29512120/" rel="noopener" target="_blank">https://pubmed.ncbi.nlm.nih.gov/29512120/</a></p>
+<p class="ref">²¹ American College of Emergency Physicians 等臨床政策與 CDC Facts About Falls 參考鏈（輕度創傷性腦傷等）
+<a href="https://www.cdc.gov/falls/data-research/facts-stats/index.html" rel="noopener" target="_blank">https://www.cdc.gov/falls/data-research/facts-stats/index.html</a></p>
+<p class="ref">²² Kakara R et al. MMWR 全文同上（州別差異與 STEADI 建議）
+<a href="https://www.cdc.gov/mmwr/volumes/72/wr/mm7235a1.htm" rel="noopener" target="_blank">https://www.cdc.gov/mmwr/volumes/72/wr/mm7235a1.htm</a></p>
+<p class="ref">²³ WHO Global report on falls prevention in older age（歷史報告 PDF）
+<a href="https://extranet.who.int/agefriendlyworld/wp-content/uploads/2014/06/WHo-Global-report-on-falls-prevention-in-older-age.pdf" rel="noopener" target="_blank">https://extranet.who.int/agefriendlyworld/wp-content/uploads/2014/06/WHo-Global-report-on-falls-prevention-in-older-age.pdf</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/109" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
