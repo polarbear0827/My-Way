@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>那通求救電話，為什麼不能只聽聲音 · 穗稻忠武的專欄</title>
+<meta name="description" content="一通來自陌生號碼的電話裡，若有人用熟悉的聲音急促地說「我出事了，先不要告訴別人」，多數人的第一個反應不會是辨認音訊編碼，而是相信關係。這正是語音複製改變日常防詐的地方：它不是憑空發明恐懼，而是把原本已存在的冒充、勒索與催促，換上一種更貼近家庭記憶的介面。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-08-09-voice-cloning-family-fraud/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="那通求救電話，為什麼不能只聽聲音">
+<meta property="og:description" content="一通來自陌生號碼的電話裡，若有人用熟悉的聲音急促地說「我出事了，先不要告訴別人」，多數人的第一個反應不會是辨認音訊編碼，而是相信關係。這正是語音複製改變日常防詐的地方：它不是憑空發明恐懼，而是把原本已存在的冒充、勒索與催促，換上一種更貼近家庭記憶的介面。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-08-09-voice-cloning-family-fraud/">
+<meta property="og:image" content="https://live.staticflickr.com/8634/15904881648_f90bd12826_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "那通求救電話，為什麼不能只聽聲音", "description": "一通來自陌生號碼的電話裡，若有人用熟悉的聲音急促地說「我出事了，先不要告訴別人」，多數人的第一個反應不會是辨認音訊編碼，而是相信關係。這正是語音複製改變日常防詐的地方：它不是憑空發明恐懼，而是把原本已存在的冒充、勒索與催促，換上一種更貼近家庭記憶的介面。", "url": "https://polarbear0827.github.io/My-Way/p/2026-08-09-voice-cloning-family-fraud/", "datePublished": "2026-08-09", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/8634/15904881648_f90bd12826_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>那通求救電話，為什麼不能只聽聲音</h1>
+<p class="byline"><time>2026-08-09</time></p>
+</div>
+
+<p class="lead">一通來自陌生號碼的電話裡，若有人用熟悉的聲音急促地說「我出事了，先不要告訴別人」，多數人的第一個反應不會是辨認音訊編碼，而是相信關係。這正是語音複製改變日常防詐的地方：它不是憑空發明恐懼，而是把原本已存在的冒充、勒索與催促，換上一種更貼近家庭記憶的介面。</p>
+<figure><img src="https://live.staticflickr.com/8634/15904881648_f90bd12826_b.jpg" alt="老式電話聽筒｜來源：r.nial.bradshaw / Flickr（CC BY）" loading="lazy"><figcaption>電話本來是把遠方的人帶進家裡的媒介；在語音可被模擬後，通話中的「熟悉感」不能再單獨承擔身分驗證。</figcaption></figure>
+<p>本文談的是可被公開資料支持的風險與程序，不把每一段可疑音檔都判成 AI，也不以未經查證的台灣案件數字製造恐慌。美國 FTC 與 FCC 都把「冒充家人緊急求助」列為合成聲音可能被濫用的情境¹²；台灣 165 打詐儀錶板提供一般詐騙警示與統計，但本文未找到能把語音複製案件獨立、可靠量化的公開表格²⁰。讀者真正能帶走的問題是：當耳朵不再足以確認身分，家人、平台與金融機構各該把哪一段驗證做得更可靠？</p>
+<h2>聲音為何曾是家人的憑證</h2>
+<figure><img src="https://live.staticflickr.com/4119/4880827911_cce12fed08_b.jpg" alt="通話中的手機｜來源：anokarina / Flickr（CC BY-SA）" loading="lazy"><figcaption>手機通話把聯絡壓縮為幾秒鐘的反應；在緊急情境中，熟悉的聲線常比螢幕上的陌生號碼更能觸發行動。</figcaption></figure>
+<p>聲音一直是低摩擦的社會憑證。家人會從口音、笑聲、稱呼和說話速度判斷對方；客服、銀行和社群平台也曾把它當作輔助訊號。可是這些判斷多半是「感覺像」，不是可稽核的驗證。BBC 在測試中報導，複製的客戶聲音曾通過一套用於銀行安全檢查的語音辨識系統；該報導的重點不是所有語音生物辨識都已失效，而是單一聲音訊號不宜被當成高價值操作的唯一門檻⁴。 這個轉變也會影響日常語言。過去「聽起來就是他」常是安心的結論；現在它最多只能是待確認的線索。FCC 的消費者指南明確提醒，來電顯示的本地號碼也不必然可信，若對方自稱親友有急難，應自行用既有聯絡方式回撥確認後再匯款²。這項建議看似普通，卻把判斷從聲音的真偽，移回可被重複執行的程序。</p>
+<p>重要的是避免另一種誤解：不是每個語音合成片段都意圖詐騙，也不是每通緊急電話都應被冷漠對待。合理做法是先把電話留在線上、請對方等待，再由另一位家人以通訊錄內既有號碼、視訊或其他獨立管道確認。這不是把親情變成審訊，而是讓善意不必依賴一個容易被偽造的訊號¹²。</p>
+<h2>舊劇本，新材料</h2>
+<figure><img src="https://live.staticflickr.com/6018/6017808909_4c09faa53c_b.jpg" alt="電話與嚴肅談話｜來源：Anton Novoselov / Flickr（CC BY）" loading="lazy"><figcaption>冒充型詐騙的關鍵往往不是技術名詞，而是把收款時限、羞恥感與保密要求同時塞進一段對話。</figcaption></figure>
+<p>所謂「家人出事」的劇本早於生成式 AI：騙徒可能冒充孫輩、律師、警員或銀行人員，要求保釋金、醫療費或立即轉帳。合成語音增加的是客製化與說服的材料，而不是讓所有既有電話詐騙突然變成同一類技術事件。FTC 的消費者警示描述過冒充家人、要求立刻匯錢的語音複製情境¹；Reuters 2024 年報導美國 FCC 宣告 AI 複製聲音 robocall 屬非法，並引述主管機關說法，稱壞人已把這類聲音用於勒索脆弱家人、冒充名人與影響選舉³。</p>
+<p>真正值得注意的是壓力的設計。要求「不要掛電話」「不要告訴父母」「現在就用禮品卡或加密貨幣」會縮短核實時間。CISA、NSA 與 FBI 對 deepfake 威脅的聯合指引建議組織建立多管道驗證與既定程序¹⁰；放到家庭，意思不是要家人使用企業級工具，而是把付款決策拆開：通話者不能同時決定緊急性、收款方式與驗證途徑。 國際案例也顯示，受害對象並不只限於家庭。Reuters 報導，義大利警方 2025 年凍結一筆約一百萬歐元款項，案件涉及以 AI 聲音冒充義大利政府官員、接觸企業領袖⁷。這不能證明每個人都會遇到同樣攻擊，但它提醒我們：當聲音被當作權威符號時，家庭與職場都可能出現同一個缺口。</p>
+<h2>從短音檔到一次冒充：能力與不能確認之處</h2>
+<figure><img src="https://live.staticflickr.com/5529/12212276953_2a1456173f_b.jpg" alt="錄音麥克風｜來源：www.ilmicrofono.it / Flickr（CC BY）" loading="lazy"><figcaption>聲音樣本可能來自公開影片、語音留言或直播；這張麥克風照片指向的是「來源材料」而非任何特定案件。</figcaption></figure>
+<p>語音複製系統以既有錄音學習音色、節奏與發音，再依文字生成新的語句。公開服務的門檻、樣本長度與品質各不相同，因此不宜把「幾秒就能完美複製任何人」當作不變事實。較可確認的是：Consumer Reports 2025 年測試六款常見產品，指出其中四款未設有意義的技術機制來確認被複製者同意；該機構也說其測試顯示，有些較嚴格的機制仍可能被繞過⁸。這是 CR 對產品設計的測試結論，不是對所有市場服務的普查。</p>
+<p>BBC 的報導與 CR 的研究共同說明另一件事：人耳未必有可靠能力靠音色辨別真偽⁴⁵。音檔壓縮、電話網路品質、情緒與環境噪音，原本就會改變聲音；因此以「聽起來有沒有怪」作為唯一防線，既容易誤判，也可能讓真正需要協助的人被不必要地懷疑。FBI 的 2025 警示也提醒，高階官員的冒充訊息可能包含近乎相同的語音複製，建議以已知聯絡資訊另行驗證¹²。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 與其要求一般人都成為音訊鑑識者，更實際的原則是把聲音降級為「啟動核實」的提示。這保留了人在危急時互相回應的速度，同時拒絕讓單一媒介直接授權付款、提供帳密或改變帳戶設定。</p>
+<h2>平台的門檻：同意、浮水印與審核</h2>
+<figure><img src="https://live.staticflickr.com/4083/5007620776_9e3697544b_b.jpg" alt="手機安全圖像｜來源：TTC Press Images / Flickr（CC BY-SA）" loading="lazy"><figcaption>手機安全並不只取決於使用者是否「夠小心」；提供工具者設計的預設門檻同樣決定濫用成本。</figcaption></figure>
+<p>討論防詐時，很容易把所有責任推回接電話的人：別在社群貼聲音、學會分辨、設定暗語。這些習慣有用，卻忽略了能大量生成、散播與兌現內容的系統由誰設計。CR 的報告主張，服務商至少可要求特定同意語句、保留可追溯的付款與帳戶資訊、對常見詐騙語意設限制，並考慮浮水印或事後偵測⁸⁹。該報告同時記錄業者的回應：部分公司稱採用人工與自動審核、封鎖公眾人物聲音或加入標記；這些是業者自述，效果仍需要獨立檢驗。</p>
+<p>技術上也沒有萬靈丹。Ofcom 2025 年的討論文件把 deepfake 的歸屬、偵測與使用者理解列為不同層次，並警告這類內容可被用於金融詐騙與其他傷害¹³。若接收端只依賴一個偵測器的分數，騙徒可改變錄音品質、轉錄方式或傳輸管道；若只依賴浮水印，未標記的來源仍存在。FTC 對語音複製挑戰的說明亦承認，預防、即時偵測、監測與事後評估需要並行，而不是只靠一種技術¹⁷。</p>
+<p>因此，合理的責任分配至少有三層：產品端提高未經同意複製的成本；通訊與平台端改善可疑來話、帳號與付款鏈路的通報；金融端對異常收款或大額急件要求額外確認。把最後一層全交給在電話另一端受驚的家人，既不公平，也不符合風險發生的位置。</p>
+<h2>法律追得上那通電話嗎</h2>
+<figure><img src="https://live.staticflickr.com/5346/9204794553_471b84e9f6_b.jpg" alt="電話按鍵｜來源：tony_duell / Flickr（CC BY）" loading="lazy"><figcaption>按下數字鍵的動作很簡單，但來電顯示、語音來源、跨境收款與執法管轄往往分散在不同系統。</figcaption></figure>
+<p>監管的進展可防止「法律完全空白」的印象，但也不等於每次冒充都能即時攔下。FCC 在 2024 年認定以 AI 生成聲音的來電可視為 TCPA 所稱的 artificial 或 prerecorded voice，未取得同意時原則上受到限制²³。FTC 則完成政府與企業冒充規則，並曾提議把保護延伸到個人冒充；其公告明確提到 AI deepfake 可能放大冒充傷害¹⁶。這些規則主要針對美國管轄下的行為，不可直接當作台灣法律現況。</p>
+<p>跨境性是執法的另一個限制。Europol 對社會工程的說明指出，犯罪者利用人類行為而非只攻擊系統，AI 可使其更逼真¹⁴；Interpol 的全球金融詐欺評估則提到，黑市可提供從少量聲音或影像樣本複製臉與聲音的應用¹⁵。兩者都支持「威脅跨平台、跨國」的判斷，卻不提供任何一個家庭案件是否必然涉及跨境集團的證明。</p>
+<p>台灣讀者若遇到可疑電話，較具體的本地入口仍是 165 打詐儀錶板與既有報案、銀行止付程序²⁰。本文不以它替代緊急服務：若有人有立即人身危險，應聯絡當地緊急服務或警方；若是付款、帳戶或身分資料風險，保留號碼、訊息、帳戶與時間紀錄，並快速聯絡金融機構及官方通報管道。法律的功能是追責和建立義務，當下保住款項往往仍取決於能否在轉帳前暫停。</p>
+<h2>家庭的第二條線：不靠猜聲音的應對</h2>
+<figure><img src="https://live.staticflickr.com/3870/14365358930_5c57b16a25_b.jpg" alt="電話安全鎖｜來源：Ervins Strauhmanis / Flickr（CC BY）" loading="lazy"><figcaption>安全鎖象徵的不是「永遠不接電話」，而是把高風險決定加上一個可重複的停頓與確認。</figcaption></figure>
+<p>家庭可先在平靜時約定一套低科技、可負擔的流程。第一，任何涉及匯款、禮品卡、加密資產、一次性密碼或帳號變更的急件，都暫停幾分鐘；第二，改撥通訊錄中原有的號碼，或請另一位家人以不同管道確認；第三，若通話者要求保密，反而把這件事告訴可信任的人。FCC 的指南建議對自稱親友陷入困境者直接聯絡本人驗證，對自稱政府或公司者則掛斷後使用帳單、電話簿或官方網站上的號碼回撥²。 「家庭暗語」常被提出作為補強，但它有邊界：暗語可能外洩、家人可能忘記，或真實緊急情境無法順利回答。因此它應是第二層，而非唯一門鎖。更穩健的安排是預先設定：誰可以批准大額款項、什麼情況必須兩人確認、海外旅行時如何留下可用聯絡方式、誰保管銀行或電信客服的官方電話。這些做法與 CISA 對多管道核實的原則一致¹⁰，但不需要把家庭生活變成資安演練。</p>
+<p>也要留意受害者處境。遭到高壓通話後，人可能感到羞愧而延遲求助；媒體與官方用語若只責備「怎麼會相信」，會讓通報更難。FTC 的警示要求消費者在可疑的緊急求助中放慢並驗證¹；它沒有把責任說成只屬於聽電話的人。較好的家人約定是：不論是否真的轉帳，只要覺得不對，就可以不被責怪地求助與共同查證。</p>
+<h2>不把合成聲音一概妖魔化</h2>
+<figure><img src="https://live.staticflickr.com/3078/2430893175_0271c61001_b.jpg" alt="行動電話｜來源：William Hook / Flickr（CC BY-SA）" loading="lazy"><figcaption>同一支手機既能播放冒充聲音，也能保存家人的留言、協助失語者發聲；風險治理不能把兩種用途混為一談。</figcaption></figure>
+<p>語音複製並非只服務於騙局。AP 報導過一名因疾病失去聲音的人，透過 AI 重建可隨身使用的個人聲音；報導也提到相關新創公司為影視或廣泛使用者提供服務，且業者的濫用限制做法不一²¹。FTC 同樣指出，這項技術可能讓因事故或疾病失聲的人以接近自己的聲音說話，也可能協助配音與無障礙用途¹⁷。這些益處不能抹去未經同意冒充的傷害，但說明了政策不應只問「要不要禁止」。</p>
+<p>真正需要被區分的是用途、同意與高風險操作。自願建立的個人聲音、清楚標示的敘事配音、取得授權的翻譯，與拿公開錄音冒充親友索款，涉及不同關係。美國紐約時報報導兩名配音員控告語音 AI 公司未經許可使用其聲音；公司否認不當行為¹⁹。這類爭議也提醒：同意不是點選一次條款後就消失的細節，而是聲音是否能被收集、訓練、重複使用及商業化的持續問題。 <strong>（以下為分析，非事實陳述）</strong> 最能兼顧無障礙與安全的方向，不是要求每個人放棄聲音工具，而是讓「被複製者同意」「產出可追溯」「高風險操作另行確認」成為不同環節的預設。如此一來，失語者不必為騙徒的濫用失去工具；家庭也不必用是否相信親人，來承擔平台與流程本可分攤的風險。</p>
+<h2>結語：把驗證移回關係與程序</h2>
+<figure><img src="https://live.staticflickr.com/8063/8174622761_068e607341_b.jpg" alt="等待來電的電話｜來源：garryknight / Flickr（CC BY）" loading="lazy"><figcaption>電話另一端的急促聲音可以是真實求助，也可能是冒充；可重複的回撥與共同確認，讓兩種可能都能被認真對待。</figcaption></figure>
+<p>語音複製迫使人們承認一件不太舒服的事：熟悉感不是證據。這不要求我們停止接電話，也不要求家人在真正危機來臨時先完成技術測驗；它要求把最容易被利用的「立刻相信、立刻付款、不要告訴別人」拆開。回撥既有號碼、找第二位親友、使用官方聯絡方式、延遲不可逆的付款，都是能在沒有偵測軟體時執行的保護。</p>
+<p>監管機構、平台、電信業者與金融機構仍有責任降低冒充的規模與獲利機會。消費者教育不應成為它們不設同意驗證、不追溯濫用或不改善付款防線的藉口。反過來說，偵測器、標記與法律也無法保證一段錄音的真實性；它們最有價值的角色，是讓人有時間把決定轉交給更可靠的程序。 下一次有人在電話裡說「我是我，快幫我」，較好的回答或許不是冷漠掛斷，而是：「我會幫你；我先用原來的號碼回撥。」那一句話同時保留關係，也拒絕讓任何一段聲音單獨決定金錢、帳戶與安全。 補充一個經常被忽略的限制：公開警示、媒體個案與產品測試，不能自動加總成「語音深偽造成多少詐騙損失」的精準數字。案件受理時可能只記錄假投資、假檢警、親友急難或冒名，而不會可靠記下是否使用語音模型；受害者也可能不知道錄音從何而來。本文因此不把網路流傳的「只要三秒」或「某比例的人已受害」當作台灣社會的統計結論。較誠實的說法是：多個監管與執法機構已把合成音訊列入冒充風險，產品測試也發現保障強度不一，但風險規模與不同地區的實際占比仍有測量缺口¹⁻³⁸⁻¹⁵。</p>
+<p>這個限制會改變新聞與家庭的反應方式。媒體報導個案時，應分清楚「受害者聽到疑似模仿聲音」「警方認定使用合成工具」與「技術鑑定已確認」三種不同層級；平台下架內容時，也不應把未經證實的指控直接稱為深偽。對家人而言，判斷標準反而更單純：即使無法證明來電是否由 AI 生成，只要對方要求不可逆的支付或敏感資訊，就值得啟動另一條驗證路徑。這是以行為風險，而非以技術標籤做決策。 金融與電信系統在這個問題上也不是旁觀者。若詐騙者成功讓人相信某段聲音，真正把損害變成現金的仍是收款帳戶、轉帳、虛擬資產交易、禮品卡或一次性密碼。FCC 指南把核實來電者、避免在不請自來的通話中交出帳戶資料、使用來電封鎖工具並提出申訴列為可行措施²；這些動作需要使用者配合，但也依賴業者能提供清楚的官方回撥入口與可理解的異常交易提示。 <strong>（以下為分析，非事實陳述）</strong> 對高風險金流，較好的設計不該要求客戶在通話中自行判別「這聲音是否合成」，而應問：這項付款是否與平常模式明顯不同？是否剛被陌生來電催促？是否能以第二個獨立通道確認？這類摩擦可能讓真實急件多花幾分鐘，也可能讓有正當理由的使用者感到不便；但它把成本放在能設計流程的機構，而不是只留給情緒最受衝擊的人。任何防護都應有申訴與人工協助，避免以風險控制為名，對老人、身心障礙者或跨國家庭造成新的排除。 聲音樣本的來源亦值得以隱私角度討論。公開演講、短影片、遊戲語音、客服錄音與語音訊息，都可能讓一個人留下可被再利用的材料；但「因此絕不發聲」不是合理的生活建議。個人能做的是檢視公開帳號的可見範圍、對不明帳號的索取錄音要求保持警覺，並在必要時移除可辨識身分的長段公開音檔。這些措施只能減少暴露面，不能保證聲音不被擷取或冒充。</p>
+<p>更重要的隱私問題在服務端。CR 的研究對六個工具的比較，把是否要求能證明本人同意的錄音、是否可追溯使用者、是否使用浮水印和是否做內容審核列為差異⁸⁹。業者稱有防護，並不表示外界已證明其防護充分；相反地，外部測試提出疑慮，也不等於每一位使用者或每一段產出都違法。可檢驗的透明度應包括：服務何時接受上傳他人音檔、何種帳戶可建立高擬真複製、違規後如何停權、受影響者如何申訴與取得救濟。若這些問題沒有答案，要求消費者「小心點」只是把資訊不對稱留在原處。 最後，這個議題牽涉的不只是個資或詐欺，還有公共信任。AP 報導的官方人物冒充事件⁶、Reuters 所述的商業目標案例⁷，都顯示熟悉聲音可被用來借用權威。當社會把每段錄音都當成可能是假的，真實受害者、記者取得的音檔與無障礙使用者也可能承受新的不信任；這就是「所有東西都可能是假的」本身的傷害。Ofcom 討論歸屬工具時關切的正是辨識、脈絡與使用者理解，而非只追求一個二元的真假答案¹³。 因此，公共討論應避免兩個極端：一是把合成語音當作無所不能，讓人以恐慌取代查證；二是因為有正當用途，就忽略未經同意模仿與緊急付款話術的實際風險。對報導者來說，應說明消息來源與核實方法；對平台來說，應建立可被獨立檢驗的來源和申訴流程；對家人來說，最有韌性的做法仍是讓一通電話不能獨自完成一項重大決定。聲音可以引起注意，不能取代可回頭檢查的證據鏈。 還有一個實務問題：家庭如何在不把技術焦慮帶進每一次聯絡的前提下，練習這套程序？答案不必是每天演練。可以在聚餐或出遊前約定一件簡單的事：若有人從陌生號碼稱「手機壞了」「被扣留」「不能講太久」，先說出一個固定回應——「我現在用原本的方式找你。」接著向另一位親友確認。若對方真有危險，這個回應不會阻礙求助；若對方持續阻止任何獨立確認，風險反而更清楚。年幼孩子、長者與照顧者可共同決定誰是可聯絡的第二人，而不必把密碼、帳務或私密資訊寫在公開地方。</p>
+<p>這也能降低把防詐責任集中於某個被認為「不懂科技」的家人。任何人在急切、疲憊、生病、旅行或被權威語氣壓迫時，都可能跳過平常會做的核對。把程序設計成人人都能提醒彼此，遠比把問題歸咎於年齡、教育程度或是否使用最新手機更有效。對照 FTC、FCC 與 FBI 的公開建議，反覆出現的共同原則不是「練成鑑定專家」，而是暫停、回撥、使用獨立通道、拒絕在未請自來的通話中交出金錢或憑證¹²¹²。這種共同規則也讓真正的家人知道：被要求多確認一次，並不是不被信任，而是大家都在保護彼此。 從制度面看，這也說明為何「把聲音當密碼」的做法需要重新檢視。聲音與人臉、指紋一樣，既是個人特徵，也是容易在日常互動中留下的資料；它不像密碼那樣能在懷疑外洩後輕易更換。若一個服務以聲音作為帳務或身分流程的一環，使用者應能知道它是否只是輔助訊號、是否能關閉、出現爭議時由誰覆核。對銀行、電信、社群與生成工具公司而言，這些資訊透明度不是附加功能，而是讓使用者理解風險與救濟途徑的前提。 同時，應避免把所有失敗都理解為技術落後。某些流程選擇增加核實步驟，是因為高風險交易本就不該只靠便利完成；某些服務不開放高度擬真的公開複製，則是在可用性與被冒充者權益間取捨。政策制定者需要判斷的是：哪些限制應由法律設定最低線，哪些可由標準、合約與市場競爭改善，哪些情況必須保留人工救濟。FTC 對個人冒充與上游工具提供者責任的討論，正反映這些問題尚在制度形成中¹⁶¹⁷。本文無法替不同法域下出單一答案，但可確定的是，要求被冒充者或接電話者獨自承擔所有驗證成本，並不是唯一選項。</p>
+<p>在台灣情境，跨國服務、不同語言與家庭成員分居海外都可能讓「回撥」需要更多準備。出國前留下行程與備援聯絡方式、在不同時區約定可聯絡的窗口、保存銀行與電信官方號碼，都是比臨時搜尋更可靠的日常措施。這些準備也適用於一般冒充詐騙，不依賴媒體是否為某通電話貼上「AI」標籤。 除了家庭內部約定，學校、社區與工作場所也可把「先驗證再處置」當作通用原則，而不是把案例講成某一代人特別容易受騙。對未成年人，要避免以追蹤或監控取代對話；對長者，要避免用羞辱式提醒取代可操作的回撥清單；對企業員工，則要避免讓單一主管的電話成為匯款授權。這些安排共享同一個核心：把信任做成可互相覆核的關係網，而不是依靠某一個看似可靠的聲音。當詐騙話術要求孤立受話者時，多找一個人、換一條通道，往往就是最有力量的反制。</p>
+<h3>從錄音到合成：信任環境如何逐步改變</h3>
+<p>在電話仍以固定號碼、熟人通訊錄和較少公開影音為主的年代，聽見熟悉聲音所帶來的確認感或許較強，但它從來不是正式身分證明。錄音、來電顯示偽造與冒名早已存在；生成式語音改變的，是把模仿的製作、修改與規模化門檻壓低，並能把原本只適合預錄的一段話，改造成看似能即時回應的對話。BBC 2024 年的報導已把「聲音複製」放在可擴張的詐騙能力脈絡中⁵；FCC 同年將 AI 生成聲音納入 robocall 的法律處理框架²³。這不是一條技術自動導向犯罪的單線歷史，而是既有冒充手法碰上較低成本內容工具後，驗證習慣需要調整的過程。 這段歷史也解釋了為何許多防詐建議看起來並不新：回撥、查官方號碼、不要在意外來電中給出帳密，早就是處理假冒來電的基本做法²。新的是，過去人們可能把「聲音不像」當作警訊；現在真正穩健的訊號是付款方式、保密要求、時間壓力及是否阻止獨立確認。這種轉向不需先證明某通電話使用了哪一種模型，仍能降低許多不同形式冒充的成功率。</p>
+<h3>今天的制度缺口：便利與可追責之間</h3>
+<p>今日可見的措施散落在工具提供者、社群與影音平台、電信網路、金融服務及執法機關之間。CR 針對六項服務的測試，顯示「用戶勾選我有權複製」與實際能否阻止未經同意模仿之間可能有很大距離⁸⁹；另一方面，業者表示採用審核、封鎖和標記，卻未必以一致方式公開其成效。這代表使用者很難只靠產品首頁判斷：自己或家人的聲音被複製時，能否快速申訴、產物能否被追溯、帳戶是否會被停權。</p>
+<p>執法亦有可見進展，但常在傷害已發生後才啟動。FTC、FCC 和 FBI 的公開資料顯示，美國監管與調查機關已把 AI 冒充、語音 robocall 與高階官員遭冒名納入工作範圍¹¹¹²¹⁶；歐洲的 Europol、Interpol 文件則指出社會工程與跨境金融詐騙的脈絡¹⁴¹⁵。這些制度並不構成對台灣案件的直接統計或保證，也不應被誤讀成「只要有規則就不必防範」。它們能做的是設定責任、蒐集證據與追查網絡；眼前的一通求救電話仍要由通訊、支付和家庭的交叉確認共同承接。</p>
+<h3>未來該驗證的是交易，而不只是聲音</h3>
+<p>未來的防線可能包括更成熟的來源標記、即時偵測、電信端可疑來電訊號與金融端的風險評估，但每一項都有誤判、規避與隱私代價。若把偵測結果直接當成拒絕服務的依據，真正使用輔具或合成語音的人可能受害；若為了追查濫用而大量保存每段通話，則可能擴大另一種監控。因此，較可檢驗的原則不是追求一個永遠準確的「AI 聲音警報」，而是讓高風險行為有比例相稱、可說明、可申訴的額外確認。 <strong>（以下為分析，非事實陳述）</strong> 對個人而言，最值得投資的未來能力不是學會辨認每一種聲音瑕疵，而是把驗證設計成跨媒介：通話後回撥、訊息再確認、付款前找第二人、帳戶異動使用官方入口。對工具與平台而言，則是讓取得同意、限制高風險複製、保存必要且受控的追溯紀錄、回應受影響者，成為產品責任。當「聽起來像」不再可靠，社會需要的不是更孤立的懷疑，而是更能共同核對的程序。</p>
+<h2>引用來源</h2>
+<p class="ref">¹ Federal Trade Commission（2024-04-09）— "Fighting back against harmful voice cloning"
+<a href="https://consumer.ftc.gov/consumer-alerts/2024/04/fighting-back-against-harmful-voice-cloning" rel="noopener" target="_blank">https://consumer.ftc.gov/consumer-alerts/2024/04/fighting-back-against-harmful-voice-cloning</a></p>
+<p class="ref">² Federal Communications Commission（無日期）— "Deep-Fake Audio and Video Links Make Robocalls and Scam Texts Harder to Spot"
+<a href="https://www.fcc.gov/consumers/guides/deep-fake-audio-and-video-links-make-robocalls-and-scam-texts-harder-spot" rel="noopener" target="_blank">https://www.fcc.gov/consumers/guides/deep-fake-audio-and-video-links-make-robocalls-and-scam-texts-harder-spot</a></p>
+<p class="ref">³ Reuters（2024-02-08）— "US agency declares AI cloned voice robocalls illegal"
+<a href="https://www.reuters.com/world/us/fcc-declares-ai-cloned-voice-robocalls-illegal-2024-02-08/" rel="noopener" target="_blank">https://www.reuters.com/world/us/fcc-declares-ai-cloned-voice-robocalls-illegal-2024-02-08/</a></p>
+<p class="ref">⁴ BBC News（2024-11-28）— "Cloned customer voice beats bank security checks"
+<a href="https://www.bbc.com/news/articles/c1lg3ded6j9o" rel="noopener" target="_blank">https://www.bbc.com/news/articles/c1lg3ded6j9o</a></p>
+<p class="ref">⁵ BBC News（2024-02-03）— "Should we fear an attack of the voice clones?"
+<a href="https://www.bbc.com/news/technology-68074257" rel="noopener" target="_blank">https://www.bbc.com/news/technology-68074257</a></p>
+<p class="ref">⁶ Associated Press（2025-07-08）— "Impostor uses AI to impersonate Marco Rubio, contact foreign officials"
+<a href="https://apnews.com/article/rubio-artificial-intelligence-impersonation-1b3cc78464404b54e63f4eba9dd4f5a9" rel="noopener" target="_blank">https://apnews.com/article/rubio-artificial-intelligence-impersonation-1b3cc78464404b54e63f4eba9dd4f5a9</a></p>
+<p class="ref">⁷ Reuters（2025-02-12）— "Italian police freeze cash from AI-voice scam that targeted business leaders"
+<a href="https://www.reuters.com/technology/artificial-intelligence/italian-police-freeze-cash-ai-voice-scam-that-targeted-business-leaders-2025-02-12/" rel="noopener" target="_blank">https://www.reuters.com/technology/artificial-intelligence/italian-police-freeze-cash-ai-voice-scam-that-targeted-business-leaders-2025-02-12/</a></p>
+<p class="ref">⁸ Consumer Reports（2025-03-10）— "Voice Cloning Apps Make It Easy for Criminals to Steal Your Voice, CR Finds"
+<a href="https://www.consumerreports.org/electronics/identity-theft/voice-cloning-apps-let-criminals-easily-steal-your-voice-a6024784872/" rel="noopener" target="_blank">https://www.consumerreports.org/electronics/identity-theft/voice-cloning-apps-let-criminals-easily-steal-your-voice-a6024784872/</a></p>
+<p class="ref">⁹ Consumer Reports（2025）— "AI Voice Cloning Report"
+<a href="https://innovation.consumerreports.org/AI-Voice-Cloning-Report-.pdf" rel="noopener" target="_blank">https://innovation.consumerreports.org/AI-Voice-Cloning-Report-.pdf</a></p>
+<p class="ref">¹⁰ CISA（2023-09-12）— "NSA, FBI, and CISA Release Cybersecurity Information Sheet on Deepfake Threats"
+<a href="https://www.cisa.gov/news-events/alerts/2023/09/12/nsa-fbi-and-cisa-release-cybersecurity-information-sheet-deepfake-threats" rel="noopener" target="_blank">https://www.cisa.gov/news-events/alerts/2023/09/12/nsa-fbi-and-cisa-release-cybersecurity-information-sheet-deepfake-threats</a></p>
+<p class="ref">¹¹ FBI IC3（2024-12-03）— "Criminals Use Generative Artificial Intelligence to Facilitate Financial Fraud"
+<a href="https://www.ic3.gov/PSA/2024/PSA241203" rel="noopener" target="_blank">https://www.ic3.gov/PSA/2024/PSA241203</a></p>
+<p class="ref">¹² FBI IC3（2025-05-15）— "Senior US Officials Impersonated in Ongoing Malicious Messaging Campaign"
+<a href="https://www.ic3.gov/PSA/2025/PSA250515" rel="noopener" target="_blank">https://www.ic3.gov/PSA/2025/PSA250515</a></p>
+<p class="ref">¹³ Ofcom（2025-07-11）— "How can tech firms help users spot deepfakes?"
+<a href="https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/how-can-tech-firms-help-users-spot-deepfakes" rel="noopener" target="_blank">https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/how-can-tech-firms-help-users-spot-deepfakes</a></p>
+<p class="ref">¹⁴ Europol（2026-01-26）— "Social engineering: when trust is exploited"
+<a href="https://www.europol.europa.eu/operations-services-and-innovation/public-awareness-and-prevention-guides/social-engineering-when-trust-exploited" rel="noopener" target="_blank">https://www.europol.europa.eu/operations-services-and-innovation/public-awareness-and-prevention-guides/social-engineering-when-trust-exploited</a></p>
+<p class="ref">¹⁵ INTERPOL（2026）— "Global Financial Fraud Threat Assessment"
+<a href="https://www.interpol.int/content/download/24291/file/INTERPOL+Global+Financial+Fraud+Threat+Assessment+2026.pdf" rel="noopener" target="_blank">https://www.interpol.int/content/download/24291/file/INTERPOL+Global+Financial+Fraud+Threat+Assessment+2026.pdf</a></p>
+<p class="ref">¹⁶ Federal Trade Commission（2024-02-15）— "FTC Proposes New Protections to Combat AI Impersonation of Individuals"
+<a href="https://www.ftc.gov/news-events/news/press-releases/2024/02/ftc-proposes-new-protections-combat-ai-impersonation-individuals" rel="noopener" target="_blank">https://www.ftc.gov/news-events/news/press-releases/2024/02/ftc-proposes-new-protections-combat-ai-impersonation-individuals</a></p>
+<p class="ref">¹⁷ Federal Trade Commission（2023-11-16）— "Preventing the Harms of AI-enabled Voice Cloning"
+<a href="https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2023/11/preventing-harms-ai-enabled-voice-cloning" rel="noopener" target="_blank">https://www.ftc.gov/policy/advocacy-research/tech-at-ftc/2023/11/preventing-harms-ai-enabled-voice-cloning</a></p>
+<p class="ref">¹⁸ The Guardian（2024-11-19）— "AI cloning of celebrity voices outpacing the law, experts warn"
+<a href="https://www.theguardian.com/technology/2024/nov/19/ai-cloning-of-celebrity-voices-outpacing-the-law-experts-warn" rel="noopener" target="_blank">https://www.theguardian.com/technology/2024/nov/19/ai-cloning-of-celebrity-voices-outpacing-the-law-experts-warn</a></p>
+<p class="ref">¹⁹ The New York Times（2024-05-16）— "Voice Actors Sue Company Whose AI Sounds Like Them"
+<a href="https://www.nytimes.com/2024/05/16/technology/ai-voice-clone-lawsuit.html" rel="noopener" target="_blank">https://www.nytimes.com/2024/05/16/technology/ai-voice-clone-lawsuit.html</a></p>
+<p class="ref">²⁰ 內政部警政署（無日期）— "165打詐儀錶板"
+<a href="https://165dashboard.tw/" rel="noopener" target="_blank">https://165dashboard.tw/</a></p>
+<p class="ref">²¹ Associated Press（2025-07-31）— "Illness took away her voice. AI created a replica she carries with her"
+<a href="https://apnews.com/article/ai-recreating-lost-voice-illness-a6512c33481072c22182c116d2cbe419" rel="noopener" target="_blank">https://apnews.com/article/ai-recreating-lost-voice-illness-a6512c33481072c22182c116d2cbe419</a></p>
+<p class="ref">²² NBC News（2025-03-10）— "AI can steal your voice, and there’s not much you can do about it"
+<a href="https://www.nbcnews.com/tech/security/ai-voice-cloning-software-flimsy-guardrails-report-finds-rcna195131" rel="noopener" target="_blank">https://www.nbcnews.com/tech/security/ai-voice-cloning-software-flimsy-guardrails-report-finds-rcna195131</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
