@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>穗稻忠武 · 每日短影音</title><link>https://polarbear0827.github.io/My-Way/</link><description>AI Radar / HF Papers / 專欄 每日直式短影音 (Reels/Shorts/TikTok)</description><language>zh-Hant</language><lastBuildDate>Sat, 08 Aug 2026 13:08:21 +0800</lastBuildDate><item><title>今天最值得看的 AI 論文？2026-08-08 HF Daily Papers</title><link>https://polarbear0827.github.io/My-Way/papers/2026-08-08/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-08-08-short.mp4</guid><pubDate>2026-08-08</pubDate><description>📄 HF DAILY PAPERS 2026-08-08
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>穗稻忠武 · 每日短影音</title><link>https://polarbear0827.github.io/My-Way/</link><description>AI Radar / HF Papers / 專欄 每日直式短影音 (Reels/Shorts/TikTok)</description><language>zh-Hant</language><lastBuildDate>Sun, 09 Aug 2026 09:33:01 +0800</lastBuildDate><item><title>今天 GitHub 哪些 AI 工具值得看？2026-08-09 AI Radar Daily</title><link>https://polarbear0827.github.io/My-Way/radar/2026-08-09/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-08-09-short.mp4</guid><pubDate>2026-08-09</pubDate><description>🛸 AI RADAR DAILY 2026-08-09
+
+今日趨勢：AI Agent 工具鏈全面爆發
+
+今日 Top 3：
+→ backnotprop/plannotator · Score 5.3
+→ nexu-io/html-video · Score 5.2
+→ jackwener/OpenCLI · Score 4.5
+
+⭐ Best Pick：backnotprop/plannotator
+適合：企業團隊 / AI 工程師 / 自動化 PM
+
+完整 Top 8 分析 → AI Radar Daily（link in bio）
+
+#ai-agent #vector-database #claude-code #code-review #AI #OpenSource #AITools #人工智慧 #開源工具</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-08-09-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-08-09-short.mp4" medium="video" type="video/mp4"/></item><item><title>今天最值得看的 AI 論文？2026-08-08 HF Daily Papers</title><link>https://polarbear0827.github.io/My-Way/papers/2026-08-08/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-08-08-short.mp4</guid><pubDate>2026-08-08</pubDate><description>📄 HF DAILY PAPERS 2026-08-08
 
 今日趨勢：多模態從「會看」走向可驗證：評測標準、失敗驅動推理、平行文件解析與時間潛在對齊齊發。
 
@@ -729,21 +743,7 @@
 
 ▶ 全文：https://polarbear0827.github.io/My-Way/p/david-hockney-ipad-painting/
 
-#科技人文 #穗稻忠武觀察室 #台灣 #科技與生活 #觀察筆記 #數位生活</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-17-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-17-short.mp4" medium="video" type="video/mp4"/></item><item><title>今天 GitHub 哪些 AI 工具值得看？2026-07-17 AI Radar Daily</title><link>https://polarbear0827.github.io/My-Way/radar/2026-07-17/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-07-17-short.mp4</guid><pubDate>2026-07-17</pubDate><description>🛸 AI RADAR DAILY 2026-07-17
-
-今日趨勢：Agent 基建與記憶爆發
-
-今日 Top 3：
-→ HKUDS/Vibe-Trading · Score 5.0
-→ lintsinghua/DeepAudit · Score 5.3
-→ NVlabs/Sana · Score 5.2
-
-⭐ Best Pick：HKUDS/Vibe-Trading
-適合：適合 AI 工程師 / 講師 / 企業團隊
-
-完整 Top 8 分析 → AI Radar Daily（link in bio）
-
-#llm #mcp #ai #python #OpenSource #AITools #人工智慧 #開源工具</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-07-17-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-07-17-short.mp4" medium="video" type="video/mp4"/></item><item><title>退潮之後，誰還在修滬：澎湖石滬的勞動、記憶與保存｜穗稻忠武觀察室</title><link>https://polarbear0827.github.io/My-Way/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-16-short.mp4</guid><pubDate>2026-07-16</pubDate><description>✍️ 退潮之後，誰還在修滬：澎湖石滬的勞動、記憶與保存
+#科技人文 #穗稻忠武觀察室 #台灣 #科技與生活 #觀察筆記 #數位生活</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-17-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-17-short.mp4" medium="video" type="video/mp4"/></item><item><title>退潮之後，誰還在修滬：澎湖石滬的勞動、記憶與保存｜穗稻忠武觀察室</title><link>https://polarbear0827.github.io/My-Way/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-16-short.mp4</guid><pubDate>2026-07-16</pubDate><description>✍️ 退潮之後，誰還在修滬：澎湖石滬的勞動、記憶與保存
 
 退潮後，那些石牆為什麼還需要人？
 
