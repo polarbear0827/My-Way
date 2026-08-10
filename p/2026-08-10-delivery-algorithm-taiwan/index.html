@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>誰在派單：外送專法上路後，一趟午餐的演算法 · 穗稻忠武的專欄</title>
+<meta name="description" content="一份午餐在手機上被點下、被接單、被送到門口，通常只留下「已送達」三個字。但對騎車或騎單車的人而言，這段路同時是報酬、評價、道路風險與帳號存續的連續決定。2026 年 7 月 21 日，《外送員權益保障及外送平臺管理法》在臺灣施行，第一次把每單報酬、接單資訊、申訴、保險與部分演算法紀錄放進同一套制度。¹²">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-08-10-delivery-algorithm-taiwan/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="誰在派單：外送專法上路後，一趟午餐的演算法">
+<meta property="og:description" content="一份午餐在手機上被點下、被接單、被送到門口，通常只留下「已送達」三個字。但對騎車或騎單車的人而言，這段路同時是報酬、評價、道路風險與帳號存續的連續決定。2026 年 7 月 21 日，《外送員權益保障及外送平臺管理法》在臺灣施行，第一次把每單報酬、接單資訊、申訴、保險與部分演算法紀錄放進同一套制度。¹²">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-08-10-delivery-algorithm-taiwan/">
+<meta property="og:image" content="https://live.staticflickr.com/65535/49926743648_e1d2734a0c_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "誰在派單：外送專法上路後，一趟午餐的演算法", "description": "一份午餐在手機上被點下、被接單、被送到門口，通常只留下「已送達」三個字。但對騎車或騎單車的人而言，這段路同時是報酬、評價、道路風險與帳號存續的連續決定。2026 年 7 月 21 日，《外送員權益保障及外送平臺管理法》在臺灣施行，第一次把每單報酬、接單資訊、申訴、保險與部分演算法紀錄放進同一套制度。¹²", "url": "https://polarbear0827.github.io/My-Way/p/2026-08-10-delivery-algorithm-taiwan/", "datePublished": "2026-08-10", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/65535/49926743648_e1d2734a0c_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">台灣文化</span><span class="tag">AI</span><span class="tag">台灣</span><span class="tag">科技與生活</span><span class="tag">專欄</span></div>
+<h1>誰在派單：外送專法上路後，一趟午餐的演算法</h1>
+<p class="byline"><time>2026-08-10</time></p>
+</div>
+
+<p class="lead">一份午餐在手機上被點下、被接單、被送到門口，通常只留下「已送達」三個字。但對騎車或騎單車的人而言，這段路同時是報酬、評價、道路風險與帳號存續的連續決定。2026 年 7 月 21 日，《外送員權益保障及外送平臺管理法》在臺灣施行，第一次把每單報酬、接單資訊、申訴、保險與部分演算法紀錄放進同一套制度。¹²</p>
+<figure><img src="https://live.staticflickr.com/65535/49926743648_e1d2734a0c_b.jpg" alt="機車外送員在城市道路上工作｜來源：byronv2 / Flickr（CC BY-NC）" loading="lazy"><figcaption>封面圖片下標：外送工作在城市道路上完成；派單、時間與交通風險卻多在手機介面內發生。</figcaption></figure>
+<p>這不是一篇把外送員描寫成單一受害者、也不是把平台視為單一答案的文章。平台提供媒合、即時定位與彈性上線的工具；但當同一套系統分派工作、算錢、評價、限制或中止帳號時，工作者如何理解及挑戰決定，便成為公共問題。本文以法律文本、主管機關紀錄、競爭決定與國際比較，區分已經入法的保障與仍待驗證的實際效果。</p>
+<h2>為何是現在：外送被放進同一張制度地圖</h2>
+<figure><img src="https://live.staticflickr.com/65535/49268172888_d05ea981aa_b.jpg" alt="外送員與機車穿梭街道｜來源：Yuya Tamai / Flickr（CC BY）" loading="lazy"><figcaption>圖片下標：一趟外送牽連消費者、店家、平台與外送員；新法正是以這四方關係設計分工。</figcaption></figure>
+<p>勞動部在施行前一天的說明中，把外送平台描述為掌握派單、數位技術與資料的一方，而外送員承擔車輛、油耗、維修與道路風險。¹這是主管機關對結構位置的判斷，不等於每位外送員的收入或經驗都相同；有人把它當兼職，有人以此為主要收入，也有人跨平台接案。</p>
+<p>法律的重點不是把所有合作關係直接改定為僱傭。法條保留：若存在僱傭關係，仍適用勞動基準法等規範；其餘外送服務則以專法處理。²這個設計試圖處理一個長期難題：契約名義是承攬，卻可能存在高度數位化的指揮、考核與限制。它也讓「是否有僱傭關係」不再是唯一的保護入口。</p>
+<p>新法把勞動、交通、經濟、衛生、金融與數位主管機關納入分工。¹²對使用者而言，這意味著取消、退款與食品衛生並非完全獨立於勞動問題；對店家而言，抽成、結算與契約爭議也被列入治理範圍。制度是否能減少摩擦，仍取決於子法、稽核與申訴資料是否真的被公開與使用。</p>
+<h2>App 如何成了主管：不是只有「AI」才算管理</h2>
+<figure><img src="https://live.staticflickr.com/65535/49268633766_5e8dbba6b6_b.jpg" alt="自行車外送員使用平台工作｜來源：Yuya Tamai / Flickr（CC BY）" loading="lazy"><figcaption>圖片下標：外送員面對的不只是導航；訂單分配、時間、報酬與帳號狀態也在同一個介面中呈現。</figcaption></figure>
+<p>國際勞工組織把「演算法管理」界定為利用被追蹤資料與其他資訊來組織、分配、監控、督導與評估工作的系統；它可以使用人工智慧，也可以是規則式系統。¹⁰因此，討論外送演算法時，焦點不應只放在程式是否「聰明」，而在系統是否實質影響一個人拿到什麼工作、何時得到報酬、能否繼續上線。</p>
+<p>ILO 的平台經濟報告指出，在許多平台上，系統可分派任務、界定工作時間、計算報酬、實施評分或排名，並影響是否能繼續提供服務。¹¹研究描述的是跨國現象，不能直接替代臺灣平台的內部實證；但它說明了為何「我可以自由上線」與「我不清楚拒單、等待、評價會帶來什麼後果」能同時存在。</p>
+<p>2024 年臺北高等行政法院處理 Uber Eats 與職安要求的爭議時，也把「合理派單」理解為平台可透過資訊系統設計或演算法，適當評估工作分派，避免過重負荷與送達壓力造成職災。法院在個案中撤銷部分行政要求，理由涉及規範明確性與時點；判決不是對所有派單設計作出安全或不安全的總結。⁸它反而提醒：技術如何影響安全，必須有可檢視的規則與具體證據。</p>
+<h2>看得見的錢與看不見的等候</h2>
+<figure><img src="https://live.staticflickr.com/65535/49268172768_fe7c0f226e_b.jpg" alt="外送工作者在城市中等候訂單｜來源：Yuya Tamai / Flickr（CC BY）" loading="lazy"><figcaption>圖片下標：候單、移動至取餐點與完成配送之間的時間，決定了工作者感受到的實際收入。</figcaption></figure>
+<p>臺灣新法建立雙重底線：每筆訂單基本報酬不得低於新臺幣 45 元，且從接單到完成配送的外送服務期間，按比例換算不得低於最低工資時薪的 1.25 倍。³法條同時要求平台在提供訂單時明確告知預估報酬等重要資訊，並將以演算法或其他方式作成的不利決定列入保存紀錄。³這些是可查核的制度要求，不是平台自願承諾。</p>
+<p>然而，法律把「外送服務期間」定義為接單至完成該單，與「上線服務期間」區分。²也就是說，候單、前往較遠取餐點、跨平台切換與設備成本如何反映在實際所得，仍可能是爭議。外送員在接單前能否看見足以評估時間與距離的資訊，將影響他們對「自由選擇」的實質感受。</p>
+<p>紐約的經驗不提供臺灣的直接答案，卻顯示工資公式的設計會改變平台與工作者行為。AP 2024 年報導，紐約市的新規允許平台在「配送中的活躍時間」與含候單的登入時間之間選擇計薪，平台也調整小費與上線時數安排；公司稱限制時數是降低閒置的必要措施，勞工團體則批評透明度不足。¹⁴不同公式造成的成本由誰承擔，是制度設計而非純粹技術問題。</p>
+<h2>停權不是按一下按鈕：理由、證據與回覆期限</h2>
+<figure><img src="https://live.staticflickr.com/65535/52136577101_cc97c93a9c_b.jpg" alt="外送員在道路旁工作｜來源：Nazly / Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>圖片下標：對靠平台接案的人而言，帳號能否上線直接關係到工作機會，因此停權程序不只是客服問題。</figcaption></figure>
+<p>外送專法規定，平台對外送員作出終止服務契約或不利決定時，要建立申訴制度；涉及終止爭議，還須有獨立處理小組。³它也要求保存停權、終止以及演算法或其他方式所作不利決定的紀錄。這不等於所有自動決定都被禁止，而是把日後的說明、申訴與監督留下可追溯的起點。</p>
+<p>在法律上路前，勞動部與工會、Uber Eats、foodpanda 的 2024 年對話紀錄已形成若干共識：原則上先查證並給外送員說明機會；若平台以身分驗證或客訴等理由終止合作，通知應寫明具體事由，外送員可在七日內陳述意見，業者應在七個工作日內回覆。⁴該會議紀錄是協商成果，不是完整的司法判決，也不應被誤寫成所有案件都已獲補償。</p>
+<p>平台有另一面顧慮。Uber Eats 表示，停權應是最後手段，仍需要透過契約與社群指引維護服務品質、個資與安全，並主張已提供 App 內申訴管道。¹⁸在涉及詐欺、騷擾、個資洩漏或重大交通違規的情境，迅速限制帳號也可能保護消費者、店家與其他人。爭點因此不是「要不要處理風險」，而是理由是否具體、證據是否可檢視、是否有合格的人為複核與及時救濟。</p>
+<h2>安全不是附加功能：時間壓力如何走上道路</h2>
+<figure><img src="https://live.staticflickr.com/65535/49470038047_98d3cb786c_b.jpg" alt="餐點外送自行車在道路上行進｜來源：harry_nl / Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>圖片下標：道路安全同時受騎士行為、交通環境、平台通知與訂單時限影響，不能只歸因於單一環節。</figcaption></figure>
+<p>外送專法要求平台為外送員投保團體傷害與責任保險，並規定安全、交通與食品衛生訓練。³勞動部的施行說明也提到，交通規則草案將處理教育訓練與避免派單、系統通知方式增加交通風險。¹這類文字不保證事故自動減少，卻把「系統通知」與「道路風險」明確放進政策視野。</p>
+<p>平台亦提出自己的安全方案。foodpanda 官方頁面稱，自 2024 年 10 月起為服務期間的合作夥伴提供第三人責任保障，最高 400 萬元且保費由平台負擔；這是業者資料，理賠範圍與個案認定仍依保單與保險公司程序。¹⁹Uber Eats 則表示，其安全功能包括安全帽驗證、超速警示與騎乘中訊息提醒。¹⁷這些措施值得納入檢視，但不能僅憑公司宣傳推論安全成效。</p>
+<p>BBC 對英國外送員罷工的報導呈現相同張力：騎士批評低費率、雨天與距離壓力，平台則強調彈性、保險與定期檢討報酬。¹⁵臺灣的路況、工資制度和法律不同，不能直接類比；不過「效率」若只以送達速度衡量，可能忽略外送員為了維持收入而承受的風險，這是所有監管都必須處理的衡量問題。</p>
+<h2>市場競爭也在改寫一趟訂單的條件</h2>
+<figure><img src="https://live.staticflickr.com/102/316082068_09bed2e3b7_b.jpg" alt="城市餐飲外送場景｜來源：w.marsh / Flickr（CC BY）" loading="lazy"><figcaption>圖片下標：外送平台連接店家、消費者與騎士；市場集中度會影響四方是否有替代選項與議價能力。</figcaption></figure>
+<p>外送員的工作條件並不只由勞動法決定，也受市場結構影響。公平會在 2024 年 12 月禁止 Uber 收購 foodpanda 臺灣業務，理由是兩者都是連接消費者、店家與外送員的三方餐飲外送平台；公平會認為合併會消除 Uber Eats 最主要的競爭壓力，並增加提高消費者價格與店家抽成的誘因。⁵Reuters 同日報導，主管機關估計合併後市占將超過九成；Delivery Hero 則說 Uber 可上訴或終止收購。⁶</p>
+<p>這個決定並未直接裁定外送員報酬必然會上升或下降。Uber 主張合併可以提升網路密度與配送效率；公平會回應，這些好處難以驗證、未必須透過合併達成，且與限制競爭的不利益不成比例。⁵因此，競爭政策的問題是平台是否仍受制衡，而不是把「更大」自動等同於更好或更壞。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 對外送員而言，更多平台並不必然等於更多好工作：跨平台接單可能增加選擇，也可能增加時間壓力與風險。但若派單、費率、停權規則都由少數平台單方改動，工作者、店家和消費者可比較與協商的空間通常會縮小。公平會處理的市場競爭，與新法處理的個別保障，因而是同一趟訂單的兩個面向。</p>
+<h2>國際比較：透明不等於公開原始碼</h2>
+<figure><img src="https://live.staticflickr.com/65535/49268172888_d05ea981aa_b.jpg" alt="夜間配送中的自行車外送員｜來源：Yuya Tamai / Flickr（CC BY）" loading="lazy"><figcaption>圖片下標：平台工作跨越國界，但工資、交通、就業分類與資料保護的規則仍由各地制度決定。</figcaption></figure>
+<p>歐盟 2024 年《平台工作指令》要求平台告知自動監控與自動決策系統的使用情形，並對影響任務分配、收入、工作時間、帳號限制或終止等決定建立人為監督。¹²歐盟理事會特別說明，重大決定如帳號停用應有人為監督；會員國須在 2026 年底前把指令轉入國內法。¹³這套規範要求的是可理解的資訊、監督與覆核，不是要求公司公開全部程式碼。</p>
+<p>路徑並沒有單一版本。Reuters 報導，歐盟在平台工作者身分推定的安排上曾因會員國分歧而降低原先方案的固定判準；各國法律、集體協約和判例仍會影響實際結果。¹⁶英國的外送員與工會則要求平台解釋派單和計酬邏輯，平台回應已向騎士提供部分資訊與客服支援。¹⁶¹⁵這些爭論顯示，透明度的難點在於資訊是否足夠讓人理解一筆具體決定，而非只是在網站放上一段原則。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 臺灣新法的起點較接近日常可驗證的問題：接單前看到什麼、跑完一單怎麼算、被限制時如何申訴、資料是否留存。下一步不宜以「有沒有完全揭露演算法」作為唯一考題，而應檢驗外送員能否據此做選擇、主管機關能否調閱、爭議能否在合理時間內被具體回覆。</p>
+<h2>從「已送達」之後開始看</h2>
+<figure><img src="https://live.staticflickr.com/65535/49268633766_5e8dbba6b6_b.jpg" alt="外送員在城市中完成配送｜來源：Yuya Tamai / Flickr（CC BY）" loading="lazy"><figcaption>圖片下標：消費者看到配送完成，制度真正要檢驗的則是前後每一個決定是否可理解、可追溯且可救濟。</figcaption></figure>
+<p>專法上路不到一個月，現在還不能以任何單一個案宣告它成功或失敗。可被持續追問的指標包括：每單預估與實際報酬的落差、候單時間是否造成新的收入壓力、停權申訴的件數與處理時間、道路事故與通知設計之間的關聯，以及主管機關是否真的利用平台保存的資料監督制度。¹³⁴</p>
+<p>平台的彈性有其價值：有人需要自行選擇上線時間，店家與消費者也需要穩定服務。但彈性若只由掌握資料的一方定義，另一方難以判斷報酬、拒單與風險，便可能變成資訊不對稱。新法把最低報酬、資訊提示、申訴與保險寫進規則，是把這種不對稱拉回可討論的起點，而不是終點。 從法律文字回到手機畫面，第一個應被看見的是訂單資訊。法定最低額度只能處理已接受的工作；外送員要決定是否接受，還需要在倒數時間內知道取餐和送達的條件、預估時間、預估報酬及可能增加的步行或聯絡成本。¹²如果資訊呈現得太晚，形式上的拒單自由可能無法轉化為可用的選擇。這不是說每一個細節都必須公開，也不是說系統不可預估路況；重點在於會改變工作者經濟判斷的資訊，是否在決定之前已可理解。</p>
+<p>第二個檢驗是報酬明細能否讓人核對。新法所設的每單金額與服務期間底線，提供了一個最低標準，但實際計算需依賴平台記錄的接單、取餐、交付與調整資料。³外送員若只能看見總額而無法理解差額，主管機關也難以辨識問題是個案、特定區域、特定時段或制度設計。這正是保存紀錄、提供明細與申訴機制彼此相連的原因。 第三個問題是「人」在何時介入。平台可用自動化工具偵測帳號異常、交通風險或服務品質，這在大規模即時媒合中可能具有實務需要；但當結果是少派單、停權或終止合作，受影響者需要知道發生了什麼、能交什麼資料、由誰審查，以及多久能得到結果。⁴¹²歐盟規則將重大帳號決定的人為監督視為一項保障，臺灣的獨立處理小組與申訴設計則提供了不同的制度路徑。兩者共同的核心不是反對自動化，而是避免自動化成為無法對話的終點。</p>
+<p>第四個問題是安全資料的使用。外送工作面對的事故風險不只來自個人騎乘，也涉及天候、道路設計、餐廳備餐延遲、消費者聯繫、平台提示和外送時限。¹⁸如果安全提醒只被當作合規勾選，而沒有檢視派單密度、延遲或通知是否造成壓力，制度便會失去一部分效果。反過來說，若只把事故歸咎於平台，也忽略交通執法、駕駛行為和城市道路環境，並不符合事實。 第五個問題是競爭與合規成本的分配。新法新增資訊、保險、訓練與救濟要求，平台可能提高自身成本；業者與部分評論已預期成本可能反映於服務費、運費、抽成或營運安排。¹⁸這些效果的幅度尚無可靠的完整資料，不能預先斷定一定由哪一方負擔。不過，公平會對合併案的分析已指出，當市場集中且替代選項有限時，消費者與中小店家的抗衡能力會減弱。⁵因此，勞動保障的討論也必須保留競爭、價格與店家生存的觀察。</p>
+<p>第六個問題是外送員的多樣性。全職與兼職、機車與自行車、都會與非都會、單平台與跨平台，面對的成本結構不盡相同。國際報導中的工資經驗可提供警訊，卻不能取代臺灣在地統計。¹⁴¹⁵制度若要以資料修正，就需要主管機關在保護個資前提下，彙整足以看見差異的資料，而不是只公布單一平均數。 對讀者來說，這些規則看似離一份餐點很遠，實際上卻會影響送達時間、費用、可選的店家與道路上的行車壓力。對店家而言，外送平台既是客源通道，也是抽成、資訊與結算的契約關係；對平台而言，法規合規不能只靠條款更新，而要能讓派單、客服、保險與資料處理在尖峰時段仍可運作。¹三方的利益未必一致，因而需要公開的爭議處理與持續檢驗。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 最值得避免的，是把「演算法」當成萬用的責任代名詞。它既可能提升媒合效率，也可能把原本需要解釋與協商的管理決定藏在介面裡。臺灣的新法沒有承諾消除所有衝突；它提供的是一組可驗證的問題：接單前看見什麼、完成後收到什麼、發生爭議時誰說明、資料能否留下。未來的答案應由實施後的申訴、稽核、事故與報酬資料支持；目前尚無定論。</p>
+<p>第七個問題是監理能否從個案走向趨勢。單一外送員的申訴可以釐清一次停權或一筆差額，但如果同類型問題反覆發生，主管機關需要能看見時間、地區、平台與原因的整體資料。法律要求平台保存與不利決定有關的紀錄，提供了日後分析的基礎；如何在不暴露個資的情況下公布統計、讓工會與社會理解爭議樣態，仍需執行規則具體化。³</p>
+<p>第八個問題是語言與可近性。申訴期限、報酬明細、保單條款或 App 通知即使存在，若文字過於技術化、客服僅有制式回覆，權利仍可能難以使用。AP 對紐約的報導提到，該市估計許多外送員英語能力有限；這是美國城市的資料，不是臺灣的人口統計，但它提醒制度設計者：資訊透明不只是在介面增加欄位，也包含能否被實際理解。¹⁴</p>
+<p>第九個問題是對照基準。平台可以報告安全課程、保險或功能上線，工會可以報告會員收到的爭議；兩者都重要，卻各自有立場。較可靠的評估應同時看獨立事故資料、申訴處理資料、外送員實際明細與平台依法提交的紀錄。沒有這些交叉資料，任何「制度改善」或「成本過高」的斷言都應保留。¹⁹</p>
+<p>第十個問題是法律與日常的時間差。外送員在幾秒內決定接不接單，店家在尖峰時段處理備餐，消費者在等待頁面看預估送達；而申訴、稽核與立法通常以天、月或年計。制度若要有效，必須把事後救濟的結果回饋到前端設計，例如更清楚的接單卡、較少干擾的騎乘通知與可查核的報酬明細。這是本文依現有制度所作的分析，不是已被證實的成效。</p>
+<p>最後，一份外送餐點的便利不該掩蓋工作關係的複雜性，也不必因此否定技術媒合的用途。法律剛施行，平台、外送員、店家、消費者與主管機關各自都有需要調整的部分。下一輪檢驗不在口號，而在每筆訂單、每件申訴、每份紀錄是否能被合理地說明與查核。</p>
+<p>還有一項容易被忽略的限制，是外送服務的城市差異。尖峰密度高的商圈、雨天的住宅區、需要上樓或進入校園、醫院與辦公大樓的訂單，雖然都可能被顯示成一筆配送，實際耗費的時間與風險卻不同。新法要求接單資訊更透明，正是讓外送員在承接前能評估這些差異；但資訊欄位是否完整、預估是否準確、發生例外時是否能調整，仍需透過後續紀錄檢驗。¹³</p>
+<p>制度也要避免把外送員只當成被動資料點。工會在 2024 年與平台的對話中，提出終止合作、通知、陳述意見和處理時限等問題；這顯示有些需要改善的事項並不必等待全新技術才會出現。⁴若平台能定期以去識別化資料說明常見爭議與改進情形，外送員、店家與使用者就能更具體地討論制度，而非只能從個人經驗猜測規則。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 衡量專法成敗時，也應避免只看配送量或平均送達速度。若較快的數字建立在更不透明的報酬、更長的候單或更高的道路壓力上，效率的意義便需要重新計算；反之，若資訊與救濟改善能減少爭議和無效等待，平台、店家與消費者也可能受益。何種結果會出現，仍需在公開、可交叉檢驗的資料中回答。</p>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ 勞動部（2026-07-20）—「外送專法7/21正式上路，打造更安全、透明、公平的外送產業環境」
+<a href="https://www.mol.gov.tw/1607/1632/1633/95651/" rel="noopener" target="_blank">https://www.mol.gov.tw/1607/1632/1633/95651/</a></p>
+<p class="ref">² 勞動部法規查詢系統（2026-01-21）—「外送員權益保障及外送平臺管理法」
+<a href="https://laws.mol.gov.tw/FLAW/PrintFLAWDAT0202.aspx?id=FL105973" rel="noopener" target="_blank">https://laws.mol.gov.tw/FLAW/PrintFLAWDAT0202.aspx?id=FL105973</a></p>
+<p class="ref">³ 總統府（2026-01-21）—「外送員權益保障及外送平臺管理法」
+<a href="https://www.president.gov.tw/File/Doc/73897e6c-6b75-4847-b90d-d8ce3f6f4aec" rel="noopener" target="_blank">https://www.president.gov.tw/File/Doc/73897e6c-6b75-4847-b90d-d8ce3f6f4aec</a></p>
+<p class="ref">⁴ 勞動部（2024-08-08）—「外送工會及外送平臺業者對話平臺第8次會議紀錄」
+<a href="https://www.mol.gov.tw/media/03maz2u0/1130808-%E5%A4%96%E9%80%81%E5%B7%A5%E6%9C%83%E5%8F%8A%E5%A4%96%E9%80%81%E5%B9%B3%E8%87%BA%E6%A5%AD%E8%80%85%E5%B0%8D%E8%A9%B1%E5%B9%B3%E8%87%BA%E7%AC%AC8%E6%AC%A1%E6%9C%83%E8%AD%B0%E7%B4%80%E9%8C%84.pdf?mediaDL=true" rel="noopener" target="_blank">https://www.mol.gov.tw/media/03maz2u0/1130808-%E5%A4%96%E9%80%81%E5%B7%A5%E6%9C%83%E5%8F%8A%E5%A4%96%E9%80%81%E5%B9%B3%E8%87%BA%E6%A5%AD%E8%80%85%E5%B0%8D%E8%A9%B1%E5%B9%B3%E8%87%BA%E7%AC%AC8%E6%AC%A1%E6%9C%83%E8%AD%B0%E7%B4%80%E9%8C%84.pdf?mediaDL=true</a></p>
+<p class="ref">⁵ 公平交易委員會（2024-12-25）—「兩大外送平臺結合，公平會喊卡！」
+<a href="https://www.ftc.gov.tw/internet/main/doc/docDetail.aspx?docid=17952&amp;mid=126&amp;uid=126" rel="noopener" target="_blank">https://www.ftc.gov.tw/internet/main/doc/docDetail.aspx?docid=17952&amp;mid=126&amp;uid=126</a></p>
+<p class="ref">⁶ Reuters（2024-12-25）— "Taiwan blocks Uber's $950 mln Foodpanda deal over competition concerns"
+<a href="https://www.reuters.com/markets/deals/taiwan-blocks-ubers-950-mln-foodpanda-deal-bloomberg-news-reports-2024-12-25/" rel="noopener" target="_blank">https://www.reuters.com/markets/deals/taiwan-blocks-ubers-950-mln-foodpanda-deal-bloomberg-news-reports-2024-12-25/</a></p>
+<p class="ref">⁷ 中央社（2024-12-25）—「公平會3理由禁止UberEats併foodpanda 憂結合後有誘因提高價格及抽成」
+<a href="https://www.cna.com.tw/news/afe/202412250293.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/afe/202412250293.aspx</a></p>
+<p class="ref">⁸ 中央社（2024-07-14）—「須書面告知外送員多接單超速危害 UberEats興訟勝訴」
+<a href="https://www.cna.com.tw/news/asoc/202407140126.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/asoc/202407140126.aspx</a></p>
+<p class="ref">⁹ 中央社（2026-06-26）—「外送專法3子法公告 平台業者須檢視調整契約」
+<a href="https://www.cna.com.tw/news/ahel/202606260144.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/ahel/202606260144.aspx</a></p>
+<p class="ref">¹⁰ 國際勞工組織 ILO（2024-07-23）— "Algorithmic management in the workplace"
+<a href="https://www.ilo.org/algorithmic-management-workplace" rel="noopener" target="_blank">https://www.ilo.org/algorithmic-management-workplace</a></p>
+<p class="ref">¹¹ 國際勞工組織 ILO（2024）— "Realizing decent work in the platform economy"
+<a href="https://www.ilo.org/sites/default/files/2024-07/ILC113-V%281%29-%5BWORKQ-231121-002%5D-Web-EN.pdf" rel="noopener" target="_blank">https://www.ilo.org/sites/default/files/2024-07/ILC113-V%281%29-%5BWORKQ-231121-002%5D-Web-EN.pdf</a></p>
+<p class="ref">¹² EUR-Lex（2024-10-23）— "Directive (EU) 2024/2831 on improving working conditions in platform work"
+<a href="https://eur-lex.europa.eu/eli/dir/2024/2831/2024-11-11" rel="noopener" target="_blank">https://eur-lex.europa.eu/eli/dir/2024/2831/2024-11-11</a></p>
+<p class="ref">¹³ Council of the European Union（2024-10-14）— "EU rules on platform work"
+<a href="https://www.consilium.europa.eu/en/policies/platform-work-eu/" rel="noopener" target="_blank">https://www.consilium.europa.eu/en/policies/platform-work-eu/</a></p>
+<p class="ref">¹⁴ Associated Press（2024-03-06）— "Getting food delivered in New York is simple. For the workers who do it, getting paid is not"
+<a href="https://apnews.com/article/uber-eats-grubhub-nyc-minimum-wage-pay-35c5d599e17319c075f6686564f1ee94" rel="noopener" target="_blank">https://apnews.com/article/uber-eats-grubhub-nyc-minimum-wage-pay-35c5d599e17319c075f6686564f1ee94</a></p>
+<p class="ref">¹⁵ BBC News（2024-02-12）— "Deliveroo and Uber Eats riders strike on Valentine's Day"
+<a href="https://www.bbc.com/news/business-68274158" rel="noopener" target="_blank">https://www.bbc.com/news/business-68274158</a></p>
+<p class="ref">¹⁶ Reuters（2024-02-08）— "EU lawmakers, countries reach deal on gig workers' rights at second attempt"
+<a href="https://www.reuters.com/world/europe/eu-lawmakers-countries-reach-deal-gig-workers-rights-second-attempt-2024-02-08/" rel="noopener" target="_blank">https://www.reuters.com/world/europe/eu-lawmakers-countries-reach-deal-gig-workers-rights-second-attempt-2024-02-08/</a></p>
+<p class="ref">¹⁷ Uber Eats 台灣（未標示日期）—「Uber Eats 宣布擴大『安全第一』計畫」
+<a href="https://www.uber.com/tw/zh-tw/newsroom/safetyfirst_vests/" rel="noopener" target="_blank">https://www.uber.com/tw/zh-tw/newsroom/safetyfirst_vests/</a></p>
+<p class="ref">¹⁸ Uber Eats 台灣（2025）—「Uber Eats 與外送專法」
+<a href="https://www.uber.com/tw/zh-tw/blog/ue_online_delivery_act/" rel="noopener" target="_blank">https://www.uber.com/tw/zh-tw/blog/ue_online_delivery_act/</a></p>
+<p class="ref">¹⁹ foodpanda 外送夥伴官方平台（2024-10-01）—「第三人責任保障」
+<a href="https://pandarider.foodpanda.com.tw/safePlan/9" rel="noopener" target="_blank">https://pandarider.foodpanda.com.tw/safePlan/9</a></p>
+<p class="ref">²⁰ Financial Times（2025-12-08）— "App delivery drivers battle dynamic wages and uncertain finances"
+<a href="https://www.ft.com/content/df480a7b-01c7-4507-b9a9-68d47fa008f0" rel="noopener" target="_blank">https://www.ft.com/content/df480a7b-01c7-4507-b9a9-68d47fa008f0</a></p>
+<p class="ref">²¹ The Guardian（2025-01-21）— "It’s a nightmare: couriers mystified by the algorithms that control their jobs"
+<a href="https://www.theguardian.com/business/2025/jan/21/its-a-nightmare-couriers-mystified-by-the-algorithms-that-control-their-jobs" rel="noopener" target="_blank">https://www.theguardian.com/business/2025/jan/21/its-a-nightmare-couriers-mystified-by-the-algorithms-that-control-their-jobs</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/50d" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
