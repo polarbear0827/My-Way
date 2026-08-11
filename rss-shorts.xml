@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>穗稻忠武 · 每日短影音</title><link>https://polarbear0827.github.io/My-Way/</link><description>AI Radar / HF Papers / 專欄 每日直式短影音 (Reels/Shorts/TikTok)</description><language>zh-Hant</language><lastBuildDate>Tue, 11 Aug 2026 09:33:57 +0800</lastBuildDate><item><title>今天 GitHub 哪些 AI 工具值得看？2026-08-11 AI Radar Daily</title><link>https://polarbear0827.github.io/My-Way/radar/2026-08-11/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-08-11-short.mp4</guid><pubDate>2026-08-11</pubDate><description>🛸 AI RADAR DAILY 2026-08-11
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>穗稻忠武 · 每日短影音</title><link>https://polarbear0827.github.io/My-Way/</link><description>AI Radar / HF Papers / 專欄 每日直式短影音 (Reels/Shorts/TikTok)</description><language>zh-Hant</language><lastBuildDate>Tue, 11 Aug 2026 13:03:07 +0800</lastBuildDate><item><title>今天最值得看的 AI 論文？2026-08-11 HF Daily Papers</title><link>https://polarbear0827.github.io/My-Way/papers/2026-08-11/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-08-11-short.mp4</guid><pubDate>2026-08-11</pubDate><description>📄 HF DAILY PAPERS 2026-08-11
+
+今日趨勢：今天的共同趨勢：AI 研究正在從模型能力本身，推進到長任務、長上下文、空間感知與可驗證環境。
+
+今日必讀：
+→ IQuest-Coder-V1 Technical Report
+→ INSID3
+→ Scalable Prompt Routing via Fine-Grained Latent Task Discovery
+
+⭐ 今日首選：IQuest-Coder-V1 Technical Report
+
+完整每日論文速讀 → HF Daily Papers（link in bio）
+
+#arxiv #AI #LLM #MachineLearning #DeepLearning #AI論文 #人工智慧 #開源</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-08-11-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-08-11-short.mp4" medium="video" type="video/mp4"/></item><item><title>今天 GitHub 哪些 AI 工具值得看？2026-08-11 AI Radar Daily</title><link>https://polarbear0827.github.io/My-Way/radar/2026-08-11/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/radar-2026-08-11-short.mp4</guid><pubDate>2026-08-11</pubDate><description>🛸 AI RADAR DAILY 2026-08-11
 
 今日趨勢：AI紅隊與Agent基建齊升
 
@@ -730,20 +743,7 @@
 
 ▶ 全文：https://polarbear0827.github.io/My-Way/p/repairing-shoes-and-repair-culture/
 
-#科技人文 #穗稻忠武觀察室 #台灣 #科技與生活 #觀察筆記 #數位生活</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-22-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-22-short.mp4" medium="video" type="video/mp4"/></item><item><title>今天最值得看的 AI 論文？2026-07-22 HF Daily Papers</title><link>https://polarbear0827.github.io/My-Way/papers/2026-07-22/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-07-22-short.mp4</guid><pubDate>2026-07-22</pubDate><description>📄 HF DAILY PAPERS 2026-07-22
-
-今日趨勢：影片理解正從「看懂內容」走向「精準定位證據」，同時影音多模態模型持續擴展到可控生成與長音訊理解。
-
-今日必讀：
-→ TimeLens2
-→ HOMIE
-→ Audio Flamingo Next
-
-⭐ 今日首選：TimeLens2
-
-完整每日論文速讀 → HF Daily Papers（link in bio）
-
-#arxiv #AI #LLM #MachineLearning #DeepLearning #AI論文 #人工智慧 #開源</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-07-22-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/paper-2026-07-22-short.mp4" medium="video" type="video/mp4"/></item><item><title>檳榔攤的綠色難題：健康、土地與生計｜穗稻忠武觀察室</title><link>https://polarbear0827.github.io/My-Way/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-21-short.mp4</guid><pubDate>2026-07-21</pubDate><description>✍️ 檳榔攤的綠色難題：健康、土地與生計
+#科技人文 #穗稻忠武觀察室 #台灣 #科技與生活 #觀察筆記 #數位生活</description><enclosure url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-22-short.mp4" type="video/mp4" length="0"/><media:content url="https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-22-short.mp4" medium="video" type="video/mp4"/></item><item><title>檳榔攤的綠色難題：健康、土地與生計｜穗稻忠武觀察室</title><link>https://polarbear0827.github.io/My-Way/</link><guid>https://raw.githubusercontent.com/polarbear0827/My-Way/main/video/column-2026-07-21-short.mp4</guid><pubDate>2026-07-21</pubDate><description>✍️ 檳榔攤的綠色難題：健康、土地與生計
 
 省道邊的綠色招牌，為何牽動一整條人生？
 
