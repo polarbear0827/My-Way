@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>私訊裡的安全線：兒少保護與加密的難題 · 穗稻忠武的專欄</title>
+<meta name="description" content="一個孩子在群組裡收到陌生人傳來的影像、按下封鎖，或向家長求助；另一個人在同一支手機上，則希望私訊不被平台、廣告商或政府任意讀取。這兩種期待看似都很日常，卻把兒少保護推到通訊軟體最難處理的位置：訊息愈私密，平台愈難主動發現傷害；檢查愈深入，所有人的私人對話又可能被納入新的資料與監控流程。">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-08-14-encryption-child-safety/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="私訊裡的安全線：兒少保護與加密的難題">
+<meta property="og:description" content="一個孩子在群組裡收到陌生人傳來的影像、按下封鎖，或向家長求助；另一個人在同一支手機上，則希望私訊不被平台、廣告商或政府任意讀取。這兩種期待看似都很日常，卻把兒少保護推到通訊軟體最難處理的位置：訊息愈私密，平台愈難主動發現傷害；檢查愈深入，所有人的私人對話又可能被納入新的資料與監控流程。">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-08-14-encryption-child-safety/">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/a/a3/Child_with_Apple_iPad.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "私訊裡的安全線：兒少保護與加密的難題", "description": "一個孩子在群組裡收到陌生人傳來的影像、按下封鎖，或向家長求助；另一個人在同一支手機上，則希望私訊不被平台、廣告商或政府任意讀取。這兩種期待看似都很日常，卻把兒少保護推到通訊軟體最難處理的位置：訊息愈私密，平台愈難主動發現傷害；檢查愈深入，所有人的私人對話又可能被納入新的資料與監控流程。", "url": "https://polarbear0827.github.io/My-Way/p/2026-08-14-encryption-child-safety/", "datePublished": "2026-08-14", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Child_with_Apple_iPad.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>私訊裡的安全線：兒少保護與加密的難題</h1>
+<p class="byline"><time>2026-08-14</time></p>
+</div>
+
+<p class="lead">一個孩子在群組裡收到陌生人傳來的影像、按下封鎖，或向家長求助；另一個人在同一支手機上，則希望私訊不被平台、廣告商或政府任意讀取。這兩種期待看似都很日常，卻把兒少保護推到通訊軟體最難處理的位置：訊息愈私密，平台愈難主動發現傷害；檢查愈深入，所有人的私人對話又可能被納入新的資料與監控流程。</p>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Child_with_Apple_iPad.jpg" alt="孩童使用平板電腦｜來源：Intel Free Press／Wikimedia Commons（CC BY-SA）" loading="lazy"><figcaption>這張家庭裝置使用情境提醒人們：保護措施落在真實生活裡，往往同時牽涉孩子、照顧者與裝置平台。</figcaption></figure>
+<p>本文不把加密描寫成罪犯的遮蔽，也不把兒少安全縮成一個設定選項；而是檢視英國近年的年齡保證規則、平台的裝置端工具，以及臺灣處理性影像與網路風險的制度，釐清哪些事實已有資料支持、哪些技術主張仍有爭議。¹²</p>
+<h2>先把問題分開：內容、接觸與私訊</h2>
+<figure><img src="https://live.staticflickr.com/7400/10658401506_f3d2f935a6_b.jpg" alt="親子共用行動裝置｜來源：Giuseppe Milo／Flickr（CC BY）" loading="lazy"><figcaption>兒少網路風險不只發生在公開動態，也可能始於裝置交接、帳號設定與陌生人聯絡。</figcaption></figure>
+<p>端對端加密（E2EE）的基本意思是：內容在寄件端加密、由收件端解密，服務提供者原則上不能閱讀明文。它不等於帳號沒有規則，也不表示平台無法處理檢舉、封鎖、年齡分級、公開內容或帳號行為；真正困難的是，平台不能像處理公開貼文一樣，以內容審核直接看到私訊。BBC 以英國規則為例指出，兒少保護措施涵蓋推薦系統、群組邀請、檢舉與年齡檢查，但慈善團體 NSPCC 認為加密私訊仍留下重大風險。³⁴</p>
+<p>這個區分很重要。兒少受害可能是公開內容暴露、陌生人接觸、被誘導拍攝或轉傳影像；每一類問題需要的介入並不相同。若只把答案定義為「讀取所有私訊」，可能忽略帳號預設值、聯絡權限、快速通報、教育與被害人下架管道；若只說「加密不可碰」，也可能忽略已知違法影像如何被反覆散布的處境。</p>
+<h2>年齡保證為何成為新閘門</h2>
+<figure><img src="https://live.staticflickr.com/7197/13484454623_863823328f_b.jpg" alt="手機上的日常溝通｜來源：Ed Yourdon／Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>年齡判定通常在登入或存取之前發生，因此它處理的是誰可進入，而非直接判讀每一則私訊。</figcaption></figure>
+<p>英國 Ofcom 在 2025 年公布「高有效性」年齡保證指引，列出開放銀行、證件比對、臉部年齡估計、電信業者檢查、信用卡、數位身分與電子郵件估計等可能方法；它同時明確表示，單靠使用者自行填寫年齡不夠。規則要求服務在保護兒少時，也必須注意隱私與成人取得合法內容的權利。⁵⁶</p>
+<p>這類做法有一項明確優點：服務若能較可靠地知道使用者是兒少，就能把陌生人私訊、群組邀請、敏感內容推薦與購買等限制放到兒少帳號上。英國政府的說明也稱，平台可透過年齡估計只回傳「是否超過門檻」的結果，而非保存完整身分資料；這是官方目標，並非對所有供應商實作方式的獨立保證。⁷</p>
+<p>但年齡檢查不是萬能鑰匙。BBC 報導提到，服務可使用自拍、證件或金融資料，也承認決心規避的人會嘗試其他途徑；AP 對美國年齡規則的整理則顯示，支持者與隱私、言論權利團體之間仍有法律與政策拉鋸。⁸⁹</p>
+<h2>隱私與排除：不是附帶的小問題</h2>
+<figure><img src="https://live.staticflickr.com/3058/3563927087_1a82456029_b.jpg" alt="人在公共空間使用手機｜來源：Ed Yourdon／Flickr（CC BY-NC-SA）" loading="lazy"><figcaption>當存取資訊與身分、臉部或付款資料相連，風險不只在於是否通過檢查，也在於資料如何流動與保存。</figcaption></figure>
+<p>英國政府委託的年齡保證包容性研究結論是，沒有一種單一方案適合所有受訪者；依護照、信用卡或駕照等「硬識別」的方法，通常提供較高年齡信心，卻也是受訪方法中最不具包容性的類型。研究特別討論安置兒少、特殊教育需求兒少與非主流教育者可能遭遇的障礙，因此建議提供多種選項。¹⁰</p>
+<p>反對強制年齡驗證的團體 EFF 主張，政府證件或生物辨識可能把線上活動與離線身分連結，並使缺少證件、擔心被辨識或需要匿名求助的人更難進入資訊空間。這是倡議立場，不能直接等同於所有系統必然外洩；不過它指出了制度設計必須回答的問題：資料是否最小化、保存多久、誰可取得、誤判怎麼申覆、沒有手機或證件的人怎麼辦。¹¹</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 若年齡保證被當成唯一解方，平台可能把安全責任外包給一次性驗證；較可檢驗的做法，是把驗證後的預設隱私、陌生人限制、透明申覆與定期效果評估一併列入，而非只計算完成驗證的人數。</p>
+<h2>加密空間裡，兒少保護者看見什麼</h2>
+<figure><img src="https://live.staticflickr.com/1973/30506596497_e8a41f5507_b.jpg" alt="孩童與行動裝置｜來源：Katsujiro Maekawa／Flickr（CC0）" loading="lazy"><figcaption>對受害者而言，重點不在技術名稱，而在不法影像是否會被再次傳送、是否有人能協助停止擴散。</figcaption></figure>
+<p>網路觀察基金會 IWF 在 2025 年報說，該年度新增 317,101 筆影像與影片雜湊到其清單；它主張，端對端加密服務若沒有主動偵測，會減少平台辨識與移除已知兒少性剝削影像的能力。IWF 因而倡議「上傳防止」：在檔案加密傳送前，以雜湊比對已確認的違法影像，命中時阻擋上傳。¹²</p>
+<p>這是兒少保護陣營的核心論點：加密不應成為已知犯罪影像反覆流通的盲點。BBC 報導英國警察與兒少倡議者的主張時，也記錄到他們把陌生人接觸、私訊或加密私訊列為高風險特徵之一。¹³ 但「已知影像」比對能否推論到文字誘騙、新生成影像或未知檔案，仍是不同問題；技術能力與誤判率都需由獨立測試說明。</p>
+<p>臺灣的制度提供另一個觀察點：衛福部性影像處理中心 2024 年受理 1,928 件申訴、涉及 6,431 個網址，其中被害人 1,040 人、364 人為兒少；資料也列出即時通訊平台類別的移除率。這些數字不證明加密本身造成案件，卻顯示被害人需要迅速的申訴、保全與下架流程。¹⁴</p>
+<h2>「加密不等於放任」的技術爭論</h2>
+<figure><img src="https://live.staticflickr.com/8479/28619189492_c1ac2c0033_b.jpg" alt="家庭中的平板與通訊使用｜來源：Thad Zajdowicz／Flickr（CC0）" loading="lazy"><figcaption>裝置端保護與服務端讀取不同；兩者都可能被稱為「安全功能」，卻涉及不同權限與風險。</figcaption></figure>
+<p>Signal 對英國法案的立場是，要求大規模客戶端掃描，即使發生在加密前，也會改變端對端加密所承諾的私密性並形成新的攻擊面。該公司與 Open Rights Group 的說法代表隱私與資安倡議方的觀點；它們認為不能以「掃描在加密前」就宣稱不影響加密。¹⁵¹⁶</p>
+<p>IWF 則主張，針對已知違法影像的上傳前雜湊比對可以在保護私訊機密下運作，並要求平台採取這類措施。¹² 兩種說法的差異不只是價值判斷，也牽涉範圍：比對的資料庫由誰治理、是否只限已確認影像、誤中時如何申訴、功能能否被擴張到其他內容、程式是否可獨立稽核。本文無法以現有公開資料獨立判定哪一種實作在所有情境都安全有效，因此不把任何一方的技術結論當作定論。</p>
+<p>英國政府則表示，Online Safety Act 並非加密禁令，且對年齡保證要求資料最小化；法規實際執行的效果仍須看 Ofcom 的稽核、執法與公開評估。⁷¹⁷</p>
+<h2>平台已在嘗試的另一條路</h2>
+<figure><img src="https://live.staticflickr.com/5628/23052209642_87860981f9_b.jpg" alt="家長與孩子的數位生活｜來源：infomatique／Flickr（CC BY-SA）" loading="lazy"><figcaption>若目標是減少不當接觸，聯絡人權限、兒少帳號預設與求助流程可在不閱讀所有內容的情況下發揮作用。</figcaption></figure>
+<p>Apple 的 Communication Safety 是一個具體例子。Apple 表示，兒少裝置上的功能會在偵測到可能含裸露的影像或影片時先模糊畫面、顯示警示與求助資源；公司稱判定在裝置上進行，Apple 不會收到偵測結果，也不會取得影像或影片。這是廠商對其產品設計的說明，應與獨立測試區分。¹⁸</p>
+<p>Apple 2025 年另宣布擴充家長保護工具，讓 13 至 17 歲帳號也有網頁內容過濾與 Communication Safety 等預設保護。¹⁹ AP 報導 Meta 增加青少年帳號防護、陌生聯絡資訊與一鍵封鎖檢舉功能，同時引述公司自行公布的大量帳號移除數；後者是公司聲明，不能單獨視為外部成效證明。²⁰</p>
+<p>這些例子說明，安全設計可以把重點放在降低陌生人接觸、延緩敏感影像傳送、鼓勵求助與提供封鎖，而不必然等於全面閱讀私訊。它們同時也有侷限：功能是否開啟、年齡資料是否正確、跨平台互動怎麼處理，以及孩子是否能安全求助，都不能由單一產品功能解決。</p>
+<h2>臺灣需要的不是複製法案</h2>
+<figure><img src="https://live.staticflickr.com/7155/6403048149_74d5dc37a1_b.jpg" alt="使用手機進行訊息溝通｜來源：nSeika／Flickr（CC BY）" loading="lazy"><figcaption>制度的可用性取決於人能否理解、申訴與獲得協助，而不只取決於平台是否增加一個按鈕。</figcaption></figure>
+<p>臺灣《兒童及少年性剝削防制條例》與相關修法已建立性影像限制瀏覽與移除機制；衛福部說明指出，平台在得知被害人性影像後，須先行限制瀏覽或移除，並保留相關紀錄供偵查。²¹ 中央社 2025 年報導衛福部統計，兒少性剝削案件自 2017 年的 1,117 件增至 2024 年 3,582 件；該報導並記錄政府規劃以科技協助主動巡查。²²</p>
+<p>這些資料支持的是「傷害已經存在，且被害人需要可近的救濟」，不是「因此必須弱化每一項加密」。臺灣若討論平台責任，可先檢視：兒少帳號是否預設限制陌生人私訊；回報和緊急求助是否用繁體中文、容易找到；被害人是否能獲得保全、下架與心理法律支持；以及平台是否定期公開處理時效與申覆結果。iWIN 的年度資料亦顯示，境內外平台處理與聯絡機制都影響實務效果。²³</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 把所有責任交給家庭，會忽略平台設計與制度救濟；把所有責任交給平台，又可能讓驗證或掃描擴張得無法追蹤。較可問責的原則是最小必要資料、明確目的限制、兒少優先預設、被害人快速救濟與外部審查。</p>
+<h2>結語：安全不是只有一把鑰匙</h2>
+<figure><img src="https://live.staticflickr.com/4068/4580058581_11bf83ed48_b.jpg" alt="手機使用的日常場景｜來源：Johan Larsson／Flickr（CC BY）" loading="lazy"><figcaption>私訊安全的難題不會由單一技術消失；孩子能否被保護，也取決於平台設計、求助關係與公共制度能否接住人。</figcaption></figure>
+<p>兒少保護與私人通訊都是真實需求。現有證據顯示，年齡保證可以讓服務為兒少套用較安全的預設；裝置端提示、陌生人限制、封鎖檢舉與被害人下架機制也各自處理不同環節。另一方面，年齡驗證帶來的資料、誤判與排除風險，以及在加密前大規模掃描是否破壞安全保證，仍是有實質分歧的問題。</p>
+<p>因此，讀者面對「保護孩子」與「保護私訊」的二選一說法時，應追問更具體的細節：要防的是什麼傷害？資料是否只用於年齡判定？誰能稽核、誰能申覆？被害人需要協助時，是否有立即可用的管道？能被檢驗的制度，才比口號更接近安全。</p>
+<h2>從一次設定到持續照顧</h2>
+<figure><img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Child_with_Apple_iPad.jpg" alt="孩子使用平板的場景｜來源：Intel Free Press／Wikimedia Commons（CC BY-SA）" loading="lazy"><figcaption>安全不是把裝置交給孩子前的一次性設定；它會隨交友、群組、更新與求助經驗反覆改變。</figcaption></figure>
+<p>英國 Ofcom 的兒少規則把責任放在多個環節：服務要評估兒少可能接觸的風險、調整推薦系統、提供檢舉與支援工具，並在某些高風險內容前採用年齡保證。²⁴ 這種框架的價值，在於不把「孩子是否填對生日」當成唯一安全訊號。年齡只是讓平台能選擇不同預設的一個線索；陌生人能否主動聯絡、群組能否任意把人加入、封鎖是否容易使用、檢舉後是否真的有人回應，同樣決定風險如何落在日常生活。</p>
+<p>對家長而言，最可見的往往是螢幕時間或密碼；但孩子遇到尷尬、被威脅或被要求傳影像時，是否能不先受責備地向可信任成人說明，也會影響求助時機。Apple 的文件把提供可信任成人與離開對話的選項列為 Communication Safety 的介入之一；這不等於軟體能代替家庭對話，卻把技術功能放回關係與支持網絡。¹⁸</p>
+<p>平台也不應只把安全工具藏在深層設定。若預設允許陌生人傳訊，再要求家長逐項關閉，責任仍落在最容易錯過通知的人身上。反之，對未成年帳號採取較保守的聯絡與內容預設，並提供年齡合宜的調整與透明說明，才較符合「安全設計」的概念。</p>
+<h2>看得見的成效，與看不見的代價</h2>
+<figure><img src="https://live.staticflickr.com/4127/4964565556_1f81286050.jpg" alt="使用手機閱讀訊息的人｜來源：FaceMePLS／Flickr（CC BY）" loading="lazy"><figcaption>新制度上線時，登入流程的變化最容易被看見；資料留存、誤判與真正減少的傷害則需要長期公開檢驗。</figcaption></figure>
+<p>監管規則常以「高度有效」形容年齡保證，但 Ofcom 的指引並未把它簡化成單一百分比門檻，而要求技術準確、穩健、可靠且公平。⁶ 這反映一個實務限制：同一種方法在不同年齡、裝置、光線、文件條件與網路環境下，可能產生不同結果。真正應問的不是某個供應商是否宣稱使用人工智慧，而是它對未通過者提供什麼替代方式、是否將生物辨識資料轉交第三方、保存與刪除如何被稽核。</p>
+<p>AP 報導美國的相關法律時提到，年齡規則被支持者視為保護兒少的工具，而數位權利團體則擔憂敏感資料、隱私與言論的後果。⁹ 這種分歧並不表示任何一方不重視兒少；它要求政策辯論把成效指標說清楚，例如兒少接觸特定傷害內容是否下降、陌生接觸通報是否改善、誤擋成年人的比率、資料外洩與申覆件數是否公開。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 若只公布「完成驗證量」，平台可能把摩擦成本轉嫁給所有人，卻沒有回答傷害是否減少。能被外部研究者、監管者與使用者檢視的透明報告，會比只有宣傳數字更有助於判斷措施是否合比例。</p>
+<h2>不把被害人的需求放到技術辯論之外</h2>
+<figure><img src="https://live.staticflickr.com/5671/22673524139_19edaaec73_b.jpg" alt="家庭與行動裝置的互動｜來源：infomatique／Flickr（CC BY-SA）" loading="lazy"><figcaption>當私密影像已遭散布，受害者最先需要的往往是停止擴散、保存證據與有人可以回應，而不是一場抽象的加密辯論。</figcaption></figure>
+<p>衛福部說明，臺灣性影像處理制度包含集中受理、通知平台限制瀏覽或移除、保留紀錄及轉介社政、警政等機關；流程圖亦把二十四小時後確認業者是否完成限制瀏覽或移除列為一環。²¹²⁵ 此類措施處理的是已被發現、已能被通報的內容，與直接取得每一段私訊內容不同。</p>
+<p>中央社所報的案件增加與衛福部資料提醒，傷害不會因為服務改了名稱或使用者轉換平台而消失。²² 對被害人而言，跨境服務是否有聯絡窗口、申訴是否能用熟悉語言、重複上傳時是否有比對與阻擋、警政與社工能否協作，都是比抽象宣示更立即的問題。</p>
+<p>IWF 主張的已知影像雜湊比對，是把「阻止再次上傳」拉進加密辯論的一種方向。¹² 然而，這種方案若要取得信任，仍需清楚限制目的與清單治理：誰決定何者已確認違法、錯誤列入時如何更正、是否有獨立監督、技術是否被擴大用於其他言論。受害人權益與通訊保密不是可隨意互相抵銷的口號，而是制度必須同時回答的責任。</p>
+<h2>下一步：讓每一種權利都有可問責的出口</h2>
+<figure><img src="https://live.staticflickr.com/8097/8462775336_65d6522ef8_b.jpg" alt="行動裝置與家庭日常｜來源：Alan Stanton／Flickr（CC BY-SA）" loading="lazy"><figcaption>面對快速更新的應用程式，穩定的安全原則應包括最小蒐集、可理解的選擇與能被追究的責任。</figcaption></figure>
+<p>目前沒有證據能支持「只要強制年齡驗證」或「只要完整加密」就能單獨解決兒少網路風險。英國的規則與平台做法顯示，年齡訊號、兒少帳號預設、推薦系統調整、陌生人互動限制、回報工具與支援資源可以並行；臺灣的下架與保護服務則說明，事件發生後仍必須有具體的救濟路徑。⁷²¹</p>
+<p>可行的公共檢驗標準至少包括五項：第一，是否只蒐集達成目的所需的資料；第二，兒少與成人是否有合理替代與申覆；第三，對陌生聯絡和敏感內容的預設是否足夠保守；第四，平台是否公開處理時效、錯誤率與稽核結果；第五，受害人是否能取得跨機構協助。這些不是特定國家的唯一答案，而是讀者、家長與監管者都可用來檢查承諾的問題。</p>
+<p>私訊裡的安全線不會畫在一個按鈕上。它要靠能被檢驗的技術範圍、不能任意擴張的資料權限、孩子可實際使用的求助工具，以及在傷害發生時不讓人孤立的制度。以下整理本文查閱的原始與媒體來源，讀者可回到各自立場的原文檢視。</p>
+<h3>對照國際經驗時，先看服務差異</h3>
+<p>英國的 Online Safety Act、美国州法、歐盟討論與臺灣的兒少保護法並不處在相同制度脈絡，不能把任何一地的罰則或技術要求直接搬來使用。英國規則的重要部分，是要求服務依風險採取措施並由 Ofcom 監督；美國則有各州立法與訴訟交錯，AP 記錄過法院對部分社群年齡規則的不同處置。⁹²⁶ 對臺灣而言，國際案例最有用的不是複製名詞，而是看它們是否公開了效果、是否提供申覆、是否留意跨境平台與小型服務的負擔。</p>
+<p>平台也不是同一種類型。公開社群、交友服務、遊戲內聊天室、學校聯絡工具、家族通訊軟體和以私密通訊為核心的服務，在使用者年齡、風險型態與可採取的預設值上都不同。要求所有服務做完全相同的身分驗證，可能忽略風險差異；完全不分服務類型，又可能讓高風險功能缺少對應的防護。Ofcom 的資料正是以服務是否可能被兒少使用及其風險評估為起點。²⁴</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 比例原則在此不是抽象的折衷語，而是要求每一種干預都講清楚「最少需要什麼資料、能降低什麼風險、留下哪些副作用」。若無法回答這三件事，新增檢查可能只是把複雜風險移到更不容易被看見的地方。</p>
+<h3>讓孩子有權利，而不只是被管理</h3>
+<p>兒少常在政策文字裡被當成需要保護的對象，卻較少被視為有隱私、資訊、表意與求助權利的使用者。英國政府委託的包容性研究訪談了照顧體系、特殊教育需求與非主流教育情境的兒少及照顧者，結論是單一驗證方法會產生不同程度的排除；這也是為何「替代途徑」與「孩子能理解的說明」不應被放到上線後再補。¹⁰</p>
+<p>對孩子來說，好的安全功能應該讓他知道：誰可以聯絡自己、如何拒絕群組、遇到不舒服內容能做什麼、找誰幫忙，以及誤按或被誤判時如何恢復。對成人來說，好的系統也不應把私密對話、身分資料或求助紀錄悄悄變成可被無限保存的資產。這些期待不會消除犯罪風險，但能避免保護措施本身另造傷害。</p>
+<p>回到開頭那支手機，最需要的不是一句保證「平台全都看得到」或「平台永遠看不到」，而是一套能公開說明界線、讓不同處境的人使用、並在失敗時有人負責的安排。兒少安全與加密的爭論還會持續；把問題拆細、把證據公開、把被害人與使用者的申覆放進制度，才是可以繼續被追問的起點。</p>
+<h3>問責必須能被日常使用者理解</h3>
+<p>政策與產品說明常以「安全」「隱私」「人工智慧」等大詞概括設計，但真正遇到麻煩的人需要的是具體答案：這個按鈕是否會通知對方？我能否拒絕陌生人？上傳證件後會交給誰？被誤判時，是否能找到真人處理？遭散布影像後，是否能在不反覆描述傷害的情況下取得協助？這些問題看起來瑣碎，卻決定制度在危急時刻是否可用。</p>
+<p>平台若以「端對端加密」作為不回應使用者檢舉與帳號濫用的理由，沒有盡到其他可做的安全責任；監管者若以「保護兒少」為名要求不透明、不可申覆且無期限的資料蒐集，同樣需要被質疑。成熟的制度不會要求使用者先相信口號，而會讓外界看得見責任分工、資料邊界、補救管道與獨立檢驗。 在這個意義上，最可靠的保護不是假定孩子或成人永遠不會犯錯，而是讓錯誤發生後仍有減損傷害的機會：預設不讓陌生人任意接觸、提供清楚封鎖與回報、用最少資料完成必要判定、在影像外流時提供快速下架與支持，並允許獨立單位檢視平台是否真正履行承諾。這些安排不能保證零風險，卻能把「安全」從宣傳語變成可被持續修正的公共工作。</p>
+<h2>引用來源</h2>
+<p class="ref">¹ Reuters（2025-10-27）— "Fact Check: Post overstates what Britain's Online Safety Act lets authorities do"
+<a href="https://www.reuters.com/fact-check/post-overstates-what-britains-online-safety-act-lets-authorities-do-2025-10-27/" rel="noopener" target="_blank">https://www.reuters.com/fact-check/post-overstates-what-britains-online-safety-act-lets-authorities-do-2025-10-27/</a></p>
+<p class="ref">² Reuters（2025-04-24）— "Britain gives websites hosting pornography until July to enforce age restrictions"
+<a href="https://www.reuters.com/world/uk/uks-ofcom-sets-july-deadline-mandatory-age-verification-2025-04-24/" rel="noopener" target="_blank">https://www.reuters.com/world/uk/uks-ofcom-sets-july-deadline-mandatory-age-verification-2025-04-24/</a></p>
+<p class="ref">³ BBC News（2025-07-24）— "What the Online Safety Act is - and how to keep children safe online"
+<a href="https://www.bbc.com/news/articles/c0epennv98lo" rel="noopener" target="_blank">https://www.bbc.com/news/articles/c0epennv98lo</a></p>
+<p class="ref">⁴ BBC News（2025-04-24）— "Overhaul algorithms and age checks or face fines, tech firms told"
+<a href="https://www.bbc.com/news/articles/c5yljn2vkn1o" rel="noopener" target="_blank">https://www.bbc.com/news/articles/c5yljn2vkn1o</a></p>
+<p class="ref">⁵ Ofcom（2025-01-16）— "Age checks to protect children online"
+<a href="https://www.ofcom.org.uk/online-safety/protecting-children/age-checks-to-protect-children-online" rel="noopener" target="_blank">https://www.ofcom.org.uk/online-safety/protecting-children/age-checks-to-protect-children-online</a></p>
+<p class="ref">⁶ Ofcom（2025-04-24）— "Guidance on highly effective age assurance"
+<a href="https://www.ofcom.org.uk/siteassets/resources/documents/consultations/category-1-10-weeks/statement-age-assurance-and-childrens-access/part-3-guidance-on-highly-effective-age-assurance.pdf?v=395680" rel="noopener" target="_blank">https://www.ofcom.org.uk/siteassets/resources/documents/consultations/category-1-10-weeks/statement-age-assurance-and-childrens-access/part-3-guidance-on-highly-effective-age-assurance.pdf?v=395680</a></p>
+<p class="ref">⁷ GOV.UK（2025-08-01）— "Keeping children safe online: changes to the Online Safety Act explained"
+<a href="https://www.gov.uk/government/news/keeping-children-safe-online-changes-to-the-online-safety-act-explained" rel="noopener" target="_blank">https://www.gov.uk/government/news/keeping-children-safe-online-changes-to-the-online-safety-act-explained</a></p>
+<p class="ref">⁸ BBC News（2025-07-24）— "As porn sites apply new age checks, will users hand over personal ID?"
+<a href="https://www.bbc.com/news/articles/c1k81lj8nvpo" rel="noopener" target="_blank">https://www.bbc.com/news/articles/c1k81lj8nvpo</a></p>
+<p class="ref">⁹ AP News（2025-06-27）— "What to know about online age verification laws"
+<a href="https://apnews.com/article/internet-age-verification-supreme-court-def346d7bf299566a3687d8c4f224fec" rel="noopener" target="_blank">https://apnews.com/article/internet-age-verification-supreme-court-def346d7bf299566a3687d8c4f224fec</a></p>
+<p class="ref">¹⁰ UK Department for Science, Innovation and Technology（2023）— "Age assurance technologies and inclusion considerations"
+<a href="https://assets.publishing.service.gov.uk/media/642572d160a35e000c0cb1ae/age_assurance_technologies_and_inclusion_considerations.pdf" rel="noopener" target="_blank">https://assets.publishing.service.gov.uk/media/642572d160a35e000c0cb1ae/age_assurance_technologies_and_inclusion_considerations.pdf</a></p>
+<p class="ref">¹¹ Electronic Frontier Foundation（2025-06-16）— "Protecting Minors Online Must Not Come at the Cost of Privacy and Free Expression"
+<a href="https://www.eff.org/deeplinks/2025/06/protecting-minors-online-must-not-come-cost-privacy-and-free-expression" rel="noopener" target="_blank">https://www.eff.org/deeplinks/2025/06/protecting-minors-online-must-not-come-cost-privacy-and-free-expression</a></p>
+<p class="ref">¹² Internet Watch Foundation（2025）— "2025 IWF Data and Insights Report"
+<a href="https://www.iwf.org.uk/annual-data-insights-report-2025" rel="noopener" target="_blank">https://www.iwf.org.uk/annual-data-insights-report-2025</a></p>
+<p class="ref">¹³ BBC News（2026-05-21）— "UK police bosses say unsafe social media platforms should be blocked for under-16s"
+<a href="https://www.bbc.com/news/articles/c4gv0qg2levo" rel="noopener" target="_blank">https://www.bbc.com/news/articles/c4gv0qg2levo</a></p>
+<p class="ref">¹⁴ 衛生福利部（2025）— "性影像處理中心服務資訊（113年度）"
+<a href="https://www.mohw.gov.tw/dl-93656-0bca7a8f-bb37-4124-b0a9-826da47bf7e5.html" rel="noopener" target="_blank">https://www.mohw.gov.tw/dl-93656-0bca7a8f-bb37-4124-b0a9-826da47bf7e5.html</a></p>
+<p class="ref">¹⁵ Signal（2023）— "Standing firm against threats to private and safe communication"
+<a href="https://signal.org/blog/uk-online-safety-bill/" rel="noopener" target="_blank">https://signal.org/blog/uk-online-safety-bill/</a></p>
+<p class="ref">¹⁶ Open Rights Group（2025-02-24）— "The Case for Encryption"
+<a href="https://www.openrightsgroup.org/blog/the-case-for-encryption/" rel="noopener" target="_blank">https://www.openrightsgroup.org/blog/the-case-for-encryption/</a></p>
+<p class="ref">¹⁷ GOV.UK（2025-07-23）— "What's changing for children on social media from 25 July 2025"
+<a href="https://www.gov.uk/government/news/whats-changing-for-children-on-social-media-from-25-july-2025" rel="noopener" target="_blank">https://www.gov.uk/government/news/whats-changing-for-children-on-social-media-from-25-july-2025</a></p>
+<p class="ref">¹⁸ Apple Support（2026-03-24）— "About Communication Safety on your child's Apple device"
+<a href="https://support.apple.com/en-us/105069" rel="noopener" target="_blank">https://support.apple.com/en-us/105069</a></p>
+<p class="ref">¹⁹ Apple Newsroom（2025-06-11）— "Apple expands tools to help parents protect kids and teens online"
+<a href="https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/" rel="noopener" target="_blank">https://www.apple.com/newsroom/2025/06/apple-expands-tools-to-help-parents-protect-kids-and-teens-online/</a></p>
+<p class="ref">²⁰ AP News（2025-07-23）— "Meta launches new teen safety features"
+<a href="https://apnews.com/article/meta-instagram-teen-accounts-dd99ae488140c41ba66012757498216c" rel="noopener" target="_blank">https://apnews.com/article/meta-instagram-teen-accounts-dd99ae488140c41ba66012757498216c</a></p>
+<p class="ref">²¹ 衛生福利部（2023）— "兒少性剝削防制條例修正草案"
+<a href="https://www.mohw.gov.tw/cp-6568-73177-1.html" rel="noopener" target="_blank">https://www.mohw.gov.tw/cp-6568-73177-1.html</a></p>
+<p class="ref">²² 中央社（2025-08-08）— "兒少性剝削案件7年增2.2倍"
+<a href="https://www.cna.com.tw/news/ahel/202508080281.aspx" rel="noopener" target="_blank">https://www.cna.com.tw/news/ahel/202508080281.aspx</a></p>
+<p class="ref">²³ iWIN 網路內容防護機構（2025）— "2025年iWIN兒少網安年會：年度成果"
+<a href="https://i.win.org.tw/annual-report/2025/results.html" rel="noopener" target="_blank">https://i.win.org.tw/annual-report/2025/results.html</a></p>
+<p class="ref">²⁴ Ofcom（2025-04-24）— "New rules for a safer generation of children online"
+<a href="https://www.ofcom.org.uk/online-safety/protecting-children/new-rules-for-a-safer-generation-of-children-online" rel="noopener" target="_blank">https://www.ofcom.org.uk/online-safety/protecting-children/new-rules-for-a-safer-generation-of-children-online</a></p>
+<p class="ref">²⁵ 衛生福利部（2024）— "性影像處理中心受理性影像案件流程圖"
+<a href="https://www.mohw.gov.tw/dl-88446-b7aa5f4c-f9a4-4b98-b267-bc8a05eccb02.html" rel="noopener" target="_blank">https://www.mohw.gov.tw/dl-88446-b7aa5f4c-f9a4-4b98-b267-bc8a05eccb02.html</a></p>
+<p class="ref">²⁶ AP News（2025-06-26）— "Judge blocks Georgia's social media age verification law"
+<a href="https://apnews.com/article/georgia-social-media-age-verification-law-lawsuit-51b4ce108f0d22adadc50d50e0392dd4" rel="noopener" target="_blank">https://apnews.com/article/georgia-social-media-age-verification-law-lawsuit-51b4ce108f0d22adadc50d50e0392dd4</a></p>
+<p class="ref">²⁷ The Guardian（2025-07-24）— "What are the new UK online safety rules"
+<a href="https://www.theguardian.com/technology/2025/jul/24/what-are-the-new-uk-online-safety-rules-and-how-will-they-be-enforced" rel="noopener" target="_blank">https://www.theguardian.com/technology/2025/jul/24/what-are-the-new-uk-online-safety-rules-and-how-will-they-be-enforced</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
