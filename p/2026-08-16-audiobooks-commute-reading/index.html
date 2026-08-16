@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>耳機裡的書：通勤時間如何被有聲書重寫 · 穗稻忠武的專欄</title>
+<meta name="description" content="早晨的車門關上，手沒有翻頁，耳朵卻已經進入一段敘事。有聲書把原本被切成站與站之間、紅燈與紅燈之間的時間，變成可以帶著走的文本。它也因此改變一個看似簡單的日常問題：我們所說的「閱讀」，究竟是眼睛掃過字句，還是理解、記憶與想像一段作品的過程？">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-08-16-audiobooks-commute-reading/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="耳機裡的書：通勤時間如何被有聲書重寫">
+<meta property="og:description" content="早晨的車門關上，手沒有翻頁，耳朵卻已經進入一段敘事。有聲書把原本被切成站與站之間、紅燈與紅燈之間的時間，變成可以帶著走的文本。它也因此改變一個看似簡單的日常問題：我們所說的「閱讀」，究竟是眼睛掃過字句，還是理解、記憶與想像一段作品的過程？">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-08-16-audiobooks-commute-reading/">
+<meta property="og:image" content="https://live.staticflickr.com/65535/48389128462_846396211d_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "耳機裡的書：通勤時間如何被有聲書重寫", "description": "早晨的車門關上，手沒有翻頁，耳朵卻已經進入一段敘事。有聲書把原本被切成站與站之間、紅燈與紅燈之間的時間，變成可以帶著走的文本。它也因此改變一個看似簡單的日常問題：我們所說的「閱讀」，究竟是眼睛掃過字句，還是理解、記憶與想像一段作品的過程？", "url": "https://polarbear0827.github.io/My-Way/p/2026-08-16-audiobooks-commute-reading/", "datePublished": "2026-08-16", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/65535/48389128462_846396211d_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>耳機裡的書：通勤時間如何被有聲書重寫</h1>
+<p class="byline"><time>2026-08-16</time></p>
+</div>
+
+<p class="lead">早晨的車門關上，手沒有翻頁，耳朵卻已經進入一段敘事。有聲書把原本被切成站與站之間、紅燈與紅燈之間的時間，變成可以帶著走的文本。它也因此改變一個看似簡單的日常問題：我們所說的「閱讀」，究竟是眼睛掃過字句，還是理解、記憶與想像一段作品的過程？</p>
+<p>這不是替任何媒介宣告勝負的文章。紙本、電子書與聲音各有不同的身體條件與注意力要求；有聲書的成長也不代表每個人都能從中獲益。本文從通勤的使用場景、出版生產、圖書館服務與學術研究出發，辨認耳機帶來的便利，也辨認它留下的限制與仍無定論之處。¹²</p>
+<figure><img src="https://live.staticflickr.com/65535/48389128462_846396211d_b.jpg" alt="通勤者戴著耳機｜來源：susanjanegolding／Flickr（CC BY）" loading="lazy"><figcaption>耳機使聲音內容可隨移動接續；但聆聽是否能在擁擠、轉乘與分心中轉化為理解，仍取決於文本與情境。</figcaption></figure>
+<h2>從空檔到文本：通勤為何成為聲音的入口</h2>
+<p>有聲書不是新發明，但串流、手機與藍牙耳機讓它從車內光碟、下載檔案，轉成可在通勤路上隨時開始或暫停的服務。英國媒體對近年市場的描述，將多工使用、訂閱方案與名人或多演員製作列為推動因素；2024 年的報導也記錄到英國下載量年增 17%。³⁴ 這些數字是出版產業資料的轉述，能說明市場變化，不能直接推論每一次播放都代表完整閱讀。 就日常經驗而言，聲音的優勢是讓雙手與視線得以留給方向、扶手、路況或家務。紐約時報書評作者把通勤、排隊與做家務列為自己聽書的場合；那是個人的閱讀敘述，而不是普遍行為統計，但說明了有聲書如何填入原本不利於持書閱讀的片段。⁵ 在臺灣，手機網路與通勤工具也創造相似條件，但公開可比較的全國有聲書使用統計仍有限，因此不能把英美趨勢直接套用為臺灣比例。</p>
+<figure><img src="https://live.staticflickr.com/8455/8049983027_3b362ddc58_b.jpg" alt="戴耳機閱讀的人｜來源：Nicola since 1972／Flickr（CC BY）" loading="lazy"><figcaption>閱讀姿勢不只一種；聲音格式把「可讀」延伸到眼睛無法長時間停在頁面上的場景。</figcaption></figure>
+<h2>成長的市場，不等於單一的閱讀習慣</h2>
+<figure><img src="https://live.staticflickr.com/5820/30398188503_1019f6734b_b.jpg" alt="錄音室中的麥克風與工作桌｜來源：gruntzooki／Flickr（CC BY-SA）" loading="lazy"><figcaption>市場上的有聲書營收，對應到錄音、剪輯、配音與發行等多個環節。</figcaption></figure>
+<p>市場資料確實顯示聲音出版正在擴張。Audio Publishers Association 表示，美國有聲書出版商 2024 年營收為 22.2 億美元、較前一年增加 13%；這是業界協會委託調查的結果，應視為產業方數據。⁶ 英國 Publishers Association 的資料則顯示，2024 年英國出版商有聲書收入達 2.68 億英鎊，較 2023 年增加 31%；《衛報》報導同時指出，多工使用被受訪者列為吸引力之一。⁷</p>
+<p>兩組資料不能相加成「全球市場」，因為統計範圍、幣別、通路與年度口徑不同；它們較適合說明兩個成熟英語市場都有擴張。Ofcom 的英國音訊報告亦把有聲內容放在更大的音訊生態中，提醒聆聽時間同時被廣播、音樂、Podcast 與其他聲音服務競逐。⁸ 因此，收入增加不必然表示紙本閱讀被取代，也不必然表示所有人開始聽得更專注。 出版端的變化也改變作品本身。AP 對敘述者 Julia Whelan 的報導提到，她已錄製逾 600 本有聲書；另一篇 AP 報導則記錄《哈利波特》新版採用完整演員陣容。⁹¹⁰ 當配音、節奏、音效與選角都成為作品的一部分，有聲書不是把紙頁逐字搬運，而可能形成另一種表演文本。</p>
+<figure><img src="https://live.staticflickr.com/5820/30398188503_1019f6734b_b.jpg" alt="錄音室中的麥克風與工作桌｜來源：gruntzooki／Flickr（CC BY-SA）" loading="lazy"><figcaption>從文字到音檔涉及錄音、剪輯與表演勞動；聽眾聽到的聲音並非沒有製作成本。</figcaption></figure>
+<h2>「聽」算不算讀：證據支持什麼、還沒支持什麼</h2>
+<p>這個問題常被化成價值判斷：聽書是偷懶，或聽書當然等於閱讀。現有研究較不支持這兩種簡化說法。2022 年一篇關於有聲書、紙本與理解的文獻回顧指出，直接比較兩種形式的研究仍不足，尤其缺少針對不同年齡、不同閱讀需求與說明文的比較。¹¹ 換言之，不能由少量研究推出所有讀者、所有文本都具有相同理解結果。</p>
+<p>同時，理解也不是只有答題分數。讀者是否能回想情節、辨識論證、做筆記，及是否可反覆回看，都會受速度、背景噪音、文字難度與是否同時做事影響。當通勤者需要留意轉乘或行車安全時，注意力會被環境切割；當故事由優秀敘述者演出時，人物與節奏又可能更容易被感知。這些都是合理的機制推論，不是本文可獨立量化的因果結論。</p>
+<p>《衛報》2026 年關於「聽是否和讀一樣好」的報導呈現倡議者與出版界逐漸把聆聽納入閱讀活動的趨勢；但媒體文化報導不取代實驗研究。¹² 比較謹慎的說法是：聽有聲書可以是接觸文學與知識的一種途徑，而其理解效果要依人、文本和任務而定，目前沒有能一概而論的定論。</p>
+<h2>方便背後的勞動、價格與著作權</h2>
+<figure><img src="https://live.staticflickr.com/5526/10479282263_4c2c7e9f6e_b.jpg" alt="有聲書敘述者活動現場｜來源：New Jersey State Library／Flickr（CC BY-NC）" loading="lazy"><figcaption>有聲書的「隨選」建立在作者、敘述者與製作團隊的勞動及授權協商之上。</figcaption></figure>
+<p>有聲書的「隨選」外觀容易遮住供應鏈。一本作品可能涉及作者、譯者、編輯、敘述者、錄音工程、後製與平台分潤；不同平台的按時收聽、單本購買或訂閱池分配，也可能讓權利人收入模型不同。2024 年《衛報》把 Spotify 擴張有聲書服務及 Audible 的製作投資置於產業競爭脈絡；這可說明平台正在競逐目錄與使用時間，卻不足以證明任一支付模式對創作者最公平。¹³</p>
+<p>公平報酬也是聽眾能見的爭點。APA 的消費者調查曾記錄部分聽眾表示，若不確定作者獲得合理支付，會降低對串流服務的好感；調查本身由產業協會發布，結果應保留其樣本與提問設計的限制。¹⁴ 相對地，訂閱平台通常主張它們帶來發現新作品與新增收入。這兩種主張可同時存在，不能僅憑一方數字裁決。 對讀者而言，最實際的差異是可攜性與可退出性：使用者能否下載、離線聽、保留筆記，或在更換平台後繼續使用，都取決於服務條款與授權，而不只是檔案格式。當「一本書」被包裝成帳戶中的播放權，閱讀日常也開始受登入、方案與區域目錄左右。</p>
+<figure><img src="https://live.staticflickr.com/4137/4734830821_2f8b49b662_b.jpg" alt="圖書館中的耳機與媒體設備｜來源：juhansonin／Flickr（CC BY）" loading="lazy"><figcaption>數位借閱可把館藏帶出館舍，但其授權、排隊與裝置支援也成為公共服務的一部分。</figcaption></figure>
+<h2>圖書館借得到，並不表示取得成本消失</h2>
+<p>對不想或無法訂閱的人，圖書館的數位借閱是重要入口。美聯社 2024 年報導美國多家公共圖書館因電子書與數位有聲書需求增加、授權價格與使用限制而承受預算壓力，並出現尋求州法改革的行動。¹⁵ 這不是所有國家圖書館的共同情況，但顯示數位館藏不必然像紙本一樣可一次買斷並長期自由流通。</p>
+<p>臺灣的國立公共資訊圖書館長期提供數位資源，地方讀者也可透過各館系統接觸電子與音訊內容。公開新聞曾報導該館 2021 年電子書借閱約 74 萬冊、年增 69%，這是單一館舍及特定年度資料，不能代表全臺有聲書借閱量，卻提示公共閱讀已部分移到螢幕與耳機。¹⁶ 讀者在實際使用前仍需確認自己的縣市圖書館是否提供帳號互通、可借冊數、等待規則與支援的 App。</p>
+<p>國際圖書館協會聯盟（IFLA）對電子借閱的原則，主張圖書館應能在合理條件下提供電子內容，也提醒授權制度可能限制館方選擇與保存。¹⁷ 這是圖書館界的政策立場，不是出版商必然接受的答案；出版商則會關切借閱是否替代銷售與影響作者收入。爭點目前沒有跨市場的一致解方。</p>
+<h2>通勤不是空白：注意力、可近性與安全</h2>
+<p>把通勤說成「可被完全利用的空白時間」，也可能壓縮人的休息權。有人在車上需要閉目、觀察路況、與同行者交談，或只是讓感官安靜；有聲書應是一種選擇，而不是把每分鐘變成產出的要求。尤其步行、騎車或駕駛時，任何音訊都不應妨礙對環境的辨識。本文沒有找到能直接量化「聽有聲書導致通勤事故」的可靠研究，因而不作此類因果宣稱。</p>
+<p>可近性是另一面。對視覺障礙、閱讀障礙或暫時難以長時間看字的人，聲音格式可能擴大接觸文本的機會；但如果平台介面不易使用、內容缺少適當語速或章節標記、訂閱費過高，便利也可能形成新的排除。研究回顧所指出的證據不足，正提醒教育與公共服務不宜把一種媒介當成萬用答案。¹¹</p>
+<figure><img src="https://live.staticflickr.com/4091/5013445218_e03cd01eb4.jpg" alt="耳機與閱讀姿態｜來源：Shermeee／Flickr（CC BY）" loading="lazy"><figcaption>聲音閱讀可以擴大接觸的方式，但不同障礙、語言能力與裝置條件都會改變實際可近性。</figcaption></figure>
+<h2>結語：讓媒介選擇回到讀者手上</h2>
+<figure><img src="https://live.staticflickr.com/4091/5013445218_e03cd01eb4.jpg" alt="耳機與閱讀姿態｜來源：Shermeee／Flickr（CC BY）" loading="lazy"><figcaption>讀者可以在紙本、螢幕與聲音間切換；選擇的條件取決於服務、成本與身處的場景。</figcaption></figure>
+<p>有聲書讓通勤的時間感產生變化：一段故事能跨越捷運站、步行路線和等待的空檔；它也把閱讀帶進平台、授權、表演勞動與公共採購的制度中。市場成長是可觀察到的現象，但不能被誤讀成紙本已無用，或聆聽必定等同於任何形式的閱讀。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 對讀者與公共機構而言，較有用的問題也許不是「聽算不算讀」，而是：誰能選擇適合自己的形式？誰能負擔取得成本？誰的注意力與隱私被服務設計尊重？若有聲書真能把文本帶進移動中的日常，好的制度不該只追求播放時數，也應留下暫停、重聽、借閱與不聽的空間。</p>
+<figure><img src="https://live.staticflickr.com/8070/8196954985_7ce592b796_b.jpg" alt="閱讀與聲音的日常物件｜來源：Nicola since 1972／Flickr（CC BY）" loading="lazy"><figcaption>有聲書的價值不只在於播放；它也取決於讀者是否能控制速度、停下來與回到先前章節。</figcaption></figure>
+<h3>速度不是效率的同義詞</h3>
+<p>播放器的倍速功能常被當成節省時間的工具，但速度提高會改變語音停頓、人物聲線與複雜論證的可追蹤程度。相反地，對熟悉內容或需要反覆複習的人，暫停與倒轉可能比紙本翻找更方便。這些並非同一種閱讀任務：小說中的情感節奏、歷史敘事中的人名關係、工作報告中的數字與條款，對注意力的要求不同。 因此，把「完成一本」當成唯一指標會漏掉媒介差異。紙本容易在頁邊留下視覺位置，電子文本方便搜尋，聲音則能利用步行與家務的時段；三者也可以互相搭配。出版社與平台提供的書籤、章節、文字同步與睡眠計時功能，會實際影響讀者能否把聽過的內容重新找回。本文未找到跨平台且可比的功能使用統計，故不把任何功能描述為普遍偏好。</p>
+<h3>誰的聲音被聽見</h3>
+<p>聲音格式也帶來語言與代表性的問題。一部作品的敘述者選擇會影響口音、角色、情緒與讀者對文本的距離；多人演出的版本尤其讓製作判斷更明顯。AP 對新《哈利波特》有聲書的報導提到，製作採用不同年齡的演員接力詮釋角色，正是把聲音當成改編的一部分。¹⁰ 這不表示單人朗讀較差，而是顯示兩種作品安排服務不同的聽覺經驗。</p>
+<p>在非英語市場，翻譯、腔調與授權目錄同樣決定可聽到什麼。臺灣讀者若尋找中文有聲書，還會遇到平台目錄、地區授權、出版社是否製作音檔及圖書館採購能力的差異。這些條件並非讀者單靠下載 App 就能消除。從文化政策角度看，聲音出版的擴張是否能涵蓋地方語言、獨立出版與不同閱讀需求，仍需要更細緻的公開資料。</p>
+<figure><img src="https://live.staticflickr.com/8343/8224443828_595af1417b_b.jpg" alt="圖書館與數位媒體的接點｜來源：Clemson University Library／Flickr（CC BY-NC）" loading="lazy"><figcaption>館藏數位化不只改變讀者取得方式，也要求館方處理目錄、授權與裝置協助。</figcaption></figure>
+<h3>不只是一個 App 的公共服務</h3>
+<p>數位借閱往往被理解為「在家就能借」，但真正的服務還包括讀者教育、帳號支援、無障礙設計、館藏選擇與隱私保護。IFLA 的背景文件提醒，電子借閱可能蒐集大量閱讀習慣資料，因此讀者資料保護也是制度的一環。¹⁹ 對紙本借閱而言，歸還後的物件不會持續回傳播放進度；對平台化服務，資料流向、保存期間與第三方處理則需要被清楚說明。 這一點並非要把數位借閱視為風險來源，而是要求公共服務的便利與資料最小化同時被考慮。館方、平台與出版商各自掌握不同系統，責任如何分配也因法律與契約而異。本文未能取得臺灣各館對有聲書資料保存的可比較調查，故不對本地實務作超出公開資料的判斷。</p>
+<h3>給通勤讀者的三個實際問題</h3>
+<p>選擇有聲書時，可以先問三件不需要立場的事。第一，這本書的任務是陪伴、理解還是查找？若要引用資料或精讀論證，最好確認是否有同步文字、可搜尋章節或其他可回看的版本。第二，場景是否安全？步行過馬路、騎車與開車時，音量、單耳使用或乾脆暫停，比不中斷一本書更重要。第三，來源是否可長期使用？圖書館、單次購買和訂閱的目錄、到期條件與離線功能不同。</p>
+<p>這些問題也避免把聽書道德化。對某些人，聲音讓文學進入原本被照顧、勞動或身體狀況占據的時間；對另一些人，安靜讀紙本仍是較能集中與休息的方式。選擇本身不必被排名。較值得要求的是，服務商不要以模糊條款限制使用者，公共機構也不要把數位服務當成縮減實體空間與人員的理由。</p>
+<h3>產業數字應如何被閱讀</h3>
+<p>有聲書營收的年度成長容易成為醒目的新聞標題，但它至少有三個閱讀限制。第一，營收不是人數：少數重度使用者、高單價作品或訂閱分配方式都可能影響金額。第二，營收不是作者所得：製作、平台、經銷與權利分配的比例需要合約資料，通常不會由總營收揭示。第三，英美市場不是臺灣市場：語言、版權、公共圖書館採購與通勤型態皆不同。 因此，APA 的 22.2 億美元與英國 2.68 億英鎊，最適合作為「兩個市場的產業資料」而非世界閱讀習慣的總結。⁶⁷ 同樣地，單一書籍因名人朗讀而熱銷的案例，不能推出所有作品都應改成戲劇化演出。好的報導與好的選書都需要把數字放回其統計邊界。</p>
+<h3>仍待回答的問題</h3>
+<p>未來值得追蹤的不是只有平台新功能。公共統計能否區分電子書與數位有聲書的借閱、是否說明等待時間與採購成本？出版商能否更透明地說明敘述者與作者的報酬？教育研究能否在不同文本、語言、年齡與閱讀目的下進行更多直接比較？這些問題決定有聲書會是少數訂閱者的便利，還是能被更廣泛使用的文化資源。</p>
+<p>有聲書已經在通勤與家務等日常場景中存在，但它的社會意義仍未固定。它可以補足視覺閱讀的空白，也可能受到付費牆、授權或注意力經濟限制。把這些條件講清楚，比急著替「聽」或「讀」劃出高低，更接近讀者真正面對的選擇。</p>
+<h3>以聲音保存的閱讀記憶</h3>
+<p>紙本書的記憶常與封面、頁碼、書頁厚度或一段摺角連在一起；有聲書則可能與一條路線、某段車窗外的景色或敘述者的音色連在一起。這不是哪一種記憶較好的證明，而是媒介把文本置入身體與空間的方式不同。當讀者隔天從同一段續聽，作品也會和移動的節奏一起被重新喚起。</p>
+<p>此一現象也提醒平台不要只用「完聽率」定義價值。有人會因一段難懂的章節停下重聽，有人會因工作中斷而延後回來；這些行為可能是投入，而非流失。公開市場資料大多不會揭露這種細緻的閱讀歷程。研究者、館員與出版者若要理解聲音閱讀，仍需把使用資料和讀者自身的敘述並讀。</p>
+<h3>對出版與教育的保留</h3>
+<p>把有聲書納入課程或閱讀推廣時，必須避免用它替代對文字能力的支持。音訊可以協助讀者進入內容，卻未必練習到辨識字形、拼寫、查閱引文或在段落間比對的能力；反過來說，純粹要求每個人都以視覺閱讀，也可能忽略身心障礙與不同學習需求。合適做法取決於教學目標，而不是媒介的身分。 出版端同樣需要保留多樣性。名人朗讀、全員演出和高製作預算可能吸引聽眾，但小型出版與地方語言作品是否也有進入音訊市場的條件，關乎目錄能否代表更多聲音。現有新聞與協會統計主要聚焦英語市場；臺灣相關公開資料不足，本文不宣稱已掌握本地完整生態。</p>
+<h3>一段路，一種可撤回的選擇</h3>
+<p>最後，有聲書最健康的位置或許不是逼迫人「把零碎時間都用完」，而是讓人可以在想聽時帶上一段文字，在疲憊、嘈雜或需要留意周遭時放心停止。好的閱讀制度也應容許這種可撤回性：清楚的授權、可近的圖書館服務、尊重資料隱私，以及對作者與製作人員可理解的報酬規則。</p>
+<p>有聲書沒有消除紙本，也沒有終結閱讀的爭論。它只是把一個長久的文化活動放進耳朵、帳戶與移動中的身體。讀者最需要的，或許不是被告知哪種方式更正確，而是有足夠的選擇與資訊，決定一段路上要聽什麼、怎麼聽，或什麼也不聽。</p>
+<h3>對時間的另一種理解</h3>
+<p>通勤時間常被描繪成可被效率工具「收回」的損失，但這種說法會忽略移動本身包含等候、換乘、疲憊與對環境的感受。有聲書可以陪伴其中一部分，卻不必填滿全部。把它看作可選擇的文化陪伴，比把它當成績效工具更能保留讀者的自主性。</p>
+<p>同一位讀者也可能在不同日子做不同選擇：精神充足時聽一段長篇，疲累時關掉聲音，週末再以紙本回看。這種跨媒介的來回不等於不專心，而可能是依情境調整。現有產業報告較容易量到銷售與播放，較難呈現這類不連續、但真實存在的使用方式。</p>
+<h3>服務設計的細節</h3>
+<p>真正影響日常的，往往是小功能：能否在不同裝置同步位置、能否設定較小的倒轉秒數、能否在鎖定螢幕清楚辨識章節、能否在網路不穩時離線使用。這些設計不只是產品競爭，也與不同年齡、數位能力和通勤環境相關。若操作過於複雜，原本想降低閱讀門檻的服務可能反而排除使用者。</p>
+<p>圖書館若要推廣數位有聲書，也需要把這些細節納入服務：除了採購內容，還包括首次登入的協助、裝置教學、資料使用告知與讀者可理解的借閱規則。這些觀察是本文分析，並非對任何特定臺灣館舍的評價。</p>
+<h3>平衡成長與公共性</h3>
+<p>產業成長帶來更多製作、更多目錄與新的職業機會，但公共性不會自動隨市場擴大而到來。若熱門作品只存在於昂貴訂閱、地區授權或有限的裝置生態中，能否「聽書」仍取決於付款能力和技術條件。公共圖書館的角色正是在此補上部分缺口，但它們也需要穩定預算與可協商的授權條件。 這也解釋為何電子與音訊借閱的爭論不只是格式之爭。它同時涉及誰能保存文化、誰能取得作品、誰能為創作與製作勞動付費，以及讀者的選擇能否不被單一平台定義。</p>
+<h3>聆聽也需要被設計成可停止</h3>
+<p>有聲書服務若把自動播放、連續推薦與完聽徽章當成唯一目標，容易把文化活動推向無止盡的停留。讀者需要的反而可能是清楚的停點：一章結束時的摘要、可被理解的書籤、可關閉的推播，以及不因暫停太久就失去進度的設計。這些功能看起來細小，卻會影響一位在轉乘、照顧家人或工作間隙使用者能否真正回到作品。</p>
+<p>對出版商而言，聲音格式也提出保存問題。當作品依賴特定 App、特定帳戶和雲端授權，數年後是否仍能被同樣播放，並非只靠讀者把檔案留在手機就能保證。圖書館、權利人和平台對長期保存的安排值得被公開討論；本文沒有足夠資料判定任何特定服務的保存政策優劣。</p>
+<h3>從個人習慣回到公共選擇</h3>
+<p>有聲書的未來不只由排行榜決定。它也取決於公共圖書館能否取得多樣館藏、學校能否依學習目標搭配不同格式、平台能否說清楚資料與授權，以及創作者與敘述者能否在製作鏈中取得可理解的報酬。這些是不同機構的責任，不能全部交給讀者用一次訂閱來解決。</p>
+<p>因此，通勤時戴上耳機的動作雖然私密，背後卻連著公共制度。當讀者能在紙本、螢幕和聲音之間自由來回，並知道服務如何運作，媒介選擇才比較接近自主，而不是被目錄、介面或付款方式預先決定。</p>
+<h2 class="refs-head">引用來源</h2>
+<p class="ref">¹ The Guardian（2024-12-27）— "Listen up! Why 2024 was the year of the audiobook"
+<a href="https://www.theguardian.com/books/2024/dec/27/year-of-the-audiobook-spotify-audible-ai" rel="noopener" target="_blank">https://www.theguardian.com/books/2024/dec/27/year-of-the-audiobook-spotify-audible-ai</a></p>
+<p class="ref">² Ofcom（2024）— "Audio listening in the UK 2024"
+<a href="https://www.ofcom.org.uk/siteassets/resources/documents/research-and-data/data/statistics/2024/audio-report-2024/ofcom-audio-report.pdf?v=320716" rel="noopener" target="_blank">https://www.ofcom.org.uk/siteassets/resources/documents/research-and-data/data/statistics/2024/audio-report-2024/ofcom-audio-report.pdf?v=320716</a></p>
+<p class="ref">³ The Guardian（2024-05-08）— "UK audiobook downloads up 17% last year"
+<a href="https://www.theguardian.com/books/article/2024/may/07/uk-audiobook-downloads-up-17-last-year-publishers-association-data-shows" rel="noopener" target="_blank">https://www.theguardian.com/books/article/2024/may/07/uk-audiobook-downloads-up-17-last-year-publishers-association-data-shows</a></p>
+<p class="ref">⁴ The Guardian（2025-06-18）— "UK audiobook revenue up by almost a third last year"
+<a href="https://www.theguardian.com/books/2025/jun/18/uk-audiobook-revenue-up-ability-multitask-publishers-association" rel="noopener" target="_blank">https://www.theguardian.com/books/2025/jun/18/uk-audiobook-revenue-up-ability-multitask-publishers-association</a></p>
+<p class="ref">⁵ The New York Times（2025-12-21）— "Why I Stopped Reading and Embraced Audiobooks"
+<a href="https://www.nytimes.com/2025/12/21/books/review/audiobooks-reading-listening-habits.html" rel="noopener" target="_blank">https://www.nytimes.com/2025/12/21/books/review/audiobooks-reading-listening-habits.html</a></p>
+<p class="ref">⁶ Audio Publishers Association（2025）— "Research Surveys Press Release"
+<a href="https://www.audiopub.org/surveys" rel="noopener" target="_blank">https://www.audiopub.org/surveys</a></p>
+<p class="ref">⁷ Publishers Association（2025）— "Audiobooks and fiction drove growth in 2024"
+<a href="https://www.publishers.org.uk/audiobooks-and-fiction-drove-growth-in-2024/" rel="noopener" target="_blank">https://www.publishers.org.uk/audiobooks-and-fiction-drove-growth-in-2024/</a></p>
+<p class="ref">⁸ Ofcom（2024）— "Audio Survey Technical Report 2024"
+<a href="https://www.ofcom.org.uk/siteassets/resources/documents/research-and-data/data/statistics/2024/audio-report-2024/ofcom-audio-survey-technical-report-2024.pdf?v=321338" rel="noopener" target="_blank">https://www.ofcom.org.uk/siteassets/resources/documents/research-and-data/data/statistics/2024/audio-report-2024/ofcom-audio-survey-technical-report-2024.pdf?v=321338</a></p>
+<p class="ref">⁹ AP News（2025）— "Meet Julia Whelan, the narrator of more than 600 audiobooks"
+<a href="https://apnews.com/article/julia-whelan-audiobooks-my-oxford-year-ad615b4da3d1ea6ecb998cd3876cb1f5" rel="noopener" target="_blank">https://apnews.com/article/julia-whelan-audiobooks-my-oxford-year-ad615b4da3d1ea6ecb998cd3876cb1f5</a></p>
+<p class="ref">¹⁰ AP News（2025）— "'Harry Potter' audiobooks: A new trio tells the story"
+<a href="https://apnews.com/article/harry-potter-audiobooks-interview-b779f250b3f17b93ac906685a7d26a46" rel="noopener" target="_blank">https://apnews.com/article/harry-potter-audiobooks-interview-b779f250b3f17b93ac906685a7d26a46</a></p>
+<p class="ref">¹¹ Springer（2022）— "Audiobooks, Print, and Comprehension: What We Know and What We Need to Know"
+<a href="https://link.springer.com/article/10.1007/s10648-021-09653-2" rel="noopener" target="_blank">https://link.springer.com/article/10.1007/s10648-021-09653-2</a></p>
+<p class="ref">¹² The Guardian（2026-01-21）— "Is listening to an audiobook as good as reading?"
+<a href="https://www.theguardian.com/books/2026/jan/21/is-listening-to-an-audiobook-as-good-as-reading" rel="noopener" target="_blank">https://www.theguardian.com/books/2026/jan/21/is-listening-to-an-audiobook-as-good-as-reading</a></p>
+<p class="ref">¹³ The Guardian（2024-11-08）— "Roddy Doyle: ‘A PG Wodehouse audiobook made me laugh so much I had to stop the car’"
+<a href="https://www.theguardian.com/books/2024/nov/08/roddy-doyle-a-pg-wodehouse-audiobook-made-me-laugh-so-much-i-had-to-stop-the-car" rel="noopener" target="_blank">https://www.theguardian.com/books/2024/nov/08/roddy-doyle-a-pg-wodehouse-audiobook-made-me-laugh-so-much-i-had-to-stop-the-car</a></p>
+<p class="ref">¹⁴ Audio Publishers Association（2021）— "Consumer and Sales Surveys Press Release"
+<a href="https://cdn.ymaws.com/audiopub.site-ym.com/resource/collection/63CA49A7-1450-449A-A718-8ACCA7250FF9/2021_Consumer_&amp;_2020_Sales_Surveys_Press_Release.pdf" rel="noopener" target="_blank">https://cdn.ymaws.com/audiopub.site-ym.com/resource/collection/63CA49A7-1450-449A-A718-8ACCA7250FF9/2021_Consumer_&amp;_2020_Sales_Surveys_Press_Release.pdf</a></p>
+<p class="ref">¹⁵ AP News（2024）— "Libraries struggle to afford the demand for e-books and seek new state laws"
+<a href="https://apnews.com/article/libraries-ebooks-publishers-expensive-laws-5d494dbaee0961eea7eaac384b9f75d2" rel="noopener" target="_blank">https://apnews.com/article/libraries-ebooks-publishers-expensive-laws-5d494dbaee0961eea7eaac384b9f75d2</a></p>
+<p class="ref">¹⁶ 中時新聞網（2022-01-11）— "國資圖去年借閱由武俠小說包下文學類前5 電子書成長近7成"
+<a href="https://www.chinatimes.com/realtimenews/20220111005262-260405" rel="noopener" target="_blank">https://www.chinatimes.com/realtimenews/20220111005262-260405</a></p>
+<p class="ref">¹⁷ IFLA（2013）— "IFLA Principles for Library eLending"
+<a href="https://www.ifla.org/ifla-principles-for-library-elending/" rel="noopener" target="_blank">https://www.ifla.org/ifla-principles-for-library-elending/</a></p>
+<p class="ref">¹⁸ EBLIDA（2022）— "First European Overview on E-lending in Public Libraries"
+<a href="https://www.eblida.org/News/2022/first-european-overview-elending-public-libraries.pdf" rel="noopener" target="_blank">https://www.eblida.org/News/2022/first-european-overview-elending-public-libraries.pdf</a></p>
+<p class="ref">¹⁹ IFLA（2012）— "IFLA E-Lending Background Paper"
+<a href="https://www.ifla.org/wp-content/uploads/2019/05/assets/clm/publications/ifla-background-paper-e-lending-en.pdf" rel="noopener" target="_blank">https://www.ifla.org/wp-content/uploads/2019/05/assets/clm/publications/ifla-background-paper-e-lending-en.pdf</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
