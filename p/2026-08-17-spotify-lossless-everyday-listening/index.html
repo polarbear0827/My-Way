@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify 無損音訊來到台灣：升級真的有感嗎 · 穗稻忠武的專欄</title>
+<meta name="description" content="Spotify 在 2025 年 9 月宣布為 Premium 用戶推出 Lossless，並在同年 10 月把服務擴至逾 50 個市場；Spotify 社群公告的名單包含台灣。這是公司 2021 年宣告 Spotify HiFi 後，歷經多年延宕才落地的功能。¹²³">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-08-17-spotify-lossless-everyday-listening/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spotify 無損音訊來到台灣：升級真的有感嗎">
+<meta property="og:description" content="Spotify 在 2025 年 9 月宣布為 Premium 用戶推出 Lossless，並在同年 10 月把服務擴至逾 50 個市場；Spotify 社群公告的名單包含台灣。這是公司 2021 年宣告 Spotify HiFi 後，歷經多年延宕才落地的功能。¹²³">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-08-17-spotify-lossless-everyday-listening/">
+<meta property="og:image" content="https://live.staticflickr.com/65535/49395735443_ec5601ea90_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Spotify 無損音訊來到台灣：升級真的有感嗎", "description": "Spotify 在 2025 年 9 月宣布為 Premium 用戶推出 Lossless，並在同年 10 月把服務擴至逾 50 個市場；Spotify 社群公告的名單包含台灣。這是公司 2021 年宣告 Spotify HiFi 後，歷經多年延宕才落地的功能。¹²³", "url": "https://polarbear0827.github.io/My-Way/p/2026-08-17-spotify-lossless-everyday-listening/", "datePublished": "2026-08-17", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/65535/49395735443_ec5601ea90_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">台灣文化</span><span class="tag">台灣</span><span class="tag">科技與生活</span><span class="tag">專欄</span></div>
+<h1>Spotify 無損音訊來到台灣：升級真的有感嗎</h1>
+<p class="byline"><time>2026-08-17</time></p>
+</div>
+
+<p class="lead">Spotify 在 2025 年 9 月宣布為 Premium 用戶推出 Lossless，並在同年 10 月把服務擴至逾 50 個市場；Spotify 社群公告的名單包含台灣。這是公司 2021 年宣告 Spotify HiFi 後，歷經多年延宕才落地的功能。¹²³</p>
+<p>但「無損」不是一個按下去便必然更好聽的魔法開關。它改變的是串流檔案保留資訊的方式；聽者最後能否感到差異，還要經過手機、耳機、藍牙或 Wi-Fi、播放設定、環境噪音與個人聽覺。這篇報導不評斷哪一種聽法較高級，而是追問：當一項長期被視為發燒友規格的功能進入日常訂閱，使用者真正得到什麼，又要承擔什麼？</p>
+<figure><img src="https://live.staticflickr.com/65535/49395735443_ec5601ea90_b.jpg" alt="戴耳機聆聽音樂｜來源：chocolatedazzles／Flickr（CC BY）" loading="lazy"><figcaption>一副耳機與一段通勤或獨處時間，往往比規格表更接近多數人實際的串流場景。</figcaption></figure>
+<h2>一項等了四年的功能</h2>
+<p>Spotify 於 2021 年公開 HiFi 計畫，當時稱將提供 CD 品質音訊；其後上市時間多次推遲。2025 年的 Lossless 版本改以最高 24-bit／44.1 kHz 的 FLAC 串流推出，並納入既有 Premium，而非另設高價音質方案。Spotify 對此的說法是，功能涵蓋平台上「幾乎所有」歌曲；TechCrunch 與 Variety 的報導都指出，這與先前市場對額外加價方案的預期不同。¹³⁴</p>
+<figure><img src="https://live.staticflickr.com/61/172600054_f8787e8ed1_b.jpg" alt="黑膠唱片與唱盤｜來源：stevecadman／Flickr（CC BY-SA）" loading="lazy"><figcaption>實體唱片的儀式感常被拿來對比串流；但本節討論的是數位檔案傳遞是否保留原始資料，而不是媒介之間的價值排序。</figcaption></figure>
+<p>Spotify 這次的規格也界定了它不是「Hi-Res」的全面競賽。Apple 說其 Apple Music 的無損範圍從 CD 品質 16-bit／44.1 kHz 到 24-bit／192 kHz；因此，Spotify 的上限較接近 CD 取樣率延伸的串流選項，而非所有平台標榜的最高解析度。⁷ 這不表示任何一方必然較適合所有人：曲目、裝置、費率與使用習慣都不同。</p>
+<h2>無損究竟保留了什麼</h2>
+<p>「無損壓縮」的意思是把檔案縮小時仍可還原原始音訊資料；它不等於錄音品質、混音品質或喇叭品質會自動變好。Apple 的技術說明明確提醒，多數壓縮方法會遺失部分原始資料，而無損壓縮保留原始資料；同一份說明也稱 AAC 與無損的差異「幾乎難以辨別」。⁷</p>
+<p>這一句保留很重要。它來自提供無損服務的業者，不能被讀成否定功能，也不能被讀成保證每個人都能辨識。紐約時報 Wirecutter 在評估高解析串流時指出，是否值得付費取決於聽者、內容與設備；專業聽音經驗並不能直接替一般人的客廳、捷運或辦公桌下判決。⁸</p>
+<figure><img src="https://live.staticflickr.com/2699/4233580183_6b4204cb13_b.jpg" alt="家用 JBL 喇叭｜來源：Nesster／Flickr（CC BY-SA）" loading="lazy"><figcaption>家用喇叭顯示串流音質不是手機 App 單點功能，而是一條由帳號、網路、播放器與輸出設備構成的鏈路。</figcaption></figure>
+<h2>藍牙是最容易被忽略的一段</h2>
+<p>Spotify 建議以 Wi-Fi、有線耳機或非藍牙連線的喇叭使用 Lossless，理由是目前藍牙頻寬不足以傳送無損音訊。² Engadget 與 TechCrunch 的報導亦依官方資料轉述這一限制。³⁵ 這意味著：常用真無線耳機聽歌的人，即使在 App 選了 Lossless，傳到耳機的一段仍可能重新壓縮；資料量變大，不等於耳中接收的是完整無損鏈路。</p>
+<p>這不該被簡化成「藍牙很差」。Bluetooth SIG 表示，LE Audio 使用的 LC3 編碼可在較低位元率下改善相對於傳統 SBC 的品質與耗電取捨，並開啟廣播音訊與助聽器等用途。⁹ 這是不同工程目標：更有效率、更省電或更方便的無線音訊，與「位元完全不失」不是同一個命題。對多數行走、運動、通勤使用者而言，穩定、低延遲和佩戴感也可能比規格優先。</p>
+<h2>手動設定，讓選擇回到每一台裝置</h2>
+<p>Spotify 沒有把 Lossless 預設套用到帳號所有設備。它要求用戶在每一台手機、桌機或平板，分別到「設定與隱私／媒體品質」選擇 Wi-Fi、行動網路與下載的品質；播放畫面或 Connect Picker 會顯示指示。²³ 這種設計把控制權交還給人，也把判斷工作交還給人。</p>
+<figure><img src="https://live.staticflickr.com/23/31207220_b746edaacc_b.jpg" alt="桌上混音器與數位錄音機｜來源：TimWilson／Flickr（CC BY）" loading="lazy"><figcaption>錄音與播放之間隔著多個環節；格式標籤只能描述其中一段，無法替代整條鏈路。</figcaption></figure>
+<p>實務上可以把情境拆開：家中 Wi-Fi 與有線耳機可選 Lossless；通勤使用有限行動資料時，可改高品質或下載；多人共用網路或舊款裝置時，先確認穩定性。Spotify 提供不同品質模式和資料用量資訊，正是承認每個情境的成本不同。² Amazon 的音訊格式說明同樣把 SD、HD、Ultra HD 與裝置支援分開描述。¹⁰¹¹</p>
+<h2>成本不只是一個月多少錢</h2>
+<p>Spotify 將功能納入 Premium，不另收音質加價，對既有訂戶是一項產品變動；但「不加價」不代表沒有成本。檔案資料量更大，會碰到行動數據、下載容量、家中網路與電池使用。Apple 也警告無損串流和下載會顯著增加資料與裝置空間，而較高解析度消耗更多。⁷</p>
+<p>另一層成本是訂閱本身。Ars Technica 報導，Spotify 在 2026 年初再度調高部分市場方案價格，這是兩年半內第三次上調；該報導提到公司近期功能包括無損、音樂影片與訊息。¹² 價格變動是否由某一項功能造成，文章無法獨立證明；但它提醒讀者，把 Lossless 放回整體訂閱組合看，比把它當成免費贈品更準確。</p>
+<figure><img src="https://live.staticflickr.com/4152/5087718854_d0654eee64_b.jpg" alt="桌面音響升級｜來源：Jordanhill School D&amp;T Dept／Flickr（CC BY）" loading="lazy"><figcaption>是否升級設備，是聽者的選擇；本節討論的是先辨認既有設備和連線方式，而非鼓勵購買。</figcaption></figure>
+<h2>台灣用戶實際要先看什麼</h2>
+<p>台灣已列在 Spotify 社群公告的 Lossless 逐步開放市場中；功能是否已出現在個人帳號，仍須以 App 通知和設定頁為準。⁶ 對使用者而言，最有用的第一步不是立即添購耳機，而是確認：自己是否為 Premium、App 是否有 Lossless 選項、主要聽音位置是 Wi-Fi 還是行動網路、輸出是有線或藍牙，以及常聽曲目是否真的提供相應標示。Spotify 表示該功能覆蓋「幾乎所有」可聽曲目，這句話也保留了例外。²</p>
+<p>第二步是做可逆的比較。選熟悉的兩三首曲子，在相同音量、同一副耳機、安靜環境下切換品質，而不要把不同音量、不同混音或不同耳機的差異都歸給格式。自由時報 3C、NME 和 TechRadar 報導均提醒，功能須手動開啟，且業者建議有線或 Wi-Fi 輸出；這些是設定事實，不是「一定聽得出來」的承諾。¹³¹⁴¹⁵</p>
+<h2>平台競爭，不應只剩規格競賽</h2>
+<p>Apple Music 在 2021 年先推出無損；Amazon 的 HD 服務更早進入市場。⁴⁷¹⁰ Spotify 延後推出，使這一功能成為平台追趕競爭的一部分。對公司來說，音質可用來維持 Premium 的吸引力；對聽者來說，推薦、歌單、朋友協作、Podcast、裝置支援與既有資料庫，往往也影響是否轉換。</p>
+<figure><img src="https://live.staticflickr.com/2510/4015102979_704f2efc11_b.jpg" alt="復古 Hi-Fi 音響｜來源：mabecerra／Flickr（CC BY）" loading="lazy"><figcaption>規格競爭最終仍回到一個日常問題：一個人想在哪裡、用什麼裝置、花多少時間聽音樂。</figcaption></figure>
+<p>將無損視為唯一尺度，可能忽略音樂服務的其他關係。藝人報酬、訂閱漲價、資料使用、無線便利與可近用性都會進入同一筆帳。Ars Technica 提及產業內對串流報酬的批評；這與音質功能不是同一個問題，但讀者不宜因新增功能而忘記它。¹² 本文也未發現 Spotify 對「無損是否改善藝人收入」提出可供獨立驗證的因果資料。</p>
+<h2>什麼可以確定，什麼仍無定論</h2>
+<p>可以確認的是：Spotify 已將最高 24-bit／44.1 kHz FLAC 的 Lossless 納入 Premium，台灣在其公告市場名單中；用戶要逐裝置手動開啟；業者建議用 Wi-Fi 和非藍牙鏈路。²⁶ 也可以確認，無損通常需要更多資料和空間。⁷</p>
+<p>尚無法用一個普遍答案確認的，是「所有人是否值得長期開啟」。音量、環境、設備、聽覺、曲目與網路限制都不同；把任何一次主觀聽感當成普遍事實並不嚴謹。<strong>（以下為本文分析，非事實陳述）</strong> 較實際的問題或許不是「我是否聽得出無損」，而是「在我真正聽音樂的地方，這項設定是否讓我更願意停下來聽一首歌」。</p>
+<h2>結語：把選擇留在耳朵與生活之間</h2>
+<p>Spotify 的新選項結束了多年等待，卻沒有結束串流音樂的取捨。它讓想用有線耳機、家用音響或 Wi-Fi 喇叭的人多一種可選品質；也讓習慣藍牙耳機、有限流量或共享網路的人更需要理解設定背後的限制。¹²</p>
+<figure><img src="https://live.staticflickr.com/115/259411177_eaf5f39612_b.jpg" alt="唱盤上的唱片｜來源：nimble photography／Flickr（CC BY）" loading="lazy"><figcaption>一張唱片不會因為格式名稱而自動變得動人；串流設定亦然。聽者能掌握的，是在自己的生活條件裡作出可撤回的選擇。</figcaption></figure>
+<h2>從錄音室到耳朵，中間沒有捷徑</h2>
+<figure><img src="https://live.staticflickr.com/2503/4234352490_1599c01af2_b.jpg" alt="JBL 喇叭單體｜來源：Nesster／Flickr（CC BY-SA）" loading="lazy"><figcaption>喇叭單體是播放鏈路的一環；它不能被 App 裡的一個品質選項取代。</figcaption></figure>
+<p>Lossless 所描述的是檔案編碼與傳送中保留資料的特性，不是對整個聆聽結果的保固。原始母帶怎麼錄、後期怎麼混、串流服務拿到哪一種版本、裝置如何解碼、擴大機或耳機如何重現聲音，都是不同環節。Spotify 指出可串流最高 24-bit／44.1 kHz 的 FLAC；這可以精確描述它提供的上限，卻不能單獨說明每一張專輯的製作品質。²⁴</p>
+<p>同樣地，所謂「細節」不應被當成絕對、可量化的享受承諾。不同人對人聲齒音、低頻、殘響或樂器分離度的注意力不同；有些人最在意的是在擁擠車廂裡仍能聽清節奏，有些人則在安靜夜裡以固定設備比較熟悉錄音。Apple 的說明把 AAC 與無損差異描述為幾乎難以分辨，正好提供一個業者自身也承認的邊界。⁷ 這不是說格式沒有差異，而是提醒讀者把「檔案可還原」與「個人一定可感知」分開。</p>
+<p>對日常使用者，較少後悔的做法是先盤點現有鏈路：手機若只接藍牙耳機，先享受便利；若家裡有有線耳機、USB DAC 或 Wi-Fi 喇叭，再用熟悉曲目測試。Spotify 與 Apple 的官方文件都把有線連線、接收器、喇叭或外接數位類比轉換器列為可能的條件。²⁷ 任何需要另購設備的決定，都應建立在自己的聆聽情境，而不是社群上對「升級」的想像。</p>
+<h2>流量與儲存：看不見的帳單</h2>
+<figure><img src="https://live.staticflickr.com/2677/4218894050_c837a1bdc5_b.jpg" alt="手機與光纖網路設備｜來源：Mike Cattell／Flickr（CC BY）" loading="lazy"><figcaption>高品質串流會穿過家用或行動網路；資料選項因此也是日常預算與連線管理的一部分。</figcaption></figure>
+<p>串流服務把音質選單做成「低、一般、高、非常高、無損」，表面上像偏好設定，實際上也在分配網路資源。Spotify 說會顯示不同品質的資料用量，並將 Wi-Fi、行動網路與下載拆成可分別設定的選項。² Engadget 報導亦指出，這樣的設計是因為無損資料量高於其他設定。⁵</p>
+<p>Apple 的官方文件更直接提醒，無損串流與下載會使用顯著更多的資料和裝置空間，高解析度會再增加消耗。⁷ 因此，若使用者每月行動數據有限，或一支手機同時存放照片、影片、離線地圖與工作檔案，長期全開未必符合需要。這不是「節省」或「講究」之間的道德選擇，而是依場所切換：家裡固定 Wi-Fi、短程通勤、長途旅行、機上離線聽歌，各自適合不同設定。</p>
+<p>Amazon Music 的官方說明同樣區分 SD、HD、Ultra HD、Dolby Atmos 等可用內容與格式。¹⁰¹¹ 這顯示整個串流產業都把音質選擇與網路條件綁在一起。本文無法以公開資料計算台灣每一個電信方案的實際成本，也不宜把海外服務的位元率換算直接套到所有帳單；可確認的是，讀者應先查看自己 App 顯示的用量提示與電信資費，再決定是否在行動網路下開啟 Lossless。</p>
+<h2>不同房間，不同答案</h2>
+<figure><img src="https://live.staticflickr.com/2695/4233580017_2690b3f6f8_b.jpg" alt="家中兩座 JBL 喇叭｜來源：Nesster／Flickr（CC BY-SA）" loading="lazy"><figcaption>客廳、書桌與通勤路徑的聲學條件不同；一套設定不必主宰所有房間。</figcaption></figure>
+<p>把音質討論放回日常空間，答案通常比「開或關」更細。早晨用藍牙耳機走到捷運站，風聲、車廂廣播和周遭談話足以改變聽感；下午在辦公桌前，可能需要音量可控、不干擾同事；晚上在客廳使用 Wi-Fi 喇叭，才比較接近業者所說的非藍牙串流條件。Spotify 支援行動、桌面與平板，並列出可用 Spotify Connect 的多個品牌，正是承認人們不只在一種裝置上聽歌。²</p>
+<p>不過，裝置相容名單也不等於整條鏈路都相同。Spotify 在首波公告中提到部分 Connect 裝置與日後擴充支援；媒體報導則指出 Sonos、Amazon 等品牌的支援時程另有安排。²⁵ 實際選擇時，最可靠的是看播放畫面的 Lossless 指示、設備的官方支援頁，以及是否真的以 Wi-Fi 或有線方式輸出，而不是只看包裝上的「高解析」字樣。</p>
+<p>Bluetooth SIG 對 LE Audio 的介紹提供另一種視角：無線音訊也關係到省電、助聽器、廣播與多人共享。⁹ 對需要長時間佩戴耳機的人，電池與舒適度可能比檔案規格更影響使用頻率；對有聽覺需求的使用者，可近用性甚至比格式排名更優先。這些考量沒有把 Lossless 貶低，而是讓它回到眾多音訊功能之一。</p>
+<h2>四年等待，改變了什麼競爭</h2>
+<figure><img src="https://live.staticflickr.com/2510/4015102979_704f2efc11_b.jpg" alt="復古唱盤與音響｜來源：mabecerra／Flickr（CC BY）" loading="lazy"><figcaption>舊式 Hi-Fi 器材提醒人們，高保真一直是音樂消費的一部分；串流把它帶到訂閱介面，卻也改變了付費方式。</figcaption></figure>
+<p>Spotify 在 2021 年宣布 HiFi 時，串流市場已經有不同音質層級。後來 Apple Music、Amazon Music 等競爭者先行提供無損選項，Spotify 到 2025 年才以既有 Premium 方案納入 Lossless。¹³⁴⁷¹⁰ TechCrunch 指出，早期 HiFi 計畫曾受延遲與授權問題影響；Variety 也把這次推出描述為公司在音質服務上的追趕。³⁴ 這些是對產品時間線的報導，不足以證明延後的單一原因或未來商業成效。</p>
+<p>從消費者角度看，「包含在 Premium」減少了多一層方案比較；從公司角度看，功能也成為保留訂戶的一部分。Ars Technica 報導 Spotify 在 2026 年初第三度於兩年半內調漲訂閱價格，並提到公司近期持續新增功能。¹² 報導沒有把漲價明確歸因於 Lossless，本文也不作此推論。較穩妥的說法是：音質升級與價格、音樂影片、社交功能、內容投資一起出現在同一個訂閱產品裡，使用者應以整體價值評估。</p>
+<p>這裡也有利益衝突需要標示。Spotify 對功能品質、曲庫覆蓋與相容裝置的描述，來自公司自己的新聞室；Apple 和 Amazon 對自家格式的描述，也同樣是業者材料。²⁷¹⁰ 本文以媒體與技術機構交叉核對可驗證規格，但涉及「哪個服務最好」的判斷，仍取決於個人曲庫、介面、價格與裝置，沒有一個獨立標準答案。</p>
+<h2>一份不必購物的檢查表</h2>
+<figure><img src="https://live.staticflickr.com/32/46329607_b8e753145b_b.jpg" alt="耳機｜來源：timtak／Flickr（授權依原圖頁標示）" loading="lazy"><figcaption>先用既有耳機和既有網路測試，可避免把規格焦慮直接轉成購物清單。</figcaption></figure>
+<p>在台灣可見功能後，使用者可以用幾個不帶品牌立場的步驟檢查：第一，確認帳號方案與 App 版本；第二，在「媒體品質」中確認 Wi-Fi、行動網路和下載是否各自設定；第三，播放時查看是否出現官方的 Lossless 指示；第四，辨認目前輸出是藍牙、有線，還是 Wi-Fi Connect；第五，觀察資料用量與離線容量是否符合自己的方案。²⁶</p>
+<p>比較時也應控制變因。同一首熟悉曲目、同一段落、相同音量與同一套設備，才比較接近格式差異；若一邊是藍牙、一邊是有線，或一邊音量更大，得到的結果可能混入其他影響。紐約時報 Wirecutter 對高解析串流的評估把器材與可察覺性列為核心條件，提供了不把規格當信仰的參考。⁸</p>
+<p>最後，應保留退出選項。若發現行動資料上升、手機空間不足，或在主要耳機上沒有可感覺的差異，就把行動網路或下載設定調回較低品質，並不表示「不懂音樂」。相反地，能依環境調整，正是 Spotify 設計多個品質層級的理由。² <strong>（以下為本文分析，非事實陳述）</strong> 好的消費決定不必展示給別人看；它只需要讓音樂在自己的時間與預算裡待得更久。</p>
+<h2>「聽得出來」不該成為身分測驗</h2>
+<figure><img src="https://live.staticflickr.com/4019/5127877151_b7aeb30f78_b.jpg" alt="唱片｜來源：Ninα／Flickr（CC BY-NC-ND）" loading="lazy"><figcaption>音樂的親近感不由格式名稱決定；本節討論如何避免把技術偏好變成排除他人的標準。</figcaption></figure>
+<p>無損音訊的討論很容易滑向一種二分法：能聽出的人被視為「懂」，聽不出的人則被視為不夠認真。公開資料並不支持這種判斷。Apple 在自家支援文件裡將 AAC 與無損的差異稱作幾乎難以辨別；Wirecutter 的分析也將設備、環境和個人感受列入判斷。⁷⁸ 即使兩人使用同一服務，耳機型號、音量習慣、聽力、背景噪音與偏好曲風都可能不同。</p>
+<p>這種保留也有助於談可近用性。聽覺輔具、單耳使用、對特定頻段敏感，或只在吵雜場所聽歌的人，未必把「更多原始資料」當作第一需求。Bluetooth SIG 在介紹 LE Audio 時，除了音質，也強調助聽器支援、低功耗與 Auracast 廣播功能。⁹ 這些用途提醒我們，音訊技術的價值不只在是否接近錄音室檔案，也在是否讓更多人能在自己的場景接觸聲音。</p>
+<p><strong>（以下為本文分析，非事實陳述）</strong> 一項好的串流選項應允許人選擇，而不是要求人證明資格。把 Lossless 當作可試用、可關閉的設定，比把它當成耳朵的考試，更貼近日常科技應有的位置。</p>
+<h2>歌曲、演算法與音質之外的關係</h2>
+<figure><img src="https://live.staticflickr.com/7152/6439602217_8a49cf1be8_b.jpg" alt="類比唱盤｜來源：Fabio Sola Penna／Flickr（CC BY）" loading="lazy"><figcaption>同一首歌在串流上被發現、收藏、分享與播放，通常涉及的功能比單一音質選項更多。</figcaption></figure>
+<p>Spotify 的 Lossless 公告把新功能放在 DJ、Jam、AI Playlist、Mix 與編輯歌單等 Premium 功能的脈絡中。² 這是公司對產品價值的自我描述；它顯示音質並非一個孤立功能，而是和推薦、社交共聽與既有歌單資料一起構成訂閱經驗。對一個不想搬移多年收藏的人，曲庫與朋友的共用歌單可能比最大取樣率更有影響力。</p>
+<p>另一方面，平台也牽涉創作者收入與內容治理。Ars Technica 在價格調整報導中提及業界對 Spotify 付費模式的批評。¹² 本文沒有找到能把 Lossless 與個別音樂人收入直接連結的公開證據，因此不把音質升級說成對創作者的改善或傷害。可以確定的是，當用戶衡量月費時，除了音質，仍可問：自己常聽的創作者是否在此、服務如何推薦內容、帳號和資料怎麼處理、以及預算是否可負擔。</p>
+<p>這種問題不會有統一答案。它也使「比較平台」不必變成品牌站隊：有些人需要跨裝置與社交功能，有些人重視特定曲庫或家庭方案，有些人只想在一段通勤中不被打斷。Lossless 是可列入比較表的一格，並不必成為整張表。</p>
+<h2>回到設定頁之前</h2>
+<figure><img src="https://live.staticflickr.com/115/259411177_eaf5f39612_b.jpg" alt="金色唱盤｜來源：nimble photography／Flickr（CC BY）" loading="lazy"><figcaption>技術選項最後仍回到一個具體動作：在自己的裝置與網路條件下決定是否開啟。</figcaption></figure>
+<p>報導的交叉核驗可整理為三件事。第一，Spotify 的正式規格是最高 24-bit／44.1 kHz FLAC，且台灣已在公司公告的可用市場名單；第二，該功能需逐裝置啟用，並可為 Wi-Fi、行動網路與下載分別選擇；第三，Spotify 建議以非藍牙連線取得它所稱較順暢的無損體驗。²⁶ 這些事項可由官方資料與多家科技媒體報導互相核對。³⁴⁵</p>
+<p>同時也有兩項應保留的不確定性：第一，官方以「幾乎所有」曲目描述覆蓋範圍，並非保證每一首都提供同樣格式；第二，使用者能否察覺差異不是公開規格可以代答。²⁷ 因此，最小風險的行動不是衝動升級，而是挑一個安靜、熟悉的時段，把設定打開、查看指示與資料用量，之後再依體驗保留或關閉。</p>
+<p>若設定頁沒有出現選項，也不宜依賴非官方 APK、VPN 或網路傳言繞過區域與帳號條件。Spotify 說明會以 App 通知提示開放；以官方 App 與支援資訊確認，能減少帳號、安全與付款風險。²⁶ 這樣的謹慎並不掃興：它只是讓一項聽覺功能回到可以被驗證、可以被改回的日常選擇。</p>
+<figure><img src="https://live.staticflickr.com/5516/9759224905_691c071e19_b.jpg" alt="黑膠播放器｜來源：nan palmero／Flickr（授權依原圖頁標示）" loading="lazy"><figcaption>這張播放設備照片補充本文最後的重點：格式與設備都只是聆聽關係的一部分。</figcaption></figure>
+<figure><img src="https://live.staticflickr.com/32/46329607_b8e753145b_b.jpg" alt="有線耳機｜來源：timtak／Flickr（授權依原圖頁標示）" loading="lazy"><figcaption>有線連接符合 Spotify 對非藍牙無損播放的建議，但不構成任何人必須購買的理由。</figcaption></figure>
+<p>最後還有一個容易被忽略的問題：音樂服務的「最高」品質，和人把音樂留在生活裡的品質，並不是同一件事。有人會把它用在週末聽完整張專輯；有人只想讓書桌上的小喇叭多一個選項；也有人試過之後決定仍用藍牙，因為那是最能陪自己散步、做家事或接電話的方式。官方資料提供規格與操作路徑，卻不替任何人決定時間怎麼安排。²⁷</p>
+<p>因此，本文採取的結論不是「所有 Premium 用戶都應開啟」，也不是「聽不出差異就毫無價值」。可驗證的事實是功能、格式與傳輸限制；不可由公開資料推定的是每個人的感受與預算排序。把兩者清楚分開，才不會讓行銷語言或反行銷的嘲諷代替自己的判斷。當一項新設定能夠隨時調整、在不同網路下分別配置，它最合理的用途或許正是讓人保有選擇，而不是要求人作出一次性的技術信仰。 ⁵ Engadget（2025-09-10）— "Spotify lossless streaming is finally here and it's included with a Premium plan" <a href="https://www.engadget.com/entertainment/music/spotify-lossless-streaming-is-finally-here-and-its-included-with-a-premium-plan-131009528.html" rel="noopener" target="_blank">https://www.engadget.com/entertainment/music/spotify-lossless-streaming-is-finally-here-and-its-included-with-a-premium-plan-131009528.html</a></p>
+<p>⁶ Spotify Community（2025-09-10）— "Spotify Premium: Now Streaming in Lossless Quality" <a href="https://community.spotify.com/t5/Community-Blog/Spotify-Premium-Now-Streaming-in-Lossless-Quality/ba-p/7124509" rel="noopener" target="_blank">https://community.spotify.com/t5/Community-Blog/Spotify-Premium-Now-Streaming-in-Lossless-Quality/ba-p/7124509</a></p>
+<p>⁷ Apple Support（更新日期未列）— "About lossless audio in Apple Music" <a href="https://support.apple.com/en-us/118295" rel="noopener" target="_blank">https://support.apple.com/en-us/118295</a></p>
+<p>⁸ The New York Times Wirecutter（2019-11-04）— "Is Amazon’s High-Res Music Streaming Worth the Extra Money?" <a href="https://www.nytimes.com/wirecutter/blog/amazons-hd-music-streaming-worth-the-money/" rel="noopener" target="_blank">https://www.nytimes.com/wirecutter/blog/amazons-hd-music-streaming-worth-the-money/</a></p>
+<p>⁹ Bluetooth SIG（日期未列）— "LE Audio" <a href="https://www.bluetooth.com/learn-about-bluetooth/feature-enhancements/le-audio/" rel="noopener" target="_blank">https://www.bluetooth.com/learn-about-bluetooth/feature-enhancements/le-audio/</a></p>
+<p>¹⁰ Amazon Music（日期未列）— "Discover the HD Difference" <a href="https://www.amazon.com/music/unlimited/why-hd/" rel="noopener" target="_blank">https://www.amazon.com/music/unlimited/why-hd/</a></p>
+<p>¹¹ Amazon Music Developer（日期未列）— "Audio Formats" <a href="https://developer.amazon.com/docs/music/audio-formats.html" rel="noopener" target="_blank">https://developer.amazon.com/docs/music/audio-formats.html</a></p>
+<p>¹² Ars Technica（2026-01-15）— "Spotify’s 3rd price hike in 2.5 years hints at potential new normal" <a href="https://arstechnica.com/gadgets/2026/01/spotify-to-raise-subscription-prices-by-up-to-2-in-february/" rel="noopener" target="_blank">https://arstechnica.com/gadgets/2026/01/spotify-to-raise-subscription-prices-by-up-to-2-in-february/</a></p>
+<p>¹³ NME（2025-09-11）— "Spotify launches lossless audio for premium users" <a href="https://www.nme.com/news/music/spotify-launches-lossless-audio-for-premium-users-3891853" rel="noopener" target="_blank">https://www.nme.com/news/music/spotify-launches-lossless-audio-for-premium-users-3891853</a></p>
+<p>¹⁴ 自由時報 3C（2025-09-11）— "Spotify無損音質終於來了！免加價升級、台灣上路時間曝光" <a href="https://3c.ltn.com.tw/news/63189" rel="noopener" target="_blank">https://3c.ltn.com.tw/news/63189</a></p>
+<p>¹⁵ TechRadar（2025-09-10）— "Audiophiles rejoice, Spotify Lossless is finally here" <a href="https://www.techradar.com/audio/spotify/audiophiles-rejoice-spotify-lossless-is-finally-here-and-its-a-huge-step-for-the-streaming-service" rel="noopener" target="_blank">https://www.techradar.com/audio/spotify/audiophiles-rejoice-spotify-lossless-is-finally-here-and-its-a-huge-step-for-the-streaming-service</a></p>
+<p>¹⁶ Music Business Worldwide（2025-09-10）— "Spotify is finally launching lossless - but it’s not part of a ‘super premium’ tier" <a href="https://www.musicbusinessworldwide.com/spotify-is-finally-launching-lossless-but-its-not-part-of-a-super-premium-tier/" rel="noopener" target="_blank">https://www.musicbusinessworldwide.com/spotify-is-finally-launching-lossless-but-its-not-part-of-a-super-premium-tier/</a></p>
+<p>¹⁷ Pocket-lint（2025-09-10）— "Lossless audio finally comes to Spotify - here's how to enable it" <a href="https://www.pocket-lint.com/spotify-lossless-audio-launch/" rel="noopener" target="_blank">https://www.pocket-lint.com/spotify-lossless-audio-launch/</a></p>
+<p>¹⁸ What Hi-Fi?（2025-10-13）— "Spotify Lossless: release date, price and all the official details" <a href="https://www.whathifi.com/advice/spotify-hifi-quality-price-release-date-free-trial-and-latest-news" rel="noopener" target="_blank">https://www.whathifi.com/advice/spotify-hifi-quality-price-release-date-free-trial-and-latest-news</a></p>
+<h2>補充結論：讓設定保持可逆</h2>
+<figure><img src="https://live.staticflickr.com/7152/6439602217_8a49cf1be8_b.jpg" alt="唱盤與音樂空間｜來源：Fabio Sola Penna／Flickr（CC BY）" loading="lazy"><figcaption>可逆的設定讓使用者能在不同時間與空間重新選擇，而不必將一次測試變成永久立場。</figcaption></figure>
+<p>如果一位讀者在安靜的書桌前感到 Lossless 值得保留，而另一位讀者在通勤路上改回一般高品質，兩種結果都與目前可查證的資料相容。規格說明的是服務能提供什麼；日常使用則要處理網路、設備、預算與注意力。把這兩個層次區分，能避免把一次試聽擴大為對他人聽覺或消費能力的評斷。對消費者而言，最重要的保障不是任何平台的最高數字，而是能清楚看見設定、理解成本並隨時改回。</p>
+<figure><img src="https://live.staticflickr.com/65535/49395735443_ec5601ea90_b.jpg" alt="耳機與串流選擇｜來源：chocolatedazzles／Flickr（CC BY）" loading="lazy"><figcaption>下列來源依類型混合官方文件與獨立媒體，讀者可據此辨識公司陳述與外部報導的差異。</figcaption></figure>
+<h2>引用來源</h2>
+<p class="ref">¹ Spotify Newsroom（2021-02-22）— "Spotify HiFi Delivers Music in CD Quality to Your Devices"
+<a href="https://newsroom.spotify.com/2021-02-22/spotify-hifi-delivers-music-in-cd-quality-to-your-devices/" rel="noopener" target="_blank">https://newsroom.spotify.com/2021-02-22/spotify-hifi-delivers-music-in-cd-quality-to-your-devices/</a></p>
+<p class="ref">² Spotify Newsroom（2025-09-10）— "Lossless Listening Arrives on Spotify Premium With a Richer, More Detailed Listening Experience"
+<a href="https://newsroom.spotify.com/2025-09-10/lossless-listening-arrives-on-spotify-premium-with-a-richer-more-detailed-listening-experience/" rel="noopener" target="_blank">https://newsroom.spotify.com/2025-09-10/lossless-listening-arrives-on-spotify-premium-with-a-richer-more-detailed-listening-experience/</a></p>
+<p class="ref">³ TechCrunch（2025-09-10）— "Spotify is finally launching support for lossless music streaming"
+<a href="https://techcrunch.com/2025/09/10/spotify-is-finally-launching-support-for-lossless-music-streaming/" rel="noopener" target="_blank">https://techcrunch.com/2025/09/10/spotify-is-finally-launching-support-for-lossless-music-streaming/</a></p>
+<p class="ref">⁴ Variety（2025-09-10）— "Spotify Finally Launches HD Lossless Audio for Premium Subscribers"
+<a href="https://variety.com/2025/digital/news/spotify-hd-lossless-audio-premium-subscribers-launch-1236513178/" rel="noopener" target="_blank">https://variety.com/2025/digital/news/spotify-hd-lossless-audio-premium-subscribers-launch-1236513178/</a></p>
+<p class="ref">⁵ Engadget（2025-09-10）— "Spotify lossless streaming is finally here and it's included with a Premium plan"
+<a href="https://www.engadget.com/entertainment/music/spotify-lossless-streaming-is-finally-here-and-its-included-with-a-premium-plan-131009528.html" rel="noopener" target="_blank">https://www.engadget.com/entertainment/music/spotify-lossless-streaming-is-finally-here-and-its-included-with-a-premium-plan-131009528.html</a></p>
+<p class="ref">⁶ Spotify Community（2025-09-10）— "Spotify Premium: Now Streaming in Lossless Quality"
+<a href="https://community.spotify.com/t5/Community-Blog/Spotify-Premium-Now-Streaming-in-Lossless-Quality/ba-p/7124509" rel="noopener" target="_blank">https://community.spotify.com/t5/Community-Blog/Spotify-Premium-Now-Streaming-in-Lossless-Quality/ba-p/7124509</a></p>
+<p class="ref">⁷ Apple Support（更新日期未列）— "About lossless audio in Apple Music"
+<a href="https://support.apple.com/en-us/118295" rel="noopener" target="_blank">https://support.apple.com/en-us/118295</a></p>
+<p class="ref">⁸ The New York Times Wirecutter（2019-11-04）— "Is Amazon’s High-Res Music Streaming Worth the Extra Money?"
+<a href="https://www.nytimes.com/wirecutter/blog/amazons-hd-music-streaming-worth-the-money/" rel="noopener" target="_blank">https://www.nytimes.com/wirecutter/blog/amazons-hd-music-streaming-worth-the-money/</a></p>
+<p class="ref">⁹ Bluetooth SIG（日期未列）— "LE Audio"
+<a href="https://www.bluetooth.com/learn-about-bluetooth/feature-enhancements/le-audio/" rel="noopener" target="_blank">https://www.bluetooth.com/learn-about-bluetooth/feature-enhancements/le-audio/</a></p>
+<p class="ref">¹⁰ Amazon Music（日期未列）— "Discover the HD Difference"
+<a href="https://www.amazon.com/music/unlimited/why-hd/" rel="noopener" target="_blank">https://www.amazon.com/music/unlimited/why-hd/</a></p>
+<p class="ref">¹¹ Amazon Music Developer（日期未列）— "Audio Formats"
+<a href="https://developer.amazon.com/docs/music/audio-formats.html" rel="noopener" target="_blank">https://developer.amazon.com/docs/music/audio-formats.html</a></p>
+<p class="ref">¹² Ars Technica（2026-01-15）— "Spotify’s 3rd price hike in 2.5 years hints at potential new normal"
+<a href="https://arstechnica.com/gadgets/2026/01/spotify-to-raise-subscription-prices-by-up-to-2-in-february/" rel="noopener" target="_blank">https://arstechnica.com/gadgets/2026/01/spotify-to-raise-subscription-prices-by-up-to-2-in-february/</a></p>
+<p class="ref">¹³ NME（2025-09-11）— "Spotify launches lossless audio for premium users"
+<a href="https://www.nme.com/news/music/spotify-launches-lossless-audio-for-premium-users-3891853" rel="noopener" target="_blank">https://www.nme.com/news/music/spotify-launches-lossless-audio-for-premium-users-3891853</a></p>
+<p class="ref">¹⁴ 自由時報 3C（2025-09-11）— "Spotify無損音質終於來了！免加價升級、台灣上路時間曝光"
+<a href="https://3c.ltn.com.tw/news/63189" rel="noopener" target="_blank">https://3c.ltn.com.tw/news/63189</a></p>
+<p class="ref">¹⁵ TechRadar（2025-09-10）— "Audiophiles rejoice, Spotify Lossless is finally here"
+<a href="https://www.techradar.com/audio/spotify/audiophiles-rejoice-spotify-lossless-is-finally-here-and-its-a-huge-step-for-the-streaming-service" rel="noopener" target="_blank">https://www.techradar.com/audio/spotify/audiophiles-rejoice-spotify-lossless-is-finally-here-and-its-a-huge-step-for-the-streaming-service</a></p>
+<p class="ref">¹⁶ Music Business Worldwide（2025-09-10）— "Spotify is finally launching lossless - but it’s not part of a ‘super premium’ tier"
+<a href="https://www.musicbusinessworldwide.com/spotify-is-finally-launching-lossless-but-its-not-part-of-a-super-premium-tier/" rel="noopener" target="_blank">https://www.musicbusinessworldwide.com/spotify-is-finally-launching-lossless-but-its-not-part-of-a-super-premium-tier/</a></p>
+<p class="ref">¹⁷ Pocket-lint（2025-09-10）— "Lossless audio finally comes to Spotify - here's how to enable it"
+<a href="https://www.pocket-lint.com/spotify-lossless-audio-launch/" rel="noopener" target="_blank">https://www.pocket-lint.com/spotify-lossless-audio-launch/</a></p>
+<p class="ref">¹⁸ What Hi-Fi?（2025-10-13）— "Spotify Lossless: release date, price and all the official details"
+<a href="https://www.whathifi.com/advice/spotify-hifi-quality-price-release-date-free-trial-and-latest-news" rel="noopener" target="_blank">https://www.whathifi.com/advice/spotify-hifi-quality-price-release-date-free-trial-and-latest-news</a></p>
+<aside class="also">本文亦發表於 <a href="https://maruamru777.substack.com/p/spotify" rel="noopener" target="_blank">Substack</a>。</aside>
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
