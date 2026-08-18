@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>被量化的在家上班：遠距監控如何改寫工作信任 · 穗稻忠武的專欄</title>
+<meta name="description" content="遠距工作讓通勤時間消失，也讓管理者失去以座位、打卡與走動判斷「人在不在」的舊式線索。補上那個空白的，往往是一個安裝在公司電腦或協作系統裡的程式：它可能記錄登入時間、應用程式使用、滑鼠移動、鍵盤輸入、檔案傳送，甚至截圖、通話或定位。這些資料原本可用於資訊安全、工時紀錄或支援服務；一旦轉入績效評比，問題便不只是技術功能，而">
+<link rel="canonical" href="https://polarbear0827.github.io/My-Way/p/2026-08-18-remote-work-monitoring/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="被量化的在家上班：遠距監控如何改寫工作信任">
+<meta property="og:description" content="遠距工作讓通勤時間消失，也讓管理者失去以座位、打卡與走動判斷「人在不在」的舊式線索。補上那個空白的，往往是一個安裝在公司電腦或協作系統裡的程式：它可能記錄登入時間、應用程式使用、滑鼠移動、鍵盤輸入、檔案傳送，甚至截圖、通話或定位。這些資料原本可用於資訊安全、工時紀錄或支援服務；一旦轉入績效評比，問題便不只是技術功能，而">
+<meta property="og:url" content="https://polarbear0827.github.io/My-Way/p/2026-08-18-remote-work-monitoring/">
+<meta property="og:image" content="https://live.staticflickr.com/5202/5378333486_d97bc41ecb_b.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>:root{
+  --bg:#faf8f3; --surface:#fffdf8; --ink:#1c1b18; --soft:#6f6a60; --faint:#9a9388;
+  --line:#e9e3d7; --accent:#9c3024; --accent-soft:#f3e7e3;
+  --serif:"Noto Serif CJK TC","Noto Serif TC","Source Han Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  --sans:system-ui,-apple-system,"PingFang TC","Noto Sans CJK TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.85;
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+  -webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);padding:.9rem 1.5rem}
+.topbar .brand{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:1.02rem}
+.nav{display:flex;gap:1.3rem;font-size:.92rem}
+.nav a{color:var(--soft);padding:.2rem 0;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+.masthead{text-align:center;padding:3.4rem 1.5rem 2.4rem;border-bottom:1px solid var(--line)}
+.masthead h1{font-family:var(--serif);font-weight:900;font-size:2.5rem;letter-spacing:.06em;margin:0}
+.masthead .tagline{color:var(--soft);max-width:560px;margin:1rem auto 0;font-size:1rem}
+.masthead .rss{display:inline-block;margin-top:1.2rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem}
+.masthead .rss:hover{background:var(--accent);color:#fff}
+
+/* 首頁動態封面(純 CSS 動畫) */
+.cover{border-bottom:1px solid var(--line);
+  background:radial-gradient(120% 130% at 50% 0%,#fffdf8 0%,var(--bg) 58%,#f1e9db 100%)}
+.cover-inner{position:relative;max-width:900px;margin:0 auto;
+  padding:4.4rem 1.5rem 3.8rem;text-align:center}
+.cover .cc{position:absolute;width:22px;height:22px;border:3px solid var(--accent);
+  opacity:0;animation:cc-in .5s ease-out forwards}
+.cover .cc-tl{top:1.4rem;left:1.4rem;border-right:none;border-bottom:none;animation-delay:.1s}
+.cover .cc-tr{top:1.4rem;right:1.4rem;border-left:none;border-bottom:none;animation-delay:.18s}
+.cover .cc-bl{bottom:1.4rem;left:1.4rem;border-right:none;border-top:none;animation-delay:.26s}
+.cover .cc-br{bottom:1.4rem;right:1.4rem;border-left:none;border-top:none;animation-delay:.34s}
+.cover-kicker{font-family:var(--sans);letter-spacing:.55em;text-indent:.55em;color:var(--accent);
+  font-size:.82rem;font-weight:600;opacity:0;animation:fade-up .6s ease-out .3s forwards}
+.cover-bar{width:0;height:5px;background:var(--accent);margin:1rem auto 1.4rem;
+  animation:bar-in .6s ease-out .5s forwards}
+.cover-title{font-family:var(--serif);font-weight:900;font-size:3rem;letter-spacing:.05em;
+  margin:0;color:var(--ink);opacity:0;animation:fade-up .9s cubic-bezier(.2,.7,.2,1) .7s forwards}
+.cover-sub{font-family:var(--sans);color:var(--soft);max-width:600px;margin:1.1rem auto 0;
+  font-size:1rem;opacity:0;animation:fade-up .75s ease-out 1.15s forwards}
+.cover .rss{display:inline-block;margin-top:1.6rem;font-size:.82rem;letter-spacing:.12em;
+  color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:.35rem 1.1rem;
+  opacity:0;animation:fade-up .7s ease-out 1.5s forwards}
+.cover .rss:hover{background:var(--accent);color:#fff}
+@keyframes cc-in{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes bar-in{from{width:0}to{width:150px}}
+@keyframes fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cover *{animation:none!important;opacity:1!important;width:auto}
+  .cover-bar{width:150px}}
+@media(max-width:680px){.cover-title{font-size:2.1rem}}
+
+.feed{max-width:1080px;margin:0 auto;padding:2.2rem 1.4rem 1rem}
+.lead-slot{margin-bottom:2.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(40,30,20,.10)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--accent-soft)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .thumb.noimg{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#f6efe6,#efe6da)}
+.card .thumb.noimg span{font-family:var(--serif);color:var(--faint);font-size:1.4rem;letter-spacing:.3em}
+.card-body{padding:1.1rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.card-body h2{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.45;margin:.1rem 0}
+.card .excerpt{color:var(--soft);font-size:.9rem;line-height:1.7;flex:1}
+.kicker{display:flex;gap:.4rem;flex-wrap:wrap}
+.tag{font-size:.72rem;letter-spacing:.06em;color:var(--accent);background:var(--accent-soft);
+  border-radius:999px;padding:.12rem .6rem}
+.byline{color:var(--faint);font-size:.8rem;margin:.2rem 0 0;letter-spacing:.05em}
+.card.featured{flex-direction:row;align-items:stretch}
+.card.featured .thumb{flex:1.15;aspect-ratio:auto;min-height:300px}
+.card.featured .card-body{flex:1;justify-content:center;padding:2rem 2.2rem}
+.card.featured h2{font-size:1.85rem;line-height:1.4}
+.card.featured .excerpt{font-size:1rem;flex:none;margin-top:.4rem}
+@media(max-width:680px){.card.featured{flex-direction:column}.card.featured .thumb{min-height:200px}}
+
+.post{max-width:700px;margin:0 auto;padding:2.6rem 1.5rem 1rem}
+.post-head{text-align:center;margin-bottom:2.4rem}
+.post-head .kicker{justify-content:center;margin-bottom:1rem}
+.post-head h1{font-family:var(--serif);font-weight:900;font-size:2.2rem;line-height:1.45;margin:.3rem 0}
+.post-head .byline{margin-top:.9rem}
+.post p{margin:1.25rem 0;font-size:1.07rem;letter-spacing:.01em}
+.post p.lead{font-size:1.18rem;line-height:1.9;color:#2c2a26}
+.post p.lead::first-letter{font-family:var(--serif);font-weight:900;float:left;font-size:3.4rem;
+  line-height:.82;margin:.34rem .55rem 0 0;color:var(--accent)}
+.post h2{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:2.6rem 0 .8rem;
+  padding-bottom:.4rem;border-bottom:2px solid var(--accent)}
+.post h2.refs-head{font-size:1.12rem;color:var(--soft);border-bottom:1px solid var(--line)}
+.post h3{font-family:var(--serif);font-size:1.18rem;margin:1.8rem 0 .5rem}
+.post .hero{margin:0 0 1.8rem}
+.post .hero img{width:100%;max-height:440px;object-fit:cover;border-radius:12px;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figure{margin:2.2rem 0}
+.post figure img{width:100%;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(40,30,20,.10)}
+.post figcaption{color:var(--soft);font-size:.85rem;text-align:center;margin-top:.7rem;font-style:italic;line-height:1.6}
+.post .ref{font-size:.84rem;line-height:1.7;color:#56524a;margin:.4rem 0;padding-left:.9rem;
+  border-left:2px solid var(--line);word-break:break-all}
+.post .ref a{color:var(--accent)}
+.post hr{border:0;border-top:1px solid var(--line);margin:2.4rem 0}
+.onesent{font-family:var(--serif);font-size:1.15rem;color:var(--accent);border-left:3px solid var(--accent);
+  margin:1.5rem 0;padding:.4rem 0 .4rem 1rem;line-height:1.8}
+.rem3{padding-left:1.2rem}.rem3 li{margin:.6rem 0;line-height:1.8}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.2rem 0}
+.paper h3{margin:.1rem 0 .3rem;font-size:1.18rem}
+.paper .role{color:var(--accent);font-size:.85rem;margin:.1rem 0 .7rem;letter-spacing:.05em}
+.paper p{margin:.4rem 0;font-size:.98rem;line-height:1.75}
+.also{margin:3rem 0 1rem;padding:1.1rem 1.3rem;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;color:var(--soft);font-size:.95rem}
+.also a{color:var(--accent);font-weight:500}
+.foot{max-width:900px;margin:3rem auto 0;padding:1.6rem 1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--faint);font-size:.85rem}
+.foot a{color:var(--accent)}
+@media(max-width:680px){.masthead h1{font-size:2rem}.post-head h1{font-size:1.7rem}.post p.lead{font-size:1.08rem}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "被量化的在家上班：遠距監控如何改寫工作信任", "description": "遠距工作讓通勤時間消失，也讓管理者失去以座位、打卡與走動判斷「人在不在」的舊式線索。補上那個空白的，往往是一個安裝在公司電腦或協作系統裡的程式：它可能記錄登入時間、應用程式使用、滑鼠移動、鍵盤輸入、檔案傳送，甚至截圖、通話或定位。這些資料原本可用於資訊安全、工時紀錄或支援服務；一旦轉入績效評比，問題便不只是技術功能，而", "url": "https://polarbear0827.github.io/My-Way/p/2026-08-18-remote-work-monitoring/", "datePublished": "2026-08-18", "inLanguage": "zh-Hant-TW", "author": {"@type": "Person", "name": "穗稻忠武的專欄"}, "publisher": {"@type": "Organization", "name": "穗稻忠武的專欄"}, "image": "https://live.staticflickr.com/5202/5378333486_d97bc41ecb_b.jpg"}</script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="https://polarbear0827.github.io/My-Way/">穗稻忠武的專欄</a><nav class="nav"><a href="https://polarbear0827.github.io/My-Way/">專欄</a><a href="https://polarbear0827.github.io/My-Way/radar/">AI Radar</a><a href="https://polarbear0827.github.io/My-Way/papers/">HF 速讀</a><a href="https://polarbear0827.github.io/My-Way/podcast/">Podcast</a><a href="https://polarbear0827.github.io/Daily-briefing/">早報 ↗</a></nav></header>
+<article class="post">
+<div class="post-head">
+<div class="kicker"><span class="tag">專欄</span></div>
+<h1>被量化的在家上班：遠距監控如何改寫工作信任</h1>
+<p class="byline"><time>2026-08-18</time></p>
+</div>
+
+<p class="lead">遠距工作讓通勤時間消失，也讓管理者失去以座位、打卡與走動判斷「人在不在」的舊式線索。補上那個空白的，往往是一個安裝在公司電腦或協作系統裡的程式：它可能記錄登入時間、應用程式使用、滑鼠移動、鍵盤輸入、檔案傳送，甚至截圖、通話或定位。這些資料原本可用於資訊安全、工時紀錄或支援服務；一旦轉入績效評比，問題便不只是技術功能，而是誰定義了工作、誰能解釋資料。¹²</p>
+<figure><img src="https://live.staticflickr.com/5202/5378333486_d97bc41ecb_b.jpg" alt="在家使用筆記型電腦的遠距工作場景｜來源：David Wellbeloved / Flickr（CC BY 2.0）" loading="lazy"><figcaption>當工作桌搬進家中，工作資料與私人生活的邊界也更難清楚劃分。</figcaption></figure>
+<p>本文以遠距與混合工作為焦點，檢視監控軟體能做什麼、雇主提出哪些正當目的、研究對績效效果說了什麼，以及英美與國際機構提供的最低保障。這不是法律意見，也不把所有記錄工具等同於不當監控：資安事件、受規管產業的稽核與工時安排確實可能需要有限資料。關鍵在於目的是否具體、手段是否必要、資料是否被拿去做原先未說明的決定，以及勞工是否有理解、查詢與挑戰的機會。³⁴</p>
+<h2>一個「在線」指標，裝不下工作</h2>
+<figure><img src="https://live.staticflickr.com/3182/5858741646_3cc9614638_b.jpg" alt="鍵盤與電腦工作畫面｜來源：NezTez / Flickr（CC BY 2.0）" loading="lazy"><figcaption>鍵盤活動容易被量測，卻未必能代表閱讀、思考、溝通或照顧客戶等工作成果。</figcaption></figure>
+<p>《紐約時報》2022 年的調查描述，企業正以個人層級的資料記錄、排行與評分工人；一名全遠距員工的經驗是，系統只把偵測到的「活躍分鐘」計入薪資，紙本閱讀、思考與帶人等離線勞動，反而要另行申請補登。⁵ 這不是單一產品的證明，卻指出一項設計問題：可觀測的電腦事件，與可交付的工作，並非同一件事。</p>
+<p>對需要長時間寫作、研究、設計、除錯、電話協調或照顧人的職務而言，滑鼠閒置可能意味著正在讀文件，也可能正在與同事處理難題。把「活躍」直接轉換成勤惰，會把衡量工具誤當成工作定義。BBC 引述研究者與受訪者指出，監控可以包含按鍵、定期截圖、通話與會議紀錄，甚至網路攝影機；同篇也提醒，有些雇主確有合規或資安需求，但工具的使用範圍會決定其後果。⁶</p>
+<h2>從資安紀錄到「老闆軟體」</h2>
+<figure><img src="https://live.staticflickr.com/2731/5760925422_6f9a4863d1_b.jpg" alt="視訊會議中的遠距協作｜來源：citrixonline / Flickr（CC BY-NC-ND 2.0）" loading="lazy"><figcaption>視訊、聊天與協作平台讓分散團隊能合作，也留下比辦公室更多可被保存與分析的資料。</figcaption></figure>
+<p>同樣是裝在工作裝置上的軟體，功能與風險差異很大。最低侵入的做法可能只記錄登入異常、惡意程式或敏感檔案外傳；較進一步的產品會建立網站與應用程式使用報表、工時表或專案時間線；最具爭議的功能則包括連續截圖、鍵盤記錄、鏡頭或音訊、GPS，以及把資料匯成個人「生產力分數」。美國勞動關係委員會（NLRB）在 2022 年備忘錄列舉的正是這些技術：穿戴裝置、攝影機、RFID、GPS、鍵盤記錄、截圖、網路攝影機照片與音訊都可能成為管理工具。⁷</p>
+<p>因此，「有沒有監控」不是充分問題。應追問：收集的是系統安全日誌還是內容？是否連下班與私人裝置也涵蓋？是否由人判讀，或自動觸發扣薪、紀律或解僱？資料留多久、誰能看、供應商能否再利用？英國資訊專員辦公室（ICO）明確提醒，從家中工作時，捕捉家人與私人生活資訊的風險更高，勞工對隱私的合理期待也通常高於一般工作場所。⁸</p>
+<p>公司販售端的論述同樣值得記錄。MIT Technology Review 2025 年採訪 Teramind 時，該公司主管把產品定位為協助客戶了解混合工作情境、降低資料外洩風險，而不只是判斷人是否坐在螢幕前。⁹ 這是供應商的商業說法，不足以證明成效；但它說明市場正在把安全、合規與績效放進同一套資料管線，因而更需要清楚的目的切分。</p>
+<h2>雇主需要的是風險控制，還是可見的忙碌？</h2>
+<figure><img src="https://live.staticflickr.com/82/233433149_c046d19fb6_b.jpg" alt="工作場所的監視攝影機｜來源：chuckp / Flickr（CC BY-NC 2.0）" loading="lazy"><figcaption>監控設備可用於安全與調查，但其資料用途若擴張到日常績效判斷，影響也會改變。</figcaption></figure>
+<p>雇主並非沒有可被理解的理由。分散工作使公司裝置離開受控網路，釣魚、帳號遭盜用、未授權雲端同步與機密檔案外流，都可能造成真實損失；客服、金融、醫療或政府承攬工作，也可能受保存紀錄與稽核義務約束。Reuters 的法律專欄指出，遠距環境下，企業常把裝置監測視為防資料外洩、未授權存取及保護專有資訊的措施。¹⁰ 這類理由應個別檢驗，而非被概括地否定。</p>
+<p>但同一組資料可以有不同用途。為偵測惡意登入而蒐集的系統事件，未必需要截取私人訊息內容；為確認客服通話品質而保存錄音，也未必應推論員工整日的投入程度。ICO 的指引要求雇主先說清楚目的，不能「以防萬一」而監控；若有較不侵入的做法，應優先考慮。¹¹ 它也指出，若監控電子郵件或訊息內容，通常需要資料保護影響評估（DPIA），而且僅在例外情況下才較可能合理。¹²</p>
+<p>管理者真正要解的問題，往往是交付標準不清、專案協作中斷，或安全控管不足。這些問題不必然能靠增加截圖頻率處理。把安全監測、工時紀錄、績效回饋與紀律程序拆開，能讓各自的必要性與保存期限被檢視，也能避免員工在不知情下被同一筆資料多重評分。</p>
+<h2>研究沒有給「盯得越緊，做得越多」的保證</h2>
+<figure><img src="https://live.staticflickr.com/2329/1591498755_73c4e7af3d_b.jpg" alt="在家使用電腦的工作者｜來源：Phil and Pam / Flickr（CC BY 2.0）" loading="lazy"><figcaption>遠距工作帶來彈性，也使管理者更容易把螢幕上的活動誤認為完整的工作表現。</figcaption></figure>
+<p>支持監控的人常以效率與問責作為理由，但實證並沒有提供一條單向結論。Siegel 與 König 的統合分析彙整 70 個獨立樣本、233 個效果量，檢視電子監控與工作滿意度、壓力、績效及反生產行為的關係；摘要所述結果對「監控必然提高績效」沒有支持。¹³ BBC 報導同樣引述該研究脈絡：監控效果會因職務與實施方式而異，透明、讓勞工參與的安排，較可能減輕負面反應。¹⁴</p>
+<p>這不代表所有時間紀錄都無用。對按件計酬、輪班、外勤安全或明確流程型工作，可靠的時間與事件資料可協助排班、申訴或稽核；在資安事件中，日誌也能協助還原問題。問題是資料是否與要做的判斷相稱。若一項系統只能辨識滑鼠活動，卻被用來推斷創意、合作、健康狀態或忠誠，就超過了測量能力。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 更可行的管理單位可能不是「每分鐘是否活動」，而是預先說明的成果、服務水準、交接品質與合理時程。這並不排除必要監測；它要求監測結果必須能被脈絡化，不能把儀表板上的低分當成完整的人事判斷。對員工而言，知道資料如何轉成後果，也比只收到一個分數更能理解規則。</p>
+<h2>住家不是縮小版辦公室</h2>
+<figure><img src="https://live.staticflickr.com/7343/10410713934_1da8c3753b_b.jpg" alt="線上團隊會議場景｜來源：citrixonline / Flickr（CC BY-NC-ND 2.0）" loading="lazy"><figcaption>遠距協作工具可連結同事，也可能讓家庭背景、私訊與非工作時段意外進入工作資料。</figcaption></figure>
+<p>當鏡頭、麥克風或螢幕截圖進入住家，資料不只關於員工。背景可能露出家人、醫療用品、宗教物件、居住條件或孩子的行蹤；共享網路、私人手機與家庭電腦也使工作與生活的資料界線更難維持。《衛報》訪問隱私倡議者時指出，網路攝影機型遠距監控可能暴露懷孕、性傾向或家庭構成等不應由雇主取得的線索。¹⁵ 這是風險說明，而非每一種遠距工具都必然會造成的結果。</p>
+<p>ICO 因此要求考慮被一併拍到或記錄的人，例如在家工作的員工之家庭成員；它也認為連續音訊與影像紀錄格外侵入，通常難以合理化，應預設關閉音訊能力，僅在例外觸發。¹⁶ 對公司而言，這意味著「自備裝置」與「公司管理裝置」的界線、工作時間帶、截圖遮罩、內容排除規則及資料刪除期限，都應在導入前寫清楚。</p>
+<p>隱私也不是唯一風險。監控資料可能包含與工會、病假、宗教、照顧責任或申訴有關的敏感訊息。NLRB 的備忘錄警告，無所不在的電子監控與自動管理，可能妨礙員工私下討論工作條件或組織行動的權利。¹⁷ 美國法制與臺灣並不相同，不能直接移植；但它提出一個普遍的治理問題：雇主能否證明其資料需求，窄於對員工私人生活與集體權利的干擾。</p>
+<h2>當資料開始決定升遷、薪資或去留</h2>
+<figure><img src="https://live.staticflickr.com/65535/52005816626_7da76b1354_b.jpg" alt="筆記型電腦上的數位工作畫面｜來源：UN Women Asia &amp; the Pacific / Flickr（CC BY-NC-ND 2.0）" loading="lazy"><figcaption>工作資料被彙整後，可能不只用於資安，也可能影響考核、排班與其他人事決策。</figcaption></figure>
+<p>監控的風險會在資料跨過「提示」而成為人事決策依據時提高。美國平等就業機會委員會（EEOC）對勞工的說明列出多種職場監測：任務時間、穿戴式定位、臉部表情、聲音、電子郵件、按鍵與游標活動；該機構提醒，自動系統已被用於招聘、監督與解僱，也可能帶來歧視風險。¹⁸ AP 2023 年報導則引述當時 EEOC 主席說法，追蹤位置、按鍵與生產力的 AI「bossware」可能觸及反歧視法。¹⁹</p>
+<p>英國的資料保護框架對「僅由自動化做出且具有法律或類似重大效果」的決定設有限制。ICO 的指引舉例，依績效降低薪資或影響解僱，可能屬重大效果；在適用情形下，勞工須能得到有意義的人為介入、知道邏輯與預期後果，並可提出異議。²⁰ 這些是 UK GDPR 脈絡下的要求，不等同於臺灣現行法；其制度思路仍有參考價值：越接近扣薪、升遷、排班或解僱，越不應把系統輸出當成不可挑戰的結論。</p>
+<p>OECD 將演算法管理定義為以軟體、可能包含 AI，全部或部分自動化傳統上由人類管理者完成的任務。²¹ 定義的重要性在於，它把討論從單一軟體拉回權力關係：誰設定指標、誰能修正錯誤資料、誰看得到模型的假設，以及被評量者是否有實質的申訴入口。</p>
+<h2>透明不是同意書上的一行字</h2>
+<figure><img src="https://live.staticflickr.com/2261/2062184804_744aa9be6d_b.jpg" alt="電腦與工作資料的畫面｜來源：Wonderlane / Flickr（CC BY 2.0）" loading="lazy"><figcaption>資料治理的核心不只是蒐集能力，也包括員工是否清楚知道資料的用途、存取者與保存期限。</figcaption></figure>
+<p>在僱傭關係裡，員工通常難以自由拒絕一套影響工作資格的系統，因此「已勾選同意」不必然代表權力關係平等。國際勞工組織（ILO）2025 年工作論文指出，勞工因權力不對等與資料遭利用的風險而特別脆弱；它把數位監控與演算法管理視為需要更具體保障的領域。²² ILO 並非立法者，其建議不具拘束力，但提供了跨國比較的共同語言。</p>
+<p>ICO 的建議更具操作性：導入前應先界定目的與合法基礎、評估必要性與比例原則、讓勞工知道蒐集哪些資料，並在適當時徵詢勞工或代表意見。²³ 若使用第三方產品，使用者公司仍須對「為何、如何」監控負責，不能假設市售產品自然符合法規。²⁴ 這一點對採購流程尤其重要：功能清單越長，不代表每個功能都應開啟。</p>
+<p>具體而言，一份可被員工讀懂的規則至少應回答：監控目的是資安、工時或績效中的哪一項？處理哪些欄位、在哪些時段？是否收集內容、影像或位置？誰可存取、留存多久、是否跨境傳輸？是否會用於升遷、獎金或紀律？員工如何取得自己的資料、要求更正或提出申訴？這些問題不會消除衝突，卻能讓衝突從猜測回到可核對的制度。</p>
+<h2>臺灣的遠距工作：先把資料與勞動條件寫清楚</h2>
+<figure><img src="https://live.staticflickr.com/5202/5378333486_d97bc41ecb_b.jpg" alt="筆記型電腦前的工作者｜來源：David Wellbeloved / Flickr（CC BY 2.0）" loading="lazy"><figcaption>對臺灣的遠距工作者而言，工具規則應與工時、設備、資安及個人資料保護一起被明確約定。</figcaption></figure>
+<p>臺灣的討論不能照搬英美制度。台灣的個人資料保護與勞動規範、企業內規、工作契約及個案事實，會共同影響特定做法能否成立；本文未找到一套可直接涵蓋所有「遠距監控軟體」情境的單一官方標準，因此不對臺灣個案作合法與否的判定。可確認的是，學術研究在談臺灣居家工作政策時，也將勞動部職業安全衛生署的居家工作職安指引納入遠距工作的制度背景。²⁵</p>
+<p>對勞工，實際可做的第一步不是自行推測是否被監控，而是閱讀公司提供的資訊安全、可接受使用、個資告知、遠距工作與績效規則；使用公司電腦時，把私人帳號、私人雲端與私人通訊盡量分開，也能降低資料混雜。對雇主，採購前先問「不用這功能能否達成目的」；若可用端點安全、權限控管與成果檢核處理，就不必自動啟用截圖、鏡頭或鍵盤記錄。</p>
+<p>若制度影響薪資、出勤、工作分配或紀律，應保留人工說明與更正管道。這不是要求企業放棄資安，而是避免把遠距工作的信任問題外包給一個黑箱指標。當資料有錯、職務型態不適合、或員工有合理的私人與健康情況，能被聽見的程序本身就是風險控制的一部分。</p>
+<h2>一份值得被討論的導入清單</h2>
+<figure><img src="https://live.staticflickr.com/2329/1591498755_73c4e7af3d_b.jpg" alt="筆記型電腦與工作空間｜來源：Phil and Pam / Flickr（CC BY 2.0）" loading="lazy"><figcaption>評估監控工具時，應先釐清要解決的工作問題，而不是把可蒐集的資料全部變成常態指標。</figcaption></figure>
+<p>導入者可以把問題分成三層。第一層是必要性：要防的是帳號入侵、資料外洩、工時爭議，還是專案協作？每一種目標是否已有較少侵入的做法？第二層是資料設計：收集的是中繼資料還是內容，是否包含家庭成員或下班時間，是否能去識別化、縮短保存、限制權限？第三層是決策保障：哪些結果只供安全團隊調查，哪些會進入人事資料，誰能覆核、如何告知、何處申訴？</p>
+<p>這類檢查不是反對技術。ICO 的小型企業指南同時承認安全、資源適當使用與效率可能是正當目的，卻要求雇主選擇合理、相稱的做法、事先告知、保護資料並定期檢討，也應考慮訓練與例行績效回饋等替代方案。²⁶ 從這個角度看，好的制度不是「完全不看」，而是能說明為何看、看多少、看完如何處理。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 對遠距團隊最困難的，未必是技術部署，而是承認工作不總能以可見活動表現。若管理者只獎勵即時回覆與游標移動，員工可能把注意力從深度工作轉向製造可見痕跡；若團隊共同定義成果與可回應的時程，監控資料才較可能回到輔助位置，而非取代信任。</p>
+<h2>結語：把工作看成成果，而不是訊號</h2>
+<figure><img src="https://live.staticflickr.com/2731/5760925422_6f9a4863d1_b.jpg" alt="遠距協作與數位工作｜來源：citrixonline / Flickr（CC BY-NC-ND 2.0）" loading="lazy"><figcaption>遠距工具可以支援協作；是否傷害信任，取決於資料被蒐集、解讀與使用的規則。</figcaption></figure>
+<p>遠距監控的爭論不會因為某一套軟體存在或消失而結束。它涉及企業保護系統與履行責任的需要，也涉及勞工在家中仍保有私人生活、尊嚴與被公平評量的權利。現有資料支持的結論較為有限：監控可以有合法與實務目的；其侵入性與後果則高度取決於範圍、透明度、比例、保存與是否影響重大人事決定。²⁷²⁸</p>
+<p>因此，最值得避免的不是所有紀錄，而是把「能被記錄」誤當成「最重要」。一套對目的有節制、對資料有邊界、對錯誤可更正、對員工有說明與參與的制度，未必能讓勞資意見完全一致；至少能讓在家上班不必以全天候證明自己正在工作為代價。接下來值得觀察的，是各地對演算法管理、個資與勞動權的規則如何演進，以及企業是否把信任當成需要被設計的條件，而非儀表板上可以直接替代的數字。</p>
+<h2>從平台勞動看見更早出現的問題</h2>
+<figure><img src="https://live.staticflickr.com/2261/2062184804_744aa9be6d_b.jpg" alt="工作裝置與個人資料的交界｜來源：Wonderlane / Flickr（CC BY 2.0）" loading="lazy"><figcaption>當工作流程被完整數位化，指派、評量與申訴也可能一併被資料化。</figcaption></figure>
+<p>遠距白領監控並不是孤立現象。外送、叫車、倉儲與線上接案等平台工作，較早就面對由系統派單、定位、評分與帳號狀態決定工作機會的情境。ILO 關於數位勞動平台的資料說明，平台可用設計與演算法管理來指派、監控與評估工作；其後的工作者資料研究則把自動監控界定為為了監督或評估表現與行為而處理資料的技術，範圍從簡單工時軟體到生物辨識皆可能涵蓋。²⁹³⁰</p>
+<p>兩者的差別不能被抹平：受僱白領、承攬外送員與工廠作業員面對的契約、保障與工作流程不同。然而，平台經驗提示一個共同風險：當分數、接單率、活躍時間或回覆速度與收入和工作機會相連，被評量者若不知道資料怎麼算、也難以更正，就會把管理判斷視為不可見的系統命令。MIT Technology Review 報導提到，演算法管理的資料可能進一步用於招聘、解僱、升遷或「停用」；它同時指出美國對勞工電子監控的保護並不一致。³¹</p>
+<p>這也說明為何「有人審核」必須是實質的，而不是在表單最後加上一個核章。能提出異議的人需要知道爭議資料是什麼、決策者有沒有權限偏離系統建議，以及更正是否會在下一次排班、考核或薪資計算前生效。對公司而言，這些程序也能降低因資料錯置、職務差異或供應商模型偏差而造成的管理風險。</p>
+<h2>信任可以被制度化，也可以被消耗</h2>
+<figure><img src="https://live.staticflickr.com/5202/5378333486_d97bc41ecb_b.jpg" alt="居家工作與電腦設備｜來源：David Wellbeloved / Flickr（CC BY 2.0）" loading="lazy"><figcaption>遠距制度若只要求員工持續證明「在線」，可能忽略真正需要協調的成果、負荷與回應時間。</figcaption></figure>
+<p>混合工作常把管理難題簡化成「看不到人」，但真正看不見的也包括工作負荷、照顧責任、跨時區協作、系統障礙與角色之間的依賴。每五分鐘截圖或要求滑鼠常動，或許能增加可視資料，卻不一定增加這些情境的可理解性。BBC 所引述的研究與訪談呈現了另一種可能：被監控的員工可能因失去自主感而壓力增加、出現反彈；同時，透明與參與能降低部分負面效果。³² 這不是普遍因果定律，而是導入前應被測試的組織風險。</p>
+<p>實務上，主管可先以小範圍、限期與明確目的試行，並把安全監測的告警品質、誤報率與資料保存量列入評估，而非只看蒐集量。與員工代表、資訊安全、法務、人資和實際使用者共同檢視，能較早發現某些職務會被錯誤量化。若工具確有必要，應提供可見的狀態提示、說明頁、資料副本與固定複審期；若工具無法通過這些基本檢視，採購成本再低也不代表組織成本低。</p>
+<p><strong>（以下為分析，非事實陳述）</strong> 信任不是不做管理，而是讓管理的理由與限制可被理解。遠距工作最有價值之處在於它容許人們以不同節奏完成責任；若制度只獎勵被系統辨認出的忙碌，它可能反過來削弱遠距工作原本承諾的彈性。把成果、資安與隱私放在同一張可討論的規則表上，比把每個人變成一條持續輸出的資料流，更接近可長期運作的安排。</p>
+<h2>結語：先問資料為何存在</h2>
+<figure><img src="https://live.staticflickr.com/7343/10410713934_1da8c3753b_b.jpg" alt="遠距團隊的數位協作｜來源：citrixonline / Flickr（CC BY-NC-ND 2.0）" loading="lazy"><figcaption>工作工具可以產生大量資料，但資料的存在不應自動成為全天候評量人的理由。</figcaption></figure>
+<p>遠距監控沒有一個適用所有職務的答案。資安與法遵可能要求有限紀錄，個別工作也可能需要可核對的工時或服務資料；這些目的必須和截圖、按鍵、影像、定位與自動化評分等更侵入的功能分開判斷。研究、監管指引與勞工權利機構共同指向的，不是「資料愈多愈好」，而是目的明確、手段相稱、事前告知、保存受限，並保留人能說明與更正的空間。³³</p>
+<p>對正在採購工具的組織，最實用的問題或許是：如果這一筆資料被員工、主管、稽核者與未來的法庭同時看到，公司能否清楚說明為何需要它、為何沒有更少侵入的方法，以及它是否真的能改善工作？若答案含糊，問題多半不在員工沒有被看見，而在工作制度尚未被說清楚。 還有一項常被忽略的成本：資料一旦被保存，就會產生新的保護義務。存取權限設得過寬、供應商帳號未妥善管理、離職後帳號未撤銷，或資料保留時間沒有終點，都可能讓原本為安全而蒐集的紀錄變成新的外洩面。把資料最小化、設定刪除期限與定期審核，不只是隱私原則，也能減少組織必須守護的攻擊面。³⁴ 資料治理若只在事故發生後才補做，往往已經太晚。導入前的試行、定期檢討與可撤回的設定，能讓管理措施隨風險改變，而不是在組織裡永久累積。</p>
+<h2>引用來源</h2>
+<p class="ref">¹ Reuters（2026-04-27）— "Eyes on me: Monitoring the way through employee privacy"
+<a href="https://www.reuters.com/legal/legalindustry/eyes-me-monitoring-way-through-employee-privacy--pracin-2026-04-27/" rel="noopener" target="_blank">https://www.reuters.com/legal/legalindustry/eyes-me-monitoring-way-through-employee-privacy--pracin-2026-04-27/</a></p>
+<p class="ref">² ICO（2023）— "Data protection and monitoring workers"
+<a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/data-protection-and-monitoring-workers/" rel="noopener" target="_blank">https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/data-protection-and-monitoring-workers/</a></p>
+<p class="ref">³ ILO（2025）— "Navigating workers' data rights in the digital age"
+<a href="https://webapps.ilo.org/static/english/intserv/working-papers/wp149/index.html" rel="noopener" target="_blank">https://webapps.ilo.org/static/english/intserv/working-papers/wp149/index.html</a></p>
+<p class="ref">⁴ OECD（2025）— "Algorithmic management in the workplace"
+<a href="https://www.oecd.org/en/publications/algorithmic-management-in-the-workplace_287c13c4-en.html" rel="noopener" target="_blank">https://www.oecd.org/en/publications/algorithmic-management-in-the-workplace_287c13c4-en.html</a></p>
+<p class="ref">⁵ The New York Times（2022-08-15）— "The Rise of the Worker Productivity Score"
+<a href="https://www.nytimes.com/interactive/2022/08/14/business/worker-productivity-tracking.html" rel="noopener" target="_blank">https://www.nytimes.com/interactive/2022/08/14/business/worker-productivity-tracking.html</a></p>
+<p class="ref">⁶ BBC Worklife（2023-01-30）— "How worker surveillance is backfiring on employers"
+<a href="https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers" rel="noopener" target="_blank">https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers</a></p>
+<p class="ref">⁷ NLRB（2022）— "Electronic Monitoring and Algorithmic Management of Employees"
+<a href="https://s3.documentcloud.org/documents/23253403/nlrb-abruzzo-electronic-monitoring-algorithms-section-7-rights.pdf" rel="noopener" target="_blank">https://s3.documentcloud.org/documents/23253403/nlrb-abruzzo-electronic-monitoring-algorithms-section-7-rights.pdf</a></p>
+<p class="ref">⁸ ICO（2023）— "Specific data protection considerations"
+<a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/specific-data-protection-considerations-for-different-ways-or-methods-of-monitoring-workers/" rel="noopener" target="_blank">https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/specific-data-protection-considerations-for-different-ways-or-methods-of-monitoring-workers/</a></p>
+<p class="ref">⁹ MIT Technology Review（2025-02-24）— "Your boss is watching"
+<a href="https://www.technologyreview.com/2025/02/24/1111664/worker-monitoring-employee-surveillance/" rel="noopener" target="_blank">https://www.technologyreview.com/2025/02/24/1111664/worker-monitoring-employee-surveillance/</a></p>
+<p class="ref">¹⁰ Reuters（2022-12-06）— "High-tech, high-risk: remote employee monitoring"
+<a href="https://www.reuters.com/legal/legalindustry/high-tech-high-risk-potential-pitfalls-remote-employee-monitoring-2022-12-06/" rel="noopener" target="_blank">https://www.reuters.com/legal/legalindustry/high-tech-high-risk-potential-pitfalls-remote-employee-monitoring-2022-12-06/</a></p>
+<p class="ref">¹¹ ICO（2026）— "Employee monitoring – is it right for your business?"
+<a href="https://ico.org.uk/for-organisations/advice-for-small-organisations/news-blogs-and-events/blogs/employee-monitoring-is-it-right-for-your-business/" rel="noopener" target="_blank">https://ico.org.uk/for-organisations/advice-for-small-organisations/news-blogs-and-events/blogs/employee-monitoring-is-it-right-for-your-business/</a></p>
+<p class="ref">¹² ICO（2023）— "Employment practices and data protection: monitoring workers"
+<a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/" rel="noopener" target="_blank">https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/</a></p>
+<p class="ref">¹³ Siegel &amp; König（2022）— "The impact of electronic monitoring on employees"
+<a href="https://publikationen.sulb.uni-saarland.de/bitstream/20.500.11880/34042/1/1-s2.0-S2451958822000616-main.pdf" rel="noopener" target="_blank">https://publikationen.sulb.uni-saarland.de/bitstream/20.500.11880/34042/1/1-s2.0-S2451958822000616-main.pdf</a></p>
+<p class="ref">¹⁴ Semantic Scholar（2022）— "Impact of Electronic Monitoring on Employees"
+<a href="https://www.semanticscholar.org/paper/Impact-of-Electronic-Monitoring-on-Employees:-A-Siegel-König/ff8e6fc4b380a5442f85eca1813fc57ff7bcbac9" rel="noopener" target="_blank">https://www.semanticscholar.org/paper/Impact-of-Electronic-Monitoring-on-Employees:-A-Siegel-König/ff8e6fc4b380a5442f85eca1813fc57ff7bcbac9</a></p>
+<p class="ref">¹⁵ The Guardian（2022-04-27）— "Bossware is coming for almost every worker"
+<a href="https://www.theguardian.com/technology/2022/apr/27/remote-work-software-home-surveillance-computer-monitoring-pandemic" rel="noopener" target="_blank">https://www.theguardian.com/technology/2022/apr/27/remote-work-software-home-surveillance-computer-monitoring-pandemic</a></p>
+<p class="ref">¹⁶ ICO（2023）— "Specific data protection considerations"
+<a href="https://cy.ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/specific-data-protection-considerations-for-different-ways-or-methods-of-monitoring-workers/" rel="noopener" target="_blank">https://cy.ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/specific-data-protection-considerations-for-different-ways-or-methods-of-monitoring-workers/</a></p>
+<p class="ref">¹⁷ NLRB（2022）— "Unlawful Electronic Surveillance and Automated Management"
+<a href="https://www.nlrb.gov/news-outreach/news-story/nlrb-general-counsel-issues-memo-on-unlawful-electronic-surveillance-and" rel="noopener" target="_blank">https://www.nlrb.gov/news-outreach/news-story/nlrb-general-counsel-issues-memo-on-unlawful-electronic-surveillance-and</a></p>
+<p class="ref">¹⁸ EEOC（2024）— "Employment Discrimination and AI for Workers"
+<a href="https://www.eeoc.gov/sites/default/files/2024-04/20240429_Employment+Discrimination+and+AI+for+Workers.pdf" rel="noopener" target="_blank">https://www.eeoc.gov/sites/default/files/2024-04/20240429_Employment+Discrimination+and+AI+for+Workers.pdf</a></p>
+<p class="ref">¹⁹ AP News（2023-05-18）— "Check your AI bossware tools for bias"
+<a href="https://apnews.com/article/bossware-eeoc-artificial-intelligence-job-discrimination-48f2da9321a023aa102e636026667bb4" rel="noopener" target="_blank">https://apnews.com/article/bossware-eeoc-artificial-intelligence-job-discrimination-48f2da9321a023aa102e636026667bb4</a></p>
+<p class="ref">²⁰ ICO（2023）— "Monitoring tools that use solely automated processes"
+<a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/what-do-we-need-to-do-if-we-use-monitoring-tools-that-use-solely-automated-processes/" rel="noopener" target="_blank">https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/what-do-we-need-to-do-if-we-use-monitoring-tools-that-use-solely-automated-processes/</a></p>
+<p class="ref">²¹ OECD（2025）— "Algorithmic management in the workplace"
+<a href="https://www.oecd.org/en/publications/algorithmic-management-in-the-workplace_287c13c4-en.html" rel="noopener" target="_blank">https://www.oecd.org/en/publications/algorithmic-management-in-the-workplace_287c13c4-en.html</a></p>
+<p class="ref">²² ILO（2025）— "Navigating workers' data rights in the digital age"
+<a href="https://webapps.ilo.org/static/english/intserv/working-papers/wp149/index.html" rel="noopener" target="_blank">https://webapps.ilo.org/static/english/intserv/working-papers/wp149/index.html</a></p>
+<p class="ref">²³ ICO（2023）— "Checklists: monitoring workers"
+<a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/checklists/" rel="noopener" target="_blank">https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/checklists/</a></p>
+<p class="ref">²⁴ ICO（2023）— "Data protection and monitoring workers"
+<a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/data-protection-and-monitoring-workers/" rel="noopener" target="_blank">https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/data-protection-and-monitoring-workers/</a></p>
+<p class="ref">²⁵ National Library of Medicine（2024）— "Effect of Government Guidelines and Corporate Governance on Telework"
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11255928/" rel="noopener" target="_blank">https://pmc.ncbi.nlm.nih.gov/articles/PMC11255928/</a></p>
+<p class="ref">²⁶ ICO（2026）— "Employee monitoring – is it right for your business?"
+<a href="https://ico.org.uk/for-organisations/advice-for-small-organisations/news-blogs-and-events/blogs/employee-monitoring-is-it-right-for-your-business/" rel="noopener" target="_blank">https://ico.org.uk/for-organisations/advice-for-small-organisations/news-blogs-and-events/blogs/employee-monitoring-is-it-right-for-your-business/</a></p>
+<p class="ref">²⁷ Reuters（2023-04-25）— "Watched while working"
+<a href="https://www.reuters.com/legal/legalindustry/watched-while-working-use-monitoring-ai-workplace-increases-2023-04-25/" rel="noopener" target="_blank">https://www.reuters.com/legal/legalindustry/watched-while-working-use-monitoring-ai-workplace-increases-2023-04-25/</a></p>
+<p class="ref">²⁸ Financial Times（2021-01-12）— "Workplace surveillance may hurt us more than it helps"
+<a href="https://www.ft.com/content/27faa953-1723-4597-a5a0-2ff9e617feab" rel="noopener" target="_blank">https://www.ft.com/content/27faa953-1723-4597-a5a0-2ff9e617feab</a></p>
+<p class="ref">²⁹ ILO（2021）— "Worker monitoring and surveillance in digital labour platforms"
+<a href="https://www.ilo.org/resource/worker-monitoring-and-surveillance-digital-labour-platforms" rel="noopener" target="_blank">https://www.ilo.org/resource/worker-monitoring-and-surveillance-digital-labour-platforms</a></p>
+<p class="ref">³⁰ ILO（2021）— "Worker monitoring and surveillance in digital labour platforms"（PDF）
+<a href="https://www.ilo.org/media/281516/download" rel="noopener" target="_blank">https://www.ilo.org/media/281516/download</a></p>
+<p class="ref">³¹ MIT Technology Review（2025-02-24）— "Your boss is watching"
+<a href="https://www.technologyreview.com/2025/02/24/1111664/worker-monitoring-employee-surveillance/" rel="noopener" target="_blank">https://www.technologyreview.com/2025/02/24/1111664/worker-monitoring-employee-surveillance/</a></p>
+<p class="ref">³² BBC Worklife（2023-01-30）— "How worker surveillance is backfiring on employers"
+<a href="https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers" rel="noopener" target="_blank">https://www.bbc.com/worklife/article/20230127-how-worker-surveillance-is-backfiring-on-employers</a></p>
+<p class="ref">³³ ILO（1997）— "Protection of workers’ personal data"
+<a href="https://www.ilo.org/resource/other/protection-workers%E2%80%99-personal-data" rel="noopener" target="_blank">https://www.ilo.org/resource/other/protection-workers%E2%80%99-personal-data</a></p>
+<p class="ref">³⁴ ICO（2023）— "Data protection and monitoring workers"
+<a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/data-protection-and-monitoring-workers/" rel="noopener" target="_blank">https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/monitoring-workers/data-protection-and-monitoring-workers/</a></p>
+
+</article>
+<footer class="foot"><a href="https://polarbear0827.github.io/My-Way/">← 回首頁</a><span>© 穗稻忠武的專欄</span></footer>
+<script>
+(function(){
+  var stop=function(e){e.preventDefault();return false;};
+  document.addEventListener('contextmenu',stop);
+  document.addEventListener('selectstart',stop);
+  document.addEventListener('copy',stop);
+  document.addEventListener('cut',stop);
+  document.addEventListener('dragstart',stop);
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','s','u','a','p'].indexOf(k)>-1){e.preventDefault();return false;}
+  });
+})();
+</script>
+</body>
+</html>
